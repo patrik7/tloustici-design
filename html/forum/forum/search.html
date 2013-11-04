@@ -1,0 +1,67 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+
+{% block extra_meta %}
+  <link rel="stylesheet" type="text/css" href="/static/forum.css" />
+
+  <script type="text/javascript" src="/static/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" language="javascript">
+
+    function loadData()
+    {
+      $('#results').html('loading ...');
+
+      $.getJSON('/forum/search/data/', {
+          male: document.getElementById('id_sex_1').checked,
+          female: document.getElementById('id_sex_2').checked,
+          city: document.getElementById('id_city').value,
+      }).done(function(entries) {
+          $('#results').html('');
+          for (var i = 0; i < entries.length; i++) {
+            profile(i, entries[i]);
+          }
+        })
+        .error(function() {
+          $('#results').html('Error loading data');
+        });
+    }
+
+    function profile(i, e) {
+      $('#results').append('<div class="post">'
+
+        + '<div class="post_image"><a href="' + e.link  + '"><img src="' + e.avatar + '" width="55" height="55"/></a></div>'
+
+        + '<div class="post_body">' + e.username + '<br/>'
+        + e.sex + '<br/>'
+        + '</div>'
+
+        + '<div class="post_body2">'
+        + '<img height="10" width="' + e.fitness[0] + '" /><br/>'
+        + '<img height="10" width="' + e.fitness[1] + '" /><br/>'
+        + '<img height="10" width="' + e.fitness[2] + '" /><br/>'
+      + '</div>'
+
+      + '</div>');            
+    }
+
+    $(document).ready(loadData);
+
+  </script>
+{% endblock %}
+
+{% block main %}
+
+<h3>{% trans 'Search' %}</h3>
+
+<fieldset class="outer">
+  {% for field in search_form %}
+    {{ field.label_tag }} {{ field }} </br>
+  {% endfor %}
+</fieldset>
+
+<div id="results">
+loading ...
+</div>
+
+{% endblock %}
+

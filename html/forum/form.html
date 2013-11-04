@@ -1,0 +1,16 @@
+
+{% csrf_token %}
+
+{% for field in form.visible_fields %}
+  <div>
+  {{field.errors}}
+  {{field.label_tag}}
+  {{field}}
+  {{field.help_text }}
+  </div>
+{% endfor %}
+
+{% for hidden in form.hidden_fields %}
+  {{ hidden }}
+{% endfor 5%}
+

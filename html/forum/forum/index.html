@@ -1,0 +1,79 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+
+{% block extra_meta %}
+  <link rel="stylesheet" type="text/css" href="/static/forum.css" />
+
+  <script type="text/javascript" src="/static/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" language="javascript">
+
+    function loadData(root)
+    {
+      $('#data').html('loading ...');
+
+      $.getJSON('/forum/data/' + root, {
+      }).done(function(entries) {
+          $('#data').html('');
+          for (var i = 0; i < entries.length; i++) {
+            render(i, entries[i]);
+          }
+        })
+        .error(function() {
+          $('#data').html('Error loading data');
+        });
+    }
+
+    function render(i, e) {
+      var body = '';
+      if (e.action)
+      {
+        body += '<form method="post" action="' + e.post_link + '">'
+          + "{% csrf_token %}"
+          + e.body
+          + e.subscribe + "{% trans 'Subscribe' %}"
+
+          + '<input type="submit" class="submit_button" name="submit" value="{% trans 'Post' %}" />'
+          + '</form>';
+
+      } else {
+        if (e.level > 1) {
+          body += '<a href="' + e.user_link + '">'
+            + '<small>' + e.by_user + '</small>'
+            + '</a><br/>';
+        }
+
+        if (e.is_link) {
+//          body += '<a href="' + e.post_link + '">' + e.text + '</a>';
+          body += '<a href="javascript:void(0)" onClick="loadData(' + e.pk + ')">' + e.text + '</a>';
+        } else {
+          body += e.text
+        }
+
+        if (e.post_count > 0) {
+          body += '<br/><small>' + e.post_count + ' '+ e.posts + '</small>';
+        }
+      }
+
+      $('#data').append('<div class="' + e.html_class + '">'
+        + '<div class="post_image">'
+          + '<img src="' + e.avatar + '" width="55" height="55" />'
+        + '</div>'
+        + '<div class="post_body">' + body + '</div>'
+      + '</div>');
+    }
+
+    {% if root %}
+      $(document).ready(loadData({{root}}));
+    {% else %}
+      $(document).ready(loadData(''));
+    {% endif %}
+
+  </script>
+
+{% endblock %}
+
+{% block main %}
+
+<div id="data" />
+
+{% endblock %}

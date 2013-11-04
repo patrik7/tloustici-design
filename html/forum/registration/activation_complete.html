@@ -1,0 +1,18 @@
+{% extends "base/base.html" %}
+
+{% load i18n %}
+
+{% block main %}
+
+<h3>{% trans 'Activation Completed' %}</h3>
+
+<p>
+{% trans 'Your account' %} <b>{{ request.user.username }}</b> {% trans 'was activated.' %}
+</p>
+
+<p>
+{% trans 'You can now log in using the form in the upper right corner.' %}
+</p>
+
+{% endblock %}
+

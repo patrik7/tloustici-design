@@ -1,0 +1,27 @@
+{% extends "base/base.html" %}
+
+{% load i18n %}
+
+{% block main %}
+
+<h3>{% trans 'Registration' %}</h3>
+
+  <form id="registration_form" method="post" action="{% url register %}">
+    {% csrf_token %}
+
+    <p>{{ form.non_field_errors }}</p>
+
+    {% for hidden in form.hidden_fields %}
+      {{ hidden }}
+    {% endfor %}
+    {% for field in form.visible_fields %}
+        <p>
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
+        </p>
+    {% endfor %}
+    <input type="submit" class="submit_button" name="Submit" value="{% trans 'Register' %}" />
+  </form>
+
+{% endblock %}
+

@@ -1,0 +1,85 @@
+{% extends 'base/base.html' %}
+
+{% load i18n %}
+
+{% block main %}
+
+<h3>{% trans 'Profile' %}</h3>
+
+
+<form action="{% url profile profile.username %}" class="main" method="POST" >
+  {% csrf_token %}
+  <fieldset class="outer">
+    <legend class="outer">{% trans 'Essential Information' %}</legend>
+    <div>
+      {{form_essentials.email.errors}}
+      {{form_essentials.email.label_tag}}   
+      {{form_essentials.email}}
+    </div>
+
+    {% if not form_essentials.username.is_hidden %}
+      <div>
+        {{form_essentials.username.errors}}
+        {{form_essentials.username.label_tag}}   
+        {{form_essentials.username}}
+      </div>
+    {% else %}
+      {{form_essentials.username}}
+    {% endif %}
+
+    {{form_essentials.sex.erros}}
+    <fieldset class="radio">
+      {{form_essentials.sex.errors}}
+      <legend><span>{{form_essentials.sex.label}}</span></legend>
+      {{form_essentials.sex}}
+    </fieldset>
+
+    <div class="check">
+      {{form_essentials.searchable.errors}}
+      {{form_essentials.searchable.label_tag}}   
+      {{form_essentials.searchable}}
+    </div>
+
+    <input type="submit" class="submit_button" name="essentials" value="{% trans 'Save' %}">
+
+  </fieldset>
+</form>
+
+<form action="{% url profile profile.username %}" class="main" method="POST" >
+  {% csrf_token %}
+  <fieldset class="outer">
+    <legend class="outer">{% trans 'Personal Information' %}</legend>
+
+    {% include 'form.html' with form=form_personal %}
+
+    <input type="submit" class="submit_button" name="personal" value="{% trans 'Save' %}">
+
+  </fieldset>
+</form>
+
+<form enctype="multipart/form-data" action="{% url profile profile.username %}" class="main" method="POST" >
+  {% csrf_token %}
+  <fieldset class="outer">
+    <legend class="outer">{% trans 'Upload Picture' %}</legend>
+
+    {% include 'form.html' with form=form_uploadavatar %}
+
+    <input type="submit" class="submit_button" name="uploadavatar" value="{% trans 'Save' %}">
+
+  </fieldset>
+</form>
+
+
+<form action="{% url profile profile.username %}" class="main" method="POST" >
+  {% csrf_token %}
+  <fieldset class="outer">
+    <legend class="outer">{% trans 'Activities' %}</legend>
+
+    {% include 'form.html' with form=form_act %}
+
+    <input type="submit" class="submit_button" name="act" value="{% trans 'Save' %}">
+
+  </fieldset>
+</form>
+
+{% endblock %}
