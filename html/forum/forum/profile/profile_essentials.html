@@ -48,6 +48,18 @@
 <form action="{% url profile profile.username %}" class="main" method="POST" >
   {% csrf_token %}
   <fieldset class="outer">
+    <legend class="outer">{% trans 'Bio - Description' %}</legend>
+
+    {% include 'form.html' with form=form_bio %}
+
+    <input type="submit" class="submit_button" name="bio" value="{% trans 'Save' %}">
+
+  </fieldset>
+</form>
+
+<form action="{% url profile profile.username %}" class="main" method="POST" >
+  {% csrf_token %}
+  <fieldset class="outer">
     <legend class="outer">{% trans 'Personal Information' %}</legend>
 
     {% include 'form.html' with form=form_personal %}

@@ -11,7 +11,11 @@
     {
       $('#data').html('loading ...');
 
-      $.getJSON('/forum/data/' + root, {
+      {% block load_data %}
+      $.getJSON('/forum/data/' + root
+      {% endblock %}
+
+      ,{
       }).done(function(entries) {
           $('#data').html('');
           for (var i = 0; i < entries.length; i++) {

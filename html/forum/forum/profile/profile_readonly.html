@@ -24,6 +24,10 @@
     <img height="20" width="{{fit_sport}}" alt="{% trans 'sport' %}">{{fit_sport}}%<br/>
     <img height="20" width="{{fit_activities}}" alt="{% trans 'activities' %}">{{fit_activities}}%<br/>
 
+    <h4>{% trans 'Bio' %}</h4>
+
+    <p>{{profile.descripion_html|safe}}</p>
+
     <h4>{% trans 'Profile' %}</h4>
 
     <table>
