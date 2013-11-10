@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+
+{% block main %}
+
+<h3>{% trans 'Logged in first time' %}</h3>
+
+{% block text %}
+{% endblock %}
+
+<form action="{% url fillin profile.username step %}" class="main" method="POST" >
+  {% csrf_token %}
+  <fieldset class="outer">
+    <legend class="outer">{% trans step %}</legend>
+
+    {% include 'form.html' with form=form %}
+
+    <input type="submit" class="submit_button" name="{{step}}" value="{% trans 'Save' %}">
+
+  </fieldset>
+</form>
+
+
+{% endblock %}
