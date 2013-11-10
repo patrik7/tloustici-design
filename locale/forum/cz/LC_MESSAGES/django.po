@@ -1,0 +1,196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-10 20:28+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: forms.py:17
+msgid "Username"
+msgstr ""
+
+#: forms.py:18
+msgid "E-mail"
+msgstr "E-mail"
+
+#: forms.py:51
+msgid "Real name"
+msgstr ""
+
+#: forms.py:67
+msgid "Height has to be between 30 cm and 250 cm"
+msgstr ""
+
+#: forms.py:75
+msgid "Weight has to be between 30 kg and 350 kg"
+msgstr ""
+
+#: forms.py:146
+msgid "Subscribe"
+msgstr ""
+
+#: forms.py:146
+msgid "Subscribe this topic."
+msgstr ""
+
+#: forms.py:168
+msgid "Can't be empty nor contain only whitespace characters"
+msgstr ""
+
+#: models.py:43
+msgid "Male"
+msgstr "Muž"
+
+#: models.py:44
+msgid "Female"
+msgstr "Žena"
+
+#: models.py:48
+msgid "University"
+msgstr ""
+
+#: models.py:49
+msgid "High School"
+msgstr ""
+
+#: models.py:65
+msgid "Parent"
+msgstr ""
+
+#: models.py:66 models.py:198 models.py:289
+msgid "User"
+msgstr ""
+
+#: models.py:68
+msgid "Created"
+msgstr ""
+
+#: models.py:69
+msgid "Updated"
+msgstr ""
+
+#: models.py:70
+msgid "Updated by"
+msgstr ""
+
+#: models.py:71
+msgid "Markup"
+msgstr ""
+
+#: models.py:72
+msgid "Message"
+msgstr ""
+
+#: models.py:73 models.py:294
+msgid "HTML version"
+msgstr ""
+
+#: models.py:74
+msgid "User IP"
+msgstr ""
+
+#: models.py:77
+msgid "Closed"
+msgstr ""
+
+#: models.py:78
+msgid "Subscribers"
+msgstr ""
+
+#: models.py:83
+msgid "Post"
+msgstr ""
+
+#: models.py:84
+msgid "Posts"
+msgstr ""
+
+#: models.py:119
+msgid "by"
+msgstr ""
+
+#: models.py:124
+msgid "post"
+msgid_plural "posts"
+msgstr[0] ""
+msgstr[1] ""
+
+#: models.py:223
+msgid "City"
+msgstr ""
+
+#: models.py:224
+msgid "Cities"
+msgstr ""
+
+#: models.py:234
+msgid "Activity"
+msgstr ""
+
+#: models.py:235
+msgid "Activities"
+msgstr ""
+
+#: models.py:244
+msgid "How many choices are allowed simultaneously."
+msgstr ""
+
+#: models.py:247
+msgid "Can users vote to this poll or just see the result?"
+msgstr ""
+
+#: models.py:250
+msgid "Point of time after this poll would be automatic deactivated"
+msgstr ""
+
+#: models.py:253
+msgid "Users who has voted this poll."
+msgstr ""
+
+#: models.py:290
+msgid "The city you live in, or closes to you."
+msgstr ""
+
+#: models.py:291
+msgid "Language"
+msgstr ""
+
+#: models.py:292
+msgid "Avatar"
+msgstr ""
+
+#: models.py:293
+msgid "Description"
+msgstr ""
+
+#: models.py:301
+msgid "The highest achieved education"
+msgstr ""
+
+#: models.py:307
+msgid "Profile"
+msgstr ""
+
+#: models.py:308
+msgid "Profiles"
+msgstr ""
+
+#: views.py:55 views.py:95
+msgid "User profile saved."
+msgstr ""
+
+#: views.py:237
+msgid "Your reply saved."
+msgstr ""
