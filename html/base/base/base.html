@@ -1,198 +1,140 @@
 {% load i18n %}
+{% load bootstrap %}
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta name="description" content="{{ settings.FORUM_META_DESCRIPTION }} " />
-    <meta name="keywords" content="{{ settings.FORUM_META_KEYWORDS }}" />
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- TODO -->
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
     <title>{% block caption %}Tloustici{% endblock %}</title>
 
-    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+    <!-- Bootstrap core CSS -->
+    <link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.png" type="image/png" />
-<!--
-    <script type="text/javascript">
-        var STATIC_URL = "{{ STATIC_URL }}";
-    </script>
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
-    {% if DEBUG %}
-        <script type="text/javascript" src="{{ STATIC_URL }}admin/js/jquery.js" onerror="JavaScript:alert('Error loading file [' + this.src + '] !');" ></script>
-    {% else %}
-        <script type="text/javascript" src="{{ STATIC_URL }}admin/js/jquery.min.js" onerror="JavaScript:alert('Error loading file [' + this.src + '] !');" ></script>
-    {% endif %}
--->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
 
     {% block extra_meta %}
     {% endblock %}
-</head>
 
-<body>
+  </head>
 
-{% block body %}
+  <body>
+    {% block body %}
+    <div class="container">
 
-<div id="container">
+      <div class="page-header">
+        <h1>{% block title %}{% trans 'Lose fat, now' %}{% endblock %}</h1>
+        <p class="lead">{% block subtitle %}{% trans 'What are you waiting for?' %}{% endblock %}</p>
+      </div>
 
-<div id="header">
+      <div class="row">
+        <div class="col-md-3">
+        {% block navigation %}
 
-<div id="header_left">
-<h1>{% block title %}{% trans 'Lose fat' %}, <span class="red">{% trans 'now' %}</span>{% endblock%}</h1>
-<h2>{% block subtitle %}{% trans 'What are you waiting for?' %}{% endblock %}</h2>
-</div>
+            <ul class="nav nav-pills nav-stacked">
+              {% if user.is_superuser %}
+                <li id="navadmin"><a href="{% url admin:index %}">{% trans "Administration" %}</a></li>
+                <li id="reloadstatic"><a href="{% url reload_static %}">Reload Static</a></li>
+              {% endif %}
 
-<div id="header_right">
+              {% for item in navigation %}
+                <li id="{{ item.id }}" class="{{ item.cls }}">
+                  <a href="{{ item.url }}" >{{ item.label }}</a>
+                </li>
+              {% endfor %}
+            </ul>
 
-{% block header_right %}
+        {% endblock %}
+        </div>
 
-{% if user.is_authenticated %}
-  <p class="welcome">
+        <div class="col-md-6">
+        {% block messages %}
 
-    {% if user.forum_profile.avatar %}
-      <img src="{{user.forum_profile.avatar.url}}" width=100 height=100 />
-    {% else %}
-      <img src="/static/images/person.jpg" width=100 height=100 />
-    {% endif %}
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{message.tags}}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
 
-<br>
-   {% trans 'Welcome' %} {{user.username}},
-  </p>
+        {% endblock %}
 
-  <form id="logout_form" method="post" action="{% url logout %}">
-    {% csrf_token %}
-    <p>
-    <input type="submit" class="submit_button" name="Submit" value="{% trans 'Log out' %}" />
-    </p>
-  </form>
+        {% block main %}
 
+        {% endblock %}
 
-{% else %}
+        </div>
 
-<p class="welcome">{% trans 'Welcome. Please log in or' %} <a href="register">{% trans 'register' %}</a>.</p>
+        <div class="col-md-3">
+        {% block right %}
+          {% if user.is_authenticated %}
+            
+            {% if user.forum_profile.avatar %}
+              <img src="{{user.forum_profile.avatar.url}}" width=100 height=100 />
+            {% else %}
+              <img src="{{STATIC_URL}}images/person.jpg" width=100 height=100 />
+            {% endif %}
 
-  <form id="login_form" method="post" action="{% url login %}">
-    {% csrf_token %}
-    <p>
-    {{ login_form }}
-    <input type="submit" class="submit_button" name="Submit" value="{% trans 'Log in' %}" />
-    </p>
-  </form>
+            <br>
+            {% trans 'Welcome' %} {{user.username}},
 
-{% endif %}
+            <form id="logout_form" method="post" action="{% url logout %}" class="form-horizontal">
+              {% csrf_token %}
+              <div class="form-actions">
+                <input type="submit" class="btn btn-primary" value="{% trans 'Log out' %}" />
+              </div>
+            </form>
 
-{% endblock %}
+          {% else %}
 
-  </div>
-  
-</div>
+            <p>{% trans 'Welcome. Please log in or' %} <a href="register">{% trans 'register' %}</a>.</p>
 
-<div id="left">
+            <form id="login_form" method="post" action="{% url login %}" class="form-horizontal">
+              {% csrf_token %}
+              {{ login_form|bootstrap }}
+              <div class="form-actions">
+                <input type="submit" class="btn btn-primary" value="{% trans 'Log in' %}" />
+              <div>
+            </form>
 
-{% block navigation %}
+          {% endif %}
 
-<h4><span class="menu_first_letter">{% trans 'Navigation' %}</span></h4>
+        {% endblock %}
+        </div>
+      </div>
 
-<div id="navcontainer">
-<ul id="navlist">
-{% if user.is_superuser %}
-  <li id="navadmin"><a href="{% url admin:index %}">{% trans "Administration" %}</a></li>
-  <li id="reloadstatic"><a href="{% url reload_static %}">Reload Static</a></li>
-{% endif %}
+      <div class="footer">
+        {% block footer %}
+        <p>&copy; Patrik Beck 2013</p>
+        {% endblock %}
+      </div>
 
-{% for item in navigation %}
-  <li id="{{ item.id }}" class="{{ item.cls }}">
-    <a href="{{ item.url }}" >{{ item.label }}</a>
-  </li>
-{% endfor %}
-</ul>
-</div>
+    </div> <!-- /container -->
 
-{% endblock %}
-
-{% block sub_navigation %}
-<h4>Contact us </h4>
-
-
-  <form id="form2" method="post" class="contact_us" action="">
-    <p><label>Name
-    <input type="text" class="fields_contact_us" name="textfield" />
-    </label>
-    <label>E-mail
-    <input type="text" class="fields_contact_us" name="textfield2" />
-	</label>
-	<label>
-    Your message:
-    <textarea name="textarea" cols="" rows=""></textarea>
-	</label>
-    <label>
-    <input type="submit" class="submit_button_contact" name="Submit3" value="Submit" />
-    </label></p>
-  </form>
-
-<h4>Suggested links </h4>
+    {% endblock %}
 
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
 
-<a href="http://www.csstemplateheaven.com">CssTemplateHeaven</a></div>
-
-{% endblock %}
-
-<div id="right">
-
-{% block messages %}
-
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
-
-{% endblock %}
-
-{% block main %}
-
-<div class="date_box">
-<div class="date_box_month">Jan</div>
-<div class="date_box_day">18</div>
-</div>
-<h3>Lorem Ipsum sample text  </h3>
-
-
-  <p><img src="/static/images/demo_img.jpg" alt="Kiwi" width="159" height="140" class="float_right" />This template is created by Dieter Schneider a cold January night 2007.  It's valid Xhtml 1.0 Strict! If you want the PSD file for this template  you can purchase it at <a href="http://www.csstemplateheaven.com">CssTemplateHeaven.com</a>,  this will give you more flexibility. I kindly ask you to not remove the copyright  in the footer if you have the free version of this template.</p>
-  
-  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum sapien enim, cursus in, aliquam sit amet, convallis eget, metus. Duis dui mi, varius at, lacinia eget, ullamcorper et, tortor. Pellentesque ac pede. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean orci mi, varius eget, mollis vel, rhoncus a, leo. Ut eros enim, vehicula quis, gravida ac, sodales sit amet, orci. Nulla eleifend tristique erat.</p>
-  
-  <p class="read_more"><a href="#"><img src="/static/images/arrow.png" alt="read more" width="16" height="12" />Further reading</a> </p>
-  
-  
-  <div class="date_box">
-<div class="date_box_month">Jan</div>
-<div class="date_box_day">12</div>
-</div>
-
-
-<h3>A blockquote</h3>
-  
-  <blockquote><p class="quote">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum sapien enim, cursus in, aliquam sit amet, convallis eget, metus. Duis dui mi, varius at, lacinia eget, ullamcorper et, tortor. Pellentesque ac pede. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean orci mi, varius eget, mollis vel, rhoncus a, leo. Ut eros enim, vehicula quis, gravida ac, sodales sit amet, orci. Nulla eleifend tristique erat. Sed ac est. Fusce tincidunt luctus tortor. Quisque sed neque vitae elit cursus faucibus.</p></blockquote>
-  
-  <p>Duis mauris justo, tincidunt in, molestie sed, lacinia vel, dolor. Aenean ac tellus porttitor ligula hendrerit ornare. Vivamus gravida ornare augue. Proin porta, quam a vulputate blandit, massa lorem euismod eros, vel nonummy enim sapien eget nisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In dapibus commodo dolor. Aliquam facilisis turpis ac tortor. Quisque quis velit eget lacus consectetuer volutpat. Cras nibh. Sed quis justo. In neque lacus, sagittis id, lobortis nec, congue id, diam. Phasellus ut pede. Praesent porta consectetuer dui. Praesent mattis neque. Nunc commodo facilisis ipsum. Etiam scelerisque. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ut quam. Nullam mauris nulla, dictum vulputate, pharetra vel, tempor nec, sem. Pellentesque scelerisque. </p>
-  
-    <p class="read_more"><a href="#"><img src="/static/images/arrow.png" alt="read more" width="16" height="12" />Further reading</a> </p>
-
-{% endblock %}
-
-</div>
-
-<div id="footer">
-{% block footer %}
-Created by: Patrik Beck 2013 | <a href="http://www.google.com">www.google.com</a> </div>
-{% endblock %}
-</div>
-
-{% endblock %}
-
-</body>
+  </body>
 </html>
+
+
+
 

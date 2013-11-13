@@ -1,26 +1,21 @@
 {% extends "base/base.html" %}
 
 {% load i18n %}
+{% load bootstrap %}
 
 {% block main %}
 
 <h3>{% trans 'Registration' %}</h3>
 
-  <form id="registration_form" method="post" action="{% url register %}">
+  <form id="registration_form" method="post" action="{% url register %}" class="form-horizontal">
     {% csrf_token %}
 
-    <p>{{ form.non_field_errors }}</p>
-
-    {% for hidden in form.hidden_fields %}
-      {{ hidden }}
-    {% endfor %}
-    {% for field in form.visible_fields %}
-        <p>
-            {{ field.errors }}
-            {{ field.label_tag }} {{ field }}
-        </p>
-    {% endfor %}
-    <input type="submit" class="submit_button" name="Submit" value="{% trans 'Register' %}" />
+    {{form|bootstrap_horizontal:"col-sm-3"}}
+    <div class="form-group">
+      <div class="col-sm-offset-3 col-sm-9">
+        <button type="submit" class="btn btn-primary" >{% trans 'Register' %}</button>
+      </div>
+    </div>
   </form>
 
 {% endblock %}

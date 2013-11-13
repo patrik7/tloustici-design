@@ -1,5 +1,6 @@
 {% extends 'base/base.html' %}
 {% load i18n %}
+{% load bootstrap %}
 
 {% block main %}
 
@@ -8,16 +9,14 @@
 {% block text %}
 {% endblock %}
 
-<form action="{% url fillin profile.username step %}" class="main" method="POST" >
+<form action="{% url fillin profile.username step %}" class="form-horizontal" method="POST" >
   {% csrf_token %}
-  <fieldset class="outer">
-    <legend class="outer">{% trans step %}</legend>
-
-    {% include 'form.html' with form=form %}
-
-    <input type="submit" class="submit_button" name="{{step}}" value="{% trans 'Save' %}">
-
-  </fieldset>
+  {{form|bootstrap_horizontal:"col-sm-3"}}
+  <div class="form-group">
+     <div class="col-sm-offset-3 col-sm-9">
+       <button type="submit" class="btn btn-primary" name="{{step}}">{% trans 'Save' %}</button>
+     </div>
+  </div>
 </form>
 
 
