@@ -1,114 +1,55 @@
 {% extends 'base/base.html' %}
 
 {% load i18n %}
+{% load bootstrap %}
 
 {% block main %}
 
 <h3>{% trans 'Profile' %}</h3>
 
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{% trans 'Essential Information' %}</h3>
+  </div>
+  <div class="panel-body">
+    {% include 'form.html' with form=form_essentials button='Save' %}   
+  </div>
+</div>
 
-<form action="{% url profile profile.username %}" class="main" method="POST" >
-  {% csrf_token %}
-  <fieldset class="outer">
-    <legend class="outer">{% trans 'Essential Information' %}</legend>
-    <div>
-      {{form_essentials.email.errors}}
-      {{form_essentials.email.label_tag}}   
-      {{form_essentials.email}}
-    </div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{% trans 'Bio' %}</h3>
+  </div>
+  <div class="panel-body">
+    {% include 'form.html' with form=form_bio button='Save' %}
+  </div>
+</div>
 
-    {% if not form_essentials.username.is_hidden %}
-      <div>
-        {{form_essentials.username.errors}}
-        {{form_essentials.username.label_tag}}   
-        {{form_essentials.username}}
-      </div>
-    {% else %}
-      {{form_essentials.username}}
-    {% endif %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{% trans 'Personal Information' %}</h3>
+  </div>
+  <div class="panel-body">
+    {% include 'form.html' with form=form_personal button='Save' %}
+  </div>
+</div>
 
-    {{form_essentials.sex.erros}}
-    <fieldset class="radio">
-      {{form_essentials.sex.errors}}
-      <legend><span>{{form_essentials.sex.label}}</span></legend>
-      {{form_essentials.sex}}
-    </fieldset>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{% trans 'Avatar' %}</h3>
+  </div>
+  <div class="panel-body">
+    {% include 'form.html' with form=form_uploadavatar button='Upload' %}
+  </div>
+</div>
 
-    <div class="check">
-      {{form_essentials.searchable.errors}}
-      {{form_essentials.searchable.label_tag}}   
-      {{form_essentials.searchable}}
-    </div>
-    <div class="check">
-      {{form_essentials.message_notification.errors}}
-      {{form_essentials.message_notification.label_tag}}   
-      {{form_essentials.message_notification}}
-    </div>
-    <div class="check">
-      {{form_essentials.forum_subscription.errors}}
-      {{form_essentials.forum_subscription.label_tag}}   
-      {{form_essentials.forum_subscription}}
-    </div>
-    <div class="check">
-      {{form_essentials.newsletter.errors}}
-      {{form_essentials.newsletter.label_tag}}   
-      {{form_essentials.newsletter}}
-    </div>
-
-
-
-    <input type="submit" class="submit_button" name="essentials" value="{% trans 'Save' %}">
-
-  </fieldset>
-</form>
-
-<form action="{% url profile profile.username %}" class="main" method="POST" >
-  {% csrf_token %}
-  <fieldset class="outer">
-    <legend class="outer">{% trans 'Bio - Description' %}</legend>
-
-    {% include 'form.html' with form=form_bio %}
-
-    <input type="submit" class="submit_button" name="bio" value="{% trans 'Save' %}">
-
-  </fieldset>
-</form>
-
-<form action="{% url profile profile.username %}" class="main" method="POST" >
-  {% csrf_token %}
-  <fieldset class="outer">
-    <legend class="outer">{% trans 'Personal Information' %}</legend>
-
-    {% include 'form.html' with form=form_personal %}
-
-    <input type="submit" class="submit_button" name="personal" value="{% trans 'Save' %}">
-
-  </fieldset>
-</form>
-
-<form enctype="multipart/form-data" action="{% url profile profile.username %}" class="main" method="POST" >
-  {% csrf_token %}
-  <fieldset class="outer">
-    <legend class="outer">{% trans 'Upload Picture' %}</legend>
-
-    {% include 'form.html' with form=form_uploadavatar %}
-
-    <input type="submit" class="submit_button" name="uploadavatar" value="{% trans 'Save' %}">
-
-  </fieldset>
-</form>
-
-
-<form action="{% url profile profile.username %}" class="main" method="POST" >
-  {% csrf_token %}
-  <fieldset class="outer">
-    <legend class="outer">{% trans 'Activities' %}</legend>
-
-    {% include 'form.html' with form=form_act %}
-
-    <input type="submit" class="submit_button" name="act" value="{% trans 'Save' %}">
-
-  </fieldset>
-</form>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{% trans 'Activities' %}</h3>
+  </div>
+  <div class="panel-body">
+    {% include 'form.html' with form=form_act button='Save' %}
+  </div>
+</div>
 
 {% endblock %}

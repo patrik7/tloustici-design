@@ -1,10 +1,29 @@
 {% extends 'base/base.html' %}
 {% load i18n %}
+{% load bootstrap %}
 
-{% block extra_meta %}
-  <link rel="stylesheet" type="text/css" href="/static/forum.css" />
+{% block main %}
 
-  <script type="text/javascript" src="/static/jquery-1.10.2.min.js"></script>
+<h3>{% trans 'Search' %}</h3>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{% trans 'Search Criteria' %}</h3>
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal">
+    {{search_form|bootstrap_horizontal:"col-sm-2"}}
+    </form>
+  </div>
+</div>
+
+<div id="results">
+loading ...
+</div>
+
+{% endblock %}
+
+{% block extra_script %}
   <script type="text/javascript" language="javascript">
 
     function loadData()
@@ -26,19 +45,37 @@
         });
     }
 
-    function profile(i, e) {
-      $('#results').append('<div class="post">'
-
-        + '<div class="post_image"><a href="' + e.link  + '"><img src="' + e.avatar + '" width="55" height="55"/></a></div>'
-
-        + '<div class="post_body">' + e.username + '<br/>'
-        + e.sex + '<br/>'
+    function add_bar(value, text) {
+      var str =
+        '<div class="progress" style="margin-bottom: 10px;">'
+        + '<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="' + value + '" aria-valuemin="0" aria-valuemax="100" style="width: ' + value + '%">'
+          + text
         + '</div>'
+      + '</div>';
+      return str;
+    }
 
-        + '<div class="post_body2">'
-        + '<img height="10" width="' + e.fitness[0] + '" /><br/>'
-        + '<img height="10" width="' + e.fitness[1] + '" /><br/>'
-        + '<img height="10" width="' + e.fitness[2] + '" /><br/>'
+    function profile(i, e) {
+      var a = '<a href="' + e.link  + '">'
+      $('#results').append('<div class="panel panel-info">'
+        + '<div class="panel-heading">'
+          + a + '<span class="glyphicon glyphicon-user" /> ' + e.username + '</a>'
+        + '</div>'
+        + '<div class="panel-body">'
+          + '<div class="row"><div class="col-md-2">'
+              + a + '<img src="' + e.avatar + '" class="img-rounded" width="100%"/></a>'
+            + '</div>'
+            + '<div class="col-md-4">'
+              + a + e.username + '</a><br/>'
+              + e.sex + '<br/>'
+            + '</div>'
+            + '<div class="col-md-6">'
+              + add_bar(e.fitness[0], "{% trans 'Overall' %}")
+              + add_bar(e.fitness[1], "{% trans 'Body' %}")
+              + add_bar(e.fitness[2], "{% trans 'Activities' %}")
+            + '</div>'
+          + '</div>'
+        + '</div>'
       + '</div>'
 
       + '</div>');            
@@ -49,19 +86,4 @@
   </script>
 {% endblock %}
 
-{% block main %}
-
-<h3>{% trans 'Search' %}</h3>
-
-<fieldset class="outer">
-  {% for field in search_form %}
-    {{ field.label_tag }} {{ field }} </br>
-  {% endfor %}
-</fieldset>
-
-<div id="results">
-loading ...
-</div>
-
-{% endblock %}
 

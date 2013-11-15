@@ -1,16 +1,16 @@
 
-{% csrf_token %}
+{% load i18n %}
+{% load bootstrap %}
 
-{% for field in form.visible_fields %}
-  <div>
-  {{field.errors}}
-  {{field.label_tag}}
-  {{field}}
-  {{field.help_text }}
-  </div>
-{% endfor %}
+<form action="{{action}}" class="form-horizontal" method="POST" >
+  {% csrf_token %}
+    {{form|bootstrap_horizontal:"col-sm-3"}}
+    <div class="form-group">
+      <div class="col-sm-offset-3 col-sm-9">
+        <button type="submit" class="btn btn-primary" name="{{name}}">{% trans button %}</button>
+      </div>
+    </div>
 
-{% for hidden in form.hidden_fields %}
-  {{ hidden }}
-{% endfor 5%}
+</form>
+
 
