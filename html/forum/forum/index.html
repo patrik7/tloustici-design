@@ -63,11 +63,12 @@
 
       var hidden = '';
 
+      var link = "";
       if (e.is_link) {
-        body += '<a href="javascript:void(0)" onClick="loadData(' + e.pk + ')">' + e.text + '</a>';
-      } else {
-        body += e.text
+        link = 'onClick="loadData(' + e.pk + ')"';
       }
+
+      body += e.text;
 
       footer =
         '<div class="row">'
@@ -84,13 +85,15 @@
         footer += '<small>' + e.post_count + ' '+ e.posts + '</small>';
       }
 
-      footer += ' <button onClick="show(' + (i) + ')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Reply' %}</button>'
+      if (e.level > 0) {
+        footer += ' <button onClick="show(' + (i) + ')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Reply' %}</button>'
+      }
 
       footer += '</div></div>';
 
       $('#data').append(
         '<div class="panel panel-default ' + e.html_class + '" style="margin-bottom: 5px;">'
-        + '<div class="panel-body" style="padding: 5px;">'
+        + '<div class="panel-body" style="padding: 5px;" ' + link + '>'
           + '<div class="row">'
             + '<div class="col-md-2">'
               + '<img src="' + e.avatar + '" width="100%" class="img-rounded" />'
@@ -110,11 +113,8 @@
             + '<div class="col-md-2">'
               + '<img src="' + e.avatar + '" width="100%" class="img-rounded" />'
             + '</div>'
-            + '<div class="col-md-10">' + add_form(2) + '</div>'
+            + '<div class="col-md-10">' + add_form(e.pk) + '</div>'
           + '</div>'
-        + '</div>'
-        + '<div class="panel-footer">'
-          + footer
         + '</div>'
       + '</div>');
 
