@@ -1,11 +1,24 @@
 {% extends 'base/base.html' %}
 {% load i18n %}
+{% load bootstrap %}
 
-{% block extra_meta %}
-  <link rel="stylesheet" type="text/css" href="/static/forum.css" />
+{% block main %}
 
-  <script type="text/javascript" src="/static/jquery-1.10.2.min.js"></script>
+<div id="data"></div>
+
+{% endblock %}
+
+{% block extra_script %}
+  <script type="bogus" id="form_template">
+    {{form|bootstrap}}
+  </script>
+
   <script type="text/javascript" language="javascript">
+
+    function show(i) {
+      elem = document.getElementById("post" + i);
+      elem.className = elem.className.replace( /(?:^|\s)hidden(?!\S)/g , '' );
+    }
 
     function loadData(root)
     {
@@ -27,43 +40,84 @@
         });
     }
 
+    function add_form(reply_to) {
+      elem = document.getElementById("form_template");
+
+      var txt = 
+        '<form method="post" action="/forum/' + reply_to + '/" class="form">'
+        + "{% csrf_token %}"
+        + elem.innerHTML
+        + '<div class="form-group">'
+          + '<div>'
+            + '<button type="submit" class="btn">Post</button>'
+          + '</div>'
+        + '</div>'
+      + '</form>';
+
+      return txt;
+    }
+
     function render(i, e) {
       var body = '';
-      if (e.action)
-      {
-        body += '<form method="post" action="' + e.post_link + '">'
-          + "{% csrf_token %}"
-          + e.body
-          + e.subscribe + "{% trans 'Subscribe' %}"
+      var footer = '';
 
-          + '<input type="submit" class="submit_button" name="submit" value="{% trans 'Post' %}" />'
-          + '</form>';
+      var hidden = '';
 
+      if (e.is_link) {
+        body += '<a href="javascript:void(0)" onClick="loadData(' + e.pk + ')">' + e.text + '</a>';
       } else {
-        if (e.level > 1) {
-          body += '<a href="' + e.user_link + '">'
-            + '<small>' + e.by_user + '</small>'
-            + '</a><br/>';
-        }
-
-        if (e.is_link) {
-//          body += '<a href="' + e.post_link + '">' + e.text + '</a>';
-          body += '<a href="javascript:void(0)" onClick="loadData(' + e.pk + ')">' + e.text + '</a>';
-        } else {
-          body += e.text
-        }
-
-        if (e.post_count > 0) {
-          body += '<br/><small>' + e.post_count + ' '+ e.posts + '</small>';
-        }
+        body += e.text
       }
 
-      $('#data').append('<div class="' + e.html_class + '">'
-        + '<div class="post_image">'
-          + '<img src="' + e.avatar + '" width="55" height="55" />'
+      footer =
+        '<div class="row">'
+        + '<div class="col-sm-6">';
+
+      if (e.level > 1) {
+        footer += '<a href="' + e.user_link + '">'
+          + '<span class="glyphicon glyphicon-user"></span> ' + e.by_user
+          + '</a>';
+      }
+
+      footer += '</div><div class="col-sm-6 text-right">';
+      if (e.post_count > 0) {
+        footer += '<small>' + e.post_count + ' '+ e.posts + '</small>';
+      }
+
+      footer += ' <button onClick="show(' + (i) + ')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Reply' %}</button>'
+
+      footer += '</div></div>';
+
+      $('#data').append(
+        '<div class="panel panel-default ' + e.html_class + '" style="margin-bottom: 5px;">'
+        + '<div class="panel-body" style="padding: 5px;">'
+          + '<div class="row">'
+            + '<div class="col-md-2">'
+              + '<img src="' + e.avatar + '" width="100%" class="img-rounded" />'
+            + '</div>'
+            + '<div class="col-md-10">' + body + '</div>'
+          + '</div>'
         + '</div>'
-        + '<div class="post_body">' + body + '</div>'
+        + '<div class="panel-footer">'
+          + footer
+        + '</div>'
       + '</div>');
+
+      $('#data').append(
+        '<div id="post' + i + '" class="panel panel-default ' + e.html_class2 + ' hidden" style="margin-bottom: 5px;">'
+        + '<div class="panel-body" style="padding: 5px;">'
+          + '<div class="row">'
+            + '<div class="col-md-2">'
+              + '<img src="' + e.avatar + '" width="100%" class="img-rounded" />'
+            + '</div>'
+            + '<div class="col-md-10">' + add_form(2) + '</div>'
+          + '</div>'
+        + '</div>'
+        + '<div class="panel-footer">'
+          + footer
+        + '</div>'
+      + '</div>');
+
     }
 
     {% if root %}
@@ -76,8 +130,4 @@
 
 {% endblock %}
 
-{% block main %}
 
-<div id="data" />
-
-{% endblock %}
