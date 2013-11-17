@@ -9,15 +9,15 @@
 {% block text %}
 {% endblock %}
 
-<form action="{% url fillin profile.username step %}" class="form-horizontal" method="POST" >
-  {% csrf_token %}
-  {{form|bootstrap_horizontal:"col-sm-3"}}
-  <div class="form-group">
-     <div class="col-sm-offset-3 col-sm-9">
-       <button type="submit" class="btn btn-primary" name="{{step}}">{% trans 'Save' %}</button>
-     </div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{% trans 'Personal Information' %}</h3>
   </div>
-</form>
+  <div class="panel-body">
 
+  {% include 'form.html' with button='Save' name=step %}
+
+  </div>
+</div>
 
 {% endblock %}

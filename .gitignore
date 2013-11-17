@@ -1,4 +1,4 @@
 *.mo
-static/css
+static/css/bootstrap*
 static/fonts
-static/js
+static/js/bootstrap.min.js
