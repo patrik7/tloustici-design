@@ -3,6 +3,10 @@
 {% load i18n %}
 {% load bootstrap %}
 
+{% block extra_meta %}
+  <link href="{{STATIC_URL}}css/datepicker.css" rel="stylesheet" />
+{% endblock %}
+
 {% block main %}
 
 <div class="panel panel-default">
@@ -10,7 +14,7 @@
     <h3 class="panel-title">{% trans 'Essential Information' %}</h3>
   </div>
   <div class="panel-body">
-    {% include 'form.html' with form=form_essentials button='Save' %}   
+    {% include 'form.html' with form=form_essentials button='Save' name='personal' %}   
   </div>
 </div>
 
@@ -19,7 +23,7 @@
     <h3 class="panel-title">{% trans 'Bio' %}</h3>
   </div>
   <div class="panel-body">
-    {% include 'form.html' with form=form_bio button='Save' %}
+    {% include 'form.html' with form=form_bio button='Save' name='bio' %}
   </div>
 </div>
 
@@ -28,7 +32,7 @@
     <h3 class="panel-title">{% trans 'Personal Information' %}</h3>
   </div>
   <div class="panel-body">
-    {% include 'form.html' with form=form_personal button='Save' %}
+    {% include 'form.html' with form=form_personal button='Save' name='personal' %}
   </div>
 </div>
 
@@ -37,7 +41,7 @@
     <h3 class="panel-title">{% trans 'Avatar' %}</h3>
   </div>
   <div class="panel-body">
-    {% include 'form.html' with form=form_uploadavatar button='Upload' %}
+    {% include 'form.html' with form=form_uploadavatar button='Upload' name='uploadavatar' %}
   </div>
 </div>
 
@@ -46,8 +50,18 @@
     <h3 class="panel-title">{% trans 'Activities' %}</h3>
   </div>
   <div class="panel-body">
-    {% include 'form.html' with form=form_act button='Save' %}
+    {% include 'form.html' with form=form_act button='Save' name='act' %}
   </div>
 </div>
 
+{% endblock %}
+
+{% block extra_script %}
+  <script src="{{STATIC_URL}}js/bootstrap-datepicker.js"></script>
+
+  <script type="text/javascript" language="javascript">
+    $('#id_date_of_birth').datepicker({
+      format: 'dd.mm.yyyy'
+    });
+  </script>
 {% endblock %}
