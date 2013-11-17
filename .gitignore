@@ -1,1 +1,4 @@
 *.mo
+static/css
+static/fonts
+static/js
