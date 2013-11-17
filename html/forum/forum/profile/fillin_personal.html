@@ -1,6 +1,10 @@
 {% extends 'forum/profile/fillin.html' %}
 {% load i18n %}
 
+{% block extra_meta %}
+  <link href="{{STATIC_URL}}css/datepicker.css" rel="stylesheet" />
+{% endblock %}
+
 {% block text %}
 <p>
 {% block trans %}
@@ -11,4 +15,15 @@ Please fill in your profile information. Except for city, none of the other fiel
 {% endblock %}
 </p>
 
+{% endblock %}
+
+{% block extra_script %}
+  <script src="{{STATIC_URL}}js/bootstrap-datepicker.js"></script>
+
+  <script type="text/javascript" language="javascript">
+    $('#id_date_of_birth').datepicker({
+      format: 'dd.mm.yyyy',
+      viewMode: 2
+    });
+  </script>
 {% endblock %}

@@ -27,6 +27,17 @@
           <div class="col-md-9">
             <p>{{profile.username}}</p>
             <p>{{profile.descripion_html|safe}}</p>
+            <table class="table">
+              {% for k,v in table_fields %}
+                {% if v %}
+                  <tr>
+                    <td>{% trans k %}</td>
+                    <td>{{v}}</td>
+                  </tr>
+                {% endif %}
+              {% endfor %}
+            </table>
+
           </div>
         </div>
       </div>
@@ -52,25 +63,6 @@
       </div>
     </div>
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">{% trans 'Profile' %}</h3>
-      </div>
-      <div class="panel-body">
-        <table class="table">
-          {% for k,v in table_fields %}
-            {% if v %}
-              <tr>
-                <td>{% trans k %}</td>
-                <td>{{v}}</td>
-              </tr>
-            {% endif %}
-          {% endfor %}
-        </table>
-      </div>
-    </div>
-
-    
     {% if profile.forum_profile.activities.all %}
       <h4>{% trans 'Sports' %}:</h4>
       {% for a in profile.forum_profile.activities.all %}
