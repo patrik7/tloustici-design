@@ -1,5 +1,45 @@
 {% extends 'forum/index.html' %}
 
+{% load i18n %}
+
 {% block load_data %}
   $.getJSON('/forum/messages/data/'
+{% endblock %}
+
+{% block extra_meta %}
+
+  <link href="{{STATIC_URL}}css/typeahead.js-bootstrap.css" rel="stylesheet" />
+
+{% endblock %}
+
+{% block main %}
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{% trans 'Write Private Message' %}</h3>
+    </div>
+    <div class="panel-body">
+      {% include 'form.html' with form=new_form button='Send' name='new' %}
+    </div>
+  </div>
+
+  {{ block.super }}
+{% endblock %}
+
+{% block extra_script %}
+  {{ block.super }}
+
+  <script src="{{STATIC_URL}}js/typeahead.min.js"></script>
+
+  <script type="text/javascript" language="javascript">  
+
+     $('#id_addressee').typeahead({
+      name: 'addressee',
+      remote: '/forum/login/data/%QUERY.json',
+    });
+
+     $('.tt-hint').addClass('form-control');
+
+
+  </script>
 {% endblock %}

@@ -87,7 +87,7 @@
 
       footer += '</div><div class="col-sm-6 text-right">';
       if (e.post_count > 0) {
-        footer += '<small>' + e.post_count + ' '+ e.posts + '</small>';
+        footer += '<small>' + e.post_count + ' '+ e.posts + '</small> ';
       }
 
       if (e.level > 0) {
@@ -95,7 +95,9 @@
 
         if (e.level == 4) s = last_end;
 
-        footer += ' <button onClick="show(' + (s) + ')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Reply' %}</button>'
+        footer += '<div class="btn-group btn-group-xs">'
+                  + '<button class="btn" onClick="show(' + (s) + ')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Reply' %}</button>'
+                + '</div>'
       }
 
       footer += '</div></div>';
