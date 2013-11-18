@@ -31,8 +31,13 @@
       ,{
       }).done(function(entries) {
           $('#data').html('');
+
+          var last_end = 0;
+
           for (var i = 0; i < entries.length; i++) {
-            render(i, entries[i]);
+            if (entries[i].level == 3) last_end = i;
+
+            render(i, entries[i], last_end);
           }
         })
         .error(function() {
@@ -57,7 +62,7 @@
       return txt;
     }
 
-    function render(i, e) {
+    function render(i, e, last_end) {
       var body = '';
       var footer = '';
 
@@ -86,7 +91,11 @@
       }
 
       if (e.level > 0) {
-        footer += ' <button onClick="show(' + (i) + ')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Reply' %}</button>'
+        var s = i;
+
+        if (e.level == 4) s = last_end;
+
+        footer += ' <button onClick="show(' + (s) + ')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Reply' %}</button>'
       }
 
       footer += '</div></div>';
@@ -95,10 +104,10 @@
         '<div class="panel panel-default ' + e.html_class + '" style="margin-bottom: 5px;">'
         + '<div class="panel-body" style="padding: 5px;" ' + link + '>'
           + '<div class="row">'
-            + '<div class="col-md-2">'
+            + '<div class="col-xs-2 visible-sm visible-md visible-lg">'
               + '<img src="' + e.avatar + '" width="100%" class="img-rounded" />'
             + '</div>'
-            + '<div class="col-md-10">' + body + '</div>'
+            + '<div class="col-xs-10">' + body + '</div>'
           + '</div>'
         + '</div>'
         + '<div class="panel-footer">'
@@ -106,17 +115,20 @@
         + '</div>'
       + '</div>');
 
-      $('#data').append(
-        '<div id="post' + i + '" class="panel panel-default ' + e.html_class2 + ' hidden" style="margin-bottom: 5px;">'
-        + '<div class="panel-body" style="padding: 5px;">'
-          + '<div class="row">'
-            + '<div class="col-md-2">'
-              + '<img src="' + e.avatar + '" width="100%" class="img-rounded" />'
+      if(e.level < 4) {
+
+        $('#data').append(
+          '<div id="post' + i + '" class="panel panel-default ' + e.html_class2 + ' hidden" style="margin-bottom: 5px;">'
+          + '<div class="panel-body" style="padding: 5px;">'
+            + '<div class="row">'
+              + '<div class="col-xs-2 visible-sm visible-md visible-lg">'
+                + '<img src="' + e.avatar + '" width="100%" class="img-rounded" />'
+              + '</div>'
+              + '<div class="col-xs-10">' + add_form(e.pk) + '</div>'
             + '</div>'
-            + '<div class="col-md-10">' + add_form(e.pk) + '</div>'
           + '</div>'
-        + '</div>'
-      + '</div>');
+        + '</div>');
+      }
 
     }
 

@@ -42,43 +42,7 @@
       </div>
 
       <div class="row">
-        <div class="col-md-3">
-        {% block navigation %}
-
-            <ul class="nav nav-pills nav-stacked">
-              {% if user.is_superuser %}
-                <li id="navadmin"><a href="{% url admin:index %}">{% trans "Administration" %}</a></li>
-                <li id="reloadstatic"><a href="{% url reload_static %}">Reload Static</a></li>
-              {% endif %}
-
-              {% for item in navigation %}
-                <li class="{{ item.cls }}">
-                  <a href="{{ item.url }}" >{{ item.label }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-
-        {% endblock %}
-        </div>
-
-        <div class="col-md-6">
-        {% block messages %}
-
-          {% if messages %}
-            {% for message in messages %}
-              <div class="alert alert-{{message.tags}}">{{ message }}</div>
-            {% endfor %}
-          {% endif %}
-
-        {% endblock %}
-
-        {% block main %}
-
-        {% endblock %}
-
-        </div>
-
-        <div class="col-md-3">
+        <div class="col-md-3 col-md-push-9">
         {% block right %}
           {% if user.is_authenticated %}
             <div class="well text-center">
@@ -116,6 +80,43 @@
 
         {% endblock %}
         </div>
+
+        <div class="col-md-3 col-md-pull-3">
+        {% block navigation %}
+
+            <ul class="nav nav-pills nav-stacked">
+              {% if user.is_superuser %}
+                <li id="navadmin"><a href="{% url admin:index %}">{% trans "Administration" %}</a></li>
+                <li id="reloadstatic"><a href="{% url reload_static %}">Reload Static</a></li>
+              {% endif %}
+
+              {% for item in navigation %}
+                <li class="{{ item.cls }}">
+                  <a href="{{ item.url }}" >{{ item.label }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+
+        {% endblock %}
+        </div>
+
+        <div class="col-md-6 col-md-pull-3">
+        {% block messages %}
+
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{message.tags}}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+
+        {% endblock %}
+
+        {% block main %}
+
+        {% endblock %}
+
+        </div>
+
       </div>
 
         <div class="footer">
