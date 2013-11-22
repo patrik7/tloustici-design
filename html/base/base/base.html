@@ -4,19 +4,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
     <!-- TODO -->
-    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png" />
 
     <title>{% block caption %}Tloustici{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet" />
+    <link href="{{STATIC_URL}}css/bootstrap-theme.min.css" rel="stylesheet" />
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -57,12 +58,11 @@
               <p>{% trans 'Welcome' %} {{user.username}} </p>
             </div>
 
-            <form id="logout_form" method="post" action="{% url logout %}" class="form-horizontal">
-              {% csrf_token %}
-              <div class="form-actions">
-                <input type="submit" class="btn btn-primary" value="{% trans 'Log out' %}" />
-              </div>
-            </form>
+            <div class="btn-group btn-group-sm">
+              <a class="btn" href="{% url logout %}">
+                <button type="button" class="btn" >{% trans 'Log out' %}</button>
+              </a>
+            </div>
 
           {% else %}
 

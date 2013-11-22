@@ -17,14 +17,14 @@
       </div>
       <div class="panel-body">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-sm-3">
             {% if profile.forum_profile.avatar %}
               <img src="{{profile.forum_profile.avatar.url}}" class="img-rounded" width="100%" />
             {% else %}
               <img src="/static/images/person.jpg" class="img-rounded" width="100%" />
             {% endif %}
           </div>
-          <div class="col-md-9">
+          <div class="col-sm-9">
             <p>{{profile.username}}</p>
             <p>{{profile.descripion_html|safe}}</p>
             <table class="table">

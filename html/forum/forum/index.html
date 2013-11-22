@@ -9,9 +9,11 @@
 {% endblock %}
 
 {% block extra_script %}
-  <script type="bogus" id="form_template">
-    {{form|bootstrap}}
-  </script>
+  {% if form %}
+    <script type="bogus" id="form_template">
+      {{form|bootstrap}}
+    </script>
+  {% endif %}
 
   <script type="text/javascript" language="javascript">
 
@@ -95,9 +97,11 @@
 
         if (e.level == 4) s = last_end;
 
-        footer += '<div class="btn-group btn-group-xs">'
-                  + '<button class="btn" onClick="show(' + (s) + ')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Reply' %}</button>'
-                + '</div>'
+        {% if form %}
+          footer += '<div class="btn-group btn-group-xs">'
+                    + '<button class="btn" onClick="show(' + (s) + ')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Reply' %}</button>'
+                  + '</div>'
+        {% endif %}
       }
 
       footer += '</div></div>';
@@ -117,6 +121,7 @@
         + '</div>'
       + '</div>');
 
+      {% if form %}
       if(e.level < 4) {
 
         $('#data').append(
@@ -131,6 +136,7 @@
           + '</div>'
         + '</div>');
       }
+      {% endif %}
 
     }
 
