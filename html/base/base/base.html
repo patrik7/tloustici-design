@@ -57,7 +57,7 @@
 
               <div class="text-right">
                 <div class="btn-group btn-group-sm">
-                  <a class="btn btn-default" href="javascript:void(0)" onClick="javascript:show()" >{% trans 'Change Picture' %}</a>
+                  <a class="btn btn-default" href="javascript:void(0)" >{% trans 'Change Picture' %}</a>
                   <a class="btn btn-default" href="{% url logout %}">{% trans 'Log out' %}</a>
                 </div>
               </div>
@@ -73,7 +73,11 @@
 
             <form id="login_form" method="post" action="{% url login %}" class="form-horizontal">
               {% csrf_token %}
-              {{ login_form|bootstrap }}
+              {% if login_form %}
+                {{ login_form|bootstrap }}
+              {% elif login_form_empty %}
+                {{ login_form_empty|bootstrap }}
+              {% endif %}
               <div class="form-actions">
                 <input type="submit" class="btn btn-primary" value="{% trans 'Log in' %}" />
               </div>
