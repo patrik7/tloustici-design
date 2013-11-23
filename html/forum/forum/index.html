@@ -24,7 +24,7 @@
 
     function loadData(root)
     {
-      $('#data').html('loading ...');
+      $('#data').html('<div class="text-center"><img src="{{STATIC_URL}}images/loading.gif" width="64" height="64" /></div>');
 
       {% block load_data %}
       $.getJSON('/forum/data/' + root

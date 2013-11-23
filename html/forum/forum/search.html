@@ -16,7 +16,7 @@
 </div>
 
 <div id="results">
-loading ...
+  <div class="text-center"><img src="{{STATIC_URL}}images/loading.gif" width="64" height="64" /></div>
 </div>
 
 {% endblock %}
@@ -26,8 +26,7 @@ loading ...
 
     function loadData()
     {
-      $('#results').html('loading ...');
-
+      $('#results').html('<div class="text-center"><img src="{{STATIC_URL}}images/loading.gif" width="64" height="64" /></div>');
       $.getJSON('/forum/search/data/', {
           male: document.getElementById('id_sex_1').checked,
           female: document.getElementById('id_sex_2').checked,
