@@ -41,6 +41,17 @@
           </div>
         </div>
       </div>
+      <div class="panel-footer">
+        <div class="row">
+          <div class="col-xs-6" ></div>
+          <div class="col-xs-6 text-right">
+            <a href="{% url messages %}?addressee={{profile.username}}">
+              <span class="glyphicon glyphicon-envelope"></span>
+              {% trans 'Send Message' %}
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="panel panel-default">
