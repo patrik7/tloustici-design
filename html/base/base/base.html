@@ -46,22 +46,25 @@
         <div class="col-md-3 col-md-push-9">
         {% block right %}
           {% if user.is_authenticated %}
-            <div class="well text-center">
+            <div class="well">
+              <div class="text-center">
               {% if user.forum_profile.avatar %}
                 <img src="{{user.forum_profile.avatar.url}}" class="img-rounded" width=100 height=100 />
               {% else %}
                 <img src="{{STATIC_URL}}images/person.jpg" class="img-rounded" width=100 height=100 />
               {% endif %}
+              </div>
+
+              <div class="text-right">
+                <div class="btn-group btn-group-sm">
+                  <a class="btn btn-default" href="javascript:void(0)" onClick="javascript:show()" >{% trans 'Change Picture' %}</a>
+                  <a class="btn btn-default" href="{% url logout %}">{% trans 'Log out' %}</a>
+                </div>
+              </div>
             </div>
 
             <div class="well text-center">
               <p>{% trans 'Welcome' %} {{user.username}} </p>
-            </div>
-
-            <div class="btn-group btn-group-sm">
-              <a class="btn" href="{% url logout %}">
-                <button type="button" class="btn" >{% trans 'Log out' %}</button>
-              </a>
             </div>
 
           {% else %}
