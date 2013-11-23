@@ -25,19 +25,8 @@
             {% endif %}
           </div>
           <div class="col-sm-9">
-            <p>{{profile.username}}</p>
-            <p>{{profile.descripion_html|safe}}</p>
-            <table class="table">
-              {% for k,v in table_fields %}
-                {% if v %}
-                  <tr>
-                    <td>{% trans k %}</td>
-                    <td>{{v}}</td>
-                  </tr>
-                {% endif %}
-              {% endfor %}
-            </table>
-
+            <p>{{profile.username}} - {{sex}} - {{city}}</p>
+            <p>{{profile.forum_profile.description_html|safe}}</p>
           </div>
         </div>
       </div>
@@ -45,14 +34,46 @@
         <div class="row">
           <div class="col-xs-6" ></div>
           <div class="col-xs-6 text-right">
-            <a href="{% url messages %}?addressee={{profile.username}}">
-              <span class="glyphicon glyphicon-envelope"></span>
-              {% trans 'Send Message' %}
-            </a>
+            <div class="btn-group btn-group-sm">
+              <a href="{% url messages %}?addressee={{profile.username}}" class="btn btn-default">
+                <span class="glyphicon glyphicon-envelope"></span>
+                {% trans 'Send Message' %}
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    {% if profile.forum_profile.activities.all %}
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">{% trans 'Activities' %}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-6 col-xs-12">
+            <h4>{% trans 'Sports' %}:</h4>
+            {% for a in profile.forum_profile.activities.all %}
+              {% if a.sport %}
+                {{a}}<br/>
+              {% endif%}
+            {% endfor %}
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <h4>{% trans 'Other Activities' %}:</h4>
+            {% for a in profile.forum_profile.activities.all %}
+              {% if not a.sport %}
+                {{a}}<br/>
+              {% endif%}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
 
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -73,22 +94,6 @@
         </div>
       </div>
     </div>
-
-    {% if profile.forum_profile.activities.all %}
-      <h4>{% trans 'Sports' %}:</h4>
-      {% for a in profile.forum_profile.activities.all %}
-        {% if a.sport %}
-          {{a}}<br/>
-        {% endif%}
-      {% endfor %}
-
-      <h4>{% trans 'Activities' %}:</h4>
-      {% for a in profile.forum_profile.activities.all %}
-        {% if not a.sport %}
-          {{a}}<br/>
-        {% endif%}
-      {% endfor %}
-    {% endif %}
 
   </div>
 {% endif %}

@@ -55,7 +55,52 @@
     <h3 class="panel-title">{% trans 'Activities' %}</h3>
   </div>
   <div class="panel-body">
-    {% include 'form.html' with form=form_act button='Save' name='act' %}
+    <form action="{{action}}" class="form" method="POST" >
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-sm-6 col-xs-12">
+        <div class="form-group">
+                <label class="control-label">
+                   <span>{% trans 'Sports' %}</span>
+                </label>
+                {{form_act.sports}}
+
+                {% for error in from_act.sports.errors %}
+                    <span class="help-block">{{ error }}</span>
+                {% endfor %}
+
+                {% if from_act.sports.help_text %}
+                    <p class="help-block">
+                        {{ from_act.sports.help_text|safe }}
+                    </p>
+                {% endif %}
+        </div>
+      </div>
+      <div class="col-sm-6 col-xs-12">
+                <label class="control-label">
+                   <span>{% trans 'Other Activities' %}</span>
+                </label>
+                {{form_act.activities}}
+
+                {% for error in from_act.activities.errors %}
+                    <span class="help-block">{{ error }}</span>
+                {% endfor %}
+
+                {% if from_act.activities.help_text %}
+                    <p class="help-block">
+                        {{ from_act.activities.help_text|safe }}
+                    </p>
+                {% endif %}
+
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-9">
+        <button type="submit" class="btn btn-primary" name="act">{% trans 'Save' %}</button>
+      </div>
+    </div>
+    <form>
+
   </div>
 </div>
 
