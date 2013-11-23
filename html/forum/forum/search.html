@@ -22,11 +22,14 @@
 {% endblock %}
 
 {% block extra_script %}
+  {% include 'base/loading.html' %}
+
   <script type="text/javascript" language="javascript">
 
     function loadData()
     {
-      $('#results').html('<div class="text-center"><img src="{{STATIC_URL}}images/loading.gif" width="64" height="64" /></div>');
+      setLoading('results');
+
       $.getJSON('/forum/search/data/', {
           male: document.getElementById('id_sex_1').checked,
           female: document.getElementById('id_sex_2').checked,

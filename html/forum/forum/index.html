@@ -15,6 +15,8 @@
     </script>
   {% endif %}
 
+  {% include 'base/loading.html' %}
+
   <script type="text/javascript" language="javascript">
 
     function show(i) {
@@ -24,7 +26,7 @@
 
     function loadData(root)
     {
-      $('#data').html('<div class="text-center"><img src="{{STATIC_URL}}images/loading.gif" width="64" height="64" /></div>');
+      setLoading('data');
 
       {% block load_data %}
       $.getJSON('/forum/data/' + root
