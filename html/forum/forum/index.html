@@ -56,7 +56,7 @@
         + elem.innerHTML
         + '<div class="form-group">'
           + '<div>'
-            + '<button type="submit" class="btn">Post</button>'
+            + '<button type="submit" class="btn btn-sm">Post</button>'
           + '</div>'
         + '</div>'
       + '</form>';
@@ -92,19 +92,23 @@
         footer += '<small>' + e.post_count + ' '+ e.posts + '</small> ';
       }
 
+      footer += '<div class="btn-group btn-group-xs">';
+
+      if (e.deletable_link != '') {
+        footer += '<a href="' + e.deletable_link + '" class="btn btn-default" ><span class="glyphicon glyphicon-trash"></span> {% trans 'Delete' %}</a>';
+      }
+
       if (e.level > 0) {
         var s = i;
 
         if (e.level == 4) s = last_end;
 
         {% if form %}
-          footer += '<div class="btn-group btn-group-xs">'
-                    + '<button class="btn" onClick="show(' + (s) + ')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Reply' %}</button>'
-                  + '</div>'
+          footer += '<a href="javascript:void(0)" class="btn btn-default" onClick="show(' + (s) + ')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Reply' %}</a>';
         {% endif %}
       }
 
-      footer += '</div></div>';
+      footer += '</div></div></div>';
 
       $('#data').append(
         '<div class="panel panel-default ' + e.html_class + '" style="margin-bottom: 5px;">'

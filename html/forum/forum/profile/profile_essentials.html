@@ -32,6 +32,11 @@
     <h3 class="panel-title">{% trans 'Personal Information' %}</h3>
   </div>
   <div class="panel-body">
+    <p>
+    {% blocktrans %}
+    None of the information entered here is public. It's used only to find the best matches for you when using the search feature of the site.
+    {% endblocktrans %}
+    </p>
     {% include 'form.html' with form=form_personal button='Save' name='personal' %}
   </div>
 </div>
