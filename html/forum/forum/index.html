@@ -22,6 +22,7 @@
     function show(i) {
       elem = document.getElementById("post" + i);
       elem.className = elem.className.replace( /(?:^|\s)hidden(?!\S)/g , '' );
+      elem.getElementsByTagName('textarea')[0].focus();
     }
 
     function loadData(root)
@@ -77,16 +78,17 @@
         link = 'onClick="loadData(' + e.pk + ')"';
       }
 
-      body += e.text;
 
       footer =
         '<div class="row">'
         + '<div class="col-xs-6">';
 
       if (e.level > 1) {
-        footer += '<a href="' + e.user_link + '">'
+        footer += '<small><a href="' + e.user_link + '">'
           + '<span class="glyphicon glyphicon-user"></span> ' + e.by_user
-          + '</a>';
+          + '</a></small>';
+        body += '<div class="text-right"><small>' + e.date + '</small></div>';
+
       }
 
       footer += '</div><div class="col-xs-6 text-right">';
@@ -99,6 +101,8 @@
       if (e.deletable_link != '') {
         footer += '<a href="' + e.deletable_link + '" class="btn btn-default" ><span class="glyphicon glyphicon-trash"></span> {% trans 'Delete' %}</a>';
       }
+
+      body += '<p>' + e.text + '</p>';
 
       if (e.level > 0) {
         var s = i;
