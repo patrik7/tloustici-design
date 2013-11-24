@@ -1,0 +1,19 @@
+{% load i18n %}
+
+<h2>{{article.heading}}</h2>
+
+{% if article.image %}
+  <a href="{% url article article.id %}" >
+    <img src="{{article.image}}" class="img-rounded pull-{{article.image_align}}" width="100" height="100" style="margin: 5px;" />
+  </a>
+
+
+{% endif %}
+
+<p>
+{{article.preview}}
+</p>
+
+<p>
+<a class="btn btn-default" href="{% url article article.id %}">{% trans 'Read More' %} »</a>
+</p>

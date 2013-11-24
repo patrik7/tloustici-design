@@ -1,0 +1,33 @@
+{% extends 'articles/base.html' %}
+
+{% load i18n %}
+
+{% block main %}
+  {% if article_important %}
+    <div class="row">
+      <div class="col-xs-12">
+        {% include 'articles/preview.html' with article=article_important %}
+      </div>
+    </div>
+  {% endif %}
+  {% if articles %}
+    <div class="row">
+      <div class="col-sm-6">
+        {% for a in articles %}
+          {% if a.position %}
+            {% include 'articles/preview.html' with article=a %}
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="col-sm-6">
+        {% for a in articles %}
+          {% if not a.position %}
+            {% include 'articles/preview.html' with article=a %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif%}
+
+{% endblock %}
+
