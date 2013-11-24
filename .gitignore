@@ -3,3 +3,4 @@ static/css/bootstrap*
 static/fonts
 static/js/bootstrap.min.js
 static/images/db/*
+static/images/for_*
