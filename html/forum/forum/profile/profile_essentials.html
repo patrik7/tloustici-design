@@ -12,7 +12,7 @@
 <div class="panel-group" id="accordion">
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseEssential">{% trans 'Essential Information' %}</a></h3>
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseEssential"><span id="collapseEssential-icon" class="glyphicon glyphicon-collapse-up"></span> {% trans 'Essential Information' %}</a></h3>
   </div>
   <div id="collapseEssential" class="panel-collapse collapse in">
     <div class="panel-body">
@@ -23,7 +23,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseBio">{% trans 'Bio' %}</a></h3>
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseBio"><span id="collapseBio-icon" class="glyphicon glyphicon-collapse-down"></span> {% trans 'Bio' %}</a></h3>
   </div>
   <div id="collapseBio" class="panel-collapse collapse">
     <div class="panel-body">
@@ -34,7 +34,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapsePersonal">{% trans 'Personal Information' %}</a></h3>
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapsePersonal"><span id="collapsePersonal-icon" class="glyphicon glyphicon-collapse-down"></span> {% trans 'Personal Information' %}</a></h3>
   </div>
   <div id="collapsePersonal" class="panel-collapse collapse">
     <div class="panel-body">
@@ -50,7 +50,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseAct">{% trans 'Activities' %}</a></h3>
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseAct"><span id="collapseAct-icon" class="glyphicon glyphicon-collapse-down"></span> {% trans 'Activities' %}</a></h3>
   </div>
   <div id="collapseAct" class="panel-collapse collapse">
     <div class="panel-body">
@@ -114,6 +114,34 @@
     $('#id_date_of_birth').datepicker({
       format: 'dd.mm.yyyy'
     });
+
+/*
+    function changeIconUp(elem) { elem.className = "glyphicon glyphicon-collapse-up"; }
+    function changeIconDown(elem) { elem.className = "glyphicon glyphicon-collapse-down"; }
+
+    var a = Array();
+    a[0] = "collapseEssential";
+    a[1] = "collapseBio";
+    a[2] = "collapsePersonal";
+    a[3] = "collapseAct";
+
+    for (i = 0; i < 1; i++) {
+      var elem = document.getElementById(a[i] + '-icon');
+      e = $('#' + a[i]);
+      e.on('show.bs.collapse', changeIconUp(elem));
+      e.on('hide.bs.collapse', changeIconDown(elem));
+    }
+*/
+    $('#accordion .panel-collapse').on('show.bs.collapse', function () {
+      $(this).prev().find(".glyphicon").removeClass("glyphicon-collapse-down").addClass("glyphicon-collapse-up");
+    });
+
+    //The reverse of the above on hidden event:
+
+    $('#accordion .panel-collapse').on('hidden.bs.collapse', function () {
+      $(this).prev().find(".glyphicon").removeClass("glyphicon-collapse-up").addClass("glyphicon-collapse-down");
+    });
+
   </script>
 
 {% endblock %}
