@@ -16,14 +16,14 @@
     <div class="row">
       <div class="col-sm-6">
         {% for a in articles %}
-          {% if a.position %}
+          {% if a.left %}
             {% include 'articles/preview.html' with article=a %}
           {% endif %}
         {% endfor %}
       </div>
       <div class="col-sm-6">
         {% for a in articles %}
-          {% if not a.position %}
+          {% if not a.left %}
             {% include 'articles/preview.html' with article=a %}
           {% endif %}
         {% endfor %}

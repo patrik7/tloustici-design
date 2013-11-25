@@ -134,7 +134,10 @@
 
           {% if messages %}
             {% for message in messages %}
-              <div class="alert alert-{{message.tags}}">{{ message }}</div>
+              <div class="alert alert-{{message.tags}}" >
+                {{ message }}
+                <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+              </div>
             {% endfor %}
           {% endif %}
 
@@ -148,7 +151,7 @@
 
       </div>
 
-        <div class="footer">
+        <div class="footer" style="margin-top: 10px;">
           <div class="well text-center">
           {% block footer %}
           <p>&copy; Patrik Beck 2013</p>
@@ -165,6 +168,7 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
+    <script src="{{STATIC_URL}}js/alert.js"></script>
 
     {% block extra_script %}
     {% endblock %}

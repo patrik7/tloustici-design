@@ -4,16 +4,14 @@
 
 {% if article.image %}
   <a href="{% url article article.id %}" >
-    <img src="{{article.image}}" class="img-rounded pull-{{article.image_align}}" width="100" height="100" style="margin: 8px;" />
+    <img src="{{article.image.url}}" class="img-rounded pull-{{article.image_position}}" style="margin: 8px; max-width: 40%; height: auto;" />
   </a>
-
-
 {% endif %}
 
 <p>
-{{article.preview}}
+  {{article.preview_html|safe}}
 </p>
 
 <p>
-<a class="btn btn-default" href="{% url article article.id %}">{% trans 'Read More' %} »</a>
+  <a class="btn btn-default" href="{% url article article.id %}">{% trans 'Read More' %} »</a>
 </p>

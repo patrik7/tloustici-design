@@ -1,0 +1,28 @@
+{% extends 'articles/base.html' %}
+
+{% load i18n %}
+
+{% block main %}
+<div class="row">
+  <div class="pull-left">
+    <h2>{{article.heading}}</h2>
+  </div>
+  <div class="pull-right">
+    <small>{{article.display_from}}</small>
+  </div>
+</div>
+
+<div class="row">
+
+  {% if article.image %}
+    <img src="{{article.image.url}}" class="img-rounded pull-{{article.image_position}}" style="margin: 8px; max-width: 40%; height: auto;" />
+  {% endif %}
+
+  <p>
+    {{article.body_html|safe}}
+  </p>
+
+</div>
+
+{% endblock %}
+
