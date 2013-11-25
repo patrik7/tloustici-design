@@ -3,12 +3,14 @@
 {% load i18n %}
 
 {% block main %}
-  {% if article_important %}
-    <div class="row">
-      <div class="col-xs-12">
-        {% include 'articles/preview.html' with article=article_important %}
+  {% if articles_important %}
+    {% for a in articles_important %}
+      <div class="row">
+        <div class="col-xs-12">
+          {% include 'articles/preview.html' with article=a %}
+        </div>
       </div>
-    </div>
+    {% endfor %}
   {% endif %}
   {% if articles %}
     <div class="row">

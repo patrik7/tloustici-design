@@ -9,65 +9,73 @@
 
 {% block main %}
 
+<div class="panel-group" id="accordion">
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">{% trans 'Essential Information' %}</h3>
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseEssential">{% trans 'Essential Information' %}</a></h3>
   </div>
-  <div class="panel-body">
-    {% include 'form.html' with form=form_essentials button='Save' name='essentials' %}   
+  <div id="collapseEssential" class="panel-collapse collapse in">
+    <div class="panel-body">
+      {% include 'form.html' with form=form_essentials button='Save' name='essentials' %}   
+    </div>
   </div>
 </div>
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">{% trans 'Bio' %}</h3>
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseBio">{% trans 'Bio' %}</a></h3>
   </div>
-  <div class="panel-body">
-    {% include 'form.html' with form=form_bio button='Save' name='bio' %}
-  </div>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">{% trans 'Personal Information' %}</h3>
-  </div>
-  <div class="panel-body">
-    <p>
-    {% blocktrans %}
-    None of the information entered here is public. It's used only to find the best matches for you when using the search feature of the site.
-    {% endblocktrans %}
-    </p>
-    {% include 'form.html' with form=form_personal button='Save' name='personal' %}
+  <div id="collapseBio" class="panel-collapse collapse">
+    <div class="panel-body">
+      {% include 'form.html' with form=form_bio button='Save' name='bio' %}
+    </div>
   </div>
 </div>
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">{% trans 'Activities' %}</h3>
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapsePersonal">{% trans 'Personal Information' %}</a></h3>
   </div>
-  <div class="panel-body">
-    <form action="{{action}}" class="form" method="POST" >
-    {% csrf_token %}
-    <div class="row">
-      <div class="col-sm-6 col-xs-12">
-        <div class="form-group">
-                <label class="control-label">
-                   <span>{% trans 'Sports' %}</span>
-                </label>
-                {{form_act.sports}}
+  <div id="collapsePersonal" class="panel-collapse collapse">
+    <div class="panel-body">
+      <p>
+      {% blocktrans %}
+      None of the information entered here is public. It's used only to find the best matches for you when using the search feature of the site.
+      {% endblocktrans %}
+      </p>
+      {% include 'form.html' with form=form_personal button='Save' name='personal' %}
+    </div>
+  </div>
+</div>
 
-                {% for error in from_act.sports.errors %}
-                    <span class="help-block">{{ error }}</span>
-                {% endfor %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseAct">{% trans 'Activities' %}</a></h3>
+  </div>
+  <div id="collapseAct" class="panel-collapse collapse">
+    <div class="panel-body">
+      <form action="{{action}}" class="form" method="POST" >
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <div class="form-group">
+                  <label class="control-label">
+                     <span>{% trans 'Sports' %}</span>
+                  </label>
+                  {{form_act.sports}}
 
-                {% if from_act.sports.help_text %}
-                    <p class="help-block">
-                        {{ from_act.sports.help_text|safe }}
-                    </p>
-                {% endif %}
+                  {% for error in from_act.sports.errors %}
+                      <span class="help-block">{{ error }}</span>
+                  {% endfor %}
+
+                  {% if from_act.sports.help_text %}
+                      <p class="help-block">
+                          {{ from_act.sports.help_text|safe }}
+                      </p>
+                  {% endif %}
+          </div>
         </div>
-      </div>
-      <div class="col-sm-6 col-xs-12">
+        <div class="col-sm-6 col-xs-12">
                 <label class="control-label">
                    <span>{% trans 'Other Activities' %}</span>
                 </label>
@@ -83,26 +91,29 @@
                     </p>
                 {% endif %}
 
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-9">
-        <button type="submit" class="btn btn-primary" name="act">{% trans 'Save' %}</button>
+      <div class="form-group">
+        <div class="col-sm-9">
+          <button type="submit" class="btn btn-primary" name="act">{% trans 'Save' %}</button>
+        </div>
       </div>
+      <form>
     </div>
-    <form>
-
   </div>
+</div>
 </div>
 
 {% endblock %}
 
 {% block extra_script %}
   <script src="{{STATIC_URL}}js/bootstrap-datepicker.js"></script>
+  <script src="{{STATIC_URL}}js/collapse.js"></script>
 
   <script type="text/javascript" language="javascript">
     $('#id_date_of_birth').datepicker({
       format: 'dd.mm.yyyy'
     });
   </script>
+
 {% endblock %}
