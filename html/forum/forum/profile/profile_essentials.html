@@ -12,9 +12,9 @@
 <div class="panel-group" id="accordion">
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseEssential"><span id="collapseEssential-icon" class="glyphicon glyphicon-collapse-up"></span> {% trans 'Essential Information' %}</a></h3>
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseEssentials"><span id="collapseEssentials-icon" class="glyphicon glyphicon-collapse-up"></span> {% trans 'Essential Information' %}</a></h3>
   </div>
-  <div id="collapseEssential" class="panel-collapse collapse in">
+  <div id="collapseEssentials" class="panel-collapse collapse in">
     <div class="panel-body">
       {% include 'form.html' with form=form_essentials button='Save' name='essentials' %}   
     </div>
@@ -115,23 +115,6 @@
       format: 'dd.mm.yyyy'
     });
 
-/*
-    function changeIconUp(elem) { elem.className = "glyphicon glyphicon-collapse-up"; }
-    function changeIconDown(elem) { elem.className = "glyphicon glyphicon-collapse-down"; }
-
-    var a = Array();
-    a[0] = "collapseEssential";
-    a[1] = "collapseBio";
-    a[2] = "collapsePersonal";
-    a[3] = "collapseAct";
-
-    for (i = 0; i < 1; i++) {
-      var elem = document.getElementById(a[i] + '-icon');
-      e = $('#' + a[i]);
-      e.on('show.bs.collapse', changeIconUp(elem));
-      e.on('hide.bs.collapse', changeIconDown(elem));
-    }
-*/
     $('#accordion .panel-collapse').on('show.bs.collapse', function () {
       $(this).prev().find(".glyphicon").removeClass("glyphicon-collapse-down").addClass("glyphicon-collapse-up");
     });
@@ -142,6 +125,8 @@
       $(this).prev().find(".glyphicon").removeClass("glyphicon-collapse-up").addClass("glyphicon-collapse-down");
     });
 
+    $('#collapseEssentials').toggle();
+    $('#collapse{{active}}').toggle();
   </script>
 
 {% endblock %}
