@@ -43,3 +43,33 @@
 
   </script>
 {% endblock %}
+
+{% block entry_rendering %}
+
+    function render(i, e, last_end) {
+      var body = '';
+      var heading = '<h3 class="panel-title">{% trans 'Conversation with' %} ' + e.addressee + '</h3>';
+
+      var hidden = '';
+
+      body += '<div class="text-right" style="color: #505050;"><small>' + e.date + '</small></div>';
+
+      body += '<p>' + e.text + '</p>';
+
+      $('#data').append(
+        '<div class="panel panel-default ' + e.html_class + '" style="margin-bottom: 5px;">'
+        + '<div class="panel-heading">' + heading + '</div>'
+        + '<div class="panel-body" style="padding: 5px;">'
+          + '<div class="row">'
+            + '<div class="col-xs-2 visible-sm visible-md visible-lg">'
+              + '<img src="' + e.avatar + '" width="100%" class="img-rounded" />'
+            + '</div>'
+            + '<div class="col-xs-10">' + body + '</div>'
+          + '</div>'
+        + '</div>'
+      + '</div>');
+
+    }
+
+{% endblock %}
+

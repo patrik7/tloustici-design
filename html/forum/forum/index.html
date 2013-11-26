@@ -67,6 +67,8 @@
       return txt;
     }
 
+    {% block entry_rendering %}
+
     function render(i, e, last_end) {
       var body = '';
       var footer = '';
@@ -149,6 +151,8 @@
       {% endif %}
 
     }
+
+    {% endblock %}
 
     {% if root %}
       $(document).ready(loadData({{root}}));
