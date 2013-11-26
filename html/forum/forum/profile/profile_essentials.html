@@ -12,7 +12,7 @@
 <div class="panel-group" id="accordion">
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseEssentials"><span id="collapseEssentials-icon" class="glyphicon glyphicon-collapse-up"></span> {% trans 'Essential Information' %}</a></h3>
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseEssentials"><span id="collapseEssentials-icon" class="glyphicon glyphicon-chevron-down"></span> {% trans 'Essential Information' %}</a></h3>
   </div>
   <div id="collapseEssentials" class="panel-collapse collapse in">
     <div class="panel-body">
@@ -23,7 +23,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseBio"><span id="collapseBio-icon" class="glyphicon glyphicon-collapse-down"></span> {% trans 'Bio' %}</a></h3>
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseBio"><span id="collapseBio-icon" class="glyphicon glyphicon-chevron-right"></span> {% trans 'Bio' %}</a></h3>
   </div>
   <div id="collapseBio" class="panel-collapse collapse">
     <div class="panel-body">
@@ -34,7 +34,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapsePersonal"><span id="collapsePersonal-icon" class="glyphicon glyphicon-collapse-down"></span> {% trans 'Personal Information' %}</a></h3>
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapsePersonal"><span id="collapsePersonal-icon" class="glyphicon glyphicon-chevron-right"></span> {% trans 'Personal Information' %}</a></h3>
   </div>
   <div id="collapsePersonal" class="panel-collapse collapse">
     <div class="panel-body">
@@ -50,7 +50,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseAct"><span id="collapseAct-icon" class="glyphicon glyphicon-collapse-down"></span> {% trans 'Activities' %}</a></h3>
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseAct"><span id="collapseAct-icon" class="glyphicon glyphicon-chevron-right"></span> {% trans 'Activities' %}</a></h3>
   </div>
   <div id="collapseAct" class="panel-collapse collapse">
     <div class="panel-body">
@@ -116,13 +116,13 @@
     });
 
     $('#accordion .panel-collapse').on('show.bs.collapse', function () {
-      $(this).prev().find(".glyphicon").removeClass("glyphicon-collapse-down").addClass("glyphicon-collapse-up");
+      $(this).prev().find(".glyphicon").removeClass("glyphicon-chevron-right").addClass("glyphicon-chevron-down");
     });
 
     //The reverse of the above on hidden event:
 
     $('#accordion .panel-collapse').on('hidden.bs.collapse', function () {
-      $(this).prev().find(".glyphicon").removeClass("glyphicon-collapse-up").addClass("glyphicon-collapse-down");
+      $(this).prev().find(".glyphicon").removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-right");
     });
 
     $('#collapseEssentials').toggle();
