@@ -1,0 +1,21 @@
+{% extends "base/base.html" %}
+
+{% load i18n %}
+
+{% block main %}
+
+<div class="jumbotron">
+<h3><span class="glyphicon glyphicon-lock"></span> {% trans 'Registraion is currently closed' %}</h3>
+
+<p>
+{% trans 'Unfortunatelly, registration of new users is currently disabled.' %}
+</p>
+
+<p>
+<small>{% trans 'Try again later.' %}</small>
+</p>
+
+</div>
+
+{% endblock %}
+
