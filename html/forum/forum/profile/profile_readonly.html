@@ -13,7 +13,7 @@
 
     <div class="panel panel-info">
       <div class="panel-heading">
-        <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> {{profile.username}}</h3>
+        <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> {{profile.username}} <small>{% trans 'from' %} {{profile.forum_profile.city}}</small></h3>
       </div>
       <div class="panel-body">
         <div class="row">
@@ -25,7 +25,7 @@
             {% endif %}
           </div>
           <div class="col-sm-9">
-            <p>{{profile.username}} - {{sex}} - {{city}}</p>
+            <p>{{profile.username}} - {{sex}}</p>
             <p>{{profile.forum_profile.description_html|safe}}</p>
           </div>
         </div>

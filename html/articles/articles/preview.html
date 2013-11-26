@@ -1,6 +1,11 @@
 {% load i18n %}
 
-<h2>{{article.heading}}</h2>
+<h2>
+  {{article.heading}}
+  {% if not article.published %}
+    <small>{% trans 'Not published' %}</small>
+  {% endif %}
+</h2>
 
 {% if article.image %}
   <a href="{% url article article.id %}" >
