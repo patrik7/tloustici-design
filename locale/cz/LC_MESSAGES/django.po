@@ -1,0 +1,346 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-28 17:46+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: articles/models.py:9
+msgid "left"
+msgstr ""
+
+#: articles/models.py:10
+msgid "right"
+msgstr ""
+
+#: articles/models.py:15
+msgid "Heading"
+msgstr ""
+
+#: articles/models.py:17
+msgid "Position"
+msgstr ""
+
+#: articles/models.py:18
+msgid "Display From"
+msgstr ""
+
+#: articles/models.py:19
+msgid "Display Until"
+msgstr ""
+
+#: articles/models.py:21
+msgid "Available Forever"
+msgstr ""
+
+#: articles/models.py:37
+msgid "Article"
+msgstr ""
+
+#: articles/models.py:38 base/context_processors.py:31 forum/tests.py:67
+msgid "Articles"
+msgstr ""
+
+#: articles/views.py:56
+msgid "Article was not published yet."
+msgstr ""
+
+#: articles/views.py:59
+msgid "Article will be available from"
+msgstr ""
+
+#: articles/views.py:62
+msgid "Article is not available since"
+msgstr ""
+
+#: base/context_processors.py:36 forum/models.py:356 forum/tests.py:73
+msgid "Profile"
+msgstr ""
+
+#: base/context_processors.py:37 forum/tests.py:74
+msgid "Search for Partner"
+msgstr ""
+
+#: base/context_processors.py:38 forum/tests.py:75
+msgid "Messages"
+msgstr ""
+
+#: base/context_processors.py:42 forum/tests.py:70
+msgid "Register"
+msgstr ""
+
+#: base/context_processors.py:46 forum/tests.py:66
+msgid "Forum"
+msgstr ""
+
+#: base/context_processors.py:50
+msgid "Log out"
+msgstr ""
+
+#: base/forms.py:18
+msgid "Enter username, not email address"
+msgstr ""
+
+#: base/views.py:41
+msgid "You have been logged out."
+msgstr ""
+
+#: base/views.py:67
+msgid "User is not activated."
+msgstr ""
+
+#: base/views.py:71
+msgid "Incorrect username or password."
+msgstr ""
+
+#: forum/forms.py:22
+msgid "The nick name will be used to identify you on the website."
+msgstr ""
+
+#: forum/forms.py:23
+msgid "We will send the authorization email to this address."
+msgstr ""
+
+#: forum/forms.py:43
+msgid "Username"
+msgstr ""
+
+#: forum/forms.py:44
+msgid "E-mail"
+msgstr ""
+
+#: forum/forms.py:115
+msgid "Username does not exists"
+msgstr ""
+
+#: forum/forms.py:133
+msgid "Real name"
+msgstr ""
+
+#: forum/forms.py:154
+msgid "Height has to be between 30 cm and 250 cm"
+msgstr ""
+
+#: forum/forms.py:162
+msgid "Weight has to be between 30 kg and 350 kg"
+msgstr ""
+
+#: forum/forms.py:226 forum/forms.py:227
+msgid "doesn't matter"
+msgstr ""
+
+#: forum/forms.py:238
+msgid "Subscribe to replies"
+msgstr ""
+
+#: forum/forms.py:261
+msgid "Cannot reply, reply level too deep."
+msgstr ""
+
+#: forum/forms.py:270
+msgid "Can't be empty nor contain only whitespace characters"
+msgstr ""
+
+#: forum/models.py:40
+msgid "Male"
+msgstr ""
+
+#: forum/models.py:41
+msgid "Female"
+msgstr ""
+
+#: forum/models.py:45
+msgid "University"
+msgstr ""
+
+#: forum/models.py:46
+msgid "High School"
+msgstr ""
+
+#: forum/models.py:47
+msgid "Elementary School"
+msgstr ""
+
+#: forum/models.py:63
+msgid "Parent"
+msgstr ""
+
+#: forum/models.py:64 forum/models.py:230 forum/models.py:335
+msgid "User"
+msgstr ""
+
+#: forum/models.py:66
+msgid "Created"
+msgstr ""
+
+#: forum/models.py:67
+msgid "Updated"
+msgstr ""
+
+#: forum/models.py:68
+msgid "Updated by"
+msgstr ""
+
+#: forum/models.py:69
+msgid "Markup"
+msgstr ""
+
+#: forum/models.py:70
+msgid "Message"
+msgstr ""
+
+#: forum/models.py:71 forum/models.py:340
+msgid "HTML version"
+msgstr ""
+
+#: forum/models.py:72
+msgid "User IP"
+msgstr ""
+
+#: forum/models.py:74
+msgid "Image"
+msgstr ""
+
+#: forum/models.py:76
+msgid "Closed"
+msgstr ""
+
+#: forum/models.py:77
+msgid "Subscribers"
+msgstr ""
+
+#: forum/models.py:82
+msgid "Post"
+msgstr ""
+
+#: forum/models.py:83
+msgid "Posts"
+msgstr ""
+
+#: forum/models.py:149 forum/models.py:255
+msgid "by"
+msgstr ""
+
+#: forum/models.py:154
+msgid "post"
+msgid_plural "posts"
+msgstr[0] ""
+msgstr[1] ""
+
+#: forum/models.py:269
+msgid "City"
+msgstr ""
+
+#: forum/models.py:270
+msgid "Cities"
+msgstr ""
+
+#: forum/models.py:280
+msgid "Activity"
+msgstr ""
+
+#: forum/models.py:281
+msgid "Activities"
+msgstr ""
+
+#: forum/models.py:290
+msgid "How many choices are allowed simultaneously."
+msgstr ""
+
+#: forum/models.py:293
+msgid "Can users vote to this poll or just see the result?"
+msgstr ""
+
+#: forum/models.py:296
+msgid "Point of time after this poll would be automatic deactivated"
+msgstr ""
+
+#: forum/models.py:299
+msgid "Users who has voted this poll."
+msgstr ""
+
+#: forum/models.py:336
+msgid "The city you live in, or closes to you."
+msgstr ""
+
+#: forum/models.py:337
+msgid "Language"
+msgstr ""
+
+#: forum/models.py:338
+msgid "Avatar"
+msgstr ""
+
+#: forum/models.py:339
+msgid "Description"
+msgstr ""
+
+#: forum/models.py:339
+msgid "Use few sentences to describe yourself, and who are you looking for."
+msgstr ""
+
+#: forum/models.py:346
+msgid "The highest achieved education"
+msgstr ""
+
+#: forum/models.py:348
+msgid ""
+"Decide if your profile should come up when others use the search function."
+msgstr ""
+
+#: forum/models.py:351
+msgid "Receive an email notification on incoming message"
+msgstr ""
+
+#: forum/models.py:352
+msgid "Subscribe to my forum posts by default"
+msgstr ""
+
+#: forum/models.py:353
+msgid "Subscribe to newsletter"
+msgstr ""
+
+#: forum/models.py:357
+msgid "Profiles"
+msgstr ""
+
+#: forum/tests.py:45
+msgid "Registration Completed"
+msgstr ""
+
+#: forum/tests.py:160 forum/views.py:262
+msgid "Your reply was saved."
+msgstr ""
+
+#: forum/tests.py:220 forum/tests.py:239 forum/tests.py:267 forum/views.py:62
+#: forum/views.py:106
+msgid "User profile saved."
+msgstr ""
+
+#: forum/views.py:221
+msgid "Message sent."
+msgstr ""
+
+#: forum/views.py:248
+msgid "You can no longer delete the post."
+msgstr ""
+
+#: forum/views.py:250
+msgid "Post was deleted."
+msgstr ""
+
+#: forum/views.py:264
+msgid "Post not saved."
+msgstr ""
