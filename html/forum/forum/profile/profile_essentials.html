@@ -12,9 +12,9 @@
 <div class="panel-group" id="accordion">
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseEssentials"><span id="collapseEssentials-icon" class="glyphicon glyphicon-chevron-down"></span> {% trans 'Essential Information' %}</a></h3>
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseEssentials"><span id="collapseEssentials-icon" class="glyphicon glyphicon-chevron-{{essentials_chevron}}"></span> {% trans 'Essential Information' %}</a></h3>
   </div>
-  <div id="collapseEssentials" class="panel-collapse collapse in">
+  <div id="collapseEssentials" class="panel-collapse collapse {{essentials_in}}">
     <div class="panel-body">
       {% include 'form.html' with form=form_essentials button='Save' name='essentials' %}   
     </div>
@@ -23,9 +23,9 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseBio"><span id="collapseBio-icon" class="glyphicon glyphicon-chevron-right"></span> {% trans 'Bio' %}</a></h3>
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseBio"><span id="collapseBio-icon" class="glyphicon glyphicon-chevron-{{bio_chevron}}"></span> {% trans 'Bio' %}</a></h3>
   </div>
-  <div id="collapseBio" class="panel-collapse collapse">
+  <div id="collapseBio" class="panel-collapse collapse {{bio_in}}">
     <div class="panel-body">
       {% include 'form.html' with form=form_bio button='Save' name='bio' %}
     </div>
@@ -34,9 +34,9 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapsePersonal"><span id="collapsePersonal-icon" class="glyphicon glyphicon-chevron-right"></span> {% trans 'Personal Information' %}</a></h3>
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapsePersonal"><span id="collapsePersonal-icon" class="glyphicon glyphicon-chevron-{{personal_chevron}}"></span> {% trans 'Personal Information' %}</a></h3>
   </div>
-  <div id="collapsePersonal" class="panel-collapse collapse">
+  <div id="collapsePersonal" class="panel-collapse collapse {{personal_in}}">
     <div class="panel-body">
       <p>
       {% blocktrans %}
@@ -50,9 +50,9 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseAct"><span id="collapseAct-icon" class="glyphicon glyphicon-chevron-right"></span> {% trans 'Activities' %}</a></h3>
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseAct"><span id="collapseAct-icon" class="glyphicon glyphicon-chevron-{{act_chevron}}"></span> {% trans 'Activities' %}</a></h3>
   </div>
-  <div id="collapseAct" class="panel-collapse collapse">
+  <div id="collapseAct" class="panel-collapse collapse {{act_in}}">
     <div class="panel-body">
       <form action="{{action}}" class="form" method="POST" >
       {% csrf_token %}
@@ -125,8 +125,6 @@
       $(this).prev().find(".glyphicon").removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-right");
     });
 
-    $('#collapseEssentials').toggle();
-    $('#collapse{{active}}').toggle();
   </script>
 
 {% endblock %}
