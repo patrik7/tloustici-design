@@ -19,11 +19,11 @@ msgstr ""
 
 #: articles/models.py:9
 msgid "left"
-msgstr ""
+msgstr "vlevo"
 
 #: articles/models.py:10
 msgid "right"
-msgstr ""
+msgstr "vpravo"
 
 #: articles/models.py:15
 msgid "Heading"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: articles/models.py:17
 msgid "Position"
-msgstr ""
+msgstr "Pozice"
 
 #: articles/models.py:18
 msgid "Display From"
@@ -155,15 +155,15 @@ msgstr ""
 
 #: forum/models.py:40
 msgid "Male"
-msgstr ""
+msgstr "Muž"
 
 #: forum/models.py:41
 msgid "Female"
-msgstr ""
+msgstr "Žena"
 
 #: forum/models.py:45
 msgid "University"
-msgstr ""
+msgstr "Vysoká škola"
 
 #: forum/models.py:46
 msgid "High School"
@@ -179,7 +179,7 @@ msgstr ""
 
 #: forum/models.py:64 forum/models.py:230 forum/models.py:335
 msgid "User"
-msgstr ""
+msgstr "Uživatel"
 
 #: forum/models.py:66
 msgid "Created"
