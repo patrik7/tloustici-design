@@ -47,11 +47,11 @@ msgstr ""
 
 #: articles/models.py:37
 msgid "Article"
-msgstr ""
+msgstr "Článek"
 
 #: articles/models.py:38 base/context_processors.py:31 forum/tests.py:67
 msgid "Articles"
-msgstr ""
+msgstr "Články"
 
 #: articles/views.py:56
 msgid "Article was not published yet."
