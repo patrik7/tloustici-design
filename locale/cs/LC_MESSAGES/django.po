@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Patrik Beck <patrik.beck@gmail.com>, 2013.
 #
 #, fuzzy
 msgid ""
@@ -10,9 +10,9 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-28 17:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -67,11 +67,11 @@ msgstr ""
 
 #: base/context_processors.py:36 forum/models.py:356 forum/tests.py:73
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 #: base/context_processors.py:37 forum/tests.py:74
 msgid "Search for Partner"
-msgstr ""
+msgstr "Hledat parťáka"
 
 #: base/context_processors.py:38 forum/tests.py:75
 msgid "Messages"
@@ -79,11 +79,11 @@ msgstr ""
 
 #: base/context_processors.py:42 forum/tests.py:70
 msgid "Register"
-msgstr ""
+msgstr "Registrace"
 
 #: base/context_processors.py:46 forum/tests.py:66
 msgid "Forum"
-msgstr ""
+msgstr "Fórum"
 
 #: base/context_processors.py:50
 msgid "Log out"
