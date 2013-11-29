@@ -1,6 +1,7 @@
 {% extends 'forum/index.html' %}
 
 {% load i18n %}
+{% load base_tags %}
 
 {% block load_data %}
   $.getJSON('/forum/messages/data/'
@@ -30,12 +31,19 @@
   {{ block.super }}
 
   <script src="{{STATIC_URL}}js/typeahead.min.js"></script>
+  <script src="{{STATIC_URL}}js/hogan-2.0.0.min.js"></script>
 
   <script type="text/javascript" language="javascript">  
 
      $('#id_addressee').typeahead({
       name: 'addressee',
       remote: '/forum/login/data/%QUERY.json',
+      template: [                                                                 
+{% verbatim %}
+        '<image src="{{avatar}}" class="img" style="width: auto; height: 30px;" /> {{value}}',
+{% endverbatim %}
+      ].join(''),
+      engine: Hogan
     });
 
      $('.tt-hint').addClass('form-control');
