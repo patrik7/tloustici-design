@@ -77,6 +77,8 @@
 
           {% else %}
 
+
+            <div class="well">
             <p>{% trans 'Welcome. Please log in or' %} <a href="{% url register %}">{% trans 'register' %}</a>.</p>
 
             <form id="login_form" method="post" action="{% url login %}" class="form-horizontal">
@@ -86,10 +88,16 @@
               {% elif login_form_empty %}
                 {{ login_form_empty|bootstrap }}
               {% endif %}
+
+              <p><a href="{% url password_recovery %}">{% trans 'Forgot your password?' %}</a></p>
+
               <div class="form-actions">
                 <input type="submit" class="btn btn-primary" value="{% trans 'Log in' %}" />
               </div>
             </form>
+
+            </div>
+
 
           {% endif %}
 
