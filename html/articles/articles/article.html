@@ -22,6 +22,13 @@
     {{article.body_html|safe}}
   </p>
 
+  {% if user.is_superuser %}
+    <hr/>
+    <div class="btn-group">
+      <a class="btn btn-default" href="/admin/articles/article/{{article.id}}/">{% trans 'Edit' %}</a>
+    </div>
+  {% endif %}
+
 </div>
 
 {% endblock %}
