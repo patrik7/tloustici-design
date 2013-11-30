@@ -6,6 +6,10 @@
 
 <div id="data"></div>
 
+<div id="pagination">
+
+</div>
+
 {% endblock %}
 
 {% block extra_script %}
@@ -25,25 +29,71 @@
       elem.getElementsByTagName('textarea')[0].focus();
     }
 
-    function loadData(root)
+    function addData(entries) {
+      //TODO: detect ID offset, and last_end
+
+      var offset = 0;
+      var last_end = 0;
+
+
+      childs = document.getElementById('data').childNodes;
+      for (var i = 0; i < childs.length; i++) {
+        var e = childs[i];
+        if (e.id == '') offset += 1;
+        else {
+          last_end = parseInt(e.id.substring(4, e.id.length));
+        }
+      }
+
+      
+      for (var i = 0; i < entries.length; i++) {
+        if (entries[i].level == 3) last_end = i;
+
+        render(offset + i, entries[i], last_end);
+      }
+    }
+
+    var loadDataMore = function() {}
+
+    function setupPagination(pagination) {
+      if (pagination && pagination.has_next) {
+        loadDataMore = function() {
+          setLoading('pagination');
+          
+          $.getJSON('/forum/data/' + root, {'page': pagination.page_number + 1}).done(function(data) {
+            var entries = data.entries;
+            var pagination = data.pagination;
+
+            addData(entries);
+            setupPagination(data.pagination);
+
+            $('#pagination').html('');
+          });
+
+        }
+      } else {
+        loadDataMore = function() {}
+      }
+    }
+
+    function loadData()
     {
       setLoading('data');
+      setupPagination(null);
 
       {% block load_data %}
       $.getJSON('/forum/data/' + root
       {% endblock %}
 
       ,{
-      }).done(function(entries) {
+      }).done(function(data) {
           $('#data').html('');
 
-          var last_end = 0;
+          var entries = data.entries;
+          var pagination = data.pagination;
 
-          for (var i = 0; i < entries.length; i++) {
-            if (entries[i].level == 3) last_end = i;
-
-            render(i, entries[i], last_end);
-          }
+          addData(entries);
+          setupPagination(pagination);
         })
         .error(function() {
           $('#data').html('Error loading data');
@@ -77,7 +127,7 @@
 
       var link = "";
       if (e.is_link) {
-        link = 'onClick="loadData(' + e.pk + ')"';
+        link = 'onClick="root = ' + e.pk + '; loadData()"';
       }
 
 
@@ -154,11 +204,35 @@
 
     {% endblock %}
 
+    var root = '{{root}}'
+
     {% if root %}
-      $(document).ready(loadData({{root}}));
+      var root = '{{root}}';
     {% else %}
-      $(document).ready(loadData(''));
+      var root = '';
     {% endif %}
+    
+    $(document).ready(loadData());
+
+    function isScrolledIntoView(elem)
+    {
+      var docViewTop = $(window).scrollTop();
+      var docViewBottom = docViewTop + $(window).height();
+
+      var elemTop = $(elem).offset().top;
+      var elemBottom = elemTop + $(elem).height();
+
+      return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom)
+        && (elemBottom <= docViewBottom) &&  (elemTop >= docViewTop) );
+    }
+
+    function scrollFunction() {
+      if (isScrolledIntoView('#pagination')) {
+	loadDataMore();
+      }
+    }
+
+    window.onscroll = scrollFunction;
 
   </script>
 
