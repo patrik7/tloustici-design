@@ -15,8 +15,10 @@
   </div>
 </div>
 
-<div id="results">
-  <div class="text-center"><img src="{{STATIC_URL}}images/loading.gif" width="64" height="64" /></div>
+<div id="data">
+</div>
+
+<div id="pagination">
 </div>
 
 {% endblock %}
@@ -24,25 +26,21 @@
 {% block extra_script %}
   {% include 'base/loading.html' %}
 
+  <script src="{{STATIC_URL}}js/ajax.js"></script>
+
   <script type="text/javascript" language="javascript">
 
-    function loadData()
-    {
-      setLoading('results');
+    var ajax_url = '/forum/search/data/';
 
-      $.getJSON('/forum/search/data/', {
+    function updateSearchResults()
+    {
+      ajax_get = {
           male: document.getElementById('id_sex_1').checked,
           female: document.getElementById('id_sex_2').checked,
           city: document.getElementById('id_city').value,
-      }).done(function(entries) {
-          $('#results').html('');
-          for (var i = 0; i < entries.length; i++) {
-            profile(i, entries[i]);
-          }
-        })
-        .error(function() {
-          $('#results').html('Error loading data');
-        });
+      }
+
+      loadData();
     }
 
     function add_bar(value, text) {
@@ -55,9 +53,9 @@
       return str;
     }
 
-    function profile(i, e) {
+    function render(i, e, last) {
       var a = '<a href="' + e.link  + '">'
-      $('#results').append('<div class="panel panel-info">'
+      $('#data').append('<div class="panel panel-info">'
         + '<div class="panel-heading">'
           + '<h3 class="panel-title">'
           + a + '<span class="glyphicon glyphicon-user" /> ' + e.username + '</a> '
@@ -88,7 +86,9 @@
       + '</div>');            
     }
 
-    $(document).ready(loadData);
+    $(document).ready(updateSearchResults);
+
+    window.onscroll = scrollFunction;
 
   </script>
 {% endblock %}
