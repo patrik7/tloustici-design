@@ -45,10 +45,10 @@
     vls[0]  = 18.5;
     text[0] = "{% trans 'Underweight' %} (< " + vls[0] + ")";
     vls[1]  = 24.9;
-    text[1] = "{% trans 'Normal Weight' %} (" + (vls[0] + 1) + " - " + vls[1] + ")";
+    text[1] = "{% trans 'Normal Weight' %} (" + (vls[0] + 0.1) + " - " + vls[1] + ")";
     vls[2]  = 29.9;
-    text[2] = "{% trans 'Overweight' %} (" + (vls[1] + 1) + " - " + vls[2] + ")";
-    text[3] = "{% trans 'Obesity' %} (> " + (vls[2] + 1) + ")";
+    text[2] = "{% trans 'Overweight' %} (" + (vls[1] + 0.1) + " - " + vls[2] + ")";
+    text[3] = "{% trans 'Obesity' %} (> " + (vls[2] + 0.1) + ")";
 
     function calculate_bmi() {
       //load data
@@ -71,7 +71,7 @@
           for (var i = 0; i < 4; i++) {
             if (bmi <= vls[i]) {
               bmi_text = text[i];
-	      break;
+              break;
             }
           }
 
