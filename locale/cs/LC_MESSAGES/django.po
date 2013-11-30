@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-28 17:46+0100\n"
+"POT-Creation-Date: 2013-11-30 09:25+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,15 +53,15 @@ msgstr "Článek"
 msgid "Articles"
 msgstr "Články"
 
-#: articles/views.py:56
+#: articles/views.py:68
 msgid "Article was not published yet."
 msgstr ""
 
-#: articles/views.py:59
+#: articles/views.py:71
 msgid "Article will be available from"
 msgstr ""
 
-#: articles/views.py:62
+#: articles/views.py:74
 msgid "Article is not available since"
 msgstr ""
 
@@ -89,67 +89,79 @@ msgstr "Fórum"
 msgid "Log out"
 msgstr ""
 
-#: base/forms.py:18
+#: base/forms.py:29
 msgid "Enter username, not email address"
 msgstr ""
 
-#: base/views.py:41
+#: base/forms.py:41
+msgid "Incorrect login name, or password."
+msgstr ""
+
+#: base/forms.py:44
+msgid "User was not activated yet."
+msgstr ""
+
+#: base/views.py:38
 msgid "You have been logged out."
 msgstr ""
 
-#: base/views.py:67
-msgid "User is not activated."
-msgstr ""
-
-#: base/views.py:71
-msgid "Incorrect username or password."
+#: forum/forms.py:21
+msgid "Your username"
 msgstr ""
 
 #: forum/forms.py:22
+msgid "The email you have used for registration"
+msgstr ""
+
+#: forum/forms.py:31
+msgid "Incorrect login name, or email."
+msgstr ""
+
+#: forum/forms.py:38
 msgid "The nick name will be used to identify you on the website."
 msgstr ""
 
-#: forum/forms.py:23
+#: forum/forms.py:39
 msgid "We will send the authorization email to this address."
 msgstr ""
 
-#: forum/forms.py:43
+#: forum/forms.py:59
 msgid "Username"
 msgstr ""
 
-#: forum/forms.py:44
+#: forum/forms.py:60
 msgid "E-mail"
 msgstr ""
 
-#: forum/forms.py:115
+#: forum/forms.py:131
 msgid "Username does not exists"
 msgstr ""
 
-#: forum/forms.py:133
+#: forum/forms.py:149
 msgid "Real name"
 msgstr ""
 
-#: forum/forms.py:154
+#: forum/forms.py:170
 msgid "Height has to be between 30 cm and 250 cm"
 msgstr ""
 
-#: forum/forms.py:162
+#: forum/forms.py:178
 msgid "Weight has to be between 30 kg and 350 kg"
 msgstr ""
 
-#: forum/forms.py:226 forum/forms.py:227
+#: forum/forms.py:242 forum/forms.py:243
 msgid "doesn't matter"
 msgstr ""
 
-#: forum/forms.py:238
+#: forum/forms.py:254
 msgid "Subscribe to replies"
 msgstr ""
 
-#: forum/forms.py:261
+#: forum/forms.py:277
 msgid "Cannot reply, reply level too deep."
 msgstr ""
 
-#: forum/forms.py:270
+#: forum/forms.py:286
 msgid "Can't be empty nor contain only whitespace characters"
 msgstr ""
 
@@ -320,27 +332,35 @@ msgstr ""
 msgid "Registration Completed"
 msgstr ""
 
-#: forum/tests.py:160 forum/views.py:262
+#: forum/tests.py:160 forum/views.py:301
 msgid "Your reply was saved."
 msgstr ""
 
-#: forum/tests.py:220 forum/tests.py:239 forum/tests.py:267 forum/views.py:62
-#: forum/views.py:106
+#: forum/tests.py:220 forum/tests.py:239 forum/tests.py:267 forum/views.py:68
+#: forum/views.py:112
 msgid "User profile saved."
 msgstr ""
 
-#: forum/views.py:221
+#: forum/views.py:231
 msgid "Message sent."
 msgstr ""
 
-#: forum/views.py:248
+#: forum/views.py:267
+msgid "Password Recovery"
+msgstr ""
+
+#: forum/views.py:272
+msgid "Email with your new password was sent to"
+msgstr ""
+
+#: forum/views.py:287
 msgid "You can no longer delete the post."
 msgstr ""
 
-#: forum/views.py:250
+#: forum/views.py:289
 msgid "Post was deleted."
 msgstr ""
 
-#: forum/views.py:264
+#: forum/views.py:303
 msgid "Post not saved."
 msgstr ""
