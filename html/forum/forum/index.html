@@ -30,11 +30,9 @@
     }
 
     function addData(entries) {
-      //TODO: detect ID offset, and last_end
-
+      //detect ID offset, and last_end
       var offset = 0;
       var last_end = 0;
-
 
       childs = document.getElementById('data').childNodes;
       for (var i = 0; i < childs.length; i++) {
@@ -45,7 +43,6 @@
         }
       }
 
-      
       for (var i = 0; i < entries.length; i++) {
         if (entries[i].level == 3) last_end = i;
 
