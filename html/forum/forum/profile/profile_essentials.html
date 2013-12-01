@@ -102,6 +102,17 @@
     </div>
   </div>
 </div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapsePasswordchange"><span id="collapsePasswordchange-icon" class="glyphicon glyphicon-chevron-{{passwordchange_chevron}}"></span> {% trans 'Change Password' %}</a></h3>
+  </div>
+  <div id="collapsePasswordchange" class="panel-collapse collapse {{passwordchange_in}}">
+    <div class="panel-body">
+      {% include 'form.html' with form=form_passwordchange button='Save' name='passwordchange' %}
+    </div>
+  </div>
+</div>
+
 </div>
 
 {% endblock %}

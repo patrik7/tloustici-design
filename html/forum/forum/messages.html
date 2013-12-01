@@ -68,9 +68,9 @@
 //        setupPagination(data.pagination);
 
 //        $('#pagination').html('');
-      }).error(
+      }).fail(function () {
         setError('popu' + div_id)
-      );
+      });
     }
 
     function render_message(elem, e) {
