@@ -38,6 +38,9 @@ function setupPagination(pagination) {
         setupPagination(data.pagination);
 
         $('#pagination').html('');
+      })
+      .fail(function() {
+        setError('pagination');
       });
 
     }
@@ -62,7 +65,9 @@ function loadData()
       addData(entries);
       setupPagination(pagination);
     })
-    .error(setError('data'));
+    .fail(function() {
+      setError('data');
+    });
 }
 
 function isScrolledIntoView(elem)
