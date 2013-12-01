@@ -60,7 +60,7 @@
     function loadMessages(div_id, conversation_id) {
       setLoading('popu' + div_id);
 
-      $.getJSON('/forum/messages/data/', $.extend({}, ajax_get, {'conversation': conversation_id})).done(function(data) {
+      $.getJSON('/forum/messages/data/', {'conversation': conversation_id}).done(function(data) {
         var entries = data.entries;
         var pagination = data.pagination;
 
@@ -101,7 +101,7 @@
       body += '<div class="text-right" style="color: #505050;"><small>{% trans 'Last message' %}: ' + e.last_message + '</small></div>';
       body += '<p>{% trans 'Conversation with' %} <a href="' + e.other_user_link + '">' + e.other_user + '</a></p>';
 
-      link = 'javascript:loadMessages(' + i + ');'
+      link = 'javascript:loadMessages(' + i + ', ' + e.id + ');'
 
       $('#data').append(
         '<div class="panel panel-default ' + e.html_class + '" style="margin-bottom: 5px;">'
