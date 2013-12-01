@@ -61,9 +61,7 @@ function loadData()
       addData(entries);
       setupPagination(pagination);
     })
-    .error(function() {
-      $('#data').html('Error loading data');
-    });
+    .error(setError('data'));
 }
 
 function isScrolledIntoView(elem)

@@ -1,11 +1,7 @@
-{% extends 'forum/index.html' %}
+{% extends 'base/base.html' %}
 
 {% load i18n %}
 {% load base_tags %}
-
-{% block load_data %}
-  $.getJSON('/forum/messages/data/'
-{% endblock %}
 
 {% block extra_meta %}
 
@@ -24,16 +20,21 @@
     </div>
   </div>
 
-  {{ block.super }}
+  <div id="data"></div>
+  <div id="pagination"></div>
+
 {% endblock %}
 
 {% block extra_script %}
-  {{ block.super }}
 
   <script src="{{STATIC_URL}}js/typeahead.min.js"></script>
   <script src="{{STATIC_URL}}js/hogan-2.0.0.min.js"></script>
+  <script src="{{STATIC_URL}}js/ajax.js"></script>
+
+  {% include 'base/loading.html' %}
 
   <script type="text/javascript" language="javascript">  
+    var ajax_url = '/forum/conversation/data/';
 
      $('#id_addressee').typeahead({
       name: 'addressee',
@@ -46,27 +47,40 @@
       engine: Hogan
     });
 
-     $('.tt-hint').addClass('form-control');
+    $('.tt-hint').addClass('form-control');
 
+    function addMessages(elem, entries) {
+      elem.html('');
 
-  </script>
-{% endblock %}
+      for (var i = 0; i < entries.length; i++) {
+        render_message(elem, entries[i]);
+      }
+    }
 
-{% block entry_rendering %}
+    function loadMessages(div_id, conversation_id) {
+      setLoading('popu' + div_id);
 
-    function render(i, e, last_end) {
+      $.getJSON('/forum/messages/data/', $.extend({}, ajax_get, {'conversation': conversation_id})).done(function(data) {
+        var entries = data.entries;
+        var pagination = data.pagination;
+
+        addMessages($('#popu' + div_id), entries);
+//        setupPagination(data.pagination);
+
+//        $('#pagination').html('');
+      }).error(
+        setError('popu' + div_id)
+      );
+    }
+
+    function render_message(elem, e) {
       var body = '';
-      var heading = '<h3 class="panel-title">{% trans 'Conversation with' %} ' + e.addressee + '</h3>';
-
-      var hidden = '';
 
       body += '<div class="text-right" style="color: #505050;"><small>' + e.date + '</small></div>';
-
       body += '<p>' + e.text + '</p>';
 
-      $('#data').append(
-        '<div class="panel panel-default ' + e.html_class + '" style="margin-bottom: 5px;">'
-        + '<div class="panel-heading">' + heading + '</div>'
+      elem.append(
+        '<div class="panel panel-default col-xs-offset-1" style="margin-bottom: 5px;">'
         + '<div class="panel-body" style="padding: 5px;">'
           + '<div class="row">'
             + '<div class="col-xs-2 visible-sm visible-md visible-lg">'
@@ -78,6 +92,36 @@
       + '</div>');
 
     }
+
+    function render(i, e, last_end) {
+      var body = '';
+
+      var footer = '';
+
+      body += '<div class="text-right" style="color: #505050;"><small>{% trans 'Last message' %}: ' + e.last_message + '</small></div>';
+      body += '<p>{% trans 'Conversation with' %} <a href="' + e.other_user_link + '">' + e.other_user + '</a></p>';
+
+      link = 'javascript:loadMessages(' + i + ');'
+
+      $('#data').append(
+        '<div class="panel panel-default ' + e.html_class + '" style="margin-bottom: 5px;">'
+        + '<div class="panel-body" style="padding: 5px;" onclick="' + link + '">'
+          + '<div class="row">'
+            + '<div class="col-xs-2 visible-sm visible-md visible-lg">'
+              + '<img src="' + e.avatar + '" width="100%" class="img-rounded" />'
+            + '</div>'
+            + '<div class="col-xs-10">' + body + '</div>'
+          + '</div>'
+        + '</div>'
+        + '<div class="panel-footer">' + footer + '</div>'
+      + '</div><div id="popu' + i + '"></div>');
+
+    }
+
+    $(document).ready(loadData());
+
+
+  </script>
 
 {% endblock %}
 
