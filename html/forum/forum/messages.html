@@ -36,7 +36,7 @@
   <script type="text/javascript" language="javascript">  
     var ajax_url = '/forum/conversation/data/';
 
-     $('#id_addressee').typeahead({
+    $('#id_addressee').typeahead({
       name: 'addressee',
       remote: '/forum/login/data/%QUERY.json',
       template: [                                                                 
@@ -49,8 +49,7 @@
 
     $('.tt-hint').addClass('form-control');
 
-    function addMessages(elem, entries) {
-      elem.html('');
+    function renderMessages(elem, entries) {
 
       for (var i = 0; i < entries.length; i++) {
         render_message(elem, entries[i]);
@@ -63,14 +62,44 @@
       $.getJSON('/forum/messages/data/', {'conversation': conversation_id}).done(function(data) {
         var entries = data.entries;
         var pagination = data.pagination;
+ 
+        elem = $('#popu' + div_id); 
+        elem.html('');
+        renderMessages(elem, entries);
+        setupMessagesPagination(data.pagination, data.entries[data.entries.length -1 ], conversation_id, div_id);
 
-        addMessages($('#popu' + div_id), entries);
-//        setupPagination(data.pagination);
-
-//        $('#pagination').html('');
       }).fail(function () {
         setError('popu' + div_id)
       });
+    }
+
+    function addMessages(conversation_id, filter_down, div_id) {
+      $.getJSON('/forum/messages/data/', {'conversation': conversation_id, 'filter_down': filter_down}).done(function(data) {
+        var entries = data.entries;
+        var pagination = data.pagination;
+
+        elem = $('#popu' + div_id);
+        renderMessages(elem, entries);
+        setupMessagesPagination(data.pagination, data.entries[data.entries.length - 1], conversation_id, div_id);
+
+        $('#pagination' + conversation_id).html('');
+      }).fail(function () {
+        setError('popu' + div_id)
+      });
+
+    }
+
+    function setupMessagesPagination(pg, e, c_id, div_id) {
+      if (pg.has_next) {
+        dynamic_pagination[c_id] = {};
+        dynamic_pagination[c_id].elem = '#pagination' + c_id;
+        dynamic_pagination[c_id].fnc = function() {
+          dynamic_pagination[c_id].fnc = function() {}
+          setLoading('pagination' + c_id);
+
+          addMessages(c_id, e.pk, div_id);
+        }
+      }
     }
 
     function render_message(elem, e) {
@@ -114,12 +143,26 @@
           + '</div>'
         + '</div>'
         + '<div class="panel-footer">' + footer + '</div>'
-      + '</div><div id="popu' + i + '"></div>');
+      + '</div><div id="popu' + i + '"></div><div id="pagination' + e.id  + '"></div>');
 
     }
 
     $(document).ready(loadData());
 
+    var dynamic_pagination = {};
+
+    window.onscroll = function () {
+      //pagination for conversations
+      if (isScrolledIntoView('#pagination')) {
+        loadDataMore(); //function definition keeps changing
+      }
+
+      for (var c_id in dynamic_pagination)
+      {
+        var dp = dynamic_pagination[c_id];
+        if (isScrolledIntoView(dp.elem)) dp.fnc();
+      }
+    }
 
   </script>
 
