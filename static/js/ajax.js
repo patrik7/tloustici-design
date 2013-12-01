@@ -27,6 +27,7 @@ function addData(entries) {
 function setupPagination(pagination) {
   if (pagination && pagination.has_next) {
     loadDataMore = function() {
+      loadDataMore = function () {}
       setLoading('pagination');
       
       $.getJSON(ajax_url + root, $.extend({}, ajax_get, {'page': pagination.page_number + 1})).done(function(data) {
