@@ -4,26 +4,36 @@
 
 {% block main %}
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title"><span class="glyphicon glyphicon-search"></span> {% trans 'Search Criteria' %}</h3>
+  {% if search_form %}
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><span class="glyphicon glyphicon-search"></span> {% trans 'Search Criteria' %}</h3>
+    </div>
+    <div class="panel-body">
+      <form class="form-horizontal">
+      {{search_form|bootstrap_horizontal:"col-sm-2"}}
+      </form>
+    </div>
   </div>
-  <div class="panel-body">
-    <form class="form-horizontal">
-    {{search_form|bootstrap_horizontal:"col-sm-2"}}
-    </form>
+
+  <div id="data">
   </div>
-</div>
 
-<div id="data">
-</div>
+  <div id="pagination">
+  </div>
 
-<div id="pagination">
-</div>
+  {% else %}
+  <div class="jumbotron">
+    <h3>{% trans 'Unfortunatelly, you cannot search for other users until you fill in the personal info on your' %} <a href="{% url profile user.username %}?focus=personal" >{% trans 'profile' %}</a>.</h3>
+    <p>{% trans 'Your compatibility with others cannot be estimated.' %}</p>
+  </div>
+  {% endif %}
 
 {% endblock %}
 
 {% block extra_script %}
+  {% if search_form %}
+
   {% include 'base/loading.html' %}
 
   <script src="{{STATIC_URL}}js/ajax.js"></script>
@@ -91,6 +101,7 @@
     window.onscroll = scrollFunction;
 
   </script>
+  {% endif %}
 {% endblock %}
 
 

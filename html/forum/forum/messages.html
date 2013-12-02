@@ -31,6 +31,14 @@
   <script src="{{STATIC_URL}}js/hogan-2.0.0.min.js"></script>
   <script src="{{STATIC_URL}}js/ajax.js"></script>
 
+  <script id="form_msg" type="bogus">
+    <div class="panel panel-info col-xs-offset-1">
+      <div class="panel-body">
+        {% include "form.html" with form=form_hidden_addressee name='' button='Send' %}
+      </div>
+    </div>
+  </script>
+
   {% include 'base/loading.html' %}
 
   <script type="text/javascript" language="javascript">  
@@ -56,7 +64,15 @@
       }
     }
 
-    function loadMessages(div_id, conversation_id) {
+    function addForm(elem, other_user) {
+      e = document.getElementById("form_msg");
+      elem.append(e.innerHTML);
+
+      elem.find('textarea').focus();
+      elem.find('#id_addressee').attr('value', other_user);
+    }
+
+    function loadMessages(div_id, conversation_id, other_user) {
       setLoading('popu' + div_id);
 
       $.getJSON('/forum/messages/data/', {'conversation': conversation_id}).done(function(data) {
@@ -65,6 +81,7 @@
  
         elem = $('#popu' + div_id); 
         elem.html('');
+        addForm(elem, other_user);
         renderMessages(elem, entries);
         setupMessagesPagination(data.pagination, data.entries[data.entries.length -1 ], conversation_id, div_id);
 
@@ -130,7 +147,7 @@
       body += '<div class="text-right" style="color: #505050;"><small>{% trans 'Last message' %}: ' + e.last_message + '</small></div>';
       body += '<p>{% trans 'Conversation with' %} <a href="' + e.other_user_link + '">' + e.other_user + '</a></p>';
 
-      link = 'javascript:loadMessages(' + i + ', ' + e.id + ');'
+      link = 'javascript:loadMessages(' + i + ', ' + e.id + ', \'' + e.other_user + '\');'
 
       $('#data').append(
         '<div class="panel panel-default ' + e.html_class + '" style="margin-bottom: 5px;">'
