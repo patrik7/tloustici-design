@@ -71,7 +71,11 @@
 
       var link = "";
       if (e.is_link) {
-        link = 'onClick="root = ' + e.pk + '; loadData()"';
+        if (e.pk == root) {
+            link = 'onClick="root = \'' + e.parent + '\'; loadData()"';
+        } else {
+            link = 'onClick="root = \'' + e.pk + '\'; loadData()"';
+        }
       }
 
 
@@ -99,6 +103,7 @@
       }
 
       body += '<p>' + e.text + '</p>';
+
 
       if (e.level > 0) {
         var s = i;
