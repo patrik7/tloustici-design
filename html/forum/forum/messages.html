@@ -85,6 +85,15 @@
       elem.find('#id_addressee').attr('value', other_user);
     }
 
+    function hideMessages(div_id, conversation_id, other_user) {
+      delete dynamic_pagination[conversation_id];
+      $('#popu' + div_id).html('');
+ 
+      c = $('#conversation' + div_id + ' .panel-body');
+      c.attr('onclick', 'javascript:loadMessages(' + div_id + ', ' + conversation_id + ', \'' + other_user + '\');');
+     
+    }
+
     function loadMessages(div_id, conversation_id, other_user) {
       setLoading('popu' + div_id);
 
@@ -97,6 +106,9 @@
         addForm(elem, other_user);
         renderMessages(elem, entries);
         setupMessagesPagination(data.pagination, data.entries[data.entries.length -1 ], conversation_id, div_id);
+
+        c = $('#conversation' + div_id + ' .panel-body');
+        c.attr('onclick', 'javascript:hideMessages(' + div_id + ', ' + conversation_id + ', \'' + other_user + '\');');
 
       }).fail(function () {
         setError('popu' + div_id)
@@ -163,7 +175,7 @@
       link = 'javascript:loadMessages(' + i + ', ' + e.id + ', \'' + e.other_user + '\');'
 
       $('#data').append(
-        '<div class="panel panel-default ' + e.html_class + '" style="margin-bottom: 5px;">'
+        '<div id="conversation' + i + '" class="panel panel-default ' + e.html_class + '" style="margin-bottom: 5px;">'
         + '<div class="panel-body link-glow" style="padding: 5px;" onclick="' + link + '">'
           + '<div class="row">'
             + '<div class="col-xs-2 visible-sm visible-md visible-lg">'
@@ -189,7 +201,7 @@
 
       for (var c_id in dynamic_pagination)
       {
-        var dp = dynamic_pagination[c_id];
+        var dp = dynamic_pagination[c_id];        
         if (isScrolledIntoView(dp.elem)) dp.fnc();
       }
     }
