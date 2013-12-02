@@ -2,6 +2,21 @@
 {% load i18n %}
 {% load bootstrap %}
 
+{% block extra_meta %}
+  <style>
+  .link-glow:hover {
+    border-color: rgba(82, 168, 236, 0.8);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+
+  }
+  </style>
+{% endblock %}
+
 {% block main %}
 
 <div id="data"></div>
@@ -99,7 +114,7 @@
 
       $('#data').append(
         '<div class="panel panel-default ' + e.html_class + '" style="margin-bottom: 5px;">'
-        + '<div class="panel-body" style="padding: 5px;" ' + link + '>'
+        + '<div class="panel-body link-glow" style="padding: 5px;" ' + link + '>'
           + '<div class="row">'
             + '<div class="col-xs-2 visible-sm visible-md visible-lg">'
               + '<img src="' + e.avatar + '" width="100%" class="img-rounded" />'
