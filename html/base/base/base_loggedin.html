@@ -1,0 +1,55 @@
+{% extends 'base/base.html' %}
+
+{% load i18n %}
+{% load bootstrap %}
+
+{% block body %}
+<div class="container">
+
+  <div class="page-header">
+    <h1>{% block title %}Hubneme ve dvou <small>.cz</small>{% endblock %}</h1>
+    <p class="lead">{% block subtitle %}{% trans 'Find your partner to help you loose weight!' %}{% endblock %}</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    {% block navigation %}
+
+        <ul class="nav nav-pills nav-stacked">
+          {% include 'base/navigation_list.html' %}
+        </ul>
+
+    {% endblock %}
+
+    {% block left %}
+    {% endblock %}
+
+    </div>
+
+    <div class="col-md-9">
+       {% include 'base/messages.html' %}
+
+      {% block main %}
+      {% endblock %}
+
+      {% block bottom %}
+      {% endblock %}
+
+    </div>
+
+  </div>
+
+    {% include 'base/footer.html' %}
+  </div> <!-- /container -->
+
+  <script type="text/javascript" language="javascript">
+    function performClick(node)
+    {
+      var evt = document.createEvent("MouseEvents");
+      evt.initEvent("click", true, false);
+      node.dispatchEvent(evt);
+    }
+  </script>
+
+{% endblock %}
+

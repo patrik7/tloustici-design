@@ -1,0 +1,30 @@
+{% extends base_template %}
+{% load bootstrap %}
+{% load i18n %}
+
+{% block main %}
+  <h2>Trápí tě kila navíc, ale nemáš s kým nebo pro koho hubnout?</h2>
+  <small>
+    <p>
+    Udělej první krok, najdi si toho správného parťáka a pusťte se do boje společně! Pokud hledáš kamarádku na společné hubnutí nebo třeba i životního partnera ke společným sportovním aktivitám, tak jsi rozhodně na správném místě.
+    </p>
+    <p class="lead">Nakopni konečně své štěstí, ve dvou se to přece lépe táhne!</p>
+  </small>
+
+  <p>
+    <form method="post" action="{% url register %}" class="form-inline">
+      {% csrf_token %}
+      {{form|bootstrap_inline}}
+      <button type="submit" class="btn btn-primary" name="first_step">{% trans 'Create an Account' %}</button>
+    </form>
+  </p>
+{% endblock %}
+
+{% block bottom %}
+
+  <div class="row">
+    {% include 'articles/preview_columns.html' %}
+  </div>
+
+{% endblock %}
+

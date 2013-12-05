@@ -1,6 +1,5 @@
 {% load i18n %}
 {% load bootstrap %}
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,141 +35,6 @@
 
   <body>
     {% block body %}
-    <div class="container">
-
-      <div class="page-header">
-        <h1>{% block title %}Hubneme ve dvou <small>.cz</small>{% endblock %}</h1>
-        <p class="lead">{% block subtitle %}{% trans 'Find your partner to help you loose weight!' %}{% endblock %}</p>
-      </div>
-
-      <div class="row">
-        <div class="col-md-3 col-md-push-9">
-        {% block right %}
-          {% if user.is_authenticated %}
-            <div class="well text-center">
-                <div style="position: relative; width: 120px; height: 120px; margin-left: auto; margin-right: auto;">
-                  <img src="{{user.forum_profile.avatar_url}}" class="img-rounded link-glow" width=120 height=120 onclick="javascript:performClick(document.getElementById('id_avatar'))" />
-                  <div style="position:absolute; bottom: -1px; right: 3px; color: #505050; ">
-                     <small><small>
-                       {% trans 'Change Picture' %} <span class="glyphicon glyphicon-repeat"></span>
-                     </small></small>
-                  </div>
-                  <div style="position:absolute; bottom: 0px; right: 4px; color: #FFFFFF;">
-                     <small><small>
-                       {% trans 'Change Picture' %} <span class="glyphicon glyphicon-repeat"></span>
-                     </small></small>
-                  </div>
-
-                </div>
-                <div class="hidden">
-                  <form action="{% url profile user.username %}" method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{avatar_form}}
-                    <input type="hidden" name="uploadavatar" value=""/>
-                  </form>
-                </div>
-
-            </div>
-
-            <div class="well text-center">
-              <p>{% trans 'Hey! Have you found your partner yet?' %} - <a href="{% url search %}">{% trans 'Search for Partner' %}</a></p>
-            </div>
-
-          {% else %}
-
-
-            <div class="well">
-            <p>{% trans 'Welcome. Please log in or' %} <a href="{% url register %}">{% trans 'register' %}</a>.</p>
-
-            <form id="login_form" method="post" action="{% url login %}" class="form-horizontal">
-              {% csrf_token %}
-              {% if login_form %}
-                {{ login_form|bootstrap }}
-              {% elif login_form_empty %}
-                {{ login_form_empty|bootstrap }}
-              {% endif %}
-
-              <p><a href="{% url password_recovery %}">{% trans 'Forgot your password?' %}</a></p>
-
-              <div class="form-actions">
-                <input type="submit" class="btn btn-primary" value="{% trans 'Log in' %}" />
-              </div>
-            </form>
-
-            </div>
-
-
-          {% endif %}
-
-        {% endblock %}
-        </div>
-
-        <div class="col-md-3 col-md-pull-3">
-        {% block navigation %}
-
-            <ul class="nav nav-pills nav-stacked">
-              {% if user.is_superuser %}
-                <li id="navadmin"><a href="{% url admin:index %}">{% trans "Administration" %}</a></li>
-                <li id="reloadstatic"><a href="{% url reload_static %}">Reload Static</a></li>
-              {% endif %}
-
-              {% for item in navigation %}
-                <li class="{{ item.cls }}">
-                  <a href="{{ item.url }}" ><span class="glyphicon glyphicon-{{item.icon}}"></span> {{ item.label }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-
-        {% endblock %}
-
-        {% block left %}
-{% comment %}
-          <div class="panel panel-info hidden-xs">
-            <div class="panel-heading">
-              {% trans 'Donate' %}
-            </div>
-            <div class="panel-body">
-              <img src="{{STATIC_URL}}images/donate.png" width="100%" />
-            </div>
-          </div>
-{% endcomment %}
-        {% endblock %}
-
-        </div>
-
-        <div class="col-md-6 col-md-pull-3">
-        {% block messages %}
-
-          {% if messages %}
-            {% for message in messages %}
-              <div class="alert alert-{{message.tags}}" >
-                {{ message }}
-                <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
-              </div>
-            {% endfor %}
-          {% endif %}
-
-        {% endblock %}
-
-        {% block main %}
-
-        {% endblock %}
-
-        </div>
-
-      </div>
-
-        <div class="footer" style="margin-top: 10px;">
-          <div class="well text-center">
-          {% block footer %}
-          <p>&copy; hubnemevedvou.cz</p>
-          <a href="mailto:webmaster@hubnemevedvou.cz">webmaster@hubnemevedvou.cz</a>
-          {% endblock %}
-          </div>
-        </div>
-      </div> <!-- /container -->
-    
-
     {% endblock %}
 
 
@@ -184,16 +48,6 @@
     {% endblock %}
 
   </body>
-
-  <script type="text/javascript" language="javascript">
-    function performClick(node)
-    {
-      var evt = document.createEvent("MouseEvents");
-      evt.initEvent("click", true, false);
-      node.dispatchEvent(evt);
-    }
-  </script>
-
 </html>
 
 

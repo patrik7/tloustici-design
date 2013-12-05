@@ -1,4 +1,4 @@
-{% extends 'base/base.html' %}
+{% extends base_template %}
 
 {% load i18n %}
 
@@ -8,77 +8,11 @@
 <div class="hidden-sm hidden-xs" style="height: 50px" >
 </div>
 
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h3 class="panel-title">BMI - {% trans 'Body Mass Index' %}</h3>
-  </div>
-  <div class="panel-body">
-    <div class="row">
-      <div class="col-lg-6 col-md-12">
-        <div class="input-group input-group-sm">
-          <input id="bmi_cm" type="text" class="form-control" placeholder="{% trans 'Height' %}" onkeyup="javascript:calculate_bmi()" value="{{bmi_cm}}" />
-          <span class="input-group-addon">cm</span>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-12">
-        <div class="input-group input-group-sm">
-          <input id="bmi_kg" type="text" class="form-control" placeholder="{% trans 'Weight' %}" onkeyup="javascript:calculate_bmi()" value="{{bmi_kg}}" />
-          <span class="input-group-addon">kg</span>
-        </div>
-      </div>
-    </div>
-    <p>
-      <div id="bmi_text" class="well text-center">
-        {% trans 'Enter values above, to get yoru BMI.' %}
-      </div>
-    </p>
-  </div>
-</div>
+{% include 'articles/bmi.html' %}
 
 {% endblock %}
 
 {% block extra_script %}
-  <script type="text/javascript" language="javascript">
-    var text = new Array();
-    var vls = new Array();
-
-    vls[0]  = 18.5;
-    text[0] = "{% trans 'Underweight' %} (< " + vls[0] + ")";
-    vls[1]  = 24.9;
-    text[1] = "{% trans 'Normal Weight' %} (" + (vls[0] + 0.1) + " - " + vls[1] + ")";
-    vls[2]  = 29.9;
-    text[2] = "{% trans 'Overweight' %} (" + (vls[1] + 0.1) + " - " + vls[2] + ")";
-    text[3] = "{% trans 'Obesity' %} (> " + (vls[2] + 0.1) + ")";
-
-    function calculate_bmi() {
-      //load data
-      var cm = parseInt(document.getElementById('bmi_cm').value);
-      var kg = parseInt(document.getElementById('bmi_kg').value);
-
-      if (!isNaN(cm) && !isNaN(kg)) {
-          var m = cm/100.0;
-          var h2 = m*m;
-
-          var bmi = kg/h2;
-
-          //round to single decimal
-          bmi *= 10;
-          bmi = Math.round(bmi);
-          bmi /= 10.0;
-
-          var bmi_text = text[3];
-
-          for (var i = 0; i < 4; i++) {
-            if (bmi <= vls[i]) {
-              bmi_text = text[i];
-              break;
-            }
-          }
-
-          $('#bmi_text').html('<b>' + bmi + '</b><br/>' + bmi_text);
-      }
-    }
-
-    calculate_bmi();
-  </script>
+  {{super.extra_script}}
+  <script src="{{STATIC_URL}}js/bmi.js"></script>
 {% endblock %}

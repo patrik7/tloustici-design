@@ -1,0 +1,43 @@
+{% extends 'base/base.html' %}
+
+{% load i18n %}
+{% load bootstrap %}
+
+{% block body %}
+    <div class="container">
+      <div class="header">
+        {% block navigation %}
+          <ul class="nav nav-pills pull-right">
+            {% include 'base/navigation_list.html' %}
+          </ul>
+        {% endblock %}
+
+        <h3 class="text-muted">{% block title %}Hubneme ve dvou <small>.cz</small>{% endblock %}</h3>
+        <hr/>
+      </div>
+      <div class="row">
+        <div class="col-sm-9">
+          {% include 'base/messages.html' %}
+          <div class="jumbotron">
+            {% block main %}
+            {% endblock %}
+          </div>
+        </div>
+        <div class="col-sm-3">
+          {% block right %}
+            {% include 'articles/bmi.html' %}
+          {% endblock %}
+        </div>
+      </div>
+
+      {% block bottom %}
+      {% endblock %}
+
+      {% include 'base/footer.html' %}
+
+    </div>
+{% endblock %}
+
+{% block extra_script %}
+  <script src="{{STATIC_URL}}js/bmi.js"></script>
+{% endblock %}
