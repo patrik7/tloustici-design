@@ -12,16 +12,14 @@
           </ul>
         {% endblock %}
 
-        <h3 class="text-muted">{% block title %}Hubneme ve dvou <small>.cz</small>{% endblock %}</h3>
+        <h2>{% block title %}Hubneme<span class="text-muted">ve</span>dvou<span class="text-muted">.cz</span>{% endblock %}</h2>
         <hr/>
       </div>
       <div class="row">
         <div class="col-sm-9">
           {% include 'base/messages.html' %}
-          <div class="jumbotron">
-            {% block main %}
-            {% endblock %}
-          </div>
+          {% block main %}
+          {% endblock %}
         </div>
         <div class="col-sm-3">
           {% block right %}

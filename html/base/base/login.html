@@ -3,5 +3,23 @@
 {% load i18n %}
 
 {% block main %}
-  {% include 'base/login_form.html' %}
+  <div class="panel panel-default">
+    <div class="panel-heading">
+       <h4>{% trans 'Log in' %}</h4>
+    </div>
+    <div class="panel-body">
+      <form id="login_form" method="post" action="{% url login %}" class="form-horizontal">
+        {% csrf_token %}
+        {{ login_form|bootstrap_horizontal:"col-xs-2" }}
+
+        <div class="col-xs-offset-2">
+          <p><a href="{% url password_recovery %}">{% trans 'Forgot your password?' %}</a></p>
+
+          <div class="form-actions">
+            <input type="submit" class="btn btn-primary" value="{% trans 'Log in' %}" />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 {% endblock %}
