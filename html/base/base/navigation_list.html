@@ -3,16 +3,21 @@
 {% if user.is_superuser %}
   <li id="navadmin"><a href="{% url admin:index %}">{% trans "Administration" %}</a></li>
   <li id="reloadstatic"><a href="{% url reload_static %}">Reload Static</a></li>
+  <hr/>
 {% endif %}
 
 {% for item in navigation %}
   <li class="{{ item.cls }}">
-    <a href="{{ item.url }}" >
-    {% if item.icon == 'avatar' %}
-      <img src="{{user.forum_profile.avatar_url}}" style="width: 28px; height: auto;" /> {{ item.label }}
+    {% if item.delimiter %}
+      <hr/>
     {% else %}
-      <span class="glyphicon glyphicon-{{item.icon}}"></span> {{ item.label }}
+      <a href="{{ item.url }}" >
+      {% if item.icon == 'avatar' %}
+        <img src="{{user.forum_profile.avatar_url}}" style="width: 28px; height: auto;" /> {{ item.label }}
+      {% else %}
+        <span class="glyphicon glyphicon-{{item.icon}}"></span> {{ item.label }}
+      {% endif %}
+      </a>
     {% endif %}
-    </a>
   </li>
 {% endfor %}
