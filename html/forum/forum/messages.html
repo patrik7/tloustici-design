@@ -157,7 +157,11 @@
       var footer = '';
 
       body += '<div class="text-right" style="color: #505050;"><small>{% trans 'Last message' %}: ' + e.last_message + '</small></div>';
-      body += '<p>{% trans 'Conversation with' %} <a href="' + e.other_user_link + '">' + e.other_user + '</a></p>';
+      body += '<p>{% trans 'Conversation with' %} <a href="' + e.other_user_link + '">' + e.other_user + '</a>';
+      if (e.unread > 0) {
+        body += ' <span class="badge">' + e.unread + '</span>'; 
+      }
+      body += '</p>';
 
       link = 'javascript:loadMessages(' + i + ', ' + e.id + ', \'' + e.other_user + '\');'
 
