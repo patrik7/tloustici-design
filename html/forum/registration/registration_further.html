@@ -2,6 +2,10 @@
 {% load bootstrap %}
 {% load i18n %}
 
+{% block extra_meta %}
+  <link href="{{STATIC_URL}}css/datepicker.css" rel="stylesheet" />
+{% endblock %}
+
 {% block main %}
   <div class="jumbotron">
     {% if step == 1 %}
@@ -27,11 +31,24 @@
       </small>
     {% endif %}
 
+
     {% if step < 4 %}
 
       <div class="panel pandel-default">
         <div class="panel-body">
-          {% include 'form.html' with name=button_name %}
+          {% if step == 1 %}
+            <form action="{% url register %}" method="POST" class="form-horizontal">
+              {% csrf_token %}
+              {% include 'forum/profile/form_activities_fields.html' %}
+              <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                  <button type="submit" class="btn btn-primary" name="{{button_name}}">{% trans button %}</button>
+                </div>
+              </div>              
+            </form>
+          {% else %}
+            {% include 'form.html' with name=button_name %}
+          {% endif %}
         </div>
       </div>
 
@@ -44,6 +61,13 @@
   </div>
 {% endblock %}
 
-{% block bottom %}
-{% endblock %}
+{% block extra_script %}
+  <script src="{{STATIC_URL}}js/bootstrap-datepicker.js"></script>
 
+  <script type="text/javascript" language="javascript">
+    $('#id_date_of_birth').datepicker({
+      format: 'dd.mm.yyyy',
+      viewMode: 2
+    });
+  </script>
+{% endblock %}
