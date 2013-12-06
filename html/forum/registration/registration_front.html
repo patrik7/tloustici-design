@@ -16,7 +16,7 @@
     <form method="post" action="{% url register %}" class="form-inline">
       {% csrf_token %}
       {{form|bootstrap_inline}}
-      <button type="submit" class="btn btn-primary" name="first_step">{% trans 'Create an Account' %}</button>
+      <input type="submit" class="btn btn-primary" name="{{button_name}}" value="{{form.submit}}" />
     </form>
   </p>
   </div>

@@ -1,0 +1,49 @@
+{% extends base_template %}
+{% load bootstrap %}
+{% load i18n %}
+
+{% block main %}
+  <div class="jumbotron">
+    {% if step == 1 %}
+      <h2>{% trans 'Which sports and activities do you like' %}?</h2>
+      <small>
+        <p class="lead">
+          {% trans 'Tell us what you like to do, so we can find the best match for you.' %}
+        </p>
+      </small>
+    {% elif step == 2 %}
+      <h2>{% trans 'Tell us about yourself' %}?</h2>
+      <small>
+        <p class="lead">
+          {% trans 'Filling up basic info is necessary for using the search functionality.' %}
+        </p>
+      </small>
+    {% elif step == 3 %}
+      <h2>{% trans 'And finally' %} ..</h2>
+      <small>
+        <p class="lead">
+          {% trans 'Please create a password so you can safely use the website.' %}
+        </p>
+      </small>
+    {% endif %}
+
+    {% if step < 4 %}
+
+      <div class="panel pandel-default">
+        <div class="panel-body">
+          {% include 'form.html' with name=button_name %}
+        </div>
+      </div>
+
+    {% else %}
+      <h2>{% trans 'Congratulations, that is all the info we need.' %}</h2>
+      <p>
+        {% trans 'Follow the instructions sent to your email to finish the registration.' %}
+      </p>
+    {% endif %}
+  </div>
+{% endblock %}
+
+{% block bottom %}
+{% endblock %}
+
