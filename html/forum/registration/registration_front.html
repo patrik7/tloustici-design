@@ -22,6 +22,12 @@
   </div>
 {% endblock %}
 
+{% block right %}
+  {{block.super}}
+
+  {% include 'form_suggest.html' %}
+{% endblock %}
+
 {% block bottom %}
 
   <div class="row">

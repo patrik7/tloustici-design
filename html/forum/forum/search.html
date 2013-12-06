@@ -31,6 +31,12 @@
 
 {% endblock %}
 
+{% block left %}
+  <div class="hidden-sm hidden-xs" style="margin-top: 50px;">
+    {% include 'form_suggest.html' %}
+  </div>
+{% endblock %}
+
 {% block extra_script %}
   {% if search_form %}
 

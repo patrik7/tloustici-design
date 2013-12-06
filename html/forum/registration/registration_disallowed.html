@@ -1,10 +1,9 @@
-{% extends base_template %}
+{% extends 'registration/registration_msg.html' %}
 
 {% load i18n %}
 
-{% block main %}
+{% block message %}
 
-<div class="jumbotron">
 <h3><span class="glyphicon glyphicon-lock"></span> {% trans 'Registraion is currently closed' %}</h3>
 
 <p>
@@ -14,8 +13,6 @@
 <p>
 <small>{% trans 'Try again later.' %}</small>
 </p>
-
-</div>
 
 {% endblock %}
 

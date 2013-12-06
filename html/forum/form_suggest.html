@@ -1,0 +1,17 @@
+{% load i18n %}
+{% load bootstrap %}
+
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      {% trans 'Suggest to a friend' %}      
+    </div>
+    <div class="panel-body">
+      <form action="{{suggest_action}}" method="POST" class="form-inline">
+        {% csrf_token %}
+        <input type="hidden" name="redirect_url" value="{{request.path}}" >
+        {{form_suggest|bootstrap_inline}}
+        <input type="submit" class="btn btn-default input-sm" name="suggest" value="{% trans 'Send' %}" />
+      </form>
+    </div>
+  </div>
+
