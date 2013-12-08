@@ -56,6 +56,16 @@
     <div class="panel-body">
       <form action="{{action}}" class="form" method="POST" >
         {% csrf_token %}
+
+        {% if form_act.non_field_errors %}
+          <div class="alert alert-danger">
+            <a class="close" data-dismiss="alert">&times;</a>
+            {% for non_field_error in form_act.non_field_errors %}
+              {{ non_field_error }}
+            {% endfor %}
+          </div>
+        {% endif %}
+
         {% include 'forum/profile/form_activities_fields.html' with form=form_act %}
         <div class="form-group">
           <div class="col-sm-9">
