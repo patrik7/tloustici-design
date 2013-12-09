@@ -37,12 +37,15 @@
     {% block body %}
     {% endblock %}
 
+    {% block base_script %}
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
     <script src="{{STATIC_URL}}js/alert.js"></script>
+
+    {% endblock %}
 
     {% block extra_script %}
     {% endblock %}

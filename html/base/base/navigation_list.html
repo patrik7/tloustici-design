@@ -17,6 +17,9 @@
       {% else %}
         <span class="glyphicon glyphicon-{{item.icon}}"></span> {{ item.label }}
       {% endif %}
+      {% if item.icon == 'envelope' %}
+        <span id="messages_unread" class="badge"></span>
+      {% endif %}
       </a>
     {% endif %}
   </li>

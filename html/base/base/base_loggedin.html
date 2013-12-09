@@ -43,5 +43,23 @@
     {% include 'base/footer.html' %}
   </div> <!-- /container -->
 
+  {% block base_script %}
+
+    {{block.super}}
+
+    <script type="text/javascript" language="javascript">
+      var updateUnreadMessages = function() {
+        $.getJSON('/forum/messages/unread/', {}).done(function(unread) {
+          if (unread == 0) unread = '';
+          $('#messages_unread').html(unread);
+        });
+      }
+      setInterval(updateUnreadMessages, 10000);
+
+      updateUnreadMessages();
+    </script>
+
+  {% endblock %}
+
 {% endblock %}
 

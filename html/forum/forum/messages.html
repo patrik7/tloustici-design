@@ -7,6 +7,9 @@
 
   <link href="{{STATIC_URL}}css/typeahead.js-bootstrap.css" rel="stylesheet" />
 
+  <style>
+    .unread { background-color:#b0c4de; }
+  </style>
 {% endblock %}
 
 {% block main %}
@@ -57,10 +60,17 @@
 
     $('.tt-hint').addClass('form-control');
 
-    function renderMessages(elem, entries) {
+    function renderMessages(elem, entries, unread) {
 
       for (var i = 0; i < entries.length; i++) {
-        render_message(elem, entries[i]);
+        var mark_unread = false;
+        if (unread > 0) {
+          if (entries[i].other_user != '{{user.username}}') {
+            mark_unread = true;
+            unread--;
+          }
+        }
+        render_message(elem, entries[i], mark_unread);
       }
     }
 
@@ -77,21 +87,24 @@
       $('#popu' + div_id).html('');
  
       c = $('#conversation' + div_id + ' .panel-body');
-      c.attr('onclick', 'javascript:loadMessages(' + div_id + ', ' + conversation_id + ', \'' + other_user + '\');');
+      c.attr('onclick', 'javascript:loadMessages(' + div_id + ', ' + conversation_id + ', \'' + other_user + '\', 0);');
      
     }
 
-    function loadMessages(div_id, conversation_id, other_user) {
+    function loadMessages(div_id, conversation_id, other_user, unread) {
       setLoading('popu' + div_id);
 
       $.getJSON('/forum/messages/data/', {'conversation': conversation_id}).done(function(data) {
         var entries = data.entries;
         var pagination = data.pagination;
- 
-        elem = $('#popu' + div_id); 
+
+        //remove badge 
+        $('#conversation' + div_id + ' .badge').remove();
+
+        elem = $('#popu' + div_id);
         elem.html('');
         addForm(elem, other_user);
-        renderMessages(elem, entries);
+        renderMessages(elem, entries, unread);
         setupMessagesPagination(data.pagination, data.entries[data.entries.length -1 ], conversation_id, div_id);
 
         c = $('#conversation' + div_id + ' .panel-body');
@@ -108,7 +121,7 @@
         var pagination = data.pagination;
 
         elem = $('#popu' + div_id);
-        renderMessages(elem, entries);
+        renderMessages(elem, entries, 0);
         setupMessagesPagination(data.pagination, data.entries[data.entries.length - 1], conversation_id, div_id);
 
         $('#pagination' + conversation_id).html('');
@@ -131,15 +144,15 @@
       }
     }
 
-    function render_message(elem, e) {
+    function render_message(elem, e, unread) {
       var body = '';
 
-      body += '<div class="text-right" style="color: #505050;"><small>' + e.date + '</small></div>';
+      body += '<div class="pull-right text-muted"><small>' + e.date + '</small></div>';
       body += '<p>' + e.text + '</p>';
 
       elem.append(
         '<div class="panel panel-default col-xs-offset-1" style="margin-bottom: 5px;">'
-        + '<div class="panel-body" style="padding: 5px;">'
+        + '<div class="panel-body' + (unread ? ' unread' : '') + '" style="padding: 5px;">'
           + '<div class="row">'
             + '<div class="col-xs-2 visible-sm visible-md visible-lg">'
               + '<img src="' + e.avatar + '" width="100%" class="img-rounded" />'
@@ -163,7 +176,7 @@
       }
       body += '</p>';
 
-      link = 'javascript:loadMessages(' + i + ', ' + e.id + ', \'' + e.other_user + '\');'
+      link = 'javascript:loadMessages(' + i + ', ' + e.id + ', \'' + e.other_user + '\', ' + e.unread + ');'
 
       $('#data').append(
         '<div id="conversation' + i + '" class="panel panel-default ' + e.html_class + '" style="margin-bottom: 5px;">'
