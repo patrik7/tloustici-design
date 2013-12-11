@@ -43,23 +43,24 @@
     {% include 'base/footer.html' %}
   </div> <!-- /container -->
 
-  {% block base_script %}
+{% endblock %}
 
-    {{block.super}}
+{% block base_script %}
 
-    <script type="text/javascript" language="javascript">
-      var updateUnreadMessages = function() {
-        $.getJSON('/forum/messages/unread/', {}).done(function(unread) {
-          if (unread == 0) unread = '';
-          $('#messages_unread').html(unread);
-        });
-      }
-      setInterval(updateUnreadMessages, 10000);
+  {{block.super}}
 
-      updateUnreadMessages();
-    </script>
+  <script type="text/javascript" language="javascript">
+    var updateUnreadMessages = function() {
+      $.getJSON('/forum/messages/unread/', {}).done(function(unread) {
+        if (unread == 0) unread = '';
+        $('#messages_unread').html(unread);
+      });
+    }
+    setInterval(updateUnreadMessages, 10000);
 
-  {% endblock %}
+    updateUnreadMessages();
+  </script>
 
 {% endblock %}
+
 

@@ -36,8 +36,19 @@ function calculate_bmi() {
       }
 
       $('#bmi_text').html('<b>' + bmi + '</b><br/>' + bmi_text);
+      $('#bmi_number').html(bmi);
   }
 }
 
 calculate_bmi();
 
+$('#bmi_accordion .panel-collapse').on('show.bs.collapse', function () {
+  $('#bmi_header_full').removeClass("hidden");
+  $('#bmi_header_collapsed').addClass("hidden");
+
+});
+
+$('#bmi_accordion .panel-collapse').on('hidden.bs.collapse', function () {
+  $('#bmi_header_full').addClass("hidden");
+  $('#bmi_header_collapsed').removeClass("hidden");
+});

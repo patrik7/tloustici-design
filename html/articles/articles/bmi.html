@@ -1,30 +1,44 @@
 {% load i18n %}
 
+<div id="bmi_accordion" class="panel-group">
 <div class="panel panel-info">
   <div class="panel-heading">
-    <h3 class="panel-title">BMI - {% trans 'Body Mass Index' %}</h3>
+    <h3 id="bmi_header_full" class="panel-title{% if bmi_collapsed %} hidden{% endif %}">
+      <a data-toggle="collapse" data-parent="bmi_accordion" href="#collapseBMI">
+        <span class="glyphicon glyphicon-chevron-down"></span>
+        BMI - {% trans 'Body Mass Index' %}</h3>
+      </a>
+    <h3 id="bmi_header_collapsed" class="panel-title{% if not bmi_collapsed %} hidden{% endif %}">
+      <a data-toggle="collapse" data-parent="bmi_accordion" href="#collapseBMI">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        {% trans 'Your BMI is' %} <b><span id="bmi_number"></span></b>
+      </a>
+    </h3>
   </div>
-  <div class="panel-body">
-    <div class="row">
-      <div class="col-lg-6 col-md-12">
-        <div class="input-group input-group-sm">
-          <input id="bmi_cm" type="text" class="form-control" placeholder="{% trans 'Height' %}" onkeyup="javascript:calculate_bmi()" value="{{bmi_cm}}" />
-          <span class="input-group-addon">cm</span>
+  <div id="collapseBMI" class="panel-collapse collapse{% if not bmi_collapsed %} in{% endif %}">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <div class="input-group input-group-sm">
+            <input id="bmi_cm" type="text" class="form-control" placeholder="{% trans 'Height' %}" onkeyup="javascript:calculate_bmi()" value="{{bmi_cm}}" />
+            <span class="input-group-addon">cm</span>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+          <div class="input-group input-group-sm">
+            <input id="bmi_kg" type="text" class="form-control" placeholder="{% trans 'Weight' %}" onkeyup="javascript:calculate_bmi()" value="{{bmi_kg}}" />
+            <span class="input-group-addon">kg</span>
+          </div>
         </div>
       </div>
-      <div class="col-lg-6 col-md-12">
-        <div class="input-group input-group-sm">
-          <input id="bmi_kg" type="text" class="form-control" placeholder="{% trans 'Weight' %}" onkeyup="javascript:calculate_bmi()" value="{{bmi_kg}}" />
-          <span class="input-group-addon">kg</span>
+      <p>
+        <div id="bmi_text" class="well text-center">
+          {% trans 'Enter values above, to get your BMI.' %}
         </div>
-      </div>
+      </p>
     </div>
-    <p>
-      <div id="bmi_text" class="well text-center">
-        {% trans 'Enter values above, to get your BMI.' %}
-      </div>
-    </p>
   </div>
+</div>
 </div>
 
 
