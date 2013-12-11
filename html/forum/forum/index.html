@@ -4,9 +4,23 @@
 
 {% block main %}
 
-<div id="data"></div>
+<div class="row">
 
-<div id="pagination"></div>
+  <div class="col-md-3">
+    <ul class="nav nav-pills nav-stacked">
+      {% for l in top_level %}
+        <li class="{% if root|add:0 == l.id %}active{% endif %}"><a href="{% url forum_post root=l.id %}">{{l.body}}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="col-md-9">
+    <div id="data"></div>
+
+    <div id="pagination"></div>
+  </div>
+
+</div>
 
 {% endblock %}
 
