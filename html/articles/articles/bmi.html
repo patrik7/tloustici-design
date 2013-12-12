@@ -11,7 +11,12 @@
     <h3 id="bmi_header_collapsed" class="panel-title{% if not bmi_collapsed %} hidden{% endif %}">
       <a data-toggle="collapse" data-parent="bmi_accordion" href="#collapseBMI">
         <span class="glyphicon glyphicon-chevron-right"></span>
-        {% trans 'Your BMI is' %} <b><span id="bmi_number"></span></b>
+        <span id="bmi_header_computed" class="hidden">
+          {% trans 'Your BMI is' %} <b><span id="bmi_number"></span></b>
+        </span>
+        <span id="bmi_header_unknown">
+          {% trans 'Find out your BMI' %}
+        </span>
       </a>
     </h3>
   </div>

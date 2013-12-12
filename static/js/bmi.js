@@ -37,6 +37,13 @@ function calculate_bmi() {
 
       $('#bmi_text').html('<b>' + bmi + '</b><br/>' + bmi_text);
       $('#bmi_number').html(bmi);
+
+      $('#bmi_header_computed').removeClass("hidden");
+      $('#bmi_header_unknown').addClass("hidden");
+
+  } else {
+    $('#bmi_header_computed').addClass("hidden");
+    $('#bmi_header_unknown').removeClass("hidden");
   }
 }
 
