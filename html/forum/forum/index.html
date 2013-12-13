@@ -47,7 +47,7 @@
       elem = document.getElementById("form_template");
 
       var txt = 
-        '<form method="post" action="/forum/' + reply_to + '/" class="form">'
+        '<form method="post" action="/' + reply_to + '/" class="form">'
         + "{% csrf_token %}"
         + elem.innerHTML
         + '<div class="form-group">'
@@ -152,7 +152,7 @@
 
     {% endblock %}
 
-    var ajax_url = '/forum/data/';
+    var ajax_url = '/data/';
 
     {% if root %}
       root = '{{root}}';
