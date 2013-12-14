@@ -36,7 +36,7 @@
       <div class="panel pandel-default">
         <div class="panel-body">
           {% if step == 1 %}
-            <form action="{% url register %}" method="POST" class="form-horizontal">
+            <form action="{% url register_step step %}" method="POST" class="form-horizontal">
               {% csrf_token %}
               {% include 'forum/profile/form_activities_fields.html' %}
               <div class="form-group">

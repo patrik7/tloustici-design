@@ -13,7 +13,7 @@
   </small>
 
   <p>
-    <form method="post" action="{% url register %}" class="form-inline">
+    <form method="post" action="{% url register_step 0 %}" class="form-inline">
       {% csrf_token %}
       {{form|bootstrap_inline}}
       <input type="submit" class="btn btn-primary" name="{{button_name}}" value="{{form.submit}}" />
