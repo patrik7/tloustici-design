@@ -1,0 +1,5 @@
+{% for a in recent_articles %}
+  <p>
+    {% include 'articles/preview.html' with article=a size='small' %}
+  </p>
+{% endfor %}

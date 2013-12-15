@@ -45,7 +45,7 @@
   {% include 'base/loading.html' %}
 
   <script type="text/javascript" language="javascript">  
-    var ajax_url = '/forum/conversation/data/';
+    var ajax_url = '/conversation/data/';
 
     $('#id_addressee').typeahead({
       name: 'addressee',
@@ -94,7 +94,7 @@
     function loadMessages(div_id, conversation_id, other_user, unread) {
       setLoading('popu' + div_id);
 
-      $.getJSON('/forum/messages/data/', {'conversation': conversation_id}).done(function(data) {
+      $.getJSON('/messages/data/', {'conversation': conversation_id}).done(function(data) {
         var entries = data.entries;
         var pagination = data.pagination;
 
@@ -116,7 +116,7 @@
     }
 
     function addMessages(conversation_id, filter_down, div_id) {
-      $.getJSON('/forum/messages/data/', {'conversation': conversation_id, 'filter_down': filter_down}).done(function(data) {
+      $.getJSON('/messages/data/', {'conversation': conversation_id, 'filter_down': filter_down}).done(function(data) {
         var entries = data.entries;
         var pagination = data.pagination;
 

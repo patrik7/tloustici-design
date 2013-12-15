@@ -22,8 +22,14 @@
 
     {% endblock %}
 
-    {% block left %}
+    {% block left %}      
     {% endblock %}
+
+    {% include 'articles/recent_articles.html' %}
+
+    {% if friend_suggestion %}
+      {% include 'forum/friend_suggestion.html' with s=friend_suggestion %}
+    {% endif %}
 
     </div>
 
