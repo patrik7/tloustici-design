@@ -31,7 +31,8 @@
   </div>
   <div class="panel-footer text-right">
     <div class="btn-group btn-group-xs">
-      <a href="{% url messages %}?addressee={{s.profile.user.username}}" class="btn btn-default"><span class="glyphicon glyphicon-envelope"></span> Send Message</a>
+      <a class="btn btn-default"><span class="glyphicon glyphicon-pushpin"></span> {% trans 'Add to Favourites' %}</a>
+      <a href="{% url messages %}?addressee={{s.profile.user.username}}" class="btn btn-default"><span class="glyphicon glyphicon-envelope"></span> {% trans 'Send Message' %}</a>
     </div>
   </div>
 </div>

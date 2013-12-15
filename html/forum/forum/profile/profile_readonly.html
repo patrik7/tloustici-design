@@ -49,8 +49,8 @@
       </div>
       <div class="panel-footer">
         <div class="row">
-          <div class="col-xs-6" ></div>
-          <div class="col-xs-6 text-right">
+          <div class="col-xs-2" ></div>
+          <div class="col-xs-10 text-right">
             <div class="btn-group btn-group-sm">
               {% if user.is_superuser and user != profile %}
                 <a href="#" class="btn btn-danger">
@@ -65,6 +65,7 @@
                 </a>
               {% endif %}
               {% if user != profile %}
+                <a class="btn btn-default"><span class="glyphicon glyphicon-pushpin"></span> {% trans 'Add to Favourites' %}</a>                
                 <a href="{% url messages %}?addressee={{profile.username}}" class="btn btn-default">
                   <span class="glyphicon glyphicon-envelope"></span>
                   {% trans 'Send Message' %}
