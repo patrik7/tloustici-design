@@ -51,7 +51,7 @@
           <div class="col-xs-10 text-right">
             <div class="btn-group btn-group-sm">
               {% if user.is_superuser and user != profile %}
-                {% button 'Suspend Account' '#' icon='lock' cls='danger' %}
+                {% button 'Suspend Account' 'profile' url_arg=profile.username get_param='suspend' get_value='1' icon='lock' cls='danger' %}
               {% endif %}
               {% if user == profile or user.is_superuser %}
                 {% button 'Edit Profile' 'profile' url_arg=profile.username icon='pencil' get_param='edit' get_value='1' %}
