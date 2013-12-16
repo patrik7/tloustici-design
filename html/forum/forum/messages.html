@@ -47,6 +47,8 @@
   <script type="text/javascript" language="javascript">  
     var ajax_url = '/conversation/data/';
 
+    var focused_conversation_id = {{focus}};
+
     $('#id_addressee').typeahead({
       name: 'addressee',
       remote: '/login/data/%QUERY.json',
@@ -169,7 +171,7 @@
 
       var footer = '';
 
-      body += '<div class="text-right" style="color: #505050;"><small>{% trans 'Last message' %}: ' + e.last_message + '</small></div>';
+      body += '<div class="text-right text-muted" ><small>{% trans 'Last message' %}: ' + e.last_message + '</small></div>';
       body += '<p>{% trans 'Conversation with' %} <a href="' + e.other_user_link + '">' + e.other_user + '</a>';
       if (e.unread > 0) {
         body += ' <span class="badge">' + e.unread + '</span>'; 
@@ -193,7 +195,19 @@
 
     }
 
-    $(document).ready(loadData());
+    function performClick(node)
+    {
+      var evt = document.createEvent("MouseEvents");
+      evt.initEvent("click", true, false);
+      node.dispatchEvent(evt);
+    }
+
+    $(document).ready(loadData(function () {
+      if (focused_conversation_id != -1) {
+        performClick(document.getElementById('conversation' + focused_conversation_id).firstChild)
+        focused_conversation_id = -1;
+      }	
+    }));
 
     var dynamic_pagination = {};
 

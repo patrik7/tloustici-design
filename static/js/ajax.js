@@ -49,7 +49,7 @@ function setupPagination(pagination) {
   }
 }
 
-function loadData()
+function loadData(doneCallback)
 {
   setLoading('data');
   setupPagination(null);
@@ -64,6 +64,9 @@ function loadData()
 
       addData(entries);
       setupPagination(pagination);
+      if (doneCallback) {
+        doneCallback();
+      }
     })
     .fail(function() {
       setError('data');
