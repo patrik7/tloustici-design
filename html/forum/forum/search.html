@@ -32,7 +32,8 @@
 {% endblock %}
 
 {% block left %}
-  <div class="hidden-sm hidden-xs" style="margin-top: 50px;">
+  <p/>
+  <div class="hidden-sm hidden-xs">
     {% include 'form_suggest.html' %}
   </div>
 {% endblock %}
@@ -95,8 +96,8 @@
         + '</div>'
         + '<div class="panel-footer text-right">'
           + '<div class="btn-group btn-group-xs">'
-            + '<a class="btn btn-default"><span class="glyphicon glyphicon-pushpin"></span> {% trans 'Add to Favourites' %}</a>'
-            + '<a class="btn btn-default" href="{% url messages %}?addressee=' + e. username + '"><span class="glyphicon glyphicon-envelope"></span> {% trans 'Send Message' %}</a>'
+            + '<a class="btn btn-default" href="{% url favourites %}?add=' + e.username  + '"><span class="glyphicon glyphicon-pushpin"></span> {% trans 'Add to Favourites' %}</a>'
+            + '<a class="btn btn-default" href="{% url messages %}?addressee=' + e.username + '"><span class="glyphicon glyphicon-envelope"></span> {% trans 'Send Message' %}</a>'
           + '</div>'
         + '</div>'
       + '</div>'

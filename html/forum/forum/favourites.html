@@ -1,0 +1,17 @@
+{% extends base_template %}
+{% load i18n %}
+
+{% block main %}
+  <div class="row">
+    {% for f in favourites %}
+      <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="well text-center link-glow" onclick="location.href='{% url profile f.celebrity.username %}';">
+            <img class="img img-rounded" src="{{f.celebrity.forum_profile.avatar_url}}" /><br/>
+            {{f.celebrity.username}}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
+
+
