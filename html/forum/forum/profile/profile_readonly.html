@@ -96,6 +96,18 @@
           </div>
         </div>
       </div>
+      {% if user == profile or user.is_superuser %}
+      <div class="panel-footer">
+        <div class="row">
+          <div class="col-xs-2" ></div>
+          <div class="col-xs-10 text-right">
+            <div class="btn-group btn-group-sm">
+                {% button 'Edit Activities' 'profile' url_arg=profile.username icon='pencil' get_param='edit' get_value='1' get_param2='focus' get_value2='act' %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
     </div>
     {% endif %}
 

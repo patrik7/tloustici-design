@@ -3,6 +3,7 @@
 {% if user.is_superuser %}
   <li id="navadmin"><a href="{% url admin:index %}">{% trans "Administration" %}</a></li>
   <li id="reloadstatic"><a href="{% url reload_static %}">Reload Static</a></li>
+  <li id="kill_server"><a href="{% url kill_server %}">Kill Server</a></li>
   <hr/>
 {% endif %}
 
