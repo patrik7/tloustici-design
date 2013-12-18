@@ -824,7 +824,7 @@ msgstr "Sporty"
 #: forum/templates/forum/profile/form_activities_fields.html:24
 #: forum/templates/forum/profile/profile_readonly.html:90
 msgid "Other Activities"
-msgstr "Jíné Aktivity"
+msgstr "Jiné Aktivity"
 
 #: forum/templates/forum/profile/profile_essentials.html:15
 msgid "Essential Information"
