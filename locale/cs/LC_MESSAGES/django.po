@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-18 22:47+0100\n"
+"POT-Creation-Date: 2013-12-18 23:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,6 +41,16 @@ msgstr "Upravit Aktivity"
 msgctxt "button"
 msgid "Remove from Favourites"
 msgstr "Odebrat z oblíbených"
+
+#: Tloustici/translations.py:16
+msgctxt "button"
+msgid "Add to Favourites"
+msgstr "Přidat k oblíbeným"
+
+#: Tloustici/translations.py:18
+msgctxt "city"
+msgid "from"
+msgstr "z"
 
 #: articles/models.py:9
 msgid "left"
@@ -266,8 +276,8 @@ msgid "E-mail"
 msgstr "E-mail"
 
 #: forum/forms.py:174
-msgid "addressee"
-msgstr "příjemce"
+msgid "Addressee"
+msgstr "Příjemce"
 
 #: forum/forms.py:200
 msgid "Username does not exists"
@@ -754,7 +764,7 @@ msgstr ""
 # msgstr "Tento e-mail vám byl odeslán protože"
 #: forum/templates/forum/friend_suggestion.html:7
 msgid "Do you know"
-msgstr ""
+msgstr "Znáš"
 
 #: forum/templates/forum/friend_suggestion.html:7
 #: forum/templates/forum/search.html:79
