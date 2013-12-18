@@ -1,0 +1,23 @@
+{% extends 'base/email_base.html' %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'New Message from' %} {{from}}{% endblock %}
+
+{% block main %}
+
+<pre><code>
+{{body}}
+</code></pre>
+
+<p>
+{% trans 'You can reply to the message on' %}
+<a href="http://hubnemevedvou.cz{% url messages %}">hubnemevedvou.cz</a>.
+</p>
+
+<p>
+{% trans 'Best Regards' %}
+</p>
+
+{% endblock %}
+

@@ -1,0 +1,16 @@
+{% extends 'base/email_base.txt' %}
+
+{% load i18n %}
+
+{% block main %}
+{% trans 'New Message from' %} {{from}}
+
+{{body}}
+
+{% trans 'You can reply to the message on' %}
+http://hubnemevedvou.cz{% url messages %}
+
+{% trans 'Best Regards' %}
+
+{% endblock %}
+

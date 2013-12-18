@@ -1,0 +1,33 @@
+{% extends 'base/email_base.html' %}
+{% load i18n %}
+
+{% block title %}Hubnemevedvou.cz{% endblock %}
+
+{% block main %}
+
+<p>
+{% trans 'Hi,' %}
+</p>
+
+<p>
+{% trans 'Checkout this website!' %}
+</p>
+
+<p>
+<h3><a href="http://hubnemevedvou.cz/register?utm_medium=email&utm_source=suggestion">hubnemevedvou.cz</a></h3>
+</p>
+
+<p>
+{% block trans %}
+Trápí tě kila navíc, ale nemáš s kým nebo pro koho hubnout?
+Udělej první krok, najdi si toho správného parťáka a pusťte se do boje společně! Pokud hledáš kamarádku na společné hubnutí nebo třeba i životního partnera ke společným sportovním aktivitám, tak jsi rozhodně na správném místě.
+{% endblock %}
+</p>
+
+<p>
+{% trans 'Nakopni konečně své štěstí, ve dvou se to přece lépe táhne!' %}
+</p>
+
+<p class="text-muted">({% trans 'This email was sent to you, as somebody you know filled out the recommendation form with your email.' %})</p>
+
+{% endblock %}

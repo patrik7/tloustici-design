@@ -1,0 +1,4 @@
+{% block title %}Hubnemevedvou.cz{% endblock %}
+
+{% block main %}
+{% endblock %}
