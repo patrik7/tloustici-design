@@ -47,7 +47,7 @@
       elem = document.getElementById("form_template");
 
       var txt = 
-        '<form method="post" action="/' + reply_to + '/" class="form">'
+        '<form method="post" action="{% url forum_index %}' + reply_to + '/" class="form">'
         + "{% csrf_token %}"
         + elem.innerHTML
         + '<div class="form-group">'
