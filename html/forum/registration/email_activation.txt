@@ -5,7 +5,7 @@
 {% block main %}
 {% trans 'Registration Completed' %}
 
-{% trans 'Dear ' %} {{username}},
+{% trans 'Dear' %} {{username}},
 
 {% trans 'Thank you for registering on' %} hubnemevedvou.cz, {% trans 'to complete the registration you need to activate your account within' %} {{expiration_days}} {% trans 'days' %}.
 

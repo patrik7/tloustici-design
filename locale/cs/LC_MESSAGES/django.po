@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-18 19:37+0100\n"
+"POT-Creation-Date: 2013-12-18 22:47+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,14 +107,12 @@ msgid "Find out your BMI"
 msgstr "Zjistěte si své BMI"
 
 #: articles/templates/articles/bmi.html:28
-#, fuzzy
 msgid "Height"
-msgstr "vpravo"
+msgstr "Výška"
 
 #: articles/templates/articles/bmi.html:34
-#, fuzzy
 msgid "Weight"
-msgstr "vpravo"
+msgstr "Váha"
 
 #: articles/templates/articles/bmi.html:41
 msgid "Enter values above, to get your BMI."
@@ -228,6 +226,10 @@ msgid "Email"
 msgstr "E-mail"
 
 #: forum/forms.py:41
+msgid "Old password"
+msgstr "Staré heslo"
+
+#: forum/forms.py:41
 msgid "Your current password"
 msgstr "Současné heslo"
 
@@ -262,6 +264,10 @@ msgstr "Vytvořit účet"
 #: forum/forms.py:124
 msgid "E-mail"
 msgstr "E-mail"
+
+#: forum/forms.py:174
+msgid "addressee"
+msgstr "příjemce"
 
 #: forum/forms.py:200
 msgid "Username does not exists"
@@ -391,21 +397,20 @@ msgid "New Message"
 msgstr "Nová zpráva"
 
 #: forum/models.py:340
-#, fuzzy
 msgctxt "username"
 msgid "from"
-msgstr "z"
+msgstr "od"
 
 #: forum/models.py:368 forum/models.py:376
 msgid "Area"
-msgstr ""
+msgstr "Kraj"
 
 #: forum/models.py:369
 msgid "Areas"
-msgstr ""
+msgstr "Kraje"
 
 #: forum/models.py:376
-msgid "Are the city belongs to"
+msgid "Area the city belongs to"
 msgstr ""
 
 #: forum/models.py:379
@@ -508,54 +513,58 @@ msgstr "Prosím vytvoř si heslo, aby si mohl bez obav využívát web."
 msgid "Congratulations, that is all the info we need."
 msgstr "Gratulace, je to všechno info které je zapotřeba."
 
-#: forum/tests.py:215 forum/views.py:508
+#: forum/tests.py:215 forum/views.py:535
 msgid "Email with your new password was sent to"
 msgstr "E-mail s novým heslem byl zaslán na"
 
-#: forum/tests.py:320 forum/views.py:572
+#: forum/tests.py:320 forum/views.py:599
 msgid "Your reply was saved."
 msgstr "Tvá odpověď byla uložena."
 
-#: forum/tests.py:380 forum/tests.py:399 forum/tests.py:427 forum/views.py:193
+#: forum/tests.py:380 forum/tests.py:399 forum/tests.py:427 forum/views.py:220
 msgid "User profile saved."
 msgstr "Uživatelský profil byl uložen."
 
-#: forum/views.py:62
-#, fuzzy, python-format
+#: forum/views.py:69
+#, python-format
 msgid "Email was sent to: %s, thanks for recommending us."
 msgstr "E-mail byl odeslán: %s, děkujeme za doporučení!"
 
-#: forum/views.py:132 forum/templates/forum/profile/profile_essentials.html:72
+#: forum/views.py:125
+msgid "Registration"
+msgstr "Registrace"
+
+#: forum/views.py:159 forum/templates/forum/profile/profile_essentials.html:72
 msgid "Save"
 msgstr "Uložit"
 
-#: forum/views.py:154
+#: forum/views.py:181
 msgid "Your account was activated. Please log in."
 msgstr "Gratulujeme! Tvůj účet byl úpěšně vytvořen. Prosím, přihlaš se."
 
-#: forum/views.py:157
+#: forum/views.py:184
 msgid "Incorrect activation key. You need to register again."
 msgstr ""
 "Vypršela doba určená pro aktivaci účtu. Navštiv hubnemespolu.cz pro další "
 "pokus."
 
-#: forum/views.py:207
+#: forum/views.py:234
 msgid "Your password was changed."
 msgstr "Tvé heslo bylo změněno."
 
-#: forum/views.py:208
+#: forum/views.py:235
 msgid "Please log in again."
 msgstr "Prosím, přihlaš se znovu"
 
-#: forum/views.py:212
+#: forum/views.py:239
 msgid "Password for"
 msgstr "Heslo pro"
 
-#: forum/views.py:212
+#: forum/views.py:239
 msgid "was changed."
 msgstr "bylo změněno."
 
-#: forum/views.py:254
+#: forum/views.py:281
 #, python-format
 msgid ""
 "Your bio description is empty, consider <a href=\"%s?edit=1&focus=bio"
@@ -564,38 +573,38 @@ msgstr ""
 
 # "Váš bio popis je prázdný, zvaž <a href=\"%s?edit=1&focus=bio"
 # "\"><b>vyplnění</b></a>, to make yourself more likely to be approached"
-#: forum/views.py:289
+#: forum/views.py:316
 #, python-format
 msgid "User %s was already in the list"
 msgstr "Uživatelské jméno %s je již v seznamu"
 
-#: forum/views.py:292
+#: forum/views.py:319
 #, python-format
 msgid "User %s was added to the list"
 msgstr "Uživatel %s byl pridán do seznamu"
 
-#: forum/views.py:301
+#: forum/views.py:328
 #, python-format
 msgid "User %s was removed from the list"
 msgstr "Uživatel %s byl odebrán se seznamu"
 
-#: forum/views.py:464
+#: forum/views.py:491
 msgid "Message sent."
 msgstr "Zpráva odeslána."
 
-#: forum/views.py:503 forum/templates/forum/password_recovery.html:9
+#: forum/views.py:530 forum/templates/forum/password_recovery.html:9
 msgid "Password Recovery"
 msgstr "Obnovení hesla"
 
-#: forum/views.py:555
+#: forum/views.py:582
 msgid "You can no longer delete the post."
 msgstr "Na tvůj příspěvek bylo dpovězeno, nemůže být již smazán"
 
-#: forum/views.py:557
+#: forum/views.py:584
 msgid "Post was deleted."
 msgstr "Příspěvek byl smazaný"
 
-#: forum/views.py:574
+#: forum/views.py:601
 msgid "Post not saved."
 msgstr "Příspěvek nebyl uložen"
 
@@ -690,12 +699,15 @@ msgstr "Na zprávu můžeš odpovědět na"
 #: forum/templates/forum/email_new_message.txt:13
 #: forum/templates/forum/email_password_recovery.html:21
 #: forum/templates/forum/email_password_recovery.txt:15
-#: forum/templates/registration/activation_email.txt:11
+#: forum/templates/registration/email_activation.html:21
+#: forum/templates/registration/email_activation.txt:15
 msgid "Best Regards"
 msgstr "S pozdravem"
 
 #: forum/templates/forum/email_password_recovery.html:10
 #: forum/templates/forum/email_password_recovery.txt:7
+#: forum/templates/registration/email_activation.html:9
+#: forum/templates/registration/email_activation.txt:8
 msgid "Dear"
 msgstr "Drahý(á)"
 
@@ -786,9 +798,8 @@ msgid "New password will be sent to your email address."
 msgstr ""
 
 #: forum/templates/forum/search.html:10
-#, fuzzy
 msgid "Search Criteria"
-msgstr "Hledat parťáka"
+msgstr "Kritéria Vyhledávání"
 
 #: forum/templates/forum/search.html:27
 msgid ""
@@ -847,15 +858,13 @@ msgid ""
 msgstr ""
 
 #: forum/templates/forum/profile/profile_essentials.html:81
-#, fuzzy
 msgid "Change Password"
-msgstr "Vložit nové heslo"
+msgstr "Změna hesla"
 
 #: forum/templates/forum/profile/profile_readonly.html:23
 #: forum/templates/forum/profile/profile_readonly.html:28
-#, fuzzy
 msgid "Change Picture"
-msgstr "Vložit nové heslo"
+msgstr "Změnit Obrázek"
 
 #: forum/templates/forum/profile/profile_readonly.html:118
 msgid "Compatibility"
@@ -879,24 +888,35 @@ msgstr ""
 msgid "here"
 msgstr ""
 
-#: forum/templates/registration/activation_email.txt:3
-msgid "Dear user"
+#: forum/templates/registration/email_activation.html:5
+#: forum/templates/registration/email_activation.txt:6
+msgid "Registration Completed"
 msgstr ""
 
-#: forum/templates/registration/activation_email.txt:5
-#, fuzzy
+#: forum/templates/registration/email_activation.html:13
+#: forum/templates/registration/email_activation.txt:10
 msgid "Thank you for registering on"
-msgstr "Vložit e-mailovou adresu"
+msgstr "Děkujeme za registraci na"
 
-#: forum/templates/registration/activation_email.txt:5
+#: forum/templates/registration/email_activation.html:13
+#: forum/templates/registration/email_activation.txt:10
 msgid "to complete the registration you need to activate your account within"
 msgstr ""
 
-#: forum/templates/registration/activation_email.txt:5
+#: forum/templates/registration/email_activation.html:13
+#: forum/templates/registration/email_activation.txt:10
 msgid "days"
+msgstr "dní"
+
+#: forum/templates/registration/email_activation.html:17
+msgid "Please follow this"
 msgstr ""
 
-#: forum/templates/registration/activation_email.txt:7
+#: forum/templates/registration/email_activation.html:17
+msgid "link to complete the registration"
+msgstr ""
+
+#: forum/templates/registration/email_activation.txt:12
 msgid "Please follow the link below to complete the registration:"
 msgstr ""
 
