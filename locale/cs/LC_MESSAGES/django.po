@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-18 18:04+0100\n"
+"POT-Creation-Date: 2013-12-18 19:37+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,31 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: Tloustici/translations.py:11
+msgctxt "button"
+msgid "Edit Profile"
+msgstr "Upravit Profil"
+
+#: Tloustici/translations.py:12
+msgctxt "button"
+msgid "Suspend Account"
+msgstr "Pozastavit Účet"
+
+#: Tloustici/translations.py:13
+msgctxt "button"
+msgid "Send Message"
+msgstr "Poslat Zprávu"
+
+#: Tloustici/translations.py:14
+msgctxt "button"
+msgid "Edit Activities"
+msgstr "Upravit Aktivity"
+
+#: Tloustici/translations.py:15
+msgctxt "button"
+msgid "Remove from Favourites"
+msgstr "Odebrat z oblíbených"
 
 #: articles/models.py:9
 msgid "left"
@@ -788,9 +813,8 @@ msgid "Add to Favourites"
 msgstr "Přidat k oblíbeným"
 
 #: forum/templates/forum/search.html:100
-#, fuzzy
 msgid "Send Message"
-msgstr "Nová zpráva"
+msgstr "Poslat zprávu"
 
 #: forum/templates/forum/profile/form_activities_fields.html:7
 #: forum/templates/forum/profile/profile_readonly.html:82
@@ -799,9 +823,8 @@ msgstr "Sporty"
 
 #: forum/templates/forum/profile/form_activities_fields.html:24
 #: forum/templates/forum/profile/profile_readonly.html:90
-#, fuzzy
 msgid "Other Activities"
-msgstr "Aktivity"
+msgstr "Jíné Aktivity"
 
 #: forum/templates/forum/profile/profile_essentials.html:15
 msgid "Essential Information"
@@ -904,9 +927,3 @@ msgstr ""
 #: forum/templates/registration/registration_further.html:57
 msgid "Follow the instructions sent to your email to finish the registration."
 msgstr ""
-
-#~ msgid "Suspend Account"
-#~ msgstr "Pozastavit Účet"
-
-#~ msgid "Edit Profile"
-#~ msgstr "Upravit Profil"
