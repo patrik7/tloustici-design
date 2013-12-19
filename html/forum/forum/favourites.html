@@ -2,6 +2,7 @@
 {% load i18n %}
 
 {% block main %}
+  {% if favourites %}
   <div class="row">
     {% for f in favourites %}
       <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
@@ -12,6 +13,9 @@
       </div>
     {% endfor %}
   </div>
+  {% else %}
+    <p>{% trans 'You have not added anyone to your favourites list.' %}</p>
+  {% endif %}
 {% endblock %}
 
 
