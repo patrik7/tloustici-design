@@ -1,0 +1,37 @@
+{% extends 'base/email_base.html' %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'New Forum Post from' %} {{post.user}}{% endblock %}
+
+{% block main %}
+
+<pre><code>
+{{post.body_html}}
+</code></pre>
+
+<p>
+{% trans 'Replying to' %}
+</p>
+
+<pre><code>
+{{post.parent.body_html}}
+</code></pre>
+
+<p>
+{% trans 'Visit forum' %}
+<a href="http://hubnemevedvou.cz{% url forum_post post.id %}">hubnemevedvou.cz</a>.
+</p>
+
+<p>
+{% trans 'Best Regards' %}
+</p>
+
+<small>
+<p class="text-muted">
+{% trans 'You have received this email because you are subscribed to one of the posts this is replying to.' %}
+</p>
+</small>
+
+{% endblock %}
+

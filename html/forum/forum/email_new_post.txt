@@ -1,0 +1,23 @@
+{% extends 'base/email_base.txt' %}
+
+{% load i18n %}
+
+{% block main %}
+
+{% trans 'New Forum Post from' %} {{post.user}}
+
+{{post.body}}
+
+{% trans 'Replying to' %}
+
+{{post.parent.body}}
+
+{% trans 'Visit forum on' %}
+http://hubnemevedvou.cz{% url forum_post post.id %}
+
+{% trans 'Best Regards' %}
+
+{% trans 'You have received this email because you are subscribed to one of the posts this is replying to.' %}
+
+{% endblock %}
+

@@ -25,12 +25,16 @@
     {% block left %}      
     {% endblock %}
 
-    {% include 'articles/recent_articles.html' %}
+    <div class="hidden-xs">
+      {% include 'articles/recent_articles.html' %}
+    </div>
 
     {% if friend_suggestion %}
       <p/>
       {% include 'forum/friend_suggestion.html' with s=friend_suggestion %}
     {% endif %}
+
+    <p/>
 
     </div>
 

@@ -80,17 +80,18 @@
 
       footer =
         '<div class="row">'
-        + '<div class="col-xs-6">';
+        + '<div class="col-xs-3">';
 
       if (e.level > 1) {
         footer += '<small><a href="' + e.user_link + '">'
-          + '<span class="glyphicon glyphicon-user"></span> {% trans 'by' %} ' + e.user
+          + '<span class="glyphicon glyphicon-user"></span> ' + e.user
           + '</a></small>';
         body += '<div class="pull-right text-muted"><small>' + e.date + '</small></div>';
 
       }
 
-      footer += '</div><div class="col-xs-6 text-right">';
+      footer += '</div><div class="col-xs-9 text-right">';
+
       if (e.post_count > 0) {
         footer += '<small>' + e.post_count + ' '+ e.posts + '</small> ';
       }
@@ -99,19 +100,30 @@
 
       {% if user %}
       if (e.user != '{{user}}' && e.level > 1) {
-        footer += '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">'
+        footer += '<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">'
                   + '{% trans 'Report' %} <span class="caret"></span></button>'
                 + '<ul class="dropdown-menu">'
                   + '<li><a href="{% url report 'sexual' %}?target_id=' + e.pk + '&target=Post">{% trans 'Sexual Remarks' %}</a></li>'
                   + '<li><a href="{% url report 'advertising' %}?target_id=' + e.pk + '&target=Post">{% trans 'Advertising' %}</a></li>'
                   + '<li><a href="{% url report 'abuse' %}?target_id=' + e.pk + '&target=Post">{% trans 'Other Abuse' %}</a></li>'
                 + '</ul>'
+                + '</div>';
       }
       {% endif %}
 
       if (e.deletable_link != '') {
         footer += '<a href="' + e.deletable_link + '" class="btn btn-default" ><span class="glyphicon glyphicon-trash"></span> {% trans 'Delete' %}</a>';
       }
+
+      {% if user %}
+        if (e.level < 4) {
+          if (e.subscribed) {
+            footer += '<a href="{% url forum_index %}' + e.pk + '/?subscribe=0" class="btn btn-default" ><span class="glyphicon glyphicon-bell"></span> {% trans 'Unsubscribe' %}</a>';
+          } else {
+            footer += '<a href="{% url forum_index %}' + e.pk + '/?subscribe=1" class="btn btn-default" ><span class="glyphicon glyphicon-bell"></span> {% trans 'Subscribe' %}</a>';
+          }
+        }
+      {% endif %}
 
       body += '<p>' + e.text + '</p>';
 

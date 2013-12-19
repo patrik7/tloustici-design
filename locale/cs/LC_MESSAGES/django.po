@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-19 16:12+0100\n"
+"POT-Creation-Date: 2013-12-19 20:03+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -126,7 +126,7 @@ msgstr "Váha"
 
 #: articles/templates/articles/bmi.html:41
 msgid "Enter values above, to get your BMI."
-msgstr "Zadejte hodnoty výše, pro výpočet BMI"
+msgstr "Zadej hodnoty výše, pro výpočet BMI"
 
 #: articles/templates/articles/preview.html:10
 msgid "Not published"
@@ -521,6 +521,10 @@ msgstr "Počet Fanoušků"
 msgid "Profiles"
 msgstr "Profily"
 
+#: forum/models.py:541
+msgid "note"
+msgstr "poznámka"
+
 #: forum/tests.py:56 forum/templates/registration/registration_further.html:11
 msgid "Which sports and activities do you like?"
 msgstr "Které sporty a aktivity máš rád?"
@@ -648,7 +652,7 @@ msgstr "Na tvůj příspěvek bylo dpovězeno, nemůže být již smazán"
 msgid "Post was deleted."
 msgstr "Příspěvek byl smazaný"
 
-#: forum/views.py:656
+#: forum/views.py:663
 msgid "Post not saved."
 msgstr "Příspěvek nebyl uložen"
 
@@ -821,10 +825,6 @@ msgstr "Celkově"
 msgid "Body"
 msgstr "Tělo"
 
-#: forum/templates/forum/index.html:87
-msgid "by"
-msgstr ""
-
 #: forum/templates/forum/index.html:103
 #: forum/templates/forum/messages.html:160
 #: forum/templates/forum/report.html:11
@@ -832,11 +832,11 @@ msgstr ""
 msgid "Report"
 msgstr "Ohlásit"
 
-#: forum/templates/forum/index.html:113
+#: forum/templates/forum/index.html:114
 msgid "Delete"
 msgstr "Vymazat"
 
-#: forum/templates/forum/index.html:125
+#: forum/templates/forum/index.html:126
 msgid "Reply"
 msgstr "Odpovědět"
 

@@ -58,7 +58,7 @@
               {% endif %}
               {% if user != profile %}
                 <div class="btn-group btn-group-sm">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">{% trans 'Report' %} <span class="caret"></span></button>
+                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">{% trans 'Report' %} <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                   <li><a href="{% url report 'sexual' %}?target_id={{user.forum_profile.id}}&target=Profile">{% trans 'Sexual Remarks' %}</a></li>
                   <li><a href="{% url report 'advertising' %}?target_id={{user.forum_profile.id}}&target=Profile">{% trans 'Advertising' %}</a></li>
@@ -66,7 +66,7 @@
                 </ul>
                 </div>
                 {% if in_favourites %}
-                  {% button 'Remove from Favourites' 'favourites' icon='minus' get_param='remove' get_value=profile.username cls='warning' %}
+                  {% button 'Remove from Favourites' 'favourites' icon='minus' get_param='remove' get_value=profile.username %}
                 {% else %}
                   {% button 'Add to Favourites' 'favourites' icon='pushpin' get_param='add' get_value=profile.username %}
                 {% endif %}
