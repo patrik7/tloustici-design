@@ -152,6 +152,18 @@
       body += '<div class="pull-right text-muted"><small>' + e.date + '</small></div>';
       body += '<p>' + e.text + '</p>';
 
+      var footer = '<div class="row">'
+                   + '<div class="col-xs-12 text-right">'
+                     + '<div class="btn-group btn-group-xs">'
+                       + '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">'
+                         + '{% trans 'Report' %} <span class="caret"></span></button>'
+                       + '<ul class="dropdown-menu">'
+                         + '<li><a href="{% url report 'sexual' %}?target_id=' + e.pk + '&target=Message">{% trans 'Sexual Remarks' %}</a></li>'
+                         + '<li><a href="{% url report 'advertising' %}?target_id=' + e.pk + '&target=Message">{% trans 'Advertising' %}</a></li>'
+                         + '<li><a href="{% url report 'abuse' %}?target_id=' + e.pk + '&target=Message">{% trans 'Other Abuse' %}</a></li>'
+                       + '</ul>'
+                   + '</div></div></div>';
+
       elem.append(
         '<div class="panel panel-default col-xs-offset-1" style="margin-bottom: 5px;">'
         + '<div class="panel-body' + (unread ? ' unread' : '') + '" style="padding: 5px;">'
@@ -162,6 +174,7 @@
             + '<div class="col-xs-10">' + body + '</div>'
           + '</div>'
         + '</div>'
+        + '<div class="panel-footer">' + footer + '</div>'
       + '</div>');
 
     }
@@ -169,7 +182,11 @@
     function render(i, e, last_end) {
       var body = '';
 
-      var footer = '';
+      var footer = '<div class="row">'
+                   + '<div class="col-xs-12 text-right">'
+                     + '<div class="btn-group btn-group-xs">'
+                       + '<a class="btn btn-default"><span class="glyphicon glyphicon-ban-circle"></span> {% trans 'Block' %}</a>'
+                 + '</div></div></div>';
 
       body += '<div class="text-right text-muted" ><small>{% trans 'Last message' %}: ' + e.last_message + '</small></div>';
       body += '<p>{% trans 'Conversation with' %} <a href="' + e.other_user_link + '">' + e.other_user + '</a>';
