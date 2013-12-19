@@ -7,3 +7,9 @@
     outline: thin dotted \9;
     /* IE6-9 */
 }
+
+
+/* .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] { */
+.fb-like-box, .fb-like-box span, .fb-like-box span iframe[style] {
+    width: 100% !important;
+}
