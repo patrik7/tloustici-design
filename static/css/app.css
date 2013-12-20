@@ -42,8 +42,15 @@
 
 .bigger{
    font-size: 36px;
-   font-weight: regular;
    line-height: 30px;
+}
+
+.bold{
+   font-weight:bold;
+}
+
+.padding-bottom{
+   padding-bottom:20px;
 }
 
 .assist-text{
