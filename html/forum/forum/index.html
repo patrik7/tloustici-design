@@ -98,7 +98,7 @@
 
       footer += '<div class="btn-group btn-group-xs">';
 
-      {% if user %}
+      {% if user.is_authenticated %}
       if (e.user != '{{user}}' && e.level > 1) {
         footer += '<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">'
                   + '{% trans 'Report' %} <span class="caret"></span></button>'
@@ -115,7 +115,7 @@
         footer += '<a href="' + e.deletable_link + '" class="btn btn-default" ><span class="glyphicon glyphicon-trash"></span> {% trans 'Delete' %}</a>';
       }
 
-      {% if user %}
+      {% if user.is_authenticated %}
         if (e.level < 4) {
           if (e.subscribed) {
             footer += '<a href="{% url forum_index %}' + e.pk + '/?subscribe=0" class="btn btn-default" ><span class="glyphicon glyphicon-bell"></span> {% trans 'Unsubscribe' %}</a>';
