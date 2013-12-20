@@ -21,4 +21,10 @@
 
 #footer{
     background-color:#e3f3ff;
+    min-height:200px;
+}
+
+#content{
+background-image:url("../images/bg.png");
+    background-repeat:repeat-x;
 }
