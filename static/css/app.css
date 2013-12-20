@@ -25,6 +25,7 @@
 }
 
 #content{
-background-image:url("../images/bg.png");
+    background-image:url("../images/bg.png");
     background-repeat:repeat-x;
+    padding-bottom:50px;
 }
