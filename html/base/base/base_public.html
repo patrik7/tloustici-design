@@ -7,12 +7,12 @@
     <div class="container">
      <div id="header">
           <div class="header">
+              {% endblock %}
              <h2>{% block title %}Hubneme<span class="text-muted">ve</span>dvou<span class="text-muted">.cz</span>{% endblock %}</h2>
              {% block navigation %}
-              <ul class="nav nav-pills pull-right">
+               <ul class="nav nav-pills pull-right">
                   {% include 'base/navigation_list.html' %}
               </ul>
-              {% endblock %}
               <hr/>
         </div>
       </div>
