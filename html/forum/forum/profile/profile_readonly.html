@@ -14,6 +14,15 @@
   }(document, 'script', 'facebook-jssdk'));</script>
 {% endblock %}
 
+{% block og %}
+  <meta property="og:title" content="Profile {{profile.username}}" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="http://hubnemevedvou.cz{% url profile profile.username %}" />
+  {% if profile.forum_profile.avatar %}
+    <meta property="og:image" content="{{profile.forum_profile.avatar_url}}" />
+  {% endif %}
+{% endblock %}
+
 {% block main %}
 
   <div class="profile_image">

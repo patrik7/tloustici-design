@@ -13,6 +13,15 @@
   }(document, 'script', 'facebook-jssdk'));</script>
 {% endblock %}
 
+{% block og %}
+  <meta property="og:title" content="{{article.heading}}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://hubnemevedvou.cz{% url article article.id %}" />
+  {% if article.image %}
+    <meta property="og:image" content="{{article.image.url}}" />
+  {% endif %}
+{% endblock %}
+
 {% block main %}
   <div class="pull-right">
     <small><p class="text-muted">{{article.display_from}}</p></small>
@@ -27,6 +36,8 @@
   <p>
     {{article.body_html|safe}}
   </p>
+
+  <p/>
 
   <div class="fb-like" data-href="http://hubnemevedvou.cz/articles/{{article.id}}/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true" data-ref="article"></div>
 
