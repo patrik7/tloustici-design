@@ -28,6 +28,7 @@
     background-image:url("../images/bg.png");
     background-repeat:repeat-x;
     padding-bottom:50px;
+    background-position:center;
 }
 
 .banner{
@@ -56,6 +57,8 @@
 .assist-text{
     min-height: 200px;
     background-image:url("../images/sipky.png");
+    background-repeat:no-repeat;
+
 }
 
 .assist-text p{
