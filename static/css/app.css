@@ -32,5 +32,20 @@
 
 .banner{
     width: 602px;
+    background-color: #FFF;
     margin: 0 auto;
+    background-image: none;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    box-shadow: 0px 0px 10px #66b7fb;
+}
+
+.assist-text{
+    min-height: 200px;
+}
+
+.assist-text p{
+    font-size: 18px;
+    font-weight: lighter;
+    padding-top: 30px;
 }
