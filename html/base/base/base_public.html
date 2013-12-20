@@ -20,16 +20,17 @@
     <div class="container">
         <hr/>
       <div class="row">
-        <div class="col-sm-9">
+        <div class="col-sm-12">
           {% include 'base/messages.html' %}
           {% block main %}
           {% endblock %}
         </div>
-        <div class="col-sm-3">
-          {% block right %}
-            {% include 'articles/bmi.html' %}
+          
+        <div class="col-sm-12">
+          {% include 'base/features.html' %}
           {% endblock %}
         </div>
+        
       </div>
 
       {% block bottom %}
