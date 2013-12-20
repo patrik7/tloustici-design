@@ -4,8 +4,8 @@
 {% load bootstrap %}
 
 {% block body %}
-    <div class="container">
-     <div id="header">
+    <div id="header">
+        <div class="container">
           <div class="header">
               {% block navigation %}
                <ul class="nav nav-pills pull-right">
@@ -17,6 +17,8 @@
               <hr/>
         </div>
       </div>
+    </div>
+    <div class="container">
       <div class="row">
         <div class="col-sm-9">
           {% include 'base/messages.html' %}
