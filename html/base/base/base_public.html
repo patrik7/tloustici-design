@@ -5,15 +5,18 @@
 
 {% block body %}
     <div class="container">
-      <div class="header">
-        {% block navigation %}
-          <ul class="nav nav-pills pull-right">
-            {% include 'base/navigation_list.html' %}
-          </ul>
-        {% endblock %}
-
-        <h2>{% block title %}Hubneme<span class="text-muted">ve</span>dvou<span class="text-muted">.cz</span>{% endblock %}</h2>
-        <hr/>
+     <div id="header">
+       <div class="row">
+          <div class="header">
+             <h2>{% block title %}Hubneme<span class="text-muted">ve</span>dvou<span class="text-muted">.cz</span>{% endblock %}</h2>
+             {% block navigation %}
+              <ul class="nav nav-pills pull-right">
+                {% include 'base/navigation_list.html' %}
+              </ul>
+              {% endblock %}
+              <hr/>
+          </div>
+        </div>
       </div>
       <div class="row">
         <div class="col-sm-9">
