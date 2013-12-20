@@ -55,6 +55,7 @@
 
 .assist-text{
     min-height: 200px;
+    background-image:url("../images/sipky.png");
 }
 
 .assist-text p{
