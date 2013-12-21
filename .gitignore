@@ -2,7 +2,6 @@
 static/css/bootstrap*
 static/fonts
 static/js/bootstrap.min.js
-static/js/alert.js
 static/js/collapse.js
 static/images/db/*
 static/images/for_*
