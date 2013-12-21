@@ -186,9 +186,15 @@
 
       var footer = '<div class="row">'
                    + '<div class="col-xs-12 text-right">'
-                     + '<div class="btn-group btn-group-xs">'
-                       + '<a class="btn btn-default"><span class="glyphicon glyphicon-ban-circle"></span> {% trans 'Block' %}</a>'
-                 + '</div></div></div>';
+                     + '<div class="btn-group btn-group-xs">';
+
+      if (!e.blocked) {
+               footer += '<a href="{% url messages %}?block=' + e.other_user + '" class="btn btn-default"><span class="glyphicon glyphicon-ban-circle"></span> {% trans 'Block' %}</a>';
+      } else {
+               footer += '<a href="{% url messages %}?unblock=' + e.other_user + '" class="btn btn-default"><span class="glyphicon glyphicon-ban-circle"></span> {% trans 'Unblock' %}</a>';
+      }
+
+         footer += '</div></div></div>';
 
       body += '<div class="text-right text-muted" ><small>{% trans 'Last message' %}: ' + e.last_message + '</small></div>';
       body += '<p>{% trans 'Conversation with' %} <a href="' + e.other_user_link + '">' + e.other_user + '</a>';
