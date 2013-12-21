@@ -67,3 +67,7 @@
     font-weight: lighter;
     padding-top: 30px;
 }
+
+.navbar-toggle .icon-bar{
+    background-color: white;
+}
