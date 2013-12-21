@@ -1,12 +1,15 @@
 #header{
     background-color:#66b7fb;
-    min-height:80px; 
     color:white;
 }
 
 #header h2{
     color:white;
     
+}
+
+#header ul{
+padding-top: 12px;
 }
 
 #header a{
