@@ -12,6 +12,11 @@
 padding-top: 12px;
 }
 
+#header button{
+border: 1px solid #FFF;
+margin-top: 20px;
+}
+
 #header a{
     color:white;
     
