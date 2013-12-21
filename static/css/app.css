@@ -1,12 +1,20 @@
 #header{
     background-color:#66b7fb;
-    min-height:80px; 
     color:white;
 }
 
 #header h2{
     color:white;
     
+}
+
+#header ul{
+padding-top: 12px;
+}
+
+#header button{
+border: 1px solid #FFF;
+margin-top: 20px;
 }
 
 #header a{
@@ -30,6 +38,7 @@
     padding-bottom:50px;
     background-position:center;
     background-position: top;
+    padding-top:20px;
 }
 
 .banner{
@@ -44,7 +53,7 @@
 
 .bigger{
    font-size: 36px;
-   line-height: 30px;
+   line-height: 40px;
 }
 
 .bold{
@@ -53,6 +62,11 @@
 
 .padding-bottom{
    padding-bottom:20px;
+}
+
+.lide{
+    background-image:url("../images/hubneme-lide.png");
+    padding-bottom:20px;
 }
 
 .assist-text{
@@ -66,4 +80,28 @@
     font-size: 18px;
     font-weight: lighter;
     padding-top: 30px;
+}
+
+.navbar-toggle .icon-bar{
+    background-color: white;
+}
+
+
+@media (max-width: 640px) {
+    
+    .banner{
+    width: 100%;
+    }
+
+    .assist-text{
+    background-image:none;
+}
+
+.lide{
+    background-image:none;
+    padding-bottom: 20px;
+ 
+}
+    
+    
 }
