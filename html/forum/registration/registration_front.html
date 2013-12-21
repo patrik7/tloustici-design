@@ -14,17 +14,14 @@
 {% endblock %}
 
 {% block main %}
-  <div class="jumbotron">
+  <div class="text-center">
 
   {% if not user.is_authenticated %}
 
-  <h2>Trápí tě kila navíc, ale nemáš s kým nebo pro koho hubnout?</h2>
-  <small>
-    <p>
-    Udělej první krok, najdi si toho správného parťáka a pusťte se do boje společně! Pokud hledáš kamarádku na společné hubnutí nebo třeba i životního partnera ke společným sportovním aktivitám, tak jsi rozhodně na správném místě.
-    </p>
-    <p class="lead">Nakopni konečně své štěstí, ve dvou se to přece lépe táhne!</p>
-  </small>
+  <h2 class="bigger"><light>Máš kila navíc?</light></h2><h2 class="bigger bold padding-bottom">Najdi si partáka, s kterým múžeš společne hubnout</h2>
+  <div class="well banner">
+    <p>Nakopni konečně své štěstí, ve dvou se to přece lépe táhne!</p>
+
 
   <p>
     <form method="post" action="{% url register_step 0 %}" class="form-inline">
@@ -33,7 +30,7 @@
       <input type="submit" class="btn btn-primary" name="{{button_name}}" value="{{form.submit}}" />
     </form>
   </p>
-
+  </div>
   {% endif %}
 
   </div>
