@@ -64,6 +64,10 @@ margin-top: 20px;
    padding-bottom:20px;
 }
 
+.lide{
+    background-image:url("../images/hubneme-lide.png");
+}
+
 .assist-text{
     min-height: 200px;
     background-image:url("../images/sipky.png");
@@ -92,6 +96,8 @@ margin-top: 20px;
     background-image:none;
 }
 
+.lide{
+    background-image:none;
 }
     
     
