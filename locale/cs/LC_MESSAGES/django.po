@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-25 18:17+0100\n"
+"POT-Creation-Date: 2013-12-25 18:49+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -217,8 +217,9 @@ msgid "Log out"
 msgstr "Odhlásit se"
 
 #: base/templates/base/base_loggedin.html:12
-msgid "Find your partner to help you loose weight!"
-msgstr ""
+#: forum/templates/registration/registration_front.html:21
+msgid "Find partner to help you loose weight"
+msgstr "Najdi si parťáka a zhubněte společne"
 
 #: base/templates/base/loading.html:12
 msgid "There was a problem loading the data."
@@ -401,11 +402,11 @@ msgstr "Aktualizováno"
 
 #: forum/models.py:81
 msgid "Updated by"
-msgstr ""
+msgstr "Aktualizováno"
 
 #: forum/models.py:82
 msgid "Markup"
-msgstr ""
+msgstr "Markup"
 
 #: forum/models.py:83 forum/models.py:352
 msgid "Message"
@@ -429,7 +430,7 @@ msgstr "Diskuze je zavřena"
 
 #: forum/models.py:90
 msgid "Subscribers"
-msgstr ""
+msgstr "Odberatelé"
 
 #: forum/models.py:95
 msgid "Post"
@@ -441,13 +442,13 @@ msgstr "Příspěvky"
 
 #: forum/models.py:141
 msgid "New Forum Post"
-msgstr ""
+msgstr "Nový příspěvek na fóru"
 
 #: forum/models.py:189
 msgid "post"
 msgid_plural "posts"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "příspěvek"
+msgstr[1] "příspěvky"
 
 #: forum/models.py:378
 msgid "New Message"
@@ -468,7 +469,7 @@ msgstr "Kraje"
 
 #: forum/models.py:414
 msgid "Area the city belongs to"
-msgstr ""
+msgstr "Kraj ke kterému město patří"
 
 #: forum/models.py:418
 msgid "Cities"
@@ -484,22 +485,6 @@ msgstr "Aktivity"
 #: forum/templates/forum/profile/profile_readonly.html:160
 msgid "Activities"
 msgstr "Aktivity"
-
-#: forum/models.py:438
-msgid "How many choices are allowed simultaneously."
-msgstr ""
-
-#: forum/models.py:441
-msgid "Can users vote to this poll or just see the result?"
-msgstr ""
-
-#: forum/models.py:444
-msgid "Point of time after this poll would be automatic deactivated"
-msgstr ""
-
-#: forum/models.py:447
-msgid "Users who has voted this poll."
-msgstr ""
 
 #: forum/models.py:484
 msgid "city"
@@ -523,11 +508,11 @@ msgstr "Prozraď něco více o sobě, popiš koho hledáš"
 
 #: forum/models.py:489
 msgid "date of birth"
-msgstr ""
+msgstr "datum narození"
 
 #: forum/models.py:490
 msgid "sex"
-msgstr ""
+msgstr "pohlaví"
 
 #: forum/models.py:491
 msgid "height"
@@ -620,15 +605,15 @@ msgstr ""
 
 #: forum/tests.py:186 forum/tests.py:236 forum/tests.py:271 forum/views.py:225
 msgid "An abuse report was created."
-msgstr ""
+msgstr "Stížnost byla nahlášena."
 
 #: forum/tests.py:207 forum/views.py:214
 msgid "You are trying to report your own post."
-msgstr ""
+msgstr "Snažíš se ohlásit vlastní příspěvek."
 
 #: forum/tests.py:224 forum/views.py:204
 msgid "You are trying to report your own message."
-msgstr ""
+msgstr "Snažíš se ohlásit svou zprávu."
 
 #: forum/tests.py:286 forum/views.py:234
 msgid "The report was updated."
@@ -639,8 +624,6 @@ msgstr "Hlášení bylo aktualizováno"
 msgid "User %s was added to the list"
 msgstr "Uživatel %s byl pridán do seznamu"
 
-# "Váš bio popis je prázdný, zvaž <a href=\"%s?edit=1&focus=bio"
-# "\"><b>vyplnění</b></a>, to make yourself more likely to be approached"
 #: forum/tests.py:317 forum/views.py:374
 #, python-format
 msgid "User %s was already in the list"
@@ -725,6 +708,8 @@ msgid ""
 "Your bio description is empty, consider <a href=\"%s?edit=1&focus=bio"
 "\"><b>filling it out</b></a>, to make yourself more likely to be approached."
 msgstr ""
+"Staň se více viditelným, <a href=\"%s?edit=1&focus=bio\"><b>popiš se</b></a> "
+"podrobneji ve svém profilu."
 
 #: forum/views.py:553
 msgid "Message sent."
@@ -1139,10 +1124,6 @@ msgstr "Zkus to později"
 #: forum/templates/registration/registration_front.html:21
 msgid "Does overweight bother you?"
 msgstr "Trápí Tě kila navíc?"
-
-#: forum/templates/registration/registration_front.html:21
-msgid "Find partner to help you loose weight"
-msgstr "Najdi si parťáka a zhubněte společne"
 
 #: forum/templates/registration/registration_further.html:14
 msgid "Tell us what you like to do, so we can find the best match for you."
