@@ -120,7 +120,7 @@
           if (e.subscribed) {
             footer += '<a href="{% url forum_index %}' + e.pk + '/?subscribe=0" class="btn btn-default" ><span class="glyphicon glyphicon-bell"></span> {% trans 'Unsubscribe' %}</a>';
           } else {
-            footer += '<a href="{% url forum_index %}' + e.pk + '/?subscribe=1" class="btn btn-default" ><span class="glyphicon glyphicon-bell"></span> {% trans 'Subscribe' %}</a>';
+            footer += '<a href="{% url forum_index %}' + e.pk + '/?subscribe=1" class="btn btn-default" ><span class="glyphicon glyphicon-bell"></span> {% trans 'Subscribe' context 'button' %}</a>';
           }
         }
       {% endif %}
