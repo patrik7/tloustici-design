@@ -55,6 +55,7 @@
 
 {% endblock %}
 
-{% block extra_script %}
+{% block base_script %}
+  {{block.super}}
   <script src="{{STATIC_URL}}js/bmi.js"></script>
 {% endblock %}
