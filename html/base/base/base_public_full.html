@@ -31,18 +31,13 @@
       <div class="container">
        
         <div class="row">
-          <div class="col-sm-9">
+          <div class="col-sm-12">
             {% include 'base/messages.html' %}
+
             {% block main %}
             {% endblock %}
+            
           </div>
-          <div class="col-sm-3">
-            {% block right %}
-              {% include 'articles/bmi.html' %}
-              {% include 'articles/recent_articles.html' %}
-            {% endblock %}
-          </div>
-
         </div>
 
         {% block bottom %}
