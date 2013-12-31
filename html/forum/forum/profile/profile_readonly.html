@@ -112,7 +112,7 @@
             <h4>{% trans 'Sports' %}:</h4>
             {% for a in profile.forum_profile.activities.all %}
               {% if a.sport %}
-                {% trans a context 'activity' %}<br/>
+                {% trans a.name context 'activity' %}<br/>
               {% endif%}
             {% endfor %}
           </div>
@@ -120,7 +120,7 @@
             <h4>{% trans 'Other Activities' %}:</h4>
             {% for a in profile.forum_profile.activities.all %}
               {% if not a.sport %}
-                {% trans  a context 'activity' %}<br/>
+                {% trans a.name context 'activity' %}<br/>
               {% endif%}
             {% endfor %}
           </div>
