@@ -23,18 +23,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseBio"><span id="collapseBio-icon" class="glyphicon glyphicon-chevron-{{bio_chevron}}"></span> {% trans 'Bio' %}</a></h3>
-  </div>
-  <div id="collapseBio" class="panel-collapse collapse {{bio_in}}">
-    <div class="panel-body">
-      {% include 'form.html' with form=form_bio button='Save' name='bio' %}
-    </div>
-  </div>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapsePersonal"><span id="collapsePersonal-icon" class="glyphicon glyphicon-chevron-{{personal_chevron}}"></span> {% trans 'Personal Information' %}</a></h3>
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapsePersonal"><span id="collapsePersonal-icon" class="glyphicon glyphicon-chevron-{{personal_chevron}}"></span> {% trans 'Personal Information' %} <span class="text-muted">({% trans 'not visible to others' %})</span></a></h3>
   </div>
   <div id="collapsePersonal" class="panel-collapse collapse {{personal_in}}">
     <div class="panel-body">
@@ -76,6 +65,18 @@
     </div>
   </div>
 </div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseSettings"><span id="collapseSettings-icon" class="glyphicon glyphicon-chevron-{{settings_chevron}}"></span> {% trans 'Account Settings' %}</a></h3>
+  </div>
+  <div id="collapseSettings" class="panel-collapse collapse {{settings_in}}">
+    <div class="panel-body">
+      {% include 'form.html' with form=form_settings button='Save' name='settings' %}
+    </div>
+  </div>
+</div>
+
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapsePasswordchange"><span id="collapsePasswordchange-icon" class="glyphicon glyphicon-chevron-{{passwordchange_chevron}}"></span> {% trans 'Change Password' %}</a></h3>
@@ -88,6 +89,8 @@
 </div>
 
 </div>
+
+<p/>
 
 {% endblock %}
 
