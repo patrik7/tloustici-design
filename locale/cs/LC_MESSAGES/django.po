@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-04 18:15+0100\n"
+"POT-Creation-Date: 2014-01-04 18:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1198,7 +1198,7 @@ msgstr ""
 "rozhodně na správném místě."
 
 #: forum/templates/registration/registration_front.html:47
-msgid "Common Interests"
+msgid "Common interests"
 msgstr "Společné zájmy"
 
 #: forum/templates/registration/registration_front.html:48
@@ -1207,7 +1207,7 @@ msgstr ""
 "Najdi si partnera se stejným koníčkem, sportujte ve dvou a zhubněte společně!"
 
 #: forum/templates/registration/registration_front.html:52
-msgid "Mutual Motivation"
+msgid "Mutual motivation"
 msgstr "Vzájemná motivace"
 
 #: forum/templates/registration/registration_front.html:53
@@ -1218,7 +1218,7 @@ msgstr ""
 "snadněji."
 
 #: forum/templates/registration/registration_front.html:57
-msgid "Useful Tips"
+msgid "Useful tips"
 msgstr "Užitečné tipy"
 
 #: forum/templates/registration/registration_front.html:58
