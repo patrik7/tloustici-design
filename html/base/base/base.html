@@ -10,7 +10,7 @@
 
     <meta property="author" content="hubnemevedvou.cz" />
 
-    <meta property="og:title" content="Hubneme ve dvou" />
+    <meta property="og:title" content="{% block og_title %}Hubneme ve dvou{% endif %}" />
     <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
     <meta property="og:url" content="http://hubnemevedvou.cz{{request.path}}" />
     <meta property="og:site_name" content="Hubnemevedvou" />
