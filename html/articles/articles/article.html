@@ -13,14 +13,9 @@
   }(document, 'script', 'facebook-jssdk'));</script>
 {% endblock %}
 
-{% block og %}
-  <meta property="og:title" content="{{article.heading}}" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="http://hubnemevedvou.cz{% url article article.id %}" />
-  {% if article.image %}
-    <meta property="og:image" content="{{article.image.url}}" />
-  {% endif %}
-{% endblock %}
+{% block og_title %}{{article.heading}}{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block og_image %}{{article.image.url}}{% endblock %}
 
 {% block main %}
   <div class="pull-right">
