@@ -15,7 +15,7 @@
 
 {% block og_title %}{{article.heading}}{% endblock %}
 {% block og_type %}article{% endblock %}
-{% block og_image %}{{article.image.url}}{% endblock %}
+{% block og_image %}{% if article.image %}{{article.image.url}}{% else %}/{% endif %}{% endblock %}
 
 {% block main %}
   <div class="pull-right">
