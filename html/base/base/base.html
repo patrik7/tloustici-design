@@ -76,7 +76,7 @@
         <div class="row">
           <div class="col-sm-3">
             {% block navigation_social %}
-              <ul class="nav nav-pills nav-stacked">
+              <ul class="nav nav-pills nav-stacked" id="sidebar">
                 {% if user.is_superuser %}
                   <li id="navadmin"><a href="{% url admin:index %}">{% trans "Administration" %}</a></li>
                   <li id="reloadstatic"><a href="{% url reload_static %}">Reload Static</a></li>
