@@ -1,31 +1,13 @@
 #header{
-    background-color:#66b7fb;
-    color:white;
-}
-
-#header h2{
-    color:white;
-    
-}
-
-#header ul{
-padding-top: 12px;
-}
-
-#header button{
-border: 1px solid #FFF;
-margin-top: 20px;
-}
-
-#header a{
-    color:white;
-    
-}
-
-#header a:hover{
-    background-color:#428bca;
-    
-}
+    background-color:#00aedf;
+    color:white; }
+    #header h2{ color:white; }
+    #header ul{ padding-top: 12px; }
+    #header button{
+        border: 1px solid #FFF;
+        margin-top: 20px; }
+    #header a{ color:white; }
+    #header a:hover{ background-color:#428bca; }
 
 #footer{
     background-color:#e3f3ff;
@@ -49,6 +31,10 @@ margin-top: 20px;
     border-radius: 0px;
     -webkit-border-radius: 0px;
     box-shadow: 0px 0px 10px #66b7fb;
+}
+
+.col-sm-3 nav nav-pills nav-stacked{
+    background-color:gray;
 }
 
 .bigger{
