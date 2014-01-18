@@ -9,6 +9,10 @@
     #header a{ color:white; }
     #header a:hover{ background-color:#428bca; }
 
+#sidebar{
+    background-color:#FFF;
+    }
+
 #footer{
     background-color:#e3f3ff;
     min-height:200px;
