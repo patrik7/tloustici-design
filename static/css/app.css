@@ -53,6 +53,8 @@ Media querry
     #header a{ color:white; }
     #header a:hover{ background-color:#428bca; }
 
+.navbar-brand{ padding:0px important; }
+
 /******************************************************************************
 4. Sidebar menu
 *******************************************************************************/
