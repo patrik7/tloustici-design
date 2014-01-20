@@ -35,11 +35,10 @@
 
       <div class="panel pandel-default">
         <div class="panel-body">
-          <p>{{additional_comment|safe}}</p>
           {% if step == 1 %}
             <form action="{% url register_step step %}" method="POST" class="form-horizontal">
               {% csrf_token %}
-              {% include 'forum/profile/form_activities_fields.html' %}
+              {% include 'forum/profile/form_activities_fields.html' with form=form.0 %}
               <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-9">
                   <button type="submit" class="btn btn-primary" name="{{button_name}}">{% trans button %}</button>
