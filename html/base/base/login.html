@@ -23,7 +23,7 @@ Login / Prihlasenie
         {% csrf_token %}
         {{ login_form|bootstrap_horizontal:"col-xs-2" }}
 
-        <div class="col-xs-offset-2">
+        <div class="">
           <p><a href="{% url password_recovery %}">{% trans 'Forgot your password?' %}</a></p>
 
           <div class="form-actions">
@@ -33,4 +33,21 @@ Login / Prihlasenie
       </form>
     </div>
   </div>
+
+<div class="clear"></div>
+ <div class="col-sm-4 text-center">
+            <img src="/static/images/hubneme-ve-dvou-1.png">
+            <h2>Společné zájmy</h2>
+            <p>Najdi si partnera se stejným koníčkem, sportujte ve dvou a zhubněte společně!</p>
+ </div>
+<div class="col-sm-4 text-center">
+     <img src="/static/images/hubneme-ve-dvou-2.png">
+            <h2>Vzájemná motivace</h2>
+            <p>Ztratit nějaké ty kila navíc znamená pro mnohé nelehký úkol. Vzájemná podpora a společné zájmy jsou však silnou zbraní, jak dosáhnout svého cíle snadněji.</p>
+        </div>
+        <div class="col-sm-4 text-center">
+            <img src="/static/images/hubneme-ve-dvou-3.png">
+            <h2>Užitečné tipy</h2>
+            <p>Inspiruj se rady a tipy ostatních uživatelů v oblasti cvičení, zdravého vaření, diet, nebo třeba možností sportu ve tvém okolí.</p>
+        </div>
 {% endblock %}
