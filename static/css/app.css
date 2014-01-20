@@ -63,8 +63,9 @@ Media querry
     background-color:#FFF;
     margin: 0 0 15px 0;}
     #sidebar li{ 
-        margin: 15px;
-}
+        margin: 0 5px;
+        padding: 0 5px;
+        }
 
 
 /******************************************************************************
