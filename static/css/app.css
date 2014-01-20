@@ -75,6 +75,10 @@ Media querry
     padding-top:20px;
 }
 
+/******************************************************************************
+5. Homepage
+*******************************************************************************/
+
 .banner{
     width: 602px;
     background-color: #FFF;
@@ -83,7 +87,11 @@ Media querry
     border-radius: 0px;
     -webkit-border-radius: 0px;
     box-shadow: 0px 0px 10px #66b7fb;
-}
+    font-weight: bold;
+    font-size: 16px;
+    min-height: 132px;
+    padding: 27px;
+    }
 
 .col-sm-3 nav nav-pills nav-stacked{ background-color:gray; }
 
