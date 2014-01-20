@@ -2,7 +2,7 @@
 
 Hubnemevedvou.cz
 
-Registracia form krok 2,3,4
+Registracia form krok 2,3,4, Messages
 
 ------------------------------------------------------------------------------------------->
 
@@ -12,7 +12,7 @@ Registracia form krok 2,3,4
 <form action="{{action}}" class="form-horizontal" method="POST" >
   {% csrf_token %}
     {{form|bootstrap_horizontal:"col-sm-3"}}
-    <div class="form-group">
+    <div class="form-group text-center">
       <div class="">
         <button type="submit" class="btn btn-success" name="{{name}}">{% trans button %}</button>
       </div>
