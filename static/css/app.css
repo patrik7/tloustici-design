@@ -59,11 +59,11 @@ Media querry
 4. Sidebar menu
 *******************************************************************************/
 
-#sidebar{ background-color:#FFF; }
-    #sidebar li{ 
-        margin: 0 5px;
-        padding: 0 5px;
-        }
+#sidebar{ 
+    background-color:#FFF;
+    margin: 0 0 15px 0;}
+    #sidebar li{ padding: 0 5px; }
+    #sidebar ul{ margin: 5px; }
 
 
 /******************************************************************************
