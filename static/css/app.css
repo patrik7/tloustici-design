@@ -83,7 +83,7 @@ Media querry
 *******************************************************************************/
 
 .banner{
-    max-width: 602px;
+    width: 602px;
     background-color: #FFF;
     margin: 0 auto;
     background-image: none;
@@ -150,6 +150,20 @@ Media querry
     background-color:#e3f3ff;
     min-height:200px;
 }
+
+
+/******************************************************************************
+6. Footer
+*******************************************************************************/
+
+.sidebar-box{
+    background-color: #FFF;
+    background-image: none;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    box-shadow: 0px 0px 10px #66b7fb;
+    font-size: 16px;
+    }
 
 /******************************************************************************
 
