@@ -118,7 +118,12 @@ Media querry
 *******************************************************************************/
 
 #register-form{}
-    #register-form li{ display:inline; }
+    #register-form li{ 
+        width: 33%;
+        float: left;
+        text-align: left;
+        padding: 0px 38px;
+        list-style: none; }
 
 /******************************************************************************
 6. Footer
