@@ -1,22 +1,68 @@
+/******************************************************************************
+
+Hubnemevedvou.cz
+
+Application styles
+
+1. Colors
+2. Main
+3. Header
+4. Sidebar
+5. Content
+6. Footer
+
+Media querry
+
+*******************************************************************************/
+
+
+/******************************************************************************
+1. Colors
+*******************************************************************************/
+
+.cyan { color:#00aedf; }
+.blue { color:#428bca; }
+
+/******************************************************************************
+2. Main
+*******************************************************************************/
+
+.bigger{
+   font-size: 36px;
+   line-height: 30px;
+}
+
+.bold{ font-weight:bold; }
+.padding-bottom{ padding-bottom:20px; }
+
+
+
+/******************************************************************************
+3. Header
+*******************************************************************************/
+
 #header{
     background-color:#00aedf;
-    color:white; }
+    color:white;
+    height:62px;}
     #header h2{ color:white; }
-    #header ul{ padding-top: 12px; }
+    #header ul{ padding-top: 6px; }
     #header button{
         border: 1px solid #FFF;
         margin-top: 20px; }
     #header a{ color:white; }
     #header a:hover{ background-color:#428bca; }
 
-#sidebar{
-    background-color:#FFF;
-    }
+/******************************************************************************
+4. Sidebar menu
+*******************************************************************************/
 
-#footer{
-    background-color:#e3f3ff;
-    min-height:200px;
-}
+#sidebar{ background-color:#FFF; }
+
+
+/******************************************************************************
+5. Content
+*******************************************************************************/
 
 #content{
     background-image:url("../images/bg.png");
@@ -37,22 +83,7 @@
     box-shadow: 0px 0px 10px #66b7fb;
 }
 
-.col-sm-3 nav nav-pills nav-stacked{
-    background-color:gray;
-}
-
-.bigger{
-   font-size: 36px;
-   line-height: 40px;
-}
-
-.bold{
-   font-weight:bold;
-}
-
-.padding-bottom{
-   padding-bottom:20px;
-}
+.col-sm-3 nav nav-pills nav-stacked{ background-color:gray; }
 
 .lide{
     background-image:url("../images/hubneme-lide.png");
@@ -62,36 +93,39 @@
 .assist-text{
     min-height: 200px;
     background-image:url("../images/sipky.png");
-    background-repeat:no-repeat;
+    background-repeat:no-repeat; }
+    .assist-text p{
+        font-size: 18px;
+        font-weight: lighter;
+        padding-top: 30px;
+    }
 
+.navbar-toggle .icon-bar{ background-color: white; }
+
+/******************************************************************************
+6. Footer
+*******************************************************************************/
+
+#footer{
+    background-color:#e3f3ff;
+    min-height:200px;
 }
 
-.assist-text p{
-    font-size: 18px;
-    font-weight: lighter;
-    padding-top: 30px;
-}
+/******************************************************************************
 
-.navbar-toggle .icon-bar{
-    background-color: white;
-}
+
+6. MEDIA QUERRIES
+
+
+*******************************************************************************/
 
 
 @media (max-width: 640px) {
     
-    .banner{
-    width: 100%;
-    }
-
-    .assist-text{
-    background-image:none;
-}
-
-.lide{
-    background-image:none;
-    padding-bottom: 20px;
- 
-}
-    
-    
+    .banner{ width: 100%; }
+    .assist-text{ background-image:none; }
+    .lide{
+        background-image:none;
+        padding-bottom: 20px;
+        }
 }
