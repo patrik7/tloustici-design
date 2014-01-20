@@ -7,6 +7,9 @@
 {% endblock %}
 
 {% block main %}
+
+<div class="panel pandel-default">
+        <div class="panel-body">
     {% if step == 1 %}
       <h2>{% trans 'Which sports and activities do you like?' %}</h2>
       <small>
@@ -32,9 +35,6 @@
 
 
     {% if step < 4 %}
-
-      <div class="panel pandel-default">
-        <div class="panel-body">
           <p>{{additional_comment|safe}}</p>
           {% if step == 1 %}
             <form action="{% url register_step step %}" method="POST" class="form-horizontal">
