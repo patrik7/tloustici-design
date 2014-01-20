@@ -117,8 +117,8 @@ Media querry
 6. Registration process
 *******************************************************************************/
 
-.register-form{}
-    .register-form li{ display:inline; }
+#register-form{}
+    #register-form li{ display:inline; }
 
 /******************************************************************************
 6. Footer
