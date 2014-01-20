@@ -122,8 +122,13 @@ Media querry
         width: 33%;
         float: left;
         text-align: left;
-        padding: 0px 38px;
+        padding: 5px 38px;
         list-style: none; }
+
+
+.form-horizontal{
+    max-width: 600px;
+    margin: 0 auto; }
 
 /******************************************************************************
 6. Footer
