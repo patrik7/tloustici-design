@@ -9,7 +9,7 @@ BMI
 {% load i18n %}
 
 <div id="bmi_accordion" class="panel-group">
-<div class="panel panel-info">
+
   <div class="panel-heading">
     <h3 id="bmi_header_full" class="panel-title{% if bmi_collapsed %} hidden{% endif %}">
       <a data-toggle="collapse" data-parent="bmi_accordion" href="#collapseBMI">
@@ -28,6 +28,7 @@ BMI
       </a>
     </h3>
   </div>
+    <div class="panel panel-info">
   <div id="collapseBMI" class="panel-collapse collapse{% if not bmi_collapsed %} in{% endif %}">
     <div class="panel-body">
       <div class="row">
