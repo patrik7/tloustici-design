@@ -50,7 +50,7 @@ Media querry
     #header button{
         border: 1px solid #FFF;
         margin-top: 20px; }
-    #header a{ color:white; }
+    #header a{ color:white; display:block; }
     #header a:hover{ background-color:#428bca; }
 
 .navbar-brand{ padding:0px important; }
