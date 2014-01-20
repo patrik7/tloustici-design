@@ -12,6 +12,7 @@ Form suggest - Doporucit priteli
     <h3>
       {% trans 'Suggest to a friend' %}      
     </h3>
+ <div class="panel panel-info sidebar-box">
     <div class="panel-body">
       <form action="{{suggest_action}}" method="POST" class="form-inline">
         {% csrf_token %}
@@ -20,5 +21,6 @@ Form suggest - Doporucit priteli
         <input type="submit" class="btn btn-default input-sm" name="suggest" value="{% trans 'Send' %}" />
       </form>
     </div>
+     </div>
 
 
