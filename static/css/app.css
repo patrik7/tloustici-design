@@ -124,6 +124,8 @@ Media querry
         text-align: left;
         padding: 5px 0px;
         list-style: none; }
+    #register-form label{ 
+       font-weight:normal;}
 
 
 .form-horizontal{
