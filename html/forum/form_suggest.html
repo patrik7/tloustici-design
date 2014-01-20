@@ -8,10 +8,11 @@ Form suggest - Doporucit priteli
 
 {% load i18n %}
 {% load bootstrap %}
-
+  <div class="sidebar-header">
     <h3 class="panel-title">
       {% trans 'Suggest to a friend' %}      
     </h3>
+      </div>
  <div class="panel panel-info sidebar-box">
     <div class="panel-body">
       <form action="{{suggest_action}}" method="POST" class="form-inline">
