@@ -1,3 +1,11 @@
+<!------------------------------------------------------------------------------------------ 
+
+Hubnemevedvou.cz
+
+Proces registracie
+
+------------------------------------------------------------------------------------------->
+
 {% extends 'base/base_public_full.html' %}
 {% load bootstrap %}
 {% load i18n %}
@@ -7,6 +15,23 @@
 {% endblock %}
 
 {% block main %}
+
+<!------------------------------------------------------------------------------------------ 
+Navigacia kroky registracie
+------------------------------------------------------------------------------------------->
+
+<h2 class="text-center">Vitaj MENO pre uspesne vytvorenie profilu ta cakaju <br/> 4 jednoduche kroky</h2>
+<small>
+    <p class="lead text-center"> 1. Aktivity > 2. Informacie o sebe > 3. Nastavenie hesla > 4. Overenie mailom</a>
+    </p>
+</small> 
+
+<!------------------------------------------------------------------------------------------ 
+Text stepov v registracii
+------------------------------------------------------------------------------------------->
+
+<div class="panel pandel-default">
+        <div class="panel-body text-center">
     {% if step == 1 %}
       <h2>{% trans 'Which sports and activities do you like?' %}</h2>
       <small>
@@ -32,16 +57,13 @@
 
 
     {% if step < 4 %}
-
-      <div class="panel pandel-default">
-        <div class="panel-body">
           {% if step == 1 %}
             <form action="{% url register_step step %}" method="POST" class="form-horizontal">
               {% csrf_token %}
               {% include 'forum/profile/form_activities_fields.html' with form=form.0 %}
               <div class="form-group">
-                <div class="col-sm-offset-3 col-sm-9">
-                  <button type="submit" class="btn btn-primary" name="{{button_name}}">{% trans button %}</button>
+                <div class="register-form">
+                  <button type="submit" class="btn btn-success" name="{{button_name}}">{% trans button %}</button>
                 </div>
               </div>              
             </form>

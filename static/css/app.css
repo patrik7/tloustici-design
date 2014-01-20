@@ -1,22 +1,74 @@
+/******************************************************************************
+
+Hubnemevedvou.cz
+
+Application styles
+
+1. Colors
+2. Main
+3. Header
+4. Sidebar
+5. Content
+6. Footer
+
+Media querry
+
+*******************************************************************************/
+
+
+/******************************************************************************
+1. Colors
+*******************************************************************************/
+
+.cyan { color:#00aedf; }
+.blue { color:#428bca; }
+
+/******************************************************************************
+2. Main
+*******************************************************************************/
+
+.bigger{
+   font-size: 36px;
+   line-height: 30px;
+}
+
+.bold{ font-weight:bold; }
+.padding-bottom{ padding-bottom:20px; }
+.padding-top{ padding-top:20px; }
+
+
+/******************************************************************************
+3. Header
+*******************************************************************************/
+
 #header{
     background-color:#00aedf;
-    color:white; }
+    color:white;
+    height:62px;}
     #header h2{ color:white; }
-    #header ul{ padding-top: 12px; }
+    #header ul{ padding-top: 6px; }
     #header button{
         border: 1px solid #FFF;
         margin-top: 20px; }
-    #header a{ color:white; }
+    #header a{ color:white; display:block; }
     #header a:hover{ background-color:#428bca; }
 
-#sidebar{
-    background-color:#FFF;
-    }
+.navbar-brand{ padding:0px important; }
 
-#footer{
-    background-color:#e3f3ff;
-    min-height:200px;
-}
+/******************************************************************************
+4. Sidebar menu
+*******************************************************************************/
+
+#sidebar{ background-color:#FFF; }
+    #sidebar li{ 
+        margin: 0 5px;
+        padding: 0 5px;
+        }
+
+
+/******************************************************************************
+5. Content
+*******************************************************************************/
 
 #content{
     background-image:url("../images/bg.png");
@@ -27,6 +79,10 @@
     padding-top:20px;
 }
 
+/******************************************************************************
+5. Homepage
+*******************************************************************************/
+
 .banner{
     width: 602px;
     background-color: #FFF;
@@ -35,63 +91,101 @@
     border-radius: 0px;
     -webkit-border-radius: 0px;
     box-shadow: 0px 0px 10px #66b7fb;
-}
+    font-weight: bold;
+    font-size: 16px;
+    min-height: 132px;
+    padding: 27px;
+    }
 
-.col-sm-3 nav nav-pills nav-stacked{
-    background-color:gray;
-}
-
-.bigger{
-   font-size: 36px;
-   line-height: 40px;
-}
-
-.bold{
-   font-weight:bold;
-}
-
-.padding-bottom{
-   padding-bottom:20px;
-}
+.col-sm-3 nav nav-pills nav-stacked{ background-color:gray; }
 
 .lide{
     background-image:url("../images/hubneme-lide.png");
     padding-bottom:20px;
+    background-repeat:no-repeat;
 }
 
 .assist-text{
     min-height: 200px;
     background-image:url("../images/sipky.png");
-    background-repeat:no-repeat;
+    background-repeat:no-repeat; }
+    .assist-text p{
+        font-size: 18px;
+        font-weight: lighter;
+        padding-top: 30px;
+    }
 
+.navbar-toggle .icon-bar{ background-color: white; }
+
+/******************************************************************************
+6. Registration process
+*******************************************************************************/
+
+#register-form{}
+    #register-form li{ 
+        width: 33%;
+        float: left;
+        text-align: left;
+        padding: 5px 0px;
+        list-style: none; }
+
+
+
+.form-horizontal{
+    max-width: 600px;
+    margin: 0 auto; }
+
+/******************************************************************************
+6. Login
+*******************************************************************************/
+
+#login{ }
+    #login_form div label{ 
+       font-weight:normal;}
+
+/******************************************************************************
+6. Footer
+*******************************************************************************/
+
+#footer{
+    background-color:#e3f3ff;
+    min-height:200px;
 }
 
-.assist-text p{
-    font-size: 18px;
-    font-weight: lighter;
-    padding-top: 30px;
-}
 
-.navbar-toggle .icon-bar{
-    background-color: white;
-}
+/******************************************************************************
+6. Sidebar
+*******************************************************************************/
+
+.sidebar-box{
+    background-color: #FFF;
+    background-image: none;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    box-shadow: 0px 0px 10px #66b7fb;
+    font-size: 16px;
+    }
+
+.sidebar-header{
+    margin-bottom: 15px;
+    display: block;
+    }
+
+/******************************************************************************
+
+
+6. MEDIA QUERRIES
+
+
+*******************************************************************************/
 
 
 @media (max-width: 640px) {
     
-    .banner{
-    width: 100%;
-    }
-
-    .assist-text{
-    background-image:none;
-}
-
-.lide{
-    background-image:none;
-    padding-bottom: 20px;
- 
-}
-    
-    
+    .banner{ width: 100%; }
+    .assist-text{ background-image:none; }
+    .lide{
+        background-image:none;
+        padding-bottom: 20px;
+        }
 }
