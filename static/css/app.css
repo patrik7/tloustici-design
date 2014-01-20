@@ -83,7 +83,7 @@ Media querry
 *******************************************************************************/
 
 .banner{
-    width: 602px;
+    max-width: 602px;
     background-color: #FFF;
     margin: 0 auto;
     background-image: none;
