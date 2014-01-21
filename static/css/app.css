@@ -186,6 +186,15 @@ Media querry
     font-size: 16px;
     }
 
+.big-post{
+    background-color: #FFF;
+    background-image: none;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    box-shadow: 0px 0px 10px #66b7fb;
+    font-size: 16px;
+    }
+
 .feed-post p{
     display:inline;
     }
