@@ -14,8 +14,8 @@ Prewiev
 <div class="well feed-post">
     
 {% if article.image %}
-  <a href="{% url article article.id %}" >
-    <img src="{{article.image.url}}" class="article-image img-rounded pull-{{article.image_position}}" style="margin: 8px; max-width: 40%; height: auto;" />
+  <a href="{% url article article.id %}" class="article-image" >
+    <img src="{{article.image.url}}" class="img-rounded pull-{{article.image_position}}" />
   </a>
 {% endif %}
     
