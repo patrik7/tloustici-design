@@ -179,7 +179,10 @@ Media querry
     width: 100%;
     float: left;
     background: aliceblue;
-    max-height: 400px;
+    max-height: 150px;
+    overflow:hidden; }
+    .article-image img{
+    width:100%;
     }
 
 
