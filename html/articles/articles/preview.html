@@ -29,15 +29,15 @@ Prewiev
 
 
 
-<p class="article-text">
+<div class="article-text">
   {{article.preview_html|safe}}
-</p>
+</div>
 
-<p>
+
   <div class="btn-group{% if size == 'small' %} btn-group-sm{% endif %} right">
     <a class="" href="{% url article article.id %}">{% trans 'Read More' %} »</a>
   </div>
-</p>
+
 
 {% if size == 'small' %}
   </small>
