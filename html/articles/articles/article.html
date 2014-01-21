@@ -24,7 +24,7 @@ Article
 {% block og_title %}{{article.heading}}{% endblock %}
 {% block og_type %}article{% endblock %}
 {% block og_image %}{% if article.image %}{{article.image.url}}{% else %}/{% endif %}{% endblock %}
-
+<div id="post-detail">
 {% block main %}
   <div class="pull-right">
     <small><p class="text-muted">{{article.display_from}}</p></small>
@@ -54,4 +54,4 @@ Article
   {% endif %}
 
 {% endblock %}
-
+</div>
