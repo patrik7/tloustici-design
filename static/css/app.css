@@ -133,6 +133,12 @@ Media querry
         font-weight: lighter;
         padding-top: 30px;
         max-width: 600px;
+        margin: 0 auto; }
+    .assist-text p strong{
+        font-size: 18px;
+        font-weight: normal;
+        padding-top: 30px;
+        max-width: 600px;
         margin: 0 auto;
     }
 
