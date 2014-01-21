@@ -11,14 +11,13 @@ Prewiev
 {% if size == 'small' %}
   <small>
 {% endif %}
-      <a class="" href="{% url article article.id %}">
 <div class="well feed-post">
-<h3>
+<a class="" href="{% url article article.id %}"><h3>
   {{article.heading}}
   {% if not article.published %}
     <small>{% trans 'Not published' %}</small>
   {% endif %}
-</h3>
+</h3></a>
 
 {% if article.image %}
   <a href="{% url article article.id %}" >
@@ -29,7 +28,13 @@ Prewiev
 <p>
   {{article.preview_html|safe}}
 </p>
-</a>
+
+<p>
+  <div class="btn-group{% if size == 'small' %} btn-group-sm{% endif %}">
+    <a class="" href="{% url article article.id %}">{% trans 'Read More' %} »</a>
+  </div>
+</p>
+
 {% if size == 'small' %}
   </small>
 {% endif %}
