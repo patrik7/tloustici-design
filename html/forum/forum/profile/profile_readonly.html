@@ -56,7 +56,7 @@ Profile read only
             <div class="hidden">
               <form action="{% url profile profile.username %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{avatar_form}}
+                {{form_uploadavatar}}
                 <input type="hidden" name="uploadavatar" value=""/>
               </form>
             </div>
