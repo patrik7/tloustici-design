@@ -37,7 +37,13 @@ Media querry
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca',endColorstr='#ff2d6ca2',GradientType=0);
     height: 50px;
     padding-top: 0px;
-}
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    }
 
 
 .bigger{
