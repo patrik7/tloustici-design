@@ -35,8 +35,10 @@ Media querry
     background-repeat: repeat-x;
     border-color: #2b669a;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca',endColorstr='#ff2d6ca2',GradientType=0);
-    filter: progid:DXImageTransform.Microsoft.gradi
+    height: 50px;
+    padding-top: 0px;
 }
+
 
 .bigger{
    font-size: 36px;
