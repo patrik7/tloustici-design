@@ -94,7 +94,15 @@ Base - zakladna sablona
 
                 {% include 'base/navigation_list.html' with navigation=navigation_social %}
               </ul>
-            {% endblock %}
+            {% endblock %}            
+
+            {% if register_form %}
+              <form method="post" action="/register/0/" class="form">
+                {% csrf_token %}
+                {{register_form|bootstrap}}
+                <input type="submit" class="btn btn-primary" name="step0" value="{% trans 'Create Account' %}">
+              </form>
+            {% endif %}
 
             {% block left %}
               {% if form_suggest %}
