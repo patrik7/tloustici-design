@@ -23,12 +23,12 @@ Navigation links in menu.
   </li>
 {% endfor %}
 
-{% if user.is_authenticated %} odhlasit 
+{% if user.is_authenticated %}
 <li class="">
     <a href="/b/logout" ><span class="glyphicon glyphicon-log-in"></span>Odhlásit se</a>
   </li>
 {% else %} 
-<li class="btn btn-success">
+<li class="btn-blue">
     <a href="/b/login" ><span class="glyphicon glyphicon-log-in"></span>Prihlásit se</a>
   </li>
 {% endif %}
