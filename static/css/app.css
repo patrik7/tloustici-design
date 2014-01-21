@@ -56,7 +56,7 @@ Media querry
         margin-top: 20px; }
     #header a{ color:white; display:block; }
     #header a:hover{ background-color:#428bca; }
-    #header ul li[class*="glyphicon-log-in"]{ 
+    #header ul li[href*="login"]{ 
         background-image: -webkit-gradient(linear,left 0,left 100%,from(#428bca),to(#2d6ca2));
         background-image: -webkit-linear-gradient(top,#428bca 0,#2d6ca2 100%);
         background-image: -moz-linear-gradient(top,#428bca 0,#2d6ca2 100%);
