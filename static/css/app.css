@@ -158,8 +158,6 @@ Media querry
         padding: 5px 0px;
         list-style: none; }
 
-
-
 .form-horizontal{
     max-width: 600px;
     margin: 0 auto; }
@@ -207,7 +205,7 @@ Media querry
     max-height: 150px;
     overflow:hidden;
     margin-bottom:20px;
-    border-bottom: 4px solid #428bca; }
+    border-bottom: 4px solid #00aedf; }
     .article-image img{
     width:100%;
     }
