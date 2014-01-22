@@ -59,13 +59,13 @@ Profile read only
             {% else %}" /></div>{% endif %}
           </div>
           <div class="col-sm-9">
-            <h3>{{profile.username}} - {{sex}}</h3>
-            <p> {% trans 'from' %} {{profile.forum_profile.city}}<p>
+            <h3>{{profile.username}} </h3>
+            <p> {% trans 'from' %} {{profile.forum_profile.city}} - {{sex}}<p>
             <p>{{profile.forum_profile.description_html|safe}}</p>
           </div>
         </div>
       </div>
-      <div class="panel-footer">
+     
         <div class="row">
           <div class="col-sm-4" >
             <div class="fb-like" data-href="http://hubnemevedvou.cz/profile/{{profile.username}}/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-ref="profile" data-width="55"></div>
@@ -100,14 +100,12 @@ Profile read only
           {% endif %}
         </div>
       </div>
-    </div>
+ 
 
     {% if profile.forum_profile.activities.all %}
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
+   
         <h3 class="panel-title">{% trans 'Activities' %}</h3>
-      </div>
       <div class="panel-body">
         {% if user.is_authenticated %}
         <div class="row">
@@ -142,7 +140,7 @@ Profile read only
             </div>
           </div>
         </div>
-      </div>
+     
       {% endif %}
     </div>
     {% endif %}
