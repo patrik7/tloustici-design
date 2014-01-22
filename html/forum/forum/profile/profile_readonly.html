@@ -59,10 +59,10 @@ Profile read only
             {% else %}" /></div>{% endif %}
           </div>
           <div class="col-sm-9">
-            <h3>{{profile.username}} </h3>
+            <h3>{{profile.username}} 
               {% if user == profile or user.is_superuser %}
                 {% button 'Edit Profile' 'profile' url_arg=profile.username icon='pencil' get_param='edit' get_value='1' %}
-              {% endif %}
+              {% endif %}</h3>
             <p> {% trans 'from' %} {{profile.forum_profile.city}} - {{sex}}<p>
             <p>{{profile.forum_profile.description_html|safe}}</p>
           </div>
