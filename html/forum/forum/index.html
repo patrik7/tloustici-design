@@ -98,7 +98,7 @@ Profile index
       var hidden = '';
 
       var link = "";
-      if (e.is_link) {
+      if (e.level < 3) {
         if (e.pk == root) {
             link = 'onClick="root = \'' + e.parent + '\'; loadData(setBreadcrumbs)"';
         } else {
