@@ -64,7 +64,6 @@ Profile read only
             <p>{{profile.forum_profile.description_html|safe}}</p>
           </div>
         </div>
-      </div>
      
         <div class="row">
           <div class="col-sm-4" >
@@ -105,7 +104,7 @@ Profile read only
     {% if profile.forum_profile.activities.all %}
 
    
-        <h3 class="panel-title">{% trans 'Activities' %}</h3>
+        <h3 class="">{% trans 'Activities' %}</h3>
       <div class="panel-body">
         {% if user.is_authenticated %}
         <div class="row">
@@ -140,7 +139,7 @@ Profile read only
             </div>
           </div>
         </div>
-     
+         </div>
       {% endif %}
     </div>
     {% endif %}
