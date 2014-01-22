@@ -130,15 +130,14 @@ Profile read only
         {% endif %}
       </div>
       {% if user == profile or user.is_superuser %}
-      <div class="panel-footer">
-        <div class="row">
+        <div class="row col-sm-12">
           <div class="col-xs-2" ></div>
           <div class="col-xs-10 text-right">
             <div class="btn-group btn-group-sm">
                 {% button 'Edit Activities' 'profile' url_arg=profile.username icon='pencil' get_param='edit' get_value='1' get_param2='focus' get_value2='act' %}
             </div>
           </div>
-        </div>
+        
          </div>
       {% endif %}
     </div>
@@ -146,8 +145,7 @@ Profile read only
 
     {% if user != profile and user.is_authenticated %}
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
+
         <h3 class="panel-title">{% trans 'Compatibility' %}</h3>
       </div>
       <div class="panel-body">
@@ -163,8 +161,6 @@ Profile read only
           <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{fit_activities}}" aria-valuemin="0" aria-valuemax="100" style="width: {{fit_activities}}%">{% trans 'Activities' %}
           </div>
         </div>
-      </div>
-    </div>
 </div>
     {% endif %}
 
