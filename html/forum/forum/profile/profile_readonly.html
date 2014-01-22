@@ -60,6 +60,9 @@ Profile read only
           </div>
           <div class="col-sm-9">
             <h3>{{profile.username}} </h3>
+              {% if user == profile or user.is_superuser %}
+                {% button 'Edit Profile' 'profile' url_arg=profile.username icon='pencil' get_param='edit' get_value='1' %}
+              {% endif %}
             <p> {% trans 'from' %} {{profile.forum_profile.city}} - {{sex}}<p>
             <p>{{profile.forum_profile.description_html|safe}}</p>
           </div>
@@ -75,9 +78,7 @@ Profile read only
               {% if user.is_superuser and user != profile %}
                 {% button 'Suspend Account' 'profile' url_arg=profile.username get_param='suspend' get_value='1' icon='lock' cls='danger' %}
               {% endif %}
-              {% if user == profile or user.is_superuser %}
-                {% button 'Edit Profile' 'profile' url_arg=profile.username icon='pencil' get_param='edit' get_value='1' %}
-              {% endif %}
+              
               {% if user != profile %}
                 <div class="btn-group btn-group-sm">
                 <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">{% trans 'Report' %} <span class="caret"></span></button>
