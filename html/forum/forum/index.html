@@ -14,19 +14,28 @@ Profile index
 
 <div class="row">
 
-  <div class="col-md-3">
-    <ul class="nav nav-pills nav-stacked">
-      {% for l in top_level %}
-        <li class="{% if root|add:0 == l.id %}active{% endif %}"><a href="{% url forum_post root=l.id %}">{{l.body}}</a></li>
-      {% endfor %}
-    </ul>
+  <p id="breadcrumbs"></p>
+
+  <div id="data">
+    {% for category in categories %}
+      <div class="well">
+        <div class="row">
+          <div class="col-md-3">
+            <img src="{{category.image_url}}" />
+          </div>
+          <div class="col-md-6">
+            {{category.body_html}}
+          </div>
+          <div class="col-md-3">
+            {% trans 'Post count' %}: {{category.post_count}}
+            <a href="javascript:void(0)" class="btn btn-info" onClick="root = '{{category.id}}'; loadData(setBreadcrumbs);" >{% trans 'Read' %}</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
   </div>
 
-  <div class="col-md-9">
-    <div id="data"></div>
-
-    <div id="pagination"></div>
-  </div>
+  <div id="pagination"></div>
 
 </div>
 
@@ -68,6 +77,18 @@ Profile index
       return txt;
     }
 
+    function setBreadcrumbs(extra) {
+      var txt = '';
+      for (var i = 0; i < extra.breadcrumbs.length; i++) {
+        txt += '<a href="javascript:void(0)" onclick="root = ' + extra.breadcrumbs[i].pk + '; loadData(setBreadcrumbs);">';
+        txt += extra.breadcrumbs[i].text + '</a>';
+        if (i < extra.breadcrumbs.length - 1) {
+          txt += " > ";
+        }
+      }
+      $('#breadcrumbs').html('{% trans 'You are in discussion' %} ' + txt);
+    }
+
     {% block entry_rendering %}
 
     function render(i, e, last_end) {
@@ -79,9 +100,9 @@ Profile index
       var link = "";
       if (e.is_link) {
         if (e.pk == root) {
-            link = 'onClick="root = \'' + e.parent + '\'; loadData()"';
+            link = 'onClick="root = \'' + e.parent + '\'; loadData(setBreadcrumbs)"';
         } else {
-            link = 'onClick="root = \'' + e.pk + '\'; loadData()"';
+            link = 'onClick="root = \'' + e.pk + '\'; loadData(setBreadcrumbs)"';
         }
       }
 
@@ -191,8 +212,10 @@ Profile index
     {% else %}
       root = '';
     {% endif %}
-    
-    $(document).ready(loadData());
+
+    {% if not categories %}    
+      $(document).ready(loadData(setBreadcrumbs));
+    {% endif %}
 
     window.onscroll = scrollFunction;
 

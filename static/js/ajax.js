@@ -65,7 +65,7 @@ function loadData(doneCallback)
       addData(entries);
       setupPagination(pagination);
       if (doneCallback) {
-        doneCallback();
+        doneCallback(data.extra);
       }
     })
     .fail(function() {
