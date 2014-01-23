@@ -79,6 +79,7 @@ Media querry
     @media only screen and (max-width: 680px) {
         .hero{ float: left;
 background: #428bca; }
+        .nav-pills>li{float:none !important;}
     }
 
 
