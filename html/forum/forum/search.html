@@ -13,10 +13,9 @@ Search
 {% block main %}
 
   {% if search_form %}
-  <div class="panel panel-default">
       <h3 class=""> {% trans 'Search Criteria' %}</h3>
 
-    <div class="panel-body">
+    <div class="well big-faq panel-body">
       <form class="form-horizontal">
       {{search_form|bootstrap_horizontal:"col-sm-2"}}
       </form>
