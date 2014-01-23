@@ -245,6 +245,9 @@ Media querry
     display: block;
     }
 
+/******************************************************************************
+6. Big
+*******************************************************************************/
 
 .big-faq{
     background-color: #FFF;
@@ -252,6 +255,12 @@ Media querry
     border-radius: 0px;
     -webkit-border-radius: 0px;
     box-shadow: 0px 0px 10px #66b7fb;
+    }
+
+.big-favorities{
+    background-color: #FFF;
+    background-image: none;
+    border-radius: 0px;
     }
 
 /******************************************************************************
