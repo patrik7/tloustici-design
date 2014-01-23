@@ -57,6 +57,7 @@ Base - zakladna sablona
     {% block body %}
     <nav id="header" role="navigation">
       <div class="container">
+         
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -69,7 +70,7 @@ Base - zakladna sablona
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <div class="collapse navbar-collapse navbar-ex1-collapse menu-dropdown-new hero">
           {% block navigation %}
             <ul class="nav navbar-nav navbar-right nav-pills">
               {% include 'base/navigation_list.html' %}
@@ -78,6 +79,7 @@ Base - zakladna sablona
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container -->
     </nav>
+      <div class="clearfix"></div>
     <div id="content">
       <div class="container">
        

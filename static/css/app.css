@@ -41,7 +41,7 @@ Media querry
 .bold{ font-weight:bold; }
 .padding-bottom{ padding-bottom:20px; }
 .padding-top{ padding-top:20px; }
-
+.padding-both{ margin:0 20px}
 
 /******************************************************************************
 3. Header
@@ -76,6 +76,12 @@ Media querry
         }
 
 .navbar-brand{ padding:0px important; }
+    @media only screen and (max-width: 680px) {
+        .hero{ float: left;
+background: #428bca; }
+        .nav-pills>li{float:none !important;}
+    }
+
 
 /******************************************************************************
 4. Sidebar menu
@@ -83,7 +89,7 @@ Media querry
 
 #sidebar{ 
     background-color:#FFF;
-    margin: 0 0 15px 0; }
+    margin: 0 0 15px 0;}
     #sidebar li{ padding: 0 5px; }
 
 
@@ -122,7 +128,7 @@ Media querry
 
 .lide{
     background-image:url("../images/hubneme-lide.png");
-    padding-bottom:20px;
+    padding-bottom:94px;
     background-repeat:no-repeat;
 }
 
@@ -244,6 +250,9 @@ Media querry
     display: block;
     }
 
+/******************************************************************************
+6. Big
+*******************************************************************************/
 
 .big-faq{
     background-color: #FFF;
@@ -251,6 +260,12 @@ Media querry
     border-radius: 0px;
     -webkit-border-radius: 0px;
     box-shadow: 0px 0px 10px #66b7fb;
+    }
+
+.big-favorities{
+    background-color: #FFF;
+    background-image: none;
+    border-radius: 0px;
     }
 
 /******************************************************************************
@@ -262,12 +277,20 @@ Media querry
 *******************************************************************************/
 
 
-@media (max-width: 640px) {
+
+
+@media (max-width: 1200px) {
     
-    .banner{ width: 100%; }
-    .assist-text{ background-image:none; }
     .lide{
         background-image:none;
         padding-bottom: 20px;
         }
+    .assist-text{ background-image:none; }
+}
+
+@media (max-width: 640px) {
+    
+    .banner{ width: 100%; }
+    
+   
 }

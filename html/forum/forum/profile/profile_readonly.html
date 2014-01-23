@@ -28,19 +28,24 @@ Profile read only
 
 {% block main %}
 
-  <div class="profile_image">
-  </div>
   <div class="profile_data">
 
     <div class="panel panel-info">
-      <div class="panel-heading">
-        <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> {{profile.username}} <small>{% trans 'from' %} {{profile.forum_profile.city}}</small></h3>
-      </div>
+      
       <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-3">
-            <div style="position: relative; width: 120px; height: auto; margin-left: auto; margin-right: auto;">
-              <img src="{{profile.forum_profile.avatar_url}}" width="120" height="120" class="img-rounded{% if user == profile or user.is_superuser %} link-glow" onclick="javascript:performClick(document.getElementById('id_avatar'))" />
+        <div class="col-sm-12">
+          
+          <div class="col-sm-8">
+            <h3>{{profile.username}} 
+              {% if user == profile or user.is_superuser %}
+                {% button 'Edit Profile' 'profile' url_arg=profile.username icon='pencil' get_param='edit' get_value='1' %}
+              {% endif %}</h3>
+            <p class="text-muted"> {% trans 'from' %} {{profile.forum_profile.city}} - {{sex}}<p>
+            <p>{{profile.forum_profile.description_html|safe}}</p>
+          </div>
+            <div class="col-sm-4">
+            <div style="position: relative; width: 160px; height: auto; margin-left: auto; margin-right: auto;">
+              <img src="{{profile.forum_profile.avatar_url}}" width="160" height="160" class="img-circle{% if user == profile or user.is_superuser %} link-glow" onclick="javascript:performClick(document.getElementById('id_avatar'))" />
               <div style="position:absolute; bottom: -1px; right: 3px; color: #505050; ">
                 <small><small>
                   {% trans 'Change Picture' %} <span class="glyphicon glyphicon-repeat"></span>
@@ -50,9 +55,8 @@ Profile read only
                 <small><small>
                   {% trans 'Change Picture' %} <span class="glyphicon glyphicon-repeat"></span>
                 </small></small>
-              </div>
-
             </div>
+                
             <div class="hidden">
               <form action="{% url profile profile.username %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
@@ -62,14 +66,10 @@ Profile read only
             </div>
             {% else %}" /></div>{% endif %}
           </div>
-          <div class="col-sm-9">
-            <p>{{profile.username}} - {{sex}}</p>
-            <p>{{profile.forum_profile.description_html|safe}}</p>
-          </div>
         </div>
-      </div>
-      <div class="panel-footer">
-        <div class="row">
+     </div>
+        <div class="clearfix"></div>
+        <div class="col-sm-12">
           <div class="col-sm-4" >
             <div class="fb-like" data-href="http://hubnemevedvou.cz/profile/{{profile.username}}/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-ref="profile" data-width="55"></div>
           </div>
@@ -79,9 +79,7 @@ Profile read only
               {% if user.is_superuser and user != profile %}
                 {% button 'Suspend Account' 'profile' url_arg=profile.username get_param='suspend' get_value='1' icon='lock' cls='danger' %}
               {% endif %}
-              {% if user == profile or user.is_superuser %}
-                {% button 'Edit Profile' 'profile' url_arg=profile.username icon='pencil' get_param='edit' get_value='1' %}
-              {% endif %}
+              
               {% if user != profile %}
                 <div class="btn-group btn-group-sm">
                 <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">{% trans 'Report' %} <span class="caret"></span></button>
@@ -101,20 +99,21 @@ Profile read only
             </div>
           </div>
           {% endif %}
-        </div>
-      </div>
-    </div>
+        
+ <div class="clearfix"></div>
+ <hr/>
 
     {% if profile.forum_profile.activities.all %}
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">{% trans 'Activities' %}</h3>
-      </div>
-      <div class="panel-body">
+
+       <div class="col-sm-12">
+        
+     
+  
         {% if user.is_authenticated %}
-        <div class="row">
+       
           <div class="col-sm-6 col-xs-12">
+            <h3 class="">{% trans 'Activities' %}</h3>
             <h4>{% trans 'Sports' %}:</h4>
             {% for a in profile.forum_profile.activities.all %}
               {% if a.sport %}
@@ -123,6 +122,7 @@ Profile read only
             {% endfor %}
           </div>
           <div class="col-sm-6 col-xs-12">
+            <h3 class="">&nbsp;</h3>
             <h4>{% trans 'Other Activities' %}:</h4>
             {% for a in profile.forum_profile.activities.all %}
               {% if not a.sport %}
@@ -134,26 +134,24 @@ Profile read only
         {% else %}
           <p>{% trans 'This info is visible only to' %} <a href="{% url register %}">{% trans 'registered'%}</a> {% trans 'users.' %}</p>
         {% endif %}
-      </div>
+      <div class="clearfix"></div>
       {% if user == profile or user.is_superuser %}
-      <div class="panel-footer">
-        <div class="row">
+        <div class="col-sm-12">
           <div class="col-xs-2" ></div>
           <div class="col-xs-10 text-right">
             <div class="btn-group btn-group-sm">
                 {% button 'Edit Activities' 'profile' url_arg=profile.username icon='pencil' get_param='edit' get_value='1' get_param2='focus' get_value2='act' %}
             </div>
           </div>
-        </div>
-      </div>
+        
+         </div>
       {% endif %}
     </div>
     {% endif %}
-
+<hr/>
     {% if user != profile and user.is_authenticated %}
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
+
         <h3 class="panel-title">{% trans 'Compatibility' %}</h3>
       </div>
       <div class="panel-body">
@@ -169,13 +167,11 @@ Profile read only
           <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{fit_activities}}" aria-valuemin="0" aria-valuemax="100" style="width: {{fit_activities}}%">{% trans 'Activities' %}
           </div>
         </div>
-      </div>
-    </div>
-
+</div>
     {% endif %}
-
+</div>
   </div>
-
+</div>
 {% endblock %}
 
 {% block extra_script %}
