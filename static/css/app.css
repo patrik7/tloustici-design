@@ -76,6 +76,11 @@ Media querry
         }
 
 .navbar-brand{ padding:0px important; }
+ 
+ .hero{ float: left;
+background: #428bca; }
+
+
 
 /******************************************************************************
 4. Sidebar menu
@@ -269,6 +274,9 @@ Media querry
 
 
 *******************************************************************************/
+
+
+
 
 @media (max-width: 1200px) {
     
