@@ -76,10 +76,10 @@ Media querry
         }
 
 .navbar-brand{ padding:0px important; }
- 
- .hero{ float: left;
+    @media only screen and (max-width: 680px) {
+        .hero{ float: left;
 background: #428bca; }
-
+    }
 
 
 /******************************************************************************
