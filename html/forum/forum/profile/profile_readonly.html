@@ -33,7 +33,7 @@ Profile read only
     <div class="panel panel-info">
       
       <div class="panel-body">
-        <div class="row col-sm-12">
+        <div class="col-sm-12">
           
           <div class="col-sm-9">
             <h3>{{profile.username}} 
@@ -68,7 +68,7 @@ Profile read only
           </div>
         </div>
      
-        <div class="row col-sm-12">
+        <div class="col-sm-12">
           <div class="col-sm-4" >
             <div class="fb-like" data-href="http://hubnemevedvou.cz/profile/{{profile.username}}/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-ref="profile" data-width="55"></div>
           </div>
@@ -104,13 +104,13 @@ Profile read only
 
     {% if profile.forum_profile.activities.all %}
 
-   <div class="row">
+
        <div class="col-sm-12">
         <h3 class="">{% trans 'Activities' %}</h3>
-        </div>
-       </div>
+     
+  
         {% if user.is_authenticated %}
-       <div class="row"> 
+       
           <div class="col-sm-6 col-xs-12">
             <h4>{% trans 'Sports' %}:</h4>
             {% for a in profile.forum_profile.activities.all %}
