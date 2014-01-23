@@ -14,16 +14,15 @@ Search
 
   {% if search_form %}
   <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title"><span class="glyphicon glyphicon-search"></span> {% trans 'Search Criteria' %}</h3>
-    </div>
+      <h3 class=""> {% trans 'Search Criteria' %}</h3>
+
     <div class="panel-body">
       <form class="form-horizontal">
       {{search_form|bootstrap_horizontal:"col-sm-2"}}
       </form>
     </div>
   </div>
-
+</div>
   <div id="data">
   </div>
 
