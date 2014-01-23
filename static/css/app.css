@@ -276,11 +276,12 @@ Media querry
         background-image:none;
         padding-bottom: 20px;
         }
+    .assist-text{ background-image:none; }
 }
 
 @media (max-width: 640px) {
     
     .banner{ width: 100%; }
-    .assist-text{ background-image:none; }
+    
    
 }
