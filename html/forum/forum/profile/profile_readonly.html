@@ -104,11 +104,13 @@ Profile read only
 
     {% if profile.forum_profile.activities.all %}
 
-   
+   <div class="row">
+       <div class="col-sm-12">
         <h3 class="">{% trans 'Activities' %}</h3>
-      <div class="panel-body">
+        </div>
+       </div>
         {% if user.is_authenticated %}
-        <div class="row">
+       <div class="row"> 
           <div class="col-sm-6 col-xs-12">
             <h4>{% trans 'Sports' %}:</h4>
             {% for a in profile.forum_profile.activities.all %}
