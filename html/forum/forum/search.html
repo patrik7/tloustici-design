@@ -80,35 +80,32 @@ Search
 
     function render(i, e, last) {
       var a = '<a href="' + e.link  + '">'
-      $('#data').append('<div class="panel panel-info">'
-        + '<div class="panel-heading">'
-          + '<h3 class="panel-title">'
-          + a + '<span class="glyphicon glyphicon-user" /> ' + e.username + '</a> '
-          + (e.city != '' ? '<small>{% trans 'from' context 'city' %} ' + e.city + '</small>' : '')
-          + '</h3>'
-        + '</div>'
+      $('#data').append('<div class="col-md-6 col-sm-12 panel panel-info">'
+          
         + '<div class="panel-body">'
-          + '<div class="row"><div class="col-xs-5 col-sm-3">'
+          + '<div class="row"><div class="col-xs-12 col-sm-4">'
               + a + '<img src="' + e.avatar + '" class="img-rounded" width="100%"/></a>'
             + '</div>'
-            + '<div class="col-xs-7 col-sm-4">'
-              + e.bio
-            + '</div>'
-            + '<div class="clearfix visible-xs"></div>'
-            + '<div class="col-sm-5">'
+          
+            + '<div class="col-sm-8">'
+                + '<h3 class="">'
+          + a + e.username + '</a> '
+          + (e.city != '' ? '<small>{% trans 'from' context 'city' %} ' + e.city + '</small>' : '')
+          + '</h3>'
+           +  '<p>' + e.bio + '</p>'
               + add_bar(e.fitness[0], "{% trans 'Overall Compatibility' %}")
               + add_bar(e.fitness[1], "{% trans 'Body' %}")
               + add_bar(e.fitness[2], "{% trans 'Activities' %}")
             + '</div>'
           + '</div>'
         + '</div>'
-        + '<div class="panel-footer text-right">'
+        
           + '<div class="btn-group btn-group-xs">'
             + '<a class="btn btn-default" href="{% url favourites %}?add=' + e.username  + '"><span class="glyphicon glyphicon-pushpin"></span> {% trans 'Add to Favourites' %}</a>'
             + '<a class="btn btn-default" href="{% url messages %}?addressee=' + e.username + '"><span class="glyphicon glyphicon-envelope"></span> {% trans 'Send Message' %}</a>'
           + '</div>'
         + '</div>'
-      + '</div>'
+  
 
       + '</div>');            
     }
