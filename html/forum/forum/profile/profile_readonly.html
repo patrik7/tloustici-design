@@ -35,15 +35,15 @@ Profile read only
       <div class="panel-body">
         <div class="col-sm-12">
           
-          <div class="col-sm-9">
+          <div class="col-sm-8">
             <h3>{{profile.username}} 
               {% if user == profile or user.is_superuser %}
                 {% button 'Edit Profile' 'profile' url_arg=profile.username icon='pencil' get_param='edit' get_value='1' %}
               {% endif %}</h3>
-            <p> {% trans 'from' %} {{profile.forum_profile.city}} - {{sex}}<p>
+            <p class="text-muted"> {% trans 'from' %} {{profile.forum_profile.city}} - {{sex}}<p>
             <p>{{profile.forum_profile.description_html|safe}}</p>
           </div>
-            <div class="col-sm-3">
+            <div class="col-sm-4">
             <div style="position: relative; width: 160px; height: auto; margin-left: auto; margin-right: auto;">
               <img src="{{profile.forum_profile.avatar_url}}" width="160" height="160" class="img-circle{% if user == profile or user.is_superuser %} link-glow" onclick="javascript:performClick(document.getElementById('id_avatar'))" />
               <div style="position:absolute; bottom: -1px; right: 3px; color: #505050; ">

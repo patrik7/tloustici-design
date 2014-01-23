@@ -56,7 +56,12 @@ Base - zakladna sablona
 
     {% block body %}
     <nav id="header" role="navigation">
-      <div class="container">
+      <div class="container hero">
+          <style type="text/css">
+    @media only screen and (min-width: 680px) {
+        .hero{ min-height:150px; float:left; }
+    }
+</style>
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -69,7 +74,7 @@ Base - zakladna sablona
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <div class="collapse navbar-collapse navbar-ex1-collapse menu-dropdown-new">
           {% block navigation %}
             <ul class="nav navbar-nav navbar-right nav-pills">
               {% include 'base/navigation_list.html' %}
