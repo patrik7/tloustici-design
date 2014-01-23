@@ -13,12 +13,12 @@ Favorities
   {% if favourites %}
   <div class="row">
     {% for f in favourites %}
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left">
         <div class="well text-center link-glow" onclick="location.href='{% url profile f.celebrity.username %}';">
-            <div class="col-md-4">
+            <div class="col-md-6">
             <img class="img img-circle" src="{{f.celebrity.forum_profile.avatar_url}}" width="120" height="120"/>
             </div>
-            <div class="col-md-8">
+            <div class=" text-left col-md-6" style="max-height:64px; overflow:hidden;">
             <h3><a href="' + e.link  + '">{{f.celebrity.username}}</a></h3>
             <p>{{f.celebrity.forum_profile.description_html|safe}}</p>
             </div>
