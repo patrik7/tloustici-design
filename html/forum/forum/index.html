@@ -108,18 +108,9 @@ Profile index
 
 
       footer =
-        '<div class="row">'
-        + '<div class="col-xs-3">';
+        '<div class="row">'    
 
-      if (e.level > 1) {
-        footer += '<small><a href="' + e.user_link + '">'
-          +  e.user
-          + '</a></small>';
-        body += '<div class="pull-right text-muted"><small>' + e.date + '</small></div>';
-
-      }
-
-      footer += '</div><div class="col-xs-9 text-right">';
+      footer += '<div class="col-xs-9 text-right">';
 
       if (e.post_count > 0) {
         footer += '<small>' + e.post_count + ' '+ e.posts + '</small> ';
