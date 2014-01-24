@@ -216,6 +216,20 @@ background: #428bca; }
     width:100%;
     }
 
+
+.article-image2{
+    display: block;
+    width: 100%;
+    float: left;
+    background: aliceblue;
+    max-height: 150px;
+    overflow:hidden;
+    margin-bottom:20px;
+    border-bottom: 4px solid #00aedf; }
+    .article-image2 img{
+    width:100%;
+    }
+
 .article-text{
     max-height:64px;
     overflow:hidden;
