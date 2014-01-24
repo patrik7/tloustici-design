@@ -158,8 +158,7 @@ Messagess origin
       body += '<div class="pull-right text-muted"><small>' + e.date + '</small></div>';
       body += '<p>' + e.text + '</p>';
 
-      var footer = '<div class="row">'
-                   + '<div class="col-xs-12 text-right">'
+      var footer = '<div class="col-xs-12 text-right">'
                      + '<div class="btn-group btn-group-xs">';
       if (e.author != '{{user}}') {
                footer += '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">'
@@ -170,7 +169,7 @@ Messagess origin
                          + '<li><a href="{% url report 'abuse' %}?target_id=' + e.pk + '&target=Message">{% trans 'Other Abuse' %}</a></li>'
                        + '</ul>';
       }
-           footer += '</div></div></div>';
+           footer += '</div></div>';
 
       elem.append(
         '<div class="panel panel-default col-xs-offset-1" style="margin-bottom: 5px;">'
