@@ -160,8 +160,13 @@ Profile index
 
       footer += '</div></div></div>';
 
+      var offset = '';
+      if (e.level == '4') {
+        offset = 'col-xs-offset-1';
+      }
+
       $('#data').append(
-        '<div class="panel panel-default well big-favorities ' + e.html_class + '>'
+        '<div class="panel panel-default well big-favorities ' + offset + '">'
         + '<div class="panel-body link-glow" ' + link + '>'
           + '<div class="row">'
             + '<div class="col-xs-2 visible-sm visible-md visible-lg">'
@@ -181,7 +186,7 @@ Profile index
       if(e.level < 4) {
 
         $('#data').append(
-          '<div id="post' + i + '" class="panel panel-default ' + e.html_class2 + ' hidden" style="margin-bottom: 5px;">'
+          '<div id="post' + i + '" class="panel panel-default hidden" style="margin-bottom: 5px;">'
           + '<div class="panel-body" style="padding: 5px;">'
             + '<div class="row">'
               + '<div class="col-xs-2 visible-sm visible-md visible-lg">'
