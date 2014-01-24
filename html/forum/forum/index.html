@@ -120,11 +120,6 @@ Profile index
       }
 
       footer += '</div><div class="col-xs-9 text-right">';
-
-      if (e.post_count > 0) {
-        footer += '<small>' + e.post_count + ' '+ e.posts + '</small> ';
-      }
-
       footer += '<div class="btn-group btn-group-xs">';
 
       {% if user.is_authenticated %}
@@ -181,6 +176,9 @@ Profile index
           +  e.user
           + '</small>'
           + body + '</div>'
+          if (e.post_count > 0) {
+        footer += '<small>' + e.post_count + ' '+ e.posts + '</small> ';
+      }
           + '</div>'
           + footer
         + '</div>'
