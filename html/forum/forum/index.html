@@ -18,13 +18,13 @@ Profile index
 
   <div id="data">
     {% for category in categories %}
-      <div class="well">
+      <div class="well big-faq">
         <div class="row">
           <div class="col-md-3">
-            <img src="{{category.image_url}}" />
+            <img src="{{category.image_url}}" style="width:100%;" />
           </div>
           <div class="col-md-6">
-            {{category.body_html}}
+            <h3>{{category.body_html}}</h3>
           </div>
           <div class="col-md-3">
             {% trans 'Post count' %}: {{category.post_count}}
