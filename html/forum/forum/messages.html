@@ -212,15 +212,13 @@ Messagess origin
       link = 'javascript:loadMessages(' + i + ', ' + e.id + ', \'' + e.other_user + '\', ' + e.unread + ');'
 
       $('#data').append(
-        '<div id="conversation' + i + '" class="panel panel-default ' + e.html_class + '" style="margin-bottom: 5px;">'
-        + '<div class="panel-body link-glow" style="padding: 5px;" onclick="' + link + '">'
+        '<div id="conversation' + i + '" class="panel panel-default link-glow ' + e.html_class + '" style="margin-bottom: 5px;" onclick="' + link + '" >'
           + '<div class="row">'
             + '<div class="col-xs-2 visible-sm visible-md visible-lg">'
               + '<img src="' + e.avatar + '" width="100%" class="img-circle" />'
             + '</div>'
             + '<div class="col-xs-10">' + body + '</div>'
           + '</div>'
-        + '</div>'
         + footer 
       + '</div><div id="popu' + i + '"></div><div id="pagination' + e.id  + '"></div>');
 
