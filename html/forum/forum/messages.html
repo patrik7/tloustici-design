@@ -190,7 +190,8 @@ Messagess origin
     function render(i, e, last_end) {
       var body = '';
 
-      var footer = '<div class="btn-group btn-group-xs">';
+      var footer = '<div class="col-xs-12 text-right">'
+                     + '<div class="btn-group btn-group-xs">';
 
       if (!e.blocked) {
                footer += '<a href="{% url messages %}?block=' + e.other_user + '" class="btn btn-default"><span class="glyphicon glyphicon-ban-circle"></span> {% trans 'Block' %}</a>';
@@ -198,7 +199,7 @@ Messagess origin
                footer += '<a href="{% url messages %}?unblock=' + e.other_user + '" class="btn btn-default"><span class="glyphicon glyphicon-ban-circle"></span> {% trans 'Unblock' %}</a>';
       }
 
-         footer += '</div>';
+         footer += '</div></div>';
 
       body += '<div class="text-right text-muted" ><small>{% trans 'Last message' %}: ' + e.last_message + '</small></div>';
       body += '<p>{% trans 'Conversation with' %} <a href="' + e.other_user_link + '">' + e.other_user + '</a>';
