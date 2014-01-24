@@ -24,7 +24,7 @@ Messagess origin
 
   
     <h3 class="">{% trans 'Write Private Message' %}</h3>
-    <div class="panel panel-default">
+    <div class="panel panel-default padding-top">
       {% include 'form.html' with form=new_form button='Send Message' name='new' %}
     </div>
 
@@ -60,7 +60,7 @@ Messagess origin
       remote: '/login/data/%QUERY.json',
       template: [                                                                 
 {% verbatim %}
-        '<image src="{{avatar}}" class="img" style="width: auto; height: 30px;" /> {{value}}',
+        '<image src="{{avatar}}" class="img-circle" style="width: auto; height: 30px;" /> {{value}}',
 {% endverbatim %}
       ].join(''),
       engine: Hogan
@@ -177,7 +177,7 @@ Messagess origin
         + '<div class="panel-body' + (unread ? ' unread' : '') + '" style="padding: 5px;">'
           + '<div class="row">'
             + '<div class="col-xs-2 visible-sm visible-md visible-lg">'
-              + '<img src="' + e.avatar + '" width="100%" class="img-rounded" />'
+              + '<img src="' + e.avatar + '" width="100%" class="img-circle" />'
             + '</div>'
             + '<div class="col-xs-10">' + body + '</div>'
           + '</div>'
@@ -216,7 +216,7 @@ Messagess origin
         + '<div class="panel-body link-glow" style="padding: 5px;" onclick="' + link + '">'
           + '<div class="row">'
             + '<div class="col-xs-2 visible-sm visible-md visible-lg">'
-              + '<img src="' + e.avatar + '" width="100%" class="img-rounded" />'
+              + '<img src="' + e.avatar + '" width="100%" class="img-circle" />'
             + '</div>'
             + '<div class="col-xs-10">' + body + '</div>'
           + '</div>'
