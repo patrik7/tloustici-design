@@ -23,11 +23,12 @@ Profile index
           <div class="col-md-3">
             <img src="{{category.image_url}}" style="width:100%;" />
           </div>
-          <div class="col-md-6">
+          <div class="col-md-9">
             <h3>{{category.body_html}}</h3>
+            <p>{% trans 'Post count' %}: {{category.post_count}}</p>
           </div>
-          <div class="col-md-3">
-            {% trans 'Post count' %}: {{category.post_count}}
+          <div class="row col-md-12">
+            
             <a href="javascript:void(0)" class="btn btn-info" onClick="root = '{{category.id}}'; loadData(setBreadcrumbs);" >{% trans 'Read' %}</a>
           </div>
         </div>
