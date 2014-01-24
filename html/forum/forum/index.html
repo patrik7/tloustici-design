@@ -171,12 +171,12 @@ Profile index
 
       $('#data').append(
         '<div class="panel panel-default ' + e.html_class + '" style="margin-bottom: 5px;">'
-        + '<div class="panel-body link-glow" style="padding: 5px;" ' + link + '>'
+        + '<div class="panel-body link-glow" ' + link + '>'
           + '<div class="row">'
             + '<div class="col-xs-2 visible-sm visible-md visible-lg">'
               + '<img src="' + e.avatar + '" width="100%" class="img-rounded" />'
             + '</div>'
-            + '<div class="col-xs-10">' + body + '</div>'
+            + '<div class="col-xs-10">' + '<h3>' + body + '</h3>' + '</div>'
           + '</div>'
           + footer
         + '</div>'
