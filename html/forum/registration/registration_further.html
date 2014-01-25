@@ -20,9 +20,10 @@ Proces registracie
 Navigacia kroky registracie
 ------------------------------------------------------------------------------------------->
 
-<h2 class="text-center">Vitaj MENO pre uspesne vytvorenie profilu ta cakaju <br/> 4 jednoduche kroky</h2>
+<h2 class="text-center">{% trans 'Welcome' %} {{tmp_user.username}}, {% trans 'you need to follow 4 easy steps to complete the registration.' %}</h2>
 <small>
-    <p class="lead text-center"> 1. Aktivity > 2. Informacie o sebe > 3. Nastavenie hesla > 4. Overenie mailom</a>
+    <p class="lead text-center">
+      {{steps_text|safe}}
     </p>
 </small> 
 
