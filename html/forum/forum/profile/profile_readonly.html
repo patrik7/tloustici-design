@@ -40,7 +40,10 @@ Profile read only
               {% if user == profile or user.is_superuser %}
                 {% button 'Edit Profile' 'profile' url_arg=profile.username icon='pencil' get_param='edit' get_value='1' %}
               {% endif %}</h3>
-            <p class="text-muted"> {% trans 'from' %} {{profile.forum_profile.city}} - {{sex}}<p>
+            <p class="text-muted">
+              {% if profile.forum_profile.city %} {% trans 'from' %} {{profile.forum_profile.city}}{% endif %}
+              {% if sex %} - {{sex}}{% endif %}
+            </p>
             <p>{{profile.forum_profile.description_html|safe}}</p>
           </div>
             <div class="col-sm-4">
