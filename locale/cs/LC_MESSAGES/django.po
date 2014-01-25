@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-25 15:15+0100\n"
+"POT-Creation-Date: 2014-01-25 15:32+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,22 +20,22 @@ msgstr ""
 #: Tloustici/translations.py:11
 msgctxt "button"
 msgid "Edit Profile"
-msgstr "Upravit Profil"
+msgstr "Upravit profil"
 
 #: Tloustici/translations.py:12
 msgctxt "button"
 msgid "Suspend Account"
-msgstr "Pozastavit Účet"
+msgstr "Pozastavit účet"
 
 #: Tloustici/translations.py:13
 msgctxt "button"
 msgid "Send Message"
-msgstr "Poslat Zprávu"
+msgstr "Poslat zprávu"
 
 #: Tloustici/translations.py:14
 msgctxt "button"
 msgid "Edit Activities"
-msgstr "Upravit Aktivity"
+msgstr "Upravit aktivity"
 
 #: Tloustici/translations.py:15
 msgctxt "button"
@@ -56,6 +56,10 @@ msgstr "Přidat k oblíbeným"
 msgctxt "city"
 msgid "from"
 msgstr "z"
+
+#: Tloustici/translations.py:21
+msgid "Send Password"
+msgstr "Poslat heslo"
 
 #: articles/models.py:9
 msgid "left"
@@ -171,7 +175,7 @@ msgid "Log out"
 msgstr "Odhlásit se"
 
 #: base/context_processors.py:53 base/templates/base/email_base.html:22
-#: base/templates/base/login.html:30
+#: base/templates/base/login.html:27
 msgid "Log in"
 msgstr "Přihlásit se"
 
@@ -230,11 +234,11 @@ msgstr "Vytvořit účet"
 msgid "There was a problem loading the data."
 msgstr "Vyskytly se potíže při načítání dat"
 
-#: base/templates/base/login.html:19
+#: base/templates/base/login.html:16
 msgid "Log in and kick start your life!"
 msgstr "Přihlaš se a najdi své štěstí!"
 
-#: base/templates/base/login.html:27
+#: base/templates/base/login.html:24
 msgid "Forgot your password?"
 msgstr "Zapomněl jsi své heslo?"
 
@@ -1064,7 +1068,7 @@ msgstr "Rozhovor s"
 
 #: forum/templates/forum/password_recovery.html:21
 msgid "New password will be sent to your email address."
-msgstr ""
+msgstr "Nové heslo bude posláno na tvou e-mailovou adresu."
 
 #: forum/templates/forum/report.html:24
 msgid ""
