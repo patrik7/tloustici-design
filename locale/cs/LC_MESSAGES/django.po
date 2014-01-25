@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-25 14:47+0100\n"
+"POT-Creation-Date: 2014-01-25 15:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -171,11 +171,11 @@ msgid "Log out"
 msgstr "Odhlásit se"
 
 #: base/context_processors.py:53 base/templates/base/email_base.html:22
-#: base/templates/base/login.html:19 base/templates/base/login.html.py:30
+#: base/templates/base/login.html:30
 msgid "Log in"
 msgstr "Přihlásit se"
 
-#: base/forms.py:18
+#: base/forms.py:18 forum/forms.py:25 forum/forms.py:97
 msgid "username"
 msgstr "Uživatelské jméno"
 
@@ -230,13 +230,21 @@ msgstr "Vytvořit účet"
 msgid "There was a problem loading the data."
 msgstr "Vyskytly se potíže při načítání dat"
 
+#: base/templates/base/login.html:19
+msgid "Log in and kick start your life!"
+msgstr "Přihlaš se a najdi své štěstí!"
+
 #: base/templates/base/login.html:27
 msgid "Forgot your password?"
-msgstr "Zapomněl jsi heslo?"
+msgstr "Zapomněl jsi své heslo?"
 
 #: forum/forms.py:25
 msgid "Your username"
 msgstr "Tvé uživatelské jméno"
+
+#: forum/forms.py:26
+msgid "email"
+msgstr "E-mail"
 
 #: forum/forms.py:26
 msgid "The email you have used for registration"
@@ -246,7 +254,7 @@ msgstr "Vložit e-mailovou adresu"
 msgid "Incorrect login name, or email."
 msgstr "Nesprávné uživatelské jméno nebo e-mail"
 
-#: forum/forms.py:40
+#: forum/forms.py:40 forum/forms.py:98
 msgid "Email"
 msgstr "E-mail"
 
@@ -727,8 +735,8 @@ msgid ""
 msgstr ""
 
 #: forum/views.py:202
-msgid "Your account was activated. Please log in."
-msgstr "Gratulujeme! Tvůj účet byl úpěšně vytvořen. Prosím, přihlaš se."
+msgid "Your account was activated."
+msgstr "Gratulujeme! Tvá registrace byla úspěšně dokončena."
 
 #: forum/views.py:260
 msgid "Update"
@@ -1199,6 +1207,7 @@ msgstr ""
 "cz</a> a těšíme se na společně shozená kila!"
 
 #: forum/templates/registration/email_activation.html:30
+#, python-format
 msgid ""
 "\n"
 "      In order to finish the registration, please click on the following \n"
