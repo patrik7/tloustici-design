@@ -6,15 +6,30 @@ Base email
 
 ------------------------------------------------------------------------------------------->
 
+{% load i18n %}
+
 <html>
   <head>
+    <link href="http://{{domain}}{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet" />
+   
     {% block extra_style %}
     {% endblock %}
   </head>
   <body>
-    <h1>{% block title %}Hubnemevedvou.cz{% endblock %}</h1>
-    {% block main %}
+    {% block head %}
+      logo...
 
+      <a href="http://{{domain}}{% url login %}">{% trans 'Log in' %}</a>
     {% endblock %}
+
+    {% block main %}
+    {% endblock %}
+
+    <p class="text-right">
+      {% block underwritting %}
+        {{domain|capfirst}}<br/>
+        webmaster@{{domain}}
+      {% endblock %}
+    </p>
   </body>
 </html>

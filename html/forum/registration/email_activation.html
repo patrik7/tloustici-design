@@ -10,22 +10,27 @@ Email activation
 
 {% load i18n %}
 
-{% block title %}{% trans 'Registration Completed' %}{% endblock %}
-
 {% block main %}
-<p>
-{% trans 'Dear' %} {{user.username}},
-</p>
 
-<p>
-{% trans 'Thank you for registering on' %} <a href="http://hubnemevedvou.cz">hubnemevedvou.cz</a>, {% trans 'to complete the registration you need to activate your account within' %} {{expiration_days}} {% trans 'days' %}.
-</p>
+  <p>
+    {% blocktrans %}
+      Welcome {{user.username}}!
+    {% endblocktrans %}
+  </p>
 
-<p>
-{% trans 'Please follow this' %} <a href="http://{{site.domain}}{% url activate activation_key=activation_key %}">{% trans 'link to complete the registration' %}.</a>
-</p>
+  <p>
+    {% blocktrans %}
+      Thank you for registering on <a href="http://hubnemevedvou.cz">hubnemevedvou.cz</a> . We are looking forward to all the weight we will loose together!
+    {% endblocktrans %}
+  </p>
 
-<p>
-{% trans 'Best Regards' %}
-</p>
+  <p>
+    {% url activate activation_key=activation_key as act_link %}
+
+    {% blocktrans %}
+      In order to finish the registration, please click on the following 
+      <a href="http://{{domain}}{{act_link}}">link</a>.
+    {% endblocktrans %}
+  </p>
+
 {% endblock %}
