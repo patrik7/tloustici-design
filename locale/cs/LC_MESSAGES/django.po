@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-25 16:42+0100\n"
+"POT-Creation-Date: 2014-01-28 19:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -226,7 +226,7 @@ msgstr "Najdi si parťáka na sport a zhubněte společně"
 msgid "Administration"
 msgstr "Administrace"
 
-#: base/templates/base/base.html:105 forum/forms.py:118
+#: base/templates/base/base.html:105 forum/forms.py:122
 msgid "Create an Account"
 msgstr "Vytvořit účet"
 
@@ -286,75 +286,75 @@ msgstr "Nesprávné heslo"
 msgid "Passwords do not match"
 msgstr "Hesla se neshodují"
 
-#: forum/forms.py:109
+#: forum/forms.py:113
 msgid "Username already exists"
 msgstr "Uživatelské jméno již existuje"
 
-#: forum/forms.py:145
+#: forum/forms.py:149
 msgid "Sex"
 msgstr "Pohlaví"
 
-#: forum/forms.py:165
+#: forum/forms.py:169
 msgid "Username"
 msgstr "Uživatelské jméno"
 
-#: forum/forms.py:166
+#: forum/forms.py:170
 msgid "E-mail"
 msgstr "E-mail"
 
-#: forum/forms.py:166
+#: forum/forms.py:170
 msgid "We will never disclose your email"
 msgstr ""
 
-#: forum/forms.py:213
+#: forum/forms.py:217
 msgid "Addressee"
 msgstr "Příjemce"
 
-#: forum/forms.py:239
+#: forum/forms.py:243
 msgid "Username does not exists"
 msgstr "Uživatelské jméno neexistuje"
 
-#: forum/forms.py:242 forum/tests.py:420
+#: forum/forms.py:246 forum/tests.py:420
 msgid "Cannot send message to self"
 msgstr "Nelze si poslat vlastní zprávu"
 
-#: forum/forms.py:256
+#: forum/forms.py:260
 msgid "You have been blocked, you cannot send messages to this user."
 msgstr "Jsi zablokován, nemůžeš posílat zprávy tomuto uživateli."
 
-#: forum/forms.py:277
+#: forum/forms.py:281
 msgid "Real name"
 msgstr "Skutečné jméno"
 
-#: forum/forms.py:278
+#: forum/forms.py:282
 msgid "Date of Birth"
 msgstr "Datum narození"
 
-#: forum/forms.py:299
+#: forum/forms.py:303
 msgid "Height has to be between 30 cm and 250 cm"
 msgstr "Výška neodpovídá reálným hodnotám"
 
-#: forum/forms.py:307
+#: forum/forms.py:311
 msgid "Weight has to be between 30 kg and 350 kg"
 msgstr "Váha neodpovídá reálným hodnotám"
 
-#: forum/forms.py:372 forum/forms.py:373
+#: forum/forms.py:376 forum/forms.py:377
 msgid "doesn't matter"
 msgstr "Nezáleží"
 
-#: forum/forms.py:373 forum/models.py:399
+#: forum/forms.py:377 forum/models.py:399
 msgid "City"
 msgstr "Město"
 
-#: forum/forms.py:393
+#: forum/forms.py:397
 msgid "Subscribe to replies"
 msgstr "Upozornění při odpovědi"
 
-#: forum/forms.py:416
+#: forum/forms.py:420
 msgid "Cannot reply, reply level too deep."
 msgstr "Nemůžeš odpovědět, přiliš velké zanoření."
 
-#: forum/forms.py:425
+#: forum/forms.py:429
 msgid "Can't be empty nor contain only whitespace characters"
 msgstr "Pole nemůže zůstat prázdné"
 
@@ -603,22 +603,21 @@ msgid "Registration is currently closed"
 msgstr "Registrace je v současné době uzavřena"
 
 #: forum/tests.py:112
-#: forum/templates/registration/registration_further.html:37
 msgid "Which sports and activities do you like?"
 msgstr "Které sporty a aktivity máš rád?"
 
 #: forum/tests.py:123
-#: forum/templates/registration/registration_further.html:44
+#: forum/templates/registration/registration_further.html:39
 msgid "Tell us about yourself"
 msgstr "Řekni nám o sobě"
 
 #: forum/tests.py:140
-#: forum/templates/registration/registration_further.html:54
+#: forum/templates/registration/registration_further.html:49
 msgid "Please create a password so you can safely use the website."
 msgstr "Prosím vytvoř si heslo, aby si mohl bez obav využívát web."
 
 #: forum/tests.py:150
-#: forum/templates/registration/registration_further.html:78
+#: forum/templates/registration/registration_further.html:73
 msgid "Congratulations, that is all the info we need."
 msgstr "Gratulace, je to všechno info které je zapotřeba."
 
@@ -797,89 +796,113 @@ msgstr "Příspěvek nebyl uložen"
 
 #: forum/management/commands/init_activities.py:7
 msgctxt "activity"
-msgid "Movies"
-msgstr "Filmy"
+msgid "Traveling"
+msgstr "Cestování"
 
 #: forum/management/commands/init_activities.py:8
 msgctxt "activity"
-msgid "City trips"
-msgstr "Městské výlety"
+msgid "Reading"
+msgstr "Četba"
 
 #: forum/management/commands/init_activities.py:9
 msgctxt "activity"
-msgid "Sightseeing"
-msgstr ""
+msgid "Films/Theater/Cinema"
+msgstr "Filmy/Divadlo/Kino"
 
-# msgstr "Vyhlídkové výlety"
 #: forum/management/commands/init_activities.py:10
 msgctxt "activity"
-msgid "Eating out"
-msgstr "Stravování venku"
+msgid "Museums/Concerts/Exhibitions"
+msgstr "Muzea/Koncerty/Výstavy"
+
+#: forum/management/commands/init_activities.py:11
+msgctxt "activity"
+msgid "Shopping"
+msgstr "Nakupování"
 
 #: forum/management/commands/init_activities.py:12
+msgctxt "activity"
+msgid "Sightseeing"
+msgstr "Toulky městem"
+
+#: forum/management/commands/init_activities.py:14
 msgctxt "activity"
 msgid "Cycling"
 msgstr "Cyklistika"
 
-#: forum/management/commands/init_activities.py:13
+#: forum/management/commands/init_activities.py:15
 msgctxt "activity"
-msgid "Roler blading"
+msgid "Roller blading"
 msgstr "Kolečkové brusle"
 
-#: forum/management/commands/init_activities.py:14
+#: forum/management/commands/init_activities.py:16
 msgctxt "activity"
 msgid "Ice skating"
 msgstr "Bruslení"
 
-#: forum/management/commands/init_activities.py:15
+#: forum/management/commands/init_activities.py:17
 msgctxt "activity"
 msgid "Hiking"
 msgstr "Turistika"
 
-#: forum/management/commands/init_activities.py:16
+#: forum/management/commands/init_activities.py:18
 msgctxt "activity"
-msgid "Joging"
-msgstr "Jogging"
+msgid "Jogging"
+msgstr "Běh"
 
-#: forum/management/commands/init_activities.py:17
+#: forum/management/commands/init_activities.py:19
 msgctxt "activity"
-msgid "Joga"
+msgid "Yoga"
 msgstr "Jóga"
 
-#: forum/management/commands/init_activities.py:18
+#: forum/management/commands/init_activities.py:20
 msgctxt "activity"
 msgid "Swimming"
 msgstr "Plavání"
 
-#: forum/management/commands/init_activities.py:19
+#: forum/management/commands/init_activities.py:21
 msgctxt "activity"
 msgid "Spinning"
 msgstr "Spinning"
 
-#: forum/management/commands/init_activities.py:20
+#: forum/management/commands/init_activities.py:22
 msgctxt "activity"
 msgid "Zumba"
 msgstr "Zumba"
 
-#: forum/management/commands/init_activities.py:21
+#: forum/management/commands/init_activities.py:23
 msgctxt "activity"
 msgid "Aerobik"
 msgstr "Aerobik"
 
-#: forum/management/commands/init_activities.py:22
+#: forum/management/commands/init_activities.py:24
 msgctxt "activity"
 msgid "Cross-country skiing"
 msgstr "Běh na běžkách"
 
-#: forum/management/commands/init_activities.py:23
+#: forum/management/commands/init_activities.py:25
 msgctxt "activity"
 msgid "Skiing"
 msgstr "Lyžování"
 
-#: forum/management/commands/init_activities.py:24
+#: forum/management/commands/init_activities.py:26
 msgctxt "activity"
 msgid "Pilates"
 msgstr "Pilates"
+
+#: forum/management/commands/init_activities.py:27
+msgctxt "activity"
+msgid "Gym"
+msgstr "Fitness"
+
+#: forum/management/commands/init_activities.py:28
+msgctxt "activity"
+msgid "Dancing"
+msgstr "Tanec"
+
+#: forum/management/commands/init_activities.py:29
+msgctxt "activity"
+msgid "Other"
+msgstr "Jiné"
 
 #: forum/templates/form_suggest.html:13
 msgid "Suggest to a friend"
@@ -1119,7 +1142,7 @@ msgstr "Sporty"
 #: forum/templates/forum/profile/form_activities_fields.html:32
 #: forum/templates/forum/profile/profile_readonly.html:129
 msgid "Other Activities"
-msgstr "Jiné Aktivity"
+msgstr "Další zájmi"
 
 #: forum/templates/forum/profile/profile_essentials.html:23
 msgid "Basic Information"
@@ -1189,6 +1212,7 @@ msgid "here"
 msgstr ""
 
 #: forum/templates/registration/email_activation.html:16
+#, python-format
 msgid ""
 "\n"
 "      Welcome %(username)s!\n"
@@ -1288,29 +1312,47 @@ msgstr ""
 "vaření, diet nebo třeba možností sportu ve tvém okolí."
 
 #: forum/templates/registration/registration_further.html:23
-msgid "Welcome"
-msgstr ""
+msgid ""
+"Increase your chance to succeed and tell us more about yourslef in the "
+"following steps"
+msgstr "Zvyš svou šanci na úspěch a prozraď o sobě více v následujících krocích"
 
-#: forum/templates/registration/registration_further.html:23
-#, fuzzy
-msgid "you need to follow 4 easy steps to complete the registration."
-msgstr "tento odkaz prosím, a dokonči registraci"
+#: forum/templates/registration/registration_further.html:37
+msgid "What is your favourite sport?"
+msgstr "Jaký je tvůj nejoblíbenější sport?"
 
-#: forum/templates/registration/registration_further.html:40
-msgid "Tell us what you like to do, so we can find the best match for you."
-msgstr ""
-
-#: forum/templates/registration/registration_further.html:47
+#: forum/templates/registration/registration_further.html:42
 msgid "Filling up basic info is necessary for using the search functionality."
 msgstr ""
 
-#: forum/templates/registration/registration_further.html:51
+#: forum/templates/registration/registration_further.html:46
 msgid "And finally"
 msgstr ""
 
-#: forum/templates/registration/registration_further.html:80
+#: forum/templates/registration/registration_further.html:75
 msgid "Follow the instructions sent to your email to finish the registration."
 msgstr ""
+
+#~ msgctxt "activity"
+#~ msgid "Movies"
+#~ msgstr "Filmy"
+
+#~ msgctxt "activity"
+#~ msgid "City trips"
+#~ msgstr "Městské výlety"
+
+# msgstr "Vyhlídkové výlety"
+#~ msgctxt "activity"
+#~ msgid "Eating out"
+#~ msgstr "Stravování venku"
+
+#~ msgctxt "activity"
+#~ msgid "Joga"
+#~ msgstr "Jóga"
+
+#, fuzzy
+#~ msgid "you need to follow 4 easy steps to complete the registration."
+#~ msgstr "tento odkaz prosím, a dokonči registraci"
 
 #~ msgid "Please follow this"
 #~ msgstr "Následuj"

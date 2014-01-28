@@ -20,7 +20,7 @@ Proces registracie
 Navigacia kroky registracie
 ------------------------------------------------------------------------------------------->
 
-<h2 class="text-center">{% trans 'Welcome' %} {{tmp_user.username}}, {% trans 'you need to follow 4 easy steps to complete the registration.' %}</h2>
+<h3 class="text-center">{% trans 'Increase your chance to succeed and tell us more about yourslef in the following steps' %}</h3>
 <small>
     <p class="lead text-center">
       {{steps_text|safe}}
@@ -34,12 +34,7 @@ Text stepov v registracii
 <div class="panel pandel-default">
         <div class="panel-body text-center">
     {% if step == 1 %}
-      <h2>{% trans 'Which sports and activities do you like?' %}</h2>
-      <small>
-        <p class="lead">
-          {% trans 'Tell us what you like to do, so we can find the best match for you.' %}
-        </p>
-      </small>
+      <h2>{% trans 'What is your favourite sport?' %}</h2>
     {% elif step == 2 %}
       <h2>{% trans 'Tell us about yourself' %}</h2>
       <small>
