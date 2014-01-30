@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-28 19:40+0100\n"
+"POT-Creation-Date: 2014-01-30 20:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -179,23 +179,23 @@ msgstr "Odhlásit se"
 msgid "Log in"
 msgstr "Přihlásit se"
 
-#: base/forms.py:18 forum/forms.py:25 forum/forms.py:97
+#: base/forms.py:20 forum/forms.py:25 forum/forms.py:97
 msgid "username"
 msgstr "Uživatelské jméno"
 
-#: base/forms.py:19
+#: base/forms.py:21
 msgid "password"
 msgstr "heslo"
 
-#: base/forms.py:32
+#: base/forms.py:36
 msgid "Enter username, not email address"
 msgstr "Vlož své uživatelské jméno (ne emailovou adresu)"
 
-#: base/forms.py:44
+#: base/forms.py:50
 msgid "Incorrect login name, or password."
 msgstr "Nesprávně zadané uživatelské jméno nebo heslo"
 
-#: base/forms.py:47
+#: base/forms.py:53
 msgid "User was not activated yet."
 msgstr ""
 "Pro úspěšnou registraci je nutné kliknout na odkaz ve vaší e-mailové "
@@ -603,8 +603,9 @@ msgid "Registration is currently closed"
 msgstr "Registrace je v současné době uzavřena"
 
 #: forum/tests.py:112
-msgid "Which sports and activities do you like?"
-msgstr "Které sporty a aktivity máš rád?"
+#: forum/templates/registration/registration_further.html:37
+msgid "What is your favourite sport?"
+msgstr "Jaký je tvůj nejoblíbenější sport?"
 
 #: forum/tests.py:123
 #: forum/templates/registration/registration_further.html:39
@@ -926,7 +927,6 @@ msgstr "Na zprávu můžeš odpovědět na"
 #: forum/templates/forum/email_new_message.txt:21
 #: forum/templates/forum/email_new_post.html:35
 #: forum/templates/forum/email_new_post.txt:26
-#: forum/templates/forum/email_password_recovery.html:29
 #: forum/templates/forum/email_password_recovery.txt:23
 #: forum/templates/registration/email_activation.txt:23
 msgid "Best Regards"
@@ -957,28 +957,34 @@ msgstr ""
 msgid "Visit forum on"
 msgstr ""
 
-#: forum/templates/forum/email_password_recovery.html:18
+#: forum/templates/forum/email_password_recovery.html:16
+#, python-format
+msgid "Hi %(username)s,"
+msgstr "Ahoj %(username)s,"
+
+#: forum/templates/forum/email_password_recovery.html:20
+#, python-format
+msgid "Your temporary password is %(new_password)s."
+msgstr "Tvé dočasné heslo je %(new_password)s."
+
+#: forum/templates/forum/email_password_recovery.html:28
+msgid ""
+"\n"
+"      You need to <a href=\"http://%(domain)s%(url_login)s?username="
+"%(u)s&redirect=%(ur)s%(redir_params)s\">log in</a> to change it.\n"
+msgstr ""
+"\n"
+"Pro jeho změnu je nutné se <a href=\"http://%(domain)s%(url_login)s?username="
+"%(u)s&redirect=%(ur)s%(redir_params)s\">přihlásit</a>.\n"
+
 #: forum/templates/forum/email_password_recovery.txt:15
 #: forum/templates/registration/email_activation.txt:16
 msgid "Dear"
 msgstr "Drahý(á)"
 
-#: forum/templates/forum/email_password_recovery.html:22
 #: forum/templates/forum/email_password_recovery.txt:17
 msgid "Your password has been reset to"
 msgstr "Tvé heslo bylo změněno na"
-
-#: forum/templates/forum/email_password_recovery.html:25
-msgid "You can change your password following"
-msgstr "Své heslo můžeš změnit na"
-
-#: forum/templates/forum/email_password_recovery.html:26
-msgid "this link"
-msgstr "téhle lince"
-
-#: forum/templates/forum/email_password_recovery.html:27
-msgid "After you log in."
-msgstr "Po přihlášení."
 
 #: forum/templates/forum/email_password_recovery.txt:19
 msgid ""
@@ -1315,11 +1321,8 @@ msgstr ""
 msgid ""
 "Increase your chance to succeed and tell us more about yourslef in the "
 "following steps"
-msgstr "Zvyš svou šanci na úspěch a prozraď o sobě více v následujících krocích"
-
-#: forum/templates/registration/registration_further.html:37
-msgid "What is your favourite sport?"
-msgstr "Jaký je tvůj nejoblíbenější sport?"
+msgstr ""
+"Zvyš svou šanci na úspěch a prozraď o sobě více v následujících krocích"
 
 #: forum/templates/registration/registration_further.html:42
 msgid "Filling up basic info is necessary for using the search functionality."
@@ -1332,6 +1335,18 @@ msgstr ""
 #: forum/templates/registration/registration_further.html:75
 msgid "Follow the instructions sent to your email to finish the registration."
 msgstr ""
+
+#~ msgid "Which sports and activities do you like?"
+#~ msgstr "Které sporty a aktivity máš rád?"
+
+#~ msgid "You can change your password following"
+#~ msgstr "Své heslo můžeš změnit na"
+
+#~ msgid "this link"
+#~ msgstr "téhle lince"
+
+#~ msgid "After you log in."
+#~ msgstr "Po přihlášení."
 
 #~ msgctxt "activity"
 #~ msgid "Movies"
