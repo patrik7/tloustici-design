@@ -14,13 +14,13 @@ Prewiev
 <div class="well feed-post">
     
 {% if article.image %}
-  <a href="{% url article article.id %}" class="article-image2" >
+  <a href="{% url article article.url %}" class="article-image2" >
     <img src="{{article.image.url}}" class="img-rounded pull-{{article.image_position}}" />
   </a>
 {% endif %}
     
     
-<a class="article-header" href="{% url article article.id %}"><h3>
+<a class="article-header" href="{% url article article.url %}"><h3>
   {{article.heading}}
   {% if not article.published %}
     <small>{% trans 'Not published' %}</small>
@@ -35,7 +35,7 @@ Prewiev
 
 
   <div class="btn btn-block right">
-    <a class="" href="{% url article article.id %}">{% trans 'Read More' %} »</a>
+    <a class="" href="{% url article article.url %}">{% trans 'Read More' %} »</a>
   </div>
 
 
