@@ -27,6 +27,15 @@ Profile index
           <div class="col-md-9">
             <h3>{{category.body_html}}</h3>
             <p>{% trans 'Post count' %}: {{category.post_count}}</p>
+            {% if category.last_post %}
+              {% url profile category.last_post.user as user_url %}
+
+              <p class="text-muted">
+                {% blocktrans with date=category.last_post.created user=category.last_post.user id=category.last_post.id %}
+                  <a href="javascript:void(0)" onClick="root = '{{id}}'; loadData(setBreadcrumbs);">Last reaction {{date}}</a> by <a href="{{user_url}}">{{user}}</a>
+                {% endblocktrans %}
+              </p>
+            {% endif %}
             <a href="javascript:void(0)" class="btn btn-info" onClick="root = '{{category.id}}'; loadData(setBreadcrumbs);" >{% trans 'Read' %}</a>
           </div>
         </div>
@@ -171,6 +180,11 @@ Profile index
         show_user = '<small>' + e.user + '</small>';
       }
 
+      var last_post = '';
+      if (e.level < 3 && e.last_post) {
+        last_post = '{% blocktrans %}<a href="javascript:void(0)" onClick="root = \'' + e.last_post.id + '\'; loadData(setBreadcrumbs);">Last reaction ' + e.last_post.date + '</a> by <a href="/profile/' + e.user + '/">' + e.user + '</a>{% endblocktrans %}'
+      }
+
       $('#data').append(
         '<div class="panel panel-default well big-favorities ' + offset + '">'
         + '<div class="panel-body link-glow" ' + link + '>'
@@ -181,6 +195,7 @@ Profile index
             + '<div class="col-xs-10">' 
               + show_user
               + body
+              + last_post
             + '</div>'
           + '</div>'
           + footer
