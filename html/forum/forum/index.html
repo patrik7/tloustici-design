@@ -4,6 +4,20 @@ Hubnemevedvou.cz
 
 Profile index
 
+Page structure:
+
+<ALL>
+  <Bread crumbs>
+  <id="data"> - this is reloaded during loadData() event
+    <id="entries"> - list of entries, for each the render() method is called
+  <id="pagination"> - a placeholder, if visible, more entries are fetched using JSON
+
+Basic JSON load scenario:
+-replace <Dynamic DIV data> with loading logo
+-JSON fetch
+-preRender() called, returned HTML will replace <Dynamic DIV data>
+-render() called for each entry
+
 ------------------------------------------------------------------------------------------->
 
 {% extends 'base/base.html' %}
@@ -17,8 +31,10 @@ Profile index
   <p id="breadcrumbs"></p>
 
   <div id="data">
+    <!-- First level, categories, are rendered on the server and it's not possibel to get back here thru JSON -->
+
     {% for category in categories %}
-      <a href="javascript:void(0)" onClick="root = '{{category.id}}'; loadData(setBreadcrumbs);" >
+      <a href="javascript:void(0)" onClick="root = '{{category.id}}'; loadData(preRender);" >
       <div class="well big-faq">
         <div class="row">
           <div class="col-md-3">
@@ -32,11 +48,11 @@ Profile index
 
               <p class="text-muted">
                 {% blocktrans with date=category.last_post.created user=category.last_post.user id=category.last_post.id %}
-                  <a href="javascript:void(0)" onClick="root = '{{id}}'; loadData(setBreadcrumbs);">Last reaction {{date}}</a> by <a href="{{user_url}}">{{user}}</a>
+                  <a href="javascript:void(0)" onClick="root = '{{id}}'; loadData(preRender);">Last reaction {{date}}</a> by <a href="{{user_url}}">{{user}}</a>
                 {% endblocktrans %}
               </p>
             {% endif %}
-            <a href="javascript:void(0)" class="btn btn-info" onClick="root = '{{category.id}}'; loadData(setBreadcrumbs);" >{% trans 'Read' %}</a>
+            <a href="javascript:void(0)" class="btn btn-info" onClick="root = '{{category.id}}'; loadData(preRender);" >{% trans 'Read' %}</a>
           </div>
         </div>
       </div>
@@ -86,19 +102,36 @@ Profile index
       return txt;
     }
 
-    function setBreadcrumbs(extra) {
+    function preRender(data) {
+
+      /* Setup breadcrumbs */
+      var extra = data.extra;
       var txt = '';
       for (var i = 0; i < extra.breadcrumbs.length; i++) {
-        txt += '<a href="javascript:void(0)" onclick="root = ' + extra.breadcrumbs[i].pk + '; loadData(setBreadcrumbs);">';
+        txt += '<a href="javascript:void(0)" onclick="root = ' + extra.breadcrumbs[i].pk + '; loadData(preRender);">';
         txt += extra.breadcrumbs[i].text + '</a>';
         if (i < extra.breadcrumbs.length - 1) {
           txt += " > ";
         }
       }
       $('#breadcrumbs').html('{% trans 'You are in discussion' %} ' + txt);
-    }
 
-    {% block entry_rendering %}
+      /* Render the index head, entries will be rendered later */
+      var head_post = extra.breadcrumbs[extra.breadcrumbs.length - 1];
+      $('#data').html(
+        '<div class="panel panel-default">' +
+          //TODO render the image and text properly
+          '<img src="' + head_post.avatar + '" />' +
+          head_post.text +
+          '<a href="javascript:void(0)" class="btn btn-primary" onClick="show(\'_reply_head\')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Reply' %}</a>' +
+          //TODO add more buttons
+
+          /* Add a hidden form */
+          '<div id="post_reply_head" class="panel panel-default hidden">' +
+            add_form(head_post.id) + 
+          '</div>' +
+        '<div id="entries" /></div>');
+    }
 
     function render(i, e, last_end) {
       var body = '';
@@ -109,9 +142,9 @@ Profile index
       var link = "";
       if (e.level < 3) {
         if (e.pk == root) {
-            link = 'onClick="root = \'' + e.parent + '\'; loadData(setBreadcrumbs)"';
+            link = 'onClick="root = \'' + e.parent + '\'; loadData(preRender)"';
         } else {
-            link = 'onClick="root = \'' + e.pk + '\'; loadData(setBreadcrumbs)"';
+            link = 'onClick="root = \'' + e.pk + '\'; loadData(preRender)"';
         }
       }
 
@@ -182,10 +215,10 @@ Profile index
 
       var last_post = '';
       if (e.level < 3 && e.last_post) {
-        last_post = '{% blocktrans %}<a href="javascript:void(0)" onClick="root = \'' + e.last_post.id + '\'; loadData(setBreadcrumbs);">Last reaction ' + e.last_post.date + '</a> by <a href="/profile/' + e.user + '/">' + e.user + '</a>{% endblocktrans %}'
+        last_post = '{% blocktrans %}<a href="javascript:void(0)" onClick="root = \'' + e.last_post.id + '\'; loadData(preRender);">Last reaction ' + e.last_post.date + '</a> by <a href="/profile/' + e.user + '/">' + e.user + '</a>{% endblocktrans %}'
       }
 
-      $('#data').append(
+      $('#entries').append(
         '<div class="panel panel-default well big-favorities ' + offset + '">'
         + '<div class="panel-body link-glow" ' + link + '>'
           + '<div class="row">'
@@ -205,7 +238,7 @@ Profile index
       {% if form %}
       if(e.level < 4) {
 
-        $('#data').append(
+        $('#entries').append(
           '<div id="post' + i + '" class="panel panel-default hidden" style="margin-bottom: 5px;">'
           + '<div class="panel-body" style="padding: 5px;">'
             + '<div class="row">'
@@ -221,8 +254,6 @@ Profile index
 
     }
 
-    {% endblock %}
-
     var ajax_url = '/data/';
 
     {% if root %}
@@ -232,7 +263,7 @@ Profile index
     {% endif %}
 
     {% if not categories %}    
-      $(document).ready(loadData(setBreadcrumbs));
+      $(document).ready(loadData(preRender));
     {% endif %}
 
     window.onscroll = scrollFunction;

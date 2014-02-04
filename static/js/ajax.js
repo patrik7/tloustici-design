@@ -8,7 +8,7 @@ function addData(entries) {
   var offset = 0;
   var last_end = 0;
 
-  childs = document.getElementById('data').childNodes;
+  childs = document.getElementById('entries').childNodes;
   for (var i = 0; i < childs.length; i++) {
     var e = childs[i];
     if (e.id == '') offset += 1;
@@ -57,16 +57,18 @@ function loadData(doneCallback)
   $.getJSON(ajax_url + root
 
   ,ajax_get).done(function(data) {
-      $('#data').html('');
+      $('#data').html('<div id="entries" />');
+
+      if (doneCallback) {
+        doneCallback(data);
+      } 
 
       var entries = data.entries;
       var pagination = data.pagination;
 
       addData(entries);
       setupPagination(pagination);
-      if (doneCallback) {
-        doneCallback(data.extra);
-      }
+
     })
     .fail(function() {
       setError('data');
