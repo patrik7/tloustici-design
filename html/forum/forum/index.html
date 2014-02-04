@@ -97,7 +97,7 @@ Basic JSON load scenario:
         + elem.innerHTML
         + '<div class="form-group">'
           + '<div>'
-            + '<button type="submit" class="btn btn-lg">{% trans 'Send' %}</button>'
+            + '<button type="submit" class="btn btn-lg btn-success">{% trans 'Send' %}</button>'
           + '</div>'
         + '</div>'
       + '</form>';
@@ -156,7 +156,7 @@ Basic JSON load scenario:
 
 
       footer =
-          '<div class="col-md-3 text-right">';
+          '<div class="col-md-4 text-right">';
 
       if (e.post_count > 0) {
         footer += '<small>' + e.post_count + ' '+ e.posts + '</small> ';
@@ -225,7 +225,7 @@ Basic JSON load scenario:
       $('#entries').append(
         '<div class="panel panel-default well big-favorities ' + offset + '">'
         + '<div class="panel-body link-glow" ' + link + '>'
-          + '<div class="row">'
+          + '<div class="col-md-9">'
             + '<div class="col-xs-2 visible-sm visible-md visible-lg">'
               + '<img src="' + e.avatar + '" width="100%" class="img-rounded" />'
             + '</div>'
