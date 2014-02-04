@@ -332,6 +332,7 @@ margin-bottom:10px;
 
 #entries{
     margin-top:-15px;
+    background-color: #00aedf;
 }
 
 .big-faq h3{
@@ -341,6 +342,10 @@ margin-bottom:10px;
 .radio{
     text-align:left;
 
+}
+
+.col-xs-offset-1 {
+margin-left: 5px;
 }
 
 /******************************************************************************
