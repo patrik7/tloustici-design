@@ -97,7 +97,7 @@ Basic JSON load scenario:
         + elem.innerHTML
         + '<div class="form-group">'
           + '<div>'
-            + '<button type="submit" class="btn btn-sm">{% trans 'Send' %}</button>'
+            + '<button type="submit" class="btn btn-lg">{% trans 'Send' %}</button>'
           + '</div>'
         + '</div>'
       + '</form>';
@@ -122,11 +122,11 @@ Basic JSON load scenario:
       /* Render the index head, entries will be rendered later */
       var head_post = extra.breadcrumbs[extra.breadcrumbs.length - 1];
       $('#data').html(
-        '<div class="well big-faq"><div class="col-md-4">' +
+        '<div class="well big-faq"><div class="col-md-3">' +
           //TODO render the image and text properly
           '<img src="' + head_post.avatar + '"  class="forum-picture img-rounded"/>'
           +'</div>'
-          +'<div class="col-md-8"><h3>' 
+          +'<div class="col-md-9"><h3>' 
           + head_post.text 
           +'</h3>' 
           +'<a href="javascript:void(0)" class="btn btn-primary" onClick="show(\'_reply_head\')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Reply' %}</a></div><div class="clearfix"></div></div>' +
