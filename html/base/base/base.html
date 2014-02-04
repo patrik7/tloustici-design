@@ -100,11 +100,11 @@ Base - zakladna sablona
 
             {% if register_form %}
             <div id="register-new-sidebar">
-              <p>Nakopni konečně své štěstí, udělej první krok a zaregistruj se!</p>
+              <strong>Nakopni konečně své štěstí, udělej první krok a zaregistruj se!</strong>
               <form method="post" action="/register/0/" class="form">
                 {% csrf_token %}
                 {{register_form|bootstrap}}
-                <input type="submit" class="btn btn-primary" name="step0" value="{% trans 'Create an Account' %}">
+                <input type="submit" class="btn btn-success" name="step0" value="{% trans 'Create an Account' %}">
               </form>
             </div>
             {% endif %}
