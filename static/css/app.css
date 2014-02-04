@@ -320,7 +320,8 @@ margin-top:10px;
 }
 
 #entries .big-favorities{
-    margin:0px;
+    margin-top:0px;
+    margin-bottom:0px;
 }
 
 #entries{
