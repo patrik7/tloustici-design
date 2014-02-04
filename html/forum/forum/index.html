@@ -122,13 +122,13 @@ Basic JSON load scenario:
       /* Render the index head, entries will be rendered later */
       var head_post = extra.breadcrumbs[extra.breadcrumbs.length - 1];
       $('#data').html(
-        '<div class="well big-faq"><div class="col-md-3">' +
+        '<div class="well big-faq"><div class="col-md-4">' +
           //TODO render the image and text properly
           '<img src="' + head_post.avatar + '"  class="img-rounded"/>'
           +'</div>'
-          +'<div class="col-md-6"><h3>' 
+          +'<div class="col-md-8"><h3>' 
           + head_post.text 
-          +'</h3></div><div class="col-md-3">' 
+          +'</h3>' 
           +'<a href="javascript:void(0)" class="btn btn-primary" onClick="show(\'_reply_head\')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Reply' %}</a></div><div class="clearfix"></div></div>' +
           //TODO add more buttons
 
