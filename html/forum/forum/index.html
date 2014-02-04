@@ -158,7 +158,9 @@ Basic JSON load scenario:
       footer =
           '<div class="col-md-4 text-right">';
 
-     
+      if (e.post_count > 0) {
+        footer += '<small>' + e.post_count + ' '+ e.posts + '</small> ';
+      }
 
       footer += '<div class="btn-group btn-group-md">';
 
@@ -227,13 +229,10 @@ Basic JSON load scenario:
             + '<div class="col-md-3">'
               + '<img src="' + e.avatar + '" width="100%" class="img-rounded img-max" />'
             + '</div>'
-            + '<div class="col-md-6">'
+            + '<div class="col-md-6">' 
               + show_user
               + body
               + last_post
-           if (e.post_count > 0) {
-        '<small>' + e.post_count + ' '+ e.posts + '</small> ';
-      }
             + '</div>'
           + '</div>'
           + footer
