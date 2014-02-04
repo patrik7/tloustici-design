@@ -14,12 +14,63 @@ Favorities
   <div class="row">
     {% for f in favourites %}
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left">
-        <div class="well big-favorities text-center link-glow" onclick="location.href='{% url profile f.celebrity.username %}';">
-            <div class="col-md-6">
+        <div class="well big-faq text-center link-glow" onclick="location.href='{% url profile f.celebrity.username %}';">
+            <div class="col-md-5">
             <img class="img img-circle" src="{{f.celebrity.forum_profile.avatar_url}}" width="120" height="120"/>
             </div>
-            <div class=" text-left col-md-6" style="max-height:120px; overflow:hidden;">
+            <div class=" text-left col-md-7" style="max-height:120px; overflow:hidden;">
             <h3><a href="{% url profile f.celebrity.username %}">{{f.celebrity.username}}</a></h3>
+                
+                
+                
+                
+                 <script type="text/javascript" language="javascript">
+
+    var ajax_url = '/search/data/';
+
+    function updateSearchResults()
+    {
+      ajax_get = {
+          male: document.getElementById('id_sex_1').checked,
+          female: document.getElementById('id_sex_2').checked,
+          city: document.getElementById('id_city').value,
+      }
+
+      loadData();
+    }
+
+    function add_bar(value, text) {
+      var str =
+        '<div class="progress" style="margin-bottom: 10px;">'
+        + '<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="' + value + '" aria-valuemin="0" aria-valuemax="100" style="width: ' + value + '%">'
+          + text
+        + '</div>'
+      + '</div>';
+      return str;
+    }
+
+    function render(i, e, last) {
+      var a = '<a href="' + e.link  + '">'
+      $('#data').append('<div class="search-friend-box col-lg-6 col-md-12 col-sm-12 panel paddding-bottom">'
+          
+        + '<div class="panel-body">'
+          + '<div class="row"><div class="col-xs-12 col-sm-4">'
+              + a + '<img src="' + e.avatar + '" class="img-circle" width="120"/></a>'
+            + '</div>'
+          
+            + '<div class="col-sm-8">'
+                + '<h3 class="">'
+          + a + e.username + '</a> '
+          + (e.city != '' ? '<small>{% trans 'from' context 'city' %} ' + e.city + '</small>' : '')
+          + '</h3>'
+           +  '<p>' + e.bio + '</p>'
+              + add_bar(e.fitness[0], "{% trans 'Overall Compatibility' %}")
+              + add_bar(e.fitness[1], "{% trans 'Body' %}")
+              + add_bar(e.fitness[2], "{% trans 'Activities' %}")
+            + '</div>'
+          + '</div>'
+        + '</div>'
+                        
             <p>{{f.celebrity.forum_profile.description_html|safe}}</p>
             </div>
                       <div class="clearfix"></div>
