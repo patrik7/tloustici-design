@@ -42,19 +42,37 @@ Text stepov v registracii
           {% trans 'Filling up basic info is necessary for using the search functionality.' %}
         </p>
       </small>
+    {% elif step == 3 %}
+      <h2>{% trans 'And finally' %} ..</h2>
+      <small>
+        <p class="lead">
+          {% trans 'Please create a password so you can safely use the website.' %}
+        </p>
+      </small>
+    {% endif %}
+
+
+    {% if step < 4 %}
+          {% if step == 1 %}
+            <form action="{% url register_step step %}" method="POST" class="form-horizontal">
+              {% csrf_token %}
+              {% include 'forum/profile/form_activities_fields.html' with form=form.0 %}
+              <div class="form-group">
+                <div class="register-form">
+                  <button type="submit" class="btn btn-success" name="{{button_name}}">{% trans button %}</button>
+                </div>
+              </div>              
+            </form>
             
-        
-            
-<!------------------------------------------------------------------------------------------ 
-Expperiment stepov v registracii
-------------------------------------------------------------------------------------------->            
-         <div class="panel-body text-center">
-    
-      <h2>Jaký je tvůj nejoblíbenější sport?</h2>
-    
-          
             <form action="/register/1/" method="POST" class="form-horizontal">
               <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="emmH1pPuzwFvTOjfo3QOSeVoltl37zB4"></div>
+              <!------------------------------------------------------------------------------------------ 
+
+Hubnemevedvou.cz
+
+Registracia krok 1
+
+------------------------------------------------------------------------------------------->
 
 
 
@@ -114,35 +132,7 @@ Expperiment stepov v registracii
                 </div>
               </div>              
             </form>
-          
-        </div>   
             
-            
-            
-            
-            
-            
-    {% elif step == 3 %}
-      <h2>{% trans 'And finally' %} ..</h2>
-      <small>
-        <p class="lead">
-          {% trans 'Please create a password so you can safely use the website.' %}
-        </p>
-      </small>
-    {% endif %}
-
-
-    {% if step < 4 %}
-          {% if step == 1 %}
-            <form action="{% url register_step step %}" method="POST" class="form-horizontal">
-              {% csrf_token %}
-              {% include 'forum/profile/form_activities_fields.html' with form=form.0 %}
-              <div class="form-group">
-                <div class="register-form">
-                  <button type="submit" class="btn btn-success" name="{{button_name}}">{% trans button %}</button>
-                </div>
-              </div>              
-            </form>
           {% else %}
             {% include 'form.html' with name=button_name %}
           {% endif %}
