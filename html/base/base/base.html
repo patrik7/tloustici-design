@@ -99,11 +99,13 @@ Base - zakladna sablona
             {% endblock %}            
 
             {% if register_form %}
+            <div id="register-new-sidebar">
               <form method="post" action="/register/0/" class="form">
                 {% csrf_token %}
                 {{register_form|bootstrap}}
                 <input type="submit" class="btn btn-primary" name="step0" value="{% trans 'Create an Account' %}">
               </form>
+            </div>
             {% endif %}
 
             {% block left %}
