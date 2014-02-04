@@ -40,7 +40,7 @@ Basic JSON load scenario:
           <div class="col-md-3">
             <img src="{{category.image_url}}" style="width:100%;" />
           </div>
-          <div class="col-md-9">
+          <div class="col-md-6">
             <h3>{{category.body_html}}</h3>
             <p>{% trans 'Post count' %}: {{category.post_count}}</p>
             {% if category.last_post %}
@@ -52,8 +52,11 @@ Basic JSON load scenario:
                 {% endblocktrans %}
               </p>
             {% endif %}
-            <a href="javascript:void(0)" class="btn btn-info" onClick="root = '{{category.id}}'; loadData(preRender);" >{% trans 'Read' %}</a>
           </div>
+            <div class="col-md-3">
+                <p>{% trans 'Post count' %}: {{category.post_count}}</p>
+                <a href="javascript:void(0)" class="btn btn-info" onClick="root = '{{category.id}}'; loadData(preRender);" >{% trans 'Read' %}</a>
+            </div>
         </div>
       </div>
           </a>
