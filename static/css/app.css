@@ -98,7 +98,8 @@ Media querry
 
 #register-new-sidebar{
     background:#FFF;
-        }
+    padding: 20px;}
+    #register-new-sidebar label{ display: none; }
 
 /******************************************************************************
 5. Content
