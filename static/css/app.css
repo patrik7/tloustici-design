@@ -292,6 +292,16 @@ Media querry
     border-radius: 0px;
     }
 
+#post_reply_head{
+    margin-top: -24px;
+    padding: 15px;
+    background-color: #66B7E1;
+    }
+
+.forum-picture{
+    max-height:160px;
+}
+
 /******************************************************************************
 
 
