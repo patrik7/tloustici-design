@@ -156,19 +156,17 @@ Basic JSON load scenario:
 
 
       footer =
-        '<div class="row">'    
-
-      footer += '<div class="col-xs-12 text-right">';
+          '<div class="col-md-3 text-right">';
 
       if (e.post_count > 0) {
         footer += '<small>' + e.post_count + ' '+ e.posts + '</small> ';
       }
 
-      footer += '<div class="btn-group btn-group-xs">';
+      footer += '<div class="btn-group btn-group-md">';
 
       {% if user.is_authenticated %}
       if (e.user != '{{user}}' && e.level > 1) {
-        footer += '<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">'
+        footer += '<div class="btn-group btn-group-md"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">'
                   + '{% trans 'Report' %} <span class="caret"></span></button>'
                 + '<ul class="dropdown-menu">'
                   + '<li><a href="{% url report 'sexual' %}?target_id=' + e.pk + '&target=Post">{% trans 'Sexual Remarks' %}</a></li>'
