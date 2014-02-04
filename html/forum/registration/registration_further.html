@@ -42,6 +42,86 @@ Text stepov v registracii
           {% trans 'Filling up basic info is necessary for using the search functionality.' %}
         </p>
       </small>
+            
+        
+            
+<!------------------------------------------------------------------------------------------ 
+Expperiment stepov v registracii
+------------------------------------------------------------------------------------------->            
+         <div class="panel-body text-center">
+    
+      <h2>Jaký je tvůj nejoblíbenější sport?</h2>
+    
+          
+            <form action="/register/1/" method="POST" class="form-horizontal">
+              <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="emmH1pPuzwFvTOjfo3QOSeVoltl37zB4"></div>
+
+
+
+      <div id="register-form" class="row">
+        <div class="col-sm-12 col-xs-12">
+          <div class="form-group">
+                  <label class="control-label">
+                     <h2>Sporty</h2>
+                  </label>
+                  <ul>
+<li><label for="id_sports_0"><input type="checkbox" name="sports" value="7" id="id_sports_0"> Cyklistika</label></li>
+<li><label for="id_sports_1"><input type="checkbox" name="sports" value="8" id="id_sports_1"> Kolečkové brusle</label></li>
+<li><label for="id_sports_2"><input type="checkbox" name="sports" value="9" id="id_sports_2"> Bruslení</label></li>
+<li><label for="id_sports_3"><input type="checkbox" name="sports" value="10" id="id_sports_3"> Turistika</label></li>
+<li><label for="id_sports_4"><input type="checkbox" name="sports" value="11" id="id_sports_4"> Běh</label></li>
+<li><label for="id_sports_5"><input type="checkbox" name="sports" value="12" id="id_sports_5"> Jóga</label></li>
+<li><label for="id_sports_6"><input type="checkbox" name="sports" value="13" id="id_sports_6"> Plavání</label></li>
+<li><label for="id_sports_7"><input type="checkbox" name="sports" value="14" id="id_sports_7"> Spinning</label></li>
+<li><label for="id_sports_8"><input type="checkbox" name="sports" value="15" id="id_sports_8"> Zumba</label></li>
+<li><label for="id_sports_9"><input type="checkbox" name="sports" value="16" id="id_sports_9"> Aerobik</label></li>
+<li><label for="id_sports_10"><input type="checkbox" name="sports" value="17" id="id_sports_10"> Běh na běžkách</label></li>
+<li><label for="id_sports_11"><input type="checkbox" name="sports" value="18" id="id_sports_11"> Lyžování</label></li>
+<li><label for="id_sports_12"><input type="checkbox" name="sports" value="19" id="id_sports_12"> Pilates</label></li>
+<li><label for="id_sports_13"><input type="checkbox" name="sports" value="20" id="id_sports_13"> Fitness</label></li>
+<li><label for="id_sports_14"><input type="checkbox" name="sports" value="21" id="id_sports_14"> Tanec</label></li>
+<li><label for="id_sports_15"><input type="checkbox" name="sports" value="22" id="id_sports_15"> Jiné</label></li>
+</ul>
+
+                  
+
+                  
+          </div>
+        </div>
+        <div class="col-sm-12 col-xs-12">
+                <label class="control-label">
+                   <h2>Další zájmi</h2>
+                </label>
+                <ul>
+<li><label for="id_activities_0"><input type="checkbox" name="activities" value="1" id="id_activities_0"> Cestování</label></li>
+<li><label for="id_activities_1"><input type="checkbox" name="activities" value="2" id="id_activities_1"> Četba</label></li>
+<li><label for="id_activities_2"><input type="checkbox" name="activities" value="3" id="id_activities_2"> Filmy/Divadlo/Kino</label></li>
+<li><label for="id_activities_3"><input type="checkbox" name="activities" value="4" id="id_activities_3"> Muzea/Koncerty/Výstavy</label></li>
+<li><label for="id_activities_4"><input type="checkbox" name="activities" value="5" id="id_activities_4"> Nakupování</label></li>
+<li><label for="id_activities_5"><input type="checkbox" name="activities" value="6" id="id_activities_5"> Toulky městem</label></li>
+</ul>
+
+                
+
+                
+
+        </div>
+      </div>
+
+              <div class="form-group">
+                <div class="register-form">
+                  <button type="submit" class="btn btn-success" name="step1">Uložit</button>
+                </div>
+              </div>              
+            </form>
+          
+        </div>   
+            
+            
+            
+            
+            
+            
     {% elif step == 3 %}
       <h2>{% trans 'And finally' %} ..</h2>
       <small>
