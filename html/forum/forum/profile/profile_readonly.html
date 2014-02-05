@@ -116,7 +116,7 @@ Profile read only
         {% if user.is_authenticated %}
        
           <div class="col-sm-6 col-xs-12">
-            <h3 class="">{% trans 'Activities' %}</h3>
+            <h3 class="lead">{% trans 'Activities' %}</h3>
             <h4>{% trans 'Sports' %}:</h4>
             {% for a in profile.forum_profile.activities.all %}
               {% if a.sport %}
@@ -125,7 +125,7 @@ Profile read only
             {% endfor %}
           </div>
           <div class="col-sm-6 col-xs-12">
-            <h3 class="">&nbsp;</h3>
+            <h3 class="lead">&nbsp;</h3>
             <h4>{% trans 'Other Activities' %}:</h4>
             {% for a in profile.forum_profile.activities.all %}
               {% if not a.sport %}
