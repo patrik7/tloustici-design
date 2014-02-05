@@ -132,10 +132,15 @@ Basic JSON load scenario:
           +'<a href="javascript:void(0)" class="btn btn-primary" onClick="show(\'_reply_head\')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Reply' %}</a></div><div class="clearfix"></div></div>' +
           //TODO add more buttons
 
+          {% if user.is_authenticated %}
+
           /* Add a hidden form */
           '<div id="post_reply_head" class="panel panel-default hidden">' +
             add_form(head_post.id) + 
           '</div>' +
+
+          {% endif %}
+
         '<div id="entries" /></div>');
     }
 
