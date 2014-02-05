@@ -2,46 +2,47 @@
 
 Hubnemevedvou.cz
 
-Registracia krok 1
+Activity form - used both on registration and profile edit
 
 ------------------------------------------------------------------------------------------->
 
 {% load i18n %}
 
-      <div id="register-form" class="row">
-        <div class="col-sm-12 col-xs-12">
-          <div class="form-group">
-                  <label class="control-label">
-                     <h2>{% trans 'Sports' %}</h2>
-                  </label>
-                  {{form.sports}}
+<div id="register-form" class="row">
+  <div class="col-sm-12 col-xs-12">
+    <div class="form-group">
+      <label class="control-label">
+        <h2>{% trans 'Sports' %}</h2>
+      </label>
+      {{form.sports}}
 
-                  {% for error in from_act.sports.errors %}
-                      <span class="help-block">{{ error }}</span>
-                  {% endfor %}
+      {% for error in from.sports.errors %}
+        <span class="help-block">{{ error }}</span>
+      {% endfor %}
 
-                  {% if from_act.sports.help_text %}
-                      <p class="help-block">
-                          {{ from_act.sports.help_text|safe }}
-                      </p>
-                  {% endif %}
-          </div>
-        </div>
-        <div class="col-sm-12 col-xs-12">
-                <label class="control-label">
-                   <h2>{% trans 'Other Activities' %}</h2>
-                </label>
-                {{form.activities}}
+      {% if from.sports.help_text %}
+        <p class="help-block">
+          {{ from.sports.help_text|safe }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+  <div class="col-sm-12 col-xs-12">
+    <div class="form-group">
+      <label class="control-label">
+        <h2>{% trans 'Other Activities' %}</h2>
+      </label>
+      {{form.activities}}
 
-                {% for error in from_act.activities.errors %}
-                    <span class="help-block">{{ error }}</span>
-                {% endfor %}
+      {% for error in from.activities.errors %}
+        <span class="help-block">{{ error }}</span>
+      {% endfor %}
 
-                {% if from_act.activities.help_text %}
-                    <p class="help-block">
-                        {{ from_act.activities.help_text|safe }}
-                    </p>
-                {% endif %}
-
-        </div>
-      </div>
+      {% if from.activities.help_text %}
+        <p class="help-block">
+          {{ from.activities.help_text|safe }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</div>
