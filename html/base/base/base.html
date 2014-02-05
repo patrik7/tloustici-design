@@ -100,7 +100,7 @@ Base - zakladna sablona
 
             {% if register_form %}
             <div id="register-new-sidebar">
-              <strong>Nakopni konečně své štěstí, udělej první krok a zaregistruj se!</strong>
+              <strong>{% trans 'Get your lucky strike, take the first step and register!' %}</strong>
               <form method="post" action="/register/0/" class="form">
                 {% csrf_token %}
                 {{register_form|bootstrap}}
