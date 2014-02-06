@@ -363,7 +363,7 @@ zoom: 1.2;
 color: #1162ae;
 }
 
-#entries .big-favorities:nth-child(2n){
+#entries .shade {
     background-color:#eee;
 }
 
