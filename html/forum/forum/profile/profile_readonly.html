@@ -80,7 +80,7 @@ Profile read only
           <div class="col-sm-8 text-right">
             <div class="btn-group btn-group-sm">
               {% if user.is_superuser and user != profile %}
-                {% button 'Suspend Account' 'profile' url_arg=profile.username get_param='suspend' get_value='1' icon='lock' cls='danger' %}
+                {% button 'Suspend Account' 'profile' url_arg=profile.username get_param='suspend' get_value='1' icon='lock' cls='btn-danger' %}
               {% endif %}
               
               {% if user != profile %}

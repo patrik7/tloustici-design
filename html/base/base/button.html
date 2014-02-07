@@ -1,0 +1,9 @@
+<a href="{{url}}" class="btn {{extra_class}}">
+  {% if icon %}
+    <span class="glyphicon glyphicon-{{icon}}"></span>&nbsp;<span class="hidden-inline-xs">
+  {% endif %}
+  {{label}}
+  {% if icon %}
+    </span>
+  {% endif %}
+</a>
