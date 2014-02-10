@@ -18,6 +18,9 @@
  * limitations under the License.
  * ========================================================================
  */
+$('#animated-switch').bootstrapSwitch('setAnimated', true);
+$('#dimension-switch').bootstrapSwitch('setSizeClass', 'switch-mini');
+
 
 (function() {
   (function($) {
