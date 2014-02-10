@@ -397,7 +397,7 @@
 
 $(function() {
   // initialize all the inputs
-  $('input[type="checkbox"],[type="radio"]').not('#create-switch').bootstrapSwitch();
+  $('input[type="checkbox"]').not('#create-switch').bootstrapSwitch();
 
   // dimension
   $('#btn-size-mini-switch').on('click', function () {
