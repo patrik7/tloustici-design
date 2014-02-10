@@ -1,3 +1,5 @@
+$('#animated-switch').bootstrapSwitch('setAnimated', true);
+$('#dimension-switch').bootstrapSwitch('setSizeClass', 'switch-mini');
 
 function calculate_bmi() {
   //load data
