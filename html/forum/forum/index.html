@@ -48,15 +48,15 @@ Basic JSON load scenario:
 
               <p class="text-muted">
                 {% blocktrans with date=category.last_post.created user=category.last_post.user id=category.last_post.id %}
-                  <a href="javascript:void(0)" onClick="root = '{{id}}'; loadData(preRender);">Last reaction {{date}}</a> by <a href="{{user_url}}">{{user}}</a>
+                  <a href="javascript:void(0)" onClick="root = '{{id}}'; loadData(preRender);">Last reaction</a> {{date}} by <a href="{{user_url}}">{{user}}</a>
                 {% endblocktrans %}
               </p>
             {% endif %}
           </div>
-            <div class="col-md-3">
-                <p>{% trans 'Post count' %}: {{category.post_count}}</p>
-                <a href="javascript:void(0)" class="btn btn-info btn-block" onClick="root = '{{category.id}}'; loadData(preRender);" >{% trans 'Read' %}</a>
-            </div>
+          <div class="col-md-3">
+            <p>{% trans 'Post count' %}: {{category.post_count}}</p>
+            <a href="javascript:void(0)" class="btn btn-info btn-block" onClick="root = '{{category.id}}'; loadData(preRender);" >{% trans 'Read' %}</a>
+          </div>
         </div>
       </div>
     </a>
@@ -230,7 +230,7 @@ Basic JSON load scenario:
 
       var last_post = '';
       if (e.level < 3 && e.last_post) {
-        last_post = '{% blocktrans %}<a href="javascript:void(0)" onClick="root = \'' + e.last_post.id + '\'; loadData(preRender);">Last reaction ' + e.last_post.date + '</a> by <a href="/profile/' + e.user + '/">' + e.user + '</a>{% endblocktrans %}'
+        last_post = '{% blocktrans %}<a href="javascript:void(0)" onClick="root = \'' + e.last_post.id + '\'; loadData(preRender);">Last reaction</a> ' + e.last_post.date + ' by <a href="/profile/' + e.user + '/">' + e.user + '</a>{% endblocktrans %}'
       }
 
       var shade_alternation = '';
