@@ -237,7 +237,6 @@ margin-bottom:10px;
     width: 100%;
     float: left;
     background: aliceblue;
-    max-height: 250px;
     overflow:hidden;
     margin-bottom:20px;
     border-bottom: 4px solid #00aedf; }
@@ -251,7 +250,6 @@ margin-bottom:10px;
     width: 100%;
     float: left;
     background: aliceblue;
-    max-height: 150px;
     overflow:hidden;
     margin-bottom:20px;
     border-bottom: 4px solid #00aedf; }
