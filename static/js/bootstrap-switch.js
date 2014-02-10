@@ -400,9 +400,7 @@ $(function() {
   $('input[type="checkbox"]').not('#create-switch').bootstrapSwitch();
 
   // dimension
-  $('#btn-size-mini-switch').on('click', function () {
-    $('#dimension-switch').bootstrapSwitch('setSizeClass', 'switch-mini');
-  });
+$('#dimension-switch').bootstrapSwitch('setSizeClass', 'switch-mini');
  
   // state
   $('#toggle-state-switch-button').on('click', function () {
