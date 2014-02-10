@@ -1,5 +1,5 @@
 <li>
-  <label for="{{id}}">
-    <input {% for k,v in extra_attrs %}{{k}}="{{v}}" {% endfor %} type="checkbox" {% if checked %}checked="checked"{% endif %} name="{{field_name}}" id="{{id}}" value="{{value}}">{{label}}</input>
+  <label for="{{id}}"> 
+    <input {% for k,v in extra_attrs %}{{k}}="{{v}}" {% endfor %} type="checkbox" {% if checked %}checked="checked"{% endif %} name="{{field_name}}" id="{{id}} switch-mini" value="{{value}}"><p>{{label}}</p>
   </label>
 </li>
