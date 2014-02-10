@@ -21,6 +21,7 @@
 $('#animated-switch').bootstrapSwitch('setAnimated', true);
 $('#dimension-switch').bootstrapSwitch('setSizeClass', 'switch-mini');
 
+$("[name='sports']").bootstrapSwitch();
 
 (function() {
   (function($) {
