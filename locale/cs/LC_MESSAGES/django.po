@@ -605,7 +605,7 @@ msgstr "Registrace je v současné době uzavřena"
 #: forum/tests.py:112
 #: forum/templates/registration/registration_further.html:37
 msgid "What is your favourite sport?"
-msgstr "Jaký je tvůj nejoblíbenější sport?"
+msgstr ""
 
 #: forum/tests.py:123
 #: forum/templates/registration/registration_further.html:39
@@ -726,17 +726,17 @@ msgstr "Uložit"
 
 #: forum/views.py:187
 msgid "Public Info"
-msgstr ""
+msgstr "Veřejný informace"
 
 #: forum/views.py:188
 msgid "Private Info"
-msgstr ""
+msgstr "Soukromí informace"
 
 #: forum/views.py:189
 msgid ""
 "All the info entered below will be confidential and not visible to others. "
 "It is needed to find the best match for you."
-msgstr ""
+msgstr "Tieto informácie sú úkromné a nebudú zobrazené ostatným užívateľom. No sú dúležité aby náš systém vedel určit nejlepšícho partáka."
 
 #: forum/views.py:202
 msgid "Your account was activated."
@@ -1143,7 +1143,7 @@ msgstr "Poslat zprávu"
 #: forum/templates/forum/profile/form_activities_fields.html:15
 #: forum/templates/forum/profile/profile_readonly.html:120
 msgid "Sports"
-msgstr "Sporty"
+msgstr "Které sporty máš rád?"
 
 #: forum/templates/forum/profile/form_activities_fields.html:32
 #: forum/templates/forum/profile/profile_readonly.html:129
@@ -1326,7 +1326,7 @@ msgstr ""
 
 #: forum/templates/registration/registration_further.html:42
 msgid "Filling up basic info is necessary for using the search functionality."
-msgstr ""
+msgstr "Vyplň svoje základní informace pro celkovou funkčnost systému. "
 
 #: forum/templates/registration/registration_further.html:46
 msgid "And finally"
