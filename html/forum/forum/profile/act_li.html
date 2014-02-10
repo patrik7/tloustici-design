@@ -1,6 +1,6 @@
 <li>
   <label for="{{id}}">
-      <input type="checkbox" checked class="switch-large">{{label}}</input>
+      <input type="checkbox" checked class="switch-large" />{{label}}
     <input {% for k,v in extra_attrs %}{{k}}="{{v}}" {% endfor %} type="checkbox" {% if checked %}checked="checked"{% endif %} name="{{field_name}}" id="{{id}} dimension-switch" value="{{value}}">{{label}}</input>
   </label>
 </li>
