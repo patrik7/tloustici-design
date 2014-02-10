@@ -458,12 +458,9 @@ $('#dimension-switch').bootstrapSwitch('setSizeClass', 'switch-mini');
   });
 
   // label
-  $('#btn-label-on-switch').on('click', function() {
     $('#label-switch').bootstrapSwitch('setOnLabel', 'I');
-  });
-  $('#btn-label-off-switch').on('click', function() {
     $('#label-switch').bootstrapSwitch('setOffLabel', 'O');
-  });
+
 
   $('#label-toggle-switch').on('click', function(e, data) {
     $('.label-toggle-switch').bootstrapSwitch('toggleState');
