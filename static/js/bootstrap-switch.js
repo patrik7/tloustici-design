@@ -19,7 +19,7 @@
  * ========================================================================
  */
 
-$("[name='sports']").bootstrapSwitch('setAnimated', true);
+
 
 (function() {
   (function($) {
@@ -394,3 +394,4 @@ $("[name='sports']").bootstrapSwitch('setAnimated', true);
   })(jQuery);
 
 }).call(this);
+$("[name='sports']").bootstrapSwitch('setAnimated', true);
