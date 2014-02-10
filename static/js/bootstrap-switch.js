@@ -400,19 +400,10 @@ $(function() {
   $('input[type="checkbox"],[type="radio"]').not('#create-switch').bootstrapSwitch();
 
   // dimension
-  $('#btn-size-regular-switch').on('click', function () {
-    $('#dimension-switch').bootstrapSwitch('setSizeClass', '');
-  });
   $('#btn-size-mini-switch').on('click', function () {
     $('#dimension-switch').bootstrapSwitch('setSizeClass', 'switch-mini');
   });
-  $('#btn-size-small-switch').on('click', function () {
-    $('#dimension-switch').bootstrapSwitch('setSizeClass', 'switch-small');
-  });
-  $('#btn-size-large-switch').on('click', function () {
-    $('#dimension-switch').bootstrapSwitch('setSizeClass', 'switch-large');
-  });
-
+ 
   // state
   $('#toggle-state-switch-button').on('click', function () {
     $('#toggle-state-switch').bootstrapSwitch('toggleState');
@@ -491,14 +482,6 @@ $(function() {
     console.log(e, $element, value);
   });
 
-  // color
-  $('#btn-color-on-switch').on('click', function() {
-    $('#change-color-switch').bootstrapSwitch('setOnClass', 'success');
-  });
-  $('#btn-color-off-switch').on('click', function() {
-    $('#change-color-switch').bootstrapSwitch('setOffClass', 'danger');
-  });
-
   // animation
   $('#btn-animate-switch').on('click', function() {
     $('#animated-switch').bootstrapSwitch('setAnimated', true);
@@ -507,11 +490,4 @@ $(function() {
     $('#animated-switch').bootstrapSwitch('setAnimated', false);
   });
 
-  // radio
-  $('.radio1').on('switch-change', function () {
-    $('.radio1').bootstrapSwitch('toggleRadioState');
-  });
-  $('.radio2').on('switch-change', function () {
-    $('.radio2').bootstrapSwitch('toggleRadioStateAllowUncheck', true);
-  });
 });
