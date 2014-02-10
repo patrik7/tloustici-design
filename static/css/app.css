@@ -191,6 +191,10 @@ margin-bottom:10px;
 .form-horizontal{
     max-width: 850px;
     margin: 0 auto; }
+.has-switch{
+    z-index:999;
+}
+
 
 /******************************************************************************
 6. Login
