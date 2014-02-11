@@ -104,7 +104,7 @@ Base - zakladna sablona
               <form method="post" action="/register/0/" class="form">
                 {% csrf_token %}
                 {{register_form|bootstrap}}
-                <input type="submit" class="btn btn-success" name="step0" value="{% trans 'Create an Account' %}">
+                <input type="submit" class="btn btn-green" name="step0" value="{% trans 'Create an Account' %}">
               </form>
                 
                 <div class="text-center">
