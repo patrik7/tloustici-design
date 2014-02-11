@@ -236,6 +236,13 @@ margin-right: 15px;
     display:inline;
     }
 
+.article-header {
+color: #000;
+}
+
+.article-header h3{
+font-size:21px;
+}
 .article-image{
     display: block;
     width: 100%;
