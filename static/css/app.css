@@ -186,9 +186,9 @@ margin-bottom:10px;
 
 #register-form{}
     #register-form li{ 
-        width: 50%;
+        width: 33%;
         float: left;
-        text-align: left;
+        text-align: center;
         padding: 5px 5%;
         list-style: none;
         display: inline;}
