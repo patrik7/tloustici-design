@@ -401,6 +401,12 @@ font-size:21px;
     text-align:center;
     }
 
+#post_reply_head2{
+    padding: 15px;
+    background-color: #66B7E1;
+    text-align:center;
+    }
+
 .forum-picture{
     max-height:160px;
 }
