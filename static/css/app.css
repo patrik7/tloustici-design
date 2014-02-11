@@ -258,6 +258,7 @@ div.activity-checkbox label {
 	color: #68C2DF; /* MUTED */
 	width: 100%;
 	text-align: left;
+	padding-left: 12px;
 }
 
 div.activity-checkbox label.checked {
