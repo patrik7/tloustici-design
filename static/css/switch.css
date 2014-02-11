@@ -1,0 +1,211 @@
+/* ========================================================
+   Switches
+   ===================================================== */
+.switch {
+  position: relative;
+  float:right;
+  height: 34px;
+  width: 120px;
+  margin-right: 218px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.switch-label {
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 58px;
+  line-height: 36px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  color: #888;
+  cursor: pointer;
+  height: 32px;
+}
+
+.switch-label-off {
+  padding-left: 2px;
+}
+
+.switch-label-on {
+  padding-right: 2px;
+}
+
+/*
+ * Note: using adjacent or general sibling selectors combined with
+ *       pseudo classes doesn't work in Safari 5.0 and Chrome 12.
+ *       See this article for more info and a potential fix:
+ *       http://css-tricks.com/webkit-sibling-bug/
+ */
+.switch-input {
+  display: none;
+}
+.switch-input:checked + .switch-label {
+  color:#FFF;
+  text-shadow:0 1px 0 rgba(0,0,0,0.5);
+  -webkit-transition: 0.15s ease-out;
+  -moz-transition: 0.15s ease-out;
+  -ms-transition: 0.15s ease-out;
+  -o-transition: 0.15s ease-out;
+  transition: 0.15s ease-out;
+  -webkit-transition-property: color, text-shadow;
+  -moz-transition-property: color, text-shadow;
+  -ms-transition-property: color, text-shadow;
+  -o-transition-property: color, text-shadow;
+  transition-property: color, text-shadow;
+}
+
+.switch-input:checked + .switch-label-on ~ .switch-selection {
+  left: 60px;
+  /* Note: left: 50%; doesn't transition in WebKit */
+}
+
+.switch-selection {
+  position: absolute;
+  z-index: 1;
+  top: 2px;
+  left: 2px;
+  display: block;
+  width: 58px;
+  height: 30px;
+  border-radius: 3px;
+  background-color: #3aa2d0;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4fc9ee), color-stop(100%, #3aa2d0));
+  background-image:url(../design/btn-bg.png);
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+  -webkit-transition: left 0.15s ease-out;
+  -moz-transition: left 0.15s ease-out;
+  -ms-transition: left 0.15s ease-out;
+  -o-transition: left 0.15s ease-out;
+  transition: left 0.15s ease-out;
+}
+
+.switch-input:checked + .switch-label[for$="off"], .switch-input:checked + .switch-label[for$="off2"], .switch-input:checked + .switch-label[for$="off3"], .switch-input:checked + .switch-label[for$="off4"]{
+  background:url(../design/switch-shadow.png) !important;
+}
+.switch-blue .switch-selection {
+  background-color: #3aa2d0;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4fc9ee), color-stop(100%, #3aa2d0));
+  background-image: -webkit-linear-gradient(top, #4fc9ee, #3aa2d0);
+  background-image: -moz-linear-gradient(top, #4fc9ee, #3aa2d0);
+  background-image: -ms-linear-gradient(top, #4fc9ee, #3aa2d0);
+  background-image: -o-linear-gradient(top, #4fc9ee, #3aa2d0);
+  background-image: linear-gradient(top, #4fc9ee, #3aa2d0);
+}
+.switch-yellow .switch-selection {
+  background-color: #c4bb61;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e0dd94), color-stop(100%, #c4bb61));
+  background-image: -webkit-linear-gradient(top, #e0dd94, #c4bb61);
+  background-image: -moz-linear-gradient(top, #e0dd94, #c4bb61);
+  background-image: -ms-linear-gradient(top, #e0dd94, #c4bb61);
+  background-image: -o-linear-gradient(top, #e0dd94, #c4bb61);
+  background-image: linear-gradient(top, #e0dd94, #c4bb61);
+}
+
+/* ========================================================
+   Select
+   ===================================================== */
+   
+   			.selectBox .selectedOption
+			{
+				display:block;
+				float:left;
+				width:142px;
+				text-indent:10px;
+				border:1px solid #ccc;
+				border-right:none;
+				border-top-left-radius:5px;
+				border-bottom-left-radius:5px;
+				background: #fff url(../design/select-bg.png) repeat-x;
+				overflow:hidden;
+				text-decoration:none !important;
+				z-index:100;
+				height:27px;
+				padding-top:5px;
+				position:absolute;
+			}
+			.selectBox
+			{
+				position:relative;
+				float:left;
+				margin-top:5px;
+				margin-left:10px;
+			}
+   			div.selectBox
+			{
+				position:relative;
+				cursor:default;
+				text-align:left;
+				line-height:24px;
+				color:#999;
+				cursor:pointer;
+				z-index:900;
+                                text-shadow: 0 1px 0 #fff;
+			}
+			span.selectArrow
+			{
+				display:block;
+				background-image:url(http://zelania.sk/assets/design/arrowdown.png);
+				background-repeat:no-repeat;
+				background-position:right 0;
+				width:176px;
+				height:34px !important;
+				border-top-right-radius:5px;
+				border-bottom-right-radius:5px;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-o-user-select: none;
+				user-select: none;
+				position:absolute;
+				z-index:101;
+			}
+			
+			span.selectArrow:hover
+			{
+				background-position: right -34px;
+			}
+			span.selectArrow:active
+			{
+				background-position: right -68px;
+			}
+			
+			div.selectOptions
+			{
+				position:absolute;
+				top:31px;
+				left:0;
+				width:174px;
+				border:1px solid #ccc;
+				border-bottom-right-radius:5px;
+				border-bottom-left-radius:5px;
+				overflow:hidden;
+				background:#f6f6f6;
+				padding-top:2px;
+				display:none;
+				z-index:99;
+			}
+				
+			span.selectOption
+			{
+				display:block;
+				width:89%;
+				line-height:20px;
+				padding:5px 4%;
+				border:#f6f6f6 1px solid;
+				margin:3px;
+			}
+			
+			span.selectOption:hover
+			{
+				border-radius: 4px;
+				-moz-border-radius: 4px;
+				-webkit-border-radius: 4px;
+				color:#777;
+				background-color:#E1E1E1;
+			}			
