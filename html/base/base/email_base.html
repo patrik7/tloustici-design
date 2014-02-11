@@ -19,7 +19,7 @@ Base email
     {% block head %}
       <font face="Tahoma, Geneva, sans-serif">
 <div><div><div bgcolor="#FFFFFF" text="#000000"><div style="width:
-                               100%; min-height: 100%; background-color: rgb(45, 45, 45); 
+                               100%; min-height: 100%; background-color:#e3f3ff; 
                                background-image: none; background-attachment: scroll; background-clip: 
                                border-box; background-origin: padding-box; background-size: auto; 
                                padding-top: 0pt; padding-bottom: 0pt; margin-top: 0pt; margin-bottom: 
@@ -30,10 +30,10 @@ Base email
     <tbody>
         <tr>
             <td width="220"><a moz-do-not-send="true" 
-                               href="http://www.begrip.sk/"><img alt="Begrip.sk" title="Begrip.sk" 
+                               href="http://www.hubnemevedou.cz/"><img alt="Hubnemevedou.cz" title="Hubnemevedou.cz" 
                                                   border="0" height="51" width="161" 
                                                   id="test" apple-width="yes" 
-                                                  apple-height="yes" src="logoZ.PNG"></a>
+                                                  apple-height="yes" src="src="http://uat.hubnemevedvou.cz/static/images/hubneme-logo.png""></a>
             </td>
             <td align="right"> <br>
             </td>
@@ -55,7 +55,7 @@ Base email
                         <tr><td colspan="2">
 
                              Fall has arrived and we couldn't be more excited to break out our booties and coats. Want to look cool this season while still staying warm? Take a cue from Pose's Community Manager, Alicia, and her Fall Favorites collection as you assemble your perfect wardrobe.<br>
-
+  <a href="http://{{domain}}{% url login %}">{% trans 'Log in' %}</a>
                                 <br>
                             
 </td>
@@ -64,46 +64,37 @@ Base email
                             <td> <b><br>
                                 </b></td>
                             <td align="right">
-                                <div align="left"><b>Zdeno H.</b><br>
-                                    <b> </b>Zelania.sk team<br>
-                                    <b> </b></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" align="center" 
-                                height="60">Želajte si niečo viac, dajte najviac.<br>
+                                <div align="left"><b>{% block underwritting %}
+        {{domain|capfirst}}<br/>
+        
+      </b><br>
+                                  webmaster@{{domain}}<br>
+                                  {% endblock %}  </div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </td>
         </tr>
-        <tr>
-            <td colspan="2" align="center" height="30"> <font 
-                    color="#FFFFFF" face="Tahoma, Geneva, sans-serif" size="2">Copyright Zelania.sk</font> </td>
-        </tr>
     </tbody>
 </table>
 </table=""></div>
-<title>BEGRIP</title>
+<title>HUBNEMEVEDVOU.CZ</title>
 </div>
 
 </div></div><br>
 </font>
       
-      logo...
+     
 
-      <a href="http://{{domain}}{% url login %}">{% trans 'Log in' %}</a>
+    
     {% endblock %}
 
     {% block main %}
     {% endblock %}
 
     <p class="text-right">
-      {% block underwritting %}
-        {{domain|capfirst}}<br/>
-        webmaster@{{domain}}
-      {% endblock %}
+      
     </p>
   </body>
 </html>
