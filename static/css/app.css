@@ -195,6 +195,10 @@ margin-bottom:10px;
     z-index:999;
     min-width: 139px !important;
 }
+.has-switch.switch-animate.switch-mini.switch-off{
+float: right;
+margin-right: 15px;
+}
 
 
 /******************************************************************************
