@@ -28,6 +28,10 @@ Media querry
 *******************************************************************************/
 
 .btn-blue{
+    background: #25aae1;
+    color: #FFF;}
+    .btn-blue a{
+    color: #FFF;
     }
 
 .right{ float:right; }
