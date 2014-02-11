@@ -186,11 +186,12 @@ margin-bottom:10px;
 
 #register-form{}
     #register-form li{ 
-        width: 33%;
+        width: 50%;
         float: left;
         text-align: left;
-        padding: 5px 0px;
-        list-style: none; }
+        padding: 5px 5%;
+        list-style: none;
+        display: inline;}
 
 .form-horizontal{
     max-width: 850px;
@@ -282,7 +283,7 @@ font-size:21px;
 
 .article-text{
     max-height:68px;
-    min-height: 68px;
+    min-height: 68px;witch
     overflow:hidden;
     }
 
