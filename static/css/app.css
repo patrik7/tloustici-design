@@ -441,6 +441,15 @@ background-repeat: repeat-x;
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5',endColorstr='#ffe8e8e8',GradientType=0);
 }
 
+.search-friend-box.col-lg-6.col-md-12.col-sm-12.panel.paddding-bottom {
+height: 220px;
+max-width: 400px;
+margin: 0 auto;
+}.search-friend-box.col-lg-6.col-md-12.col-sm-12.panel.paddding-bottom p {
+display: none;
+}
+
+
 /******************************************************************************
 
 
