@@ -282,6 +282,7 @@ font-size:21px;
 
 .article-text{
     max-height:68px;
+    min-height: 68px;
     overflow:hidden;
     }
 
