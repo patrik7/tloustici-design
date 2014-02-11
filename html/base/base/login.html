@@ -21,10 +21,10 @@ Login / Prihlasenie
         {{ login_form|bootstrap_horizontal:"col-xs-2" }}
 
         <div class="">
-          <p><a href="{% url password_recovery %}">{% trans 'Forgot your password?' %}</a></p>
+          <p><a class="lead" href="{% url password_recovery %}">{% trans 'Forgot your password?' %}</a></p>
 
           <div class="form-actions">
-            <input type="submit" class="btn btn-lg btn-primary" value="{% trans 'Log in' %}" />
+            <input type="submit" class="btn btn-green" value="{% trans 'Log in' %}" />
           </div>
         </div>
       </form>
