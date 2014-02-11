@@ -254,6 +254,21 @@ id_activities_4{}
 id_activities_5{}
 id_activities_6{}
 
+div.activity-checkbox label {
+	color: #68C2DF; /* MUTED */
+	width: 100%;
+	text-align: left;
+}
+
+div.activity-checkbox label.checked {
+        color: #333;
+}
+
+div.activity-checkbox label.hover {
+	background-color:#eee;
+	color:#2a6496; 
+}
+
 /******************************************************************************
 6. Login
 *******************************************************************************/

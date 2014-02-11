@@ -36,6 +36,8 @@ Base - zakladna sablona
     <link href="{{STATIC_URL}}css/other.css" rel="stylesheet" />
     <link href="{{STATIC_URL}}css/app.css" rel="stylesheet" />
     <link href="{{STATIC_URL}}css/switch.css" rel="stylesheet" />
+    <link href="{{STATIC_URL}}css/skins/flat/blue.css" rel="stylesheet" />
+
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -161,6 +163,8 @@ Base - zakladna sablona
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
       <script src="{{STATIC_URL}}js/alert.js"></script>
+      <script src="{{STATIC_URL}}js/icheck.min.js"></script>
+
       
     {% endblock %}
 
@@ -184,6 +188,24 @@ Base - zakladna sablona
 
     {% endif %}
 
+    <script type="text/javascript" language="javascript">
+
+      $(document).ready(function(){
+        $('.activities input').iCheck({
+          checkboxClass: 'icheckbox_flat-blue',
+          radioClass: 'iradio_flat-blue',
+        });
+      });
+
+      $('.activities input').on('ifChecked', function(){
+        $(this.parentNode.parentNode).addClass('checked');
+      });
+      $('.activities input').on('ifUnchecked', function(){
+        $(this.parentNode.parentNode).removeClass('checked');
+      });
+
+
+    </script>
 
     {% if user.is_authenticated %}
       <script type="text/javascript" language="javascript">
