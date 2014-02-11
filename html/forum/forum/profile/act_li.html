@@ -1,12 +1,12 @@
 <li>
-<span class="glyphicon glyphicon-home"></span>
 <label for="{{id}}">{{label}}</label>
 <div class="switch">
-    <input type="radio" class="switch-input" name="sledovat" value="1" id="on" checked="">
-    <label for="on" class="switch-label switch-label-off">ON</label>
-    <input type="radio" class="switch-input" name="sledovat" value="0" id="off">
-    <label for="off" class="switch-label switch-label-on">OFF</label>
-    <span class="switch-selection"></span>
+     	<input {% for k,v in extra_attrs %}{{k}}="{{v}}"  {% endfor %} type="radio" {% if checked %}checked="checked"{% endif %} name="{{field_name}}" class="switch-input" id="{{id}}" name="sledovat" value="{{value}}" id="on" checked="">
+      	<label for="on" class="switch-label switch-label-off">BAVÍ</label>
+      	<input {% for k,v in extra_attrs %}{{k}}="{{v}}"  {% endfor %} type="radio" {% if checked %}checked="checked"{% endif %}  name="{{field_name}}" class="switch-input" id="{{id}}" name="sledovat" value="{{value}}" id="off">
+      	<label for="off" class="switch-label switch-label-on">NEBAVÍ</label>
+      	<span class="switch-selection"></span>
 </div>
+
 </li>
  
