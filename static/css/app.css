@@ -199,6 +199,24 @@ margin-bottom:10px;
 float: right;
 margin-right: 15px;
 }
+.has-switch span.switch-primary, .has-switch span.switch-left{
+position: absolute;
+z-index: 1;
+top: 2px;
+left: 2px;
+display: block;
+width: 58px;
+height: 30px;
+border-radius: 3px;
+background-color: #3aa2d0;
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4fc9ee), color-stop(100%, #3aa2d0));
+-webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+-webkit-transition: left 0.15s ease-out;
+-moz-transition: left 0.15s ease-out;
+-ms-transition: left 0.15s ease-out;
+-o-transition: left 0.15s ease-out;
+transition: left 0.15s ease-out;}
 
 
 /******************************************************************************
