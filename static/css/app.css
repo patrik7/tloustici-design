@@ -417,6 +417,10 @@ font-size:21px;
 
 }
 
+.well.big-faq.panel-body .form-horizontal radio{
+display:inline-block;
+}
+
 .col-xs-offset-1 {
 margin-left: 5px;
 }
