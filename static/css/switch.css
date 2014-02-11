@@ -24,6 +24,7 @@
   color: #888;
   cursor: pointer;
   height: 32px;
+  font-weight:lighter;
 }
 
 .switch-label-off {
@@ -82,6 +83,9 @@
   -ms-transition: left 0.15s ease-out;
   -o-transition: left 0.15s ease-out;
   transition: left 0.15s ease-out;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0,   #6DD4F0), color-stop(1, #5BAFC6));
+  background-image: -webkit-linear-gradient(top, #6DD4F0 0%, #5BAFC6 100%);
+  background-image: linear-gradient(to bottom, #6DD4F0 0%, #5BAFC6 100%);
 }
 
 .switch-input:checked + .switch-label[for$="off"], .switch-input:checked + .switch-label[for$="off2"], .switch-input:checked + .switch-label[for$="off3"], .switch-input:checked + .switch-label[for$="off4"]{
