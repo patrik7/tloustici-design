@@ -10,13 +10,14 @@ Base email
 
 <html>
   <head>
+      {% block head %}
     <link href="http://{{domain}}{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet" />
    
     {% block extra_style %}
     {% endblock %}
   </head>
   <body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;" >
-    {% block head %}
+    
       <font face="Tahoma, Geneva, sans-serif">
 <div><div><div bgcolor="#FFFFFF" text="#000000"><div style="width:
                                100%; min-height: 100%; background-color:#e3f3ff; 
