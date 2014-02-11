@@ -34,6 +34,15 @@ Media querry
     color: #FFF;
     }
 
+
+.btn-green{
+background-color: #7bc021;
+-moz-box-shadow: inset 0px 2px 0px #d7ef3a;
+-webkit-box-shadow: inset 0px 2px 0px #d7ef3a;
+box-shadow: inset 0px 2px 0px #d7ef3a;
+color: #FFF;
+}
+
 .right{ float:right; }
 .left{ float:left; }
 
