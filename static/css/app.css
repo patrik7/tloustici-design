@@ -499,6 +499,13 @@ margin: 0 0 10px 0;
 @media (max-width: 640px) {
     
     .banner{ width: 100%; }
-
+    .recovery {
+    font-size: 14px;
+float: none;
+position: relative;
+text-align: center;
+width: auto;
+margin-left: 0px;
+}
    
 }
