@@ -417,7 +417,7 @@ font-size:21px;
 
 }
 
-.well.big-faq.panel-body .form-horizontal radio{
+.form-group radio{
 display:inline-block;
 }
 
