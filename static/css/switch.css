@@ -29,6 +29,12 @@
 
 .switch-label-off {
   padding-left: 2px;
+    color: #FFF;
+    -webkit-transition-property: color, text-shadow;
+-moz-transition-property: color, text-shadow;
+-ms-transition-property: color, text-shadow;
+-o-transition-property: color, text-shadow;
+transition-property: color, text-shadow;
 }
 
 .switch-label-on {
