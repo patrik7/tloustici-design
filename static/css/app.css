@@ -261,6 +261,14 @@ id_activities_6{}
 #login{ }
     #login_form div label{ 
        font-weight:normal;}
+.recovery{
+    font-size: 14px;
+float: right;
+position: absolute;
+text-align: right;
+width: 149px;
+margin-left: 103px;
+}
 
 
 /******************************************************************************
@@ -491,6 +499,13 @@ margin: 0 0 10px 0;
 @media (max-width: 640px) {
     
     .banner{ width: 100%; }
-    
+    .recovery {
+    font-size: 14px;
+float: none;
+position: relative;
+text-align: center;
+width: auto;
+margin-left: 0px;
+}
    
 }
