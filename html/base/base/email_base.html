@@ -1,100 +1,111 @@
-<!------------------------------------------------------------------------------------------ 
-
-Hubnemevedvou.cz
-
-Base email
-
-------------------------------------------------------------------------------------------->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 {% load i18n %}
 
-<html>
-  <head>
-      {% block head %}
-    <link href="http://{{domain}}{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet" />
-   
-    {% block extra_style %}
-    {% endblock %}
-  </head>
-     {% endblock %}
-  <body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;" >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     {% block head %}
     
-      <font face="Tahoma, Geneva, sans-serif">
-<div><div><div bgcolor="#FFFFFF" text="#000000"><div style="width:
-                               100%; min-height: 100%; background-color:#e3f3ff; 
-                               background-image: none; background-attachment: scroll; background-clip: 
-                               border-box; background-origin: padding-box; background-size: auto; 
-                               padding-top: 0pt; padding-bottom: 0pt; margin-top: 0pt; margin-bottom: 
-                               0pt; position: static; z-index: auto; background-position: 0% 0%; 
-                               background-repeat: repeat repeat; "><table bgcolor="#2D2D2D" 
- border="0" width="600" align="left"><table align="center" 
-                                       border="0" width="500">
-    <tbody>
-        <tr>
-            <td width="220"><a moz-do-not-send="true" 
-                               href="http://www.hubnemevedvou.cz/"><img alt="Hubnemevedou.cz" title="Hubnemevedou.cz" 
-                                                  border="0" height="62" width="181" 
-                                                  id="test" apple-width="yes" 
-                                                  apple-height="yes" src="http://uat.hubnemevedvou.cz/static/images/hubneme-logo.png"></a>
-            </td>
-            <td align="right"> <br>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-top-left-radius: 4px;
-                border-top-right-radius: 4px; border-bottom-right-radius:
-                4px; border-bottom-left-radius: 4px;" colspan="2" 
-                bgcolor="#FFFFFF"> <br>
-                <table align="center" border="0" width="450">
-                    <tbody>
-                        <tr>
-                            <td height="50" width="200">
-                            </td>
-                            <td align="right"> 
-                        </td>
-                        </tr>
-                        <tr><td colspan="2">
- {% block main %}
+<!-- If you delete this meta tag, Half Life 3 will never be released. -->
+<meta name="viewport" content="width=device-width" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>ZURBemails</title>
+<link href="http://{{domain}}{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet" />	
+<link rel="stylesheet" type="text/css" href="http://{{domain}}{{STATIC_URL}}css/email.css" />
+  {% block extra_style %}
     {% endblock %}
-                 <a href="http://{{domain}}{% url login %}">{% trans 'Log in' %}</a>
-                                <br>
-                            
-</td>
-                        </tr>
-                        <tr>
-                            <td> <b><br>
-                                </b></td>
-                            <td align="right">
-                                <div align="left"><b>{% block underwritting %}
-        {{domain|capfirst}}<br/>
-        
-      </b><br>
-                                  webmaster@{{domain}}<br>
-                                  {% endblock %}  </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </td>
-        </tr>
-    </tbody>
-</table>
-</table=""></div>
-<title>HUBNEMEVEDVOU.CZ</title>
-</div>
+    {% endblock %}
+</head>
+ 
+<body bgcolor="#FFFFFF">
 
-</div></div><br>
-</font>
-      
-     
+<!-- HEADER -->
+<table class="head-wrap" bgcolor="#999999">
+	<tr>
+		<td></td>
+		<td class="header container" >
+				
+				<div class="content">
+				<table bgcolor="#999999">
+					<tr>
+						<td><a href="http://www.hubnemevedvou.cz/"><img alt="Hubnemevedou.cz" title="Hubnemevedou.cz" src="http://{{domain}}{{STATIC_URL}}/images/hubneme-logo.png" /></a></td>
+						<td align="right"><h6 class="collapse"><a href="http://{{domain}}{% url login %}">Přihlášení</a></h6></td>
+					</tr>
+				</table>
+				</div>
+				
+		</td>
+		<td></td>
+	</tr>
+</table><!-- /HEADER -->
 
-    
-   
 
-   
+<!-- BODY -->
+<table class="body-wrap">
+	<tr>
+		<td></td>
+		<td class="container" bgcolor="#FFFFFF">
 
-    <p class="text-right">
-      
-    </p>
-  </body>
+			<div class="content">
+			<table>
+				<tr>
+					<td>
+						{% block main %}
+                        {% endblock %}
+                        <a href="http://{{domain}}{% url login %}">{% trans 'Log in' %}</a>				
+												
+						<!-- social & contact -->
+						<table class="social" width="100%">
+							<tr>
+								<td>
+									
+									<!-- column 1 -->
+									<table align="left" class="column">
+										<tr>
+											<td>				
+												
+												<h5 class="">Spojte se s náma:</h5>
+												<p class=""><a href="#" class="soc-btn fb">Facebook</a> <a href="#" class="soc-btn tw">Twitter</a> <a href="#" class="soc-btn gp">Google+</a></p>
+						
+												
+											</td>
+										</tr>
+									</table><!-- /column 1 -->	
+									
+									<!-- column 2 -->
+									<table align="left" class="column">
+										<tr>
+											<td>				
+																			
+												<h5 class="">Kontakatujte nás:</h5>
+                                                HUBNEMEVEDVOU.CZ
+												{% block underwritting %}
+                                                {{domain|capfirst}}<br>
+                                                webmaster@{{domain}}<br>
+                                                {% endblock %}
+											</td>
+										</tr>
+									</table><!-- /column 2 -->
+									
+									<span class="clear"></span>	
+									
+								</td>
+							</tr>
+						</table><!-- /social & contact -->
+						
+					</td>
+				</tr>
+			</table>
+			</div><!-- /content -->
+									
+		</td>
+		<td></td>
+	</tr>
+</table><!-- /BODY -->
+
+<!-- FOOTER -->
+
+
+</body>
 </html>
