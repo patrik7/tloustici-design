@@ -1,4 +1,4 @@
-<div class="col-sm-4 col-xs-6 activity-checkbox">
+<div class="col-sm-4 col-xs-12 activity-checkbox">
   <label for="{{id}}" class="activity-checkbox{% if checked %} checked{% endif %}">
     <input {% for k,v in extra_attrs %}{{k}}="{{v}}" {% endfor %} type="checkbox" {% if checked %}checked="checked"{% endif %} name="{{field_name}}" id="{{id}}" value="{{value}}"><img src="{{STATIC_URL}}images/activity/icons-{{value}}.png" height="66"/> {{label}}</input>
   </label>
