@@ -498,6 +498,11 @@ margin: 0 0 10px 0;
 padding: 0px;
 margin: 0 0 10px 0;
 }
+
+.activities .activity-checkbox{ 
+    padding-right: 15px !important;
+    padding-left: 15px!important;   
+}
 /******************************************************************************
 
 
