@@ -38,11 +38,13 @@ Profile read only
           <div class="col-sm-9">
             <h3>{{profile.username}} 
               {% if user == profile or user.is_superuser %}
-                {% button 'Edit Profile' 'profile' url_arg=profile.username icon='pencil' get_param='edit' get_value='1' %}
+                <small>
+                  <a href="{% url profile profile.username %}?edit=1">{% trans 'Edit Profile' context 'button' %}</a>
+                </small>
               {% endif %}</h3>
             <p class="text-muted">
-              {% if profile.forum_profile.city %} {% trans 'from' %} {{profile.forum_profile.city}}{% endif %}
-              {% if sex %} - {{sex}}{% endif %}
+              {% if sex %}{{sex}}{% endif %}{% if sex and profile.forum_profile.city %}, {% endif %}
+              {% if profile.forum_profile.city %}{{profile.forum_profile.city}}{% endif %}
             </p>
             <p>{{profile.forum_profile.description_html|safe}}</p>
           </div>
@@ -118,20 +120,30 @@ Profile read only
           <div class="col-sm-6 col-xs-12">
             <h3 class="lead">{% trans 'Activities' %}</h3>
             <h4>{% trans 'Sports' %}:</h4>
-            {% for a in profile.forum_profile.activities.all %}
-              {% if a.sport %}
-                {% trans a.name context 'activity' %}<br/>
-              {% endif%}
-            {% endfor %}
+            <div class="row">
+              {% for a in profile.forum_profile.activities.all %}
+                {% if a.sport %}
+                  <div class="col-lg-6 col-md-12">
+                    <img src="{{STATIC_URL}}images/activity/icons-{{a.id}}b.png" height="66" class="pull-left" />
+                    <p>{% trans a.name context 'activity' %}</p>
+                  </div>
+                {% endif%}
+              {% endfor %}
+            </div>
           </div>
           <div class="col-sm-6 col-xs-12">
             <h3 class="lead">&nbsp;</h3>
             <h4>{% trans 'Other Activities' %}:</h4>
-            {% for a in profile.forum_profile.activities.all %}
-              {% if not a.sport %}
-                {% trans a.name context 'activity' %}<br/>
-              {% endif%}
-            {% endfor %}
+            <div class="row">
+              {% for a in profile.forum_profile.activities.all %}
+                {% if not a.sport %}
+                  <div class="col-lg-6 col-md-12">
+                    <img src="{{STATIC_URL}}images/activity/icons-{{a.id}}b.png" height="66" class="pull-left" />
+                    <p>{% trans a.name context 'activity' %}</p>
+                  </div>
+                {% endif%}            
+              {% endfor %}
+            </div>
           </div>
         </div>
         {% else %}
@@ -142,9 +154,9 @@ Profile read only
         <div class="col-sm-12">
           <div class="col-xs-2" ></div>
           <div class="col-xs-10 text-right">
-            <div class="btn-group btn-group-sm">
-                {% button 'Edit Activities' 'profile' url_arg=profile.username icon='pencil' get_param='edit' get_value='1' get_param2='focus' get_value2='act' %}
-            </div>
+            <small>
+              <a href="{% url profile profile.username %}?edit=1&focus=act">{% trans 'Edit Activities' context 'button' %}</a>
+            </small>
           </div>
         
          </div>
