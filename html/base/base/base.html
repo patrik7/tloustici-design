@@ -109,32 +109,39 @@ Base - zakladna sablona
                 <input type="submit" class="btn btn-green" name="step0" value="{% trans 'Create an Account' %}">
               </form>
                 
-                <div class="text-center">
-            <img src="{{STATIC_URL}}images/hubneme-ve-dvou-1.png">
+              <div class="text-center">
+                <img src="{{STATIC_URL}}images/hubneme-ve-dvou-1.png" />
                     
-            <h4>{% trans 'Common interests' %}</h4>
-            <p>{% trans 'bubble_1_txt' %}</p>
- </div>
+                <h4>{% trans 'Common interests' %}</h4>
+                <p>{% trans 'bubble_1_txt' %}</p>
+              </div>
                 
-                <div class="text-center">
-            <img src="{{STATIC_URL}}images/hubneme-ve-dvou-2.png">
-            <h4>{% trans 'Mutual motivation' %}</h4>
-            <p>{% trans 'bubble_2_txt' %}</p>
- </div>
+              <div class="text-center">
+                <img src="{{STATIC_URL}}images/hubneme-ve-dvou-2.png" />
+                <h4>{% trans 'Mutual motivation' %}</h4>
+                <p>{% trans 'bubble_2_txt' %}</p>
+              </div>
                 
-                <div class="text-center">
-            <img src="{{STATIC_URL}}images/hubneme-ve-dvou-3.png">
-            <h4>{% trans 'Useful tips' %}</h2>
-            <p>{% trans 'bubble_3_txt' %}</p>
- </div>
+              <div class="text-center">
+                <img src="{{STATIC_URL}}images/hubneme-ve-dvou-3.png" />
+                <h4>{% trans 'Useful tips' %}</h2>
+                <p>{% trans 'bubble_3_txt' %}</p>
+              </div>
             </div>
             {% endif %}
 
             {% block left %}
+              {% if friend_suggestion %}
+                {% include 'forum/friend_suggestion.html' with s=friend_suggestion %}
+              {% endif %}
+
               {% if form_suggest %}
                 {% include 'form_suggest.html' %}
               {% endif %}
-              {% include 'articles/bmi.html' %}
+
+              {% if bmi %}
+                {% include 'articles/bmi.html' %}
+              {% endif %}
             {% endblock %}
           </div>
 
@@ -164,7 +171,7 @@ Base - zakladna sablona
       <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
       <script src="{{STATIC_URL}}js/alert.js"></script>
       <script src="{{STATIC_URL}}js/icheck.min.js"></script>
-
+      <script src="{{STATIC_URL}}js/bmi.js"></script>
       
     {% endblock %}
 
