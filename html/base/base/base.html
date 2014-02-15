@@ -171,12 +171,34 @@ Base - zakladna sablona
       <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
       <script src="{{STATIC_URL}}js/alert.js"></script>
       <script src="{{STATIC_URL}}js/icheck.min.js"></script>
-      <script src="{{STATIC_URL}}js/bmi.js"></script>
+      {% if bmi %}<script src="{{STATIC_URL}}js/bmi.js"></script>{% endif %}
       
     {% endblock %}
 
     {% block extra_script %}
     {% endblock %}
+
+    <script type="text/javascript" language="javascript">
+
+      $(document).ready(function(){
+        $('.activities input').iCheck({
+          checkboxClass: 'icheckbox_flat-blue',
+          radioClass: 'iradio_flat-blue',
+        });
+      });
+
+      $('.activities input').on('ifChecked', function(){
+        $(this.parentNode.parentNode).addClass('checked');
+        var e = $(this.parentNode.parentNode).children('img')[0];
+        e.src = e.src.replace('.png', 'b.png');
+      });
+      $('.activities input').on('ifUnchecked', function(){
+        $(this.parentNode.parentNode).removeClass('checked');
+        var e = $(this.parentNode.parentNode).children('img')[0];
+        e.src = e.src.replace('b.png', '.png');
+      });
+
+    </script>
 
     {% if google_analytics %}
 
@@ -194,25 +216,6 @@ Base - zakladna sablona
     </script>
 
     {% endif %}
-
-    <script type="text/javascript" language="javascript">
-
-      $(document).ready(function(){
-        $('.activities input').iCheck({
-          checkboxClass: 'icheckbox_flat-blue',
-          radioClass: 'iradio_flat-blue',
-        });
-      });
-
-      $('.activities input').on('ifChecked', function(){
-        $(this.parentNode.parentNode).addClass('checked');
-      });
-      $('.activities input').on('ifUnchecked', function(){
-        $(this.parentNode.parentNode).removeClass('checked');
-      });
-
-
-    </script>
 
     {% if user.is_authenticated %}
       <script type="text/javascript" language="javascript">
