@@ -18,7 +18,7 @@ Friend suggestion
         </a>
       </div>
       <div class="col-xs-6">
-        <a href="{% url profile s.profile.user.username %}"><h3>{{s.profile.user.username}}</h3></a><br/>
+        <a href="{% url profile s.profile.user.username %}"><h3>{{s.profile.user.username}}</h3></a>
         <small>{% trans 'from' context 'city' %} {{s.profile.city}}?</small>
         <div class="progress" style="margin-bottom: 10px;">
           <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{s.fitness.0}}" aria-valuemin="0" aria-valuemax="100" style="width: {{s.fitness.0}}%">{% trans 'Overall' %}
