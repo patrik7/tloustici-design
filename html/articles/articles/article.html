@@ -65,73 +65,40 @@ Article
     
 
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/sk_SK/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/sk_SK/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="fb-comments" data-href="http://uat.hubnemevedvou.cz/" data-numposts="5" data-colorscheme="light" data-width="800"></div>
+  <div class="fb-comments" data-href="http://uat.hubnemevedvou.cz/" data-numposts="5" data-colorscheme="light" data-width="800"></div>
     
-    </div>
-            <!------------------------------------------------------------------------------------------ 
+</div>
+
+<!------------------------------------------------------------------------------------------ 
 
 Hubnemevedvou.cz
 
 Recommended ? 
 
 ------------------------------------------------------------------------------------------->
-  
-    <div class="row">
-        
-        <h3 class="text-center lead">Další podobný články</h3>
-      <div class="col-sm-6">    
-          
-<div class="well feed-post">
-<a href="/articles/hubneme-s-legraci/" class="article-image2">
-    <img src="http://uat.hubnemevedvou.cz/static/images/db/articles/iStock_couple_salad860x360.jpg" class="img-rounded pull-right">
-</a>
-  
-<a class="article-header" href="/articles/hubneme-s-legraci/"><h3>
-  Hubněme s legrací 
-  </h3></a>
 
-<div class="article-text">
-  <p>
-<b>Přečtěte si pět důvodů proč se hubnutí o samotě rozhodně nevyplácí!</b>
-</p>
-<p>
-1)      Spatřili jste při vaší procházce městem zlevněné menu v McDonalds nebo jste objevili v ledničce poslední kousky dortu od babičky při vašem nočním lovu? Zavolejte svému příteli a řekněte mu, co za prasečinku máte v úmyslu! On vám to už pěkně vytmaví. Možná sice jen pro to, že na oběd měl dušenou mrkev, každopádně výsledek je zaručen.
-</p>
-</div>
-  <div class="btn btn-blue right">
-    <a class="" href="/articles/hubneme-s-legraci/">Číst více »</a>
-  </div>
-</div>
- 
-      </div>
+{% if suggested_articles %}
+  
+  <div class="row">        
+    <h3 class="text-center lead">Další podobný články</h3>
+
+    {% for a in suggested_articles %}
       <div class="col-sm-6">
-
-<div class="well feed-post">
-  <a href="/articles/srandovny-petrzel/" class="article-image2">
-    <img src="http://uat.hubnemevedvou.cz/static/images/db/articles/e0daeb80f4ae641882c4fdde961336ea.jpg" class="img-rounded pull-None">
-  </a>   
-<a class="article-header" href="/articles/srandovny-petrzel/"><h3>
-  Srandovný pertžel 
-</h3></a>
-
-<div class="article-text">
-  Lorun Ipsum magnita vali laudare moeto.
-</div>
-  <div class="btn btn-blue right">
-    <a class="" href="/articles/srandovny-petrzel/">Číst více »</a>
-  </div>
-</div>    
+        {% include 'articles/preview.html' with article=a %}
       </div>
-    </div>
-          </div>
+    {% endfor %}
+  </div>
+
+{% endif %}
+
 {% endblock %}
 
