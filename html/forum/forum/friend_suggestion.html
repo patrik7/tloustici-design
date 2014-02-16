@@ -12,7 +12,7 @@ Friend suggestion
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">
-      {% trans 'Do you know' %} <a href="{% url profile s.profile.user.username %}">{{s.profile.user.username}}</a> <small>{% trans 'from' context 'city' %} {{s.profile.city}}?</small>
+       <a href="{% url profile s.profile.user.username %}">{{s.profile.user.username}}</a> 
     </h3>
   </div>
   <div class="panel-body">
@@ -23,6 +23,9 @@ Friend suggestion
         </a>
       </div>
       <div class="col-xs-6">
+      {% trans 'Do you know' %}<br/>
+        <a href="{% url profile s.profile.user.username %}">{{s.profile.user.username}}</a><br/>
+        <small>{% trans 'from' context 'city' %} {{s.profile.city}}?</small>
         <div class="progress" style="margin-bottom: 10px;">
           <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{s.fitness.0}}" aria-valuemin="0" aria-valuemax="100" style="width: {{s.fitness.0}}%">{% trans 'Overall' %}
           </div>
