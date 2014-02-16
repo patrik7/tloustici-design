@@ -39,7 +39,7 @@ Profile read only
             <h3>{{profile.username}} 
               {% if user == profile or user.is_superuser %}
                 <small>
-                  <a href="{% url profile profile.username %}?edit=1">{% trans 'Edit Profile' context 'button' %}</a>
+                  <a href="{% url profile profile.username %}?edit=1" class="lead">{% trans 'Edit Profile' context 'button' %}</a>
                 </small>
               {% endif %}</h3>
             <p class="text-muted">
@@ -118,7 +118,13 @@ Profile read only
         {% if user.is_authenticated %}
        
           <div class="col-sm-12 col-xs-12">
-            <h3 class="lead">{% trans 'Activities' %}</h3>
+            <h3 class="lead">{% trans 'Activities' %}</h3>{% if user == profile or user.is_superuser %}
+      
+            <small>
+              <a href="{% url profile profile.username %}?edit=1&focus=act" class="lead">{% trans 'Edit Activities' context 'button' %}</a>
+            </small>
+
+      {% endif %}
             <h4>{% trans 'Sports' %}:</h4>
             <div class="row">
               {% for a in profile.forum_profile.activities.all %}
@@ -132,7 +138,6 @@ Profile read only
             </div>
           </div>
           <div class="col-sm-12 col-xs-12">
-            <h3 class="lead">&nbsp;</h3>
             <h4>{% trans 'Other Activities' %}:</h4>
             <div class="row">
               {% for a in profile.forum_profile.activities.all %}
@@ -150,17 +155,7 @@ Profile read only
           <p>{% trans 'This info is visible only to' %} <a href="{% url register %}">{% trans 'registered'%}</a> {% trans 'users.' %}</p>
         {% endif %}
       <div class="clearfix"></div>
-      {% if user == profile or user.is_superuser %}
-        <div class="col-sm-12">
-          <div class="col-xs-2" ></div>
-          <div class="col-xs-10 text-right">
-            <small>
-              <a href="{% url profile profile.username %}?edit=1&focus=act">{% trans 'Edit Activities' context 'button' %}</a>
-            </small>
-          </div>
-        
-         </div>
-      {% endif %}
+      
     </div>
     {% endif %}
 <hr/>
