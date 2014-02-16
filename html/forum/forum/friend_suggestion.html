@@ -9,12 +9,7 @@ Friend suggestion
 {% load i18n %}
 {% load base_tags %}
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">
-       <a href="{% url profile s.profile.user.username %}">{{s.profile.user.username}}</a> 
-    </h3>
-  </div>
+
   <div class="panel-body">
     <div class="row">
       <div class="col-xs-6">
@@ -24,7 +19,7 @@ Friend suggestion
       </div>
       <div class="col-xs-6">
       {% trans 'Do you know' %}<br/>
-        <a href="{% url profile s.profile.user.username %}">{{s.profile.user.username}}</a><br/>
+        <a href="{% url profile s.profile.user.username %}"><h3>{{s.profile.user.username}}</h3></a><br/>
         <small>{% trans 'from' context 'city' %} {{s.profile.city}}?</small>
         <div class="progress" style="margin-bottom: 10px;">
           <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{s.fitness.0}}" aria-valuemin="0" aria-valuemax="100" style="width: {{s.fitness.0}}%">{% trans 'Overall' %}
@@ -48,5 +43,5 @@ Friend suggestion
   </div>
         </div>
 </div>
-</div>
+
 
