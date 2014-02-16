@@ -117,7 +117,7 @@ Profile read only
   
         {% if user.is_authenticated %}
        
-          <div class="col-sm-6 col-xs-12">
+          <div class="col-sm-12 col-xs-12">
             <h3 class="lead">{% trans 'Activities' %}</h3>
             <h4>{% trans 'Sports' %}:</h4>
             <div class="row">
@@ -131,14 +131,14 @@ Profile read only
               {% endfor %}
             </div>
           </div>
-          <div class="col-sm-6 col-xs-12">
+          <div class="col-sm-12 col-xs-12">
             <h3 class="lead">&nbsp;</h3>
             <h4>{% trans 'Other Activities' %}:</h4>
             <div class="row">
               {% for a in profile.forum_profile.activities.all %}
                 {% if not a.sport %}
                   <div class="col-lg-6 col-md-12">
-                    <img src="{{STATIC_URL}}images/activity/icons-{{a.id}}b.png" height="66" class="pull-left" />
+                    <img src="{{STATIC_URL}}images/activity/icons-{{a.id}}b.png" height="66" class="pull-left icon-profil" />
                     <p>{% trans a.name context 'activity' %}</p>
                   </div>
                 {% endif%}            

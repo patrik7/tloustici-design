@@ -508,12 +508,14 @@ margin: 0 0 10px 0;
 
 .activities .activity-checkbox{ 
     padding-right: 0px !important;
-    padding-left: 0px!important;   
+    padding-left: 16px!important;   
 }
 
 .activities {
 padding-top: 20px;
 }
+.icheckbox_flat-blue{ margin-right: 10PX; }
+.icon-profil{margin-top: -20px;}
 
 .container>.navbar-header, .container>.navbar-collapse{ margin-left:0px !importatnt;}
 /******************************************************************************
