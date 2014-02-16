@@ -123,7 +123,7 @@ Profile read only
             <div class="row">
               {% for a in profile.forum_profile.activities.all %}
                 {% if a.sport %}
-                  <div class="col-lg-6 col-md-12">
+                  <div class="col-lg-6 col-md-12 activities-sport-main">
                     <img src="{{STATIC_URL}}images/activity/icons-{{a.id}}b.png" height="66" class="icon-profil" />
                     <p>{% trans a.name context 'activity' %}</p>
                   </div>
@@ -137,7 +137,7 @@ Profile read only
             <div class="row">
               {% for a in profile.forum_profile.activities.all %}
                 {% if not a.sport %}
-                  <div class="col-lg-6 col-md-12">
+                  <div class="col-lg-6 col-md-12 activities-sport-main">
                     <img src="{{STATIC_URL}}images/activity/icons-{{a.id}}b.png" height="66" class="icon-profil" />
                     <p>{% trans a.name context 'activity' %}</p>
                   </div>
