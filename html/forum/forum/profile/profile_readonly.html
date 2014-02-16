@@ -82,7 +82,7 @@ Profile read only
           <div class="col-sm-9 text-right">
             <div class="">
               {% if user.is_superuser and user != profile %}
-                {% button 'Suspend Account' 'profile' url_arg=profile.username get_param='suspend' get_value='1' icon='lock' cls='btn-danger' %}
+                {% button 'Suspend Account' 'profile' url_arg=profile.username get_param='suspend' get_value='1' icon='lock' cls='btn' %}
               {% endif %}
               
               {% if user != profile %}
@@ -95,11 +95,11 @@ Profile read only
                 </ul>
                 </div>
                 {% if in_favourites %}
-                  {% button 'Remove from Favourites' 'favourites' icon='minus' get_param='remove' get_value=profile.username %}
+                  {% button 'Remove from Favourites' 'favourites' icon='minus' get_param='remove' get_value=profile.username cls='btn' %}
                 {% else %}
-                  {% button 'Add to Favourites' 'favourites' icon='pushpin' get_param='add' get_value=profile.username %}
+                  {% button 'Add to Favourites' 'favourites' icon='pushpin' get_param='add' get_value=profile.username cls='btn-green'%}
                 {% endif %}
-                {% button 'Send Message' 'messages' icon='envelope' get_param='addressee' get_value=profile.username %}
+                {% button 'Send Message' 'messages' icon='envelope' get_param='addressee' get_value=profile.username cls='btn-regular'%}
               {% endif %}
             </div>
           </div>
