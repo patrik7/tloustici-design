@@ -19,7 +19,7 @@ Friend suggestion
     <div class="row">
       <div class="col-xs-6">
         <a href="{% url profile s.profile.user.username %}">
-          <img class="img img-rounded img-responsive link-glow" src="{{s.profile.avatar_url}}">
+          <img class="img img-circle img-responsive link-glow" src="{{s.profile.avatar_url}}">
         </a>
       </div>
       <div class="col-xs-6">
@@ -37,12 +37,12 @@ Friend suggestion
         </div>
       </div>
     </div>
+  <div class="col-md—6">
+      {% button 'Add to Favourites' 'favourites' icon='pushpin' get_param='add' get_value=s.profile.user.username %} 
   </div>
-  <div class="panel-footer text-right">
-    <div class="btn-group btn-group-xs">
-      {% button 'Add to Favourites' 'favourites' icon='pushpin' get_param='add' get_value=s.profile.user.username %}
+  <div class="col-md—6">
       {% button 'Send Message' 'messages' icon='envelope' get_param='addressee' get_value=s.profile.user.username %}
-    </div>
   </div>
+</div>
 </div>
 
