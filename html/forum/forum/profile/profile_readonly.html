@@ -75,19 +75,19 @@ Profile read only
      </div>
         <div class="clearfix"></div>
         <div class="col-sm-12">
-          <div class="col-sm-4" >
+          <div class="col-sm-3" >
             <div class="fb-like" data-href="http://hubnemevedvou.cz/profile/{{profile.username}}/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-ref="profile" data-width="55"></div>
           </div>
           {% if user.is_authenticated %}
-          <div class="col-sm-8 text-right">
-            <div class="btn-group btn-group-sm">
+          <div class="col-sm-9 text-right">
+            <div class="">
               {% if user.is_superuser and user != profile %}
                 {% button 'Suspend Account' 'profile' url_arg=profile.username get_param='suspend' get_value='1' icon='lock' cls='btn-danger' %}
               {% endif %}
               
               {% if user != profile %}
                 <div class="btn-group btn-group-sm">
-                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">{% trans 'Report' %} <span class="caret"></span></button>
+                <a class="text-mute" data-toggle="dropdown">{% trans 'Report' %} <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                   <li><a href="{% url report 'sexual' %}?target_id={{user.forum_profile.id}}&target=Profile">{% trans 'Sexual Remarks' %}</a></li>
                   <li><a href="{% url report 'advertising' %}?target_id={{user.forum_profile.id}}&target=Profile">{% trans 'Advertising' %}</a></li>
