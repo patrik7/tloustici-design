@@ -515,7 +515,7 @@ margin: 0 0 10px 0;
 padding-top: 20px;
 }
 .icheckbox_flat-blue{ margin-right: 10PX; }
-.icon-profil{margin-top: -20px;}
+.icon-profil{margin-top: -20px;float: left!important;}
 
 .container>.navbar-header, .container>.navbar-collapse{ margin-left:0px !importatnt;}
 /******************************************************************************
