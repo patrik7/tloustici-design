@@ -9,7 +9,7 @@ Friend suggestion
 {% load i18n %}
 {% load base_tags %}
 
-
+  <h3>Odporučený</h3>
   <div class="panel-body friend-suggestion">
     <div class="row">
       <div class="col-xs-6">
@@ -34,7 +34,7 @@ Friend suggestion
         </div>
       </div>
     <div class="clear"></div>
-  <div class="btn-group">
+  <div class="btn-group-xs">
       {% button 'Add to Favourites' 'favourites' icon='pushpin' get_param='add' get_value=s.profile.user.username%} 
       {% button 'Send Message' 'messages' icon='envelope' get_param='addressee' get_value=s.profile.user.username%}
   </div>
