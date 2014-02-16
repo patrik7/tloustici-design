@@ -124,7 +124,7 @@ Profile read only
               {% for a in profile.forum_profile.activities.all %}
                 {% if a.sport %}
                   <div class="col-lg-6 col-md-12">
-                    <img src="{{STATIC_URL}}images/activity/icons-{{a.id}}b.png" height="66" class="pull-left" />
+                    <img src="{{STATIC_URL}}images/activity/icons-{{a.id}}b.png" height="66" class="icon-profil" />
                     <p>{% trans a.name context 'activity' %}</p>
                   </div>
                 {% endif%}
