@@ -118,13 +118,13 @@ Profile read only
         {% if user.is_authenticated %}
        
           <div class="col-sm-12 col-xs-12">
-            <h3 class="lead">{% trans 'Activities' %}</h3>{% if user == profile or user.is_superuser %}
+            <h3 class="lead">{% trans 'Activities' %}{% if user == profile or user.is_superuser %}
       
             <small>
               <a href="{% url profile profile.username %}?edit=1&focus=act" class="lead">{% trans 'Edit Activities' context 'button' %}</a>
             </small>
 
-      {% endif %}
+      {% endif %}</h3>
             <h4>{% trans 'Sports' %}:</h4>
             <div class="row">
               {% for a in profile.forum_profile.activities.all %}
