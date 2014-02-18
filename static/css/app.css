@@ -527,18 +527,20 @@ padding-top: 20px;
 
 .left.user1hp {
 position: absolute;
-left: 121px;
-width: 140px;
-top: 170px;
-    background-image: url("../images/lide1.png");
+left: 31px;
+width: 210px;
+height: 215px;
+top: 110px;
+background-image: url("../images/lide1.png");
 }
 
 .right.user2hp {
 position: absolute;
-left: 944px;
-width: 120px;
+left: 894px;
+width: 230px;
+height: 200px;
 top: 190px;
-    background-image: url("../images/lide2.png");
+background-image: url("../images/lide2.png");
 }
 
 /******************************************************************************
@@ -554,9 +556,8 @@ top: 190px;
 
 @media (max-width: 1200px) {
     
-    .lide{
-        background-image:none;
-        padding-bottom: 20px;
+    .left.user1hp, .right.user2hp{
+        display:none;
         }
     .assist-text{ background-image:none; }
 }
