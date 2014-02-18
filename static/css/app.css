@@ -532,7 +532,7 @@ width: 210px;
 height: 215px;
 top: 110px;
 background-image: url("../images/lide1.png");
-padding: 44px;
+padding: 55px 42px 42px 44px;
 }
 
 .left.user1hp p,.right.user2hp p{
@@ -541,6 +541,7 @@ font-size: 26px;
     line-height: 22px;
 color: #47bcf7;
     padding:0px;
+    margin: 0px;
 }
 
 .left.user1hp h5,.right.user2hp h5{
@@ -560,9 +561,9 @@ position: absolute;
 left: 894px;
 width: 230px;
 height: 200px;
-top: 190px;
+top: 150px;
 background-image: url("../images/lide2.png");
-padding: 32px;
+padding: 35px 29px 32px 47px;
 }
 
 /******************************************************************************
