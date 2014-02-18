@@ -537,11 +537,12 @@ padding: 55px 42px 42px 44px;
 
 .left.user1hp p,.right.user2hp p{
 font-family: 'Just Another Hand', Helvetica, sans-serif;
-font-size: 26px;
-    line-height: 22px;
+font-size: 17px;
+line-height: 19px;
 color: #47bcf7;
-    padding:0px;
-    margin: 0px;
+padding: 0px;
+margin: 0px;
+text-transform: uppercase;
 }
 
 .left.user1hp h5,.right.user2hp h5{
@@ -563,7 +564,10 @@ width: 230px;
 height: 200px;
 top: 150px;
 background-image: url("../images/lide2.png");
-padding: 35px 29px 32px 47px;
+padding: 40px 44px 32px 47px;
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(7deg); /* Opera, Chrome, and Safari */
 }
 
 /******************************************************************************
