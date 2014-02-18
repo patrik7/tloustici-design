@@ -538,12 +538,21 @@ padding: 44px;
 .left.user1hp p,.right.user2hp p{
 font-family: 'Just Another Hand', Helvetica, sans-serif;
 font-size: 26px;
+    line-height: 22px;
 color: #47bcf7;
+    padding:0px;
 }
 
 .left.user1hp h5,.right.user2hp h5{
 padding: 0px;
 margin: 0px;
+    color: #47bcf7;
+}
+
+.left.user1hp small,.right.user2hp small{
+padding: 0px;
+margin: 0px;
+    color: #47bcf7;
 }
 
 .right.user2hp {
