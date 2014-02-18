@@ -179,9 +179,15 @@ margin-bottom:10px;
 .col-sm-3 nav nav-pills nav-stacked{ background-color:gray; }
 
 .lide{
-    background-image:url("../images/hubneme-lide.png");
-    padding-bottom:80px;
-    background-repeat:no-repeat;
+background-image: url("../images/hubneme-lide.png");
+padding-bottom: 80px;
+background-repeat: no-repeat;
+background-position: top left;
+position: absolute;
+top: 0px;
+height: 400px;
+width: 100%;
+
 }
 
 .assist-text{
@@ -518,6 +524,21 @@ padding-top: 20px;
 .icon-profil{margin-top: -20px;float: left!important;padding-right:10px;}
 .activities-sport-main{padding:10px;}
 .container>.navbar-header, .container>.navbar-collapse{ margin-left:0px !importatnt;}
+
+.left.user1hp {
+position: absolute;
+left: 121px;
+width: 140px;
+top: 170px;
+}
+
+.right.user2hp {
+position: absolute;
+left: 944px;
+width: 120px;
+top: 190px;
+}
+
 /******************************************************************************
 
 
