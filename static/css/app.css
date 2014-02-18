@@ -530,6 +530,7 @@ position: absolute;
 left: 121px;
 width: 140px;
 top: 170px;
+    background-image: url("../images/hubneme-lide.png");
 }
 
 .right.user2hp {
@@ -537,6 +538,7 @@ position: absolute;
 left: 944px;
 width: 120px;
 top: 190px;
+    background-image: url("../images/hubneme-lide.png");
 }
 
 /******************************************************************************
