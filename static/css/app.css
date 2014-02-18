@@ -532,6 +532,18 @@ width: 210px;
 height: 215px;
 top: 110px;
 background-image: url("../images/lide1.png");
+padding: 44px;
+}
+
+.left.user1hp p,.right.user2hp p{
+font-family: 'Just Another Hand', Helvetica, sans-serif;
+font-size: 26px;
+color: #47bcf7;
+}
+
+.left.user1hp h5,.right.user2hp h5{
+padding: 0px;
+margin: 0px;
 }
 
 .right.user2hp {
@@ -541,6 +553,7 @@ width: 230px;
 height: 200px;
 top: 190px;
 background-image: url("../images/lide2.png");
+padding: 32px;
 }
 
 /******************************************************************************
