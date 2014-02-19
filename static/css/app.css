@@ -207,6 +207,13 @@ width: 100%;
         max-width: 600px;
         margin: 0 auto;
     }
+ .assist-text p b{
+        font-size: 18px;
+        font-weight: normal;
+        padding-top: 30px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
 
 .navbar-toggle .icon-bar{ background-color: white; }
 
