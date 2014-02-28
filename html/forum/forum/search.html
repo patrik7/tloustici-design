@@ -30,7 +30,9 @@ Search
 
   {% else %}
   <div class="jumbotron">
-    <h3>{% trans 'Unfortunatelly, you cannot search for other users until you fill in the personal info on your' %} <a href="{% url profile user.username %}?focus=personal&edit=1" >{% trans 'profile' %}</a>.</h3>
+    {% url profile user.username as url_profile %}
+    <h3>{% blocktrans %}Unfortunatelly, you cannot search for other users until you fill in the personal info in your <a href="{{ url_profile }}?focus=personal&edit=1" >profile</a>.{% endblocktrans %}
+    </h3>
     <p>{% trans 'Your compatibility with others cannot be estimated.' %}</p>
   </div>
   {% endif %}

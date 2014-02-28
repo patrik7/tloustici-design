@@ -65,6 +65,15 @@ Basic JSON load scenario:
 
   <div id="pagination"></div>
 
+  {% if not user.is_authenticated %}
+  <p class="text-center">
+    {% url register as url_register %}
+
+    {% blocktrans %}
+    Only <a href="{{url_register}}">registered</a> users can post on the forum.
+    {% endblocktrans %}
+  </p>
+  {% endif %}
 </div>
 
 {% endblock %}
