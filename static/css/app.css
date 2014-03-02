@@ -538,29 +538,29 @@ width: 210px;
 height: 215px;
 top: 65px;
 background-image: url("../images/lide1.png");
-padding: 55px 42px 42px 44px;
+padding: 50px 30px 30px 35px;
 }
 
 .left.user1hp p,.right.user2hp p{
-font-family: 'Just Another Hand', Helvetica, sans-serif;
-font-size: 17px;
+font-size: 13px;
 line-height: 19px;
 color: #47bcf7;
 padding: 0px;
 margin: 0px;
-text-transform: uppercase;
 }
 
 .left.user1hp h5,.right.user2hp h5{
+font-family: 'Satisfy', cursive;
 padding: 0px;
 margin: 0px;
-    color: #47bcf7;
+color: #47bcf7;
 }
 
 .left.user1hp small,.right.user2hp small{
+font-family: 'Satisfy', cursive;
 padding: 0px;
 margin: 0px;
-    color: #47bcf7;
+color: #47bcf7;
 }
 
 .right.user2hp {
@@ -570,7 +570,7 @@ width: 230px;
 height: 200px;
 top: 150px;
 background-image: url("../images/lide2.png");
-padding: 40px 44px 32px 47px;
+padding: 35px 44px 32px 47px;
 transform:rotate(7deg);
 -ms-transform:rotate(7deg); /* IE 9 */
 -webkit-transform:rotate(7deg); /* Opera, Chrome, and Safari */
