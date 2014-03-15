@@ -34,7 +34,6 @@ Basic JSON load scenario:
     <!-- First level, categories, are rendered on the server and it's not possibel to get back here thru JSON -->
 
     {% for category in categories %}
-    <a href="javascript:void(0)" onClick="root = '{{category.id}}'; loadData(preRender);" >
       <div class="well big-faq">
         <div class="row">
           <div class="col-md-2">
@@ -55,11 +54,10 @@ Basic JSON load scenario:
           </div>
           <div class="col-md-3">
             <p>{% trans 'Post count' %}: {{category.post_count}}</p>
-            <a href="javascript:void(0)" class="btn btn-info btn-block" onClick="root = '{{category.id}}'; loadData(preRender);" >{% trans 'Read' %}</a>
+            <a href="javascript:void(0)" class="btn btn-info btn-block" onClick="root = '{{category.id}}'; loadData(preRender);" >{% trans 'Open category' %}</a>
           </div>
         </div>
       </div>
-    </a>
     {% endfor %}
   </div>
 
@@ -118,16 +116,21 @@ Basic JSON load scenario:
 
       /* Setup breadcrumbs */
       var extra = data.extra;
-      var txt = '';
+      var txt = '<a href="{% url forum_index %}">Forum</a> &gt; ';
       for (var i = 0; i < extra.breadcrumbs.length; i++) {
         txt += '<a href="javascript:void(0)" onclick="root = ' + extra.breadcrumbs[i].pk + '; loadData(preRender);">';
         txt += extra.breadcrumbs[i].text + '</a>';
         if (i < extra.breadcrumbs.length - 1) {
-          txt += " > ";
+          txt += " &gt; ";
         }
       }
       $('#breadcrumbs').html('{% trans 'You are in discussion' %} ' + txt);
 
+      var head_button = '';
+      if (extra.breadcrumbs.length < 3) {
+        head_button = '<a href="javascript:void(0)" class="btn btn-primary" onClick="show(\'_reply_head\')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Start new discussion' %}</a>';
+      }
+ 
       /* Render the index head, entries will be rendered later */
       var head_post = extra.breadcrumbs[extra.breadcrumbs.length - 1];
       $('#data').html(
@@ -140,9 +143,7 @@ Basic JSON load scenario:
           +'</h3></div><div class="col-md-2">' 
 
           {% if user.is_authenticated %}
-
-          +'<a href="javascript:void(0)" class="btn btn-primary" onClick="show(\'_reply_head\')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Reply' %}</a>'
-
+            + head_button
           {% endif %}
 
           + '</div><div class="clearfix"></div></div>' +
@@ -174,7 +175,6 @@ Basic JSON load scenario:
         }
       }
 
-
       footer =
           '<div class="col-md-5 text-right">';
 
@@ -184,32 +184,44 @@ Basic JSON load scenario:
 
       footer += '<div class="btn-group btn-group-md">';
 
-      {% if user.is_authenticated %}
-      if (e.user != '{{user}}' && e.level > 1) {
-        footer += '<div class="btn-group btn-group-md"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">'
-                  + '{% trans 'Report' %} <span class="caret"></span></button>'
-                + '<ul class="dropdown-menu">'
-                  + '<li><a href="{% url report 'sexual' %}?target_id=' + e.pk + '&target=Post">{% trans 'Sexual Remarks' %}</a></li>'
-                  + '<li><a href="{% url report 'advertising' %}?target_id=' + e.pk + '&target=Post">{% trans 'Advertising' %}</a></li>'
-                  + '<li><a href="{% url report 'abuse' %}?target_id=' + e.pk + '&target=Post">{% trans 'Other Abuse' %}</a></li>'
-                + '</ul>'
-                + '</div>';
-      }
-      {% endif %}
-
       if (e.deletable_link != '') {
         footer += '<a href="' + e.deletable_link + '" class="btn btn-default" ><span class="glyphicon glyphicon-trash"></span> {% trans 'Delete' %}</a>';
       }
 
+      if (link != "") footer += '<a href="javascript:void(0)" ' + link + ' class="btn btn-primary" >{% trans 'Read' %}</a>';
+
       {% if user.is_authenticated %}
-        if (e.level < 4) {
-          if (e.subscribed) {
-            footer += '<a href="{% url forum_index %}' + e.pk + '/?subscribe=0" class="btn btn-default" ><span class="glyphicon glyphicon-bell"></span> {% trans 'Unsubscribe' %}</a>';
-          } else {
-            footer += '<a href="{% url forum_index %}' + e.pk + '/?subscribe=1" class="btn btn-default" ><span class="glyphicon glyphicon-bell"></span> {% trans 'Subscribe' context 'button' %}</a>';
+
+        var show_report = ('{{user}}' != e.user && e.level >= 1);
+        var show_subscribe = (e.level == 2);
+
+        if (show_report || show_subscribe) {
+
+          footer += '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">'
+                    + '<span class="caret"></span></button>'
+                  + '<ul class="dropdown-menu">';
+
+          if (show_subscribe) {
+            if (e.subscribed) {
+              footer += '<li><a href="{% url forum_index %}' + e.pk + '/?subscribe=0"><span class="glyphicon glyphicon-bell"></span> {% trans 'Unsubscribe' %}</a></li>';
+            } else {
+              footer += '<li><span class="glyphicon glyphicon-bell"></span><a href="{% url forum_index %}' + e.pk + '/?subscribe=1"> {% trans 'Subscribe' context 'button' %}</a></li>';
+            }
           }
+
+          if (show_report) {
+
+            if (show_subscribe) footer += '<li class="divider"></li>';
+
+            footer += '<li><a href="{% url report 'sexual' %}?target_id=' + e.pk + '&target=Post">{% trans 'Sexual Remarks' %}</a></li>'
+                  + '<li><a href="{% url report 'advertising' %}?target_id=' + e.pk + '&target=Post">{% trans 'Advertising' %}</a></li>'
+                  + '<li><a href="{% url report 'abuse' %}?target_id=' + e.pk + '&target=Post">{% trans 'Other Abuse' %}</a></li>'
+                + '</ul>';
+           }
         }
+
       {% endif %}
+
 
       body += '<p>' + e.text + '</p>';
 
@@ -219,9 +231,6 @@ Basic JSON load scenario:
 
 //        if (e.level == 4) s = last_end;
 
-        {% if form %}
-          footer += '<a href="javascript:void(0)" class="btn btn-primary" onClick="show(' + (s) + ')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Reply' %}</a>';
-        {% endif %}
       }
 
       footer += '</div></div></div>';
@@ -247,7 +256,7 @@ Basic JSON load scenario:
 
       $('#entries').append(
         '<div class="panel panel-default big-favorities ' + offset + ' ' + shade_alternation + '">'
-        + '<div class="panel-body link-glow" ' + link + '>'
+        + '<div class="panel-body link-glow" >'
             + '<div class="col-md-2">'
               + '<img src="' + e.avatar + '" width="100%" class="img-circle img-max" />'
             + '</div>'
