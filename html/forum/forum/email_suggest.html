@@ -11,30 +11,23 @@ New email suggest
 
 {% block title %}Hubnemevedvou.cz{% endblock %}
 
+{% block head_url %}http://{{domain}}{% url register %}{% endblock %}
+{% block head_label %}{% trans 'Create an Account' %}{% endblock %}
+
 {% block main %}
 
-<p>
-{% trans 'Hi,' %}
-</p>
-
-<p>
-{% trans 'Checkout this website!' %}
-</p>
-
-<p>
-<h3><a href="http://hubnemevedvou.cz/register?utm_medium=email&utm_source=suggestion">hubnemevedvou.cz</a></h3>
-</p>
-
-<p>
 {% block trans %}
-Trápí tě kila navíc, ale nemáš s kým nebo pro koho hubnout?
-Udělej první krok, najdi si toho správného parťáka a pusťte se do boje společně! Pokud hledáš kamarádku na společné hubnutí nebo třeba i životního partnera ke společným sportovním aktivitám, tak jsi rozhodně na správném místě.
-{% endblock %}
+<p>
+Ahoj, 
 </p>
 
 <p>
-{% trans 'Nakopni konečně své štěstí, ve dvou se to přece lépe táhne!' %}
+trápí Tě kila navíc, ale nemáš s kým nebo pro koho hubnout? Ať už hledáš kamarádku na společné hubnutí nebo životního partnera se stejnými koníčky, neváhej a udělej první krok! 
 </p>
+<p>
+Nakopni své štěstí a navštiv stránku <a href="http://{{domain}}">hubnemevedvou.cz</a> Ve dvou se to přece lépe táhne, tak si najdi toho správného parťáka!
+</p>
+{% endblock %}
 
 <p class="text-muted">({% trans 'This email was sent to you, as somebody you know filled out the recommendation form with your email.' %})</p>
 
