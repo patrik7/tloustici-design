@@ -127,7 +127,7 @@ Basic JSON load scenario:
       $('#breadcrumbs').html('{% trans 'You are in discussion' %} ' + txt);
 
       var head_button = '';
-      if (extra.breadcrumbs.length < 2) {
+      if (extra.breadcrumbs.length < 3) {
         head_button = '<a href="javascript:void(0)" class="btn btn-primary" onClick="show(\'_reply_head\')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Start new discussion' %}</a>';
       }
  
@@ -166,7 +166,7 @@ Basic JSON load scenario:
       var hidden = '';
 
       var link = "";
-      if (e.level < 2) {
+      if (e.level < 3) {
         if (e.pk == root) {
             link = 'onClick="root = \'' + e.parent + '\'; loadData(preRender)"';
         } else {
