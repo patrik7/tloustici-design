@@ -127,8 +127,12 @@ Basic JSON load scenario:
       $('#breadcrumbs').html('{% trans 'You are in discussion' %} ' + txt);
 
       var head_button = '';
+      var hide_form = 'hidden';
+
       if (extra.breadcrumbs.length < 3) {
-        head_button = '<a href="javascript:void(0)" class="btn btn-primary" onClick="show(\'_reply_head\')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Start new discussion' %}</a>';
+        head_button = '<a href="javascript:void(0)" class="btn btn-primary" onClick="show(\'_reply_head\')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Start new discussion' %}</a>';        
+      } else {
+        hide_form = '';
       }
  
       /* Render the index head, entries will be rendered later */
@@ -150,7 +154,7 @@ Basic JSON load scenario:
           {% if user.is_authenticated %}
 
           /* Add a hidden form */
-          '<div id="post_reply_head" class="panel panel-default hidden">' +
+          '<div id="post_reply_head" class="panel panel-default ' + hide_form + '">' +
             add_form(head_post.pk) + 
           '</div>' +
 
@@ -268,6 +272,7 @@ Basic JSON load scenario:
         + '</div>'
       + '</div>');
 
+/*
       {% if form %}
       if(e.level >= 3) {
 
@@ -284,7 +289,7 @@ Basic JSON load scenario:
         + '</div>');
       }
       {% endif %}
-
+*/
     }
 
     var ajax_url = '/data/';
