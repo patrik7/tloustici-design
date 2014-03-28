@@ -104,7 +104,7 @@ Basic JSON load scenario:
         + elem.innerHTML
         + '<div class="form-group">'
           + '<div>'
-            + '<button type="submit" class="btn btn-lg btn-success">{% trans 'Send' %}</button>'
+            + '<button type="submit" class="btn btn-lg btn-green">{% trans 'Send' %}</button>'
           + '</div>'
         + '</div>'
       + '</form>';
@@ -208,7 +208,7 @@ Basic JSON load scenario:
             if (e.subscribed) {
               footer += '<li><a href="{% url forum_index %}' + e.pk + '/?subscribe=0"><span class="glyphicon glyphicon-bell"></span> {% trans 'Unsubscribe' %}</a></li>';
             } else {
-              footer += '<li><span class="glyphicon glyphicon-bell"></span><a href="{% url forum_index %}' + e.pk + '/?subscribe=1"> {% trans 'Subscribe' context 'button' %}</a></li>';
+              footer += '<li><a href="{% url forum_index %}' + e.pk + '/?subscribe=1"><span class="glyphicon glyphicon-bell"></span> {% trans 'Subscribe' context 'button' %}</a></li>';
             }
           }
 
