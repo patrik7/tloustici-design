@@ -178,6 +178,8 @@ Basic JSON load scenario:
         }
       }
 
+      var user_link = 'http://{{domain}}/profile/' + e.user;
+
       footer =
           '<div class="col-md-5 text-right">';
 
@@ -246,7 +248,7 @@ Basic JSON load scenario:
       var show_user = '';
 
       if (e.level > 1) {
-        show_user = '<small>' + e.user + '</small>';
+        show_user = '<small><a href="' + user_link + '">' + e.user + '</a></small>';
       }
 
       var last_post = '';
@@ -257,11 +259,16 @@ Basic JSON load scenario:
       var shade_alternation = '';
       if (i % 2 == 1) shade_alternation = 'shade';
 
+      var avatar = '<img src="' + e.avatar + '" width="100%" class="img-circle img-max" />';
+      if (show_user != '') {
+        avatar = '<a href="' + user_link + '">' + avatar + '</a>';
+      }
+
       $('#entries').append(
         '<div class="panel panel-default big-favorities ' + offset + ' ' + shade_alternation + '">'
         + '<div class="panel-body link-glow" >'
             + '<div class="col-md-2">'
-              + '<img src="' + e.avatar + '" width="100%" class="img-circle img-max" />'
+              + avatar
             + '</div>'
             + '<div class="col-md-5">' 
               + show_user
