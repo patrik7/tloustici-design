@@ -77,6 +77,8 @@ Basic JSON load scenario:
 {% endblock %}
 
 {% block extra_script %}
+
+  <script src="{{STATIC_URL}}js/jquery.history.js"></script>
   <script src="{{STATIC_URL}}js/ajax.js"></script>
 
   {% if form %}
@@ -116,7 +118,7 @@ Basic JSON load scenario:
 
       /* Setup breadcrumbs */
       var extra = data.extra;
-      var txt = '<a href="{% url forum_index %}">Forum</a> &gt; ';
+      var txt = '<a href="{% url forum_index %}">{% trans 'Forum' %}</a> &gt; ';
       for (var i = 0; i < extra.breadcrumbs.length; i++) {
         txt += '<a href="javascript:void(0)" onclick="root = ' + extra.breadcrumbs[i].pk + '; loadData(preRender);">';
         txt += extra.breadcrumbs[i].text + '</a>';
@@ -290,10 +292,19 @@ Basic JSON load scenario:
     {% endif %}
 
     {% if not categories %}    
-      $(document).ready(loadData(preRender));
+      $(document).ready(function() {
+        loadData(preRender));
+      });
     {% endif %}
 
     window.onscroll = scrollFunction;
+
+        ( function(window,undefined) {
+          History.Adapter.bind(window,'statechange',function(){
+            alert('aa');
+          });
+
+        })(window);
 
   </script>
 

@@ -59,6 +59,9 @@ function loadData(doneCallback)
   ,ajax_get).done(function(data) {
       $('#data').html('<div id="entries" />');
 
+//      History.pushState({ ajax_url: ajax_url + root, root: root, done_callback: doneCallback }, '', '');
+      History.pushState('AAA' + root, '', '');
+
       if (doneCallback) {
         doneCallback(data);
       } 
