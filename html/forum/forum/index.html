@@ -62,15 +62,6 @@ Basic JSON load scenario:
 
   <div id="pagination"></div>
 
-  {% if not user.is_authenticated %}
-  <p class="text-center">
-    {% url register as url_register %}
-
-    {% blocktrans %}
-    Only <a href="{{url_register}}">registered</a> users can post on the forum.
-    {% endblocktrans %}
-  </p>
-  {% endif %}
 </div>
 
 {% endblock %}
@@ -100,6 +91,8 @@ Basic JSON load scenario:
       elem = document.getElementById("form_template");
 
       var txt = 
+
+      {% if user.is_authenticated %}
         '<form method="post" action="{% url forum_index %}' + reply_to + '/" class="form">'
         + "{% csrf_token %}"
         + elem.innerHTML
@@ -109,6 +102,16 @@ Basic JSON load scenario:
           + '</div>'
         + '</div>'
       + '</form>';
+      {% else %}
+        {% url register as url_register %}
+        {% url login as url_login %}
+        {% url forum_index as url_forum %}
+
+        {% blocktrans %}
+          'Only registered users can post on the forum. Please <a href="{{url_login}}?redirect={{url_forum}}">log in</a> or <a href="{{url_register}}">register</a>.';
+        {% endblocktrans %}
+
+      {% endif %}
 
       return txt;
     }
@@ -146,20 +149,14 @@ Basic JSON load scenario:
           + head_post.text 
           +'</h3></div><div class="col-md-2">' 
 
-          {% if user.is_authenticated %}
-            + head_button
-          {% endif %}
+          + head_button
 
           + '</div><div class="clearfix"></div></div>' +
-
-          {% if user.is_authenticated %}
 
           /* Add a hidden form */
           '<div id="post_reply_head" class="panel panel-default ' + hide_form + '">' +
             add_form(head_post.pk) + 
           '</div>' +
-
-          {% endif %}
 
         '<div id="entries" /></div>');
     }
