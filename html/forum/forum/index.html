@@ -41,7 +41,6 @@ Basic JSON load scenario:
           </div>
           <div class="col-md-6">
             <h3>{{category.body_html}}</h3>
-            <p>{% trans 'Post count' %}: {{category.post_count}}</p>
             {% if category.last_post %}
               {% url profile category.last_post.user as user_url %}
 
@@ -195,7 +194,7 @@ Basic JSON load scenario:
         footer += '<a href="' + e.deletable_link + '" class="btn btn-default" ><span class="glyphicon glyphicon-trash"></span> {% trans 'Delete' %}</a>';
       }
 
-      if (link != "") footer += '<a href="javascript:void(0)" ' + link + ' class="btn btn-primary" >{% trans 'Read' %}</a>';
+      if (link != "") footer += '<a href="javascript:void(0)" ' + link + ' class="btn btn-primary" >{% trans 'Read posts' %}</a>';
 
       {% if user.is_authenticated %}
 

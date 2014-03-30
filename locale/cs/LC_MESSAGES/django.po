@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-29 09:03+0100\n"
+"POT-Creation-Date: 2014-03-30 20:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -171,6 +171,7 @@ msgid "Messages"
 msgstr "Zprávy"
 
 #: base/context_processors.py:46 forum/tests.py:518
+#: forum/templates/forum/index.html:121
 msgid "Forum"
 msgstr "Fórum"
 
@@ -424,19 +425,19 @@ msgstr "Stredoškolské vzdělání"
 msgid "Elementary School"
 msgstr "Základní vzdělání"
 
-#: forum/models.py:57 forum/templates/forum/index.html:221
+#: forum/models.py:57 forum/templates/forum/index.html:223
 #: forum/templates/forum/messages.html:168
 #: forum/templates/forum/profile/profile_readonly.html:92
 msgid "Sexual Remarks"
 msgstr "Sexuální obtěžování"
 
-#: forum/models.py:58 forum/templates/forum/index.html:222
+#: forum/models.py:58 forum/templates/forum/index.html:224
 #: forum/templates/forum/messages.html:169
 #: forum/templates/forum/profile/profile_readonly.html:93
 msgid "Advertising"
 msgstr "Nevyžádaná reklama"
 
-#: forum/models.py:59 forum/templates/forum/index.html:223
+#: forum/models.py:59 forum/templates/forum/index.html:225
 #: forum/templates/forum/messages.html:170
 #: forum/templates/forum/profile/profile_readonly.html:94
 msgid "Other Abuse"
@@ -954,7 +955,7 @@ msgstr "Jiné"
 msgid "Suggest to a friend"
 msgstr "Doporučit příteli"
 
-#: forum/templates/form_suggest.html:22 forum/templates/forum/index.html:107
+#: forum/templates/form_suggest.html:22 forum/templates/forum/index.html:109
 msgid "Send"
 msgstr "Odeslat"
 
@@ -1099,31 +1100,31 @@ msgid ""
 "    "
 msgstr ""
 
-#: forum/templates/forum/index.html:127
+#: forum/templates/forum/index.html:129
 msgid "You are in discussion"
 msgstr "Jsi v diskuzi"
 
-#: forum/templates/forum/index.html:133
+#: forum/templates/forum/index.html:135
 msgid "Start new discussion"
 msgstr "Začít novou diskuzi"
 
-#: forum/templates/forum/index.html:193
+#: forum/templates/forum/index.html:195
 msgid "Delete"
 msgstr "Vymazat"
 
-#: forum/templates/forum/index.html:196
-msgid "Read"
-msgstr "Číst"
+#: forum/templates/forum/index.html:198
+msgid "Read posts"
+msgstr "Číst příspěvky"
 
-#: forum/templates/forum/index.html:211
+#: forum/templates/forum/index.html:213
 msgid "Unsubscribe"
 msgstr ""
 
-#: forum/templates/forum/index.html:213
+#: forum/templates/forum/index.html:215
 msgid "Subscribe"
 msgstr "Odebírat reakce"
 
-#: forum/templates/forum/index.html:256
+#: forum/templates/forum/index.html:258
 msgid ""
 "<a href=\"javascript:void(0)\" onClick=\"root = \\'' + e.last_post.id + "
 "'\\'; loadData(preRender);\">Last reaction</a> ' + e.last_post.date + ' by "
@@ -1207,7 +1208,7 @@ msgstr "Které sporty máš rád?"
 #: forum/templates/forum/profile/form_activities_fields.html:35
 #: forum/templates/forum/profile/profile_readonly.html:141
 msgid "Other Activities"
-msgstr "Další zájmi"
+msgstr "Další zájmy"
 
 #: forum/templates/forum/profile/profile_essentials.html:23
 msgid "Basic Information"
@@ -1370,6 +1371,9 @@ msgstr ""
 #: forum/templates/registration/registration_further.html:81
 msgid "Follow the instructions sent to your email to finish the registration."
 msgstr ""
+
+#~ msgid "Read"
+#~ msgstr "Číst"
 
 #~ msgid "Subscribe to replies"
 #~ msgstr "Upozornění při odpovědi"
