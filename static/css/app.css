@@ -42,6 +42,16 @@ background-color: #e3f3ff;
   clear: both;
 }
 
+img#id_avatarstaging {
+  max-width: 100%;
+  height: auto;
+}
+
+div.avatarstaging {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .btn-blue{
     background: #25aae1;
     color: #FFF;}
