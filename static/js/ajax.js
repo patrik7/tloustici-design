@@ -1,7 +1,10 @@
 
-var loadDataMore = function() {}
-var root = '';
-var ajax_get = {};
+var AjaxConfiguration = {
+  root: '',
+  loadDataMore: function() {},
+  ajax_get: {},
+  preRenderCallback: function() {},  
+};
 
 function addData(entries) {
   //detect ID offset, and last_end
@@ -26,11 +29,11 @@ function addData(entries) {
 
 function setupPagination(pagination) {
   if (pagination && pagination.has_next) {
-    loadDataMore = function() {
-      loadDataMore = function () {}
+    AjaxConfiguration.loadDataMore = function() {
+      AjaxConfiguration.loadDataMore = function () {}
       setLoading('pagination');
       
-      $.getJSON(ajax_url + root, $.extend({}, ajax_get, {'page': pagination.page_number + 1})).done(function(data) {
+      $.getJSON(AjaxConfiguration.ajax_url + AjaxConfiguration.root, $.extend({}, AjaxConfiguration.ajax_get, {'page': pagination.page_number + 1})).done(function(data) {
         var entries = data.entries;
         var pagination = data.pagination;
 
@@ -45,26 +48,26 @@ function setupPagination(pagination) {
 
     }
   } else {
-    loadDataMore = function() {}
+    AjaxConfiguration.loadDataMore = function() {}
   }
 }
 
-function loadData(doneCallback)
+function change(target)
+{
+  History.pushState({root: target}, '', '' + target);
+}
+
+function loadData()
 {
   setLoading('data');
   setupPagination(null);
 
-  $.getJSON(ajax_url + root
+  $.getJSON(AjaxConfiguration.ajax_url + AjaxConfiguration.root
 
-  ,ajax_get).done(function(data) {
+  ,AjaxConfiguration.ajax_get).done(function(data) {
       $('#data').html('<div id="entries" />');
 
-//      History.pushState({ ajax_url: ajax_url + root, root: root, done_callback: doneCallback }, '', '');
-      History.pushState('AAA' + root, '', '');
-
-      if (doneCallback) {
-        doneCallback(data);
-      } 
+      AjaxConfiguration.preRenderCallback(data);
 
       var entries = data.entries;
       var pagination = data.pagination;
@@ -92,7 +95,7 @@ function isScrolledIntoView(elem)
 
 function scrollFunction() {
   if (isScrolledIntoView('#pagination')) {
-    loadDataMore();
+    AjaxConfiguration.loadDataMore();
   }
 }
 
