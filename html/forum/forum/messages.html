@@ -50,8 +50,8 @@ Messagess origin
 
   {% include 'base/loading.html' %}
 
-  <script type="text/javascript" language="javascript">  
-    var ajax_url = '/conversation/data/';
+  <script type="text/javascript" language="javascript">
+    AjaxConfiguration.ajax_url = '/conversation/data/';
 
     var focused_conversation_id = {{focus}};
 
@@ -244,7 +244,7 @@ Messagess origin
     window.onscroll = function () {
       //pagination for conversations
       if (isScrolledIntoView('#pagination')) {
-        loadDataMore(); //function definition keeps changing
+        AjaxConfiguration.loadDataMore(); //function definition keeps changing
       }
 
       for (var c_id in dynamic_pagination)
