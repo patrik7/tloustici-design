@@ -35,6 +35,13 @@ background-color: #e3f3ff;
 2. Main
 *******************************************************************************/
 
+/* make sure pagination div is at the bottom */
+#data:before, #data:after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+
 .btn-blue{
     background: #25aae1;
     color: #FFF;}
