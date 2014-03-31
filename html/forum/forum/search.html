@@ -55,11 +55,11 @@ Search
 
   <script type="text/javascript" language="javascript">
 
-    var ajax_url = '/search/data/';
+    AjaxConfiguration.ajax_url = '/search/data/';
 
     function updateSearchResults()
     {
-      ajax_get = {
+      AjaxConfiguration.ajax_get = {
           male: document.getElementById('id_sex_1').checked,
           female: document.getElementById('id_sex_2').checked,
           city: document.getElementById('id_city').value,
