@@ -42,6 +42,10 @@ background-color: #e3f3ff;
   clear: both;
 }
 
+div#id_avatardiv {
+  margin-bottom: 10px;
+}
+
 img#id_avatarstaging {
   max-width: 100%;
   height: auto;

@@ -1,4 +1,24 @@
 
+function updateCoords(c)
+{
+  jQuery('#id_x').val(c.x);
+  jQuery('#id_y').val(c.y);
+  jQuery('#id_w').val(c.w);
+  jQuery('#id_h').val(c.h);
+
+  img = $("#id_avatarstaging");
+  jQuery('#id_disp_width').val(img.width());
+  jQuery('#id_disp_height').val(img.height());
+
+};
+
+function checkCoords()
+{
+  if (parseInt(jQuery('#id_w').val())>0) return true;
+  alert('Please select a crop region then press submit.');
+  return false;
+};
+
 function handleFileSelect(evt) {
   files = evt.target.files;
 
@@ -14,18 +34,19 @@ function handleFileSelect(evt) {
 
     var reader = new FileReader();
 
-
     // Closure to capture the file information.
     reader.onload = (function(theFile) {
       return function(e) {
         // Render thumbnail.
 
         //remove previous jcrop
-        $('div.avatarstaging').html('<img id="id_avatarstaging" class="hidden avatar-staging" />');
+        $('div#id_avatardiv').html('<img id="id_avatarstaging" class="hidden avatar-staging" />');        
 
         img = $('#id_avatarstaging');
         img.attr("src", e.target.result);
-        img.removeClass("hidden");
+        img.removeClass('hidden');
+        
+        $('#id_avatarsubmit').removeClass('hidden');
 
         jQuery(function($) {
           var width = img.width();
@@ -41,7 +62,7 @@ function handleFileSelect(evt) {
           var y = height/2 - size/2;
 
           img.Jcrop({
-//          onSelect:    showCoords,
+            onSelect:    updateCoords,
             bgColor:     'black',
             bgOpacity:   .7,
             setSelect:   [ x, y, x+size, y+size ],

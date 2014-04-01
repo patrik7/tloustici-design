@@ -66,27 +66,30 @@ Profile read only
                 </small></small>
             </div>
                 
-            <div class="hidden">
-              <input type="file" id="id_avatarinput" name="file" />
-{% comment %}
-
-              <form action="{% url profile profile.username %}" method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{form_uploadavatar}}
-                <input type="hidden" name="uploadavatar" value=""/>
-              </form>
-{% endcomment %}
-            </div>
             {% else %}" /></div>{% endif %}
           </div>
         </div>
      </div>
         <div class="clearfix"></div>
         
-        <div class="col-sm-12">
-          <div class="avatarstaging">
-            <img id="id_avatarstaging" class="hidden avatar-staging" />
-          </div>
+        <div class="col-sm-12 avatarstaging">
+          <form action="{% url profile profile.username %}" method="POST" enctype="multipart/form-data" onsubmit="return checkCoords();">
+            {% csrf_token %}
+
+            {{form_uploadavatar}}
+
+            <input type="file" name="avatar" id="id_avatarinput" class="hidden" />
+
+            <div id="id_avatardiv">
+              <img id="id_avatarstaging" class="avatar-staging hidden" />
+            </div>
+
+            <span>{% trans 'Select the image boundaries and upload the picture.' %}</span>
+            <div class="btn-group btn-group-sm right hidden" id="id_avatarsubmit">
+              <button id="id_avatarsubmit" name="uploadavatar" type="submit" class="btn btn-primary">{% trans 'Change avatar' %}</button>
+            </div>
+
+          </form>
         </div>
        
         <div class="clearfix"></div>
