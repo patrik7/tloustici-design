@@ -85,6 +85,11 @@ color: #FFF;
 .padding-top{ padding-top:20px; }
 .padding-both{ margin:0 20px}
 
+.message-text {
+    margin-right: 100px;
+    word-wrap: break-word;
+}
+
 /******************************************************************************
 3. Header
 *******************************************************************************/
