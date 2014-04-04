@@ -320,11 +320,21 @@ div.activity-checkbox label.hover {
        font-weight:normal;}
 .recovery{
     font-size: 14px;
-float: right;
-position: absolute;
-text-align: right;
-width: 149px;
-margin-left: 103px;
+    float: right;
+    position: absolute;
+    text-align: right;
+    width: 159px;
+    margin-left: 93px;
+}
+
+.recovery-register{
+    font-size: 14px;
+    float: right;
+    position: absolute;
+    text-align: right;
+    width: 159px;
+    margin-left: 93px;
+    margin-top: 2em;
 }
 
 
