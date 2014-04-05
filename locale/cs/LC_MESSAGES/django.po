@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-05 22:33+0200\n"
+"POT-Creation-Date: 2014-04-05 22:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,6 +60,10 @@ msgstr "z"
 #: Tloustici/translations.py:21
 msgid "Send Password"
 msgstr "Poslat heslo"
+
+#: Tloustici/translations.py:22
+msgid "Send Private Message"
+msgstr "Odeslat zprávu"
 
 #: articles/admin.py:31
 msgid "Image has incorrect with to height ratio, suggested size is 860 x 360"
@@ -363,7 +367,7 @@ msgstr "Tvůj e-mail nebude veřejně viditelný."
 
 #: forum/forms.py:222
 msgid "Addressee"
-msgstr "Příjemce"
+msgstr "Uživatel"
 
 #: forum/forms.py:248
 msgid "Username does not exists"
@@ -1152,7 +1156,7 @@ msgstr ""
 
 #: forum/templates/forum/messages.html:26
 msgid "Write Private Message"
-msgstr "Napiš Soukromou Zprávu"
+msgstr "Poslat novou zprávu"
 
 #: forum/templates/forum/messages.html:166
 #: forum/templates/forum/report.html:19
@@ -1174,7 +1178,7 @@ msgstr "Poslední zpráva"
 
 #: forum/templates/forum/messages.html:205
 msgid "Conversation with"
-msgstr "Rozhovor s"
+msgstr "Konverzace s"
 
 #: forum/templates/forum/password_recovery.html:21
 msgid "New password will be sent to your email address."
@@ -1202,6 +1206,9 @@ msgid ""
 "personal info in your <a href=\"%(url_profile)s?focus=personal&edit=1\" "
 ">profile</a>."
 msgstr ""
+"Je nám líto, ale nemůžeš vyhledávat ostatní uživatelé, nemáš-li vyplněné "
+"informace ve svém <a href=\"%(url_profile)s?focus=personal&edit=1\">profilu</"
+"a>."
 
 #: forum/templates/forum/search.html:36
 msgid "Your compatibility with others cannot be estimated."

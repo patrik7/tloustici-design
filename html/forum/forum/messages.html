@@ -25,7 +25,7 @@ Messagess origin
   
     <h3 class="">{% trans 'Write Private Message' %}</h3>
     <div class="panel panel-default padding-top">
-      {% include 'form.html' with form=new_form button='Send Message' name='new' %}
+      {% include 'form.html' with form=new_form button='Send Private Message' name='new' %}
     </div>
 
 
@@ -41,7 +41,7 @@ Messagess origin
   <script src="{{STATIC_URL}}js/ajax.js"></script>
 
   <script id="form_msg" type="bogus">
-    <div class="panel panel-info col-xs-offset-1">
+    <div class="panel panel-info left-offset">
       <div class="panel-body">
         {% include "form.html" with form=form_hidden_addressee name='' button='Send' %}
       </div>
@@ -173,8 +173,8 @@ Messagess origin
            footer += '</div></div></div>';
 
       elem.append(
-        '<div class="panel panel-default col-xs-offset-1" style="margin-bottom: 5px;">'
-        + '<div class="panel-body' + (unread ? ' unread' : '') + '" style="padding: 5px;">'
+        '<div class="panel panel-default left-offset' + (unread ? ' unread' : '') + '" style="margin-bottom: 5px;">'
+        + '<div class="panel-body" style="padding: 5px;">'
           + '<div class="row">'
             + '<div class="col-xs-2 visible-sm visible-md visible-lg">'
               + '<img src="' + e.avatar + '" width="100%" class="img-circle" />'
@@ -194,9 +194,9 @@ Messagess origin
                      + '<div class="btn-group btn-group-xs">';
 
       if (!e.blocked) {
-               footer += '<a href="{% url messages %}?block=' + e.other_user + '" class="btn btn-default"><span class="glyphicon glyphicon-ban-circle"></span> {% trans 'Block' %}</a>';
+               footer += '<a href="{% url messages %}?block=' + e.other_user + '" class="btn btn-default" style="margin-bottom: 4px;"><span class="glyphicon glyphicon-ban-circle"></span> {% trans 'Block' %}</a>';
       } else {
-               footer += '<a href="{% url messages %}?unblock=' + e.other_user + '" class="btn btn-default"><span class="glyphicon glyphicon-ban-circle"></span> {% trans 'Unblock' %}</a>';
+               footer += '<a href="{% url messages %}?unblock=' + e.other_user + '" class="btn btn-default" style="margin-bottom: 4px;"><span class="glyphicon glyphicon-ban-circle"></span> {% trans 'Unblock' %}</a>';
       }
 
          footer += '</div></div>';

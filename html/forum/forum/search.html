@@ -33,7 +33,6 @@ Search
     {% url profile user.username as url_profile %}
     <h3>{% blocktrans %}Unfortunatelly, you cannot search for other users until you fill in the personal info in your <a href="{{ url_profile }}?focus=personal&edit=1" >profile</a>.{% endblocktrans %}
     </h3>
-    <p>{% trans 'Your compatibility with others cannot be estimated.' %}</p>
   </div>
   {% endif %}
 
