@@ -10,20 +10,6 @@ Registration front
 {% load bootstrap %}
 {% load i18n %}
 
-{% block body_top %}
- <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/sk_SK/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<!--
-<div class="fb-facepile" data-href="https://www.facebook.com/hubnemespolecne" data-action="like" data-width="500px" data-height="100px" data-max-rows="1" data-colorscheme="light" data-size="medium" data-show-count="true"></div> 
--->
-{% endblock %}
 {% block main %}
 
   <div class="text-center">

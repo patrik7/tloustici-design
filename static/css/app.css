@@ -35,6 +35,13 @@ background-color: #e3f3ff;
 2. Main
 *******************************************************************************/
 
+/* Used for FB button */
+.float-left {
+  position: absolute;
+  float: left;
+  margin-left: 17px;
+}
+
 /* make sure pagination div is at the bottom */
 #data:before, #data:after {
   display: table;
