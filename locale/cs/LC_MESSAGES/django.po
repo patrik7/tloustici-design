@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-04 14:54+0200\n"
+"POT-Creation-Date: 2014-04-05 22:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -117,7 +117,7 @@ msgstr "Článek bude dostupný od"
 msgid "Article is not available since"
 msgstr "Článek není dostupný od"
 
-#: articles/templates/articles/article.html:61
+#: articles/templates/articles/article.html:50
 msgid "Edit"
 msgstr "Upravit"
 
@@ -153,8 +153,8 @@ msgstr "Dosud nezveřejněné"
 msgid "Read More"
 msgstr "Číst více"
 
-#: base/context_processors.py:38 forum/models.py:478 forum/tests.py:522
-#: forum/templates/forum/profile/profile_readonly.html:25
+#: base/context_processors.py:38 forum/models.py:480 forum/tests.py:522
+#: forum/templates/forum/profile/profile_readonly.html:14
 msgid "Profile"
 msgstr "Profil"
 
@@ -183,8 +183,8 @@ msgstr "Nápověda"
 msgid "Log out"
 msgstr "Odhlásit se"
 
-#: base/context_processors.py:53 base/templates/base/email_base.html:40
-#: base/templates/base/email_base.html:66 base/templates/base/login.html:30
+#: base/context_processors.py:53 base/templates/base/email_base.html:42
+#: base/templates/base/email_base.html:70 base/templates/base/login.html:30
 msgid "Log in"
 msgstr "Přihlásit se"
 
@@ -227,55 +227,55 @@ msgid "was not found!"
 msgstr "se nenašel"
 
 #: base/templates/base/base.html:17 base/templates/base/base.html.py:23
-#: forum/templates/registration/registration_front.html:33
+#: forum/templates/registration/registration_front.html:19
 msgid "Find partner to help you loose weight"
 msgstr "Najdi si parťáka na sport a zhubněte společně"
 
-#: base/templates/base/base.html:95
+#: base/templates/base/base.html:105
 msgid "Administration"
 msgstr "Administrace"
 
-#: base/templates/base/base.html:107
-#: forum/templates/registration/registration_front.html:37
+#: base/templates/base/base.html:117
+#: forum/templates/registration/registration_front.html:23
 msgid "Get your lucky strike, take the first step and register!"
 msgstr "Nakopni konečně své štěstí, udělej první krok a zaregistruj se!"
 
-#: base/templates/base/base.html:111 forum/forms.py:127
+#: base/templates/base/base.html:121 forum/forms.py:127
 #: forum/templates/forum/email_suggest.html:15
 msgid "Create an Account"
 msgstr "Vytvořit účet"
 
-#: base/templates/base/base.html:117
-#: forum/templates/registration/registration_front.html:62
+#: base/templates/base/base.html:127
+#: forum/templates/registration/registration_front.html:48
 msgid "Common interests"
 msgstr "Společné zájmy"
 
-#: base/templates/base/base.html:118
-#: forum/templates/registration/registration_front.html:63
+#: base/templates/base/base.html:128
+#: forum/templates/registration/registration_front.html:49
 msgid "bubble_1_txt"
 msgstr ""
 "Najdi si partnera se stejným koníčkem, sportujte ve dvou a zhubněte společně!"
 
-#: base/templates/base/base.html:123
-#: forum/templates/registration/registration_front.html:67
+#: base/templates/base/base.html:133
+#: forum/templates/registration/registration_front.html:53
 msgid "Mutual motivation"
 msgstr "Vzájemná motivace"
 
-#: base/templates/base/base.html:124
-#: forum/templates/registration/registration_front.html:68
+#: base/templates/base/base.html:134
+#: forum/templates/registration/registration_front.html:54
 msgid "bubble_2_txt"
 msgstr ""
 "Ztratit nějaké ty kila navíc znamená pro mnohé nelehký úkol. Vzájemná "
 "podpora a společné zájmy jsou však silnou zbraní, jak dosáhnout svého cíle "
 "snadněji."
 
-#: base/templates/base/base.html:129
-#: forum/templates/registration/registration_front.html:72
+#: base/templates/base/base.html:139
+#: forum/templates/registration/registration_front.html:58
 msgid "Useful tips"
 msgstr "Užitečné tipy"
 
-#: base/templates/base/base.html:130
-#: forum/templates/registration/registration_front.html:73
+#: base/templates/base/base.html:140
+#: forum/templates/registration/registration_front.html:59
 msgid "bubble_3_txt"
 msgstr ""
 "Inspiruj se rady a tipy ostatních uživatelů v oblasti cvičení, zdravého "
@@ -397,7 +397,7 @@ msgstr "Váha neodpovídá reálným hodnotám"
 msgid "doesn't matter"
 msgstr "Nezáleží"
 
-#: forum/forms.py:424 forum/models.py:389
+#: forum/forms.py:424 forum/models.py:391
 msgid "City"
 msgstr "Město"
 
@@ -431,19 +431,19 @@ msgstr "Základní vzdělání"
 
 #: forum/models.py:57 forum/templates/forum/index.html:219
 #: forum/templates/forum/messages.html:168
-#: forum/templates/forum/profile/profile_readonly.html:111
+#: forum/templates/forum/profile/profile_readonly.html:100
 msgid "Sexual Remarks"
 msgstr "Sexuální obtěžování"
 
 #: forum/models.py:58 forum/templates/forum/index.html:220
 #: forum/templates/forum/messages.html:169
-#: forum/templates/forum/profile/profile_readonly.html:112
+#: forum/templates/forum/profile/profile_readonly.html:101
 msgid "Advertising"
 msgstr "Nevyžádaná reklama"
 
 #: forum/models.py:59 forum/templates/forum/index.html:221
 #: forum/templates/forum/messages.html:170
-#: forum/templates/forum/profile/profile_readonly.html:113
+#: forum/templates/forum/profile/profile_readonly.html:102
 msgid "Other Abuse"
 msgstr "Ostatní"
 
@@ -452,7 +452,7 @@ msgid "Parent"
 msgstr "Rodič"
 
 #: forum/models.py:75 forum/models.py:236 forum/models.py:237
-#: forum/models.py:308 forum/models.py:455
+#: forum/models.py:308 forum/models.py:457
 msgid "User"
 msgstr "Uživatel"
 
@@ -476,7 +476,7 @@ msgstr "Markup"
 msgid "Message"
 msgstr "Zpráva"
 
-#: forum/models.py:82 forum/models.py:460
+#: forum/models.py:82 forum/models.py:462
 msgid "HTML version"
 msgstr "HTML verze"
 
@@ -528,123 +528,123 @@ msgctxt "username"
 msgid "from"
 msgstr "od"
 
-#: forum/models.py:365 forum/models.py:375
+#: forum/models.py:367 forum/models.py:377
 msgid "Area"
 msgstr "Kraj"
 
-#: forum/models.py:366
+#: forum/models.py:368
 msgid "Areas"
 msgstr "Kraje"
 
-#: forum/models.py:375
+#: forum/models.py:377
 msgid "Area the city belongs to"
 msgstr "Kraj ke kterému město patří"
 
-#: forum/models.py:390
+#: forum/models.py:392
 msgid "Cities"
 msgstr "Města"
 
-#: forum/models.py:400 forum/templates/forum/friend_suggestion.html:32
+#: forum/models.py:402 forum/templates/forum/friend_suggestion.html:32
 msgid "Activity"
 msgstr "Aktivity"
 
-#: forum/models.py:401 forum/templates/forum/search.html:98
+#: forum/models.py:403 forum/templates/forum/search.html:98
 #: forum/templates/forum/profile/profile_essentials.html:50
-#: forum/templates/forum/profile/profile_readonly.html:140
-#: forum/templates/forum/profile/profile_readonly.html:196
+#: forum/templates/forum/profile/profile_readonly.html:129
+#: forum/templates/forum/profile/profile_readonly.html:185
 msgid "Activities"
 msgstr "Aktivity"
 
-#: forum/models.py:456
+#: forum/models.py:458
 msgid "city"
 msgstr "město"
 
-#: forum/models.py:457
+#: forum/models.py:459
 msgid "Language"
 msgstr "Jazyk"
 
-#: forum/models.py:458
+#: forum/models.py:460
 msgid "Avatar"
 msgstr "Fotka"
 
-#: forum/models.py:459
+#: forum/models.py:461
 msgid "Description"
 msgstr "Popis"
 
-#: forum/models.py:459
+#: forum/models.py:461
 msgid "Use few sentences to describe yourself, and who are you looking for."
 msgstr "Prozraď něco více o sobě, popiš koho hledáš"
 
-#: forum/models.py:461
+#: forum/models.py:463
 msgid "date of birth"
 msgstr "datum narození"
 
-#: forum/models.py:462
+#: forum/models.py:464
 msgid "sex"
 msgstr "pohlaví"
 
-#: forum/models.py:463
+#: forum/models.py:465
 msgid "height"
 msgstr "výška"
 
-#: forum/models.py:464
+#: forum/models.py:466
 msgid "weight"
 msgstr "váha"
 
-#: forum/models.py:465
+#: forum/models.py:467
 msgid "phone"
 msgstr "telefon"
 
-#: forum/models.py:466
+#: forum/models.py:468
 msgid "education"
 msgstr "vzdělání"
 
-#: forum/models.py:466
+#: forum/models.py:468
 msgid "The highest achieved education"
 msgstr "Nejvyšší dosažené vzdělání"
 
-#: forum/models.py:468
+#: forum/models.py:470
 msgid "searchable"
 msgstr "vyhledatelný"
 
-#: forum/models.py:468
+#: forum/models.py:470
 msgid ""
 "Decide if your profile should come up when others use the search function."
 msgstr "Zobrazovat se ostatním uživatelům při hledání"
 
-#: forum/models.py:471
+#: forum/models.py:473
 msgid "Message notification"
 msgstr "Upozornit na zprávy"
 
-#: forum/models.py:471
+#: forum/models.py:473
 msgid "Receive an email notification on incoming message"
 msgstr "Zasílat soukromné zprávy na e-mail"
 
-#: forum/models.py:472
+#: forum/models.py:474
 msgid "Forum subscription"
 msgstr "Předvolit upozornení na fóru"
 
-#: forum/models.py:472
+#: forum/models.py:474
 msgid "Subscribe to my forum posts by default"
 msgstr "Posílat notifikace na veškeré odpovědi v zúčastněných tématech fóra"
 
-#: forum/models.py:473
+#: forum/models.py:475
 msgid "Newsletter subscription"
 msgstr "Odoberat novinky"
 
-#: forum/models.py:473
+#: forum/models.py:475
 msgid "Subscribe to newsletter"
 msgstr "Přihlásit se k odběru novinek"
 
-#: forum/models.py:475
+#: forum/models.py:477
 msgid "Fans Count"
 msgstr "Počet Fanoušků"
 
-#: forum/models.py:479
+#: forum/models.py:481
 msgid "Profiles"
 msgstr "Profily"
 
-#: forum/models.py:553
+#: forum/models.py:555
 msgid "note"
 msgstr "poznámka"
 
@@ -968,12 +968,27 @@ msgstr "Odeslat"
 msgid "New Message from"
 msgstr "Nová zpráva od"
 
-#: forum/templates/forum/email_new_message.html:22
+#: forum/templates/forum/email_new_message.html:26
+msgid "Message from user"
+msgstr "Zpráva od uživatele"
+
+#: forum/templates/forum/email_new_message.html:31
+msgid "Reply"
+msgstr "Odpovědět"
+
+#: forum/templates/forum/email_new_message.html:42
+#, python-format
+msgid ""
+"\n"
+"You can switch off the email/messages notification in your <a href=\"http://"
+"%(domain)s%(url_settings)s\" style=\"color: #2BA6CB;\" >profile settings "
+"page</a>.\n"
+msgstr ""
+
 #: forum/templates/forum/email_new_message.txt:18
 msgid "You can reply to the message on"
 msgstr "Na zprávu můžeš odpovědět na"
 
-#: forum/templates/forum/email_new_message.html:27
 #: forum/templates/forum/email_new_message.txt:21
 #: forum/templates/forum/email_new_post.html:35
 #: forum/templates/forum/email_new_post.txt:26
@@ -1063,13 +1078,13 @@ msgid "from"
 msgstr "z"
 
 #: forum/templates/forum/friend_suggestion.html:24
-#: forum/templates/forum/profile/profile_readonly.html:188
+#: forum/templates/forum/profile/profile_readonly.html:177
 msgid "Overall"
 msgstr "Celkově"
 
 #: forum/templates/forum/friend_suggestion.html:28
 #: forum/templates/forum/search.html:97
-#: forum/templates/forum/profile/profile_readonly.html:192
+#: forum/templates/forum/profile/profile_readonly.html:181
 msgid "BMI"
 msgstr ""
 
@@ -1141,7 +1156,7 @@ msgstr "Napiš Soukromou Zprávu"
 
 #: forum/templates/forum/messages.html:166
 #: forum/templates/forum/report.html:19
-#: forum/templates/forum/profile/profile_readonly.html:109
+#: forum/templates/forum/profile/profile_readonly.html:98
 msgid "Report"
 msgstr "Ohlásit"
 
@@ -1205,12 +1220,12 @@ msgid "Send Message"
 msgstr "Poslat zprávu"
 
 #: forum/templates/forum/profile/form_activities_fields.html:15
-#: forum/templates/forum/profile/profile_readonly.html:147
+#: forum/templates/forum/profile/profile_readonly.html:136
 msgid "Sports"
 msgstr "Které sporty máš rád?"
 
 #: forum/templates/forum/profile/form_activities_fields.html:35
-#: forum/templates/forum/profile/profile_readonly.html:160
+#: forum/templates/forum/profile/profile_readonly.html:149
 msgid "Other Activities"
 msgstr "Další zájmy"
 
@@ -1242,43 +1257,43 @@ msgstr "Nastavení Účtu"
 msgid "Change Password"
 msgstr "Změna hesla"
 
-#: forum/templates/forum/profile/profile_readonly.html:46
+#: forum/templates/forum/profile/profile_readonly.html:35
 #, fuzzy
 msgid "Edit Profile"
 msgstr "Upravit profil"
 
-#: forum/templates/forum/profile/profile_readonly.html:60
-#: forum/templates/forum/profile/profile_readonly.html:65
+#: forum/templates/forum/profile/profile_readonly.html:49
+#: forum/templates/forum/profile/profile_readonly.html:54
 msgid "Change Picture"
 msgstr "Změnit Obrázek"
 
-#: forum/templates/forum/profile/profile_readonly.html:87
+#: forum/templates/forum/profile/profile_readonly.html:76
 msgid "Select the image boundaries and upload the picture."
 msgstr ""
 
-#: forum/templates/forum/profile/profile_readonly.html:89
+#: forum/templates/forum/profile/profile_readonly.html:78
 #, fuzzy
 msgid "Change avatar"
 msgstr "Změnit Obrázek"
 
-#: forum/templates/forum/profile/profile_readonly.html:143
+#: forum/templates/forum/profile/profile_readonly.html:132
 #, fuzzy
 msgid "Edit Activities"
 msgstr "Upravit aktivity"
 
-#: forum/templates/forum/profile/profile_readonly.html:174
+#: forum/templates/forum/profile/profile_readonly.html:163
 msgid "This info is visible only to"
 msgstr "Táto informace je dostupná pouze"
 
-#: forum/templates/forum/profile/profile_readonly.html:174
+#: forum/templates/forum/profile/profile_readonly.html:163
 msgid "registered"
 msgstr ""
 
-#: forum/templates/forum/profile/profile_readonly.html:174
+#: forum/templates/forum/profile/profile_readonly.html:163
 msgid "users."
 msgstr "uživatelům."
 
-#: forum/templates/forum/profile/profile_readonly.html:184
+#: forum/templates/forum/profile/profile_readonly.html:173
 msgid "Compatibility"
 msgstr "Kompatibilita"
 
@@ -1362,7 +1377,7 @@ msgstr ""
 msgid "Try again later."
 msgstr "Zkus to později"
 
-#: forum/templates/registration/registration_front.html:33
+#: forum/templates/registration/registration_front.html:19
 msgid "Does overweight bother you?"
 msgstr "Trápí Tě kila navíc?"
 
@@ -1409,9 +1424,6 @@ msgstr ""
 # msgstr "Tento e-mail vám byl odeslán protože"
 #~ msgid "Do you know"
 #~ msgstr "Doporučujeme"
-
-#~ msgid "Reply"
-#~ msgstr "Odpovědět"
 
 #~ msgid "profile"
 #~ msgstr "profil"
