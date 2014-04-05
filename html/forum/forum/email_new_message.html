@@ -10,22 +10,42 @@ New email
 
 {% load i18n %}
 
-{% block title %}{% trans 'New Message from' %} {{from}}{% endblock %}
+{% block title %}{% trans 'New Message from' %} <a href="" style="color: #2BA6CB;">{{from}}</a>{% endblock %}
 
 {% block main %}
 
-<pre><code>
-{{body}}
-</code></pre>
+<table style="width: 100%;">
+  <tbody>
+    <tr>
+      <td align="center" style="width: 100px;">
+        <a href="http://{{domain}}{% url profile from %}" style="border: 0px;">
+          <img src="{{img}}" width="100%" style="border-radius: 50%; vertical-align: middle; border: 0px;" />
+        </a>
+      </td>
+      <td style="padding-left: 20px;" >
+        <p><b>{% trans 'Message from' %} <a href="http://{{domain}}{% url profile from %}" style="color: #2BA6CB;">{{from}}</a></b></p>
+        <p>{{body}}</p>
 
-<p>
-{% trans 'You can reply to the message on' %}
-<a href="http://hubnemevedvou.cz{% url messages %}">hubnemevedvou.cz</a>.
-</p>
+        <br/><br/>
 
-<p>
-{% trans 'Best Regards' %}
-</p>
+        <a href="http://{{domain}}{% url messages %}" style="background-color: #7bc021; box-shadow: inset 0px 2px 0px #d7ef3a; color: #FFF; display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; line-height: 1.428571429; text-align: center; white-space: nowrap; vertical-align: middle; cursor: pointer; background-image: none; border: 1px solid transparent; border-radius: 4px;font-family: inherit; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none; box-sizing: border-box; text-decoration: none; text-transform: none;">{% trans 'Reply' %}</a>
+      </td>
+    </tr>  
+  </tbody>
+</table>
 
+<br/>
+<br/>
+<br/>
+
+<small>
+{% blocktrans %}
+You can switch off the email/messages notification in your <a href="http://{{domain}}{{url_settings}}" style="color: #2BA6CB;" >profile settings page</a>.
+{% endblocktrans %}
+</small>
+
+{% endblock %}
+
+{% block signature %}
 {% endblock %}
 

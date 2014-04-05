@@ -134,7 +134,7 @@ Basic JSON load scenario:
       var hide_form = 'hidden';
 
       if (extra.breadcrumbs.length < 3) {
-        head_button = '<a href="javascript:void(0)" class="btn btn-primary" onClick="show(\'_reply_head\')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Start new discussion' %}</a>';        
+        head_button = '<a href="javascript:void(0)" class="btn btn-info" onClick="show(\'_reply_head\')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Start new discussion' %}</a>';        
       } else {
         hide_form = '';
       }
@@ -191,7 +191,7 @@ Basic JSON load scenario:
         footer += '<a href="' + e.deletable_link + '" class="btn btn-default" ><span class="glyphicon glyphicon-trash"></span> {% trans 'Delete' %}</a>';
       }
 
-      if (link != "") footer += '<a href="javascript:void(0)" ' + link + ' class="btn btn-primary" >{% trans 'Read posts' %}</a>';
+      if (link != "") footer += '<a href="javascript:void(0)" ' + link + ' class="btn btn-info" >{% trans 'Read posts' %}</a>';
 
       {% if user.is_authenticated %}
 

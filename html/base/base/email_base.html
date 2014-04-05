@@ -4,16 +4,18 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-     {% block head %}
+{% block head %}
     
-<!-- If you delete this meta tag, Half Life 3 will never be released. -->
-<meta name="viewport" content="width=device-width" />
+  <!-- If you delete this meta tag, Half Life 3 will never be released. -->
+  <meta name="viewport" content="width=device-width" />
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Hubnemevedvou.cz</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Hubnemevedvou.cz</title>
+
   {% block extra_style %}
-    {% endblock %}
-    {% endblock %}
+  {% endblock %}
+
+{% endblock %}
 </head>
  
 <style>
@@ -60,13 +62,17 @@ cursor:pointer;display: inline-block;" href="{% block head_url %}http://{{domain
 				<tr>
 					<td>
                         <br/>
-						{% block main %}
-                        {% endblock %}
-                        <br/>
-                        <a href="http://{{domain}}{% url login %}" style="color: #2BA6CB;">{% trans 'Log in' %}</a>				
-						<br/>						
-                        <br/>
-                        <br/>						
+{% block main %}
+{% endblock %}
+
+{% block signature %}
+<br/>
+<a href="http://{{domain}}{% url login %}" style="color: #2BA6CB;">{% trans 'Log in' %}</a>
+{% endblock %}
+
+<br/>						
+<br/>
+<br/>						
 					</td>
 				</tr>
 			</table>
