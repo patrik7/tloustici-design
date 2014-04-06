@@ -326,8 +326,10 @@ div.activity-checkbox label.hover {
 *******************************************************************************/
 
 #login{ }
-    #login_form div label{ 
-       font-weight:normal;}
+#login_form div label { 
+    font-weight:normal;
+}
+
 .recovery{
     font-size: 14px;
     float: right;
@@ -335,6 +337,7 @@ div.activity-checkbox label.hover {
     text-align: right;
     width: 159px;
     margin-left: 93px;
+    margin-top: 2em;
 }
 
 .recovery-register{
@@ -344,7 +347,6 @@ div.activity-checkbox label.hover {
     text-align: right;
     width: 159px;
     margin-left: 93px;
-    margin-top: 2em;
 }
 
 
