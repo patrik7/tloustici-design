@@ -35,18 +35,14 @@ Text stepov v registracii
         <div class="panel-body text-center">
     {% if step == 2 %}
       <h2>{% trans 'Tell us about yourself' %}</h2>
-      <small>
-        <p class="lead">
-          {% trans 'Filling up basic info is necessary for using the search functionality.' %}
-        </p>
-      </small>
+      <p class="lead">
+        {% trans 'Filling up basic info is necessary for using the search functionality.' %}
+      </p>
     {% elif step == 3 %}
       <h2>{% trans 'And finally' %} ..</h2>
-      <small>
-        <p class="lead">
-          {% trans 'Please create a password so you can safely use the website.' %}
-        </p>
-      </small>
+      <p class="lead">
+        {% trans 'Please create a password so you can safely use the website.' %}
+      </p>
     {% endif %}
 
 

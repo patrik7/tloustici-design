@@ -15,7 +15,7 @@ Registracia form krok 2,3,4, Messages
   {% csrf_token %}
     {% if form|is_list %}
       {% for f in form %}
-        {% if f.label %}<p class="lead">{{f.label}}</p>{% endif %}
+        {% if f.label %}<p class="lead"><small>{{f.label}}</small></p>{% endif %}
         {% if f.additional_comment %}<p>{{f.additional_comment}}</p>{% endif %}
         {{f|bootstrap_horizontal:"col-sm-3"}}
       {% endfor %}
