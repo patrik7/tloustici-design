@@ -18,17 +18,17 @@ New email
   <tbody>
     <tr>
       <td align="center" style="width: 100px;">
-        <a href="http://{{domain}}{% url profile from %}" style="border: 0px;">
+        <a href="http://{{domain}}{% url profile from %}?utm_source=avatarlink&utm_medium=email&utm_campaign=message" style="border: 0px;">
           <img src="{{img}}" width="100%" style="border-radius: 50%; vertical-align: top; border: 0px;" />
         </a>
       </td>
       <td style="padding-left: 20px;" >
-        <p><b>{% trans 'Message from user' %} <a href="http://{{domain}}{% url profile from %}" style="color: #2BA6CB;">{{from}}</a></b></p>
+        <p><b>{% trans 'Message from user' %} <a href="http://{{domain}}{% url profile from %}?utm_source=userlink&utm_medium=email&utm_campaign=message" style="color: #2BA6CB;">{{from}}</a></b></p>
         <p>{{body}}</p>
 
         <br/><br/>
 
-        <a href="http://{{domain}}{% url messages %}?addressee={{from}}" style="background-color: #7bc021; box-shadow: inset 0px 2px 0px #d7ef3a; color: #FFF; display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; line-height: 1.428571429; text-align: center; white-space: nowrap; vertical-align: middle; cursor: pointer; background-image: none; border: 1px solid transparent; border-radius: 4px;font-family: inherit; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none; box-sizing: border-box; text-decoration: none; text-transform: none;">{% trans 'Reply' %}</a>
+        <a href="http://{{domain}}{% url messages %}?addressee={{from}}&utm_source=replylink&utm_medium=email&utm_campaign=message" style="background-color: #7bc021; box-shadow: inset 0px 2px 0px #d7ef3a; color: #FFF; display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; line-height: 1.428571429; text-align: center; white-space: nowrap; vertical-align: middle; cursor: pointer; background-image: none; border: 1px solid transparent; border-radius: 4px;font-family: inherit; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none; box-sizing: border-box; text-decoration: none; text-transform: none;">{% trans 'Reply' %}</a>
       </td>
     </tr>  
   </tbody>
