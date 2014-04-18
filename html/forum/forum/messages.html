@@ -24,7 +24,7 @@ Messagess origin
 
   
     <h3 class="">{% trans 'Write Private Message' %}</h3>
-    <div class="panel panel-default padding-top">
+    <div id="new_message_form" class="panel panel-default padding-top">
       {% include 'form.html' with form=new_form button='Send Private Message' name='new' %}
     </div>
 
@@ -99,6 +99,25 @@ Messagess origin
      
     }
 
+    function collapseNewMessage() {
+        var div = $('#new_message_form');
+        var form = $('#new_message_form > form');
+
+        div.addClass("link-glow");
+        div.attr("onClick", "javascript: showNewMessage()");
+        form.addClass("hidden");
+        
+    }
+
+    function showNewMessage() {
+        var div = $('#new_message_form');
+        var form = $('#new_message_form > form');
+
+        div.removeClass("link-glow");
+        div.attr("onClick", "");
+        form.removeClass("hidden");
+    }
+
     function loadMessages(div_id, conversation_id, other_user, unread) {
       setLoading('popu' + div_id);
 
@@ -117,6 +136,8 @@ Messagess origin
 
         c = $('#conversation' + div_id);
         c.attr('onclick', 'javascript:hideMessages(' + div_id + ', ' + conversation_id + ', \'' + other_user + '\');');
+
+        collapseNewMessage();
 
       }).fail(function () {
         setError('popu' + div_id)
