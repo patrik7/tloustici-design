@@ -246,7 +246,7 @@ msgstr "Administrace"
 #: base/templates/base/base.html:117
 #: forum/templates/registration/registration_front.html:23
 msgid "Get your lucky strike, take the first step and register!"
-msgstr "Nakopni konečně své štěstí, udělej první krok a zaregistruj se!"
+msgstr "Nakopni konečně své štěstí, udělej první krok a zaregistruj&nbsp;se!"
 
 #: base/templates/base/base.html:121 forum/forms.py:127
 #: forum/templates/forum/email_suggest.html:15
@@ -1296,7 +1296,7 @@ msgstr "Táto informace je dostupná pouze"
 
 #: forum/templates/forum/profile/profile_readonly.html:163
 msgid "registered"
-msgstr ""
+msgstr "registrovaným"
 
 #: forum/templates/forum/profile/profile_readonly.html:163
 msgid "users."

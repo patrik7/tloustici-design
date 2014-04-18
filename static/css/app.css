@@ -24,7 +24,11 @@ Media querry
 .blue { color:#428bca; }
 
 .text-muted {
-color: #68C2DF;
+  color: #68C2DF;
+}
+
+.unread .text-muted {
+  color: #FFFFFF;
 }
 
 html {

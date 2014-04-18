@@ -10,9 +10,9 @@ function calculate_bmi() {
   vls[0]  = 18.5;
   text[0] = "Underweight (< " + vls[0] + ")";
   vls[1]  = 24.9;
-  text[1] = "Normal Weight (" + (vls[0] + 0.1) + " - " + vls[1] + ")";
+  text[1] = "Normal&nbsp;weight (" + (vls[0] + 0.1) + "&nbsp;-&nbsp;" + vls[1] + ")";
   vls[2]  = 29.9;
-  text[2] = "Overweight (" + (vls[1] + 0.1) + " - " + vls[2] + ")";
+  text[2] = "Overweight (" + (vls[1] + 0.1) + "&nbsp;-&nbsp;" + vls[2] + ")";
   text[3] = "Obesity (> " + (vls[2] + 0.1) + ")";
 
   if (!isNaN(cm) && !isNaN(kg)) {
