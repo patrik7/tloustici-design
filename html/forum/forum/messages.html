@@ -94,7 +94,7 @@ Messagess origin
       delete dynamic_pagination[conversation_id];
       $('#popu' + div_id).html('');
  
-      c = $('#conversation' + div_id + ' .panel-body');
+      c = $('#conversation' + div_id);
       c.attr('onclick', 'javascript:loadMessages(' + div_id + ', ' + conversation_id + ', \'' + other_user + '\', 0);');
      
     }
@@ -115,7 +115,7 @@ Messagess origin
         renderMessages(elem, entries, unread);
         setupMessagesPagination(data.pagination, data.entries[data.entries.length -1 ], conversation_id, div_id);
 
-        c = $('#conversation' + div_id + ' .panel-body');
+        c = $('#conversation' + div_id);
         c.attr('onclick', 'javascript:hideMessages(' + div_id + ', ' + conversation_id + ', \'' + other_user + '\');');
 
       }).fail(function () {
