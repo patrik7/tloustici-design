@@ -14,25 +14,47 @@ New email post
 
 {% block main %}
 
-<pre><code>
-{{post.body_html}}
-</code></pre>
+<table style="width: 100%;">
+  <tbody>
+    <tr>
+      <td align="center" style="width: 100px;">
+        <a href="http://{{domain}}{% url profile post.user.username %}?utm_source=avatarlink&utm_medium=email&utm_campaign={{analytics_campaign}}" style="border: 0px;">
+          <img src="{{post.image_url}}" width="100%" style="border-radius: 50%; vertical-align: top; border: 0px;" />
+        </a>
+      </td>
+      <td style="padding-left: 20px;" >
+        {{post.body_html}}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br/><br/>
 
 <p>
+<b>
 {% trans 'Replying to' %}
+</b>
 </p>
 
-<pre><code>
-{{post.parent.body_html}}
-</code></pre>
+<table style="width: 100%;">
+  <tbody>
+    <tr>
+      <td align="center" style="width: 100px;">
+        <a href="http://{{domain}}{% url profile post.paret.user.username %}?utm_source=avatarlink&utm_medium=email&utm_campaign={{analytics_campaign}}" style="border: 0px;">
+          <img src="{{post.parent.image_url}}" width="100%" style="border-radius: 50%; vertical-align: top; border: 0px;" />
+        </a>
+      </td>
+      <td style="padding-left: 20px;" >
+        {{post.parent.body_html}}
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 <p>
 {% trans 'Visit forum' %}
-<a href="http://hubnemevedvou.cz{% url forum_post post.id %}?utm_source=bottomlink&utm_medium=email&utm_campaign=forum">hubnemevedvou.cz</a>.
-</p>
-
-<p>
-{% trans 'Best Regards' %}
+<a href="http://hubnemevedvou.cz{% url forum_post post.id %}?utm_source=bottomlink&utm_medium=email&utm_campaign={{analytics_campaign}}">hubnemevedvou.cz/forum</a>.
 </p>
 
 <small>
