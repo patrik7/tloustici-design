@@ -18,9 +18,11 @@ Email activation
     {% endblocktrans %}
   </p>
 
+  {% url activate activation_key=activation_key as act_link %}
+
   <p>
     {% blocktrans %}
-      Thank you for registering on <a href="http://hubnemevedvou.cz/?utm_source=toplink&utm_medium=email&utm_campaign={{analytics_campaign}}">hubnemevedvou.cz</a> . We are looking forward to all the weight we will loose together!
+      Thank you for registering on <a href="http://{{domain}}{{act_link}}?utm_source=activationlink&utm_medium=email&utm_campaign={{analytics_campaign}}">hubnemevedvou.cz</a> . We are looking forward to all the weight we will loose together!
     {% endblocktrans %}
   </p>
 

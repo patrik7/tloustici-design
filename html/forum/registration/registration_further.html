@@ -20,7 +20,10 @@ Proces registracie
 Navigacia kroky registracie
 ------------------------------------------------------------------------------------------->
 
-<h3 class="text-center">{% trans 'Increase your chance to succeed and tell us more about yourslef in the following steps' %}</h3>
+{% if step <= 2 %}
+  <h3 class="text-center">{% trans 'Increase your chance to succeed and tell us more about yourslef in the following steps' %}</h3>
+{% endif %}
+
 <small>
     <p class="lead text-center">
       {{steps_text|safe}}
