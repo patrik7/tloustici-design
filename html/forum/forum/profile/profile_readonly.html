@@ -113,15 +113,28 @@ Profile read only
           </div>
           {% endif %}
         
+<div class="clearfix"></div>
+
+{% if info %}
+  <hr/>
+
+  <div class="col-md-8 col-sm-12">
+
+    {% for k,v in info %}
+      <div class="row">
+        <div class="col-xs-4">{{k}}</div>
+        <div class="col-xs-8">{{v}}</div>
+      </div>
+    {% endfor %}
+
+  </div>
  <div class="clearfix"></div>
- <hr/>
+ 
+{% endif %}
+<hr/>
 
     {% if profile.forum_profile.activities.all %}
-
-
        <div class="col-sm-12">
-        
-     
   
         {% if user.is_authenticated %}
        

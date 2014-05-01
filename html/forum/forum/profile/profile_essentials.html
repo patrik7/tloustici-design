@@ -13,6 +13,7 @@ Profile essentials
 
 {% block extra_meta %}
   <link href="{{STATIC_URL}}css/datepicker.css" rel="stylesheet" />
+  <link href="{{STATIC_URL}}css/bootstrap-switch.min.css" rel="stylesheet" />
 {% endblock %}
 
 {% block main %}
@@ -35,12 +36,14 @@ Profile essentials
   </div>
   <div id="collapsePersonal" class="panel-collapse collapse {{personal_in}}">
     <div class="panel-body">
-      <p>
+      <p class="text-center">
       {% blocktrans %}
-      None of the information entered here is public. It's used only to find the best matches for you when using the search feature of the site.
+      You can decide which of the following information will be visible to other registered users.
       {% endblocktrans %}
       </p>
-      {% include 'form.html' with form=form_personal button='Save' name='personal' %}
+
+      {% include 'forum/profile/form_private_info.html' with form=form_personal %}
+
     </div>
   </div>
 </div>
@@ -104,6 +107,7 @@ Profile essentials
 
 {% block extra_script %}
   <script src="{{STATIC_URL}}js/bootstrap-datepicker.js"></script>
+  <script src="{{STATIC_URL}}js/bootstrap-switch.min.js"></script>
   <script src="{{STATIC_URL}}js/collapse.js"></script>
 
   <script type="text/javascript" language="javascript">
@@ -120,6 +124,11 @@ Profile essentials
     $('#accordion .panel-collapse').on('hidden.bs.collapse', function () {
       $(this).prev().find(".glyphicon").removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-right");
     });
+
+    $.fn.bootstrapSwitch.defaults.onText = '{% trans 'public' %}';
+    $.fn.bootstrapSwitch.defaults.offText = '{% trans 'hidden' %}';
+
+    $('.bbswitch').bootstrapSwitch();
 
   </script>
 

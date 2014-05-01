@@ -2,25 +2,24 @@
 
 Hubnemevedvou.cz
 
-Registracia form krok 2,3,4, Messages
+Private info form
 
 ------------------------------------------------------------------------------------------->
 
 {% load i18n %}
 
-{% load forum_extras %}
+<form action="{{action}}" class="form-horizontal" method="POST">
+  <div style="display:none">
+    {% csrf_token %}
+  </div>
 
-<form action="{{action}}" class="form-horizontal" method="POST" >
-  {% csrf_token %}
-
-  {% include "form_fields.html" %}
+  {% include 'forum/profile/form_private_info_fields.html' %}
 
   <div class="form-group text-center">
     <div class="">
-      <button type="submit" class="btn btn-green" name="{{name}}">{% trans button %}</button>
+      <button type="submit" class="btn btn-green" name="personal">Uložit</button>
     </div>
   </div>
-
 </form>
 
 

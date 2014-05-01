@@ -12,6 +12,7 @@ Proces registracie
 
 {% block extra_meta %}
   <link href="{{STATIC_URL}}css/datepicker.css" rel="stylesheet" />
+  <link href="{{STATIC_URL}}css/bootstrap-switch.min.css" rel="stylesheet" />
 {% endblock %}
 
 {% block main %}
@@ -38,9 +39,6 @@ Text stepov v registracii
         <div class="panel-body text-center">
     {% if step == 2 %}
       <h2>{% trans 'Tell us about yourself' %}</h2>
-      <p class="lead">
-        {% trans 'Filling up basic info is necessary for using the search functionality.' %}
-      </p>
     {% elif step == 3 %}
       <h2>{% trans 'And finally' %} ..</h2>
       <p class="lead">
@@ -69,7 +67,22 @@ Registracia krok 1
             </form>
             
           {% else %}
-            {% include 'form.html' with name=button_name %}
+            {% if step == 2 %}
+              <form action="{% url register_step step %}" method="POST" class="form-horizontal">
+                {% csrf_token %}
+            
+                {% include 'form_fields.html' with name=button_name form=form.0 cols="9" %}
+                {% include 'forum/profile/form_private_info_fields.html' with form=form.1 %}
+
+                <div class="form-group">
+                  <div class="register-form">
+                    <button type="submit" class="btn btn-green" name="{{button_name}}">{% trans button %}</button>
+                  </div>
+                </div>              
+              </form>
+            {% else %}
+              {% include 'form.html' with name=button_name %}
+            {% endif %}
           {% endif %}
         </div>
       </div>
@@ -83,11 +96,20 @@ Registracia krok 1
 
 {% block extra_script %}
   <script src="{{STATIC_URL}}js/bootstrap-datepicker.js"></script>
+  <script src="{{STATIC_URL}}js/bootstrap-switch.min.js"></script>
 
   <script type="text/javascript" language="javascript">
     $('#id_date_of_birth').datepicker({
       format: 'dd.mm.yyyy',
       viewMode: 2
     });
+
+    $.fn.bootstrapSwitch.defaults.onText = '{% trans 'public' %}';
+    $.fn.bootstrapSwitch.defaults.offText = '{% trans 'hidden' %}';
+
+    $('.bbswitch').bootstrapSwitch();
+
   </script>
+
+  
 {% endblock %}

@@ -1,0 +1,29 @@
+<!------------------------------------------------------------------------------------------ 
+
+Hubnemevedvou.cz
+
+Registracia form krok 2,3,4, Messages
+
+------------------------------------------------------------------------------------------->
+
+{% load i18n %}
+{% load bootstrap %}
+
+{% load forum_extras %}
+
+  {% with cols|default:"12" as tt %}
+    {% with "col-sm-3,"|add:tt as bootstrap_cols %}
+
+      {% if form|is_list %}
+        {% for f in form %}
+          {% if f.label %}<p class="lead"><small>{{f.label}}</small></p>{% endif %}
+          {% if f.additional_comment %}<p>{{f.additional_comment}}</p>{% endif %}
+          {{f|bootstrap_horizontal:bootstrap_cols}}
+        {% endfor %}
+      {% else %}   
+        {{form|bootstrap_horizontal:bootstrap_cols}}
+      {% endif %}
+    {% endwith %}
+  {% endwith %}
+
+

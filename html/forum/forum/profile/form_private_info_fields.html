@@ -1,0 +1,44 @@
+<!------------------------------------------------------------------------------------------ 
+
+Hubnemevedvou.cz
+
+Private info form
+
+------------------------------------------------------------------------------------------->
+
+{% load i18n %}
+
+  {% for field in form.visible_fields %}
+    {% if field.html_name == "name" or field.html_name == "date_of_birth"  or field.html_name == "education" or field.html_name == "height" or field.html_name == "weight" %}
+    <div class="form-group{% if field.errors %} has-error{% endif %}">
+      <label class="control-label col-sm-3" for="{{field.auto_id}}">{{ field.label }}</label>        
+      <div class="col-sm-6 text-left">
+        {{ field }}
+
+        {% for error in field.errors %}
+          <span class="help-block">{{ error }}</span>
+        {% endfor %}
+
+        {% if field.help_text %}
+          <p class="help-block">
+            {{ field.help_text|safe }}
+          </p>
+        {% endif %}
+      </div>
+      <div class="col-sm-3 text-center">
+        {% if field.html_name == "weight" %}
+          {{form.show_weight}}
+        {% else %}{% if field.html_name == "height" %}
+          {{form.show_height}}
+        {% else %}{% if field.html_name == "name" %}
+          {{form.show_realname}}
+        {% else %}{% if field.html_name == "date_of_birth" %}
+          {{form.show_date_of_birth}}
+        {% else %}{% if field.html_name == "education" %}
+          {{form.show_education}}
+        {% endif %}{% endif %}{% endif %}{% endif %}{% endif %}
+      </div>
+    </div>
+    {% endif %}
+  {% endfor %}
+
