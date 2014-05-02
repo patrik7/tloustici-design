@@ -11,7 +11,7 @@ New email suggest
 
 {% block title %}Hubnemevedvou.cz{% endblock %}
 
-{% block head_url %}http://{{domain}}{% url register %}?utm_source=headlink&utm_medium=email&utm_campaign={{analytics_campaign}}{% endblock %}
+{% block head_url %}http://{{domain}}{% url register %}?utm_source=internal&utm_content=headlink&utm_medium=email&utm_campaign={{analytics_campaign}}{% endblock %}
 {% block head_label %}{% trans 'Create an Account' %}{% endblock %}
 
 {% block main %}
@@ -25,7 +25,7 @@ Ahoj,
 trápí Tě kila navíc, ale nemáš s kým nebo pro koho hubnout? Ať už hledáš kamarádku na společné hubnutí nebo životního partnera se stejnými koníčky, neváhej a udělej první krok! 
 </p>
 <p>
-Nakopni své štěstí a navštiv stránku <a href="http://{{domain}}/?utm_source=midlink&utm_medium=email&utm_campaign={{analytics_campaign}}">hubnemevedvou.cz</a> Ve dvou se to přece lépe táhne, tak si najdi toho správného parťáka!
+Nakopni své štěstí a navštiv stránku <a href="http://{{domain}}/?utm_source=internal&utm_content=midlink&utm_medium=email&utm_campaign={{analytics_campaign}}">hubnemevedvou.cz</a> Ve dvou se to přece lépe táhne, tak si najdi toho správného parťáka!
 </p>
 {% endblock %}
 

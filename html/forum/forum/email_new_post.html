@@ -18,7 +18,7 @@ New email post
   <tbody>
     <tr>
       <td align="center" style="width: 100px;">
-        <a href="http://{{domain}}{% url profile post.user.username %}?utm_source=avatarlink&utm_medium=email&utm_campaign={{analytics_campaign}}" style="border: 0px;">
+        <a href="http://{{domain}}{% url profile post.user.username %}?utm_source=internal&utm_content=avatarlink&utm_medium=email&utm_campaign={{analytics_campaign}}" style="border: 0px;">
           <img src="{{post.image_url}}" width="100%" style="border-radius: 50%; vertical-align: top; border: 0px;" />
         </a>
       </td>
@@ -41,7 +41,7 @@ New email post
   <tbody>
     <tr>
       <td align="center" style="width: 100px;">
-        <a href="http://{{domain}}{% url profile post.paret.user.username %}?utm_source=avatarlink&utm_medium=email&utm_campaign={{analytics_campaign}}" style="border: 0px;">
+        <a href="http://{{domain}}{% url profile post.paret.user.username %}?utm_source=internal&utm_content=avatarlink&utm_medium=email&utm_campaign={{analytics_campaign}}" style="border: 0px;">
           <img src="{{post.parent.image_url}}" width="100%" style="border-radius: 50%; vertical-align: top; border: 0px;" />
         </a>
       </td>
@@ -54,7 +54,7 @@ New email post
 
 <p>
 {% trans 'Visit forum' %}
-<a href="http://hubnemevedvou.cz{% url forum_post post.id %}?utm_source=bottomlink&utm_medium=email&utm_campaign={{analytics_campaign}}">hubnemevedvou.cz/forum</a>.
+<a href="http://hubnemevedvou.cz{% url forum_post post.id %}?utm_source=internal&utm_content=bottomlink&utm_medium=email&utm_campaign={{analytics_campaign}}">hubnemevedvou.cz/forum</a>.
 </p>
 
 <small>
