@@ -513,7 +513,7 @@ font-size:21px;
 
 #entries{
     margin-top:-15px;
-    background-color: #00aedf;
+/*    background-color: #00aedf; */
 }
 
 .radio{
@@ -550,7 +550,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5',end
 }
 
 .search-friend-box.col-lg-6.col-md-12.col-sm-12.panel.paddding-bottom {
-height: 220px;
+min-height: 238px;
 max-width: 403px;
 margin: 20px 10px;
 -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25);
