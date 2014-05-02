@@ -1,0 +1,23 @@
+<!------------------------------------------------------------------------------------------ 
+
+Hubnemevedvou.cz
+
+New email recovery
+
+------------------------------------------------------------------------------------------->
+
+{% extends 'base/email_base.txt' %}
+
+{% load i18n %}
+
+{% block main %}
+
+An abuse report was posted on the website.
+
+Item: {{item}} - http://{{domain}}/admin/forum/report/{{report.id}}
+Reporter: {{reporter.username}}
+Reason: {{reason}}
+
+http://{{domain}}/admin/forum/report/
+
+{% endblock %}

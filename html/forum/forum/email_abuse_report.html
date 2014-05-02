@@ -1,0 +1,29 @@
+<!------------------------------------------------------------------------------------------ 
+
+Hubnemevedvou.cz
+
+New email recovery
+
+------------------------------------------------------------------------------------------->
+
+{% extends 'base/email_base.html' %}
+
+{% load i18n %}
+
+{% block main %}
+
+<p>
+An abuse report was posted on the website.
+</p>
+
+<p>
+Item: <a href="http://{{domain}}/admin/forum/report/{{report.id}}">{{item}}</a><br/>
+Reporter: {{reporter.username}}<br/>
+Reason: {{reason}}</br>
+</p>
+
+<p>
+<a href="http://{{domain}}/admin/forum/report/">List of abuse reports</a><br/>
+</p>
+
+{% endblock %}

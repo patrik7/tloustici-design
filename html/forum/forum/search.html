@@ -88,8 +88,8 @@ Search
           
             + '<div class="col-sm-8">'
                 + '<h3 class="">'
-          + a + e.username + '</a> '
-          + (e.city != '' ? '<small>{% trans 'from' context 'city' %} ' + e.city + '</small>' : '')
+          + a + e.username + '</a><br/> '
+          + '<small>' + (e.city ? e.city : '&nbsp;') + '</small>'
           + '</h3>'
            +  '<p>' + e.bio + '</p>'
               + add_bar(e.fitness[0], "{% trans 'Overall Compatibility' %}")
