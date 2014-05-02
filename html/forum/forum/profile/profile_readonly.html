@@ -97,9 +97,9 @@ Profile read only
                 <div class="btn-group btn-group-sm">
                 <a class="text-mute" data-toggle="dropdown">{% trans 'Report' %} <span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                  <li><a href="{% url report 'sexual' %}?target_id={{user.forum_profile.id}}&target=Profile">{% trans 'Sexual Remarks' %}</a></li>
-                  <li><a href="{% url report 'advertising' %}?target_id={{user.forum_profile.id}}&target=Profile">{% trans 'Advertising' %}</a></li>
-                  <li><a href="{% url report 'abuse' %}?target_id={{user.forum_profile.id}}&target=Profile">{% trans 'Other Abuse' %}</a></li>
+                  <li><a href="{% url report 'sexual' %}?target_id={{profile.forum_profile.id}}&target=Profile">{% trans 'Sexual Remarks' %}</a></li>
+                  <li><a href="{% url report 'advertising' %}?target_id={{profile.forum_profile.id}}&target=Profile">{% trans 'Advertising' %}</a></li>
+                  <li><a href="{% url report 'abuse' %}?target_id={{profile.forum_profile.id}}&target=Profile">{% trans 'Other Abuse' %}</a></li>
                 </ul>
                 </div>
                 {% if in_favourites %}
