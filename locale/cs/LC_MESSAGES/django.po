@@ -1407,7 +1407,7 @@ msgstr ""
 
 #: forum/templates/registration/registration_disallowed.html:18
 msgid "Try again later, please."
-msgstr "Zkus to později, prosím."
+msgstr "Zkus to prosím později."
 
 #: forum/templates/registration/registration_front.html:19
 msgid "Does overweight bother you?"
