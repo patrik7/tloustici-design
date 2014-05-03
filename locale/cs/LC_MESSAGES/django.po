@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-03 22:57+0200\n"
+"POT-Creation-Date: 2014-05-03 23:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -386,7 +386,7 @@ msgstr "Jsi zablokován, nemůžeš posílat zprávy tomuto uživateli."
 
 #: forum/forms.py:289
 msgid "Real name"
-msgstr "Skutečné jméno"
+msgstr "Jméno a příjmení"
 
 #: forum/forms.py:290 forum/views.py:420
 msgid "Date of Birth"
@@ -434,7 +434,7 @@ msgstr "Vysokoškolské vzdělání"
 
 #: forum/models.py:53
 msgid "High School"
-msgstr "Stredoškolské vzdělání"
+msgstr "Středoškolské vzdělání"
 
 #: forum/models.py:54
 msgid "Elementary School"
@@ -892,7 +892,7 @@ msgstr "Filmy/Divadlo/Kino"
 #: forum/management/commands/init_activities.py:10
 msgctxt "activity"
 msgid "Museums/Concerts/Exhibitions"
-msgstr "Muzea/Koncerty/Výstavy"
+msgstr "Muzea/Koncerty"
 
 #: forum/management/commands/init_activities.py:11
 msgctxt "activity"
