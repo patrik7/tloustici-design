@@ -15,4 +15,6 @@ RESULT=$?
 git stash pop -q
 
 [ $RESULT -ne 0 ] && exit 0
+
+echo "Failed!"
 exit 1
