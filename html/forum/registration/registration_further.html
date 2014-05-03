@@ -36,19 +36,22 @@ Text stepov v registracii
 ------------------------------------------------------------------------------------------->
 
 <div class="panel pandel-default">
-        <div class="panel-body text-center">
+  <div class="panel-body text-center">
     {% if step == 2 %}
       <h2>{% trans 'Tell us about yourself' %}</h2>
     {% elif step == 3 %}
-      <h2>{% trans 'And finally' %} ..</h2>
+      <p class="lead">
+        {% trans 'Upload your photo' %}
+      </p>
+    {% elif step == 4 %}
       <p class="lead">
         {% trans 'Please create a password so you can safely use the website.' %}
       </p>
     {% endif %}
 
 
-    {% if step < 4 %}
-          {% if step == 1 %}
+    {% if step < 5 %}
+      {% if step == 1 %}
             <!------------------------------------------------------------------------------------------ 
 
 Hubnemevedvou.cz
@@ -66,31 +69,67 @@ Registracia krok 1
               </div>              
             </form>
             
-          {% else %}
-            {% if step == 2 %}
-              <form action="{% url register_step step %}" method="POST" class="form-horizontal">
-                {% csrf_token %}
+          {% elif step == 2 %}
+            <form action="{% url register_step step %}" method="POST" class="form-horizontal">
+              {% csrf_token %}
             
-                {% include 'form_fields.html' with name=button_name form=form.0 cols="9" %}
-                {% include 'forum/profile/form_private_info_fields.html' with form=form.1 %}
+              {% include 'form_fields.html' with name=button_name form=form.0 cols="9" %}
+              {% include 'forum/profile/form_private_info_fields.html' with form=form.1 %}
 
-                <div class="form-group">
-                  <div class="register-form">
-                    <button type="submit" class="btn btn-green" name="{{button_name}}">{% trans button %}</button>
-                  </div>
-                </div>              
+              <div class="form-group">
+                <div class="register-form">
+                  <button type="submit" class="btn btn-green" name="{{button_name}}">{% trans button %}</button>
+                </div>
+              </div>              
+            </form>
+          {% elif step == 3 %}
+            <div style="position: relative; width: 160px; height: auto; margin-left: auto; margin-right: auto;">
+              <img id="id_avatar" src="{{STATIC_URL}}images/person.jpg" width="160" height="160" class="img-circle link-glow" onclick="javascript:performClick(document.getElementById('id_avatarinput'))">
+              <div class="link-glow-trigger" style="position:absolute; bottom: 23px; right: 2px; color: #505050; ">
+                <h3>
+                  <span class="glyphicon glyphicon-repeat"></span><br/>{% trans 'Change picture' %}
+                </h3>
+              </div>
+              <div class="link-glow-trigger" style="position:absolute; bottom: 25px; right: 4px; color: #FFFFFF;">
+                <h3>
+                  <span class="glyphicon glyphicon-repeat"></span><br/>{% trans 'Change picture' %}
+                </h3>
+              </div>
+            </div>
+
+            <div class="col-sm-12 avatarstaging">
+              <form action="{% url register_step step %}" method="POST" enctype="multipart/form-data" onsubmit="return checkCoords();">
+
+                {% csrf_token %}
+
+                {{form.0}}
+
+                <input type="file" name="avatar" id="id_avatarinput" class="hidden" />
+
+                <div id="id_avatardiv">
+                  <img id="id_avatarstaging" class="avatar-staging hidden" />
+                </div>
+
+                <span id="id_avatarsubmitlabel" class="left hidden">{% trans 'Select the image boundaries and upload the picture.' %}</span>
+                <div class="btn-group btn-group-sm right hidden" id="id_avatarsubmit">
+                  <button id="id_avatarsubmit" name="uploadavatar" type="submit" class="btn btn-primary">{% trans 'Change avatar' %}</button>
+                </div>
+
               </form>
-            {% else %}
-              {% include 'form.html' with name=button_name %}
-            {% endif %}
+            </div>
+
+            <a href="{% url register_step step %}" >{% trans 'I will upload my picture later' %}</a>
+
+          {% else %}
+            {% include 'form.html' with name=button_name %}
           {% endif %}
         </div>
       </div>
 
     {% else %}
-      <div class="row">    
+      <div class="row">
         <div class="col-md-offset-2 col-md-4 col-sm-6 text-center">
-          <img src="{{STATIC_URL}}images/belly-2473_1280.jpg" class="img-registration-over">
+          <img src="{{STATIC_URL}}images/belly-2473_1280.jpg" class="img-registration-over" />
         </div>
         <div class="col-md-4 col-sm-6 text-left" style="padding-top: 35px;">
           <p class="lead">
@@ -99,6 +138,10 @@ Registracia krok 1
         </div>
       </div>
     {% endif %}
+
+  </div>
+</div>
+
 {% endblock %}
 
 {% block extra_script %}
@@ -115,6 +158,19 @@ Registracia krok 1
     $.fn.bootstrapSwitch.defaults.offText = '{% trans 'hidden' %}';
 
     $('.bbswitch').bootstrapSwitch();
+
+    {% if step == 3 %}
+      var img_target = $('#id_avatar');
+
+      $('.link-glow-trigger').mouseover(function () {
+        img_target.addClass('link-glow-hover');
+      });
+
+      $('.link-glow-trigger').mouseout(function () {
+        img_target.removeClass('link-glow-hover');
+      });
+
+    {% endif %}
 
   </script>
 
