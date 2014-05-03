@@ -13,6 +13,9 @@ Proces registracie
 {% block extra_meta %}
   <link href="{{STATIC_URL}}css/datepicker.css" rel="stylesheet" />
   <link href="{{STATIC_URL}}css/bootstrap-switch.min.css" rel="stylesheet" />
+  {% if step == 3 %}
+    <link rel="stylesheet" href="{{STATIC_URL}}css/jquery.Jcrop.min.css" type="text/css" />
+  {% endif %}
 {% endblock %}
 
 {% block main %}
@@ -83,42 +86,46 @@ Registracia krok 1
               </div>              
             </form>
           {% elif step == 3 %}
-            <div style="position: relative; width: 160px; height: auto; margin-left: auto; margin-right: auto;">
+            <div id="id_img_change_hide" style="position: relative; width: 160px; height: auto; margin-left: auto; margin-right: auto;">
               <img id="id_avatar" src="{{STATIC_URL}}images/person.jpg" width="160" height="160" class="img-circle link-glow" onclick="javascript:performClick(document.getElementById('id_avatarinput'))">
-              <div class="link-glow-trigger" style="position:absolute; bottom: 23px; right: 2px; color: #505050; ">
+              <div class="link-glow-trigger" style="position:absolute; bottom: 23px; right: 2px; color: #505050; " onclick="javascript:performClick(document.getElementById('id_avatarinput'))">
                 <h3>
                   <span class="glyphicon glyphicon-repeat"></span><br/>{% trans 'Change picture' %}
                 </h3>
               </div>
-              <div class="link-glow-trigger" style="position:absolute; bottom: 25px; right: 4px; color: #FFFFFF;">
+              <div class="link-glow-trigger" style="position:absolute; bottom: 25px; right: 4px; color: #FFFFFF;" onclick="javascript:performClick(document.getElementById('id_avatarinput'))">
                 <h3>
                   <span class="glyphicon glyphicon-repeat"></span><br/>{% trans 'Change picture' %}
                 </h3>
               </div>
             </div>
 
-            <div class="col-sm-12 avatarstaging">
-              <form action="{% url register_step step %}" method="POST" enctype="multipart/form-data" onsubmit="return checkCoords();">
+            <div class="clear-fix" />
 
-                {% csrf_token %}
+            <div class="row">
+              <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 col-xs-12">
+                <div class="avatarstaging">
+                  <form action="{% url register_step step %}" method="POST" enctype="multipart/form-data" onsubmit="return checkCoords();">
 
-                {{form.0}}
+                    {% csrf_token %}
 
-                <input type="file" name="avatar" id="id_avatarinput" class="hidden" />
+                    {{form.0}}
 
-                <div id="id_avatardiv">
-                  <img id="id_avatarstaging" class="avatar-staging hidden" />
+                    <div id="id_avatardiv">
+                      <img id="id_avatarstaging" class="avatar-staging hidden" />
+                    </div>
+
+                    <span id="id_avatarsubmitlabel" class="text-center hidden">{% trans 'Select the image boundaries and upload the picture.' %}</span>
+                    <div class="btn-group btn-group-sm text-center hidden" id="id_avatarsubmit">
+                      <button id="id_avatarsubmit" name="step3" type="submit" class="btn btn-green">{% trans 'Upload picture' %}</button>
+                    </div>
+
+                  </form>
                 </div>
-
-                <span id="id_avatarsubmitlabel" class="left hidden">{% trans 'Select the image boundaries and upload the picture.' %}</span>
-                <div class="btn-group btn-group-sm right hidden" id="id_avatarsubmit">
-                  <button id="id_avatarsubmit" name="uploadavatar" type="submit" class="btn btn-primary">{% trans 'Change avatar' %}</button>
-                </div>
-
-              </form>
+              </div>
             </div>
 
-            <a href="{% url register_step step %}" >{% trans 'I will upload my picture later' %}</a>
+            <a href="{% url register_step step %}" element="padding-top: 20px;">{% trans 'I will upload my picture later' %}</a>
 
           {% else %}
             {% include 'form.html' with name=button_name %}
@@ -148,6 +155,11 @@ Registracia krok 1
   <script src="{{STATIC_URL}}js/bootstrap-datepicker.js"></script>
   <script src="{{STATIC_URL}}js/bootstrap-switch.min.js"></script>
 
+  {% if step == 3 %}
+    <script src="{{STATIC_URL}}js/jquery.Jcrop.min.js"></script>
+    <script src="{{STATIC_URL}}js/image-crop.js"></script>
+  {% endif %}
+
   <script type="text/javascript" language="javascript">
     $('#id_date_of_birth').datepicker({
       format: 'dd.mm.yyyy',
@@ -169,6 +181,15 @@ Registracia krok 1
       $('.link-glow-trigger').mouseout(function () {
         img_target.removeClass('link-glow-hover');
       });
+
+      function performClick(node)
+      {
+        var evt = document.createEvent("MouseEvents");
+        evt.initEvent("click", true, false);
+        node.dispatchEvent(evt);
+      }
+
+      document.getElementById('id_avatarinput').addEventListener('change', handleFileSelect, false);
 
     {% endif %}
 

@@ -49,6 +49,8 @@ function handleFileSelect(evt) {
         $('#id_avatarsubmit').removeClass('hidden');
         $('#id_avatarsubmitlabel').removeClass('hidden');
 
+        $('#id_img_change_hide').addClass('hidden');
+
         jQuery(function($) {
           var width = img.width();
           var height = img.height();

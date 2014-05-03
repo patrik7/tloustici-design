@@ -58,30 +58,29 @@ Profile read only
             {% else %}" /></div>{% endif %}
           </div>
         </div>
-     </div>
-        <div class="clearfix"></div>
+      </div>
+      <div class="clearfix"></div>
         
-        <div class="col-sm-12 avatarstaging">
-          <form action="{% url profile profile.username %}" method="POST" enctype="multipart/form-data" onsubmit="return checkCoords();">
-            {% csrf_token %}
+      <div class="col-sm-12 avatarstaging">
+        <form action="{% url profile profile.username %}" method="POST" enctype="multipart/form-data" onsubmit="return checkCoords();">
+          {% csrf_token %}
 
-            {{form_uploadavatar}}
+          {{form_uploadavatar}}
 
-            <input type="file" name="avatar" id="id_avatarinput" class="hidden" />
+          <div id="id_avatardiv">
+            <img id="id_avatarstaging" class="avatar-staging hidden" />
+          </div>
 
-            <div id="id_avatardiv">
-              <img id="id_avatarstaging" class="avatar-staging hidden" />
-            </div>
+          <span id="id_avatarsubmitlabel" class="left hidden">{% trans 'Select the image boundaries and upload the picture.' %}</span>
+          <div class="btn-group btn-group-sm right hidden" id="id_avatarsubmit">
+            <button id="id_avatarsubmit" name="uploadavatar" type="submit" class="btn btn-primary">{% trans 'Change avatar' %}</button>
+          </div>
 
-            <span id="id_avatarsubmitlabel" class="left hidden">{% trans 'Select the image boundaries and upload the picture.' %}</span>
-            <div class="btn-group btn-group-sm right hidden" id="id_avatarsubmit">
-              <button id="id_avatarsubmit" name="uploadavatar" type="submit" class="btn btn-primary">{% trans 'Change avatar' %}</button>
-            </div>
-
-          </form>
-        </div>
+        </form>
+      </div>
        
-        <div class="clearfix"></div>
+      <div class="clearfix"></div>
+
         <div class="col-sm-12">
           <div class="col-sm-3" >
             <div class="fb-like" data-href="http://hubnemevedvou.cz/profile/{{profile.username}}/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-ref="profile" data-width="55"></div>
