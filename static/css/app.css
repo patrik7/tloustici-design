@@ -65,6 +65,11 @@ div.avatarstaging {
   margin-bottom: 20px;
 }
 
+img.img-registration-over {
+  max-width: 100%;
+  width: 349px;
+}
+
 .btn-blue{
     background: #25aae1;
     color: #FFF;}
