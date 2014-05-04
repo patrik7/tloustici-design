@@ -685,7 +685,7 @@ msgstr "Nahraj svoji fotku"
 #: forum/tests.py:153 forum/tests.py:207
 #: forum/templates/registration/registration_further.html:51
 msgid "Please create a password so you can safely use the website."
-msgstr "Prosím vytvoř si heslo, aby si mohl bez obav využívát web."
+msgstr "Nyní už jen zbývá vyplnit nové heslo..."
 
 #: forum/tests.py:163 forum/tests.py:217
 #: forum/templates/registration/registration_further.html:143
@@ -1320,7 +1320,7 @@ msgstr "Změnit obrázek"
 #: forum/templates/forum/profile/profile_readonly.html:74
 #: forum/templates/registration/registration_further.html:118
 msgid "Select the image boundaries and upload the picture."
-msgstr ""
+msgstr "Klikni na vložený obrázek a uprav ho pomocí uchytů"
 
 #: forum/templates/forum/profile/profile_readonly.html:76
 msgid "Change avatar"
@@ -1448,7 +1448,7 @@ msgstr "Vložit obrázek"
 
 #: forum/templates/registration/registration_further.html:120
 msgid "Upload picture"
-msgstr ""
+msgstr "Nahrát obrázek"
 
 #: forum/templates/registration/registration_further.html:128
 msgid "I will upload my picture later"
