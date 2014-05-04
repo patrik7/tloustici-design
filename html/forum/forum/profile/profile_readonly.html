@@ -26,24 +26,8 @@ Profile read only
     <div class="panel panel-info">
       
       <div class="panel-body">
-        <div class="col-sm-12">
-          
-          <div class="col-sm-9">
-            <h3>{{profile.username}} 
-              {% if user == profile or user.is_superuser %}
-                <small>
-                  <a href="{% url profile profile.username %}?edit=1" class="lead">{% trans 'Edit Profile' context 'button' %}</a>
-                </small>
-              {% endif %}
-            </h3>
-            <p class="text-muted">
-              {% if sex %}{{sex}}{% endif %}{% if sex and profile.forum_profile.city %}, {% endif %}
-              {% if profile.forum_profile.city %}{{profile.forum_profile.city}}{% endif %}
-            </p>
-            <p>{{profile.forum_profile.description_html|safe}}</p>
-          </div>
-
-          <div class="col-sm-3">
+        <div class="">
+          <div class="col-sm-push-8 col-sm-4">
             <div style="position: relative; width: 160px; height: auto; margin-left: auto; margin-right: auto;">
               <img id="id_avatar" src="{{profile.forum_profile.avatar_url}}" width="160" height="160" class="img-circle{% if user == profile or user.is_superuser %} link-glow{% endif %}" {% if user == profile or user.is_superuser %}onclick="javascript:performClick(document.getElementById('id_avatarinput'))"{% endif %} />
 
@@ -61,6 +45,29 @@ Profile read only
               {% endif %}
             </div>
           </div>
+
+          <div class="col-sm-8 col-sm-pull-4">
+            <h3>{{profile.username}} 
+              {% if user == profile or user.is_superuser %}
+                <small>
+                  <a href="{% url profile profile.username %}?edit=1" class="lead">{% trans 'Edit Profile' context 'button' %}</a>
+                </small>
+              {% endif %}
+            </h3>
+
+            <p class="text-muted">
+              {% if sex %}{{sex}}{% endif %}{% if sex and profile.forum_profile.city %}, {% endif %}
+              {% if profile.forum_profile.city %}{{profile.forum_profile.city}}{% endif %}
+            </p>
+
+            {% for k,v in info %}
+              <div class="row">
+                <div class="col-xs-4">{{k}}</div>
+                <div class="col-xs-8">{{v}}</div>
+              </div>
+            {% endfor %}
+          </div>
+
         </div>
 
         <div class="clearfix"></div>
@@ -105,25 +112,15 @@ Profile read only
           </div>
           {% endif %}
         
-          <div class="clearfix"></div>
-
-          {% if info %}
+          {% if profile.forum_profile.description_html %}
+            <div class="clearfix"></div>
             <hr/>
 
-            <div class="col-md-8 col-sm-12">
-
-              {% for k,v in info %}
-                <div class="row">
-                  <div class="col-xs-4">{{k}}</div>
-                  <div class="col-xs-8">{{v}}</div>
-                </div>
-              {% endfor %}
-
-            </div>
-            <div class="clearfix"></div>
- 
+            <p>
+              {{profile.forum_profile.description_html|safe}}
+            </p>
           {% endif %}
-          <hr/>
+            <hr/>
 
           {% if user.is_authenticated %}
             {% if sports or other %}
@@ -141,7 +138,7 @@ Profile read only
                   {% else %}
                   <div class="col-md-12">
                   {% endif %}
-                    <h4>{% trans 'Sports' %}</h4>
+                    <h4>{% trans 'Sports' %}:</h4>
                     <div class="row">
                       {% for a in sports %}
                         {% if sports|length <= 1 %}
@@ -183,10 +180,9 @@ Profile read only
             <p>{% trans 'This info is visible only to' %} <a href="{% url register %}">{% trans 'registered'%}</a> {% trans 'users.' %}</p>
           {% endif %} <!-- auth -->
 
-          <hr/>
-
           {% if user != profile and user.is_authenticated %}
 
+            <hr/>
 
             <h3 class="lead">{% trans 'Compatibility' %}</h3>
 

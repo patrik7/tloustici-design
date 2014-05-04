@@ -8,8 +8,12 @@ Friend suggestion
 
 {% load i18n %}
 {% load base_tags %}
-
-  <h4>{% trans 'We recommend' %}</h4>
+<div class="sidebar-header">
+  <h3 class="panel-title">{% trans 'We recommend' %}</h3>
+</div>
+<!--
+<div class="panel panel-info sidebax-box">
+-->
   <div class="panel-body friend-suggestion">
     <div class="row">
       <div class="col-xs-6">
@@ -33,12 +37,22 @@ Friend suggestion
           </div>
         </div>
       </div>
-    <div class="clear"></div>
-  <div class="btn-group-xs">
-      {% button 'Add to Favourites' 'favourites' icon='pushpin' get_param='add' get_value=s.profile.user.username%} 
-      {% button 'Send Message' 'messages' icon='envelope' get_param='addressee' get_value=s.profile.user.username%}
-  </div>
+    </div>
+
+    <div class="row text-center">
+<!--
+      <div class="col-xs-12">
+-->
+        <div class="btn-group-xs text-right">
+          {% button 'Add to Favourites' 'favourites' icon='pushpin' get_param='add' get_value=s.profile.user.username%} 
+          {% button 'Send Message' 'messages' icon='envelope' get_param='addressee' get_value=s.profile.user.username%}
+<!--          {% button '' 'messages' icon='envelope' get_param='addressee' get_value=s.profile.user.username %} -->
         </div>
+<!--
+      </div>
+-->
+    </div>
+  </div>
+<!--
 </div>
-
-
+-->
