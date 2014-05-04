@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-04 14:17+0200\n"
+"POT-Creation-Date: 2014-05-04 14:18+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -680,7 +680,7 @@ msgstr "Prozraď něco o sobě"
 #: forum/tests.py:150 forum/tests.py:204
 #: forum/templates/registration/registration_further.html:47
 msgid "Upload your photo"
-msgstr ""
+msgstr "Nahraj svoji fotku"
 
 #: forum/tests.py:153 forum/tests.py:207
 #: forum/templates/registration/registration_further.html:51
@@ -1444,7 +1444,7 @@ msgstr ""
 #: forum/templates/registration/registration_further.html:93
 #: forum/templates/registration/registration_further.html:98
 msgid "Change picture"
-msgstr "Změnit obrázek"
+msgstr "Vložit obrázek"
 
 #: forum/templates/registration/registration_further.html:120
 msgid "Upload picture"
@@ -1452,7 +1452,7 @@ msgstr ""
 
 #: forum/templates/registration/registration_further.html:128
 msgid "I will upload my picture later"
-msgstr ""
+msgstr "Své foto nahraji později"
 
 #~ msgid "4) Email Verification"
 #~ msgstr "4. Ověření e-mailu"
