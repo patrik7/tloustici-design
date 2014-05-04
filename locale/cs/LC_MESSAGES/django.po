@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-04 17:43+0200\n"
+"POT-Creation-Date: 2014-05-04 17:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -442,19 +442,19 @@ msgstr "Základní vzdělání"
 
 #: forum/models.py:58 forum/templates/forum/index.html:219
 #: forum/templates/forum/messages.html:189
-#: forum/templates/forum/profile/profile_readonly.html:206
+#: forum/templates/forum/profile/profile_readonly.html:203
 msgid "Sexual Remarks"
 msgstr "Sexuální obtěžování"
 
 #: forum/models.py:59 forum/templates/forum/index.html:220
 #: forum/templates/forum/messages.html:190
-#: forum/templates/forum/profile/profile_readonly.html:207
+#: forum/templates/forum/profile/profile_readonly.html:204
 msgid "Advertising"
 msgstr "Nevyžádaná reklama"
 
 #: forum/models.py:60 forum/templates/forum/index.html:221
 #: forum/templates/forum/messages.html:191
-#: forum/templates/forum/profile/profile_readonly.html:208
+#: forum/templates/forum/profile/profile_readonly.html:205
 msgid "Other Abuse"
 msgstr "Ostatní"
 
@@ -554,14 +554,14 @@ msgstr "Kraj ke kterému město patří"
 msgid "Cities"
 msgstr "Města"
 
-#: forum/models.py:408 forum/templates/forum/friend_suggestion.html:36
+#: forum/models.py:408 forum/templates/forum/friend_suggestion.html:34
 msgid "Activity"
 msgstr "Aktivity"
 
 #: forum/models.py:409 forum/templates/forum/search.html:97
 #: forum/templates/forum/profile/profile_essentials.html:53
-#: forum/templates/forum/profile/profile_readonly.html:127
-#: forum/templates/forum/profile/profile_readonly.html:196
+#: forum/templates/forum/profile/profile_readonly.html:124
+#: forum/templates/forum/profile/profile_readonly.html:193
 msgid "Activities"
 msgstr "Aktivity"
 
@@ -1119,14 +1119,14 @@ msgstr "Nikoho sis nepřidal do seznamu oblíbených."
 msgid "We recommend"
 msgstr "Doporučujeme"
 
-#: forum/templates/forum/friend_suggestion.html:28
-#: forum/templates/forum/profile/profile_readonly.html:190
+#: forum/templates/forum/friend_suggestion.html:26
+#: forum/templates/forum/profile/profile_readonly.html:187
 msgid "Overall"
 msgstr "Celkově"
 
-#: forum/templates/forum/friend_suggestion.html:32
+#: forum/templates/forum/friend_suggestion.html:30
 #: forum/templates/forum/search.html:96
-#: forum/templates/forum/profile/profile_readonly.html:193
+#: forum/templates/forum/profile/profile_readonly.html:190
 msgid "BMI"
 msgstr ""
 
@@ -1264,7 +1264,7 @@ msgid "Which sports you like?"
 msgstr "Které sporty máš rád?"
 
 #: forum/templates/forum/profile/form_activities_fields.html:35
-#: forum/templates/forum/profile/profile_readonly.html:162
+#: forum/templates/forum/profile/profile_readonly.html:159
 msgid "Other Activities"
 msgstr "Další zájmy"
 
@@ -1315,40 +1315,40 @@ msgstr "Změnit obrázek"
 msgid "Edit Profile"
 msgstr "Upravit profil"
 
-#: forum/templates/forum/profile/profile_readonly.html:85
+#: forum/templates/forum/profile/profile_readonly.html:82
 #: forum/templates/registration/registration_further.html:118
 msgid "Select the image boundaries and upload the picture."
 msgstr "Klikni na vložený obrázek a uprav ho pomocí uchytů"
 
-#: forum/templates/forum/profile/profile_readonly.html:87
+#: forum/templates/forum/profile/profile_readonly.html:84
 msgid "Change avatar"
 msgstr "Změnit obrázek"
 
-#: forum/templates/forum/profile/profile_readonly.html:130
+#: forum/templates/forum/profile/profile_readonly.html:127
 msgid "Edit Activities"
 msgstr "Upravit aktivity"
 
-#: forum/templates/forum/profile/profile_readonly.html:141
+#: forum/templates/forum/profile/profile_readonly.html:138
 msgid "Sports"
 msgstr "Sporty"
 
-#: forum/templates/forum/profile/profile_readonly.html:180
+#: forum/templates/forum/profile/profile_readonly.html:177
 msgid "This info is visible only to"
 msgstr "Více informací je dostupných pouze"
 
-#: forum/templates/forum/profile/profile_readonly.html:180
+#: forum/templates/forum/profile/profile_readonly.html:177
 msgid "registered"
 msgstr "registrovaným"
 
-#: forum/templates/forum/profile/profile_readonly.html:180
+#: forum/templates/forum/profile/profile_readonly.html:177
 msgid "users."
 msgstr "uživatelům."
 
-#: forum/templates/forum/profile/profile_readonly.html:187
+#: forum/templates/forum/profile/profile_readonly.html:184
 msgid "Compatibility"
 msgstr "Kompatibilita"
 
-#: forum/templates/forum/profile/profile_readonly.html:204
+#: forum/templates/forum/profile/profile_readonly.html:201
 msgid "Report user"
 msgstr "Ohlásit uživatele"
 

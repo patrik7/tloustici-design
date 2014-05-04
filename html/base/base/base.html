@@ -98,7 +98,7 @@ Base - zakladna sablona
       <div class="container">
        
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-md-3 col-sm-4">
             {% block navigation_social %}
               <ul class="nav nav-pills nav-stacked" id="sidebar">
                 {% if user.is_superuser %}
@@ -157,7 +157,7 @@ Base - zakladna sablona
             {% endblock %}
           </div>
 
-          <div class="col-sm-9">
+          <div class="col-sm-8 col-md-9">
             {% include 'base/messages.html' %}
             {% block main %}
             {% endblock %}
