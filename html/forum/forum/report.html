@@ -28,16 +28,28 @@ Report
     {% trans 'If you wish to <b>add</b> any additional comments you may do so here.' %}
     </p>
 
-    {% include 'form.html' %}
-  </div>
+    <form action="/report/advertising" class="form-horizontal" method="POST">
+      {% csrf_token %}
 
+      <div class="form-group">
+        <div class="col-sm-12 text-left">
+          <textarea rows="5" name="note" id="id_note" placeholder="" cols="40" class=" form-control"></textarea>
+        </div>
+      </div>
+      <div class="form-group text-center">
+        <div class="">
+          <button type="submit" class="btn btn-green">{% trans 'Add note' %}</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 
 {% else %}
 
-<p>
-{% trans 'You need to click on the report button to report an abuse' %}
-</p>
+  <p>
+    {% trans 'You need to click on the report button to report an abuse' %}
+  </p>
 
 {% endif %}
 

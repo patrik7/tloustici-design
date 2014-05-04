@@ -18,7 +18,7 @@ RESULT=$?
 git stash pop -q
 
 d=`diff $LNGFILE /tmp/${LNGFILE##*/} | wc -l`
-if [ "$d" == "2" ]; then
+if [ "$d" == "4" ]; then
 	#no change besides the date
 	cp /tmp/${LNGFILE##*/} $LNGFILE
 fi
