@@ -39,6 +39,12 @@ background-color: #e3f3ff;
 2. Main
 *******************************************************************************/
 
+/* login screen */
+
+.login-link {
+  white-space: nowrap;
+}
+
 /* messages */
 .left-offset {
   margin-left: 33px;

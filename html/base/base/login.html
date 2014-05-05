@@ -20,13 +20,14 @@ Login / Prihlasenie
         {% csrf_token %}
         {{ login_form|bootstrap_horizontal:"col-xs-2" }}
 
-        <div class="">
-          <p>
-            <a class="recovery lead" href="{% url password_recovery %}">{% trans 'Forgot your password?' %}</a>
-            <a class="recovery-register lead" href="{% url register %}">{% trans 'Register for free' %}</a>
-          </p>
-
-          <div class="form-actions">
+        <div class="row">
+          <div class="col-md-4 col-md-push-8 text-right">
+            <small class="pull-right"> <!-- overflow to the left -->
+              <a class="login-link" href="{% url register %}">{% trans 'Register for free' %}</a><br/>
+              <a class="login-link" href="{% url password_recovery %}">{% trans 'Forgot your password?' %}</a>
+            </small>
+          </div>
+          <div class="col-md-4 col-push-4 text-centered">
             <input type="submit" class="btn btn-green" value="{% trans 'Log in' %}" />
           </div>
         </div>
