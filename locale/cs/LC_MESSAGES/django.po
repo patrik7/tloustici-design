@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-04 21:51+0200\n"
+"POT-Creation-Date: 2014-05-05 21:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -186,7 +186,7 @@ msgid "Log out"
 msgstr "Odhlásit se"
 
 #: base/context_processors.py:56 base/templates/base/email_base.html:42
-#: base/templates/base/login.html:30
+#: base/templates/base/login.html:31
 msgid "Log in"
 msgstr "Přihlásit se"
 
@@ -296,13 +296,13 @@ msgstr "Vyskytly se potíže při načítání dat"
 msgid "Log in and kick start your life!"
 msgstr "Přihlaš se a najdi své štěstí!"
 
-#: base/templates/base/login.html:25
-msgid "Forgot your password?"
-msgstr "Zapomněl jsi své heslo?"
-
 #: base/templates/base/login.html:26
 msgid "Register for free"
 msgstr "Registruj se zdarma"
+
+#: base/templates/base/login.html:27
+msgid "Forgot your password?"
+msgstr "Zapomněl jsi své heslo?"
 
 #: forum/forms.py:33
 msgid "Your username"
