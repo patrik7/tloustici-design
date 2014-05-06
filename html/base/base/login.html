@@ -21,15 +21,22 @@ Login / Prihlasenie
         {{ login_form|bootstrap_horizontal:"col-xs-2" }}
 
         <div class="row">
-          <div class="col-md-4 col-md-push-8 text-right">
+          <div class="col-sm-offset-4 col-sm-4 col-xs-12 text-centered">
+            <input type="submit" class="btn btn-green" value="{% trans 'Log in' %}" />
+          </div>
+          <div class="col-sm-4 text-right hidden-xs">
             <small class="pull-right"> <!-- overflow to the left -->
               <a class="login-link" href="{% url register %}">{% trans 'Register for free' %}</a><br/>
               <a class="login-link" href="{% url password_recovery %}">{% trans 'Forgot your password?' %}</a>
             </small>
           </div>
-          <div class="col-md-4 col-push-4 text-centered">
-            <input type="submit" class="btn btn-green" value="{% trans 'Log in' %}" />
+          <div class="col-xs-12 text-centered visible-xs" style="margin-top: 10px;">            
+            <small>
+              <a class="login-link" href="{% url register %}">{% trans 'Register for free' %}</a><br/>
+              <a class="login-link" href="{% url password_recovery %}">{% trans 'Forgot your password?' %}</a>
+            </small>
           </div>
+
         </div>
       </form>
     </div>
