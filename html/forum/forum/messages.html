@@ -176,8 +176,9 @@ Messagess origin
     function render_message(elem, e, unread) {
       var body = '';
 
-      body += '<div class="pull-right text-muted"><small>' + e.date + '</small></div>';
-      body += '<p class="message-text">' + e.text + '</p>';
+      body += '<small class="pull-right text-muted">' + e.date + '</small>';
+      body += '<p class="message-text col-xs-12">';
+      body += e.text + '</p>';
 
       var footer = '<div class="row">'
                    + '<div class="col-xs-12 text-right">'
@@ -197,10 +198,10 @@ Messagess origin
         '<div class="panel panel-default left-offset' + (unread ? ' unread' : '') + '" style="margin-bottom: 5px;">'
         + '<div class="panel-body" style="padding: 5px;">'
           + '<div class="row">'
-            + '<div class="col-xs-2 visible-sm visible-md visible-lg">'
+            + '<div class="col-sm-2 visible-sm visible-md visible-lg">'
               + '<img src="' + e.avatar + '" width="100%" class="img-circle" />'
             + '</div>'
-            + '<div class="col-xs-10">' + body + '</div>'
+            + '<div class="col-xs-12 col-sm-10">' + body + '</div>'
           + '</div>'
         + '</div>'
         + footer 
