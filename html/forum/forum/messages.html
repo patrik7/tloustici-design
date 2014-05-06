@@ -180,11 +180,11 @@ Messagess origin
       body += '<p class="message-text col-xs-12">';
       body += e.text + '</p>';
 
-      var footer = '<div class="row">'
+      var footer = ''
                    + '<div class="col-xs-12 text-right">'
                      + '<div class="btn-group btn-group-xs">';
       if (e.author != '{{user}}') {
-               footer += '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">'
+               footer += '<a class="text-muted dropdown-toggle" data-toggle="dropdown">'
                          + '{% trans 'Report' %} <span class="caret"></span></button>'
                        + '<ul class="dropdown-menu">'
                          + '<li><a href="{% url report 'sexual' %}?target_id=' + e.pk + '&target=Message">{% trans 'Sexual Remarks' %}</a></li>'
@@ -192,11 +192,11 @@ Messagess origin
                          + '<li><a href="{% url report 'abuse' %}?target_id=' + e.pk + '&target=Message">{% trans 'Other Abuse' %}</a></li>'
                        + '</ul>';
       }
-           footer += '</div></div></div>';
+           footer += '</div></div>';
 
       elem.append(
         '<div class="panel panel-default left-offset' + (unread ? ' unread' : '') + '" style="margin-bottom: 5px;">'
-        + '<div class="panel-body" style="padding: 5px;">'
+        + '<div class="panel-body">'
           + '<div class="row">'
             + '<div class="col-sm-2 visible-sm visible-md visible-lg">'
               + '<img src="' + e.avatar + '" width="100%" class="img-circle" />'
@@ -204,7 +204,7 @@ Messagess origin
             + '<div class="col-xs-12 col-sm-10">' + body + '</div>'
           + '</div>'
         + '</div>'
-        + footer 
+        + footer
       + '</div>');
 
     }
@@ -216,15 +216,15 @@ Messagess origin
                      + '<div class="btn-group btn-group-xs">';
 
       if (!e.blocked) {
-               footer += '<a href="{% url messages %}?block=' + e.other_user + '" class="btn btn-default" style="margin-bottom: 4px;"><span class="glyphicon glyphicon-ban-circle"></span> {% trans 'Block' %}</a>';
+               footer += '<a href="{% url messages %}?block=' + e.other_user + '" class="text-muted" style="margin-bottom: 4px;"><span class="glyphicon glyphicon-ban-circle"></span> {% trans 'Block' %}</a>';
       } else {
-               footer += '<a href="{% url messages %}?unblock=' + e.other_user + '" class="btn btn-default" style="margin-bottom: 4px;"><span class="glyphicon glyphicon-ban-circle"></span> {% trans 'Unblock' %}</a>';
+               footer += '<a href="{% url messages %}?unblock=' + e.other_user + '" class="text-muted" style="margin-bottom: 4px;"><span class="glyphicon glyphicon-ban-circle"></span> {% trans 'Unblock' %}</a>';
       }
 
          footer += '</div></div>';
 
-      body += '<div class="text-right text-muted" ><small>{% trans 'Last message' %}: ' + e.last_message + '</small></div>';
-      body += '<p>{% trans 'Conversation with' %} <a href="' + e.other_user_link + '">' + e.other_user + '</a>';
+      body += '<small class="pull-right text-muted">{% trans 'Last message' %}: ' + e.last_message + '</small>';
+      body += '<p class="col-xs-12">{% trans 'Conversation with' %} <a href="' + e.other_user_link + '">' + e.other_user + '</a>';
       if (e.unread > 0) {
         body += ' <span class="badge">' + e.unread + '</span>'; 
       }
@@ -234,12 +234,12 @@ Messagess origin
 
       $('#data').append(
         '<div id="conversation' + i + '" class="panel panel-default link-glow ' + e.html_class + '" style="margin-bottom: 5px;" onclick="' + link + '" >'
-        + '<div class="col-md-12">'
+        + '<div class="panel-body">'
           + '<div class="row">'
-            + '<div class="col-xs-2 visible-sm visible-md visible-lg">'
+            + '<div class="col-sm-2 visible-sm visible-md visible-lg">'
               + '<img src="' + e.avatar + '" width="100%" class="img-circle" />'
             + '</div>'
-            + '<div class="col-xs-10">' + body + '</div>'
+            + '<div class="col-sm-10 col-xs-12">' + body + '</div>'
           + '</div>'
         + '</div>'
         + footer 

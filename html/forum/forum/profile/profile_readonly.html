@@ -198,7 +198,7 @@ Profile read only
         <div class="col-xs-12 text-right">
           {% if user != profile %}
             <div class="btn-group btn-group-sm">
-              <a class="text-mute" data-toggle="dropdown">{% trans 'Report user' %} <span class="caret"></span></a>
+              <a class="text-muted dropdown-toggle" data-toggle="dropdown">{% trans 'Report user' %} <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="{% url report 'sexual' %}?target_id={{profile.forum_profile.id}}&target=Profile">{% trans 'Sexual Remarks' %}</a></li>
                 <li><a href="{% url report 'advertising' %}?target_id={{profile.forum_profile.id}}&target=Profile">{% trans 'Advertising' %}</a></li>
