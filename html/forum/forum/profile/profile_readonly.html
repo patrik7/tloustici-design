@@ -27,7 +27,7 @@ Profile read only
       
       <div class="panel-body">
         <div class="">
-          <div class="col-sm-push-8 col-sm-4">
+          <div class="col-md-push-8 col-md-4">
             <div style="position: relative; width: 160px; height: auto; margin-left: auto; margin-right: auto;">
               <img id="id_avatar" src="{{profile.forum_profile.avatar_url}}" width="160" height="160" class="img-circle{% if user == profile or user.is_superuser %} link-glow{% endif %}" {% if user == profile or user.is_superuser %}onclick="javascript:performClick(document.getElementById('id_avatarinput'))"{% endif %} />
 
@@ -46,7 +46,7 @@ Profile read only
             </div>
           </div>
 
-          <div class="col-sm-8 col-sm-pull-4">
+          <div class="col-md-8 col-md-pull-4">
             <h3>{{profile.username}} 
               {% if user == profile or user.is_superuser %}
                 <small>
