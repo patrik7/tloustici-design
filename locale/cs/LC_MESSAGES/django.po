@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-06 10:53+0200\n"
+"POT-Creation-Date: 2014-05-06 15:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -688,7 +688,8 @@ msgid "Please create a password so you can safely use the website."
 msgstr "Nyní už jen zbývá vyplnit nové heslo..."
 
 #: forum/tests.py:163 forum/tests.py:217
-#: forum/templates/registration/registration_further.html:143
+#: forum/templates/registration/registration_further.html:140
+#: forum/templates/registration/registration_further.html:148
 msgid "Follow the instructions sent to your email to finish the registration."
 msgstr ""
 "Pro úspěšné dokončení registrace je nutné kliknout na odkaz, který byl "
@@ -1305,12 +1306,12 @@ msgid "Change Password"
 msgstr "Změna hesla"
 
 #: forum/templates/forum/profile/profile_essentials.html:128
-#: forum/templates/registration/registration_further.html:169
+#: forum/templates/registration/registration_further.html:174
 msgid "public"
 msgstr "veřejné"
 
 #: forum/templates/forum/profile/profile_essentials.html:129
-#: forum/templates/registration/registration_further.html:170
+#: forum/templates/registration/registration_further.html:175
 msgid "hidden"
 msgstr "skryté"
 
