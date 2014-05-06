@@ -34,7 +34,7 @@ Basic JSON load scenario:
     <!-- First level, categories, are rendered on the server and it's not possibel to get back here thru JSON -->
 
     {% for category in categories %}
-      <div class="well big-faq">
+      <div class="white-well big-faq">
         <div class="row">
           <div class="col-md-2">
             <img src="{{category.image_url}}" class="img-max" />
@@ -142,7 +142,7 @@ Basic JSON load scenario:
       /* Render the index head, entries will be rendered later */
       var head_post = extra.breadcrumbs[extra.breadcrumbs.length - 1];
       $('#data').html(
-        '<div class="well big-faq"><div class="col-md-2">' +
+        '<div class="white-well big-faq"><div class="col-md-2">' +
           '<img src="' + head_post.avatar + '"  class="forum-picture img-circle"/>'
           +'</div>'
           +'<div class="col-md-7"><h3>' 

@@ -213,20 +213,27 @@ margin-bottom:10px;
 5. Homepage
 *******************************************************************************/
 
-.banner{
-    width: 602px;
+.white-well {
     background-color: #FFF;
     background-repeat: repeat-x;
-    margin: 0 auto;
     border: 1px solid #e3e3e3;
     border-radius: 0px;
     -webkit-border-radius: 0px;
     box-shadow: 0px 0px 10px #66b7fb;
+
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+}
+
+.banner{
+    width: 602px;
+    margin: 0 auto;
     font-weight: bold;
     font-size: 16px;
     min-height: 132px;
     padding: 27px;
-    }
+}
 
 .col-sm-3 nav nav-pills nav-stacked{ background-color:gray; }
 
@@ -376,20 +383,10 @@ div.activity-checkbox label.hover {
 *******************************************************************************/
 .feed-post{
     height:350px;
-    background-color: #FFF;
-    background-image: none;
-    border-radius: 0px;
-    -webkit-border-radius: 0px;
-    box-shadow: 0px 0px 10px #66b7fb;
     font-size: 16px;
     }
 
 .big-post{
-    background-color: #FFF;
-    background-image: none;
-    border-radius: 0px;
-    -webkit-border-radius: 0px;
-    box-shadow: 0px 0px 10px #66b7fb;
     font-size: 16px;
     }
 
@@ -480,11 +477,6 @@ font-size:21px;
 *******************************************************************************/
 
 .big-faq{
-    background-color: #FFF;
-    background-image: none;
-    border-radius: 0px;
-    -webkit-border-radius: 0px;
-    box-shadow: 0px 0px 10px #66b7fb;
     }
 
 .big-favorities{
