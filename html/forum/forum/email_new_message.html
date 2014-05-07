@@ -28,7 +28,7 @@ New email
 
         <br/><br/>
 
-        <a href="http://{{domain}}{% url messages %}?addressee={{from}}&utm_source=internal&utm_content=replylink&utm_medium=email&utm_campaign=message" style="background-color: #7bc021; box-shadow: inset 0px 2px 0px #d7ef3a; color: #FFF; display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; line-height: 1.428571429; text-align: center; white-space: nowrap; vertical-align: middle; cursor: pointer; background-image: none; border: 1px solid transparent; border-radius: 4px;font-family: inherit; letter-spacing: normal; word-spacing: normal; text-indent: 0px; text-shadow: none; box-sizing: border-box; text-decoration: none; text-transform: none;">{% trans 'Reply' %}</a>
+        <a href="http://{{domain}}{% url messages %}?addressee={{from}}&utm_source=internal&utm_content=replylink&utm_medium=email&utm_campaign=message" {% include 'base/email_calltoactionbutton.html' %}>{% trans 'Reply' %}</a>
       </td>
     </tr>  
   </tbody>
