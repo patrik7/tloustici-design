@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-07 19:38+0200\n"
+"POT-Creation-Date: 2014-05-07 19:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -398,7 +398,7 @@ msgstr "Datum narození"
 
 #: forum/forms.py:321 forum/tests.py:177
 msgid "You must be at least 14 years old"
-msgstr ""
+msgstr "Registrace je přístupná pouze uživatelům od 14 let"
 
 #: forum/forms.py:329
 msgid "Height has to be between 30 cm and 250 cm"
@@ -776,7 +776,7 @@ msgstr ""
 
 #: forum/views.py:90
 msgid "There was a problem sending the email"
-msgstr ""
+msgstr "E-mail nebyl odeslán. Omlouvǎme se za technické potíže, zkus to později."
 
 #: forum/views.py:103
 #, python-format
@@ -789,7 +789,7 @@ msgstr "Registrace"
 
 #: forum/views.py:168
 msgid "Failed to send the activation email"
-msgstr ""
+msgstr "Při odeslání potvrzovacího e-mailu nastal technický problém. Omlouváme se za případné potíže, zkuste registraci později."
 
 #: forum/views.py:224
 msgid "1) Activity"
@@ -885,7 +885,7 @@ msgstr "Obnovení hesla"
 msgid ""
 "Failed to send an email with the new password, your password was not "
 "changed, please try again later"
-msgstr ""
+msgstr "E-mail s novým heslem nebyl zaslán. Omlouváme se za technické potíže, změnu hesla zkus později."
 
 #: forum/views.py:811
 msgid "You are now subscribed to the replies."
@@ -1116,7 +1116,7 @@ msgid ""
 "You can change your password following the link below. (After you log in)"
 msgstr "Své heslo můžeš změnit na následující lince. (Po přihlášení)"
 
-#: forum/templates/forum/email_suggest.html:36
+#: forum/templates/forum/email_suggest.html:43
 msgid ""
 "This email was sent to you, as somebody you know filled out the "
 "recommendation form with your email."
@@ -1403,7 +1403,8 @@ msgid ""
 "      In order to finish the registration, please click on the following "
 "link.\n"
 "    "
-msgstr "\n"
+msgstr ""
+"\n"
 "Pro úspěšné dokončení registrace, prosím, klikni na tento odkaz.\n"
 "    "
 
