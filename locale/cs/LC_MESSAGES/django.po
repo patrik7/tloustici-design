@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-07 19:51+0200\n"
+"POT-Creation-Date: 2014-05-07 20:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -762,7 +762,7 @@ msgstr "Tvá odpověď byla uložena."
 
 #: forum/tests.py:786 forum/templates/forum/search.html:16
 msgid "Search Criteria"
-msgstr "Kritéria Vyhledávání"
+msgstr "Kritéria vyhledávání"
 
 #: forum/tests.py:863 forum/tests.py:884 forum/tests.py:910 forum/views.py:362
 msgid "User profile saved."
@@ -776,7 +776,8 @@ msgstr ""
 
 #: forum/views.py:90
 msgid "There was a problem sending the email"
-msgstr "E-mail nebyl odeslán. Omlouvǎme se za technické potíže, zkus to později."
+msgstr ""
+"E-mail nebyl odeslán. Omlouvǎme se za technické potíže, zkus to později."
 
 #: forum/views.py:103
 #, python-format
@@ -789,7 +790,9 @@ msgstr "Registrace"
 
 #: forum/views.py:168
 msgid "Failed to send the activation email"
-msgstr "Při odeslání potvrzovacího e-mailu nastal technický problém. Omlouváme se za případné potíže, zkuste registraci později."
+msgstr ""
+"Při odeslání potvrzovacího e-mailu nastal technický problém. Omlouváme se za "
+"případné potíže, zkuste registraci později."
 
 #: forum/views.py:224
 msgid "1) Activity"
@@ -885,7 +888,9 @@ msgstr "Obnovení hesla"
 msgid ""
 "Failed to send an email with the new password, your password was not "
 "changed, please try again later"
-msgstr "E-mail s novým heslem nebyl zaslán. Omlouváme se za technické potíže, změnu hesla zkus později."
+msgstr ""
+"E-mail s novým heslem nebyl zaslán. Omlouváme se za technické potíže, změnu "
+"hesla zkus později."
 
 #: forum/views.py:811
 msgid "You are now subscribed to the replies."

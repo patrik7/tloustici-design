@@ -25,7 +25,7 @@ Messagess origin
   
     <h3 class="">{% trans 'Write Private Message' %}</h3>
     <div id="new_message_form" class="panel panel-default padding-top">
-      {% include 'form.html' with form=new_form button='Send Private Message' name='new' %}
+      {% include 'form.html' with form=new_form button='Send Private Message' name='new' ga_c='messaging' ga_a='send message' %}
     </div>
 
 
