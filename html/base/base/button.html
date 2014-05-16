@@ -1,4 +1,4 @@
-<a href="{{url}}" class="btn {{extra_class}}" {% if ga %}onclick="gaTrackEvent('{{ga.0}}', '{{ga.1}}', '{{ga.2}}');"{% endif %}>
+<a href="{{url}}" class="btn {{extra_class}}" {% if ga %}onmousedown="gaTrackEvent('{{ga.0}}', '{{ga.1}}', '{{ga.2}}');"{% endif %}>
   {% if icon %}
     <span class="glyphicon glyphicon-{{icon}}"></span>&nbsp;<span class="hidden-inline-xs">
   {% endif %}

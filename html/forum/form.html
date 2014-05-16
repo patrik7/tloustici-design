@@ -17,7 +17,7 @@ Registracia form krok 2,3,4, Messages
 
   <div class="form-group text-center">
     <div class="">
-      <button type="submit" class="btn btn-green" name="{{name}}" {% if ga_c and ga_a %}onclick="gaTrackEvent('{{ga_c}}', '{{ga_a}}');"{% endif %}>{% trans button %}</button>
+      <button type="submit" class="btn btn-green" name="{{name}}" {% if ga_c and ga_a %}onmousedown="gaTrackEvent('{{ga_c}}', '{{ga_a}}', '{{button}}');"{% endif %}>{% trans button %}</button>
     </div>
   </div>
 
