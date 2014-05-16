@@ -16,11 +16,11 @@ Friend suggestion
     <div class="row">
       <div class="col-xs-6">
         <a href="{% url profile s.profile.user.username %}">
-          <img class="img img-circle img-responsive link-glow" src="{{s.profile.avatar_url}}">
+          <img class="img img-circle img-responsive link-glow" src="{{s.profile.avatar_url}}" onclick="gaTrackEvent('friend suggest', 'click', 'photo');">
         </a>
       </div>
       <div class="col-xs-6" style="text-align: right;">
-        <a href="{% url profile s.profile.user.username %}"><h3>{{s.profile.user.username}}</h3></a>
+        <a href="{% url profile s.profile.user.username %}" onclick="gaTrackEvent('friend suggest', 'click', 'login');"><h3>{{s.profile.user.username}}</h3></a>
         <small>{{s.profile.sex_verbose}}, {{s.profile.city}}</small>
         <div class="progress" style="margin-bottom: 10px;">
           <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{s.fitness.0}}" aria-valuemin="0" aria-valuemax="100" style="width: {{s.fitness.0}}%">{% trans 'Overall' %}
@@ -39,9 +39,8 @@ Friend suggestion
 
     <div class="row text-center">
         <div class="btn-group btn-group-xs text-right">
-          {% button 'Add to Favourites' 'favourites' icon='pushpin' get_param='add' get_value=s.profile.user.username%} 
-          {% button 'Send Message' 'messages' icon='envelope' get_param='addressee' get_value=s.profile.user.username%}
-<!--          {% button '' 'messages' icon='envelope' get_param='addressee' get_value=s.profile.user.username %} -->
+          {% button 'Add to Favourites' 'favourites' icon='pushpin' get_param='add' get_value=s.profile.user.username ga_category='friend suggest' %} 
+          {% button 'Send Message' 'messages' icon='envelope' get_param='addressee' get_value=s.profile.user.username ga_category='friend suggest' %}
         </div>
     </div>
   </div>

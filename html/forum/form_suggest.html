@@ -19,7 +19,7 @@ Form suggest - Doporucit priteli
         {% csrf_token %}
         <input type="hidden" name="redirect_url" value="{{request.path}}" >
         {{form_suggest|bootstrap_inline}}
-        <input type="submit" onclick="_trackEvent('suggesting', 'email submit');" class="btn btn-green input-sm" name="suggest" value="{% trans 'Send' %}" />
+        <input type="submit" onclick="gaTrackEvent('suggesting', 'email submit');" class="btn btn-green input-sm" name="suggest" value="{% trans 'Send' %}" />
       </form>
     </div>
      </div>
