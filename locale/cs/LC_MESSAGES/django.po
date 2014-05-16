@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-07 20:16+0200\n"
+"POT-Creation-Date: 2014-05-16 14:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -732,31 +732,31 @@ msgstr "Uživatelské jméno %s je již v seznamu"
 msgid "User %s was removed from the list"
 msgstr "Uživatel %s byl odebrán ze seznamu"
 
-#: forum/tests.py:455 forum/views.py:688
+#: forum/tests.py:455 forum/views.py:689
 #, python-format
 msgid ""
 "You have blocked user %s, he/she will not be able to send you messages "
 "anymore."
 msgstr "Uživatel %s byl zablokován, už od něj neobdržíš žádné zprávy."
 
-#: forum/tests.py:464 forum/views.py:697
+#: forum/tests.py:464 forum/views.py:698
 #, python-format
 msgid "You have unblocked user %s."
 msgstr "Uživatel %s již není blokován."
 
-#: forum/tests.py:599 forum/views.py:740
+#: forum/tests.py:599 forum/views.py:741
 msgid "Email with your new password was sent to"
 msgstr "E-mail s novým heslem byl zaslán na"
 
-#: forum/tests.py:708 forum/views.py:793
+#: forum/tests.py:708 forum/views.py:794
 msgid "Post was deleted."
 msgstr "Příspěvek byl smazaný"
 
-#: forum/tests.py:718 forum/views.py:791
+#: forum/tests.py:718 forum/views.py:792
 msgid "You can no longer delete the post."
 msgstr "Na tvůj příspěvek bylo dpovězeno, nemůže být již smazán"
 
-#: forum/tests.py:727 forum/views.py:829
+#: forum/tests.py:727 forum/views.py:830
 msgid "Your reply was saved."
 msgstr "Tvá odpověď byla uložena."
 
@@ -876,15 +876,15 @@ msgstr "Jméno"
 msgid "Education"
 msgstr "Vzdělání"
 
-#: forum/views.py:673
+#: forum/views.py:674
 msgid "Message sent."
 msgstr "Zpráva odeslána."
 
-#: forum/views.py:734 forum/templates/forum/password_recovery.html:17
+#: forum/views.py:735 forum/templates/forum/password_recovery.html:17
 msgid "Password Recovery"
 msgstr "Obnovení hesla"
 
-#: forum/views.py:742
+#: forum/views.py:743
 msgid ""
 "Failed to send an email with the new password, your password was not "
 "changed, please try again later"
@@ -892,15 +892,15 @@ msgstr ""
 "E-mail s novým heslem nebyl zaslán. Omlouváme se za technické potíže, změnu "
 "hesla zkus později."
 
-#: forum/views.py:811
+#: forum/views.py:812
 msgid "You are now subscribed to the replies."
 msgstr ""
 
-#: forum/views.py:814
+#: forum/views.py:815
 msgid "You have been unsubscribed from the replies to this post."
 msgstr ""
 
-#: forum/views.py:831
+#: forum/views.py:832
 msgid "Post not saved."
 msgstr "Příspěvek nebyl uložen"
 
