@@ -123,7 +123,7 @@ Basic JSON load scenario:
       var txt = '<a href="{% url forum_index %}">{% trans 'Forum' %}</a> &gt; ';
       for (var i = 0; i < extra.breadcrumbs.length; i++) {
         txt += '<a href="javascript:void(0)" onclick="change(\'' + extra.breadcrumbs[i].pk + '\');">';
-        txt += extra.breadcrumbs[i].text + '</a>';
+        txt += extra.breadcrumbs[i].text_shorter + '</a>';
         if (i < extra.breadcrumbs.length - 1) {
           txt += " &gt; ";
         }
@@ -142,17 +142,16 @@ Basic JSON load scenario:
       /* Render the index head, entries will be rendered later */
       var head_post = extra.breadcrumbs[extra.breadcrumbs.length - 1];
       $('#data').html(
-        '<div class="white-well big-faq"><div class="col-md-2">' +
-          '<img src="' + head_post.avatar + '"  class="forum-picture img-circle"/>'
-          +'</div>'
-          +'<div class="col-md-7"><h3>' 
-          + head_post.text 
-          +'</h3></div><div class="col-md-2">' 
-
-          + head_button
-
-          + '</div><div class="clearfix"></div></div>' +
-
+        '<div class="white-well big-faq" style="min-height:130px;">'
+        + '<div class="col-md-2">'
+          + '<img src="' + head_post.avatar + '"  class="forum-picture img-circle"/>'
+        + '</div>'
+        + '<div class="col-md-10">'
+          + '<p class="pull-right">' + head_button + '</p>'
+          + '<h3>' + head_post.text_short + '</h3>'
+        + '</div>'
+      + '</div>'
+      +
           /* Add a hidden form */
           '<div id="post_reply_head" class="panel panel-default ' + hide_form + '">' +
             add_form(head_post.pk) + 
@@ -179,7 +178,7 @@ Basic JSON load scenario:
       var user_link = 'http://{{domain}}/profile/' + e.user;
 
       footer =
-          '<div class="col-md-5 text-right">';
+          '';
 
       if (e.post_count > 0) {
         footer += '<small>' + e.post_count + ' '+ e.posts + '</small> ';
@@ -236,7 +235,7 @@ Basic JSON load scenario:
 
       }
 
-      footer += '</div></div></div>';
+      footer += '</div>';
 
       var offset = '';
       if (e.level == '4') {
@@ -257,7 +256,7 @@ Basic JSON load scenario:
       var shade_alternation = '';
       if (i % 2 == 1) shade_alternation = 'shade';
 
-      var avatar = '<img src="' + e.avatar + '" width="100%" class="img-circle img-max" />';
+      var avatar = '<img src="' + e.avatar + '" class="img-circle" style="max-width: 124px;" />';
       if (show_user != '') {
         avatar = '<a href="' + user_link + '">' + avatar + '</a>';
       }
@@ -265,15 +264,19 @@ Basic JSON load scenario:
       $('#entries').append(
         '<div class="panel panel-default big-favorities ' + offset + ' ' + shade_alternation + '">'
         + '<div class="panel-body link-glow" >'
-            + '<div class="col-md-2">'
-              + avatar
+          + '<div class="col-md-2">'
+            + avatar
+          + '</div>'
+          + '<div class="col-md-10">' 
+            + '<div class="pull-right">'
+              + footer
             + '</div>'
-            + '<div class="col-md-5">' 
+            + '<p>'
               + show_user
               + body
               + last_post
-            + '</div>'
-          + footer
+            + '</p>'
+          + '</div>'
         + '</div>'
       + '</div>');
 

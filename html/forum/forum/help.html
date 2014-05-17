@@ -11,14 +11,66 @@ FAQ - Otazky
 
 {% block main %}
   <div class="row">
-      <h2>{% trans 'Questions you need answers for' %}</h2>
+    <h2>{% trans 'Questions you need answers for' %}</h2>
       
     <div class="col-md-12 white-well big-faq" data-toggle="collapse" data-target="#text1">
-      <h3><span class="caret"></span>&nbsp;Jak hledat partnera?</h3>
-        <p id="text1" class="collapse in">
-          Napriek všeobecnému presvedčeniu nie je Lorem Ipsum len náhodný text. Jeho korene sú v časti klasickej latinskej literatúry z roku 45 pred n.l., takže má viac ako 2000 rokov. Richard McClintock, profesor latinčiny na Hampden-Sydney College vo Virgínii, hľadal jedno z menej určitých latinských slov, consectetur, z pasáže Lorem Ipsum, a ako vyhľadával výskyt tohto slova v klasickej literatúre, objavil jeho nepochybný zdroj. Lorem Ipsum pochádza z odsekov 1.10.32 a 1.10.33 Cicerovho diela "De finibus bonorum et malorum" (O najvyššom dobre a zle), napísaného v roku 45 pred n.l. Táto kniha je pojednaním o teórii etiky, a bola veľmi populárna v renesancii. Prvý riadok Lorem Ipsum, "Lorem ipsum dolor sit amet..", je z riadku v odseku 1.10.32.  
-        </p>
+      <h3><span class="caret"></span>&nbsp;{% trans 'How to search for partner?' %}</h3>
 
+      <div id="text1" class="collapse in">
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-4">
+            <a href="{% url search %}">
+              <img src="{{STATIC_URL}}images/screenshot_help_1.png" class="screenshot-help" />
+            </a>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-8"> 
+            <p>
+              <br><br>
+              {% blocktrans %}
+                Click on the 'Search' entry in the left sidebar menu.
+              {% endblocktrans %}
+            </p>
+          </div>
+        </div>
+
+        <p><br/></p>
+
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-8"> 
+            <p>
+              <br>
+              {% blocktrans %}
+                Select your search preference. Limit the search by sex and city.
+              {% endblocktrans %}
+            </p>
+          </div>
+
+          <div class="col-xs-6 col-sm-6 col-md-4">
+            <a href="{% url search %}">
+              <img src="{{STATIC_URL}}images/screenshot_help_2.png" class="screenshot-help" />
+            </a>
+          </div>
+        </div>
+
+        <p><br/></p>
+
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-4">
+            <a href="{% url search %}">
+              <img src="{{STATIC_URL}}images/screenshot_help_3.png" class="screenshot-help" />
+            </a>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-8"> 
+            <p>
+              <br>
+              {% blocktrans %}
+                You can choose to add people to you favourites list, send them a message. Or check their profile further by clicking on their username.
+              {% endblocktrans %}
+            </p>
+          </div>
+        </div>
+
+      </div>
     </div>
 
      <div class="col-md-12 white-well big-faq" data-toggle="collapse" data-target="#text2">

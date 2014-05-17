@@ -23,7 +23,7 @@ New email post
         </a>
       </td>
       <td style="padding-left: 20px;" >
-        {{post.body_html}}
+        {{post.body_html|safe}}
       </td>
     </tr>
   </tbody>
@@ -46,7 +46,7 @@ New email post
         </a>
       </td>
       <td style="padding-left: 20px;" >
-        {{post.parent.body_html}}
+        {{post.parent.body_html|safe}}
       </td>
     </tr>
   </tbody>

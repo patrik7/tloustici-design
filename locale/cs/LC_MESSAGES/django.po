@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-16 14:34+0200\n"
+"POT-Creation-Date: 2014-05-17 15:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -242,37 +242,37 @@ msgstr "se nenašel"
 msgid "Find partner to help you loose weight"
 msgstr "Najdi si parťáka na sport a zhubněte společně"
 
-#: base/templates/base/base.html:105
+#: base/templates/base/base.html:110
 msgid "Administration"
 msgstr "Administrace"
 
-#: base/templates/base/base.html:117
+#: base/templates/base/base.html:122
 #: forum/templates/registration/registration_front.html:23
 msgid "Get your lucky strike, take the first step and register!"
 msgstr "Nakopni konečně své štěstí, udělej první krok a zaregistruj&nbsp;se!"
 
-#: base/templates/base/base.html:121 forum/forms.py:130
+#: base/templates/base/base.html:126 forum/forms.py:130
 #: forum/templates/forum/email_suggest.html:15
 msgid "Create an Account"
 msgstr "Vytvořit účet"
 
-#: base/templates/base/base.html:127
+#: base/templates/base/base.html:132
 #: forum/templates/registration/registration_front.html:48
 msgid "Common interests"
 msgstr "Společné zájmy"
 
-#: base/templates/base/base.html:128
+#: base/templates/base/base.html:133
 #: forum/templates/registration/registration_front.html:49
 msgid "bubble_1_txt"
 msgstr ""
 "Najdi si partnera se stejným koníčkem, sportujte ve dvou a zhubněte společně!"
 
-#: base/templates/base/base.html:133
+#: base/templates/base/base.html:138
 #: forum/templates/registration/registration_front.html:53
 msgid "Mutual motivation"
 msgstr "Vzájemná motivace"
 
-#: base/templates/base/base.html:134
+#: base/templates/base/base.html:139
 #: forum/templates/registration/registration_front.html:54
 msgid "bubble_2_txt"
 msgstr ""
@@ -280,17 +280,21 @@ msgstr ""
 "podpora a společné zájmy jsou však silnou zbraní, jak dosáhnout svého cíle "
 "snadněji."
 
-#: base/templates/base/base.html:139
+#: base/templates/base/base.html:144
 #: forum/templates/registration/registration_front.html:58
 msgid "Useful tips"
 msgstr "Užitečné tipy"
 
-#: base/templates/base/base.html:140
+#: base/templates/base/base.html:145
 #: forum/templates/registration/registration_front.html:59
 msgid "bubble_3_txt"
 msgstr ""
 "Inspiruj se rady a tipy ostatních uživatelů v oblasti cvičení, zdravého "
 "vaření, diet nebo třeba možností sportu ve tvém okolí."
+
+#: base/templates/base/footer.html:46 forum/templates/forum/terms.html:6
+msgid "Terms and conditions"
+msgstr "Podmínky užívání"
 
 #: base/templates/base/loading.html:19
 msgid "There was a problem loading the data."
@@ -356,7 +360,7 @@ msgstr "Hesla se neshodují"
 msgid "Username already exists"
 msgstr "Uživatelské jméno již existuje"
 
-#: forum/forms.py:157
+#: forum/forms.py:157 forum/forms.py:446
 msgid "Sex"
 msgstr "Pohlaví"
 
@@ -412,7 +416,7 @@ msgstr "Váha neodpovídá reálným hodnotám"
 msgid "doesn't matter"
 msgstr "Nezáleží"
 
-#: forum/forms.py:447 forum/models.py:397
+#: forum/forms.py:447 forum/models.py:399
 msgid "City"
 msgstr "Město"
 
@@ -444,19 +448,19 @@ msgstr "Středoškolské vzdělání"
 msgid "Elementary School"
 msgstr "Základní vzdělání"
 
-#: forum/models.py:58 forum/templates/forum/index.html:219
+#: forum/models.py:58 forum/templates/forum/index.html:218
 #: forum/templates/forum/messages.html:190
 #: forum/templates/forum/profile/profile_readonly.html:203
 msgid "Sexual Remarks"
 msgstr "Sexuální obtěžování"
 
-#: forum/models.py:59 forum/templates/forum/index.html:220
+#: forum/models.py:59 forum/templates/forum/index.html:219
 #: forum/templates/forum/messages.html:191
 #: forum/templates/forum/profile/profile_readonly.html:204
 msgid "Advertising"
 msgstr "Nevyžádaná reklama"
 
-#: forum/models.py:60 forum/templates/forum/index.html:221
+#: forum/models.py:60 forum/templates/forum/index.html:220
 #: forum/templates/forum/messages.html:192
 #: forum/templates/forum/profile/profile_readonly.html:205
 msgid "Other Abuse"
@@ -466,12 +470,12 @@ msgstr "Ostatní"
 msgid "Parent"
 msgstr "Rodič"
 
-#: forum/models.py:76 forum/models.py:237 forum/models.py:238
-#: forum/models.py:309 forum/models.py:463
+#: forum/models.py:76 forum/models.py:239 forum/models.py:240
+#: forum/models.py:311 forum/models.py:465
 msgid "User"
 msgstr "Uživatel"
 
-#: forum/models.py:78 forum/models.py:311
+#: forum/models.py:78 forum/models.py:313
 msgid "Created"
 msgstr "Vytvořeno"
 
@@ -487,15 +491,15 @@ msgstr "Aktualizováno"
 msgid "Markup"
 msgstr "Markup"
 
-#: forum/models.py:82 forum/models.py:312
+#: forum/models.py:82 forum/models.py:314
 msgid "Message"
 msgstr "Zpráva"
 
-#: forum/models.py:83 forum/models.py:468
+#: forum/models.py:83 forum/models.py:470
 msgid "HTML version"
 msgstr "HTML verze"
 
-#: forum/models.py:84 forum/models.py:313
+#: forum/models.py:84 forum/models.py:315
 msgid "User IP"
 msgstr "Uživatelské IP"
 
@@ -533,140 +537,140 @@ msgid_plural "posts"
 msgstr[0] "příspěvek"
 msgstr[1] "příspěvky"
 
-#: forum/models.py:338
+#: forum/models.py:340
 msgid "New Message"
 msgstr "Nová zpráva"
 
-#: forum/models.py:338
+#: forum/models.py:340
 msgctxt "username"
 msgid "from"
 msgstr "od"
 
-#: forum/models.py:373 forum/models.py:383
+#: forum/models.py:375 forum/models.py:385
 msgid "Area"
 msgstr "Kraj"
 
-#: forum/models.py:374
+#: forum/models.py:376
 msgid "Areas"
 msgstr "Kraje"
 
-#: forum/models.py:383
+#: forum/models.py:385
 msgid "Area the city belongs to"
 msgstr "Kraj ke kterému město patří"
 
-#: forum/models.py:398
+#: forum/models.py:400
 msgid "Cities"
 msgstr "Města"
 
-#: forum/models.py:408 forum/templates/forum/friend_suggestion.html:34
+#: forum/models.py:410 forum/templates/forum/friend_suggestion.html:34
 msgid "Activity"
 msgstr "Aktivity"
 
-#: forum/models.py:409 forum/templates/forum/search.html:97
+#: forum/models.py:411 forum/templates/forum/search.html:97
 #: forum/templates/forum/profile/profile_essentials.html:53
 #: forum/templates/forum/profile/profile_readonly.html:124
 #: forum/templates/forum/profile/profile_readonly.html:193
 msgid "Activities"
 msgstr "Aktivity"
 
-#: forum/models.py:464
+#: forum/models.py:466
 msgid "city"
 msgstr "město"
 
-#: forum/models.py:465
+#: forum/models.py:467
 msgid "Language"
 msgstr "Jazyk"
 
-#: forum/models.py:466
+#: forum/models.py:468
 msgid "Avatar"
 msgstr "Fotka"
 
-#: forum/models.py:467
+#: forum/models.py:469
 msgid "Description"
 msgstr "Popis"
 
-#: forum/models.py:467
+#: forum/models.py:469
 msgid "Use few sentences to describe yourself, and who are you looking for."
 msgstr "Prozraď něco více o sobě, popiš koho hledáš"
 
-#: forum/models.py:469
+#: forum/models.py:471
 msgid "date of birth"
 msgstr "datum narození"
 
-#: forum/models.py:470
+#: forum/models.py:472
 msgid "sex"
 msgstr "pohlaví"
 
-#: forum/models.py:471
+#: forum/models.py:473
 msgid "height"
 msgstr "výška"
 
-#: forum/models.py:472
+#: forum/models.py:474
 msgid "weight"
 msgstr "váha"
 
-#: forum/models.py:473
+#: forum/models.py:475
 msgid "phone"
 msgstr "telefon"
 
-#: forum/models.py:474
+#: forum/models.py:476
 msgid "education"
 msgstr "vzdělání"
 
-#: forum/models.py:474
+#: forum/models.py:476
 msgid "The highest achieved education"
 msgstr "Nejvyšší dosažené vzdělání"
 
-#: forum/models.py:476
+#: forum/models.py:478
 msgid "searchable"
 msgstr "vyhledatelný"
 
-#: forum/models.py:476
+#: forum/models.py:478
 msgid ""
 "Decide if your profile should come up when others use the search function."
 msgstr "Zobrazovat se ostatním uživatelům při hledání"
 
-#: forum/models.py:485
+#: forum/models.py:487
 msgid "Message notification"
 msgstr "Upozornit na zprávy"
 
-#: forum/models.py:485
+#: forum/models.py:487
 msgid "Receive an email notification on incoming message"
 msgstr "Zasílat soukromné zprávy na e-mail"
 
-#: forum/models.py:486
+#: forum/models.py:488
 msgid "Forum subscription"
 msgstr "Předvolit upozornení na fóru"
 
-#: forum/models.py:486
+#: forum/models.py:488
 msgid "Subscribe to my forum posts by default"
 msgstr "Posílat notifikace na veškeré odpovědi v zúčastněných tématech fóra"
 
-#: forum/models.py:487
+#: forum/models.py:489
 msgid "Newsletter subscription"
 msgstr "Odoberat novinky"
 
-#: forum/models.py:487
+#: forum/models.py:489
 msgid "Subscribe to newsletter"
 msgstr "Přihlásit se k odběru novinek"
 
-#: forum/models.py:489
+#: forum/models.py:491
 msgid "Fans Count"
 msgstr "Počet Fanoušků"
 
-#: forum/models.py:492 forum/templates/forum/profile/profile_readonly.html:14
+#: forum/models.py:494 forum/templates/forum/profile/profile_readonly.html:14
 msgid "Profile"
 msgstr "Profil"
 
-#: forum/models.py:493
+#: forum/models.py:495
 msgid "Profiles"
 msgstr "Profily"
 
-#: forum/models.py:577
+#: forum/models.py:579
 msgid "note"
 msgstr "poznámka"
 
-#: forum/tests.py:79 forum/views.py:88
+#: forum/tests.py:79 forum/views.py:84
 #, python-format
 msgid "Email was sent to: %s, thanks for recommending us."
 msgstr "E-mail byl odeslán: %s, děkujeme za doporučení!"
@@ -732,49 +736,43 @@ msgstr "Uživatelské jméno %s je již v seznamu"
 msgid "User %s was removed from the list"
 msgstr "Uživatel %s byl odebrán ze seznamu"
 
-#: forum/tests.py:455 forum/views.py:689
+#: forum/tests.py:455 forum/views.py:688
 #, python-format
 msgid ""
 "You have blocked user %s, he/she will not be able to send you messages "
 "anymore."
 msgstr "Uživatel %s byl zablokován, už od něj neobdržíš žádné zprávy."
 
-#: forum/tests.py:464 forum/views.py:698
+#: forum/tests.py:464 forum/views.py:697
 #, python-format
 msgid "You have unblocked user %s."
 msgstr "Uživatel %s již není blokován."
 
-#: forum/tests.py:599 forum/views.py:741
+#: forum/tests.py:599 forum/views.py:740
 msgid "Email with your new password was sent to"
 msgstr "E-mail s novým heslem byl zaslán na"
 
-#: forum/tests.py:708 forum/views.py:794
+#: forum/tests.py:709 forum/views.py:793
 msgid "Post was deleted."
 msgstr "Příspěvek byl smazaný"
 
-#: forum/tests.py:718 forum/views.py:792
+#: forum/tests.py:719 forum/views.py:791
 msgid "You can no longer delete the post."
 msgstr "Na tvůj příspěvek bylo dpovězeno, nemůže být již smazán"
 
-#: forum/tests.py:727 forum/views.py:830
+#: forum/tests.py:728 forum/views.py:829
 msgid "Your reply was saved."
 msgstr "Tvá odpověď byla uložena."
 
-#: forum/tests.py:786 forum/templates/forum/search.html:16
+#: forum/tests.py:787 forum/templates/forum/search.html:16
 msgid "Search Criteria"
 msgstr "Kritéria vyhledávání"
 
-#: forum/tests.py:863 forum/tests.py:884 forum/tests.py:910 forum/views.py:362
+#: forum/tests.py:864 forum/tests.py:885 forum/tests.py:911 forum/views.py:362
 msgid "User profile saved."
 msgstr "Uživatelský profil byl uložen."
 
-#: forum/views.py:82
-msgid ""
-"You have already send too many invites for now, please try sending more "
-"later."
-msgstr ""
-
-#: forum/views.py:90
+#: forum/views.py:86
 msgid "There was a problem sending the email"
 msgstr ""
 "E-mail nebyl odeslán. Omlouvǎme se za technické potíže, zkus to později."
@@ -876,15 +874,15 @@ msgstr "Jméno"
 msgid "Education"
 msgstr "Vzdělání"
 
-#: forum/views.py:674
+#: forum/views.py:673
 msgid "Message sent."
 msgstr "Zpráva odeslána."
 
-#: forum/views.py:735 forum/templates/forum/password_recovery.html:17
+#: forum/views.py:734 forum/templates/forum/password_recovery.html:17
 msgid "Password Recovery"
 msgstr "Obnovení hesla"
 
-#: forum/views.py:743
+#: forum/views.py:742
 msgid ""
 "Failed to send an email with the new password, your password was not "
 "changed, please try again later"
@@ -892,15 +890,15 @@ msgstr ""
 "E-mail s novým heslem nebyl zaslán. Omlouváme se za technické potíže, změnu "
 "hesla zkus později."
 
-#: forum/views.py:812
+#: forum/views.py:811
 msgid "You are now subscribed to the replies."
 msgstr ""
 
-#: forum/views.py:815
+#: forum/views.py:814
 msgid "You have been unsubscribed from the replies to this post."
 msgstr ""
 
-#: forum/views.py:832
+#: forum/views.py:831
 msgid "Post not saved."
 msgstr "Příspěvek nebyl uložen"
 
@@ -1051,7 +1049,6 @@ msgstr "Na zprávu můžeš odpovědět na"
 #: forum/templates/forum/email_new_message.txt:21
 #: forum/templates/forum/email_new_post.txt:26
 #: forum/templates/forum/email_password_recovery.txt:23
-#: forum/templates/registration/email_activation.txt:23
 msgid "Best Regards"
 msgstr "S pozdravem"
 
@@ -1108,7 +1105,6 @@ msgstr ""
 "    "
 
 #: forum/templates/forum/email_password_recovery.txt:15
-#: forum/templates/registration/email_activation.txt:16
 msgid "Dear"
 msgstr "Drahý(á)"
 
@@ -1150,6 +1146,34 @@ msgstr "BMI"
 msgid "Questions you need answers for"
 msgstr "Nápověda"
 
+#: forum/templates/forum/help.html:17
+msgid "How to search for partner?"
+msgstr "Jak hledat parťáka?"
+
+#: forum/templates/forum/help.html:29
+msgid ""
+"\n"
+"                Click on the 'Search' entry in the left sidebar menu.\n"
+"              "
+msgstr ""
+
+#: forum/templates/forum/help.html:42
+msgid ""
+"\n"
+"                Select your search preference. Limit the search by sex and "
+"city.\n"
+"              "
+msgstr ""
+
+#: forum/templates/forum/help.html:66
+msgid ""
+"\n"
+"                You can choose to add people to you favourites list, send "
+"them a message. Or check their profile further by clicking on their "
+"username.\n"
+"              "
+msgstr ""
+
 #: forum/templates/forum/index.html:48
 #, python-format
 msgid ""
@@ -1158,6 +1182,10 @@ msgid ""
 "\">Last reaction</a> %(date)s by <a href=\"%(user_url)s\">%(user)s</a>\n"
 "                "
 msgstr ""
+"\n"
+"<a href=\"javascript:void(0)\" onClick=\"change('%(id)s');\">Poslední "
+"reakce</a> byla %(date)s od uživatele <a href=\"%(user_url)s\">%(user)s</a>\n"
+"  "
 
 #: forum/templates/forum/index.html:55
 msgid "Post count"
@@ -1185,28 +1213,31 @@ msgstr "Jsi v diskuzi"
 msgid "Start new discussion"
 msgstr "Začít novou diskuzi"
 
-#: forum/templates/forum/index.html:191
+#: forum/templates/forum/index.html:190
 msgid "Delete"
 msgstr "Vymazat"
 
-#: forum/templates/forum/index.html:194
+#: forum/templates/forum/index.html:193
 msgid "Read posts"
 msgstr "Číst příspěvky"
 
-#: forum/templates/forum/index.html:209
+#: forum/templates/forum/index.html:208
 msgid "Unsubscribe"
 msgstr "Neodebírat reakce"
 
-#: forum/templates/forum/index.html:211
+#: forum/templates/forum/index.html:210
 msgid "Subscribe"
 msgstr "Odebírat reakce"
 
-#: forum/templates/forum/index.html:254
+#: forum/templates/forum/index.html:253
 msgid ""
 "<a href=\"javascript:void(0)\" onClick=\"change(\\'' + e.last_post.id + "
 "'\\');\">Last reaction</a> ' + e.last_post.date + ' by <a href=\"/profile/' "
 "+ e.user + '/\">' + e.user + '</a>"
 msgstr ""
+"<a href=\"javascript:void(0)\" onClick=\"change(\\'' + e.last_post.id + "
+"'\\');\">Poslední reakce</a> byla ' + e.last_post.date + ' od <a href=\"/"
+"profile/' + e.user + '/\">' + e.user + '</a>"
 
 #: forum/templates/forum/messages.html:26
 msgid "Write Private Message"
@@ -1418,24 +1449,31 @@ msgid "Activate"
 msgstr "Aktivovat"
 
 #: forum/templates/registration/email_activation.txt:14
-msgid "Registration Completed"
+#, python-format
+msgid ""
+"\n"
+"Welcome %(username)s!\n"
 msgstr ""
+"\n"
+"Vítej %(username)s!\n"
 
-#: forum/templates/registration/email_activation.txt:18
-msgid "Thank you for registering on"
-msgstr "Děkujeme za registraci na"
-
-#: forum/templates/registration/email_activation.txt:18
-msgid "to complete the registration you need to activate your account within"
+#: forum/templates/registration/email_activation.txt:19
+#, python-format
+msgid ""
+"\n"
+"Thank you for registering on %(domain)s. We are looking forward to all the "
+"weight we will loose together!\n"
 msgstr ""
+"\n"
+"Děkujeme za registraci na %(domain)s a těšíme se na společně shozená kila!\n"
 
-#: forum/templates/registration/email_activation.txt:18
-msgid "days"
-msgstr "dní"
-
-#: forum/templates/registration/email_activation.txt:20
-msgid "Please follow the link below to complete the registration:"
+#: forum/templates/registration/email_activation.txt:23
+msgid ""
+"\n"
+"In order to finish the registration, please click on the following link.\n"
 msgstr ""
+"\n"
+"Pro úspěšné dokončení registrace, prosím, klikni na tento odkaz.\n"
 
 #: forum/templates/registration/registration_disallowed.html:18
 msgid "Try again later, please."
@@ -1464,6 +1502,12 @@ msgstr "Nahrát obrázek"
 #: forum/templates/registration/registration_further.html:128
 msgid "I will upload my picture later"
 msgstr "Své foto nahraji později"
+
+#~ msgid "Thank you for registering on"
+#~ msgstr "Děkujeme za registraci na"
+
+#~ msgid "days"
+#~ msgstr "dní"
 
 #~ msgid "Activation Failed"
 #~ msgstr "Aktivace Zlyhala"

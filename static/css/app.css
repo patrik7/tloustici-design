@@ -32,12 +32,27 @@ Media querry
 }
 
 html {
-background-color: #e3f3ff;
+  background-color: #e3f3ff;
+  overflow-y: scroll;
 }
 
 /******************************************************************************
 2. Main
 *******************************************************************************/
+
+/* help */
+.screenshot-help {
+  border-radius: 15px;
+  max-width: 80%;
+
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 16px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 16px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 16px rgba(82, 168, 236, 0.6);
+  outline: 0;
+  outline: thin dotted \9;
+
+}
 
 /* login screen */
 
@@ -410,7 +425,9 @@ font-size:21px;
     margin-bottom:20px;
     border-bottom: 4px solid #00aedf; }
     .article-image img{
-    width:100%;
+      width:100%;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
     }
 
 
@@ -423,7 +440,9 @@ font-size:21px;
     margin-bottom:20px;
     border-bottom: 4px solid #00aedf; }
     .article-image2 img{
-    width:100%;
+      width:100%;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
     }
 
 .article-text{

@@ -23,6 +23,11 @@ Base - zakladna sablona
     <meta property="og:description" content="{% block og_description %}{% trans 'Find partner to help you loose weight' %}{% endblock %}">
     <meta property="og:image" content="{% block og_image%}{{STATIC_URL}}images/hubneme-logo-fb.png{% endblock %}">
 
+    {% if caption_prefix == "UAT - " %}
+      <meta name="GOOGLEBOT" content="NOINDEX, NOFOLLOW" />
+      <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+    {% endif %}
+
     <meta property="fb:admins" content="721894314" />
 
     <!-- TODO -->
@@ -183,6 +188,7 @@ Base - zakladna sablona
       <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
       <script src="{{STATIC_URL}}js/alert.js"></script>
       <script src="{{STATIC_URL}}js/icheck.min.js"></script>
+      <script src="{{STATIC_URL}}js/retina.min.js"></script>
       {% if bmi %}<script src="{{STATIC_URL}}js/bmi.js"></script>{% endif %}
       
     {% endblock %}

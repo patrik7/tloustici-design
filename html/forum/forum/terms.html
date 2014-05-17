@@ -1,35 +1,90 @@
-Provozovatel serveru hubnemevedvou.cz (dále jen Server) s URL adresou http://www.hubnemevedvou.cz je oprávněným provozovatelem a správcem Serveru (dále jen Správce). Správce poskytuje služby, které umožňují uživatelům vkládat na Server textové, obrazové a zvukové informace (dále jen Data). Služby Serveru umožňují tyto informace zobrazovat, zasílat, přehrávat, mazat nebo s nimi jinak dále pracovat. Při používání jednotlivých služeb a produktů může Server využívat nabízených služeb propojených serverů. Služby usnadňují uživateli i přístup na další servery provozované Správcem.
+{% extends 'base/base.html' %}
 
+{% load i18n %}
+
+{% block main %}
+<h3>{% trans 'Terms and conditions' %}</h3>
+
+<p>
+Provozovatel serveru hubnemevedvou.cz (dále jen Server) s URL adresou http://hubnemevedvou.cz je oprávněným provozovatelem a správcem Serveru (dále jen Správce). Správce poskytuje služby, které umožňují uživatelům vkládat na Server textové, obrazové a zvukové informace (dále jen Data). Služby Serveru umožňují tyto informace zobrazovat, zasílat, přehrávat, mazat nebo s nimi jinak dále pracovat. Při používání jednotlivých služeb a produktů může Server využívat nabízených služeb propojených serverů. Služby usnadňují uživateli i přístup na další servery provozované Správcem.
+</p>
+
+<p>
 Uživatelem služeb Serveru je každá osoba, která Server používá, při využívání služeb tohoto Serveru přistoupila k těmto Podmínkám; nebo každá osoba, která se v souladu s těmito Podmínkami zaregistruje a/nebo se již zaregistrovala v rámci služeb Serveru. Podmínkou pro vstup či využití služeb Serveru je přistoupení uživatele k Podmínkám. Uživatel, který před zveřejněním těchto Podmínek přistoupil k předchozím platným podmínkám a nadále se s odvoláním na výše uvedené Podmínky přihlašuje, má se za to, že přistoupil k platným novelizovaným Podmínkám. Přistoupením k Podmínkám uživatel přistupuje k těmto Podmínkám a akceptuje veškerá jejich ustanovení.
+</p>
 
+<p>
 Při využití služeb Serveru je uživatel povinen uvést pouze platnou emailovou adresu, popř. další údaje požadované správcem, které nemají osobní povahu, nejsou v rozporu se zák.č. 101/2000 Sb., o ochraně osobních údajů, a které jsou nutné pro zařazení Dat do příslušné kategorie. Uživatel, který uvedl cizí e-mailovou adresu bere na vědomí, že nese plnou odpovědnost za škody, které tak způsobí jiné osobě, jejíž emailovou adresu při registraci uvedl jakož i za škody způsobené Správci. Správce nezodpovídá za zneužití jakékoliv e-mailové adresy jinou osobou v rámci registrace na Serveru. Uživatel služeb Serveru s tímto výslovně souhlasí.
+</p>
 
+<p>
 Pro Data, která uživatel na Server vkládá platí určité pokyny a omezení. Tyto pokyny jsou zveřejněny přímo na stránkách Serveru, prostřednictvím nichž uživatel Data vkládá. Uživatel je povinen tyto pokyny respektovat.
+</p>
+
+<p>
 Kromě případů výslovně uvedených v těchto Podmínkách uživatel nesmí upravovat, kopírovat, distribuovat, předávat, zobrazovat, provádět, reprodukovat, publikovat, licencovat, převádět nebo prodávat jakékoli informace, software, produkty nebo služby získané ze služeb Serveru ani z nich vytvářet odvozená díla. Uživatel není oprávněn využívat služeb Serveru k jakýmkoli účelům odporujícím zákonům nebo těmto Podmínkám. Uživatel nesmí služby Serveru využívat způsobem, který by mohl poškodit, znemožnit, přetížit nebo zhoršit funkci serverů provozovaných Správcem nebo jeho partnery nebo rušit používání těchto serverů nebo služeb Serveru jinými osobami. Uživatel nesmí využivat služeb serveru k vlastnímu obohacení či komerčním účelům bez povolení Provozovatele, či jakýmkoli způsobem získávat ani se pokoušet získávat jakékoli materiály či informace týkající se služeb Serveru, které nejsou (nebyly) veřejně zpřístupněny nebo poskytnuty prostřednictvím serverů provozovaných Správcem.
+</p>
 
+<p>
 Uživatel tímto vyslovuje souhlas s tím, že služby Serveru mohou zahrnovat propojení na jiné webové servery (dále jen Propojené servery). Propojené servery nejsou kontrolovány správcem a tento není zodpovědný za obsah žádného propojeného serveru, ani za obsah žádného propojení obsaženého na stránkách Propojených serverů, ani za žádné změny či aktualizace Propojených serverů. Správce není zodpovědný za webcasting ani za žádnou jinou formu přenosu přijatého od jakéhokoli Propojeného serveru. Zahrnutí těchto propojení do služeb Serveru neznamená, že by Správce schvaloval obsah těchto serverů nebo byl v jakémkoli spojení s jejich provozovateli. Uživatel nese odpovědnost za to, že se seznámil s podmínkami, za kterých je možné tyto servery používat a je odpovědný za dodržování těchto podmínek.
+</p>
 
+<p>
 Na tomto Serveru nejsou shromažďována žádná data osobní povahy, tak jak jsou definována v zák.č. 101/2000 Sb., o ochraně osobních údajů. Kontaktním pojítkem je pouze e-mailová adresa uživatele, popřípadě mobilní telefonní číslo v zakódovaném tvaru, vždy ve spojitosti s heslem, které volí uživatel. Tímto způsobem je vyloučena možnost manipulace s vloženými daty uživatelů. Na přání uživatele (i bez udání důvodu), budou jím vložená data vymazána z databáze. Správce prohlašuje, že podnikne veškerá možná, tj. t.č. známá opatření, aby Data zabezpečil před neoprávněnými zásahy třetích osob.
+</p>
 
+<p>
 Uživatel bere na vědomí, že Data, která dobrovolně poskytne vložením na Server mohou být použita třetí osobou. Správce však nenese žádnou odpovědnost za případné neoprávněné zásahy třetích osob, v důsledku nichž tyto osoby získají přístup k datům jednotlivých uživatelů anebo k jejich účtům anebo k příslušné databázi Správce či jeho partnerů využívajících služeb Serveru a tyto údaje neoprávněně použijí, využijí, zneužijí nebo je zpřístupní třetím osobám. Uživatel prohlašuje, že si je v této souvislosti vědom rizik pro něho vyplývajících z výše uvedených neoprávněných zásahů třetích osob.
+</p>
 
+<p>
 Uživatel tímto vyslovuje souhlas se zasíláním e-mailů do schránky, jejíž adresu uvedl v souvislosti s využíváním služeb Serveru. Původcem těchto e-mailů je Správce Serveru, e-mail může mít informační nebo reklamní charakter. Správce nebo jím pověřený obchodní zástupce má právo zasílat na e-mailové adresy uvedené při registraci obchodní sdělení inzerentů Serveru (viz. seznam zde) nebo Správce. Takto zaslaný e-mail splňuje veškeré podmínky Zákona o regulaci reklamy č. 138/2002 Sb. a Zákona o některých službách informační společnosti č. 480/2004 Sb, a nelze jej považovat za nevyžádanou reklamu - spam. Nesouhlas se zasíláním těchto e-mailů může uživatel projevit oznámením správci serveru na e-mail nezasilat@libimseti.cz. V předmětu zprávy musí uživatel uvést NEZASÍLAT. V případě, že Správce zjistí, nebo mu bude oznámeno a prokazatelně doloženo, že došlo k zneužití cizí e-mailové adresy při registraci do služeb Serveru, odstraní Správce tento e-mail ze své databáze. Správce odstraní vždy pouze konkrétní e-mail, ne celou skupinu e-mailů definovanou doménou druhého řádu. 10. Uživatel bere na vědomí, že nedílnou součástí Serveru je reklama inzerentů serveru a nelze ji považovat za nevyžádanou nebo požadovat její odstranění. 11. Pokud uživatel v souvislosti s využíváním služeb Serveru předá své názory nebo připomínky (elektronicky, poštou či jiným způsobem), poskytuje tím Správci následující práva k těmto výsledkům jeho činnosti a to i tehdy, pokud jsou dílem ve smyslu zák. č. 121/2000 Sb., o právu autorském (dále jen Příspěvky): používat, upravovat, kopírovat, distribuovat, předávat, veřejně vystavovat, veřejně provádět, reprodukovat, publikovat, sublicencovat, přenášet nebo prodávat jakékoli takové komunikace a vytvářet z nich odvozená díla, sublicencovat třetí straně neomezená práva k provádění kterýchkoli předchozích práv udělených ve vztahu k těmto Příspěvkům. Na základě předání těchto příspěvků nevzniká Správci povinnost tyto jakkoli užívat a je oprávněn tyto příspěvky kdykoli na základě vlastního uvážení odstranit z webových stránek. Za poskytnutí oprávnění Správce k příspěvkům nenáleží uživateli úplata. Honorářem se v tomto případě rozumí strojový čas Serveru, který provozovatel vyhradil pro tuto fotografii a pomocí něhož mohou ostatní uživatele Internetu fotku shlédnout, hodnotit její obsah zábavnou formou a dále s ní pracovat.
+</p>
 
+<p>
 Správce je oprávněn sledovat údaje z profilu služeb Serveru jednotlivých uživatelů pro statistické účely. Je oprávněn informovat Propojené servery o statistických údajích týkajících se uživatelů služeb Serveru. Je oprávněn tyto informace zveřejňovat. Tyto sestavy nebudou obsahovat žádné údaje, na základě kterých by mohl být uživatel kontaktován bez jeho předchozího požadavku nebo popř. identifikován. Uživatel služeb Serveru s tímto výslovně souhlasí.
+</p>
+
+<p>
 Správce je oprávněn odtajnit údaje uživatele Serveru, bude-li to nezbytné z hlediska dodržení zákona nebo v rámci soudních či správních řízení vedených se Správcem, nebo proti Správci; aby byla chráněna či bráněna práva Správce nebo provozovatelů Propojených serverů; nebo aby za daných podmínek byla chráněna osobní bezpečnost uživatelů produktů Správce, poskytovaných v rámci tohoto Serveru nebo třetích osob.
+</p>
 
+<p>
 Správce prohlašuje, že zavedení služeb Serveru věnuje a bude věnovat s vynaložením maximálního úsilí a s odbornou péčí, tak aby minimalizoval veškerá případná rizika, která by při řádném využívání služby Serveru mohla vzniknout uživatelům či třetím osobám.
+</p>
+
+<p>
 Správce neodpovídá za činnost uživatelů služeb Serveru ani za způsob jakým služby Serveru využívají. Správce nenese žádnou odpovědnost za případné zneužití služeb Serveru uživateli či třetími osobami.
+</p>
 
+<p>
 Správce nenese žádnou odpovědnost za škody, které by uživateli nebo třetím osobám přímo, nepřímo či náhodně vznikly v důsledku nebo v souvislosti s využíváním služeb Serveru. Neodpovídá za škody, které by uživatelům nebo třetím osobám vznikly v důsledku nemožnosti využívání služeb Serveru nebo v přímé či nepřímé souvislosti s touto skutečností.
+</p>
 
+<p>
 Správce je oprávněn bez souhlasu Uživatelů a i bez jejich předchozího oznámení služby Serveru upravovat nebo inovovat.
+</p>
 
+<p>
 Správce je oprávněn kdykoli měnit ustanovení těchto Podmínek. Změna podmínek je platná a účinná okamžikem zveřejnění na stránkách Serveru. Tyto změny budou zapracovány do textu a budou zveřejněny ve formě úplného znění Podmínek. Je v zájmu uživatele, aby průběžně sledoval znění Podmínek.
+</p>
 
+<p>
 Uživatel je povinen pravidelně se seznamovat se změnami Podmínek. Bude-li uživatel pokračovat v používání služeb Serveru po provedení těchto změn Správcem, má se za to, že se změnami Podmínek bez výhrad souhlasí.
+</p>
+
+<p>
 Služby Serveru mohou odesílat uživatelům Serveru zprávy formou elektronické pošty, SMS nebo MMS, jimiž uživatel dostává požadované informace. Správce je oprávněn elektronickou poštou informovat uživatele o službách Serveru, funkcích, provozu, novinkách atd.
+</p>
 
-Dotazy, podněty a případné stížnosti týkající se služeb Serveru nebo těchto Podmínek mohou uživatelé zasílat prostřednictvím služby KONTAKT v patičce stránky.
+<p>
+Dotazy, podněty a případné stížnosti týkající se služeb Serveru nebo těchto Podmínek mohou uživatelé zasílat prostřednictvím kontaktního e-mailu v patičce stránky.
+</p>
 
+<p>
 Tyto Podmínky nabývají platnosti a účinnosti jejich zveřejněním.
+</p>
+
+{% endblock %}
+
+
