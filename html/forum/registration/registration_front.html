@@ -12,6 +12,7 @@ Registration front
 
 {% block main %}
 
+
   <div class="text-center">
 
   {% if not user.is_authenticated %}
@@ -58,6 +59,28 @@ ke společným sportovním aktivitám, tak jsi rozhodně na správném místě.
             <h2>{% trans 'Useful tips' %}</h2>
             <p>{% trans 'bubble_3_txt' %}</p>
         </div>
+
+  {% comment %} SEO {% endcomment %}
+  <div class="collapsed" data-toggle="collapse" data-target="#text1">
+    <h3 style="height: 0px; overflow:hidden;"><span class="caret"></span>Zaujímavé odkazy</h3>
+
+    <div id="text1" class="collapse" style="height: 0px;">
+      <h2>Exkluzivní italská značková kosmetika PUPA</h2>
+      <p>
+        <a href="http://www.kosmetikamilano.cz">Exkluzivní italská značková kosmetika PUPA</a>
+      </p>
+
+      <h2>Tepperwein - Odkyselení organismu</h2>
+      <p>
+        <a href="http://www.tepperwein.cz/">Tepperwein - Odkyselení organismu</a>
+      </p>
+
+      <h2>Solartour - dovolenka leto 2014</h2>
+      <p>
+        <a href="http://www.solartour.sk">Solartour - dovolenka leto 2014</a>
+      </p>
+    </div>
+  </div>
 
 
 
