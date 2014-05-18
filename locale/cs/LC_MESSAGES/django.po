@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-17 15:10+0200\n"
+"POT-Creation-Date: 2014-05-18 10:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -104,7 +104,7 @@ msgstr "Url"
 msgid "Article"
 msgstr "Článek"
 
-#: articles/models.py:38 base/context_processors.py:48 forum/tests.py:561
+#: articles/models.py:38 base/context_processors.py:48 forum/tests.py:586
 msgid "Articles"
 msgstr "Články"
 
@@ -156,7 +156,7 @@ msgstr "Dosud nezveřejněné"
 msgid "Read More"
 msgstr "Číst více"
 
-#: base/context_processors.py:41 forum/tests.py:564
+#: base/context_processors.py:41 forum/tests.py:589
 msgid "Personal profile"
 msgstr "Osobní profil"
 
@@ -164,15 +164,15 @@ msgstr "Osobní profil"
 msgid "Favourites"
 msgstr "Oblíbené"
 
-#: base/context_processors.py:43 forum/tests.py:565
+#: base/context_processors.py:43 forum/tests.py:590
 msgid "Search for Partner"
 msgstr "Hledat parťáka"
 
-#: base/context_processors.py:44 forum/tests.py:566
+#: base/context_processors.py:44 forum/tests.py:591
 msgid "Messages"
 msgstr "Zprávy"
 
-#: base/context_processors.py:49 forum/tests.py:560
+#: base/context_processors.py:49 forum/tests.py:585
 #: forum/templates/forum/index.html:123
 msgid "Forum"
 msgstr "Fórum"
@@ -238,7 +238,7 @@ msgid "was not found!"
 msgstr "se nenašel"
 
 #: base/templates/base/base.html:17 base/templates/base/base.html.py:23
-#: forum/templates/registration/registration_front.html:19
+#: forum/templates/registration/registration_front.html:20
 msgid "Find partner to help you loose weight"
 msgstr "Najdi si parťáka na sport a zhubněte společně"
 
@@ -247,7 +247,7 @@ msgid "Administration"
 msgstr "Administrace"
 
 #: base/templates/base/base.html:122
-#: forum/templates/registration/registration_front.html:23
+#: forum/templates/registration/registration_front.html:24
 msgid "Get your lucky strike, take the first step and register!"
 msgstr "Nakopni konečně své štěstí, udělej první krok a zaregistruj&nbsp;se!"
 
@@ -257,23 +257,23 @@ msgid "Create an Account"
 msgstr "Vytvořit účet"
 
 #: base/templates/base/base.html:132
-#: forum/templates/registration/registration_front.html:48
+#: forum/templates/registration/registration_front.html:49
 msgid "Common interests"
 msgstr "Společné zájmy"
 
 #: base/templates/base/base.html:133
-#: forum/templates/registration/registration_front.html:49
+#: forum/templates/registration/registration_front.html:50
 msgid "bubble_1_txt"
 msgstr ""
 "Najdi si partnera se stejným koníčkem, sportujte ve dvou a zhubněte společně!"
 
 #: base/templates/base/base.html:138
-#: forum/templates/registration/registration_front.html:53
+#: forum/templates/registration/registration_front.html:54
 msgid "Mutual motivation"
 msgstr "Vzájemná motivace"
 
 #: base/templates/base/base.html:139
-#: forum/templates/registration/registration_front.html:54
+#: forum/templates/registration/registration_front.html:55
 msgid "bubble_2_txt"
 msgstr ""
 "Ztratit nějaké ty kila navíc znamená pro mnohé nelehký úkol. Vzájemná "
@@ -281,12 +281,12 @@ msgstr ""
 "snadněji."
 
 #: base/templates/base/base.html:144
-#: forum/templates/registration/registration_front.html:58
+#: forum/templates/registration/registration_front.html:59
 msgid "Useful tips"
 msgstr "Užitečné tipy"
 
 #: base/templates/base/base.html:145
-#: forum/templates/registration/registration_front.html:59
+#: forum/templates/registration/registration_front.html:60
 msgid "bubble_3_txt"
 msgstr ""
 "Inspiruj se rady a tipy ostatních uživatelů v oblasti cvičení, zdravého "
@@ -324,7 +324,7 @@ msgstr "E-mail"
 msgid "The email you have used for registration"
 msgstr "Vložit e-mailovou adresu"
 
-#: forum/forms.py:43 forum/tests.py:602
+#: forum/forms.py:43 forum/tests.py:627
 msgid "Incorrect login name, or email."
 msgstr "Nesprávné uživatelské jméno nebo e-mail"
 
@@ -348,11 +348,11 @@ msgstr "Vložit nové heslo"
 msgid "New password (again)"
 msgstr "Potvrdit nové heslo"
 
-#: forum/forms.py:90 forum/tests.py:577
+#: forum/forms.py:90 forum/tests.py:602
 msgid "Incorrect password"
 msgstr "Nesprávné heslo"
 
-#: forum/forms.py:100 forum/tests.py:585
+#: forum/forms.py:100 forum/tests.py:610
 msgid "Passwords do not match"
 msgstr "Hesla se neshodují"
 
@@ -748,27 +748,27 @@ msgstr "Uživatel %s byl zablokován, už od něj neobdržíš žádné zprávy.
 msgid "You have unblocked user %s."
 msgstr "Uživatel %s již není blokován."
 
-#: forum/tests.py:599 forum/views.py:740
+#: forum/tests.py:624 forum/views.py:740
 msgid "Email with your new password was sent to"
 msgstr "E-mail s novým heslem byl zaslán na"
 
-#: forum/tests.py:709 forum/views.py:793
+#: forum/tests.py:734 forum/views.py:793
 msgid "Post was deleted."
 msgstr "Příspěvek byl smazaný"
 
-#: forum/tests.py:719 forum/views.py:791
+#: forum/tests.py:744 forum/views.py:791
 msgid "You can no longer delete the post."
 msgstr "Na tvůj příspěvek bylo dpovězeno, nemůže být již smazán"
 
-#: forum/tests.py:728 forum/views.py:829
+#: forum/tests.py:753 forum/views.py:829
 msgid "Your reply was saved."
 msgstr "Tvá odpověď byla uložena."
 
-#: forum/tests.py:787 forum/templates/forum/search.html:16
+#: forum/tests.py:812 forum/templates/forum/search.html:16
 msgid "Search Criteria"
 msgstr "Kritéria vyhledávání"
 
-#: forum/tests.py:864 forum/tests.py:885 forum/tests.py:911 forum/views.py:362
+#: forum/tests.py:889 forum/tests.py:910 forum/tests.py:936 forum/views.py:362
 msgid "User profile saved."
 msgstr "Uživatelský profil byl uložen."
 
@@ -1479,7 +1479,7 @@ msgstr ""
 msgid "Try again later, please."
 msgstr "Zkus to prosím později."
 
-#: forum/templates/registration/registration_front.html:19
+#: forum/templates/registration/registration_front.html:20
 msgid "Does overweight bother you?"
 msgstr "Trápí Tě kila navíc?"
 
