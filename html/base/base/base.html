@@ -34,16 +34,12 @@ Base - zakladna sablona
     <link rel="shortcut icon" href="{{STATIC_URL}}images/favicon.png" />
 
     <title>{{caption_prefix}}{% block caption %}Hubneme ve dvou{% endblock %}</title>
-    <link href="http://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
 
     <!-- Bootstrap core CSS -->
     <link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet" />
     <link href="{{STATIC_URL}}css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="{{STATIC_URL}}css/other.css" rel="stylesheet" />
     <link href="{{STATIC_URL}}css/app.css" rel="stylesheet" />
-    <link href="{{STATIC_URL}}css/switch.css" rel="stylesheet" />
-    <link href="{{STATIC_URL}}css/skins/flat/blue.css" rel="stylesheet" />
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -85,7 +81,7 @@ Base - zakladna sablona
             <span class="icon-bar"></span>
           </button>
 
-          <a class="" href="{% if user.is_atenticated %}{% url articles %}{% else %}{% url register%}{% endif %}"><img alt="{% if user.is_atenticated %}{% trans 'Articles' %}{% else %}{% trans 'Register' %}{% endif %}" src="{{STATIC_URL}}images/hubneme-logo.png" /></a>
+          <a class="" href="{% if user.is_authenticated %}{% url articles %}{% else %}{% url register%}{% endif %}"><img alt="{% if user.is_authenticated %}{% trans 'Articles' %}{% else %}{% trans 'Register' %}{% endif %}" src="{{STATIC_URL}}images/hubneme-logo.png" /></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -181,6 +177,12 @@ Base - zakladna sablona
     {% include 'base/footer.html' %}
 
     {% endblock %}
+
+    <link href="{{STATIC_URL}}css/switch.css" rel="stylesheet" />
+    <link href="{{STATIC_URL}}css/skins/flat/blue.css" rel="stylesheet" />
+
+    <link href="http://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
 
     {% block base_script %}
 

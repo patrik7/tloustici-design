@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-18 17:13+0200\n"
+"POT-Creation-Date: 2014-05-18 22:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -106,7 +106,7 @@ msgstr "Článek"
 
 #: articles/models.py:38 articles/templates/articles/index.html:13
 #: articles/templates/articles/index.html:14 base/context_processors.py:48
-#: base/templates/base/base.html:88
+#: base/templates/base/base.html:84
 #: base/templates/base/base_public_full.html:25 forum/tests.py:586
 msgid "Articles"
 msgstr "Články"
@@ -232,7 +232,7 @@ msgstr "Uživatel byl odhlášen"
 
 #: base/views.py:62
 msgid "Too many incorrect login attempts, please try later"
-msgstr ""
+msgstr "Příliš mnoho chybných pokusů o přihlášení, zkuste to prosím později"
 
 #: base/templates/403.html:16
 msgid "Permission denied"
@@ -251,7 +251,7 @@ msgstr "se nenašel"
 msgid "Find partner to help you loose weight"
 msgstr "Najdi si parťáka na sport a zhubněte společně"
 
-#: base/templates/base/base.html:88
+#: base/templates/base/base.html:84
 #: base/templates/base/base_public_full.html:25
 #: base/templates/base/footer.html:41
 #: forum/templates/registration/registration_front.html:13
@@ -259,37 +259,37 @@ msgstr "Najdi si parťáka na sport a zhubněte společně"
 msgid "Register"
 msgstr "Registrace"
 
-#: base/templates/base/base.html:112
+#: base/templates/base/base.html:108
 msgid "Administration"
 msgstr "Administrace"
 
-#: base/templates/base/base.html:124
+#: base/templates/base/base.html:120
 #: forum/templates/registration/registration_front.html:28
 msgid "Get your lucky strike, take the first step and register!"
 msgstr "Nakopni konečně své štěstí, udělej první krok a zaregistruj&nbsp;se!"
 
-#: base/templates/base/base.html:128 forum/forms.py:130
+#: base/templates/base/base.html:124 forum/forms.py:130
 #: forum/templates/forum/email_suggest.html:15
 msgid "Create an Account"
 msgstr "Vytvořit účet"
 
-#: base/templates/base/base.html:134
+#: base/templates/base/base.html:130
 #: forum/templates/registration/registration_front.html:53
 msgid "Common interests"
 msgstr "Společné zájmy"
 
-#: base/templates/base/base.html:135
+#: base/templates/base/base.html:131
 #: forum/templates/registration/registration_front.html:54
 msgid "bubble_1_txt"
 msgstr ""
 "Najdi si partnera se stejným koníčkem, sportujte ve dvou a zhubněte společně!"
 
-#: base/templates/base/base.html:140
+#: base/templates/base/base.html:136
 #: forum/templates/registration/registration_front.html:58
 msgid "Mutual motivation"
 msgstr "Vzájemná motivace"
 
-#: base/templates/base/base.html:141
+#: base/templates/base/base.html:137
 #: forum/templates/registration/registration_front.html:59
 msgid "bubble_2_txt"
 msgstr ""
@@ -297,12 +297,12 @@ msgstr ""
 "podpora a společné zájmy jsou však silnou zbraní, jak dosáhnout svého cíle "
 "snadněji."
 
-#: base/templates/base/base.html:146
+#: base/templates/base/base.html:142
 #: forum/templates/registration/registration_front.html:63
 msgid "Useful tips"
 msgstr "Užitečné tipy"
 
-#: base/templates/base/base.html:147
+#: base/templates/base/base.html:143
 #: forum/templates/registration/registration_front.html:64
 msgid "bubble_3_txt"
 msgstr ""
@@ -1058,6 +1058,9 @@ msgid ""
 "%(domain)s%(url_settings)s\" style=\"color: #2BA6CB;\" >profile settings "
 "page</a>.\n"
 msgstr ""
+"\n"
+"Oznámení na zprávu e-mailem můžete vypnout v <a href=\"http://%(domain)s"
+"%(url_settings)s\" style=\"color: #2BA6CB;\" >nastavení profilu</a>.\n"
 
 #: forum/templates/forum/email_new_message.txt:18
 msgid "You can reply to the message on"

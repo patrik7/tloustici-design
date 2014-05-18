@@ -22,7 +22,7 @@ Base public - zakladna sablona pre neprihláseneho
             <span class="icon-bar"></span>
           </button>
 
-            <a class="" href="{% if user.is_atenticated %}{% url articles %}{% else %}{% url register%}{% endif %}"><img alt="{% if user.is_atenticated %}{% trans 'Articles' %}{% else %}{% trans 'Register' %}{% endif %}" src="{{STATIC_URL}}images/hubneme-logo.png" /></a>
+            <a class="" href="{% if user.is_authenticated %}{% url articles %}{% else %}{% url register%}{% endif %}"><img alt="{% if user.is_authenticated %}{% trans 'Articles' %}{% else %}{% trans 'Register' %}{% endif %}" src="{{STATIC_URL}}images/hubneme-logo.png" /></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
