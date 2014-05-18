@@ -14,7 +14,7 @@ Base - zakladna sablona
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{% trans 'Find partner to help you loose weight' %}" />
+    <meta name="description" content="{% block description %}{% trans 'Find partner to help you loose weight' %}{% endblock %}" />
 
     <meta property="og:title" content="{% block og_title %}Hubneme ve dvou{% endblock %}" />
     <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
@@ -33,7 +33,7 @@ Base - zakladna sablona
     <!-- TODO -->
     <link rel="shortcut icon" href="{{STATIC_URL}}images/favicon.png" />
 
-    <title>{% block caption %}{{caption_prefix}}Hubneme ve dvou{% endblock %}</title>
+    <title>{{caption_prefix}}{% block caption %}Hubneme ve dvou{% endblock %}</title>
     <link href="http://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
 
@@ -84,8 +84,8 @@ Base - zakladna sablona
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
-          <a title="Hubnemevedvou.cz" class="" href="http://{{domain}}/"><img title="Hubnemevedvou.cz" src="{{STATIC_URL}}images/hubneme-logo.png" /></a>
+
+          <a class="" href="{% if user.is_atenticated %}{% url articles %}{% else %}{% url register%}{% endif %}"><img alt="{% if user.is_atenticated %}{% trans 'Articles' %}{% else %}{% trans 'Register' %}{% endif %}" src="{{STATIC_URL}}images/hubneme-logo.png" /></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -98,7 +98,9 @@ Base - zakladna sablona
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container -->
     </nav>
-      <div class="clearfix"></div>
+
+    <div class="clearfix"></div>
+
     <div id="content">
       <div class="container">
        

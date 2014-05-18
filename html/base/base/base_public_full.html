@@ -21,17 +21,17 @@ Base public - zakladna sablona pre neprihláseneho
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
-          <a title="Hubnemevedvou.cz" class="" href="http://{{domain}}/"><img title="Hubnemevedvou.cz" src="{{STATIC_URL}}images/hubneme-logo.png" /></a>
+
+            <a class="" href="{% if user.is_atenticated %}{% url articles %}{% else %}{% url register%}{% endif %}"><img alt="{% if user.is_atenticated %}{% trans 'Articles' %}{% else %}{% trans 'Register' %}{% endif %}" src="{{STATIC_URL}}images/hubneme-logo.png" /></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse  hero">
           {% block navigation %}
-               <ul class="nav navbar-nav navbar-right nav-pills">
-                  {% include 'base/navigation_list.html' %}
-              </ul>
-              {% endblock %}
+            <ul class="nav navbar-nav navbar-right nav-pills">
+               {% include 'base/navigation_list.html' %}
+            </ul>
+          {% endblock %}
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container -->
     </nav>

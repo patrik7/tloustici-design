@@ -11,8 +11,9 @@ if len(argv) != 2:
 entities = []
 
 class Entity:    
-    def __init__(self, lines):
+    def __init__(self, d, lines):
         self.lines = lines
+        self.start_line = d
     
     def valid(self):
         return self.lines[0][:2] == "#:"
@@ -21,14 +22,19 @@ class Entity:
         return self.lines[-1] == 'msgstr ""\n'
 
     def dump(self):
+        c = self.start_line
+        
         for l in self.lines:
-            print l[:-1]
+            print "%d: %s" % (c, l[:-1])
+            c += 1
 
 lines = []
+count = 0
 
 for l in open(argv[1], "r").readlines():
+    count += 1
     if l == "\n":
-        e = Entity(lines)
+        e = Entity(count - len(lines), lines)
         if e.valid():
             entities.append(e)
         

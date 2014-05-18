@@ -10,6 +10,12 @@ Articles index
 
 {% load i18n %}
 
+{% block og_title %}{% trans 'Articles' %} - Hubneme ve dvou{% endblock %}
+{% block caption %}{% trans 'Articles' %} - Hubneme ve dvou{% endblock %}
+
+{% block og_description %}{% trans 'Articles about weight loss and healthy lifestyle' %}{% endblock %}
+{% block description %}{% trans 'Articles about weight loss and healthy lifestyle' %}{% endblock %}
+
 {% block main %}
   {% if articles_important %}
     {% for a in articles_important %}

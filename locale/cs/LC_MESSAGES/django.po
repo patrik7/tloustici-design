@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-18 10:14+0200\n"
+"POT-Creation-Date: 2014-05-18 17:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -104,7 +104,10 @@ msgstr "Url"
 msgid "Article"
 msgstr "Článek"
 
-#: articles/models.py:38 base/context_processors.py:48 forum/tests.py:586
+#: articles/models.py:38 articles/templates/articles/index.html:13
+#: articles/templates/articles/index.html:14 base/context_processors.py:48
+#: base/templates/base/base.html:88
+#: base/templates/base/base_public_full.html:25 forum/tests.py:586
 msgid "Articles"
 msgstr "Články"
 
@@ -120,7 +123,7 @@ msgstr "Článek bude dostupný od"
 msgid "Article is not available since"
 msgstr "Článek není dostupný od"
 
-#: articles/templates/articles/article.html:50
+#: articles/templates/articles/article.html:47
 msgid "Edit"
 msgstr "Upravit"
 
@@ -148,6 +151,11 @@ msgstr "Váha"
 msgid "Enter values above, to get your BMI."
 msgstr "Zadej hodnoty výše, pro výpočet BMI"
 
+#: articles/templates/articles/index.html:16
+#: articles/templates/articles/index.html:17
+msgid "Articles about weight loss and healthy lifestyle"
+msgstr "Články o hubnutí a zdravém životním stylu"
+
 #: articles/templates/articles/preview.html:26
 msgid "Not published"
 msgstr "Dosud nezveřejněné"
@@ -173,7 +181,8 @@ msgid "Messages"
 msgstr "Zprávy"
 
 #: base/context_processors.py:49 forum/tests.py:585
-#: forum/templates/forum/index.html:123
+#: forum/templates/forum/index.html:27 forum/templates/forum/index.html:28
+#: forum/templates/forum/index.html:129
 msgid "Forum"
 msgstr "Fórum"
 
@@ -238,61 +247,69 @@ msgid "was not found!"
 msgstr "se nenašel"
 
 #: base/templates/base/base.html:17 base/templates/base/base.html.py:23
-#: forum/templates/registration/registration_front.html:20
+#: forum/templates/registration/registration_front.html:24
 msgid "Find partner to help you loose weight"
 msgstr "Najdi si parťáka na sport a zhubněte společně"
 
-#: base/templates/base/base.html:110
+#: base/templates/base/base.html:88
+#: base/templates/base/base_public_full.html:25
+#: base/templates/base/footer.html:41
+#: forum/templates/registration/registration_front.html:13
+#: forum/templates/registration/registration_front.html:15
+msgid "Register"
+msgstr "Registrace"
+
+#: base/templates/base/base.html:112
 msgid "Administration"
 msgstr "Administrace"
 
-#: base/templates/base/base.html:122
-#: forum/templates/registration/registration_front.html:24
+#: base/templates/base/base.html:124
+#: forum/templates/registration/registration_front.html:28
 msgid "Get your lucky strike, take the first step and register!"
 msgstr "Nakopni konečně své štěstí, udělej první krok a zaregistruj&nbsp;se!"
 
-#: base/templates/base/base.html:126 forum/forms.py:130
+#: base/templates/base/base.html:128 forum/forms.py:130
 #: forum/templates/forum/email_suggest.html:15
 msgid "Create an Account"
 msgstr "Vytvořit účet"
 
-#: base/templates/base/base.html:132
-#: forum/templates/registration/registration_front.html:49
+#: base/templates/base/base.html:134
+#: forum/templates/registration/registration_front.html:53
 msgid "Common interests"
 msgstr "Společné zájmy"
 
-#: base/templates/base/base.html:133
-#: forum/templates/registration/registration_front.html:50
+#: base/templates/base/base.html:135
+#: forum/templates/registration/registration_front.html:54
 msgid "bubble_1_txt"
 msgstr ""
 "Najdi si partnera se stejným koníčkem, sportujte ve dvou a zhubněte společně!"
 
-#: base/templates/base/base.html:138
-#: forum/templates/registration/registration_front.html:54
+#: base/templates/base/base.html:140
+#: forum/templates/registration/registration_front.html:58
 msgid "Mutual motivation"
 msgstr "Vzájemná motivace"
 
-#: base/templates/base/base.html:139
-#: forum/templates/registration/registration_front.html:55
+#: base/templates/base/base.html:141
+#: forum/templates/registration/registration_front.html:59
 msgid "bubble_2_txt"
 msgstr ""
 "Ztratit nějaké ty kila navíc znamená pro mnohé nelehký úkol. Vzájemná "
 "podpora a společné zájmy jsou však silnou zbraní, jak dosáhnout svého cíle "
 "snadněji."
 
-#: base/templates/base/base.html:144
-#: forum/templates/registration/registration_front.html:59
+#: base/templates/base/base.html:146
+#: forum/templates/registration/registration_front.html:63
 msgid "Useful tips"
 msgstr "Užitečné tipy"
 
-#: base/templates/base/base.html:145
-#: forum/templates/registration/registration_front.html:60
+#: base/templates/base/base.html:147
+#: forum/templates/registration/registration_front.html:64
 msgid "bubble_3_txt"
 msgstr ""
 "Inspiruj se rady a tipy ostatních uživatelů v oblasti cvičení, zdravého "
 "vaření, diet nebo třeba možností sportu ve tvém okolí."
 
-#: base/templates/base/footer.html:46 forum/templates/forum/terms.html:6
+#: base/templates/base/footer.html:49 forum/templates/forum/terms.html:6
 msgid "Terms and conditions"
 msgstr "Podmínky užívání"
 
@@ -448,19 +465,19 @@ msgstr "Středoškolské vzdělání"
 msgid "Elementary School"
 msgstr "Základní vzdělání"
 
-#: forum/models.py:58 forum/templates/forum/index.html:218
+#: forum/models.py:58 forum/templates/forum/index.html:224
 #: forum/templates/forum/messages.html:190
 #: forum/templates/forum/profile/profile_readonly.html:203
 msgid "Sexual Remarks"
 msgstr "Sexuální obtěžování"
 
-#: forum/models.py:59 forum/templates/forum/index.html:219
+#: forum/models.py:59 forum/templates/forum/index.html:225
 #: forum/templates/forum/messages.html:191
 #: forum/templates/forum/profile/profile_readonly.html:204
 msgid "Advertising"
 msgstr "Nevyžádaná reklama"
 
-#: forum/models.py:60 forum/templates/forum/index.html:220
+#: forum/models.py:60 forum/templates/forum/index.html:226
 #: forum/templates/forum/messages.html:192
 #: forum/templates/forum/profile/profile_readonly.html:205
 msgid "Other Abuse"
@@ -1016,7 +1033,7 @@ msgstr "Jiné"
 msgid "Suggest to a friend"
 msgstr "Doporučit příteli"
 
-#: forum/templates/form_suggest.html:22 forum/templates/forum/index.html:101
+#: forum/templates/form_suggest.html:22 forum/templates/forum/index.html:107
 msgid "Send"
 msgstr "Odeslat"
 
@@ -1174,7 +1191,11 @@ msgid ""
 "              "
 msgstr ""
 
-#: forum/templates/forum/index.html:48
+#: forum/templates/forum/index.html:30 forum/templates/forum/index.html:31
+msgid "Discussions about weight loss and healthy lifestyle"
+msgstr "Diskuse o hubnutí a zdravém životním stylu"
+
+#: forum/templates/forum/index.html:54
 #, python-format
 msgid ""
 "\n"
@@ -1187,15 +1208,15 @@ msgstr ""
 "reakce</a> byla %(date)s od uživatele <a href=\"%(user_url)s\">%(user)s</a>\n"
 "  "
 
-#: forum/templates/forum/index.html:55
+#: forum/templates/forum/index.html:61
 msgid "Post count"
 msgstr "Počet příspěvků"
 
-#: forum/templates/forum/index.html:56
+#: forum/templates/forum/index.html:62
 msgid "Open category"
 msgstr "Otevřít kategorii"
 
-#: forum/templates/forum/index.html:110
+#: forum/templates/forum/index.html:116
 #, python-format
 msgid ""
 "\n"
@@ -1205,31 +1226,31 @@ msgid ""
 "        "
 msgstr ""
 
-#: forum/templates/forum/index.html:131
+#: forum/templates/forum/index.html:137
 msgid "You are in discussion"
 msgstr "Jsi v diskuzi"
 
-#: forum/templates/forum/index.html:137
+#: forum/templates/forum/index.html:143
 msgid "Start new discussion"
 msgstr "Začít novou diskuzi"
 
-#: forum/templates/forum/index.html:190
+#: forum/templates/forum/index.html:196
 msgid "Delete"
 msgstr "Vymazat"
 
-#: forum/templates/forum/index.html:193
+#: forum/templates/forum/index.html:199
 msgid "Read posts"
 msgstr "Číst příspěvky"
 
-#: forum/templates/forum/index.html:208
+#: forum/templates/forum/index.html:214
 msgid "Unsubscribe"
 msgstr "Neodebírat reakce"
 
-#: forum/templates/forum/index.html:210
+#: forum/templates/forum/index.html:216
 msgid "Subscribe"
 msgstr "Odebírat reakce"
 
-#: forum/templates/forum/index.html:253
+#: forum/templates/forum/index.html:259
 msgid ""
 "<a href=\"javascript:void(0)\" onClick=\"change(\\'' + e.last_post.id + "
 "'\\');\">Last reaction</a> ' + e.last_post.date + ' by <a href=\"/profile/' "
@@ -1479,7 +1500,7 @@ msgstr ""
 msgid "Try again later, please."
 msgstr "Zkus to prosím později."
 
-#: forum/templates/registration/registration_front.html:20
+#: forum/templates/registration/registration_front.html:24
 msgid "Does overweight bother you?"
 msgstr "Trápí Tě kila navíc?"
 
