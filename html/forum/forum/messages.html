@@ -95,7 +95,7 @@ Messagess origin
       $('#popu' + div_id).html('');
  
       c = $('#conversation' + div_id);
-      c.attr('onclick', 'javascript:loadMessages(' + div_id + ', ' + conversation_id + ', \'' + other_user + '\', 0);');
+      c.attr('onclick', 'javascript:loadMessages(' + div_id + ', ' + conversation_id + ', \'' + other_user + '\');');
      
     }
 
@@ -118,12 +118,13 @@ Messagess origin
         form.removeClass("hidden");
     }
 
-    function loadMessages(div_id, conversation_id, other_user, unread) {
+    function loadMessages(div_id, conversation_id, other_user) {
       setLoading('popu' + div_id);
 
       $.getJSON('/messages/data/', {'conversation': conversation_id}).done(function(data) {
         var entries = data.entries;
         var pagination = data.pagination;
+        var unread = data.unread;
 
         //remove badge 
         $('#conversation' + div_id + ' .badge').remove();
@@ -230,7 +231,7 @@ Messagess origin
       }
       body += '</p>';
 
-      link = 'javascript:loadMessages(' + i + ', ' + e.id + ', \'' + e.other_user + '\', ' + e.unread + ');'
+      link = 'javascript:loadMessages(' + i + ', ' + e.id + ', \'' + e.other_user + '\');'
 
       $('#data').append(
         '<div id="conversation' + i + '" class="panel panel-default link-glow ' + e.html_class + '" style="margin-bottom: 5px;" onclick="' + link + '" >'
