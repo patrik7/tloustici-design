@@ -54,7 +54,7 @@ function setupPagination(pagination) {
 
 function change(target)
 {
-  History.pushState({root: target}, '', '' + target);
+  History.pushState({root: target}, '', '/forum/' + target + '/');
 }
 
 function loadData()
