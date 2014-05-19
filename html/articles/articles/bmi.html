@@ -33,12 +33,12 @@ BMI
     <div class="panel-body">
       <div class="row">
         <div class="col-lg-6 col-md-12">
-          <div class="input-group input-group-sm">
+          <div id="id_bmi_cm_group" class="input-group input-group-sm">
             <input id="bmi_cm" type="text" class="form-control" placeholder="{% trans 'Height' %}" onkeyup="javascript:calculate_bmi()" value="{{bmi_cm}}" />
             <span class="input-group-addon">cm</span>
           </div>
         </div>
-        <div class="col-lg-6 col-md-12">
+        <div id="id_bmi_kg_group" class="col-lg-6 col-md-12">
           <div class="input-group input-group-sm">
             <input id="bmi_kg" type="text" class="form-control" placeholder="{% trans 'Weight' %}" onkeyup="javascript:calculate_bmi()" value="{{bmi_kg}}" />
             <span class="input-group-addon">kg</span>

@@ -4,6 +4,28 @@ function calculate_bmi() {
   var cm = parseInt(document.getElementById('bmi_cm').value);
   var kg = parseInt(document.getElementById('bmi_kg').value);
 
+  var cm_group = $('#id_bmi_cm_group');
+  var kg_group = $('#id_bmi_kg_group');
+
+  var cm_error = false;
+  var kg_error = false;
+
+  if (isNaN(cm) || cm < 30 || cm > 300) {
+    cm_error = true;
+    cm_group.addClass('has-error');
+  }
+  if (!cm_error || document.getElementById('bmi_cm').value == '') {
+    cm_group.removeClass('has-error');
+  }
+
+  if (isNaN(kg) || kg < 30 || kg > 300) {
+    kg_error = true;
+    kg_group.addClass('has-error');
+  }
+  if (!kg_error || document.getElementById('bmi_kg').value == '') {
+    kg_group.removeClass('has-error');
+  }
+
   var text = new Array();
   var vls = new Array();
 
@@ -15,7 +37,7 @@ function calculate_bmi() {
   text[2] = "Nádvaha (" + (vls[1] + 0.1) + "&nbsp;-&nbsp;" + vls[2] + ")";
   text[3] = "Obezita (> " + (vls[2] + 0.1) + ")";
 
-  if (!isNaN(cm) && !isNaN(kg)) {
+  if (!cm_error && !kg_error) {
       var m = cm/100.0;
       var h2 = m*m;
 
@@ -42,6 +64,9 @@ function calculate_bmi() {
       $('#bmi_header_unknown').addClass("hidden");
 
   } else {
+    $('#bmi_text').html('Zadej hodnoty výše, pro výpočet BMI');
+    $('#bmi_number').html();
+
     $('#bmi_header_computed').addClass("hidden");
     $('#bmi_header_unknown').removeClass("hidden");
   }
