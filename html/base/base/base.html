@@ -257,6 +257,22 @@ Base - zakladna sablona
         setInterval(updateUnreadMessages, 10000);
 
         updateUnreadMessages();
+
+        function decreaseUnread(dc) {
+          var node = $('#messages_unread');
+
+          var n = parseInt(node.html());
+
+          if (!isNaN(n)) {
+            n -= dc;
+            if (n <= 0) {
+              node.html('');
+            } else {
+              node.html(n);
+            }
+          }
+        }
+
       </script>
     {% endif %}
 

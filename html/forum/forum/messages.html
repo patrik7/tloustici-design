@@ -124,10 +124,12 @@ Messagess origin
       $.getJSON('/messages/data/', {'conversation': conversation_id}).done(function(data) {
         var entries = data.entries;
         var pagination = data.pagination;
-        var unread = data.unread;
+        var unread = data.unread;        
 
         //remove badge 
         $('#conversation' + div_id + ' .badge').remove();
+
+        decreaseUnread(unread);
 
         elem = $('#popu' + div_id);
         elem.html('');
@@ -139,7 +141,6 @@ Messagess origin
         c.attr('onclick', 'javascript:hideMessages(' + div_id + ', ' + conversation_id + ', \'' + other_user + '\');');
 
         collapseNewMessage();
-
       }).fail(function () {
         setError('popu' + div_id)
       });
