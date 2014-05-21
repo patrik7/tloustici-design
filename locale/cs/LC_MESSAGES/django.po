@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-19 17:46+0200\n"
+"POT-Creation-Date: 2014-05-20 11:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -466,19 +466,19 @@ msgid "Elementary School"
 msgstr "Základní vzdělání"
 
 #: forum/models.py:58 forum/templates/forum/index.html:224
-#: forum/templates/forum/messages.html:191
+#: forum/templates/forum/messages.html:192
 #: forum/templates/forum/profile/profile_readonly.html:203
 msgid "Sexual Remarks"
 msgstr "Sexuální obtěžování"
 
 #: forum/models.py:59 forum/templates/forum/index.html:225
-#: forum/templates/forum/messages.html:192
+#: forum/templates/forum/messages.html:193
 #: forum/templates/forum/profile/profile_readonly.html:204
 msgid "Advertising"
 msgstr "Nevyžádaná reklama"
 
 #: forum/models.py:60 forum/templates/forum/index.html:226
-#: forum/templates/forum/messages.html:193
+#: forum/templates/forum/messages.html:194
 #: forum/templates/forum/profile/profile_readonly.html:205
 msgid "Other Abuse"
 msgstr "Ostatní"
@@ -1267,24 +1267,24 @@ msgstr ""
 msgid "Write Private Message"
 msgstr "Poslat novou zprávu"
 
-#: forum/templates/forum/messages.html:189
+#: forum/templates/forum/messages.html:190
 #: forum/templates/forum/report.html:19
 msgid "Report"
 msgstr "Ohlásit"
 
-#: forum/templates/forum/messages.html:220
+#: forum/templates/forum/messages.html:221
 msgid "Block"
 msgstr "Zablokovat"
 
-#: forum/templates/forum/messages.html:222
+#: forum/templates/forum/messages.html:223
 msgid "Unblock"
 msgstr "Odblokovat"
 
-#: forum/templates/forum/messages.html:227
+#: forum/templates/forum/messages.html:228
 msgid "Last message"
 msgstr "Poslední zpráva"
 
-#: forum/templates/forum/messages.html:228
+#: forum/templates/forum/messages.html:229
 msgid "Conversation with"
 msgstr "Konverzace s"
 
