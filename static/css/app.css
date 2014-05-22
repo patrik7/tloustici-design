@@ -402,6 +402,11 @@ div.activity-checkbox label.hover {
     font-size: 16px;
     }
 
+.feed-post-inner {
+    height: 310px;
+    overflow: hidden;
+}
+
 .big-post{
     font-size: 16px;
     }
@@ -447,9 +452,8 @@ font-size:21px;
     }
 
 .article-text{
-    max-height:48px;
-    overflow:hidden;
     }
+
 
 #sidebar input{
     -moz-box-shadow: inset 0 0 10px #e3e3e3 !important;

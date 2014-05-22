@@ -8,39 +8,31 @@ Prewiev
 
 {% load i18n %}
 
-{% if size == 'small' %}
-  <small>
-{% endif %}
 <div class="white-well feed-post" itemscope itemtype="http://schema.org/Article">
-    
-{% if article.image %}
-  <a href="{% url article article.url %}" class="article-image2" >
-    <img src="{{article.image.url}}" class="pull-{{article.image_position}}" />
-  </a>
-{% endif %}
-    
-    
-<a class="article-header" href="{% url article article.url %}"><h3>
-  {{article.heading}}
-  {% if not article.published %}
-    <small>{% trans 'Not published' %}</small>
+  
+  <div class="feed-post-inner">
+  
+  {% if article.image %}
+    <a href="{% url article article.url %}" class="article-image2" >
+      <img src="{{article.image.url}}" class="pull-{{article.image_position}}" />
+    </a>
   {% endif %}
-</h3></a>
+    
+  <a class="article-header" href="{% url article article.url %}"><h3>
+    {{article.heading}}
+    {% if not article.published %}
+      <small>{% trans 'Not published' %}</small>
+    {% endif %}
+  </h3></a>
 
+  <div class="article-text" itemprop="description" >
+    {{article.preview_html|safe}}
+  </div>
 
-
-<div class="article-text" itemprop="description" >
-  {{article.preview_html|safe}}
-</div>
-
+  </div>
 
   <div class="btn btn-blue right">
     <a class="" href="{% url article article.url %}">{% trans 'Read More' %} »</a>
   </div>
-
-
-{% if size == 'small' %}
-  </small>
-{% endif %}
 
 </div>
