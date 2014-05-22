@@ -10,14 +10,18 @@ Prewiev
 
 <div class="white-well feed-post" itemscope itemtype="http://schema.org/Article">
   
-  <div class="feed-post-inner">
-  
+  <div class=""> 
+ 
   {% if article.image %}
     <a href="{% url article article.url %}" class="article-image2" >
       <img src="{{article.image.url}}" class="pull-{{article.image_position}}" />
     </a>
   {% endif %}
-    
+
+  </div>
+
+  <div class="feed-post-inner">
+
   <a class="article-header" href="{% url article article.url %}"><h3>
     {{article.heading}}
     {% if not article.published %}
