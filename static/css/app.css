@@ -397,7 +397,8 @@ div.activity-checkbox label.hover {
 6. Articles
 *******************************************************************************/
 .feed-post{
-    height:350px;
+/*    height:350px; */
+    padding-bottom: 52px;
     font-size: 16px;
     }
 
