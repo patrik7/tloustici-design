@@ -12,15 +12,7 @@ Footer
   <div class="container">
     <div class="footer" style="margin-top: 10px;">
       <div class="row">
-        <div class="col-xs-12">
-          <div class="right text-right">
-            {% block footer %}
-              <div style="width: 200px; height:70px;">
-                <div class="fb-like-box" data-href="https://www.facebook.com/hubnemevedvou" data-colorscheme="light" data-show-faces="false" data-header="true" data-stream="false" data-show-border="true"></div>
-              </div>
-            {% endblock %}
-          </div>
-
+        <div class="col-xs-6">
           <ul class="nav navbar-nav navbar-left nav-pills">
             <li class="">
               <a href="/articles/">
@@ -35,12 +27,23 @@ Footer
             <li class="">
               <a href="/help/"><span class="glyphicon glyphicon-question-sign"></span> Nápověda</a>
             </li>
-         </ul>
+          </ul>
           <div class="hidden" style="width:0px; height: 0px;">
             <a href="{% url register %}" >{% trans 'Register' %}</a>
           </div>
         </div>
+        <div class="col-xs-6">
+          <div class="right text-right">
+            {% block footer %}
+              <div style="width: 200px; height:70px;">
+                <div class="fb-like-box" data-href="https://www.facebook.com/hubnemevedvou" data-colorscheme="light" data-show-faces="false" data-header="true" data-stream="false" data-show-border="true"></div>
+              </div>
+            {% endblock %}
+          </div>
+        </div>
+
       </div>
+
 
       <div class="row text-right small" style="text-transform:uppercase; margin-top: 5px;">
         <div class="col-xs-12">
