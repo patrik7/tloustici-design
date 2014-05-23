@@ -12,7 +12,7 @@ Article
 
 {% block og_title %}{{article.heading}}{% endblock %}
 {% block og_type %}article{% endblock %}
-{% block og_image %}{% if article.image %}{{article.image.url}}{% else %}/{% endif %}{% endblock %}
+{% block og_image %}{% if article.image %}http:{{article.image_direct_url}}{% else %}http:{{STATIC_URL_NOCLOUD}}images/hubneme-logo-fb.png{% endif %}{% endblock %}
 
 {% block main %}
 <div id="post-detail" class="white-well big-post" itemscope itemtype="http://schema.org/Article">
@@ -38,7 +38,7 @@ Article
   <p/>
 
   <div class="fb-surround">
-    <div class="fb-like" data-href="http://hubnemevedvou.cz/articles/{{article.url}}/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true" data-ref="article"></div>
+    <div class="fb-like" data-href="http://hubnemevedvou.cz/articles/{{article.url}}" data-layout="standard" data-action="like" data-show-faces="true" data-share="true" data-ref="article"></div>
   </div>
 
   {% if user.is_superuser %}
@@ -48,7 +48,7 @@ Article
     </div>
   {% endif %}
     
-  <div class="fb-comments" data-href="http://{{domain}}/" data-numposts="5" data-colorscheme="light" data-width="800"></div>
+  <div class="fb-comments" data-href="http://{{domain}}" data-numposts="5" data-colorscheme="light" data-width="800"></div>
     
 </div>
 
