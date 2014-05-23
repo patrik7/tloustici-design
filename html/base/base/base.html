@@ -242,6 +242,15 @@ Base - zakladna sablona
     {% else %}
       function gaTrackEvent(category, action, opt_label, opt_value) {}
     {% endif %}
+
+      //FB filler - if blocked
+      setTimeout(function() {
+        var fb = $('.fb-like-box');
+
+        if (fb.html() == '') {
+          fb.html($('#fb-alternative').html());
+        }
+      }, 3000);
     </script>
 
 
