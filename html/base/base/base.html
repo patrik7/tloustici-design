@@ -282,6 +282,12 @@ Base - zakladna sablona
         }
 
       </script>
+    {% else %}
+      <script type="text/javascript" language="javascript">
+        function show_disclaimer() {
+          $('#id_disclaimer').removeClass('hidden');
+        }
+      </script>
     {% endif %}
 
   </body>

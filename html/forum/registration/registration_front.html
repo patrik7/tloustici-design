@@ -28,13 +28,17 @@ Registration front
     <p>{% trans 'Get your lucky strike, take the first step and register!' %}</p>
 
 
-  <p>
-    <form method="post" action="{% url register_step 0 %}" class="form-inline">
-      {% csrf_token %}
-      {{form.0|bootstrap_inline}}
-      <input type="submit" class="btn btn-primary" name="{{button_name}}" value="{{form.0.submit}}" />
-    </form>
-  </p>
+    <p>
+      <form method="post" action="{% url register_step 0 %}" class="form-inline">
+        {% csrf_token %}
+        {{form.0|bootstrap_inline}}
+        <input type="submit" class="btn btn-primary" name="{{button_name}}" value="{{form.0.submit}}" />
+      </form>
+    </p>
+    {% url terms as url_terms %}
+    <p id="id_disclaimer" class="text-center hidden small" style="font-weight: normal;">
+      {% blocktrans %}Registering here, I confirm I agree with <a href="{{url_terms}}" target="_blank">terms and conditions</a>.{% endblocktrans %}
+    </p>
   </div>  
     <div class="left user1hp"><p>Chci zhubnout po porodu, najde se kamarádka na brusle?</p><h5>Tereza, Olomouc</h5></div>
     <div class="right user2hp"><p>Mám rád vyjížďky na kole, ale samotnému se mi nechce</p><h5>Jirka, Praha</h5></div>    

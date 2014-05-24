@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-24 13:59+0200\n"
+"POT-Creation-Date: 2014-05-24 15:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -294,23 +294,23 @@ msgid "Create an Account"
 msgstr "Vytvořit účet"
 
 #: base/templates/base/base.html:131
-#: forum/templates/registration/registration_front.html:53
+#: forum/templates/registration/registration_front.html:57
 msgid "Common interests"
 msgstr "Společné zájmy"
 
 #: base/templates/base/base.html:132
-#: forum/templates/registration/registration_front.html:54
+#: forum/templates/registration/registration_front.html:58
 msgid "bubble_1_txt"
 msgstr ""
 "Najdi si partnera se stejným koníčkem, sportujte ve dvou a zhubněte společně!"
 
 #: base/templates/base/base.html:137
-#: forum/templates/registration/registration_front.html:58
+#: forum/templates/registration/registration_front.html:62
 msgid "Mutual motivation"
 msgstr "Vzájemná motivace"
 
 #: base/templates/base/base.html:138
-#: forum/templates/registration/registration_front.html:59
+#: forum/templates/registration/registration_front.html:63
 msgid "bubble_2_txt"
 msgstr ""
 "Ztratit nějaké ty kila navíc znamená pro mnohé nelehký úkol. Vzájemná "
@@ -318,12 +318,12 @@ msgstr ""
 "snadněji."
 
 #: base/templates/base/base.html:143
-#: forum/templates/registration/registration_front.html:63
+#: forum/templates/registration/registration_front.html:67
 msgid "Useful tips"
 msgstr "Užitečné tipy"
 
 #: base/templates/base/base.html:144
-#: forum/templates/registration/registration_front.html:64
+#: forum/templates/registration/registration_front.html:68
 msgid "bubble_3_txt"
 msgstr ""
 "Inspiruj se rady a tipy ostatních uživatelů v oblasti cvičení, zdravého "
@@ -1526,6 +1526,14 @@ msgstr "Zkus to prosím později."
 #: forum/templates/registration/registration_front.html:24
 msgid "Does overweight bother you?"
 msgstr "Trápí Tě kila navíc?"
+
+#: forum/templates/registration/registration_front.html:40
+#, python-format
+msgid ""
+"Registering here, I confirm I agree with <a href=\"%(url_terms)s\" target="
+"\"_blank\">terms and conditions</a>."
+msgstr ""
+"Registrací souhlasím s <a href=\"%(url_terms)s\" target=\"_blank\">podmínkami užívání</a> webu hubnemevedvou.cz."
 
 #: forum/templates/registration/registration_further.html:28
 msgid ""
