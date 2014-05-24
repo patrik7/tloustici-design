@@ -22,7 +22,3 @@
     width: 100% !important;
 }
 
-/* so page doesn't jump around while FB loads */
-div.fb-surround {
-    min-height: 86px;
-}

@@ -9,6 +9,10 @@ FAQ - Otazky
 {% extends 'base/base.html' %}
 {% load i18n %}
 
+{% block description %}{% trans 'How it works' %}{% endblock %}
+{% block og_description %}{% trans 'How it works' %}{% endblock %}
+{% block caption %}{% trans 'Help' %} - Hubneme ve dvou{% endblock %}
+
 {% block main %}
   <div class="row">
     <h2>{% trans 'Questions you need answers for' %}</h2>
