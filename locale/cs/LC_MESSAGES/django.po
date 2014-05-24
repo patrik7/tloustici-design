@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-24 13:37+0200\n"
+"POT-Creation-Date: 2014-05-24 13:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -453,7 +453,7 @@ msgstr "Váha neodpovídá reálným hodnotám"
 msgid "doesn't matter"
 msgstr "Nezáleží"
 
-#: forum/forms.py:447 forum/models.py:405
+#: forum/forms.py:447 forum/models.py:408
 msgid "City"
 msgstr "Město"
 
@@ -510,12 +510,12 @@ msgstr "Ostatní"
 msgid "Parent"
 msgstr "Rodič"
 
-#: forum/models.py:76 forum/models.py:239 forum/models.py:240
-#: forum/models.py:317 forum/models.py:471
+#: forum/models.py:76 forum/models.py:242 forum/models.py:243
+#: forum/models.py:320 forum/models.py:474
 msgid "User"
 msgstr "Uživatel"
 
-#: forum/models.py:78 forum/models.py:319
+#: forum/models.py:78 forum/models.py:322
 msgid "Created"
 msgstr "Vytvořeno"
 
@@ -531,15 +531,15 @@ msgstr "Aktualizováno"
 msgid "Markup"
 msgstr "Markup"
 
-#: forum/models.py:82 forum/models.py:320
+#: forum/models.py:82 forum/models.py:323
 msgid "Message"
 msgstr "Zpráva"
 
-#: forum/models.py:83 forum/models.py:476
+#: forum/models.py:83 forum/models.py:479
 msgid "HTML version"
 msgstr "HTML verze"
 
-#: forum/models.py:84 forum/models.py:321
+#: forum/models.py:84 forum/models.py:324
 msgid "User IP"
 msgstr "Uživatelské IP"
 
@@ -567,146 +567,146 @@ msgstr "Příspěvek"
 msgid "Posts"
 msgstr "Příspěvky"
 
-#: forum/models.py:159
+#: forum/models.py:162
 msgid "New Forum Post"
 msgstr "Nový příspěvek na fóru"
 
-#: forum/models.py:187
+#: forum/models.py:190
 msgid "post"
 msgid_plural "posts"
 msgstr[0] "příspěvek"
 msgstr[1] "příspěvky"
 
-#: forum/models.py:346
+#: forum/models.py:349
 msgid "New Message"
 msgstr "Nová zpráva"
 
-#: forum/models.py:346
+#: forum/models.py:349
 msgctxt "username"
 msgid "from"
 msgstr "od"
 
-#: forum/models.py:381 forum/models.py:391
+#: forum/models.py:384 forum/models.py:394
 msgid "Area"
 msgstr "Kraj"
 
-#: forum/models.py:382
+#: forum/models.py:385
 msgid "Areas"
 msgstr "Kraje"
 
-#: forum/models.py:391
+#: forum/models.py:394
 msgid "Area the city belongs to"
 msgstr "Kraj ke kterému město patří"
 
-#: forum/models.py:406
+#: forum/models.py:409
 msgid "Cities"
 msgstr "Města"
 
-#: forum/models.py:416 forum/templates/forum/friend_suggestion.html:34
+#: forum/models.py:419 forum/templates/forum/friend_suggestion.html:34
 msgid "Activity"
 msgstr "Aktivity"
 
-#: forum/models.py:417 forum/templates/forum/search.html:97
+#: forum/models.py:420 forum/templates/forum/search.html:97
 #: forum/templates/forum/profile/profile_essentials.html:53
 #: forum/templates/forum/profile/profile_readonly.html:124
 #: forum/templates/forum/profile/profile_readonly.html:193
 msgid "Activities"
 msgstr "Aktivity"
 
-#: forum/models.py:472
+#: forum/models.py:475
 msgid "city"
 msgstr "město"
 
-#: forum/models.py:473
+#: forum/models.py:476
 msgid "Language"
 msgstr "Jazyk"
 
-#: forum/models.py:474
+#: forum/models.py:477
 msgid "Avatar"
 msgstr "Fotka"
 
-#: forum/models.py:475
+#: forum/models.py:478
 msgid "Description"
 msgstr "Popis"
 
-#: forum/models.py:475
+#: forum/models.py:478
 msgid "Use few sentences to describe yourself, and who are you looking for."
 msgstr "Prozraď něco více o sobě, popiš koho hledáš"
 
-#: forum/models.py:477
+#: forum/models.py:480
 msgid "date of birth"
 msgstr "datum narození"
 
-#: forum/models.py:478
+#: forum/models.py:481
 msgid "sex"
 msgstr "pohlaví"
 
-#: forum/models.py:479
+#: forum/models.py:482
 msgid "height"
 msgstr "výška"
 
-#: forum/models.py:480
+#: forum/models.py:483
 msgid "weight"
 msgstr "váha"
 
-#: forum/models.py:481
+#: forum/models.py:484
 msgid "phone"
 msgstr "telefon"
 
-#: forum/models.py:482
+#: forum/models.py:485
 msgid "education"
 msgstr "vzdělání"
 
-#: forum/models.py:482
+#: forum/models.py:485
 msgid "The highest achieved education"
 msgstr "Nejvyšší dosažené vzdělání"
 
-#: forum/models.py:484
+#: forum/models.py:487
 msgid "searchable"
 msgstr "vyhledatelný"
 
-#: forum/models.py:484
+#: forum/models.py:487
 msgid ""
 "Decide if your profile should come up when others use the search function."
 msgstr "Zobrazovat se ostatním uživatelům při hledání"
 
-#: forum/models.py:493
+#: forum/models.py:496
 msgid "Message notification"
 msgstr "Upozornit na zprávy"
 
-#: forum/models.py:493
+#: forum/models.py:496
 msgid "Receive an email notification on incoming message"
 msgstr "Zasílat soukromné zprávy na e-mail"
 
-#: forum/models.py:494
+#: forum/models.py:497
 msgid "Forum subscription"
 msgstr "Předvolit upozornení na fóru"
 
-#: forum/models.py:494
+#: forum/models.py:497
 msgid "Subscribe to my forum posts by default"
 msgstr "Posílat notifikace na veškeré odpovědi v zúčastněných tématech fóra"
 
-#: forum/models.py:495
+#: forum/models.py:498
 msgid "Newsletter subscription"
 msgstr "Odoberat novinky"
 
-#: forum/models.py:495
+#: forum/models.py:498
 msgid "Subscribe to newsletter"
 msgstr "Přihlásit se k odběru novinek"
 
-#: forum/models.py:497
+#: forum/models.py:500
 msgid "Fans Count"
 msgstr "Počet Fanoušků"
 
-#: forum/models.py:500 forum/templates/forum/profile/profile_readonly.html:14
+#: forum/models.py:503 forum/templates/forum/profile/profile_readonly.html:14
 msgid "Profile"
 msgstr "Profil"
 
-#: forum/models.py:501
+#: forum/models.py:504
 msgid "Profiles"
 msgstr "Profily"
 
-#: forum/models.py:585
+#: forum/models.py:588
 msgid "note"
 msgstr "poznámka"
 
@@ -1277,11 +1277,11 @@ msgstr "Číst reakce"
 msgid ""
 "<a href=\"javascript:void(0)\" onClick=\"change(\\'' + e.last_post.id + "
 "'\\');\">Last reaction</a> ' + e.last_post.date + ' by <a href=\"/profile/' "
-"+ e.user + '/\">' + e.user + '</a>"
+"+ e.last_post.user + '/\">' + e.last_post.user + '</a>"
 msgstr ""
 "<a href=\"javascript:void(0)\" onClick=\"change(\\'' + e.last_post.id + "
 "'\\');\">Poslední reakce</a> byla ' + e.last_post.date + ' od <a href=\"/"
-"profile/' + e.user + '/\">' + e.user + '</a>"
+"profile/' + e.last_post.user + '/\">' + e.last_post.user + '</a>"
 
 #: forum/templates/forum/messages.html:26
 msgid "Write Private Message"
