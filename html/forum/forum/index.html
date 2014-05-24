@@ -136,34 +136,74 @@ Basic JSON load scenario:
       }
       $('#breadcrumbs').html('{% trans 'You are in discussion' %} ' + txt);
 
+      var head_post = extra.breadcrumbs[extra.breadcrumbs.length - 1];
+
       var head_button = '';
       var hide_form = 'hidden';
+      var show_subscribe = false;
+      var show_report = false;
 
       if (extra.breadcrumbs.length < 3) {
-        head_button = '<a href="javascript:void(0)" class="btn btn-info" onClick="show(\'_reply_head\')"><span class="glyphicon glyphicon-share-alt"></span> {% trans 'Start new discussion' %}</a>';        
+        head_button = '<a href="javascript:void(0)" class="btn btn-info" onClick="show(\'_reply_head\')"><span class="glyphicon glyphicon-share-alt"></span> ';
+        if (extra.breadcrumbs.length < 2) {
+          head_button += '{% trans 'Start new discussion' %}</a>';
+        } else {
+          head_button += '{% trans 'Reply' %}</a>';
+          show_subscribe = true;
+          show_report = ('{{user}}' != head_post.user);
+        }
       } else {
         hide_form = '';
       }
+
+      
+
+      if (show_report || show_subscribe) {
+
+        head_button += '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">'
+                     + '<span class="caret"></span></button>'
+                     + '<ul class="dropdown-menu">';
+
+        if (show_subscribe) {
+          if (head_post.subscribed) {
+            head_button += '<li><a href="{% url forum_index %}' + head_post.pk + '/?subscribe=0"><span class="glyphicon glyphicon-bell"></span> {% trans 'Unsubscribe' %}</a></li>';
+          } else {
+            head_button += '<li><a href="{% url forum_index %}' + head_post.pk + '/?subscribe=1"><span class="glyphicon glyphicon-bell"></span> {% trans 'Subscribe' context 'button' %}</a></li>';
+          }
+        }
+
+        if (show_report) {
+
+          if (show_subscribe) head_button += '<li class="divider"></li>';
+
+          head_button += '<li><a href="{% url report 'sexual' %}?target_id=' + head_post.pk + '&target=Post">{% trans 'Sexual Remarks' %}</a></li>'
+                       + '<li><a href="{% url report 'advertising' %}?target_id=' + head_post.pk + '&target=Post">{% trans 'Advertising' %}</a></li>'
+                       + '<li><a href="{% url report 'abuse' %}?target_id=' + head_post.pk + '&target=Post">{% trans 'Other Abuse' %}</a></li>'
+        }
+
+        head_button += '</ul>';
+      }
  
       /* Render the index head, entries will be rendered later */
-      var head_post = extra.breadcrumbs[extra.breadcrumbs.length - 1];
       $('#data').html(
         '<div class="white-well big-faq" style="min-height:130px;">'
         + '<div class="col-md-2">'
           + '<img src="' + head_post.avatar + '"  class="forum-picture img-circle"/>'
         + '</div>'
         + '<div class="col-md-10">'
-          + '<p class="pull-right">' + head_button + '</p>'
+          + '<div class="pull-right">'
+            + '<div class="btn-group btn-group-md">' + head_button + '</div>'
+          + '</div>'
           + '<h3>' + head_post.text_short + '</h3>'
         + '</div>'
       + '</div>'
       +
-          /* Add a hidden form */
-          '<div id="post_reply_head" class="panel panel-default ' + hide_form + '">' +
-            add_form(head_post.pk) + 
-          '</div>' +
+        /* Add a hidden form */
+        '<div id="post_reply_head" class="panel panel-default ' + hide_form + '">' +
+          add_form(head_post.pk) + 
+        '</div>' +
 
-        '<div id="entries" /></div>');
+      '<div id="entries" /></div>');
     }
 
     function render(i, e, last_end) {
@@ -173,7 +213,7 @@ Basic JSON load scenario:
       var hidden = '';
 
       var link = "";
-      if (e.level < 3) {
+      if (e.level < 2) {
         if (e.pk == AjaxConfiguration.root) {
             link = 'onClick="change(\' + e.parent + \')"';
         } else {
@@ -186,8 +226,9 @@ Basic JSON load scenario:
       footer =
           '';
 
+      var btn_posts = '';
       if (e.post_count > 0) {
-        footer += '<small>' + e.post_count + ' '+ e.posts + '</small> ';
+        btn_posts = ' (' + e.post_count + ')';
       }
 
       footer += '<div class="btn-group btn-group-md">';
@@ -196,12 +237,12 @@ Basic JSON load scenario:
         footer += '<a href="' + e.deletable_link + '" class="btn btn-default" ><span class="glyphicon glyphicon-trash"></span> {% trans 'Delete' %}</a>';
       }
 
-      if (link != "") footer += '<a href="javascript:void(0)" ' + link + ' class="btn btn-info" >{% trans 'Read posts' %}</a>';
+      if (link != "") footer += '<a href="javascript:void(0)" ' + link + ' class="btn btn-info" >{% trans 'Read posts' %}' + btn_posts + '</a>';
 
       {% if user.is_authenticated %}
 
         var show_report = ('{{user}}' != e.user && e.level >= 1);
-        var show_subscribe = (e.level == 2);
+        var show_subscribe = (e.level == 1);
 
         if (show_report || show_subscribe) {
 
@@ -224,8 +265,9 @@ Basic JSON load scenario:
             footer += '<li><a href="{% url report 'sexual' %}?target_id=' + e.pk + '&target=Post">{% trans 'Sexual Remarks' %}</a></li>'
                   + '<li><a href="{% url report 'advertising' %}?target_id=' + e.pk + '&target=Post">{% trans 'Advertising' %}</a></li>'
                   + '<li><a href="{% url report 'abuse' %}?target_id=' + e.pk + '&target=Post">{% trans 'Other Abuse' %}</a></li>'
-                + '</ul>';
-           }
+          }
+
+          footer += '</ul>';
         }
 
       {% endif %}
@@ -234,28 +276,22 @@ Basic JSON load scenario:
       body += '<p>' + e.text + '</p>';
 
 
-      if (e.level == 3) {
+      if (e.level == 2) {
         var s = i;
-
-//        if (e.level == 4) s = last_end;
-
       }
 
       footer += '</div>';
 
-      var offset = '';
-      if (e.level == '4') {
-        offset = 'col-xs-offset-1';
-      }
+      var offset = 'col-xs-offset-1';
 
       var show_user = '';
 
-      if (e.level > 1) {
+      if (e.level > 0) {
         show_user = '<small><a href="' + user_link + '">' + e.user + '</a></small>';
       }
 
       var last_post = '';
-      if (e.level < 3 && e.last_post) {
+      if (e.level < 2 && e.last_post) {
         last_post = '{% blocktrans %}<a href="javascript:void(0)" onClick="change(\'' + e.last_post.id + '\');">Last reaction</a> ' + e.last_post.date + ' by <a href="/profile/' + e.user + '/">' + e.user + '</a>{% endblocktrans %}'
       }
 
@@ -314,6 +350,8 @@ Basic JSON load scenario:
       }
 
     });
+
+    if (AjaxConfiguration.root != '') loadData();
 
     window.onscroll = scrollFunction;
 

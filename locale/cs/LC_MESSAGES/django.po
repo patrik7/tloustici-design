@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-24 09:51+0200\n"
+"POT-Creation-Date: 2014-05-24 13:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,7 +39,7 @@ msgstr "Upravit aktivity"
 #: Tloustici/translations.py:15
 msgctxt "button"
 msgid "Subscribe"
-msgstr "Upozornit"
+msgstr "Odebírat reakce"
 
 #: Tloustici/translations.py:16
 msgctxt "button"
@@ -63,6 +63,26 @@ msgstr "Poslat heslo"
 #: Tloustici/translations.py:22
 msgid "Send Private Message"
 msgstr "Odeslat zprávu"
+
+#: Tloustici/translations.py:24 forum/views.py:814
+msgctxt "female"
+msgid "You are now subscribed to the replies."
+msgstr "Nyní jsi přihlášená k odběru příspěvků v této diskuzi."
+
+#: Tloustici/translations.py:25
+msgctxt "male"
+msgid "You are now subscribed to the replies."
+msgstr "Nyní jsi přihlášen k odběru příspěvků v této diskuzi."
+
+#: Tloustici/translations.py:26 forum/views.py:817
+msgctxt "female"
+msgid "You have been unsubscribed from the replies to this post."
+msgstr "Byla jsi odhlášená z odběru příspěvků v této diskuzi."
+
+#: Tloustici/translations.py:27
+msgctxt "male"
+msgid "You have been unsubscribed from the replies to this post."
+msgstr "Byl jsi odhlášen z odběru příspěvků v této diskuzi."
 
 #: articles/admin.py:31
 msgid "Image has incorrect with to height ratio, suggested size is 860 x 360"
@@ -123,7 +143,7 @@ msgstr "Článek bude dostupný od"
 msgid "Article is not available since"
 msgstr "Článek není dostupný od"
 
-#: articles/templates/articles/article.html:47
+#: articles/templates/articles/article.html:57
 msgid "Edit"
 msgstr "Upravit"
 
@@ -465,19 +485,22 @@ msgstr "Středoškolské vzdělání"
 msgid "Elementary School"
 msgstr "Základní vzdělání"
 
-#: forum/models.py:58 forum/templates/forum/index.html:224
+#: forum/models.py:58 forum/templates/forum/index.html:179
+#: forum/templates/forum/index.html:265
 #: forum/templates/forum/messages.html:192
 #: forum/templates/forum/profile/profile_readonly.html:203
 msgid "Sexual Remarks"
 msgstr "Sexuální obtěžování"
 
-#: forum/models.py:59 forum/templates/forum/index.html:225
+#: forum/models.py:59 forum/templates/forum/index.html:180
+#: forum/templates/forum/index.html:266
 #: forum/templates/forum/messages.html:193
 #: forum/templates/forum/profile/profile_readonly.html:204
 msgid "Advertising"
 msgstr "Nevyžádaná reklama"
 
-#: forum/models.py:60 forum/templates/forum/index.html:226
+#: forum/models.py:60 forum/templates/forum/index.html:181
+#: forum/templates/forum/index.html:267
 #: forum/templates/forum/messages.html:194
 #: forum/templates/forum/profile/profile_readonly.html:205
 msgid "Other Abuse"
@@ -907,14 +930,6 @@ msgstr ""
 "E-mail s novým heslem nebyl zaslán. Omlouváme se za technické potíže, změnu "
 "hesla zkus později."
 
-#: forum/views.py:814
-msgid "You are now subscribed to the replies."
-msgstr ""
-
-#: forum/views.py:817
-msgid "You have been unsubscribed from the replies to this post."
-msgstr ""
-
 #: forum/views.py:834
 msgid "Post not saved."
 msgstr "Příspěvek nebyl uložen"
@@ -1047,6 +1062,7 @@ msgid "Message from user"
 msgstr "Zpráva od uživatele"
 
 #: forum/templates/forum/email_new_message.html:31
+#: forum/templates/forum/index.html:151
 msgid "Reply"
 msgstr "Odpovědět"
 
@@ -1237,27 +1253,27 @@ msgstr ""
 msgid "You are in discussion"
 msgstr "Jsi v diskuzi"
 
-#: forum/templates/forum/index.html:143
+#: forum/templates/forum/index.html:149
 msgid "Start new discussion"
 msgstr "Začít novou diskuzi"
 
-#: forum/templates/forum/index.html:196
-msgid "Delete"
-msgstr "Vymazat"
-
-#: forum/templates/forum/index.html:199
-msgid "Read posts"
-msgstr "Číst příspěvky"
-
-#: forum/templates/forum/index.html:214
+#: forum/templates/forum/index.html:169 forum/templates/forum/index.html:255
 msgid "Unsubscribe"
 msgstr "Neodebírat reakce"
 
-#: forum/templates/forum/index.html:216
+#: forum/templates/forum/index.html:171 forum/templates/forum/index.html:257
 msgid "Subscribe"
 msgstr "Odebírat reakce"
 
-#: forum/templates/forum/index.html:259
+#: forum/templates/forum/index.html:237
+msgid "Delete"
+msgstr "Vymazat"
+
+#: forum/templates/forum/index.html:240
+msgid "Read posts"
+msgstr "Číst reakce"
+
+#: forum/templates/forum/index.html:295
 msgid ""
 "<a href=\"javascript:void(0)\" onClick=\"change(\\'' + e.last_post.id + "
 "'\\');\">Last reaction</a> ' + e.last_post.date + ' by <a href=\"/profile/' "
