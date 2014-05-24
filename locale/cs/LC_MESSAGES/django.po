@@ -798,7 +798,7 @@ msgstr "Příspěvek byl smazaný"
 
 #: forum/tests.py:744 forum/views.py:794
 msgid "You can no longer delete the post."
-msgstr "Na tvůj příspěvek bylo dpovězeno, nemůže být již smazán"
+msgstr "Na tvůj příspěvek bylo odpovězeno, nemůže být již smazán"
 
 #: forum/tests.py:753 forum/views.py:832
 msgid "Your reply was saved."
