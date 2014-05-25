@@ -43,7 +43,7 @@ Basic JSON load scenario:
       <div class="white-well big-faq">
         <div class="row">
           <div class="col-md-2">
-            <img src="{{category.image_url}}" class="img-max" />
+            <img src="{{category.image_url}}" class="img-forum" />
           </div>
           <div class="col-md-6">
             <h3>{{category.body_html}}</h3>
@@ -188,7 +188,7 @@ Basic JSON load scenario:
       $('#data').html(
         '<div class="white-well big-faq" style="min-height:130px;">'
         + '<div class="col-md-2">'
-          + '<img src="' + head_post.avatar + '"  class="forum-picture img-circle"/>'
+          + '<img src="' + head_post.avatar + '"  class="img-forum-head img-circle"/>'
         + '</div>'
         + '<div class="col-md-10">'
           + '<div class="pull-right">'
@@ -298,7 +298,7 @@ Basic JSON load scenario:
       var shade_alternation = '';
       if (i % 2 == 1) shade_alternation = 'shade';
 
-      var avatar = '<img src="' + e.avatar + '" class="img-circle" style="max-width: 124px;" />';
+      var avatar = '<img src="' + e.avatar + '" class="img-circle img-forum"  />';
       if (show_user != '') {
         avatar = '<a href="' + user_link + '">' + avatar + '</a>';
       }
