@@ -225,10 +225,18 @@ Messagess origin
 
          footer += '</div></div>';
 
-      body += '<small class="pull-right text-muted">{% trans 'Last message' %}: ' + e.last_message + '</small>';
-      body += '<p class="col-xs-12">{% trans 'Conversation with' %} <a href="' + e.other_user_link + '">' + e.other_user + '</a>';
+      body += '<p class="pull-right text-muted">{% trans 'Last message' %}: ' + e.last_message + '</p>';
+      body += '<h3 class="col-xs-12">{% trans 'Conversation with' %} <a href="' + e.other_user_link + '">' + e.other_user + '</a>';
       if (e.unread > 0) {
         body += ' <span class="badge">' + e.unread + '</span>'; 
+      }
+      body += '</h3>';
+
+      body += '<p class="conversation-snippet">';
+      if (e.last_message_snippet) {
+        body += '"' + e.last_message_snippet + '"';
+      } else {
+        body += 'You have sent the last message.';
       }
       body += '</p>';
 

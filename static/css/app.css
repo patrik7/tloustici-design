@@ -65,6 +65,11 @@ html {
   margin-left: 33px;
 }
 
+.conversation-snippet {
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
 /* make sure pagination div is at the bottom */
 #data:before, #data:after {
   display: table;
