@@ -10,8 +10,6 @@ New email
 
 {% load i18n %}
 
-{% block title %}{% trans 'New Message from' %} <a href="" style="color: #2BA6CB;">{{from}}</a>{% endblock %}
-
 {% block main %}
 
 <table style="width: 100%;">
@@ -24,7 +22,7 @@ New email
       </td>
       <td style="padding-left: 20px;" >
         <p><b>{% trans 'Message from user' %} <a href="http://{{domain}}{% url profile from %}?utm_source=internal&utm_content=userlink&utm_medium=email&utm_campaign=message" style="color: #2BA6CB;">{{from}}</a></b></p>
-        <p>{{body}}</p>
+        <p>{{body|safe}}</p>
 
         <br/><br/>
 

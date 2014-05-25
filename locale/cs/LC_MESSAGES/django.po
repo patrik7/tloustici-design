@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-24 16:05+0200\n"
+"POT-Creation-Date: 2014-05-24 18:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -453,7 +453,7 @@ msgstr "Váha neodpovídá reálným hodnotám"
 msgid "doesn't matter"
 msgstr "Nezáleží"
 
-#: forum/forms.py:447 forum/models.py:408
+#: forum/forms.py:447 forum/models.py:424
 msgid "City"
 msgstr "Město"
 
@@ -510,12 +510,12 @@ msgstr "Ostatní"
 msgid "Parent"
 msgstr "Rodič"
 
-#: forum/models.py:76 forum/models.py:242 forum/models.py:243
-#: forum/models.py:320 forum/models.py:474
+#: forum/models.py:76 forum/models.py:258 forum/models.py:259
+#: forum/models.py:336 forum/models.py:490
 msgid "User"
 msgstr "Uživatel"
 
-#: forum/models.py:78 forum/models.py:322
+#: forum/models.py:78 forum/models.py:338
 msgid "Created"
 msgstr "Vytvořeno"
 
@@ -531,15 +531,15 @@ msgstr "Aktualizováno"
 msgid "Markup"
 msgstr "Markup"
 
-#: forum/models.py:82 forum/models.py:323
+#: forum/models.py:82 forum/models.py:339
 msgid "Message"
 msgstr "Zpráva"
 
-#: forum/models.py:83 forum/models.py:479
+#: forum/models.py:83 forum/models.py:495
 msgid "HTML version"
 msgstr "HTML verze"
 
-#: forum/models.py:84 forum/models.py:324
+#: forum/models.py:84 forum/models.py:340
 msgid "User IP"
 msgstr "Uživatelské IP"
 
@@ -571,142 +571,142 @@ msgstr "Příspěvky"
 msgid "New Forum Post"
 msgstr "Nový příspěvek na fóru"
 
-#: forum/models.py:190
+#: forum/models.py:206
 msgid "post"
 msgid_plural "posts"
 msgstr[0] "příspěvek"
 msgstr[1] "příspěvky"
 
-#: forum/models.py:349
+#: forum/models.py:365
 msgid "New Message"
 msgstr "Nová zpráva"
 
-#: forum/models.py:349
+#: forum/models.py:365
 msgctxt "username"
 msgid "from"
 msgstr "od"
 
-#: forum/models.py:384 forum/models.py:394
+#: forum/models.py:400 forum/models.py:410
 msgid "Area"
 msgstr "Kraj"
 
-#: forum/models.py:385
+#: forum/models.py:401
 msgid "Areas"
 msgstr "Kraje"
 
-#: forum/models.py:394
+#: forum/models.py:410
 msgid "Area the city belongs to"
 msgstr "Kraj ke kterému město patří"
 
-#: forum/models.py:409
+#: forum/models.py:425
 msgid "Cities"
 msgstr "Města"
 
-#: forum/models.py:419 forum/templates/forum/friend_suggestion.html:34
+#: forum/models.py:435 forum/templates/forum/friend_suggestion.html:34
 msgid "Activity"
 msgstr "Aktivity"
 
-#: forum/models.py:420 forum/templates/forum/search.html:97
+#: forum/models.py:436 forum/templates/forum/search.html:97
 #: forum/templates/forum/profile/profile_essentials.html:53
 #: forum/templates/forum/profile/profile_readonly.html:124
 #: forum/templates/forum/profile/profile_readonly.html:193
 msgid "Activities"
 msgstr "Aktivity"
 
-#: forum/models.py:475
+#: forum/models.py:491
 msgid "city"
 msgstr "město"
 
-#: forum/models.py:476
+#: forum/models.py:492
 msgid "Language"
 msgstr "Jazyk"
 
-#: forum/models.py:477
+#: forum/models.py:493
 msgid "Avatar"
 msgstr "Fotka"
 
-#: forum/models.py:478
+#: forum/models.py:494
 msgid "Description"
 msgstr "Popis"
 
-#: forum/models.py:478
+#: forum/models.py:494
 msgid "Use few sentences to describe yourself, and who are you looking for."
 msgstr "Prozraď něco více o sobě, popiš koho hledáš"
 
-#: forum/models.py:480
+#: forum/models.py:496
 msgid "date of birth"
 msgstr "datum narození"
 
-#: forum/models.py:481
+#: forum/models.py:497
 msgid "sex"
 msgstr "pohlaví"
 
-#: forum/models.py:482
+#: forum/models.py:498
 msgid "height"
 msgstr "výška"
 
-#: forum/models.py:483
+#: forum/models.py:499
 msgid "weight"
 msgstr "váha"
 
-#: forum/models.py:484
+#: forum/models.py:500
 msgid "phone"
 msgstr "telefon"
 
-#: forum/models.py:485
+#: forum/models.py:501
 msgid "education"
 msgstr "vzdělání"
 
-#: forum/models.py:485
+#: forum/models.py:501
 msgid "The highest achieved education"
 msgstr "Nejvyšší dosažené vzdělání"
 
-#: forum/models.py:487
+#: forum/models.py:503
 msgid "searchable"
 msgstr "vyhledatelný"
 
-#: forum/models.py:487
+#: forum/models.py:503
 msgid ""
 "Decide if your profile should come up when others use the search function."
 msgstr "Zobrazovat se ostatním uživatelům při hledání"
 
-#: forum/models.py:496
+#: forum/models.py:512
 msgid "Message notification"
 msgstr "Upozornit na zprávy"
 
-#: forum/models.py:496
+#: forum/models.py:512
 msgid "Receive an email notification on incoming message"
 msgstr "Zasílat soukromné zprávy na e-mail"
 
-#: forum/models.py:497
+#: forum/models.py:513
 msgid "Forum subscription"
 msgstr "Předvolit upozornení na fóru"
 
-#: forum/models.py:497
+#: forum/models.py:513
 msgid "Subscribe to my forum posts by default"
 msgstr "Posílat notifikace na veškeré odpovědi v zúčastněných tématech fóra"
 
-#: forum/models.py:498
+#: forum/models.py:514
 msgid "Newsletter subscription"
 msgstr "Odoberat novinky"
 
-#: forum/models.py:498
+#: forum/models.py:514
 msgid "Subscribe to newsletter"
 msgstr "Přihlásit se k odběru novinek"
 
-#: forum/models.py:500
+#: forum/models.py:516
 msgid "Fans Count"
 msgstr "Počet Fanoušků"
 
-#: forum/models.py:503 forum/templates/forum/profile/profile_readonly.html:14
+#: forum/models.py:519 forum/templates/forum/profile/profile_readonly.html:14
 msgid "Profile"
 msgstr "Profil"
 
-#: forum/models.py:504
+#: forum/models.py:520
 msgid "Profiles"
 msgstr "Profily"
 
-#: forum/models.py:588
+#: forum/models.py:604
 msgid "note"
 msgstr "poznámka"
 
@@ -1070,21 +1070,16 @@ msgstr "Doporučit příteli"
 msgid "Send"
 msgstr "Odeslat"
 
-#: forum/templates/forum/email_new_message.html:13
-#: forum/templates/forum/email_new_message.txt:14
-msgid "New Message from"
-msgstr "Nová zpráva od"
-
-#: forum/templates/forum/email_new_message.html:26
+#: forum/templates/forum/email_new_message.html:24
 msgid "Message from user"
 msgstr "Zpráva od uživatele"
 
-#: forum/templates/forum/email_new_message.html:31
+#: forum/templates/forum/email_new_message.html:29
 #: forum/templates/forum/index.html:151
 msgid "Reply"
 msgstr "Odpovědět"
 
-#: forum/templates/forum/email_new_message.html:42
+#: forum/templates/forum/email_new_message.html:40
 #, python-format
 msgid ""
 "\n"
@@ -1096,6 +1091,10 @@ msgstr ""
 "Oznámení na zprávu e-mailem můžete vypnout v <a href=\"http://%(domain)s"
 "%(url_settings)s\" style=\"color: #2BA6CB;\" >nastavení profilu</a>.\n"
 
+#: forum/templates/forum/email_new_message.txt:14
+msgid "New Message from"
+msgstr "Nová zpráva od"
+
 #: forum/templates/forum/email_new_message.txt:18
 msgid "You can reply to the message on"
 msgstr "Na zprávu můžeš odpovědět na"
@@ -1106,29 +1105,41 @@ msgstr "Na zprávu můžeš odpovědět na"
 msgid "Best Regards"
 msgstr "S pozdravem"
 
-#: forum/templates/forum/email_new_post.html:13
+#: forum/templates/forum/email_new_post.html:24
+msgid "New post on forum by"
+msgstr ""
+
+#: forum/templates/forum/email_new_post.html:29
+msgid "Checkout forum"
+msgstr ""
+
+#: forum/templates/forum/email_new_post.html:40
+#, python-format
+msgid ""
+"\n"
+"If you don't wish to receive e-mail notifications, you can unsubscribe from "
+"this forum discussion by clicking on this <a href=\"http://%(domain)s"
+"%(url_unsubscribe)s?"
+"subscribe=0&utm_source=internal&utm_content=unsubscribelink&utm_medium=email&utm_campaign=forum"
+"\" style=\"color: #2BA6CB;\" >link</a>\n"
+msgstr ""
+
 #: forum/templates/forum/email_new_post.txt:15
 msgid "New Forum Post from"
 msgstr ""
 
-#: forum/templates/forum/email_new_post.html:36
 #: forum/templates/forum/email_new_post.txt:19
 msgid "Replying to"
 msgstr "Odpověd na"
 
-#: forum/templates/forum/email_new_post.html:56
-msgid "Visit forum"
+#: forum/templates/forum/email_new_post.txt:23
+msgid "Visit forum on"
 msgstr ""
 
-#: forum/templates/forum/email_new_post.html:62
 #: forum/templates/forum/email_new_post.txt:28
 msgid ""
 "You have received this email because you are subscribed to one of the posts "
 "this is replying to."
-msgstr ""
-
-#: forum/templates/forum/email_new_post.txt:23
-msgid "Visit forum on"
 msgstr ""
 
 #: forum/templates/forum/email_password_recovery.html:16

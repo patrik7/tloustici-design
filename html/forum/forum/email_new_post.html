@@ -2,7 +2,7 @@
 
 Hubnemevedvou.cz
 
-New email post
+New email
 
 ------------------------------------------------------------------------------------------->
 
@@ -10,58 +10,40 @@ New email post
 
 {% load i18n %}
 
-{% block title %}{% trans 'New Forum Post from' %} {{post.user}}{% endblock %}
-
 {% block main %}
 
 <table style="width: 100%;">
   <tbody>
     <tr>
       <td align="center" style="width: 100px;">
-        <a href="http://{{domain}}{% url profile post.user.username %}?utm_source=internal&utm_content=avatarlink&utm_medium=email&utm_campaign={{analytics_campaign}}" style="border: 0px;">
-          <img src="https:{{post.image_url}}" width="100%" style="border-radius: 50%; vertical-align: top; border: 0px;" />
+        <a href="http://{{domain}}{% url profile post.user.username %}?utm_source=internal&utm_content=avatarlink&utm_medium=email&utm_campaign=message" style="border: 0px;">
+          <img src="{{post.image_url}}" width="100%" style="border-radius: 50%; vertical-align: top; border: 0px;" />
         </a>
       </td>
       <td style="padding-left: 20px;" >
-        {{post.body_html|safe}}
+        <p><b>{% trans 'New post on forum by' %} <a href="http://{{domain}}{% url profile post.user.username %}?utm_source=internal&utm_content=userlink&utm_medium=email&utm_campaign=message" style="color: #2BA6CB;">{{post.user.username}}</a></b></p>
+        <p>{{post.body_html|safe}}</p>
+
+        <br/><br/>
+
+        <a href="http://{{domain}}{% url forum_post post.id %}?utm_source=internal&utm_content=forumlink&utm_medium=email&utm_campaign=forum" {% include 'base/email_calltoactionbutton.html' %}>{% trans 'Checkout forum' %}</a>
       </td>
-    </tr>
+    </tr>  
   </tbody>
 </table>
 
-<br/><br/>
-
-<p>
-<b>
-{% trans 'Replying to' %}
-</b>
-</p>
-
-<table style="width: 100%;">
-  <tbody>
-    <tr>
-      <td align="center" style="width: 100px;">
-        <a href="http://{{domain}}{% url profile post.paret.user.username %}?utm_source=internal&utm_content=avatarlink&utm_medium=email&utm_campaign={{analytics_campaign}}" style="border: 0px;">
-          <img src="https:{{post.parent.image_url}}" width="100%" style="border-radius: 50%; vertical-align: top; border: 0px;" />
-        </a>
-      </td>
-      <td style="padding-left: 20px;" >
-        {{post.parent.body_html|safe}}
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<p>
-{% trans 'Visit forum' %}
-<a href="http://hubnemevedvou.cz{% url forum_post post.id %}?utm_source=internal&utm_content=bottomlink&utm_medium=email&utm_campaign={{analytics_campaign}}">hubnemevedvou.cz/forum</a>.
-</p>
+<br/>
+<br/>
+<br/>
 
 <small>
-<p class="text-muted">
-{% trans 'You have received this email because you are subscribed to one of the posts this is replying to.' %}
-</p>
+{% blocktrans %}
+If you don't wish to receive e-mail notifications, you can unsubscribe from this forum discussion by clicking on this <a href="http://{{domain}}{{url_unsubscribe}}?subscribe=0&utm_source=internal&utm_content=unsubscribelink&utm_medium=email&utm_campaign=forum" style="color: #2BA6CB;" >link</a>
+{% endblocktrans %}
 </small>
 
+{% endblock %}
+
+{% block signature %}
 {% endblock %}
 

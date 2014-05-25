@@ -119,12 +119,19 @@ Base - zakladna sablona
             {% if register_form %}
             <div id="register-new-sidebar">
               <strong>{% trans 'Get your lucky strike, take the first step and register!' %}</strong>
+              <p/>
               <form method="post" action="/register/0/" class="form">
                 {% csrf_token %}
                 {{register_form|bootstrap}}
+
+                {% url terms as url_terms %}
+                <p id="id_disclaimer" class="text-center hidden small" style="font-weight: normal;">
+                  {% blocktrans %}Registering here, I confirm I agree with <a href="{{url_terms}}" target="_blank">terms and conditions</a>.{% endblocktrans %}
+                </p> 
+
                 <input type="submit" class="btn btn-green" name="step0" value="{% trans 'Create an Account' %}">
               </form>
-                
+
               <div class="text-center">
                 <img src="{{STATIC_URL}}images/hubneme-ve-dvou-1.png" />
                     
