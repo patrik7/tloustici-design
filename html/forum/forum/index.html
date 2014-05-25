@@ -114,7 +114,7 @@ Basic JSON load scenario:
         {% url forum_index as url_forum %}
 
         {% blocktrans %}
-          'Only registered users can post on the forum. Please <a href="{{url_login}}?redirect={{url_forum}}">log in</a> or <a href="{{url_register}}">register</a>.';
+          'Only registered users can post on the forum. Please <a class="light-link" href="{{url_login}}?redirect={{url_forum}}">log in</a> or <a class="light-link" href="{{url_register}}">register</a>.';
         {% endblocktrans %}
 
       {% endif %}
