@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-25 19:28+0200\n"
+"POT-Creation-Date: 2014-05-25 20:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,7 +64,7 @@ msgstr "Poslat heslo"
 msgid "Send Private Message"
 msgstr "Odeslat zprávu"
 
-#: Tloustici/translations.py:24 forum/views.py:835
+#: Tloustici/translations.py:24 forum/views.py:836
 msgctxt "female"
 msgid "You are now subscribed to the replies."
 msgstr "Nyní jsi přihlášená k odběru příspěvků v této diskuzi."
@@ -74,7 +74,7 @@ msgctxt "male"
 msgid "You are now subscribed to the replies."
 msgstr "Nyní jsi přihlášen k odběru příspěvků v této diskuzi."
 
-#: Tloustici/translations.py:26 forum/views.py:838
+#: Tloustici/translations.py:26 forum/views.py:839
 msgctxt "female"
 msgid "You have been unsubscribed from the replies to this post."
 msgstr "Byla jsi odhlášená z odběru příspěvků v této diskuzi."
@@ -159,11 +159,11 @@ msgstr "Tvé BMI je"
 msgid "Find out your BMI"
 msgstr "Zjistěte si své BMI"
 
-#: articles/templates/articles/bmi.html:37 forum/views.py:467
+#: articles/templates/articles/bmi.html:37 forum/views.py:468
 msgid "Height"
 msgstr "Výška"
 
-#: articles/templates/articles/bmi.html:43 forum/views.py:470
+#: articles/templates/articles/bmi.html:43 forum/views.py:471
 msgid "Weight"
 msgstr "Váha"
 
@@ -443,7 +443,7 @@ msgstr "Jsi zablokován, nemůžeš posílat zprávy tomuto uživateli."
 msgid "Real name"
 msgstr "Jméno a příjmení"
 
-#: forum/forms.py:290 forum/views.py:461
+#: forum/forms.py:290 forum/views.py:462
 msgid "Date of Birth"
 msgstr "Datum narození"
 
@@ -759,58 +759,58 @@ msgstr ""
 "Vypršela doba určená pro aktivaci účtu. Navštiv hubnemevedvou.cz pro další "
 "pokus."
 
-#: forum/tests.py:285 forum/tests.py:335 forum/views.py:298
+#: forum/tests.py:285 forum/tests.py:335 forum/views.py:299
 msgid "An abuse report was created."
 msgstr "Stížnost byla nahlášena."
 
-#: forum/tests.py:306 forum/views.py:287
+#: forum/tests.py:306 forum/views.py:288
 msgid "You are trying to report your own post."
 msgstr "Snažíš se ohlásit vlastní příspěvek."
 
-#: forum/tests.py:323 forum/views.py:277
+#: forum/tests.py:323 forum/views.py:278
 msgid "You are trying to report your own message."
 msgstr "Snažíš se ohlásit svou zprávu."
 
-#: forum/tests.py:411 forum/views.py:509
+#: forum/tests.py:411 forum/views.py:510
 #, python-format
 msgid "User %s was added to the list"
 msgstr "Uživatel %s byl pridán do seznamu"
 
-#: forum/tests.py:417 forum/views.py:506
+#: forum/tests.py:417 forum/views.py:507
 #, python-format
 msgid "User %s was already in the list"
 msgstr "Uživatelské jméno %s je již v seznamu"
 
-#: forum/tests.py:427 forum/views.py:518
+#: forum/tests.py:427 forum/views.py:519
 #, python-format
 msgid "User %s was removed from the list"
 msgstr "Uživatel %s byl odebrán ze seznamu"
 
-#: forum/tests.py:455 forum/views.py:712
+#: forum/tests.py:455 forum/views.py:713
 #, python-format
 msgid ""
 "You have blocked user %s, he/she will not be able to send you messages "
 "anymore."
 msgstr "Uživatel %s byl zablokován, už od něj neobdržíš žádné zprávy."
 
-#: forum/tests.py:464 forum/views.py:721
+#: forum/tests.py:464 forum/views.py:722
 #, python-format
 msgid "You have unblocked user %s."
 msgstr "Uživatel %s již není blokován."
 
-#: forum/tests.py:624 forum/views.py:764
+#: forum/tests.py:624 forum/views.py:765
 msgid "Email with your new password was sent to"
 msgstr "E-mail s novým heslem byl zaslán na"
 
-#: forum/tests.py:734 forum/views.py:817
+#: forum/tests.py:734 forum/views.py:818
 msgid "Post was deleted."
 msgstr "Příspěvek byl smazaný"
 
-#: forum/tests.py:744 forum/views.py:815
+#: forum/tests.py:744 forum/views.py:816
 msgid "You can no longer delete the post."
 msgstr "Na tvůj příspěvek bylo odpovězeno, nemůže být již smazán"
 
-#: forum/tests.py:753 forum/views.py:853
+#: forum/tests.py:753 forum/views.py:854
 msgid "Your reply was saved."
 msgstr "Tvá odpověď byla uložena."
 
@@ -818,7 +818,7 @@ msgstr "Tvá odpověď byla uložena."
 msgid "Search Criteria"
 msgstr "Kritéria vyhledávání"
 
-#: forum/tests.py:889 forum/tests.py:910 forum/tests.py:936 forum/views.py:383
+#: forum/tests.py:889 forum/tests.py:910 forum/tests.py:936 forum/views.py:384
 msgid "User profile saved."
 msgstr "Uživatelský profil byl uložen."
 
@@ -883,49 +883,49 @@ msgstr ""
 msgid "Your account was activated."
 msgstr "Gratulujeme! Tvá registrace byla úspěšně dokončena."
 
-#: forum/views.py:316
+#: forum/views.py:317
 msgid "The report was updated."
 msgstr "Hlášení bylo aktualizováno"
 
-#: forum/views.py:323
+#: forum/views.py:324
 msgid "Update"
 msgstr "Aktualizovat"
 
-#: forum/views.py:332
+#: forum/views.py:333
 msgid "How to search for partner"
 msgstr "Jak hledat partnera?"
 
-#: forum/views.py:336
+#: forum/views.py:337
 msgid "Click on the 'Search' entry in the left sidebar menu."
 msgstr ""
 
-#: forum/views.py:340
+#: forum/views.py:341
 msgid "Select your search preference. Limit the search by sex and city."
 msgstr ""
 
-#: forum/views.py:344
+#: forum/views.py:345
 msgid ""
 "You can choose to add people to you favourites list, send them a message. Or "
 "check their profile further by clicking on their username."
 msgstr ""
 
-#: forum/views.py:397
+#: forum/views.py:398
 msgid "Your password was changed."
 msgstr "Tvé heslo bylo změněno."
 
-#: forum/views.py:398
+#: forum/views.py:399
 msgid "Please log in again."
 msgstr "Prosím, přihlaš se znovu"
 
-#: forum/views.py:402
+#: forum/views.py:403
 msgid "Password for"
 msgstr "Heslo pro"
 
-#: forum/views.py:402
+#: forum/views.py:403
 msgid "was changed."
 msgstr "bylo změněno."
 
-#: forum/views.py:450
+#: forum/views.py:451
 #, python-format
 msgid ""
 "Your bio description is empty, consider <a href=\"%s?edit=1\"><b>filling it "
@@ -934,23 +934,23 @@ msgstr ""
 "<a href=\"%s?edit=1\"><b>Prozraď něco málo o sobě</b></a> a usnadni tak "
 "hledání svému budoucímu parťákovi."
 
-#: forum/views.py:458
+#: forum/views.py:459
 msgid "name"
 msgstr "Jméno"
 
-#: forum/views.py:464
+#: forum/views.py:465
 msgid "Education"
 msgstr "Vzdělání"
 
-#: forum/views.py:697
+#: forum/views.py:698
 msgid "Message sent."
 msgstr "Zpráva odeslána."
 
-#: forum/views.py:758 forum/templates/forum/password_recovery.html:17
+#: forum/views.py:759 forum/templates/forum/password_recovery.html:17
 msgid "Password Recovery"
 msgstr "Obnovení hesla"
 
-#: forum/views.py:766
+#: forum/views.py:767
 msgid ""
 "Failed to send an email with the new password, your password was not "
 "changed, please try again later"
@@ -958,7 +958,7 @@ msgstr ""
 "E-mail s novým heslem nebyl zaslán. Omlouváme se za technické potíže, změnu "
 "hesla zkus později."
 
-#: forum/views.py:855
+#: forum/views.py:856
 msgid "Post not saved."
 msgstr "Příspěvek nebyl uložen"
 
@@ -1160,6 +1160,7 @@ msgstr ""
 "Uživatel %(from)s přidal do fóra nový příspěvek.\n"
 
 #: forum/templates/forum/email_new_post.txt:17
+#, python-format
 msgid ""
 "\n"
 "If you don't wish to receive e-mail notifications, you can unsubscribe from "
@@ -1360,10 +1361,6 @@ msgstr ""
 msgid "Add note"
 msgstr "Přidat komentář"
 
-#: forum/templates/forum/report.html:51
-msgid "You need to click on the report button to report an abuse"
-msgstr ""
-
 #: forum/templates/forum/search.html:34
 #, python-format
 msgid ""
@@ -1403,10 +1400,6 @@ msgstr "Základní informace"
 #: forum/templates/forum/profile/profile_essentials.html:35
 msgid "Personal Information"
 msgstr "Osobní informace"
-
-#: forum/templates/forum/profile/profile_essentials.html:35
-msgid "not visible to others"
-msgstr "nepřístupné ostatním uživatelům"
 
 #: forum/templates/forum/profile/profile_essentials.html:40
 msgid ""
@@ -1575,6 +1568,9 @@ msgstr "Nahrát obrázek"
 #: forum/templates/registration/registration_further.html:128
 msgid "I will upload my picture later"
 msgstr "Své foto nahraji později"
+
+#~ msgid "not visible to others"
+#~ msgstr "nepřístupné ostatním uživatelům"
 
 #~ msgid "Replying to"
 #~ msgstr "Odpověd na"
