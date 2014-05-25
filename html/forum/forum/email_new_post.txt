@@ -1,31 +1,23 @@
-<!------------------------------------------------------------------------------------------ 
-
-Hubnemevedvou.cz
-
-New email post txt
-
-------------------------------------------------------------------------------------------->
-
 {% extends 'base/email_base.txt' %}
 
 {% load i18n %}
 
 {% block main %}
 
-{% trans 'New Forum Post from' %} {{post.user}}
+{% url profile from as url_profile %}
+{% blocktrans %}
+New post on forum by {{from}}
+{% endblocktrans %}
 
-{{post.body}}
+{{post}}
 
-{% trans 'Replying to' %}
+{% trans 'Checkout forum' %}:
+http://{{domain}}{% url forum_post post.id %}
 
-{{post.parent.body}}
-
-{% trans 'Visit forum on' %}
-http://hubnemevedvou.cz{% url forum_post post.id %}
-
-{% trans 'Best Regards' %}
-
-{% trans 'You have received this email because you are subscribed to one of the posts this is replying to.' %}
+{% blocktrans %}
+If you don't wish to receive e-mail notifications, you can unsubscribe from this forum discussion by following this link:
+http://{{domain}}{{url_unsubscribe}}?subscribe=0
+{% endblocktrans %}
 
 {% endblock %}
 

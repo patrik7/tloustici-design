@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-25 19:17+0200\n"
+"POT-Creation-Date: 2014-05-25 19:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1110,12 +1110,12 @@ msgid "You can reply to the message on"
 msgstr "Na zprávu můžeš odpovědět na"
 
 #: forum/templates/forum/email_new_message.txt:21
-#: forum/templates/forum/email_new_post.txt:26
 #: forum/templates/forum/email_password_recovery.txt:23
 msgid "Best Regards"
 msgstr "S pozdravem"
 
 #: forum/templates/forum/email_new_post.html:26
+#, python-format
 msgid ""
 "\n"
 "            New post on forum by <a href=\"http://%(domain)s%(url_profile)s?"
@@ -1126,11 +1126,11 @@ msgstr ""
 "\n"
 "Uživatel <a href=\"http://%(domain)s%(url_profile)s?"
 "utm_source=internal&utm_content=userlink&utm_medium=email&utm_campaign=forum"
-"\" style=\"color: #2BA6CB;\">%(from)s</a> přidal do fóra nový "
-"příspěvek.\n"
+"\" style=\"color: #2BA6CB;\">%(from)s</a> přidal do fóra nový příspěvek.\n"
 " "
 
 #: forum/templates/forum/email_new_post.html:34
+#: forum/templates/forum/email_new_post.txt:14
 msgid "Checkout forum"
 msgstr "Přejít na diskuzi"
 
@@ -1150,23 +1150,25 @@ msgstr ""
 "subscribe=0&utm_source=internal&utm_content=unsubscribelink&utm_medium=email&utm_campaign=forum"
 "\" style=\"color: #2BA6CB;\" >odkaz</a>\n"
 
-#: forum/templates/forum/email_new_post.txt:15
-msgid "New Forum Post from"
-msgstr ""
-
-#: forum/templates/forum/email_new_post.txt:19
-msgid "Replying to"
-msgstr "Odpověd na"
-
-#: forum/templates/forum/email_new_post.txt:23
-msgid "Visit forum on"
-msgstr ""
-
-#: forum/templates/forum/email_new_post.txt:28
+#: forum/templates/forum/email_new_post.txt:8
+#, python-format
 msgid ""
-"You have received this email because you are subscribed to one of the posts "
-"this is replying to."
+"\n"
+"New post on forum by %(from)s\n"
 msgstr ""
+"\n"
+"Uživatel %(from)s přidal do fóra nový příspěvek.\n"
+
+#: forum/templates/forum/email_new_post.txt:17
+msgid ""
+"\n"
+"If you don't wish to receive e-mail notifications, you can unsubscribe from "
+"this forum discussion by following this link:\n"
+"http://%(domain)s%(url_unsubscribe)s?subscribe=0\n"
+msgstr ""
+"\n"
+"Pro odhlášení odběru příspěvků z této diskuze použi následující link:\n"
+"http://%(domain)s%(url_unsubscribe)s?subscribe=0\n"
 
 #: forum/templates/forum/email_password_recovery.html:16
 #, python-format
@@ -1573,6 +1575,9 @@ msgstr "Nahrát obrázek"
 #: forum/templates/registration/registration_further.html:128
 msgid "I will upload my picture later"
 msgstr "Své foto nahraji později"
+
+#~ msgid "Replying to"
+#~ msgstr "Odpověd na"
 
 #~ msgid "Thank you for registering on"
 #~ msgstr "Děkujeme za registraci na"
