@@ -21,7 +21,12 @@ New email
         </a>
       </td>
       <td style="padding-left: 20px;" >
-        <p><b>{% trans 'New post on forum by' %} <a href="http://{{domain}}{% url profile post.user.username %}?utm_source=internal&utm_content=userlink&utm_medium=email&utm_campaign=message" style="color: #2BA6CB;">{{post.user.username}}</a></b></p>
+        <p><b>
+          {% url profile post.user.username as url_profile %}
+          {% blocktrans %}
+            New post on forum by <a href="http://{{domain}}{{url_profile}}?utm_source=internal&utm_content=userlink&utm_medium=email&utm_campaign=forum" style="color: #2BA6CB;">{{post.user.username}}</a>
+          {% endblocktrans %}
+        </b></p>
         <p>{{post.body_html|safe}}</p>
 
         <br/><br/>
