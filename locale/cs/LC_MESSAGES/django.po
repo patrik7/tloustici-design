@@ -1412,6 +1412,9 @@ msgid ""
 "other registered users.\n"
 "      "
 msgstr ""
+"\n"
+"Níže si vyber, které informace budou ostatním uživatelům viditelné.\n"
+"      "
 
 #: forum/templates/forum/profile/profile_essentials.html:82
 msgid "Account Settings"
