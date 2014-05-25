@@ -287,12 +287,12 @@ Basic JSON load scenario:
       var show_user = '';
 
       if (e.level > 0) {
-        show_user = '<small><a href="' + user_link + '">' + e.user + '</a></small>';
+        show_user = '<small class="text-muted"><a href="' + user_link + '">' + e.user + '</a> - ' + e.date + '</small>';
       }
 
       var last_post = '';
       if (e.level < 2 && e.last_post) {
-        last_post = '<p class="text-muted">{% blocktrans %}<a href="javascript:void(0)" onClick="change(\'' + e.last_post.id + '\');">Last reaction</a> ' + e.last_post.date + ' by <a href="/profile/' + e.last_post.user + '/">' + e.last_post.user + '</a>{% endblocktrans %}</p>';
+        last_post = '<p class="text-muted small"><br/>{% blocktrans %}<a href="javascript:void(0)" onClick="change(\'' + e.last_post.id + '\');">Last reaction</a> ' + e.last_post.date + ' by <a href="/profile/' + e.last_post.user + '/">' + e.last_post.user + '</a>{% endblocktrans %}</p>';
       }
 
       var shade_alternation = '';
