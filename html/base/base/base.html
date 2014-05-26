@@ -238,7 +238,9 @@ Base - zakladna sablona
     {% if google_analytics %}
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', '{{google_analytics}}']);
+      _gaq.push(['_setSiteSpeedSampleRate', 100]);
       _gaq.push(['_trackPageview']);
+
 
       (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
