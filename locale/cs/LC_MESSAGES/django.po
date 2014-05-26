@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-25 21:50+0200\n"
+"POT-Creation-Date: 2014-05-26 10:18+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,7 +64,7 @@ msgstr "Poslat heslo"
 msgid "Send Private Message"
 msgstr "Odeslat zprávu"
 
-#: Tloustici/translations.py:24 forum/views.py:836
+#: Tloustici/translations.py:24 forum/views.py:872
 msgctxt "female"
 msgid "You are now subscribed to the replies."
 msgstr "Nyní jsi přihlášená k odběru příspěvků v této diskuzi."
@@ -74,7 +74,7 @@ msgctxt "male"
 msgid "You are now subscribed to the replies."
 msgstr "Nyní jsi přihlášen k odběru příspěvků v této diskuzi."
 
-#: Tloustici/translations.py:26 forum/views.py:839
+#: Tloustici/translations.py:26 forum/views.py:875
 msgctxt "female"
 msgid "You have been unsubscribed from the replies to this post."
 msgstr "Byla jsi odhlášená z odběru příspěvků v této diskuzi."
@@ -159,11 +159,11 @@ msgstr "Tvé BMI je"
 msgid "Find out your BMI"
 msgstr "Zjistěte si své BMI"
 
-#: articles/templates/articles/bmi.html:37 forum/views.py:468
+#: articles/templates/articles/bmi.html:37 forum/views.py:504
 msgid "Height"
 msgstr "Výška"
 
-#: articles/templates/articles/bmi.html:43 forum/views.py:471
+#: articles/templates/articles/bmi.html:43 forum/views.py:507
 msgid "Weight"
 msgstr "Váha"
 
@@ -443,7 +443,7 @@ msgstr "Jsi zablokován, nemůžeš posílat zprávy tomuto uživateli."
 msgid "Real name"
 msgstr "Jméno a příjmení"
 
-#: forum/forms.py:290 forum/views.py:462
+#: forum/forms.py:290 forum/views.py:498
 msgid "Date of Birth"
 msgstr "Datum narození"
 
@@ -771,46 +771,46 @@ msgstr "Snažíš se ohlásit vlastní příspěvek."
 msgid "You are trying to report your own message."
 msgstr "Snažíš se ohlásit svou zprávu."
 
-#: forum/tests.py:411 forum/views.py:510
+#: forum/tests.py:411 forum/views.py:546
 #, python-format
 msgid "User %s was added to the list"
 msgstr "Uživatel %s byl pridán do seznamu"
 
-#: forum/tests.py:417 forum/views.py:507
+#: forum/tests.py:417 forum/views.py:543
 #, python-format
 msgid "User %s was already in the list"
 msgstr "Uživatelské jméno %s je již v seznamu"
 
-#: forum/tests.py:427 forum/views.py:519
+#: forum/tests.py:427 forum/views.py:555
 #, python-format
 msgid "User %s was removed from the list"
 msgstr "Uživatel %s byl odebrán ze seznamu"
 
-#: forum/tests.py:455 forum/views.py:713
+#: forum/tests.py:455 forum/views.py:749
 #, python-format
 msgid ""
 "You have blocked user %s, he/she will not be able to send you messages "
 "anymore."
 msgstr "Uživatel %s byl zablokován, už od něj neobdržíš žádné zprávy."
 
-#: forum/tests.py:464 forum/views.py:722
+#: forum/tests.py:464 forum/views.py:758
 #, python-format
 msgid "You have unblocked user %s."
 msgstr "Uživatel %s již není blokován."
 
-#: forum/tests.py:624 forum/views.py:765
+#: forum/tests.py:624 forum/views.py:801
 msgid "Email with your new password was sent to"
 msgstr "E-mail s novým heslem byl zaslán na"
 
-#: forum/tests.py:734 forum/views.py:818
+#: forum/tests.py:734 forum/views.py:854
 msgid "Post was deleted."
 msgstr "Příspěvek byl smazaný"
 
-#: forum/tests.py:744 forum/views.py:816
+#: forum/tests.py:744 forum/views.py:852
 msgid "You can no longer delete the post."
 msgstr "Na tvůj příspěvek bylo odpovězeno, nemůže být již smazán"
 
-#: forum/tests.py:753 forum/views.py:854
+#: forum/tests.py:753 forum/views.py:890
 msgid "Your reply was saved."
 msgstr "Tvá odpověď byla uložena."
 
@@ -818,7 +818,7 @@ msgstr "Tvá odpověď byla uložena."
 msgid "Search Criteria"
 msgstr "Kritéria vyhledávání"
 
-#: forum/tests.py:889 forum/tests.py:910 forum/tests.py:936 forum/views.py:384
+#: forum/tests.py:889 forum/tests.py:910 forum/tests.py:936 forum/views.py:420
 msgid "User profile saved."
 msgstr "Uživatelský profil byl uložen."
 
@@ -892,40 +892,55 @@ msgid "Update"
 msgstr "Aktualizovat"
 
 #: forum/views.py:333
-msgid "How to search for partner"
-msgstr "Jak hledat partnera?"
+msgid "How to register"
+msgstr "Jak se registrovat"
 
 #: forum/views.py:337
-msgid "Click on the 'Search' entry in the left sidebar menu."
+msgid "help_register_1"
 msgstr ""
 
 #: forum/views.py:341
-msgid "Select your search preference. Limit the search by sex and city."
+msgid "help_register_2"
 msgstr ""
 
-#: forum/views.py:345
-msgid ""
-"You can choose to add people to you favourites list, send them a message. Or "
-"check their profile further by clicking on their username."
+#: forum/views.py:345 forum/views.py:349 forum/views.py:353 forum/views.py:357
+#: forum/views.py:361 forum/views.py:365
+msgid "help_register_3"
 msgstr ""
 
-#: forum/views.py:398
+#: forum/views.py:369
+msgid "How to search for partner"
+msgstr "Jak hledat partnera?"
+
+#: forum/views.py:373
+msgid "help_search_1"
+msgstr ""
+
+#: forum/views.py:377
+msgid "help_search_2"
+msgstr ""
+
+#: forum/views.py:381
+msgid "help_search_3"
+msgstr ""
+
+#: forum/views.py:434
 msgid "Your password was changed."
 msgstr "Tvé heslo bylo změněno."
 
-#: forum/views.py:399
+#: forum/views.py:435
 msgid "Please log in again."
 msgstr "Prosím, přihlaš se znovu"
 
-#: forum/views.py:403
+#: forum/views.py:439
 msgid "Password for"
 msgstr "Heslo pro"
 
-#: forum/views.py:403
+#: forum/views.py:439
 msgid "was changed."
 msgstr "bylo změněno."
 
-#: forum/views.py:451
+#: forum/views.py:487
 #, python-format
 msgid ""
 "Your bio description is empty, consider <a href=\"%s?edit=1\"><b>filling it "
@@ -934,23 +949,23 @@ msgstr ""
 "<a href=\"%s?edit=1\"><b>Prozraď něco málo o sobě</b></a> a usnadni tak "
 "hledání svému budoucímu parťákovi."
 
-#: forum/views.py:459
+#: forum/views.py:495
 msgid "name"
 msgstr "Jméno"
 
-#: forum/views.py:465
+#: forum/views.py:501
 msgid "Education"
 msgstr "Vzdělání"
 
-#: forum/views.py:698
+#: forum/views.py:734
 msgid "Message sent."
 msgstr "Zpráva odeslána."
 
-#: forum/views.py:759 forum/templates/forum/password_recovery.html:17
+#: forum/views.py:795 forum/templates/forum/password_recovery.html:17
 msgid "Password Recovery"
 msgstr "Obnovení hesla"
 
-#: forum/views.py:767
+#: forum/views.py:803
 msgid ""
 "Failed to send an email with the new password, your password was not "
 "changed, please try again later"
@@ -958,7 +973,7 @@ msgstr ""
 "E-mail s novým heslem nebyl zaslán. Omlouváme se za technické potíže, změnu "
 "hesla zkus později."
 
-#: forum/views.py:856
+#: forum/views.py:892
 msgid "Post not saved."
 msgstr "Příspěvek nebyl uložen"
 
@@ -1270,6 +1285,7 @@ msgid "Open category"
 msgstr "Otevřít kategorii"
 
 #: forum/templates/forum/index.html:116
+#, python-format
 msgid ""
 "\n"
 "          'Only registered users can post on the forum. Please <a class="
@@ -1278,9 +1294,10 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"          'Pouze registrovaní uživatelé mohou přispívat do fóra. Prosím <a class="
-"\"light-link\" href=\"%(url_login)s?redirect=%(url_forum)s\">přihlas se</a> nebo se <a class=\"light-link\" href="
-"\"%(url_register)s\">zaregistruj</a>.';\n"
+"          'Pouze registrovaní uživatelé mohou přispívat do fóra. Prosím <a "
+"class=\"light-link\" href=\"%(url_login)s?redirect=%(url_forum)s\">přihlas "
+"se</a> nebo se <a class=\"light-link\" href=\"%(url_register)s"
+"\">zaregistruj</a>.';\n"
 "        "
 
 #: forum/templates/forum/index.html:137
