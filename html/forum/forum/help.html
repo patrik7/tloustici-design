@@ -14,13 +14,13 @@ FAQ - Otazky
 {% block caption %}{% trans 'Help' %} - Hubneme ve dvou{% endblock %}
 
 {% block main %}
-  <div class="row">
+  <div class="row accordion-group" id="accordion">
     <h2>{% trans 'Questions you need answers for' %}</h2>
       
     {% for item in help_items %}
 
-      <div class="col-md-12 white-well big-faq" data-toggle="collapse" data-target="#text{{forloop.counter0}}">
-        <h3><span class="caret"></span>&nbsp;{{item.caption}}</h3>
+      <div class="col-md-12 white-well big-faq">
+        <h3 data-parent="#accordion" data-toggle="collapse" href="#text{{forloop.counter0}}"><span class="caret"></span>&nbsp;{{item.caption}}</h3>
 
         <div id="text{{forloop.counter0}}" class="collapse">
         {% for r in item.rows %}
