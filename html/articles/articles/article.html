@@ -16,6 +16,14 @@ Article
 
 {% block caption %}Hubneme ve dvou - {{article.heading}}{% endblock %}
 
+{% block extra_meta %}
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@Hubnemevedvou">
+  <meta name="twitter:title" content="{{article.heading}}">
+  <meta name="twitter:description" content="{{article.preview}}">
+  <meta name="twitter:image" content="http:{{article.image.url}}">
+{% endblock %}
+
 {% block main %}
 <div id="post-detail" class="white-well big-post" itemscope itemtype="http://schema.org/Article">
     
