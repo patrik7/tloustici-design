@@ -20,8 +20,10 @@ Article
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@Hubnemevedvou">
   <meta name="twitter:title" content="{{article.heading}}">
-  <meta name="twitter:description" content="{{article.preview}}">
-  <meta name="twitter:image" content="http:{{article.image.url}}">
+  <meta name="twitter:description" content="{{article.preview_plain}}">
+  {% if article.image %}
+    <meta name="twitter:image" content="http:{{article.image.url}}">
+  {% endif %}
 {% endblock %}
 
 {% block main %}
