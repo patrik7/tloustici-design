@@ -254,7 +254,7 @@ Base - zakladna sablona
     {% else %}
       function gaTrackEvent(category, action, opt_label, opt_value) {}
     {% endif %}
-
+      {% comment %}
       //FB filler - if blocked
       setTimeout(function() {
         var fb = $('.fb-like-box');
@@ -263,6 +263,7 @@ Base - zakladna sablona
           fb.html($('#fb-alternative').html());
         }
       }, 3000);
+      {% endcomment %}
     </script>
 
 
