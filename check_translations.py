@@ -21,6 +21,9 @@ class Entity:
     def translation_missing(self):
         return self.lines[-1] == 'msgstr ""\n'
 
+    def translation_fuzzy(self):
+        return self.lines[1].find("fuzzy") != -1
+
     def dump(self):
         c = self.start_line
         
@@ -45,7 +48,7 @@ for l in open(argv[1], "r").readlines():
 m_count = 0
         
 for e in entities[1:]:
-    if e.translation_missing():
+    if e.translation_missing() or e.translation_fuzzy():
         e.dump()
         m_count += 1
         print
