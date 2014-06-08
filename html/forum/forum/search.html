@@ -70,7 +70,7 @@ Search
     function add_bar(value, text) {
       var str =
         '<div class="progress" style="margin-bottom: 10px;">'
-        + '<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="' + value + '" aria-valuemin="0" aria-valuemax="100" style="width: ' + value + '%">'
+        + '<div class="compatibility-bar progress-bar-info" role="progressbar" aria-valuenow="' + value + '" aria-valuemin="0" aria-valuemax="100" style="width: ' + value + '%">'
           + text
         + '</div>'
       + '</div>';
@@ -92,9 +92,9 @@ Search
           + '<small>' + (e.city ? e.city : '&nbsp;') + '</small>'
           + '</h3>'
            +  '<p>' + e.bio + '</p>'
-              + add_bar(e.fitness[0], "{% trans 'Overall Compatibility' %}")
-              + add_bar(e.fitness[1], "{% trans 'BMI' %}")
-              + add_bar(e.fitness[2], "{% trans 'Activities' %}")
+              + add_bar(e.fitness[0], "{% trans 'Overall compatibility' %}")
+              + add_bar(e.fitness[1], "{% trans 'BMI compatibility' %}")
+              + add_bar(e.fitness[2], "{% trans 'Activities compatibility' %}")
             + '</div>'
           + '</div>'
         + '</div>'
