@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-08 15:11+0200\n"
+"POT-Creation-Date: 2014-06-08 22:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -186,7 +186,7 @@ msgstr "Číst více"
 
 #: base/context_processors.py:41 forum/tests.py:692
 msgid "Personal profile"
-msgstr "Osobní profil"
+msgstr "Profil"
 
 #: base/context_processors.py:42
 msgid "Favourites"
@@ -444,6 +444,7 @@ msgid "Sex"
 msgstr "Pohlaví"
 
 #: forum/forms.py:250
+#: forum/templates/registration/registration_further.html:79
 msgid "Username"
 msgstr "Uživatelské jméno"
 
@@ -495,7 +496,7 @@ msgstr "Váha neodpovídá reálným hodnotám"
 msgid "doesn't matter"
 msgstr "Nezáleží"
 
-#: forum/forms.py:520 forum/models.py:443
+#: forum/forms.py:520 forum/models.py:445
 msgid "City"
 msgstr "Město"
 
@@ -552,12 +553,12 @@ msgstr "Ostatní"
 msgid "Parent"
 msgstr "Rodič"
 
-#: forum/models.py:79 forum/models.py:263 forum/models.py:264
-#: forum/models.py:356 forum/models.py:510
+#: forum/models.py:79 forum/models.py:265 forum/models.py:266
+#: forum/models.py:358 forum/models.py:512
 msgid "User"
 msgstr "Uživatel"
 
-#: forum/models.py:81 forum/models.py:358
+#: forum/models.py:81 forum/models.py:360
 msgid "Created"
 msgstr "Vytvořeno"
 
@@ -573,15 +574,15 @@ msgstr "Aktualizováno"
 msgid "Markup"
 msgstr "Markup"
 
-#: forum/models.py:85 forum/models.py:359
+#: forum/models.py:85 forum/models.py:361
 msgid "Message"
 msgstr "Zpráva"
 
-#: forum/models.py:86 forum/models.py:515
+#: forum/models.py:86 forum/models.py:517
 msgid "HTML version"
 msgstr "HTML verze"
 
-#: forum/models.py:87 forum/models.py:361
+#: forum/models.py:87 forum/models.py:363
 msgid "User IP"
 msgstr "Uživatelské IP"
 
@@ -609,146 +610,146 @@ msgstr "Příspěvek"
 msgid "Posts"
 msgstr "Příspěvky"
 
-#: forum/models.py:165
+#: forum/models.py:167
 msgid "New Forum Post"
 msgstr "Nový příspěvek na fóru"
 
-#: forum/models.py:211
+#: forum/models.py:213
 msgid "post"
 msgid_plural "posts"
 msgstr[0] "příspěvek"
 msgstr[1] "příspěvky"
 
-#: forum/models.py:388
+#: forum/models.py:390
 msgid "New Message"
 msgstr "Nová zpráva"
 
-#: forum/models.py:388
+#: forum/models.py:390
 msgctxt "username"
 msgid "from"
 msgstr "od"
 
-#: forum/models.py:419 forum/models.py:429
+#: forum/models.py:421 forum/models.py:431
 msgid "Area"
 msgstr "Kraj"
 
-#: forum/models.py:420
+#: forum/models.py:422
 msgid "Areas"
 msgstr "Kraje"
 
-#: forum/models.py:429
+#: forum/models.py:431
 msgid "Area the city belongs to"
 msgstr "Kraj ke kterému město patří"
 
-#: forum/models.py:444
+#: forum/models.py:446
 msgid "Cities"
 msgstr "Města"
 
-#: forum/models.py:454 forum/templates/forum/friend_suggestion.html:34
+#: forum/models.py:456 forum/templates/forum/friend_suggestion.html:34
 msgid "Activity"
 msgstr "Aktivity"
 
-#: forum/models.py:455
+#: forum/models.py:457
 #: forum/templates/forum/profile/profile_essentials.html:53
 #: forum/templates/forum/profile/profile_readonly.html:124
 #: forum/templates/forum/profile/profile_readonly.html:193
 msgid "Activities"
 msgstr "Aktivity"
 
-#: forum/models.py:511
+#: forum/models.py:513
 msgid "city"
 msgstr "město"
 
-#: forum/models.py:512
+#: forum/models.py:514
 msgid "Language"
 msgstr "Jazyk"
 
-#: forum/models.py:513
+#: forum/models.py:515
 msgid "Avatar"
 msgstr "Fotka"
 
-#: forum/models.py:514
+#: forum/models.py:516
 msgid "Description"
 msgstr "Popis"
 
-#: forum/models.py:514
+#: forum/models.py:516
 msgid "Use few sentences to describe yourself, and who are you looking for."
 msgstr "Prozraď něco více o sobě, popiš koho hledáš"
 
-#: forum/models.py:516
+#: forum/models.py:518
 msgid "date of birth"
 msgstr "datum narození"
 
-#: forum/models.py:517
+#: forum/models.py:519
 msgid "sex"
 msgstr "pohlaví"
 
-#: forum/models.py:518
+#: forum/models.py:520
 msgid "height"
 msgstr "výška"
 
-#: forum/models.py:519
+#: forum/models.py:521
 msgid "weight"
 msgstr "váha"
 
-#: forum/models.py:520
+#: forum/models.py:522
 msgid "phone"
 msgstr "telefon"
 
-#: forum/models.py:521
+#: forum/models.py:523
 msgid "education"
 msgstr "vzdělání"
 
-#: forum/models.py:521
+#: forum/models.py:523
 msgid "The highest achieved education"
 msgstr "Nejvyšší dosažené vzdělání"
 
-#: forum/models.py:523
+#: forum/models.py:525
 msgid "searchable"
 msgstr "vyhledatelný"
 
-#: forum/models.py:523
+#: forum/models.py:525
 msgid ""
 "Decide if your profile should come up when others use the search function."
 msgstr "Zobrazovat se ostatním uživatelům při hledání"
 
-#: forum/models.py:532
+#: forum/models.py:534
 msgid "Message notification"
 msgstr "Upozornit na zprávy"
 
-#: forum/models.py:532
+#: forum/models.py:534
 msgid "Receive an email notification on incoming message"
 msgstr "Zasílat soukromné zprávy na e-mail"
 
-#: forum/models.py:533
+#: forum/models.py:535
 msgid "Forum subscription"
 msgstr "Předvolit upozornení na fóru"
 
-#: forum/models.py:533
+#: forum/models.py:535
 msgid "Subscribe to my forum posts by default"
 msgstr "Posílat notifikace na veškeré odpovědi v zúčastněných tématech fóra"
 
-#: forum/models.py:534
+#: forum/models.py:536
 msgid "Newsletter subscription"
 msgstr "Odoberat novinky"
 
-#: forum/models.py:534
+#: forum/models.py:536
 msgid "Subscribe to newsletter"
 msgstr "Přihlásit se k odběru novinek"
 
-#: forum/models.py:536
+#: forum/models.py:538
 msgid "Fans Count"
 msgstr "Počet Fanoušků"
 
-#: forum/models.py:539 forum/templates/forum/profile/profile_readonly.html:14
+#: forum/models.py:541 forum/templates/forum/profile/profile_readonly.html:14
 msgid "Profile"
 msgstr "Profil"
 
-#: forum/models.py:540
+#: forum/models.py:542
 msgid "Profiles"
 msgstr "Profily"
 
-#: forum/models.py:624
+#: forum/models.py:626
 msgid "note"
 msgstr "poznámka"
 
@@ -784,8 +785,8 @@ msgid "Please create a password so you can safely use the website."
 msgstr "Nyní už jen zbývá vyplnit nové heslo..."
 
 #: forum/tests.py:201 forum/tests.py:348
-#: forum/templates/registration/registration_further.html:140
-#: forum/templates/registration/registration_further.html:148
+#: forum/templates/registration/registration_further.html:146
+#: forum/templates/registration/registration_further.html:154
 msgid "Follow the instructions sent to your email to finish the registration."
 msgstr ""
 "Pro úspěšné dokončení registrace je nutné kliknout na odkaz, který byl "
@@ -1449,7 +1450,7 @@ msgstr "Vymazat"
 msgid "Read posts"
 msgstr "Číst reakce"
 
-#: forum/templates/forum/index.html:295
+#: forum/templates/forum/index.html:299
 msgid ""
 "<a href=\"javascript:void(0)\" onClick=\"change(\\'' + e.last_post.id + "
 "'\\');\">Last reaction</a> ' + e.last_post.date + ' by <a href=\"/profile/' "
@@ -1571,12 +1572,12 @@ msgid "Change Password"
 msgstr "Změna hesla"
 
 #: forum/templates/forum/profile/profile_essentials.html:128
-#: forum/templates/registration/registration_further.html:174
+#: forum/templates/registration/registration_further.html:180
 msgid "public"
 msgstr "veřejné"
 
 #: forum/templates/forum/profile/profile_essentials.html:129
-#: forum/templates/registration/registration_further.html:175
+#: forum/templates/registration/registration_further.html:181
 msgid "hidden"
 msgstr "skryté"
 
@@ -1590,7 +1591,7 @@ msgid "Edit Profile"
 msgstr "Upravit profil"
 
 #: forum/templates/forum/profile/profile_readonly.html:82
-#: forum/templates/registration/registration_further.html:118
+#: forum/templates/registration/registration_further.html:124
 msgid "Select the image boundaries and upload the picture."
 msgstr "Klikni na vložený obrázek a uprav ho pomocí uchytů"
 
@@ -1709,16 +1710,16 @@ msgid ""
 msgstr ""
 "Zvyš svou šanci na úspěch a prozraď o sobě více v následujících krocích"
 
-#: forum/templates/registration/registration_further.html:93
-#: forum/templates/registration/registration_further.html:98
+#: forum/templates/registration/registration_further.html:99
+#: forum/templates/registration/registration_further.html:104
 msgid "Change picture"
 msgstr "Vložit obrázek"
 
-#: forum/templates/registration/registration_further.html:120
+#: forum/templates/registration/registration_further.html:126
 msgid "Upload picture"
 msgstr "Nahrát obrázek"
 
-#: forum/templates/registration/registration_further.html:128
+#: forum/templates/registration/registration_further.html:134
 msgid "I will upload my picture later"
 msgstr "Své foto nahraji později"
 
