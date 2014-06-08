@@ -186,7 +186,7 @@ Basic JSON load scenario:
  
       /* Render the index head, entries will be rendered later */
       $('#data').html(
-        '<div class="white-well big-faq" style="min-height:130px;">'
+        '<div class="white-well big-faq" style="min-height:146px;">'
         + '<div class="col-md-2">'
           + '<img src="' + head_post.avatar + '"  class="img-forum-head img-circle"/>'
         + '</div>'
@@ -231,7 +231,7 @@ Basic JSON load scenario:
         btn_posts = ' (' + e.post_count + ')';
       }
 
-      footer += '<div class="btn-group btn-group-md">';
+      footer += '<div class="btn-group btn-group-sm">';
 
       if (e.deletable_link != '') {
         footer += '<a href="' + e.deletable_link + '" class="btn btn-default" ><span class="glyphicon glyphicon-trash"></span> {% trans 'Delete' %}</a>';
@@ -291,7 +291,7 @@ Basic JSON load scenario:
       var show_user = '';
 
       if (e.level > 0) {
-        show_user = '<small class="text-muted"><a href="' + user_link + '">' + e.user + '</a> - ' + e.date + '</small>';
+        show_user = '<p style="margin-bottom: 5px;"><small class="text-muted"><a href="' + user_link + '">' + e.user + '</a> - ' + e.date + '</small></p>';
       }
 
       var last_post = '';
@@ -317,11 +317,9 @@ Basic JSON load scenario:
             + '<div class="pull-right">'
               + footer
             + '</div>'
-            + '<p>'
               + show_user
               + body
               + last_post
-            + '</p>'
           + '</div>'
         + '</div>'
       + '</div>');
