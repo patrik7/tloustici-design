@@ -244,7 +244,7 @@ Basic JSON load scenario:
         var show_report = ('{{user}}' != e.user && e.level >= 1);
         var show_subscribe = (e.level == 1);
 
-        if (show_report || show_subscribe) {
+        if (show_report || show_subscribe || '{% if user.is_superuser %}1{% else %}0{% endif %}' == '1') {
 
           footer += '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">'
                     + '<span class="caret"></span></button>'
@@ -265,6 +265,10 @@ Basic JSON load scenario:
             footer += '<li><a href="{% url report 'sexual' %}?target_id=' + e.pk + '&target=Post">{% trans 'Sexual Remarks' %}</a></li>'
                   + '<li><a href="{% url report 'advertising' %}?target_id=' + e.pk + '&target=Post">{% trans 'Advertising' %}</a></li>'
                   + '<li><a href="{% url report 'abuse' %}?target_id=' + e.pk + '&target=Post">{% trans 'Other Abuse' %}</a></li>'
+          }
+
+          if ('{% if user.is_superuser %}1{% else %}0{% endif %}' == '1') {
+            footer += '<li><a href="/admin/forum/post/' + e.pk + '" target="_blank">Edit in admin</a></li>';
           }
 
           footer += '</ul>';

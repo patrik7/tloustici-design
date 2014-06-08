@@ -75,7 +75,13 @@ Registracia krok 1
           {% elif step == 2 %}
             <form action="{% url register_step step %}" method="POST" class="form-horizontal">
               {% csrf_token %}
-            
+              <div class="form-group">
+                <label class="control-label col-sm-3" for="id_description">{% trans 'Username' %}</label>
+                <div class=" col-sm-9 text-left">
+                  <div style="margin-top: 7px;">{{tmp_user.username}}</div>
+                </div>
+              </div>              
+ 
               {% include 'form_fields.html' with name=button_name form=form.0 cols="9" %}
               {% include 'forum/profile/form_private_info_fields.html' with form=form.1 %}
 
