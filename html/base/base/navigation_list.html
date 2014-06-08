@@ -12,7 +12,7 @@ Navigation links in menu.
   <li class="{{ item.cls }}">
     <a href="{{ item.url }}" >
     {% if item.icon == 'avatar' %}
-      <img src="{{user.forum_profile.avatar_url}}" class="img-circle" style="width: 28px; height: auto;" /> {{ item.label }}
+      <img src="{{user.forum_profile.avatar_url}}" class="img-circle" style="width: 28px; height: auto;" alt="{% trans 'picture' %} {{user.username}}" /> {{ item.label }}
     {% else %}
       <span class="glyphicon glyphicon-{{item.icon}}"></span> {{ item.label }}
     {% endif %}

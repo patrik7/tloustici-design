@@ -16,7 +16,7 @@ Favorities
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left">
         <div class="white-well big-faq text-center link-glow" onclick="location.href='{% url profile f.celebrity.username %}';">
             <div class="col-md-5">
-            <img class="img img-circle" src="{{f.celebrity.forum_profile.avatar_url}}" width="120" height="120"/>
+            <img class="img img-circle" src="{{f.celebrity.forum_profile.avatar_url}}" width="120" height="120" alt="{% trans 'picture' %} {{f.celebrity.username}}" />
             </div>
             <div class=" text-left col-md-7" style="max-height:120px; overflow:hidden;">
             <h3><a href="{% url profile f.celebrity.username %}">{{f.celebrity.username}}</a></h3>

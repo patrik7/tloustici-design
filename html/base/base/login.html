@@ -46,21 +46,22 @@ Login / Prihlasenie
  Feature box
 ------------------------------------------------------------------------------------------->
 <div class="clear"></div>
-<div class="feature-box padding-top">
- <div class="col-sm-4 text-center">
-            <img src="{{STATIC_URL}}images/hubneme-ve-dvou-1.png">
-            <h2>Společné zájmy</h2>
-            <p>Najdi si partnera se stejným koníčkem, sportujte ve dvou a zhubněte společně!</p>
- </div>
-<div class="col-sm-4 text-center">
-     <img src="{{STATIC_URL}}images/hubneme-ve-dvou-2.png">
-            <h2>Vzájemná motivace</h2>
-            <p>Ztratit nějaké ty kila navíc znamená pro mnohé nelehký úkol. Vzájemná podpora a společné zájmy jsou však silnou zbraní, jak dosáhnout svého cíle snadněji.</p>
-        </div>
-        <div class="col-sm-4 text-center">
-            <img src="{{STATIC_URL}}images/hubneme-ve-dvou-3.png">
-            <h2>Užitečné tipy</h2>
-            <p>Inspiruj se rady a tipy ostatních uživatelů v oblasti cvičení, zdravého vaření, diet, nebo třeba možností sportu ve tvém okolí.</p>
-        </div>
+  <div class="feature-box padding-top">
+    <div class="col-sm-4 text-center">
+      <img src="{{STATIC_URL}}images/hubneme-ve-dvou-1.png" alt="{% trans 'Common interests' %}"/>
+      <h2>{% trans 'Common interests' %}</h2>
+      <p>{% trans 'bubble_1_txt' %}</p>
+    </div>
+    <div class="col-sm-4 text-center">
+      <img src="{{STATIC_URL}}images/hubneme-ve-dvou-2.png" alt="{% trans 'Mutual motivation' %}"/>
+      <h2>{% trans 'Mutual motivation' %}</h2>
+      <p>{% trans 'bubble_2_txt' %}</p>
+    </div>
+    <div class="col-sm-4 text-center">
+      <img src="{{STATIC_URL}}images/hubneme-ve-dvou-3.png" alt="{% trans 'Useful tips' %}" />
+      <h2>{% trans 'Useful tips' %}</h2>
+      <p>{% trans 'bubble_3_txt' %}</p>
+    </div>
+  </div>
 </div>
 {% endblock %}

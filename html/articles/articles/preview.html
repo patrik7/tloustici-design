@@ -14,7 +14,7 @@ Prewiev
  
   {% if article.image %}
     <a href="{% url article article.url %}" class="article-image2" >
-      <img src="{{article.image.url}}" class="pull-{{article.image_position}}" />
+      <img src="{{article.image.url}}" class="pull-{{article.image_position}}" alt="{{article.heading}}" />
     </a>
   {% endif %}
 

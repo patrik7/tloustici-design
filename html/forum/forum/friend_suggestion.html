@@ -16,7 +16,7 @@ Friend suggestion
     <div class="row">
       <div class="col-xs-6">
         <a href="{% url profile s.profile.user.username %}">
-          <img class="img img-circle img-responsive link-glow" src="{{s.profile.avatar_url}}" onmousedown="gaTrackEvent('friend suggest', 'click', 'photo');">
+          <img class="img img-circle img-responsive link-glow" src="{{s.profile.avatar_url}}" onmousedown="gaTrackEvent('friend suggest', 'click', 'photo');" alt="{% trans 'picture' %} {{s.profile.user.username}}">
         </a>
       </div>
       <div class="col-xs-6" style="text-align: right;">

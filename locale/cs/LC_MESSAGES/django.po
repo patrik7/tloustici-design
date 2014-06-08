@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-08 11:54+0200\n"
+"POT-Creation-Date: 2014-06-08 15:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -312,25 +312,27 @@ msgstr ""
 msgid "Create an Account"
 msgstr "Vytvořit účet"
 
-#: base/templates/base/base.html:142
+#: base/templates/base/base.html:140 base/templates/base/base.html.py:142
+#: base/templates/base/login.html:51 base/templates/base/login.html.py:52
 #: forum/templates/registration/registration_front.html:56
 #: forum/templates/registration/registration_front.html:57
 msgid "Common interests"
 msgstr "Společné zájmy"
 
-#: base/templates/base/base.html:143
+#: base/templates/base/base.html:143 base/templates/base/login.html:53
 #: forum/templates/registration/registration_front.html:58
 msgid "bubble_1_txt"
 msgstr ""
 "Najdi si partnera se stejným koníčkem, sportujte ve dvou a zhubněte společně!"
 
-#: base/templates/base/base.html:148
+#: base/templates/base/base.html:147 base/templates/base/base.html.py:148
+#: base/templates/base/login.html:56 base/templates/base/login.html.py:57
 #: forum/templates/registration/registration_front.html:61
 #: forum/templates/registration/registration_front.html:62
 msgid "Mutual motivation"
 msgstr "Vzájemná motivace"
 
-#: base/templates/base/base.html:149
+#: base/templates/base/base.html:149 base/templates/base/login.html:58
 #: forum/templates/registration/registration_front.html:63
 msgid "bubble_2_txt"
 msgstr ""
@@ -338,13 +340,14 @@ msgstr ""
 "podpora a společné zájmy jsou však silnou zbraní, jak dosáhnout svého cíle "
 "snadněji."
 
-#: base/templates/base/base.html:154
+#: base/templates/base/base.html:153 base/templates/base/base.html.py:154
+#: base/templates/base/login.html:61 base/templates/base/login.html.py:62
 #: forum/templates/registration/registration_front.html:66
 #: forum/templates/registration/registration_front.html:67
 msgid "Useful tips"
 msgstr "Užitečné tipy"
 
-#: base/templates/base/base.html:155
+#: base/templates/base/base.html:155 base/templates/base/login.html:63
 #: forum/templates/registration/registration_front.html:68
 msgid "bubble_3_txt"
 msgstr ""
@@ -356,6 +359,10 @@ msgstr ""
 #: forum/templates/forum/terms.html.py:9 forum/templates/forum/terms.html:12
 msgid "Terms and conditions"
 msgstr "Podmínky užívání"
+
+#: base/templates/base/loading.html:13
+msgid "loading"
+msgstr "načítavá se"
 
 #: base/templates/base/loading.html:19
 msgid "There was a problem loading the data."
@@ -372,6 +379,12 @@ msgstr "Registruj se zdarma"
 #: base/templates/base/login.html:30 base/templates/base/login.html.py:36
 msgid "Forgot your password?"
 msgstr "Zapomněl jsi své heslo?"
+
+#: base/templates/base/navigation_list.html:15
+#: forum/templates/forum/favourites.html:19
+#: forum/templates/forum/friend_suggestion.html:19
+msgid "picture"
+msgstr "obrázek"
 
 #: forum/forms.py:79
 msgid "Your username"
@@ -972,7 +985,7 @@ msgstr "Jak hledat partnera?"
 
 #: forum/views.py:393
 msgid "screenshot search for weight loss partner"
-msgstr "screenshot hledam partnera na hubnutí"
+msgstr "screenshot hledám partnera na hubnutí"
 
 #: forum/views.py:394
 msgid "help_search_1"

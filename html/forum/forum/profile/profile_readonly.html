@@ -143,7 +143,7 @@ Profile read only
                         {% else %}
                           <div class="col-lg-4 col-md-6 col-xs-12 activities-sport-main">
                         {% endif %}
-                          <img src="{{STATIC_URL}}images/activity/icons-{{a.id}}b.png" height="66" class="icon-profil" />
+                          <img src="{{STATIC_URL}}images/activity/icons-{{a.id}}b.png" height="66" class="icon-profil" alt="{% trans a.name context 'activity' %}" />
                           <p>{% trans a.name context 'activity' %}</p>
                         </div>
                       {% endfor %}
@@ -164,7 +164,7 @@ Profile read only
                         {% else %}
                         <div class="col-lg-4 col-md-6 col-xs-12  activities-sport-main">
                         {% endif %}
-                          <img src="{{STATIC_URL}}images/activity/icons-{{a.id}}b.png" height="66" class="icon-profil" />
+                          <img src="{{STATIC_URL}}images/activity/icons-{{a.id}}b.png" height="66" class="icon-profil" alt="{% trans a.name context 'activity' %}"/>
                           <p>{% trans a.name context 'activity' %}</p>
                         </div>
                       {% endfor %}
