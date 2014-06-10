@@ -64,10 +64,10 @@ Basic JSON load scenario:
         </div>
       </div>
     {% endfor %}
-  </div>
+  </div>  
 
   <div id="pagination"></div>
-
+  <div id="reply_placeholder"></div>
 </div>
 
 {% endblock %}
@@ -83,6 +83,12 @@ Basic JSON load scenario:
     </script>
   {% endif %}
 
+  {% if form2 %}
+    <script type="bogus" id="form2_template">
+      {{form2|bootstrap}}
+    </script>
+  {% endif %}
+
   {% include 'base/loading.html' %}
 
   <script type="text/javascript" language="javascript">
@@ -93,8 +99,8 @@ Basic JSON load scenario:
       elem.getElementsByTagName('textarea')[0].focus();
     }
 
-    function add_form(reply_to) {
-      elem = document.getElementById("form_template");
+    function add_form(reply_to, template) {
+      elem = document.getElementById(template);
 
       var txt = 
 
@@ -142,21 +148,33 @@ Basic JSON load scenario:
       var hide_form = 'hidden';
       var show_subscribe = false;
       var show_report = false;
+      var reply_placeholder = $('#reply_placeholder');
 
-      if (extra.breadcrumbs.length < 3) {
+      if (extra.breadcrumbs.length < 2) {
         head_button = '<a href="javascript:void(0)" class="btn btn-info" onClick="show(\'_reply_head\')"><span class="glyphicon glyphicon-share-alt"></span> ';
-        if (extra.breadcrumbs.length < 2) {
-          head_button += '{% trans 'Start new discussion' %}</a>';
-        } else {
-          head_button += '{% trans 'Reply' %}</a>';
-          show_subscribe = true;
-          show_report = ('{{user}}' != head_post.user);
-        }
-      } else {
-        hide_form = '';
-      }
+        head_button += '{% trans 'Start new discussion' %}</a>';
+        reply_placeholder.html('');
 
-      
+      } else {
+        show_subscribe = true;
+        show_report = ('{{user}}' != head_post.user);
+
+        hide_form = '';
+
+        //render the form
+        reply_placeholder.html(
+            '<div class="panel panel-default big-favorities col-md-offset-1">'
+            + '<div class="panel-body">'
+              + '<div class="col-md-1 hidden-sm hidden-xs">'
+                + '<img src="{{user.forum_profile.avatar_url}}" class="img-circle img-forum">'
+              + '</div>'
+              + '<div class="col-md-11">'
+                + add_form(head_post.pk, 'form_template')
+              + '</div>'
+            + '</div>'
+          + '</div>'
+        );
+      }
 
       if (show_report || show_subscribe) {
 
@@ -184,6 +202,15 @@ Basic JSON load scenario:
         head_button += '</ul>';
       }
  
+      var form = '';
+
+      if (head_post.level == 0) {
+        form =
+        '<div id="post_reply_head" class="panel panel-default ' + hide_form + '">' +
+          add_form(head_post.pk, 'form2_template') + 
+        '</div>';
+      }
+
       /* Render the index head, entries will be rendered later */
       $('#data').html(
         '<div class="white-well big-faq" style="min-height:146px;">'
@@ -197,12 +224,7 @@ Basic JSON load scenario:
           + '<h3>' + head_post.text_short + '</h3>'
         + '</div>'
       + '</div>'
-      +
-        /* Add a hidden form */
-        '<div id="post_reply_head" class="panel panel-default ' + hide_form + '">' +
-          add_form(head_post.pk) + 
-        '</div>' +
-
+      + form +
       '<div id="entries" /></div>');
     }
 
@@ -286,7 +308,7 @@ Basic JSON load scenario:
 
       footer += '</div>';
 
-      var offset = 'col-xs-offset-1';
+      var offset = 'col-md-offset-1';
 
       var show_user = '';
 
@@ -309,11 +331,11 @@ Basic JSON load scenario:
 
       $('#entries').append(
         '<div class="panel panel-default big-favorities ' + offset + ' ' + shade_alternation + '">'
-        + '<div class="panel-body link-glow" >'
-          + '<div class="col-md-2">'
+        + '<div class="panel-body" >'
+          + '<div class="col-md-1">'
             + avatar
           + '</div>'
-          + '<div class="col-md-10">' 
+          + '<div class="col-md-11">' 
             + '<div class="pull-right">'
               + footer
             + '</div>'
