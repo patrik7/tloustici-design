@@ -1,9 +1,9 @@
-
 var AjaxConfiguration = {
   root: '',
   loadDataMore: function() {},
   ajax_get: {},
-  preRenderCallback: function() {},  
+  preRenderCallback: function() {},
+  focus: '',
 };
 
 function addData(entries) {
@@ -21,9 +21,7 @@ function addData(entries) {
   }
 
   for (var i = 0; i < entries.length; i++) {
-    if (entries[i].level == 3) last_end = i;
-
-    render(offset + i, entries[i], last_end);
+    $('#entries').append(render(offset + i, entries[i]));
   }
 }
 
@@ -75,6 +73,10 @@ function loadData()
       addData(entries);
       setupPagination(pagination);
 
+      if(AjaxConfiguration.focus != '') {
+        $('#' + AjaxConfiguration.focus).get(0).scrollIntoView();
+        AjaxConfiguration.focus = '';
+      }
     })
     .fail(function() {
       setError('data');

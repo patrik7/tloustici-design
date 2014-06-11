@@ -110,7 +110,7 @@ Basic JSON load scenario:
         + elem.innerHTML
         + '<div class="form-group">'
           + '<div>'
-            + '<button type="submit" class="btn btn-lg btn-green">{% trans 'Send' %}</button>'
+            + '<button type="submit" class="btn btn-md btn-green">{% trans 'Send' %}</button>'
           + '</div>'
         + '</div>'
       + '</form>';
@@ -161,9 +161,8 @@ Basic JSON load scenario:
 
         hide_form = '';
 
-        //render the form
-        reply_placeholder.html(
-            '<div class="panel panel-default big-favorities col-md-offset-1">'
+        {% if user.is_authenticated %}
+          var form = '<div class="panel panel-default big-favorities col-md-offset-1">'
             + '<div class="panel-body">'
               + '<div class="col-md-1 hidden-sm hidden-xs">'
                 + '<img src="{{user.forum_profile.avatar_url}}" class="img-circle img-forum">'
@@ -172,8 +171,17 @@ Basic JSON load scenario:
                 + add_form(head_post.pk, 'form_template')
               + '</div>'
             + '</div>'
-          + '</div>'
-        );
+          + '</div>';
+        {% else %}
+          var form = '<div class="panel panel-default big-favorities col-md-offset-1">'
+            + '<div class="panel-body text-center" style="background-color: #66B7E1;">'
+                + add_form(head_post.pk, 'form_template')
+            + '</div>'
+          + '</div>';
+        {% endif %}
+
+        //render the form
+        reply_placeholder.html(form);
       }
 
       if (show_report || show_subscribe) {
@@ -211,6 +219,21 @@ Basic JSON load scenario:
         '</div>';
       }
 
+      var more = '';
+
+      if (extra.has_next) {
+        more = paginationMore(data.entries[0].pk);
+      }
+
+      var content = '';
+      if (head_post.caption) {
+        content = '<h4>' + head_post.caption + '</h4><p>' + head_post.text + '</p>';
+      } else if(head_post.level == 0) {
+        content = '<h3>' + head_post.text_short + '</h3>';
+      } else {
+        content = '<p>' + head_post.text + '</p>';
+      }
+
       /* Render the index head, entries will be rendered later */
       $('#data').html(
         '<div class="white-well big-faq" style="min-height:146px;">'
@@ -221,14 +244,54 @@ Basic JSON load scenario:
           + '<div class="pull-right">'
             + '<div class="btn-group btn-group-md">' + head_button + '</div>'
           + '</div>'
-          + '<h3>' + head_post.text_short + '</h3>'
+          + content
         + '</div>'
       + '</div>'
-      + form +
+      + form
+      + more +
       '<div id="entries" /></div>');
     }
 
-    function render(i, e, last_end) {
+    function paginationMore(last_id) {
+      return '<div class=""><div id="pagination_more" class="panel panel-default big-favorities col-md-offset-1 link-glow text-center text-muted" style="padding: 5px;" onclick="fetchMore(' + last_id + ');">({% trans 'older posts' %})</div></div>';
+    }
+
+    function fetchMore(last_id) {
+      var e = $('#pagination_more');
+
+      //make sure user will not click in this again
+      e.removeAttr('onclick');
+      setLoading('pagination_more');
+      
+      $.getJSON(AjaxConfiguration.ajax_url + AjaxConfiguration.root
+        , $.extend({}, AjaxConfiguration.ajax_get, {'last_id': last_id}) ).done(function(data) {
+         
+          var entries = data.entries;
+          $('#pagination_more').remove();
+
+          if (data.extra.has_next) {
+            $('#entries').before(paginationMore(entries[0].pk));
+          }
+
+          $('.panel.panel-default.big-favorities').attr('style', '');
+
+          //detect the shading
+          var first = $('#entries').children(':first');
+          var offset = first.hasClass('shade') ? 0 : 1;
+          first.attr("style", "margin-top: 10px;");
+
+          for (var i = entries.length - 1; i >= 0; i--, offset++) {
+            $('#entries').prepend(render(offset, entries[i]));
+          }
+
+//          $('#id_post_' + entries[entries.length - 1].pk).get(0).scrollIntoView();
+        })
+        .fail(function() {
+          setError('pagination_more');
+        });
+    }
+
+    function render(i, e) {
       var body = '';
       var footer = '';
 
@@ -298,6 +361,9 @@ Basic JSON load scenario:
 
       {% endif %}
 
+      if (e.caption) {
+        body += '<h4>' + e.caption + '</h4>';
+      }
 
       body += '<p>' + e.text + '</p>';
 
@@ -329,8 +395,7 @@ Basic JSON load scenario:
         avatar = '<a href="' + user_link + '">' + avatar + '</a>';
       }
 
-      $('#entries').append(
-        '<div class="panel panel-default big-favorities ' + offset + ' ' + shade_alternation + '">'
+      return '<div id="id_post_' + e.pk + '"class="panel panel-default big-favorities ' + offset + ' ' + shade_alternation + '">'
         + '<div class="panel-body" >'
           + '<div class="col-md-1">'
             + avatar
@@ -344,7 +409,7 @@ Basic JSON load scenario:
               + last_post
           + '</div>'
         + '</div>'
-      + '</div>');
+      + '</div>';
 
     }
 
@@ -374,6 +439,16 @@ Basic JSON load scenario:
       }
 
     });
+
+    //remember focus
+    var get_data = {};
+    window.location.search.substr(1).split("&").forEach(function(item) {
+      get_data[item.split("=")[0]] = decodeURIComponent(item.split("=")[1]); 
+    });
+
+    if(get_data['focus']) {
+      AjaxConfiguration.focus = 'id_post_' + get_data['focus'];
+    }
 
     if (AjaxConfiguration.root != '') loadData();
 

@@ -242,8 +242,7 @@ Messagess origin
 
       link = 'javascript:loadMessages(' + i + ', ' + e.id + ', \'' + e.other_user + '\');'
 
-      $('#data').append(
-        '<div id="conversation' + i + '" class="panel panel-default link-glow ' + e.html_class + '" style="margin-bottom: 5px;" onclick="' + link + '" >'
+      return '<div id="conversation' + i + '" class="panel panel-default link-glow ' + e.html_class + '" style="margin-bottom: 5px;" onclick="' + link + '" >'
         + '<div class="panel-body">'
           + '<div class="row">'
             + '<div class="col-sm-2 visible-sm visible-md visible-lg">'
@@ -253,7 +252,7 @@ Messagess origin
           + '</div>'
         + '</div>'
         + footer 
-      + '</div><div id="popu' + i + '"></div><div id="pagination' + e.id  + '"></div>');
+      + '</div><div id="popu' + i + '"></div><div id="pagination' + e.id  + '"></div>';
 
     }
 
