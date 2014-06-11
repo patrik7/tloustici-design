@@ -237,14 +237,16 @@ Basic JSON load scenario:
       /* Render the index head, entries will be rendered later */
       $('#data').html(
         '<div class="white-well big-faq" style="min-height:146px;">'
-        + '<div class="col-md-2">'
-          + '<img src="' + head_post.avatar + '"  class="img-forum-head img-circle"/>'
-        + '</div>'
-        + '<div class="col-md-10">'
-          + '<div class="pull-right">'
-            + '<div class="btn-group btn-group-md">' + head_button + '</div>'
+        + '<div style="overflow: auto;">'
+          + '<div class="col-md-2">'
+            + '<img src="' + head_post.avatar + '"  class="img-forum-head img-circle"/>'
           + '</div>'
-          + content
+          + '<div class="col-md-10">'
+            + '<div class="pull-right">'
+              + '<div class="btn-group btn-group-md">' + head_button + '</div>'
+            + '</div>'
+            + content
+          + '</div>'
         + '</div>'
       + '</div>'
       + form
