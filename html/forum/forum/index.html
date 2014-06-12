@@ -129,6 +129,9 @@ Basic JSON load scenario:
     }
 
     function preRender(data) {
+      {% if google_analytics %}
+        _gaq.push(['_trackPageview', window.location.pathname]);
+      {% endif %}
 
       /* Setup breadcrumbs */
       var extra = data.extra;
