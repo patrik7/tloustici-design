@@ -206,6 +206,7 @@ Base - zakladna sablona
       <script src="{{STATIC_URL}}js/alert.js"></script>
       <script src="{{STATIC_URL}}js/icheck.min.js"></script>
       <script src="{{STATIC_URL}}js/retina.min.js"></script>
+      <script src="{{STATIC_URL}}js/mailgun_validator.js"></script>
       {% if bmi %}<script src="{{STATIC_URL}}js/bmi.js"></script>{% endif %}
       
     {% endblock %}
@@ -256,6 +257,7 @@ Base - zakladna sablona
     {% else %}
       function gaTrackEvent(category, action, opt_label, opt_value) {}
     {% endif %}
+
       {% comment %}
       //FB filler - if blocked
       setTimeout(function() {
@@ -266,6 +268,22 @@ Base - zakladna sablona
         }
       }, 3000);
       {% endcomment %}
+
+      /* Email validator */
+      $('#id_email').mailgun_validator({
+        api_key: 'pubkey-1argxl8m0inv0hpgce0hxv2acwl5nxy9',
+        in_progress: null,
+        success: function(data) {
+          var e = $('#id_email').parent().parent();
+          if (data.is_valid) {
+            e.removeClass('has-error');
+          } else {
+            e.addClass('has-error');
+          }
+        },
+        error: null, 
+      });      
+
     </script>
 
 
