@@ -39,22 +39,31 @@ Basic JSON load scenario:
   <div id="data">
     <!-- First level, categories, are rendered on the server and it's not possibel to get back here thru JSON -->
 
+    <div class="row">
     {% for category in categories %}
-      <div class="white-well big-faq">
-        <div class="row">
-          <div class="col-md-2">
-            <img src="{{category.image_url}}" class="img-forum" alt="{{category.body}}" />
+      <div class="col-md-6">
+        <div class="panel panel-default forum-category-panel">
+          <div class="panel-body forum-category-body link-glow" style="background-image: url('{{category.image_url}}');" onClick="change('{{category.id}}');" >
+             <h2 style="position: absolute; bottom:10px;">{{category.body_html|safe}}</h2>
           </div>
-          <div class="col-md-6">
-            <h3>{{category.body_html|safe}}</h3>
+          <div class="panel-footer forum-category-footer">
             {% if category.last_post %}
               {% url profile category.last_post.user as user_url %}
 
               <p class="text-muted">
-                {% blocktrans with date=category.last_post.created user=category.last_post.user id=category.last_post.id %}
+                {% blocktrans with date=category.last_post.created|date:"H:i d.m" user=category.last_post.user id=category.last_post.id %}
                   <a href="javascript:void(0)" onClick="change('{{id}}');">Last reaction</a> {{date}} by <a href="{{user_url}}">{{user}}</a>
                 {% endblocktrans %}
               </p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+{% comment %}
+          <div class="col-md-6">
+                        {% if category.last_post %}
+              {% url profile category.last_post.user as user_url %}
+
             {% endif %}
           </div>
           <div class="col-md-3">
@@ -63,7 +72,9 @@ Basic JSON load scenario:
           </div>
         </div>
       </div>
+{% endcomment %}
     {% endfor %}
+    </div>
   </div>  
 
   <div id="pagination"></div>

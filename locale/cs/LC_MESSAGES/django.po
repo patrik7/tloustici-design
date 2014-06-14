@@ -1396,7 +1396,7 @@ msgid ""
 msgstr ""
 "\n"
 "<a href=\"javascript:void(0)\" onClick=\"change('%(id)s');\">Poslední "
-"reakce</a> byla %(date)s od uživatele <a href=\"%(user_url)s\">%(user)s</a>\n"
+"reakce</a> - %(date)s od <a href=\"%(user_url)s\">%(user)s</a>\n"
 "  "
 
 #: forum/templates/forum/index.html:61
