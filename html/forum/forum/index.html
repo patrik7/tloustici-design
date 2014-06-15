@@ -43,8 +43,9 @@ Basic JSON load scenario:
     {% for category in categories %}
       <div class="col-md-6">
         <div class="panel panel-default forum-category-panel">
-          <div class="panel-body forum-category-body link-glow" style="background-image: url('{{category.image_url}}');" onClick="change('{{category.id}}');" >
-             <h2 style="position: absolute; bottom:10px;">{{category.body_html|safe}}</h2>
+          <div class="panel-body forum-category-body link-glow" style="background-image: url('{{category.image_url}}'); background-size: cover;" onClick="change('{{category.id}}');" >
+             <h2 style="position: absolute; left: 16px; bottom:9px; color: #FFFFFF;">{{category.body_html|safe}}</h2>
+             <h2 style="position: absolute; left: 15px; bottom:10px;">{{category.body_html|safe}}</h2>
           </div>
           <div class="panel-footer forum-category-footer">
             {% if category.last_post %}
@@ -59,20 +60,6 @@ Basic JSON load scenario:
           </div>
         </div>
       </div>
-{% comment %}
-          <div class="col-md-6">
-                        {% if category.last_post %}
-              {% url profile category.last_post.user as user_url %}
-
-            {% endif %}
-          </div>
-          <div class="col-md-3">
-            <p>{% trans 'Post count' %}: {{category.post_count}}</p>
-            <a href="javascript:void(0)" class="btn btn-info btn-block" onClick="change('{{category.id}}');" >{% trans 'Open category' %}</a>
-          </div>
-        </div>
-      </div>
-{% endcomment %}
     {% endfor %}
     </div>
   </div>  
@@ -243,29 +230,47 @@ Basic JSON load scenario:
       if (head_post.caption) {
         content = '<h4>' + head_post.caption + '</h4><p>' + head_post.text + '</p>';
       } else if(head_post.level == 0) {
-        content = '<h3>' + head_post.text_short + '</h3>';
+        content = '<h1 style="position: absolute; bottom: 9px; left: 21px; color: #FFFFFF">' + head_post.text_short + '</h1>'
+                + '<h1 style="position: absolute; bottom: 10px; left: 20px;">' + head_post.text_short + '</h1>';
       } else {
         content = '<p>' + head_post.text + '</p>';
       }
 
       /* Render the index head, entries will be rendered later */
-      $('#data').html(
-        '<div class="white-well big-faq" style="min-height:146px;">'
-        + '<div class="panel-body" style="padding: 0px;">'
-          + '<div class="col-md-2">'
-            + '<img src="' + head_post.avatar + '"  class="img-forum-head img-circle"/>'
-          + '</div>'
-          + '<div class="col-md-10">'
+      if (head_post.level == 0) {
+        $('#data').html(
+          '<div class="white-well big-faq" style="position: relative; min-height:146px; background-image: url(\'' + head_post.avatar + '\'); background-size: auto 100%; background-repeat: no-repeat;">'
+          + '<div class="panel-body" style="padding: 0px">'
             + '<div class="pull-right">'
               + '<div class="btn-group btn-group-md">' + head_button + '</div>'
             + '</div>'
             + content
           + '</div>'
         + '</div>'
-      + '</div>'
-      + form
-      + more +
-      '<div id="entries" /></div>');
+        + form
+        + more +
+        '<div id="entries" /></div>');
+
+      } else {
+
+        $('#data').html(
+          '<div class="white-well big-faq" style="min-height:146px;">'
+          + '<div class="panel-body" style="padding: 0px;">'
+            + '<div class="col-md-2">'
+              + '<img src="' + head_post.avatar + '"  class="img-forum-head img-circle"/>'
+            + '</div>'
+            + '<div class="col-md-10">'
+              + '<div class="pull-right">'
+                + '<div class="btn-group btn-group-md">' + head_button + '</div>'
+              + '</div>'
+              + content
+            + '</div>'
+          + '</div>'
+        + '</div>'
+        + form
+        + more +
+        '<div id="entries" /></div>');
+      }
     }
 
     function paginationMore(last_id) {

@@ -26,15 +26,15 @@ FAQ - Otazky
         {% for r in item.rows %}
 
           <div class="row">
-            <div class="col-xs-12 hidden-sm hidden-md hidden-lg text-center">
+            <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
               <img src="{{STATIC_URL}}images/{{r.image}}_small75.png" class="screenshot-help" style="max-width: 100%;" alt="{{r.image_alt}}" />
               <p class="help-text">{{r.text|safe}}</p>
             </div>
 
             <div class="col-xs-12 hidden-xs">
               <p>
-                <img src="{{STATIC_URL}}images/{{r.image}}_small75.png" class="screenshot-help {% cycle 'pull-left' 'pull-right' %}" alt="{{r.image_alt}}" />
-                <p class="text-center help-text">{{r.text|safe}}</p>
+                <img src="{{STATIC_URL}}images/{{r.image}}_small75.png" class="screenshot-help {% cycle 'pull-right' 'pull-left' %}" alt="{{r.image_alt}}" style="margin: 12px;" />
+                <p class="help-text">{{r.text|safe}}</p>
               </p>
             </div>
           </div>
