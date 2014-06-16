@@ -194,7 +194,7 @@ msgstr "Oblíbené"
 
 #: base/context_processors.py:43 forum/tests.py:693
 msgid "Search for Partner"
-msgstr "Hledat parťáka"
+msgstr "Hledat partnera"
 
 #: base/context_processors.py:44 forum/tests.py:694
 msgid "Messages"
@@ -1022,7 +1022,7 @@ msgstr "screenshot hledám partnera na hubnutí"
 
 #: forum/views.py:392
 msgid "help_search_1"
-msgstr " "
+msgstr "Hubnemevedvou.cz využívá unikátní algoritmus, který vypočítá kompatibilitu partnerů na základě různých parametrů (BMI – Index tělesné hmotnosti, podobných sportovních aktivit a ostatních zájmů vyplněných v profilu).<br/>V levém menu klikněte na \"Hledat partnera\". Zobrazí se stránka s ostatními uživateli, kteří rovněž hledají partnera na cvičení, sport a další společné aktivity."
 
 #: forum/views.py:396
 msgid "screenshot select weight loss partner criteria"
@@ -1030,7 +1030,7 @@ msgstr "screenshot vyber kritéria partnera na hubnutí"
 
 #: forum/views.py:397
 msgid "help_search_2"
-msgstr " "
+msgstr "V dalším kroku lze specifikovat svůj výběr z hlediska pohlaví a místa bydliště. Na základě takto zvolené specifikace a vypočítaného algoritmu se vám zobrazí nejvíce relevantní uživatelé."
 
 #: forum/views.py:401
 msgid "screenshot weight loss partner"
@@ -1038,7 +1038,7 @@ msgstr "screenshot partner na hubnutí"
 
 #: forum/views.py:402
 msgid "help_search_3"
-msgstr " "
+msgstr "Vybranému uživateli můžete poslat zprávu nebo si ho pouze přidat do \"oblíbených\" a oslovit ho později."
 
 #: forum/views.py:406
 msgid "How to set profile photo"
