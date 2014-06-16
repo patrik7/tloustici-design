@@ -203,9 +203,9 @@ Basic JSON load scenario:
 
           if (show_subscribe) head_button += '<li class="divider"></li>';
 
-          head_button += '<li><a href="{% url report 'sexual' %}?target_id=' + head_post.pk + '&target=Post">{% trans 'Sexual Remarks' %}</a></li>'
-                       + '<li><a href="{% url report 'advertising' %}?target_id=' + head_post.pk + '&target=Post">{% trans 'Advertising' %}</a></li>'
-                       + '<li><a href="{% url report 'abuse' %}?target_id=' + head_post.pk + '&target=Post">{% trans 'Other Abuse' %}</a></li>'
+          head_button += '<li><a href="{% url report 'sexual' %}?target_id=' + head_post.pk + '&target=Post">{% trans 'Report sexual remarks' %}</a></li>'
+                       + '<li><a href="{% url report 'advertising' %}?target_id=' + head_post.pk + '&target=Post">{% trans 'Report advertising' %}</a></li>'
+                       + '<li><a href="{% url report 'abuse' %}?target_id=' + head_post.pk + '&target=Post">{% trans 'Report other abuse' %}</a></li>'
         }
 
         head_button += '</ul>';
@@ -368,9 +368,9 @@ Basic JSON load scenario:
 
             if (show_subscribe) footer += '<li class="divider"></li>';
 
-            footer += '<li><a href="{% url report 'sexual' %}?target_id=' + e.pk + '&target=Post">{% trans 'Sexual Remarks' %}</a></li>'
-                  + '<li><a href="{% url report 'advertising' %}?target_id=' + e.pk + '&target=Post">{% trans 'Advertising' %}</a></li>'
-                  + '<li><a href="{% url report 'abuse' %}?target_id=' + e.pk + '&target=Post">{% trans 'Other Abuse' %}</a></li>'
+            footer += '<li><a href="{% url report 'sexual' %}?target_id=' + e.pk + '&target=Post">{% trans 'Report sexual remarks' %}</a></li>'
+                  + '<li><a href="{% url report 'advertising' %}?target_id=' + e.pk + '&target=Post">{% trans 'Report advertising' %}</a></li>'
+                  + '<li><a href="{% url report 'abuse' %}?target_id=' + e.pk + '&target=Post">{% trans 'Report other abuse' %}</a></li>'
           }
 
           if ('{% if user.is_superuser %}1{% else %}0{% endif %}' == '1') {
