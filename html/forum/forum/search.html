@@ -11,9 +11,10 @@ Search
 {% load bootstrap %}
 
 {% block main %}
+  {% url profile user.username as url_profile %}
 
   {% if search_form %}
-      <h3 class=""> {% trans 'Search Criteria' %}</h3>
+    <h3 class=""> {% trans 'Search Criteria' %}</h3>
 
     <div class="white-well big-faq panel-body">
       <form class="form-horizontal">
@@ -22,19 +23,38 @@ Search
     </div>
  
 
-  <div id="data">
-  </div>
+    <div id="data">
+    </div>
 
-  <div id="pagination">
-  </div>
+    <div id="pagination">
+    </div>
 
   {% else %}
   <div class="jumbotron">
-    {% url profile user.username as url_profile %}
     <h3>{% blocktrans %}Unfortunatelly, you cannot search for other users until you fill in the personal info in your <a href="{{ url_profile }}?focus=personal&edit=1" >profile</a>.{% endblocktrans %}
     </h3>
   </div>
   {% endif %}
+
+  <div id="id_nohits" class="white-well panel-body hidden">
+    <div class="col-md-4 hidden-sm hidden-xs">
+      <img class="img-responsive" src="{{STATIC_URL}}images/sad.jpg">
+    </div>
+    <div class="col-md-8">
+      <p>{% blocktrans %}
+      We are sorry, but there are no users matching your search criteria yet.
+      Your partner may not have joined yet, make sure your <a href="{{url_profile}}">profile</a>
+      is up to date so he/she can easily find you.
+      {% endblocktrans %}</p>
+
+      <p>{% trans 'Until then, please feel free to checkout:' %}</p>
+
+      <big>
+        <a href="{% url forum_index %}"><span class="glyphicon glyphicon-comment"></span> {% trans 'Forum' %}</a><br/>
+        <a href="{% url articles %}"><span class="glyphicon glyphicon-home"></span> {% trans 'Articles' %}</a>
+      </big>
+    </div>
+  </div>
 
 {% endblock %}
 
@@ -55,6 +75,11 @@ Search
   <script type="text/javascript" language="javascript">
 
     AjaxConfiguration.ajax_url = '/search/data/';
+    AjaxConfiguration.preRenderCallback = function(data) {
+      if (data.entries.length == 0) {
+        $("#id_nohits").removeClass("hidden");
+      }
+    };
 
     function updateSearchResults()
     {
@@ -63,6 +88,8 @@ Search
           female: document.getElementById('id_sex_2').checked,
           city: document.getElementById('id_city').value,
       }
+
+      $("#id_nohits").addClass("hidden");
 
       loadData();
     }
