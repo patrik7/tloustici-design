@@ -1,0 +1,9 @@
+{% extends 'base/email_base.txt' %}
+
+{% block main %}
+New user registred: {{username}}
+
+{% url profile username %}
+{{domain}}/admin/auth/user/{{userid}}/
+
+{% endblock %}
