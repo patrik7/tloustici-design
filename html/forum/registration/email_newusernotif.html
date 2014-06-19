@@ -8,8 +8,8 @@
   </p>
 
   <p>
-    <a href="{% url profile username %}">See the profile</a><br/>
-    <a href="{{domain}}/admin/auth/user/{{userid}}/">Checkout in admin</a><br/>
+    <a href="http://{{domain}}{% url profile username %}">See the profile</a><br/>
+    <a href="http://{{domain}}/admin/auth/user/{{userid}}/">Checkout in admin</a><br/>
   </p>
 
 {% endblock %}
