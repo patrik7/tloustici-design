@@ -572,7 +572,7 @@ font-size:21px;
     -webkit-border-top-right-radius: 15px;
     -moz-border-radius-topleft: 15px;
     -moz-border-radius-topright: 15px;
-    border-top-left-radius: 15;
+    border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     padding-left:20px;
 
@@ -586,7 +586,7 @@ font-size:21px;
     -webkit-border-bottom-right-radius: 15px;
     -moz-border-radius-bottomleft: 15px;
     -moz-border-radius-bottomright: 15px;
-    border-bottom-left-radius: 15;
+    border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
   
     background-color: #FFF;
