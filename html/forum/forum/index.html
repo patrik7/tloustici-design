@@ -39,7 +39,6 @@ Basic JSON load scenario:
   <div id="data">
     <!-- First level, categories, are rendered on the server and it's not possibel to get back here thru JSON -->
 
-    <div class="row">
     {% for category in categories %}
       <div class="col-md-6">
         <div class="panel panel-default forum-category-panel">
@@ -61,7 +60,6 @@ Basic JSON load scenario:
         </div>
       </div>
     {% endfor %}
-    </div>
   </div>  
 
   <div id="pagination"></div>
