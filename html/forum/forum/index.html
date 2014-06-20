@@ -41,27 +41,12 @@ Basic JSON load scenario:
 
     {% for category in categories %}
       <div class="col-md-6">
-        <div class="panel panel-default forum-category-panel">
-          <div class="panel-body forum-category-body link-glow" style="background-image: url('{{category.image_url}}'); background-size: cover;" onClick="change('{{category.id}}');" >
-             {% comment %}
-             <h2 style="position: absolute; left: 16px; bottom:9px; color: #FFFFFF;">{{category.body_html|safe}}</h2>
-             <h2 style="position: absolute; left: 15px; bottom:10px;">{{category.body_html|safe}}</h2>
-             {% endcomment %}
-          </div>
+        <div class="panel panel-default forum-category-panel link-glow" onClick="change('{{category.id}}');">
+          <div class="panel-body forum-category-body" style="background-image: url('{{category.image_url}}'); background-size: cover;" >
+            </div>
           <div class="panel-footer forum-category-footer" style="position: relative;">
             <h2 style="position: absolute; top: 12px; left: 24px; color: #AAAAAA; margin:0px">{{category.body_html|safe}}</h2>
             <h2 style="position: absolute; top: 10px; left: 22px; margin: 0px;">{{category.body_html|safe}}</h2>
-            {% comment %}
-            {% if category.last_post %}
-              {% url profile category.last_post.user as user_url %}
-
-              <p class="text-muted">
-                {% blocktrans with date=category.last_post.created|date:"H:i d.m" user=category.last_post.user id=category.last_post.id %}
-                  <a href="javascript:void(0)" onClick="change('{{id}}');">Last reaction</a> {{date}} by <a href="{{user_url}}">{{user}}</a>
-                {% endblocktrans %}
-              </p>
-            {% endif %}
-            {% endcomment %}
           </div>
         </div>
       </div>
