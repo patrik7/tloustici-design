@@ -566,6 +566,12 @@ font-size:21px;
     width:108px;
 }
 
+.forum-category-h {
+    position: absolute;
+    font-size:250%;
+    font-weight: bold;
+}
+
 .forum-category-body {
     height: 200px;
     -webkit-border-top-left-radius: 15px;
@@ -580,7 +586,7 @@ font-size:21px;
 }
 
 .forum-category-footer {
-    height: 42px;
+    height: 54px;
     text-align: center;
     -webkit-border-bottom-left-radius: 15px;
     -webkit-border-bottom-right-radius: 15px;

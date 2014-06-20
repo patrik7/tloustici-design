@@ -43,10 +43,15 @@ Basic JSON load scenario:
       <div class="col-md-6">
         <div class="panel panel-default forum-category-panel">
           <div class="panel-body forum-category-body link-glow" style="background-image: url('{{category.image_url}}'); background-size: cover;" onClick="change('{{category.id}}');" >
+             {% comment %}
              <h2 style="position: absolute; left: 16px; bottom:9px; color: #FFFFFF;">{{category.body_html|safe}}</h2>
              <h2 style="position: absolute; left: 15px; bottom:10px;">{{category.body_html|safe}}</h2>
+             {% endcomment %}
           </div>
-          <div class="panel-footer forum-category-footer">
+          <div class="panel-footer forum-category-footer" style="position: relative;">
+            <h2 style="position: absolute; top: 12px; left: 24px; color: #AAAAAA; margin:0px">{{category.body_html|safe}}</h2>
+            <h2 style="position: absolute; top: 10px; left: 22px; margin: 0px;">{{category.body_html|safe}}</h2>
+            {% comment %}
             {% if category.last_post %}
               {% url profile category.last_post.user as user_url %}
 
@@ -56,6 +61,7 @@ Basic JSON load scenario:
                 {% endblocktrans %}
               </p>
             {% endif %}
+            {% endcomment %}
           </div>
         </div>
       </div>
@@ -228,8 +234,8 @@ Basic JSON load scenario:
       if (head_post.caption) {
         content = '<h4>' + head_post.caption + '</h4><p>' + head_post.text + '</p>';
       } else if(head_post.level == 0) {
-        content = '<h1 style="position: absolute; bottom: 9px; left: 21px; color: #FFFFFF">' + head_post.text_short + '</h1>'
-                + '<h1 style="position: absolute; bottom: 10px; left: 20px;">' + head_post.text_short + '</h1>';
+        content = '<h2 class="forum-category-h" style="bottom: 0px; right: 20px; color: #FFFFFF;">' + head_post.text_short + '</h2>'
+                + '<h2 class="forum-category-h" style="bottom: 2px; right: 22px;">' + head_post.text_short + '</h2>';
       } else {
         content = '<p>' + head_post.text + '</p>';
       }
