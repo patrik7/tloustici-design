@@ -12,6 +12,8 @@ Search
 
 {% block main %}
   {% url profile user.username as url_profile %}
+  {% url forum_index as url_forum %}
+  {% url articles as url_articles %}
 
   {% if search_form %}
     <h3 class=""> {% trans 'Search Criteria' %}</h3>
@@ -36,9 +38,15 @@ Search
   </div>
   {% endif %}
 
-  <div id="id_nohits" class="hidden col-md-8 col-md-offset-2">
-    <div class="col-md-4 hidden-sm hidden-xs">
-      <img class="img-responsive" src="{{STATIC_URL}}images/sad.jpg">
+  <div id="id_nohits" class="hidden row">
+    <div class="col-md-4 text-center hidden-sm hidden-xs">
+      <a href="{% url forum_index %}">
+        <img class="screenshot-help" src="{{STATIC_URL}}images/forum-screenshot.jpg" style="max-width:90%;">
+      </a>
+      <p></p>
+      <a href="{% url articles %}">
+        <img class="screenshot-help" src="{{STATIC_URL}}images/articles-screenshot.jpg" style="max-width:90%;">
+      </a>
     </div>
     <div class="col-md-8">
       <p>{% blocktrans %}
@@ -47,12 +55,21 @@ Search
       is up to date so he/she can easily find you.
       {% endblocktrans %}</p>
 
-      <p>{% trans 'Until then, please feel free to checkout:' %}</p>
+      <p>{% blocktrans %}
+      Share your experience with weight loss and sporting with other users. Checkout <a href="{{url_forum}}">forum</a>.
+      {% endblocktrans %}</p>
 
+      <p>{% blocktrans %}
+      For the newest inspiration, checkout the <a href="{{url_articles}}">articles section</a>.
+      {% endblocktrans %}</p>
+
+      {% comment %}
       <big>
         <a href="{% url forum_index %}"><span class="glyphicon glyphicon-comment"></span> {% trans 'Forum' %}</a><br/>
         <a href="{% url articles %}"><span class="glyphicon glyphicon-home"></span> {% trans 'Articles' %}</a>
       </big>
+      {% endcomment %}
+
     </div>
   </div>
 
