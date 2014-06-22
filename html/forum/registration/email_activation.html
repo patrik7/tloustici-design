@@ -22,13 +22,11 @@ Email activation
 
   {{p|safe}}
     {% blocktrans %}
-      Thank you for registering on <a href="http://{{domain}}{{act_link}}?utm_source=internal&utm_content=activationlink&utm_medium=email&utm_campaign={{analytics_campaign}}">hubnemevedvou.cz</a> . We are looking forward to all the weight we will loose together!
+      Thank you for registering on <a href="http://{{domain}}{{act_link}}">hubnemevedvou.cz</a> . We are looking forward to all the weight we will loose together!
     {% endblocktrans %}
   </p>
 
   {{p|safe}}
-    {% url activate activation_key=activation_key as act_link %}
-
     {% blocktrans %}
       In order to finish the registration, please click on the following link.
     {% endblocktrans %}
@@ -36,7 +34,7 @@ Email activation
 
     <center>
 
-      <a href="http://{{domain}}{{act_link}}?utm_source=internal&utm_content=calltoaction&utm_medium=email&utm_campaign={{analytics_campaign}}" {% include 'base/email_calltoactionbutton.html' %}>{% trans 'Activate' %}</a>
+      <a href="http://{{domain}}{{act_link}}" {% include 'base/email_calltoactionbutton.html' %}>{% trans 'Activate' %}</a>
 
     </center>
   </p>

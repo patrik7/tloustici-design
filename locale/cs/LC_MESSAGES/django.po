@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-21 15:01+0200\n"
+"POT-Creation-Date: 2014-06-22 08:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -128,7 +128,6 @@ msgstr "Článek"
 #: articles/templates/articles/index.html:14 base/context_processors.py:48
 #: base/templates/base/base.html:111
 #: base/templates/base/base_public_full.html:25 forum/tests.py:689
-#: forum/templates/forum/search.html:62
 msgid "Articles"
 msgstr "Články"
 
@@ -203,7 +202,7 @@ msgstr "Zprávy"
 
 #: base/context_processors.py:49 forum/tests.py:688
 #: forum/templates/forum/index.html:27 forum/templates/forum/index.html:28
-#: forum/templates/forum/index.html:125 forum/templates/forum/search.html:61
+#: forum/templates/forum/index.html:125
 msgid "Forum"
 msgstr "Fórum"
 
@@ -1556,7 +1555,7 @@ msgstr ""
 "informace ve svém <a href=\"%(url_profile)s?focus=personal&edit=1\">profilu</"
 "a>."
 
-#: forum/templates/forum/search.html:46
+#: forum/templates/forum/search.html:52
 #, python-format
 msgid ""
 "\n"
@@ -1568,10 +1567,14 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"<b>Je nám líto, ale zadaných kritériím neodpovídá žádný uživatel.</b> Nezoufejte však, databáze uživatelů se zvětšuje každý den a Vy můžete své štěstí zkusit o pár dní později. Nezapomeňte však dobře vyplnit informace v osobním profilu, Váš potencionální partner Vás tak snáze najde. Vrátit se na <a href=\"%(url_profile)s\">profil</a>.\n"
+"<b>Je nám líto, ale zadaných kritériím neodpovídá žádný uživatel.</b> "
+"Nezoufejte však, databáze uživatelů se zvětšuje každý den a Vy můžete své "
+"štěstí zkusit o pár dní později. Nezapomeňte však dobře vyplnit informace v "
+"osobním profilu, Váš potencionální partner Vás tak snáze najde. Vrátit se na "
+"<a href=\"%(url_profile)s\">profil</a>.\n"
 "    "
 
-#: forum/templates/forum/search.html:52
+#: forum/templates/forum/search.html:58
 #, python-format
 msgid ""
 "\n"
@@ -1580,10 +1583,11 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"Podělte se o své zkušenosti z oblasti hubnutí a sportování a ostatními uživately. Navštívit <a href=\"%(url_forum)s\">Fórum</a>.\n"
+"Podělte se o své zkušenosti z oblasti hubnutí a sportování a ostatními "
+"uživately. Navštívit <a href=\"%(url_forum)s\">Fórum</a>.\n"
 "      "
 
-#: forum/templates/forum/search.html:56
+#: forum/templates/forum/search.html:62
 #, python-format
 msgid ""
 "\n"
@@ -1592,26 +1596,27 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"Pro nejnovější inspiraci, navštivte sekci <a href=\"%(url_articles)s\">Články</a>.\n"
+"Pro nejnovější inspiraci, navštivte sekci <a href=\"%(url_articles)s"
+"\">Články</a>.\n"
 "   "
 
-#: forum/templates/forum/search.html:130
+#: forum/templates/forum/search.html:140
 msgid "Overall compatibility"
 msgstr "Celková kompatibilita"
 
-#: forum/templates/forum/search.html:131
+#: forum/templates/forum/search.html:141
 msgid "BMI compatibility"
 msgstr "BMI kompatibilita"
 
-#: forum/templates/forum/search.html:132
+#: forum/templates/forum/search.html:142
 msgid "Activities compatibility"
 msgstr "Aktivity"
 
-#: forum/templates/forum/search.html:138
+#: forum/templates/forum/search.html:148
 msgid "Add to Favourites"
 msgstr "Přidat k oblíbeným"
 
-#: forum/templates/forum/search.html:139
+#: forum/templates/forum/search.html:149
 msgid "Send Message"
 msgstr "Poslat zprávu"
 
@@ -1714,22 +1719,20 @@ msgstr ""
 "Vítej %(username)s!"
 
 #: forum/templates/registration/email_activation.html:24
-#, python-format
 msgid ""
 "\n"
-"      Thank you for registering on <a href=\"http://%(domain)s%(act_link)s?"
-"utm_source=internal&utm_content=activationlink&utm_medium=email&utm_campaign="
-"%(analytics_campaign)s\">hubnemevedvou.cz</a> . We are looking forward to "
-"all the weight we will loose together!\n"
+"      Thank you for registering on <a href=\"http://%(domain)s%(act_link)s"
+"\">hubnemevedvou.cz</a> . We are looking forward to all the weight we will "
+"loose together!\n"
 "    "
 msgstr ""
 "\n"
-"Děkujeme za registraci na <a href=\"http://%(domain)s%(act_link)s?"
-"utm_source=internal&utm_content=activationlink&utm_medium=email&utm_campaign="
-"%(analytics_campaign)s\">hubnemevedvou.cz</a> a těšíme se na společně "
-"shozená kila!"
+"Děkujeme za registraci na <a href=\"http://%(domain)s%(act_link)s"
+"\">hubnemevedvou.cz</a> a těšíme se na společně "
+"shozená kila!\n"
+"    "
 
-#: forum/templates/registration/email_activation.html:32
+#: forum/templates/registration/email_activation.html:30
 msgid ""
 "\n"
 "      In order to finish the registration, please click on the following "
@@ -1740,7 +1743,7 @@ msgstr ""
 "Pro úspěšné dokončení registrace, prosím, klikni na tento odkaz.\n"
 "    "
 
-#: forum/templates/registration/email_activation.html:39
+#: forum/templates/registration/email_activation.html:37
 msgid "Activate"
 msgstr "Aktivovat"
 
@@ -1801,9 +1804,24 @@ msgstr "Své foto nahraji později"
 
 #~ msgid ""
 #~ "\n"
-#~ "                  <a href=\"javascript:void(0)\" onClick=\"change"
-#~ "('%(id)s');\">Last reaction</a> %(date)s by <a href=\"%(user_url)s\">"
-#~ "%(user)s</a>\n"
+#~ "      Thank you for registering on <a href=\"http://%(domain)s"
+#~ "%(act_link)s?"
+#~ "utm_source=internal&utm_content=activationlink&utm_medium=email&utm_campaign="
+#~ "%(analytics_campaign)s\">hubnemevedvou.cz</a> . We are looking forward to "
+#~ "all the weight we will loose together!\n"
+#~ "    "
+#~ msgstr ""
+#~ "\n"
+#~ "Děkujeme za registraci na <a href=\"http://%(domain)s%(act_link)s?"
+#~ "utm_source=internal&utm_content=activationlink&utm_medium=email&utm_campaign="
+#~ "%(analytics_campaign)s\">hubnemevedvou.cz</a> a těšíme se na společně "
+#~ "shozená kila!"
+
+#~ msgid ""
+#~ "\n"
+#~ "                  <a href=\"javascript:void(0)\" onClick=\"change('%(id)"
+#~ "s');\">Last reaction</a> %(date)s by <a href=\"%(user_url)s\">%(user)s</"
+#~ "a>\n"
 #~ "                "
 #~ msgstr ""
 #~ "\n"
