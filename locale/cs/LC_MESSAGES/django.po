@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-22 08:44+0200\n"
+"POT-Creation-Date: 2014-06-22 19:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -128,6 +128,7 @@ msgstr "Článek"
 #: articles/templates/articles/index.html:14 base/context_processors.py:48
 #: base/templates/base/base.html:111
 #: base/templates/base/base_public_full.html:25 forum/tests.py:689
+#: forum/templates/forum/search.html:61
 msgid "Articles"
 msgstr "Články"
 
@@ -202,7 +203,7 @@ msgstr "Zprávy"
 
 #: base/context_processors.py:49 forum/tests.py:688
 #: forum/templates/forum/index.html:27 forum/templates/forum/index.html:28
-#: forum/templates/forum/index.html:125
+#: forum/templates/forum/index.html:125 forum/templates/forum/search.html:58
 msgid "Forum"
 msgstr "Fórum"
 
@@ -536,17 +537,17 @@ msgstr "Středoškolské vzdělání"
 msgid "Elementary School"
 msgstr "Základní vzdělání"
 
-#: forum/models.py:61 forum/templates/forum/messages.html:192
+#: forum/models.py:61 forum/templates/forum/messages.html:194
 #: forum/templates/forum/profile/profile_readonly.html:203
 msgid "Sexual Remarks"
 msgstr "Sexuální obtěžování"
 
-#: forum/models.py:62 forum/templates/forum/messages.html:193
+#: forum/models.py:62 forum/templates/forum/messages.html:195
 #: forum/templates/forum/profile/profile_readonly.html:204
 msgid "Advertising"
 msgstr "Nevyžádaná reklama"
 
-#: forum/models.py:63 forum/templates/forum/messages.html:194
+#: forum/models.py:63 forum/templates/forum/messages.html:196
 #: forum/templates/forum/profile/profile_readonly.html:205
 msgid "Other Abuse"
 msgstr "Ostatní"
@@ -733,7 +734,8 @@ msgstr "Přihlásit se k odběru novinek"
 msgid "Fans Count"
 msgstr "Počet Fanoušků"
 
-#: forum/models.py:539 forum/templates/forum/profile/profile_readonly.html:14
+#: forum/models.py:539 forum/templates/forum/search.html:55
+#: forum/templates/forum/profile/profile_readonly.html:14
 msgid "Profile"
 msgstr "Profil"
 
@@ -1500,24 +1502,24 @@ msgstr ""
 msgid "Write Private Message"
 msgstr "Poslat novou zprávu"
 
-#: forum/templates/forum/messages.html:190
+#: forum/templates/forum/messages.html:192
 #: forum/templates/forum/report.html:19
 msgid "Report"
 msgstr "Ohlásit"
 
-#: forum/templates/forum/messages.html:221
+#: forum/templates/forum/messages.html:223
 msgid "Block"
 msgstr "Zablokovat"
 
-#: forum/templates/forum/messages.html:223
+#: forum/templates/forum/messages.html:225
 msgid "Unblock"
 msgstr "Odblokovat"
 
-#: forum/templates/forum/messages.html:228
+#: forum/templates/forum/messages.html:230
 msgid "Last message"
 msgstr "Poslední zpráva"
 
-#: forum/templates/forum/messages.html:229
+#: forum/templates/forum/messages.html:231
 msgid "Conversation with"
 msgstr "Konverzace s"
 
@@ -1555,68 +1557,51 @@ msgstr ""
 "informace ve svém <a href=\"%(url_profile)s?focus=personal&edit=1\">profilu</"
 "a>."
 
-#: forum/templates/forum/search.html:52
-#, python-format
+#: forum/templates/forum/search.html:43
 msgid ""
 "\n"
 "      We are sorry, but there are no users matching your search criteria "
 "yet.\n"
-"      Your partner may not have joined yet, make sure your <a href="
-"\"%(url_profile)s\">profile</a>\n"
-"      is up to date so he/she can easily find you.\n"
 "      "
 msgstr ""
 "\n"
-"<b>Je nám líto, ale zadaných kritériím neodpovídá žádný uživatel.</b> "
-"Nezoufejte však, databáze uživatelů se zvětšuje každý den a Vy můžete své "
-"štěstí zkusit o pár dní později. Nezapomeňte však dobře vyplnit informace v "
-"osobním profilu, Váš potencionální partner Vás tak snáze najde. Vrátit se na "
-"<a href=\"%(url_profile)s\">profil</a>.\n"
-"    "
-
-#: forum/templates/forum/search.html:58
-#, python-format
-msgid ""
-"\n"
-"      Share your experience with weight loss and sporting with other users. "
-"Checkout <a href=\"%(url_forum)s\">forum</a>.\n"
-"      "
-msgstr ""
-"\n"
-"Podělte se o své zkušenosti z oblasti hubnutí a sportování a ostatními "
-"uživately. Navštívit <a href=\"%(url_forum)s\">Fórum</a>.\n"
-"      "
-
-#: forum/templates/forum/search.html:62
-#, python-format
-msgid ""
-"\n"
-"      For the newest inspiration, checkout the <a href=\"%(url_articles)s"
-"\">articles section</a>.\n"
-"      "
-msgstr ""
-"\n"
-"Pro nejnovější inspiraci, navštivte sekci <a href=\"%(url_articles)s"
-"\">Články</a>.\n"
+"Je nám líto, ale zadaných kritériím neodpovídá žádný uživatel.\n"
 "   "
 
-#: forum/templates/forum/search.html:140
+#: forum/templates/forum/search.html:47
+msgid ""
+"\n"
+"      Make sure your <a href=\"%(url_profile)s\" onmousedown=\"gaTrackEvent"
+"('searching', 'follow profile text');\">profile</a> is up to date so you can "
+"be easily found.\n"
+"      "
+msgstr ""
+"\n"
+"Nezapomeň však dobře vyplnit informace v osobním <a href=\"%(url_profile)s"
+"\" onmousedown=\"gaTrackEvent('searching', 'follow profile text');\">profilu</a>.\n"
+"    "
+
+#: forum/templates/forum/search.html:51
+msgid "Where next?"
+msgstr "Kam teď?"
+
+#: forum/templates/forum/search.html:133
 msgid "Overall compatibility"
 msgstr "Celková kompatibilita"
 
-#: forum/templates/forum/search.html:141
+#: forum/templates/forum/search.html:134
 msgid "BMI compatibility"
 msgstr "BMI kompatibilita"
 
-#: forum/templates/forum/search.html:142
+#: forum/templates/forum/search.html:135
 msgid "Activities compatibility"
 msgstr "Aktivity"
 
-#: forum/templates/forum/search.html:148
+#: forum/templates/forum/search.html:141
 msgid "Add to Favourites"
 msgstr "Přidat k oblíbeným"
 
-#: forum/templates/forum/search.html:149
+#: forum/templates/forum/search.html:142
 msgid "Send Message"
 msgstr "Poslat zprávu"
 
@@ -1719,6 +1704,7 @@ msgstr ""
 "Vítej %(username)s!"
 
 #: forum/templates/registration/email_activation.html:24
+#, python-format
 msgid ""
 "\n"
 "      Thank you for registering on <a href=\"http://%(domain)s%(act_link)s"
@@ -1728,8 +1714,7 @@ msgid ""
 msgstr ""
 "\n"
 "Děkujeme za registraci na <a href=\"http://%(domain)s%(act_link)s"
-"\">hubnemevedvou.cz</a> a těšíme se na společně "
-"shozená kila!\n"
+"\">hubnemevedvou.cz</a> a těšíme se na společně shozená kila!\n"
 "    "
 
 #: forum/templates/registration/email_activation.html:30
@@ -1804,8 +1789,47 @@ msgstr "Své foto nahraji později"
 
 #~ msgid ""
 #~ "\n"
-#~ "      Thank you for registering on <a href=\"http://%(domain)s"
-#~ "%(act_link)s?"
+#~ "      We are sorry, but there are no users matching your search criteria "
+#~ "yet.\n"
+#~ "      Your partner may not have joined yet, make sure your <a href="
+#~ "\"%(url_profile)s\">profile</a>\n"
+#~ "      is up to date so he/she can easily find you.\n"
+#~ "      "
+#~ msgstr ""
+#~ "\n"
+#~ "<b>Je nám líto, ale zadaných kritériím neodpovídá žádný uživatel.</b> "
+#~ "Nezoufejte však, databáze uživatelů se zvětšuje každý den a Vy můžete své "
+#~ "štěstí zkusit o pár dní později. Nezapomeňte však dobře vyplnit informace "
+#~ "v osobním profilu, Váš potencionální partner Vás tak snáze najde. Vrátit "
+#~ "se na <a href=\"%(url_profile)s\">profil</a>.\n"
+#~ "    "
+
+#~ msgid ""
+#~ "\n"
+#~ "      Share your experience with weight loss and sporting with other "
+#~ "users. Checkout <a href=\"%(url_forum)s\">forum</a>.\n"
+#~ "      "
+#~ msgstr ""
+#~ "\n"
+#~ "Podělte se o své zkušenosti z oblasti hubnutí a sportování a ostatními "
+#~ "uživately. Navštívit <a href=\"%(url_forum)s\">Fórum</a>.\n"
+#~ "      "
+
+#~ msgid ""
+#~ "\n"
+#~ "      For the newest inspiration, checkout the <a href=\"%(url_articles)s"
+#~ "\">articles section</a>.\n"
+#~ "      "
+#~ msgstr ""
+#~ "\n"
+#~ "Pro nejnovější inspiraci, navštivte sekci <a href=\"%(url_articles)s"
+#~ "\">Články</a>.\n"
+#~ "   "
+
+#~ msgid ""
+#~ "\n"
+#~ "      Thank you for registering on <a href=\"http://%(domain)s%(act_link)"
+#~ "s?"
 #~ "utm_source=internal&utm_content=activationlink&utm_medium=email&utm_campaign="
 #~ "%(analytics_campaign)s\">hubnemevedvou.cz</a> . We are looking forward to "
 #~ "all the weight we will loose together!\n"

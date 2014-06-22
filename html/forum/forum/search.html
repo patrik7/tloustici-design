@@ -39,36 +39,28 @@ Search
   {% endif %}
 
   <div id="id_nohits" class="hidden row">
-    <div class="col-md-4 text-center hidden-sm hidden-xs">
-      <a href="{% url forum_index %}">
-        <img class="screenshot-help" src="{{STATIC_URL}}images/forum-screenshot.jpg" style="max-width:90%;">
-      </a>
-      <p></p>
-      <a href="{% url articles %}">
-        <img class="screenshot-help" src="{{STATIC_URL}}images/articles-screenshot.jpg" style="max-width:90%;">
-      </a>
-    </div>
-    <div class="col-md-8">
-      <p>{% blocktrans %}
+    <div class="col-md-8 col-md-offset-2 text-center">
+      <p><b>{% blocktrans %}
       We are sorry, but there are no users matching your search criteria yet.
-      Your partner may not have joined yet, make sure your <a href="{{url_profile}}">profile</a>
-      is up to date so he/she can easily find you.
-      {% endblocktrans %}</p>
+      {% endblocktrans %}</b></p>
 
       <p>{% blocktrans %}
-      Share your experience with weight loss and sporting with other users. Checkout <a href="{{url_forum}}">forum</a>.
+      Make sure your <a href="{{url_profile}}" onmousedown="gaTrackEvent('searching', 'follow profile text');">profile</a> is up to date so you can be easily found.
       {% endblocktrans %}</p>
 
-      <p>{% blocktrans %}
-      For the newest inspiration, checkout the <a href="{{url_articles}}">articles section</a>.
-      {% endblocktrans %}</p>
+      <p style="margin-top: 30px;">{% trans 'Where next?' %}</p>
 
-      {% comment %}
-      <big>
-        <a href="{% url forum_index %}"><span class="glyphicon glyphicon-comment"></span> {% trans 'Forum' %}</a><br/>
-        <a href="{% url articles %}"><span class="glyphicon glyphicon-home"></span> {% trans 'Articles' %}</a>
-      </big>
-      {% endcomment %}
+      <div class="row text-center" style="margin-top: 40px; font-size:180%;">
+        <div class="col-sm-4">
+          <a href="{% url profile user.username %}" onmousedown="gaTrackEvent('searching', 'follow profile big');"><img src="{{user.forum_profile.avatar_url}}" class="img-circle" style="width: 28px; height: auto;"></img> {% trans 'Profile' %}</a><br/>
+        </div>
+        <div class="col-sm-4">
+          <a href="{% url forum_index %}" onmousedown="gaTrackEvent('searching', 'follow forum big');"><span class="glyphicon glyphicon-comment"></span> {% trans 'Forum' %}</a><br/>
+        </div>
+        <div class="col-sm-4">
+          <a href="{% url articles %}" onmousedown="gaTrackEvent('searching', 'follow articles big');"><span class="glyphicon glyphicon-home"></span> {% trans 'Articles' %}</a>
+        </div>
+      </div>
 
     </div>
   </div>
@@ -105,6 +97,8 @@ Search
           female: document.getElementById('id_sex_2').checked,
           city: document.getElementById('id_city').value,
       }
+
+      gaTrackEvent('searching', 'changing criteria');
 
       $("#id_nohits").addClass("hidden");
 
