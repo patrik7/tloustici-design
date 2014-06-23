@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-22 19:04+0200\n"
+"POT-Creation-Date: 2014-06-23 18:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -440,7 +440,7 @@ msgstr "Uživatelské jméno již existuje"
 msgid "@%s emails are not allowed"
 msgstr "@%s e-maily nejsou povoleny"
 
-#: forum/forms.py:230 forum/forms.py:519
+#: forum/forms.py:230 forum/forms.py:524
 msgid "Sex"
 msgstr "Pohlaví"
 
@@ -493,27 +493,31 @@ msgstr "Výška neodpovídá reálným hodnotám"
 msgid "Weight has to be between 30 kg and 350 kg"
 msgstr "Váha neodpovídá reálným hodnotám"
 
-#: forum/forms.py:519 forum/forms.py:520
+#: forum/forms.py:455
+msgid "There was a problem uploading the image."
+msgstr "Vyskytl se problém při načítání obrázku."
+
+#: forum/forms.py:524 forum/forms.py:525
 msgid "doesn't matter"
 msgstr "Nezáleží"
 
-#: forum/forms.py:520 forum/models.py:443
+#: forum/forms.py:525 forum/models.py:443
 msgid "City"
 msgstr "Město"
 
-#: forum/forms.py:554 forum/models.py:102
+#: forum/forms.py:559 forum/models.py:102
 msgid "Post"
 msgstr "Příspěvek"
 
-#: forum/forms.py:567 forum/models.py:89
+#: forum/forms.py:572 forum/models.py:89
 msgid "Caption"
 msgstr "Nadpis"
 
-#: forum/forms.py:580
+#: forum/forms.py:585
 msgid "Cannot reply, reply level too deep."
 msgstr "Nemůžeš odpovědět, přiliš velké zanoření."
 
-#: forum/forms.py:595
+#: forum/forms.py:600
 msgid "Can't be empty nor contain only whitespace characters"
 msgstr "Pole nemůže zůstat prázdné"
 
@@ -1569,6 +1573,7 @@ msgstr ""
 "   "
 
 #: forum/templates/forum/search.html:47
+#, python-format
 msgid ""
 "\n"
 "      Make sure your <a href=\"%(url_profile)s\" onmousedown=\"gaTrackEvent"
@@ -1577,8 +1582,9 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"Nezapomeň však dobře vyplnit informace v osobním <a href=\"%(url_profile)s"
-"\" onmousedown=\"gaTrackEvent('searching', 'follow profile text');\">profilu</a>.\n"
+"Nezapomeň však dobře vyplnit informace v osobním <a href=\"%(url_profile)s\" "
+"onmousedown=\"gaTrackEvent('searching', 'follow profile text');\">profilu</"
+"a>.\n"
 "    "
 
 #: forum/templates/forum/search.html:51
