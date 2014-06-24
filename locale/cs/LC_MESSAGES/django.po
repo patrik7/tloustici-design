@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-23 18:19+0200\n"
+"POT-Creation-Date: 2014-06-24 14:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -275,6 +275,20 @@ msgstr "Objekt"
 #: base/templates/404.html:17
 msgid "was not found!"
 msgstr "se nenašel"
+
+#: base/templates/500.html:72
+msgid ""
+"There was an error processing the request, we are sorry for the "
+"inconvenience."
+msgstr "Při spracování dotazu došlo k chybě, omlouváme se za vzniklé potíže"
+
+#: base/templates/500.html:78
+msgid "Home page"
+msgstr "Hlavní stránka"
+
+#: base/templates/500.html:83
+msgid "Back"
+msgstr "Zpět"
 
 #: base/templates/base/base.html:17 base/templates/base/base.html.py:25
 #: forum/templates/registration/registration_front.html:24
