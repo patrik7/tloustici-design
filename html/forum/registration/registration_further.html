@@ -96,12 +96,12 @@ Registracia krok 1
               <img id="id_avatar" src="{{tmp_user.forum_profile.avatar_url}}" width="160" height="160" class="img-circle link-glow" onclick="javascript:performClick(document.getElementById('id_avatarinput'))">
               <div class="link-glow-trigger" style="position:absolute; bottom: 23px; right: 2px; color: #505050; " onclick="javascript:performClick(document.getElementById('id_avatarinput'))">
                 <h3 style="word-spacing:800px;">
-                  <span class="glyphicon glyphicon-repeat"></span><br/>{% trans 'Change picture' %}
+                  <span class="glyphicon glyphicon-repeat"></span><br/>{% if not tmp_user.forum_profile.avatar %}{% trans 'Change picture' %}{% else %}{% trans 'Change Picture' %}{% endif %}
                 </h3>
               </div>
               <div class="link-glow-trigger" style="position:absolute; bottom: 25px; right: 4px; color: #FFFFFF;" onclick="javascript:performClick(document.getElementById('id_avatarinput'))">
                 <h3 style="word-spacing:800px;">
-                  <span class="glyphicon glyphicon-repeat"></span><br/>{% trans 'Change picture' %}
+                  <span class="glyphicon glyphicon-repeat"></span><br/>{% if not tmp_user.forum_profile.avatar %}{% trans 'Change picture' %}{% else %}{% trans 'Change Picture' %}{% endif %}
                 </h3>
               </div>
             </div>
@@ -131,7 +131,7 @@ Registracia krok 1
               </div>
             </div>
 
-            <a href="{% url register_step step %}" element="padding-top: 20px;">{% trans 'I will upload my picture later' %}</a>
+            <a href="{% url register_step step %}" element="padding-top: 20px;">{% if not tmp_user.forum_profile.avatar %}{% trans 'I will upload my picture later' %}{% else %}{% trans 'Keep the picture' %}{% endif %}</a>
 
           {% else %}
             {% include 'form.html' with name=button_name %}
