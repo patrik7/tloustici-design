@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-25 14:05+0200\n"
+"POT-Creation-Date: 2014-07-08 11:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,7 +64,7 @@ msgstr "Poslat heslo"
 msgid "Send Private Message"
 msgstr "Odeslat zprávu"
 
-#: Tloustici/translations.py:24 forum/views.py:945
+#: Tloustici/translations.py:24 forum/views.py:943
 msgctxt "female"
 msgid "You are now subscribed to the replies."
 msgstr "Nyní jsi přihlášená k odběru příspěvků v této diskuzi."
@@ -74,7 +74,7 @@ msgctxt "male"
 msgid "You are now subscribed to the replies."
 msgstr "Nyní jsi přihlášen k odběru příspěvků v této diskuzi."
 
-#: Tloustici/translations.py:26 forum/views.py:948
+#: Tloustici/translations.py:26 forum/views.py:946
 msgctxt "female"
 msgid "You have been unsubscribed from the replies to this post."
 msgstr "Byla jsi odhlášená z odběru příspěvků v této diskuzi."
@@ -127,8 +127,8 @@ msgstr "Článek"
 #: articles/models.py:39 articles/templates/articles/index.html:13
 #: articles/templates/articles/index.html:14 base/context_processors.py:48
 #: base/templates/base/base.html:111
-#: base/templates/base/base_public_full.html:25 forum/tests.py:689
-#: forum/templates/forum/search.html:61
+#: base/templates/base/base_public_full.html:25 forum/tests.py:707
+#: forum/templates/forum/search.html:60
 msgid "Articles"
 msgstr "Články"
 
@@ -160,11 +160,11 @@ msgstr "Tvé BMI je"
 msgid "Find out your BMI"
 msgstr "Zjistěte si své BMI"
 
-#: articles/templates/articles/bmi.html:37 forum/views.py:556
+#: articles/templates/articles/bmi.html:37 forum/views.py:552
 msgid "Height"
 msgstr "Výška"
 
-#: articles/templates/articles/bmi.html:43 forum/views.py:559
+#: articles/templates/articles/bmi.html:43 forum/views.py:555
 msgid "Weight"
 msgstr "Váha"
 
@@ -185,7 +185,7 @@ msgstr "Dosud nezveřejněné"
 msgid "Read More"
 msgstr "Číst více"
 
-#: base/context_processors.py:41 forum/tests.py:692
+#: base/context_processors.py:41 forum/tests.py:710
 msgid "Personal profile"
 msgstr "Profil"
 
@@ -193,17 +193,17 @@ msgstr "Profil"
 msgid "Favourites"
 msgstr "Oblíbené"
 
-#: base/context_processors.py:43 forum/tests.py:693
+#: base/context_processors.py:43 forum/tests.py:711
 msgid "Search for Partner"
 msgstr "Hledat partnera"
 
-#: base/context_processors.py:44 forum/tests.py:694
+#: base/context_processors.py:44 forum/tests.py:712
 msgid "Messages"
 msgstr "Zprávy"
 
-#: base/context_processors.py:49 forum/tests.py:688
+#: base/context_processors.py:49 forum/tests.py:706
 #: forum/templates/forum/index.html:27 forum/templates/forum/index.html:28
-#: forum/templates/forum/index.html:125 forum/templates/forum/search.html:58
+#: forum/templates/forum/index.html:125 forum/templates/forum/search.html:57
 msgid "Forum"
 msgstr "Fórum"
 
@@ -413,7 +413,7 @@ msgstr "E-mail"
 msgid "The email you have used for registration"
 msgstr "Vložit e-mailovou adresu"
 
-#: forum/forms.py:89 forum/tests.py:730
+#: forum/forms.py:89 forum/tests.py:755
 msgid "Incorrect login name, or email."
 msgstr "Nesprávné uživatelské jméno nebo e-mail"
 
@@ -437,11 +437,11 @@ msgstr "Vložit nové heslo"
 msgid "New password (again)"
 msgstr "Potvrdit nové heslo"
 
-#: forum/forms.py:136 forum/tests.py:705
+#: forum/forms.py:136 forum/tests.py:730
 msgid "Incorrect password"
 msgstr "Nesprávné heslo"
 
-#: forum/forms.py:146 forum/tests.py:713
+#: forum/forms.py:146 forum/tests.py:738
 msgid "Passwords do not match"
 msgstr "Hesla se neshodují"
 
@@ -479,7 +479,7 @@ msgstr "Uživatel"
 msgid "Username does not exists"
 msgstr "Uživatelské jméno neexistuje"
 
-#: forum/forms.py:327 forum/tests.py:618
+#: forum/forms.py:327 forum/tests.py:636
 msgid "Cannot send message to self"
 msgstr "Nelze si poslat vlastní zprávu"
 
@@ -491,7 +491,7 @@ msgstr "Jsi zablokován, nemůžeš posílat zprávy tomuto uživateli."
 msgid "Real name"
 msgstr "Jméno a příjmení"
 
-#: forum/forms.py:363 forum/views.py:550
+#: forum/forms.py:363 forum/views.py:546
 msgid "Date of Birth"
 msgstr "Datum narození"
 
@@ -511,27 +511,31 @@ msgstr "Váha neodpovídá reálným hodnotám"
 msgid "There was a problem uploading the image."
 msgstr "Vyskytl se problém při načítání obrázku."
 
-#: forum/forms.py:524 forum/forms.py:525
+#: forum/forms.py:524 forum/forms.py:530
 msgid "doesn't matter"
 msgstr "Nezáleží"
 
-#: forum/forms.py:525 forum/models.py:443
+#: forum/forms.py:525 forum/models.py:460
 msgid "City"
 msgstr "Město"
 
-#: forum/forms.py:559 forum/models.py:102
+#: forum/forms.py:527 forum/models.py:430 forum/models.py:448
+msgid "Country"
+msgstr "Země"
+
+#: forum/forms.py:565 forum/models.py:102
 msgid "Post"
 msgstr "Příspěvek"
 
-#: forum/forms.py:572 forum/models.py:89
+#: forum/forms.py:578 forum/models.py:89
 msgid "Caption"
 msgstr "Nadpis"
 
-#: forum/forms.py:585
+#: forum/forms.py:591
 msgid "Cannot reply, reply level too deep."
 msgstr "Nemůžeš odpovědět, přiliš velké zanoření."
 
-#: forum/forms.py:600
+#: forum/forms.py:606
 msgid "Can't be empty nor contain only whitespace characters"
 msgstr "Pole nemůže zůstat prázdné"
 
@@ -575,7 +579,7 @@ msgid "Parent"
 msgstr "Rodič"
 
 #: forum/models.py:79 forum/models.py:263 forum/models.py:264
-#: forum/models.py:356 forum/models.py:510
+#: forum/models.py:356 forum/models.py:527
 msgid "User"
 msgstr "Uživatel"
 
@@ -599,7 +603,7 @@ msgstr "Markup"
 msgid "Message"
 msgstr "Zpráva"
 
-#: forum/models.py:86 forum/models.py:515
+#: forum/models.py:86 forum/models.py:532
 msgid "HTML version"
 msgstr "HTML verze"
 
@@ -640,7 +644,7 @@ msgctxt "username"
 msgid "from"
 msgstr "od"
 
-#: forum/models.py:419 forum/models.py:429
+#: forum/models.py:419 forum/models.py:444
 msgid "Area"
 msgstr "Kraj"
 
@@ -648,120 +652,132 @@ msgstr "Kraj"
 msgid "Areas"
 msgstr "Kraje"
 
-#: forum/models.py:429
+#: forum/models.py:431
+msgid "Countries"
+msgstr "Země"
+
+#: forum/models.py:437
+msgid "Czech Republic"
+msgstr "Česká Republika"
+
+#: forum/models.py:438
+msgid "Slovakia"
+msgstr "Slovensko"
+
+#: forum/models.py:444
 msgid "Area the city belongs to"
 msgstr "Kraj ke kterému město patří"
 
-#: forum/models.py:444
+#: forum/models.py:461
 msgid "Cities"
 msgstr "Města"
 
-#: forum/models.py:454 forum/templates/forum/friend_suggestion.html:34
+#: forum/models.py:471 forum/templates/forum/friend_suggestion.html:34
 msgid "Activity"
 msgstr "Aktivity"
 
-#: forum/models.py:455
+#: forum/models.py:472
 #: forum/templates/forum/profile/profile_essentials.html:53
 #: forum/templates/forum/profile/profile_readonly.html:124
 #: forum/templates/forum/profile/profile_readonly.html:193
 msgid "Activities"
 msgstr "Aktivity"
 
-#: forum/models.py:511
+#: forum/models.py:528
 msgid "city"
 msgstr "město"
 
-#: forum/models.py:512
+#: forum/models.py:529
 msgid "Language"
 msgstr "Jazyk"
 
-#: forum/models.py:513
+#: forum/models.py:530
 msgid "Avatar"
 msgstr "Fotka"
 
-#: forum/models.py:514
+#: forum/models.py:531
 msgid "Description"
 msgstr "Popis"
 
-#: forum/models.py:514
+#: forum/models.py:531
 msgid "Use few sentences to describe yourself, and who are you looking for."
 msgstr "Prozraď něco více o sobě, popiš koho hledáš"
 
-#: forum/models.py:516
+#: forum/models.py:533
 msgid "date of birth"
 msgstr "datum narození"
 
-#: forum/models.py:517
+#: forum/models.py:534
 msgid "sex"
 msgstr "pohlaví"
 
-#: forum/models.py:518
+#: forum/models.py:535
 msgid "height"
 msgstr "výška"
 
-#: forum/models.py:519
+#: forum/models.py:536
 msgid "weight"
 msgstr "váha"
 
-#: forum/models.py:520
+#: forum/models.py:537
 msgid "phone"
 msgstr "telefon"
 
-#: forum/models.py:521
+#: forum/models.py:538
 msgid "education"
 msgstr "vzdělání"
 
-#: forum/models.py:521
+#: forum/models.py:538
 msgid "The highest achieved education"
 msgstr "Nejvyšší dosažené vzdělání"
 
-#: forum/models.py:523
+#: forum/models.py:540
 msgid "searchable"
 msgstr "vyhledatelný"
 
-#: forum/models.py:523
+#: forum/models.py:540
 msgid ""
 "Decide if your profile should come up when others use the search function."
 msgstr "Zobrazovat se ostatním uživatelům při hledání"
 
-#: forum/models.py:532
+#: forum/models.py:549
 msgid "Message notification"
 msgstr "Upozornit na zprávy"
 
-#: forum/models.py:532
+#: forum/models.py:549
 msgid "Receive an email notification on incoming message"
 msgstr "Zasílat soukromné zprávy na e-mail"
 
-#: forum/models.py:533
+#: forum/models.py:550
 msgid "Forum subscription"
 msgstr "Předvolit upozornení na fóru"
 
-#: forum/models.py:533
+#: forum/models.py:550
 msgid "Subscribe to my forum posts by default"
 msgstr "Posílat notifikace na veškeré odpovědi v zúčastněných tématech fóra"
 
-#: forum/models.py:534
+#: forum/models.py:551
 msgid "Newsletter subscription"
 msgstr "Odoberat novinky"
 
-#: forum/models.py:534
+#: forum/models.py:551
 msgid "Subscribe to newsletter"
 msgstr "Přihlásit se k odběru novinek"
 
-#: forum/models.py:536
+#: forum/models.py:553
 msgid "Fans Count"
 msgstr "Počet Fanoušků"
 
-#: forum/models.py:539 forum/templates/forum/search.html:55
+#: forum/models.py:556 forum/templates/forum/search.html:54
 #: forum/templates/forum/profile/profile_readonly.html:14
 msgid "Profile"
 msgstr "Profil"
 
-#: forum/models.py:540
+#: forum/models.py:557
 msgid "Profiles"
 msgstr "Profily"
 
-#: forum/models.py:624
+#: forum/models.py:641
 msgid "note"
 msgstr "poznámka"
 
@@ -804,73 +820,82 @@ msgstr ""
 "Pro úspěšné dokončení registrace je nutné kliknout na odkaz, který byl "
 "automaticky odeslán na vámi zadaný e-mail."
 
-#: forum/tests.py:357 forum/views.py:275
+#: forum/tests.py:357 forum/views.py:268
 msgid "Incorrect activation key. You need to register again."
 msgstr ""
 "Vypršela doba určená pro aktivaci účtu. Navštiv hubnemevedvou.cz pro další "
 "pokus."
 
-#: forum/tests.py:384 forum/tests.py:434 forum/views.py:316
+#: forum/tests.py:384 forum/tests.py:434 forum/views.py:312
 msgid "An abuse report was created."
 msgstr "Stížnost byla nahlášena."
 
-#: forum/tests.py:405 forum/views.py:305
+#: forum/tests.py:405 forum/views.py:301
 msgid "You are trying to report your own post."
 msgstr "Snažíš se ohlásit vlastní příspěvek."
 
-#: forum/tests.py:422 forum/views.py:295
+#: forum/tests.py:422 forum/views.py:291
 msgid "You are trying to report your own message."
 msgstr "Snažíš se ohlásit svou zprávu."
 
-#: forum/tests.py:510 forum/views.py:598
+#: forum/tests.py:437 forum/views.py:330
+msgid "The report was updated."
+msgstr "Hlášení bylo aktualizováno"
+
+#: forum/tests.py:528 forum/views.py:596
 #, python-format
 msgid "User %s was added to the list"
 msgstr "Uživatel %s byl pridán do seznamu"
 
-#: forum/tests.py:516 forum/views.py:595
+#: forum/tests.py:534 forum/views.py:593
 #, python-format
 msgid "User %s was already in the list"
 msgstr "Uživatelské jméno %s je již v seznamu"
 
-#: forum/tests.py:526 forum/views.py:607
+#: forum/tests.py:544 forum/views.py:605
 #, python-format
 msgid "User %s was removed from the list"
 msgstr "Uživatel %s byl odebrán ze seznamu"
 
-#: forum/tests.py:554 forum/views.py:822
+#: forum/tests.py:572 forum/views.py:820
 #, python-format
 msgid ""
 "You have blocked user %s, he/she will not be able to send you messages "
 "anymore."
 msgstr "Uživatel %s byl zablokován, už od něj neobdržíš žádné zprávy."
 
-#: forum/tests.py:563 forum/views.py:831
+#: forum/tests.py:581 forum/views.py:829
 #, python-format
 msgid "You have unblocked user %s."
 msgstr "Uživatel %s již není blokován."
 
-#: forum/tests.py:727 forum/views.py:874
+#: forum/tests.py:719 forum/views.py:104
+#, python-format
+msgid "User %s was logged out."
+msgstr "Uživatel %s byl odhlášen."
+
+#: forum/tests.py:752 forum/views.py:872
 msgid "Email with your new password was sent to"
 msgstr "E-mail s novým heslem byl zaslán na"
 
-#: forum/tests.py:837 forum/views.py:927
+#: forum/tests.py:863 forum/views.py:925
 msgid "Post was deleted."
 msgstr "Příspěvek byl smazaný"
 
-#: forum/tests.py:847 forum/views.py:925
+#: forum/tests.py:873 forum/views.py:923
 msgid "You can no longer delete the post."
 msgstr "Na tvůj příspěvek bylo odpovězeno, nemůže být již smazán"
 
-#: forum/tests.py:856 forum/views.py:975
+#: forum/tests.py:882 forum/views.py:973
 msgid "Your reply was saved."
 msgstr "Tvá odpověď byla uložena."
 
-#: forum/tests.py:915 forum/templates/forum/search.html:19
+#: forum/tests.py:941 forum/templates/forum/search.html:19
 msgid "Search Criteria"
 msgstr "Kritéria vyhledávání"
 
-#: forum/tests.py:992 forum/tests.py:1013 forum/tests.py:1039
-#: forum/views.py:472
+#: forum/tests.py:1018 forum/tests.py:1039 forum/tests.py:1065
+#: forum/views.py:468
 msgid "User profile saved."
 msgstr "Uživatelský profil byl uložen."
 
@@ -878,11 +903,6 @@ msgstr "Uživatelský profil byl uložen."
 msgid "There was a problem sending the email"
 msgstr ""
 "E-mail nebyl odeslán. Omlouvǎme se za technické potíže, zkus to později."
-
-#: forum/views.py:104
-#, python-format
-msgid "User %s was logged out."
-msgstr "Uživatel %s byl odhlášen."
 
 #: forum/views.py:178
 msgid "Registration"
@@ -894,64 +914,43 @@ msgstr ""
 "Při odeslání potvrzovacího e-mailu nastal technický problém. Omlouváme se za "
 "případné potíže, zkuste registraci později."
 
-#: forum/views.py:243
+#: forum/views.py:240
 msgid "1) Activity"
 msgstr "1. Aktivity"
 
-#: forum/views.py:243
+#: forum/views.py:240
 msgid "2) Personal Information"
 msgstr "2. Osobní informace"
 
-#: forum/views.py:243
+#: forum/views.py:240
 msgid "3) Select a picture"
 msgstr "3. Profilový obrázek"
 
-#: forum/views.py:243
+#: forum/views.py:240
 msgid "4) Password Setup"
 msgstr "4. Nastavení hesla"
 
-#: forum/views.py:254 forum/templates/forum/profile/profile_essentials.html:72
+#: forum/views.py:251 forum/templates/forum/profile/profile_essentials.html:72
 msgid "Save"
 msgstr "Uložit"
 
-#: forum/views.py:256
-msgid "Public Info"
-msgstr "Veřejný informace"
-
-#: forum/views.py:257
-msgid "Private Info"
-msgstr "Soukromí informace"
-
-#: forum/views.py:258
-msgid ""
-"All the info entered below will be confidential and not visible to others. "
-"It is needed to find the best match for you."
-msgstr ""
-"Vložené informace jsou soukromé a nebudou se zobrazovat ostatním uživatelům. "
-"Zvýšují však šanci na lepší hledání. No sú dúležité aby náš systém vedel "
-"určit nejlepšícho partáka."
-
-#: forum/views.py:272
+#: forum/views.py:265
 msgid "Your account was activated."
 msgstr "Gratulujeme! Tvá registrace byla úspěšně dokončena."
 
-#: forum/views.py:334
-msgid "The report was updated."
-msgstr "Hlášení bylo aktualizováno"
-
-#: forum/views.py:341
+#: forum/views.py:337
 msgid "Update"
 msgstr "Aktualizovat"
 
-#: forum/views.py:352
+#: forum/views.py:348
 msgid "How to search for partner"
 msgstr "Jak hledat partnera?"
 
-#: forum/views.py:356
+#: forum/views.py:352
 msgid "screenshot search for weight loss partner"
 msgstr "screenshot hledám partnera na hubnutí"
 
-#: forum/views.py:357
+#: forum/views.py:353
 msgid "help_search_1"
 msgstr ""
 "Hubnemevedvou.cz využívá unikátní algoritmus, který vypočítá kompatibilitu "
@@ -961,64 +960,64 @@ msgstr ""
 "uživateli, kteří rovněž hledají partnera na cvičení, sport a další společné "
 "aktivity."
 
-#: forum/views.py:361
+#: forum/views.py:357
 msgid "screenshot select weight loss partner criteria"
 msgstr "screenshot vyber kritéria partnera na hubnutí"
 
-#: forum/views.py:362
+#: forum/views.py:358
 msgid "help_search_2"
 msgstr ""
 "V dalším kroku lze specifikovat svůj výběr z hlediska pohlaví a místa "
 "bydliště. Na základě takto zvolené specifikace a vypočítaného algoritmu se "
 "vám zobrazí nejvíce relevantní uživatelé."
 
-#: forum/views.py:366
+#: forum/views.py:362
 msgid "screenshot weight loss partner"
 msgstr "screenshot partner na hubnutí"
 
-#: forum/views.py:367
+#: forum/views.py:363
 msgid "help_search_3"
 msgstr ""
 "Vybranému uživateli můžete poslat zprávu nebo si ho pouze přidat do "
 "\"oblíbených\" a oslovit ho později."
 
-#: forum/views.py:371
+#: forum/views.py:367
 msgid "How to set profile photo"
 msgstr "Jak nastavit profilové foto?"
 
-#: forum/views.py:374
+#: forum/views.py:370
 msgid "screenshot menu profile"
 msgstr "screenshot menu profil"
 
-#: forum/views.py:375
+#: forum/views.py:371
 msgid "help_photo_1"
 msgstr " "
 
-#: forum/views.py:378
+#: forum/views.py:374
 msgid "screenshot click on avatar"
 msgstr "screenshot změnit obrázek"
 
-#: forum/views.py:379
+#: forum/views.py:375
 msgid "help_photo_2"
 msgstr " "
 
-#: forum/views.py:382
+#: forum/views.py:378
 msgid "screenshot crop photo"
 msgstr "screenshot orezávání fotky"
 
-#: forum/views.py:383
+#: forum/views.py:379
 msgid "help_photo_3"
 msgstr " "
 
-#: forum/views.py:391
+#: forum/views.py:387
 msgid "How to register"
 msgstr "Jak se registrovat?"
 
-#: forum/views.py:395
+#: forum/views.py:391
 msgid "screenshot register"
 msgstr "screenshot registrace"
 
-#: forum/views.py:396
+#: forum/views.py:392
 msgid "help_register_1"
 msgstr ""
 "Prvním krokem jak nehubnout sám, ale ve dvou, je registrace na hubnemevedvou."
@@ -1029,30 +1028,30 @@ msgstr ""
 "platnou e-mailovou adresu. Kliknutím na tlačítko \"Vytvořit účet\" je "
 "uživatel automaticky přesměrován do dalších sekcí registrace."
 
-#: forum/views.py:400
+#: forum/views.py:396
 msgid "screenshot select favorite activities"
 msgstr "screenshot označ oblíbené aktivity"
 
-#: forum/views.py:401
+#: forum/views.py:397
 msgid "help_register_2"
 msgstr ""
 "V prvním kroku registrace je důležité vyplnit oblíbené sportovní aktivity, "
 "možné je zatrhnout i více sportů najednou. Svému budoucímu partnerovi tak "
 "usnadníte hledání a máte větší šanci, že Vás osloví někdo s podobnými zájmy."
 
-#: forum/views.py:405
+#: forum/views.py:401
 msgid "screenshot select other activities"
 msgstr "screenshot označ jiné aktivity"
 
-#: forum/views.py:406
+#: forum/views.py:402
 msgid "help_register_3"
 msgstr "Nezapomeňte zatrhnout i aktivity, které nejsou sportovního charakteru."
 
-#: forum/views.py:410
+#: forum/views.py:406
 msgid "screenshot upload your photo"
 msgstr "screenshot nahraj svoji fotku"
 
-#: forum/views.py:411
+#: forum/views.py:407
 msgid "help_register_4"
 msgstr ""
 "V druhém kroku máte možnost nahrát své foto. Tento krok lze přeskočit, k "
@@ -1060,61 +1059,61 @@ msgstr ""
 "mají svůj obrázek v profilu vyplněný, jsou ostatními mnohem častěji "
 "oslovováni!"
 
-#: forum/views.py:415
+#: forum/views.py:411
 msgid "screenshot input your info"
 msgstr "screenshot zadej informace o sobě"
 
-#: forum/views.py:416
+#: forum/views.py:412
 msgid "help_register_5"
 msgstr ""
 "V následujícím kroku je nutné vyplnit osobní informace. Informace označené "
 "hvězdičkou jsou povinné, při volbě tlačítka „skryté“ se však ostatním "
 "uživatelům zobrazovat nebudou."
 
-#: forum/views.py:420
+#: forum/views.py:416
 msgid "screenshot input password"
 msgstr "screenshot zadej heslo"
 
-#: forum/views.py:421
+#: forum/views.py:417
 msgid "help_register_6"
 msgstr "Posledním krokem zbývá nastavení hesla."
 
-#: forum/views.py:425
+#: forum/views.py:421
 msgid "screenshot hubneme ve dvou logo"
 msgstr "screenshot hubneme ve dvou logo"
 
-#: forum/views.py:426
+#: forum/views.py:422
 msgid "help_register_7"
 msgstr " "
 
-#: forum/views.py:430
+#: forum/views.py:426
 msgid "screenshot hubneme ve dvou email"
 msgstr "screenshot hubneme ve dvou e-mail"
 
-#: forum/views.py:431
+#: forum/views.py:427
 msgid "help_register_8"
 msgstr ""
 "Při správném nastavení hesla Vám přijde na e-mail potvrzení o registraci. "
 "Kliknutím na tlačítko „Aktivovat“ potvrzujete svou e-mailovou adresu a Vaše "
 "registrace je úspěšně dokončena."
 
-#: forum/views.py:486
+#: forum/views.py:482
 msgid "Your password was changed."
 msgstr "Tvé heslo bylo změněno."
 
-#: forum/views.py:487
+#: forum/views.py:483
 msgid "Please log in again."
 msgstr "Prosím, přihlaš se znovu"
 
-#: forum/views.py:491
+#: forum/views.py:487
 msgid "Password for"
 msgstr "Heslo pro"
 
-#: forum/views.py:491
+#: forum/views.py:487
 msgid "was changed."
 msgstr "bylo změněno."
 
-#: forum/views.py:539
+#: forum/views.py:535
 #, python-format
 msgid ""
 "Your bio description is empty, consider <a href=\"%s?edit=1\"><b>filling it "
@@ -1123,23 +1122,23 @@ msgstr ""
 "<a href=\"%s?edit=1\"><b>Prozraď něco málo o sobě</b></a> a usnadni tak "
 "hledání svému budoucímu parťákovi."
 
-#: forum/views.py:547
+#: forum/views.py:543
 msgid "name"
 msgstr "Jméno"
 
-#: forum/views.py:553
+#: forum/views.py:549
 msgid "Education"
 msgstr "Vzdělání"
 
-#: forum/views.py:807
+#: forum/views.py:805
 msgid "Message sent."
 msgstr "Zpráva odeslána."
 
-#: forum/views.py:868 forum/templates/forum/password_recovery.html:17
+#: forum/views.py:866 forum/templates/forum/password_recovery.html:17
 msgid "Password Recovery"
 msgstr "Obnovení hesla"
 
-#: forum/views.py:876
+#: forum/views.py:874
 msgid ""
 "Failed to send an email with the new password, your password was not "
 "changed, please try again later"
@@ -1147,7 +1146,7 @@ msgstr ""
 "E-mail s novým heslem nebyl zaslán. Omlouváme se za technické potíže, změnu "
 "hesla zkus později."
 
-#: forum/views.py:977
+#: forum/views.py:975
 msgid "Post not saved."
 msgstr "Příspěvek nebyl uložen"
 
@@ -1564,7 +1563,7 @@ msgstr ""
 msgid "Add note"
 msgstr "Přidat komentář"
 
-#: forum/templates/forum/search.html:36
+#: forum/templates/forum/search.html:35
 #, python-format
 msgid ""
 "Unfortunatelly, you cannot search for other users until you fill in the "
@@ -1575,7 +1574,7 @@ msgstr ""
 "informace ve svém <a href=\"%(url_profile)s?focus=personal&edit=1\">profilu</"
 "a>."
 
-#: forum/templates/forum/search.html:43
+#: forum/templates/forum/search.html:42
 msgid ""
 "\n"
 "      We are sorry, but there are no users matching your search criteria "
@@ -1586,7 +1585,7 @@ msgstr ""
 "Je nám líto, ale zadaných kritériím neodpovídá žádný uživatel.\n"
 "   "
 
-#: forum/templates/forum/search.html:47
+#: forum/templates/forum/search.html:46
 #, python-format
 msgid ""
 "\n"
@@ -1601,27 +1600,27 @@ msgstr ""
 "a>.\n"
 "    "
 
-#: forum/templates/forum/search.html:51
+#: forum/templates/forum/search.html:50
 msgid "Where next?"
 msgstr "Kam teď?"
 
-#: forum/templates/forum/search.html:133
+#: forum/templates/forum/search.html:148
 msgid "Overall compatibility"
 msgstr "Celková kompatibilita"
 
-#: forum/templates/forum/search.html:134
+#: forum/templates/forum/search.html:149
 msgid "BMI compatibility"
 msgstr "BMI kompatibilita"
 
-#: forum/templates/forum/search.html:135
+#: forum/templates/forum/search.html:150
 msgid "Activities compatibility"
 msgstr "Aktivity"
 
-#: forum/templates/forum/search.html:141
+#: forum/templates/forum/search.html:156
 msgid "Add to Favourites"
 msgstr "Přidat k oblíbeným"
 
-#: forum/templates/forum/search.html:142
+#: forum/templates/forum/search.html:157
 msgid "Send Message"
 msgstr "Poslat zprávu"
 
@@ -1669,6 +1668,8 @@ msgstr "skryté"
 
 #: forum/templates/forum/profile/profile_readonly.html:37
 #: forum/templates/forum/profile/profile_readonly.html:42
+#: forum/templates/registration/registration_further.html:99
+#: forum/templates/registration/registration_further.html:104
 msgid "Change Picture"
 msgstr "Změnit obrázek"
 
@@ -1810,6 +1811,20 @@ msgstr "Své foto nahraji později"
 #: forum/templates/registration/registration_further.html:134
 msgid "Keep the picture"
 msgstr "Ponechat obrázek"
+
+#~ msgid "Public Info"
+#~ msgstr "Veřejný informace"
+
+#~ msgid "Private Info"
+#~ msgstr "Soukromí informace"
+
+#~ msgid ""
+#~ "All the info entered below will be confidential and not visible to "
+#~ "others. It is needed to find the best match for you."
+#~ msgstr ""
+#~ "Vložené informace jsou soukromé a nebudou se zobrazovat ostatním "
+#~ "uživatelům. Zvýšují však šanci na lepší hledání. No sú dúležité aby náš "
+#~ "systém vedel určit nejlepšícho partáka."
 
 #~ msgid ""
 #~ "\n"

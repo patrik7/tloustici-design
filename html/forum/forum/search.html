@@ -24,7 +24,6 @@ Search
       </form>
     </div>
  
-
     <div id="data">
     </div>
 
@@ -90,20 +89,37 @@ Search
       }
     };
 
-    function updateSearchResults()
-    {
-      AjaxConfiguration.ajax_get = {
+    {% if search_form %}
+      var cities = [];
+      {% for c in cities %}
+        {{c|safe}}
+      {% endfor %}
+
+      function updateCities()
+      {
+        var e = $('#id_city');
+        e.html(cities[$('#id_country').val()]);
+        e.val("");
+        updateSearchResults();
+      }
+
+      function updateSearchResults()
+      {
+        AjaxConfiguration.ajax_get = {
           male: document.getElementById('id_sex_1').checked,
           female: document.getElementById('id_sex_2').checked,
           city: document.getElementById('id_city').value,
+          country: document.getElementById('id_country').value,
+        }
+
+        gaTrackEvent('searching', 'changing criteria');
+
+        $("#id_nohits").addClass("hidden");
+
+        loadData();
       }
 
-      gaTrackEvent('searching', 'changing criteria');
-
-      $("#id_nohits").addClass("hidden");
-
-      loadData();
-    }
+    {% endif %}
 
     function add_bar(value, text) {
       var str =
@@ -147,7 +163,7 @@ Search
       + '</div>');            
     }
 
-    $(document).ready(updateSearchResults);
+    $(document).ready(updateCities);
 
     window.onscroll = scrollFunction;
 
