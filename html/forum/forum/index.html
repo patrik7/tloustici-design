@@ -45,8 +45,8 @@ Basic JSON load scenario:
           <div class="panel-body forum-category-body" style="background-image: url('{{category.image_url}}'); background-size: cover;" >
             </div>
           <div class="panel-footer forum-category-footer" style="position: relative;">
-            <h2 style="position: absolute; top: 12px; left: 24px; color: #AAAAAA; margin:0px">{{category.body_html|safe}}</h2>
-            <h2 style="position: absolute; top: 10px; left: 22px; margin: 0px;">{{category.body_html|safe}}</h2>
+            <h1 style="position: absolute; font-size: 30px; top: 12px; left: 24px; color: #AAAAAA; margin:0px">{{category.body_html|safe}}</h1>
+            <h1 style="position: absolute; font-size: 30px; top: 10px; left: 22px; margin: 0px;">{{category.body_html|safe}}</h1>
           </div>
         </div>
       </div>
@@ -219,8 +219,8 @@ Basic JSON load scenario:
       if (head_post.caption) {
         content = '<h4>' + head_post.caption + '</h4><p>' + head_post.text + '</p>';
       } else if(head_post.level == 0) {
-        content = '<h2 class="forum-category-h" style="bottom: 0px; right: 20px; color: #FFFFFF;">' + head_post.text_short + '</h2>'
-                + '<h2 class="forum-category-h" style="bottom: 2px; right: 22px;">' + head_post.text_short + '</h2>';
+        content = '<h1 class="forum-category-h" style="bottom: 0px; right: 20px; color: #FFFFFF;">' + head_post.text_short + '</h1>'
+                + '<h1 class="forum-category-h" style="bottom: 2px; right: 22px;">' + head_post.text_short + '</h1>';
       } else {
         content = '<p>' + head_post.text + '</p>';
       }
