@@ -182,7 +182,9 @@ Registracia krok 1
 
     $('.bbswitch').bootstrapSwitch();
 
-    {% if step == 3 %}
+    {% if step == 2 %}
+      updateCities();
+    {% elif step == 3 %}
       var img_target = $('#id_avatar');
 
       $('.link-glow-trigger').mouseover(function () {
