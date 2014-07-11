@@ -26,13 +26,19 @@ Registracia form krok 2,3,4, Messages
     {% endwith %}
   {% endwith %}
 
-  <script type="text/javascript" language="javascript">  
-    {% if form|is_list %}
-      {% for f in form %}
-        {{f.js|safe}}
-      {% endfor %}
-    {% else %}
-      {{form.js|safe}}
+  {% if form|is_list %}
+    {% for f in form %}
+      {% if f.js %}
+        <script type="text/javascript" language="javascript">
+          {{f.js|safe}}
+        </script>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    {% if form.js %}
+      <script type="text/javascript" language="javascript">
+        {{form.js|safe}}
+      </script>
     {% endif %}
-  </script>
+  {% endif %}
 

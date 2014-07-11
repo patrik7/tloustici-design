@@ -8,22 +8,30 @@ Favorities
 
 {% extends 'base/base.html' %}
 {% load i18n %}
+{% load base_tags %}
 
 {% block main %}
   {% if favourites %}
   <div class="row">
     {% for f in favourites %}
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left">
-        <div class="white-well big-faq text-center link-glow" onclick="location.href='{% url profile f.celebrity.username %}';">
-            <div class="col-md-5">
-            <img class="img img-circle" src="{{f.celebrity.forum_profile.avatar_url}}" width="120" height="120" alt="{% trans 'picture' %} {{f.celebrity.username}}" />
+      <div class="col-lg-6 col-md-6 text-left">
+        <div class="white-well big-faq text-center">
+            <div class="col-xs-5" style="position: relative;">
+              <a href="{% url profile f.celebrity.username %}">
+                <img class="img img-circle" src="{{f.celebrity.forum_profile.avatar_url}}" width="120" height="120" alt="{% trans 'picture' %} {{f.celebrity.username}}" />
+              </a>
+              <h3 style="position: absolute; left: 8px; top: 0px;"><a href="{% url profile f.celebrity.username %}">{{f.celebrity.username}}</a></h3>
+
             </div>
-            <div class=" text-left col-md-7" style="max-height:120px; overflow:hidden;">
-            <h3><a href="{% url profile f.celebrity.username %}">{{f.celebrity.username}}</a></h3>
-                
-            <p>{{f.celebrity.forum_profile.description_html|safe}}</p>
+            <div class="text-right col-xs-7" style="max-height:120px; overflow:hidden; position: relative;">
+              {% button 'Send Message' 'messages' icon='envelope' get_param='addressee' get_value=f.celebrity.username cls='btn-blue'%}
+
+              <p style="margin-top: 35px;">&nbsp;</p>
+
+              {% button 'Remove from Favourites' 'favourites' icon='minus' get_param='remove' get_value=f.celebrity.username cls='btn-xs' %}
             </div>
-                      <div class="clearfix"></div>
+
+            <div class="clearfix"></div>
         </div>
 
       </div>
