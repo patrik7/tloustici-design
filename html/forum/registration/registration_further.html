@@ -62,7 +62,7 @@ Hubnemevedvou.cz
 Registracia krok 1
 
 ------------------------------------------------------------------------------------------->
-            <form action="{% url register_step step %}" method="POST" class="form-horizontal">
+            <form action="{% url "register_step" step %}" method="POST" class="form-horizontal">
               {% csrf_token %}
               {% include 'forum/profile/form_activities_fields.html' with form=form.0 %}
               <div class="form-group">
@@ -73,7 +73,7 @@ Registracia krok 1
             </form>
             
           {% elif step == 2 %}
-            <form action="{% url register_step step %}" method="POST" class="form-horizontal">
+            <form action="{% url "register_step" step %}" method="POST" class="form-horizontal">
               {% csrf_token %}
               <div class="form-group">
                 <label class="control-label col-sm-3" for="id_description">{% trans 'Username' %}</label>
@@ -111,7 +111,7 @@ Registracia krok 1
             <div class="row">
               <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 col-xs-12">
                 <div class="avatarstaging">
-                  <form action="{% url register_step step %}" method="POST" enctype="multipart/form-data" onsubmit="return checkCoords();">
+                  <form action="{% url "register_step" step %}" method="POST" enctype="multipart/form-data" onsubmit="return checkCoords();">
 
                     {% csrf_token %}
 
@@ -131,7 +131,7 @@ Registracia krok 1
               </div>
             </div>
 
-            <a href="{% url register_step step %}" element="padding-top: 20px;">{% if not tmp_user.forum_profile.avatar %}{% trans 'I will upload my picture later' %}{% else %}{% trans 'Keep the picture' %}{% endif %}</a>
+            <a href="{% url "register_step" step %}" element="padding-top: 20px;">{% if not tmp_user.forum_profile.avatar %}{% trans 'I will upload my picture later' %}{% else %}{% trans 'Keep the picture' %}{% endif %}</a>
 
           {% else %}
             {% include 'form.html' with name=button_name %}

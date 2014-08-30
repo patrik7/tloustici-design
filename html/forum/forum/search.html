@@ -11,9 +11,9 @@ Search
 {% load bootstrap %}
 
 {% block main %}
-  {% url profile user.username as url_profile %}
-  {% url forum_index as url_forum %}
-  {% url articles as url_articles %}
+  {% url "profile" user.username as url_profile %}
+  {% url "forum_index" as url_forum %}
+  {% url "articles" as url_articles %}
 
   {% if search_form %}
     <h3 class=""> {% trans 'Search Criteria' %}</h3>

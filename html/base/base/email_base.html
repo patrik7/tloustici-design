@@ -39,7 +39,7 @@
 background-image: -moz-linear-gradient(top,#428bca 0,#2d6ca2 100%);background-image: linear-gradient(to bottom,#428bca 0,#2d6ca2 100%);background-repeat: repeat-x;border-color: #2b669a;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca',endColorstr='#ff2d6ca2',GradientType=0);filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
 -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.15),0 1px 1px rgba(0,0,0,0.075);box-shadow: inset 0 1px 0 rgba(255,255,255,0.15),0 1px 1px rgba(0,0,0,0.075);color: #fff;background-color: #428bca;display: inline-block;padding: 6px 12px;margin-bottom: 0;font-size: 14px;font-weight: normal;line-height: 1.428571429;text-align: center;white-space: nowrap;vertical-align: middle;
 border-radius: 4px;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;-o-user-select: none;text-transform:none !important;text-decoration:none;color: #FFF;background-color: #666;padding:10px 16px;font-weight:bold;margin-right:10px;text-align:center;
-cursor:pointer;display: inline-block;" href="{% block head_url %}http://{{domain}}{% url login %}?utm_source=internal&utm_content=headlink&utm_medium=email&utm_campaign={{analytics_campaign}}{% endblock %}">{% block head_label %}{% trans 'Log in' %}{% endblock %}</a></h6></td>
+cursor:pointer;display: inline-block;" href="{% block head_url %}http://{{domain}}{% url "login" %}?utm_source=internal&utm_content=headlink&utm_medium=email&utm_campaign={{analytics_campaign}}{% endblock %}">{% block head_label %}{% trans 'Log in' %}{% endblock %}</a></h6></td>
 					</tr>
 				</table>
 				</div>

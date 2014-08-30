@@ -4,7 +4,7 @@
 
 {% block main %}
 
-{% url profile from as url_profile %}
+{% url "profile" from as url_profile %}
 {% blocktrans %}
 New post on forum by {{from}}
 {% endblocktrans %}
@@ -12,7 +12,7 @@ New post on forum by {{from}}
 {{post}}
 
 {% trans 'Checkout forum' %}:
-http://{{domain}}{% url forum_post post.id %}
+http://{{domain}}{% url "forum_post" post.id %}
 
 {% blocktrans %}
 If you don't wish to receive e-mail notifications, you can unsubscribe from this forum discussion by following this link:

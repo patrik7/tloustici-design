@@ -92,7 +92,7 @@ Basic JSON load scenario:
       var txt = 
 
       {% if user.is_authenticated %}
-        '<form method="post" action="{% url forum_index %}' + reply_to + '/" class="form">'
+        '<form method="post" action="{% url "forum_index" %}' + reply_to + '/" class="form">'
         + "{% csrf_token %}"
         + elem.innerHTML
         + '<div class="form-group">'
@@ -102,9 +102,9 @@ Basic JSON load scenario:
         + '</div>'
       + '</form>';
       {% else %}
-        {% url register as url_register %}
-        {% url login as url_login %}
-        {% url forum_index as url_forum %}
+        {% url "register" as url_register %}
+        {% url "login" as url_login %}
+        {% url "forum_index" as url_forum %}
 
         {% blocktrans %}
           'Only registered users can post on the forum. Please <a class="light-link" href="{{url_login}}?redirect={{url_forum}}">log in</a> or <a class="light-link" href="{{url_register}}">register</a>.';
@@ -122,7 +122,7 @@ Basic JSON load scenario:
 
       /* Setup breadcrumbs */
       var extra = data.extra;
-      var txt = '<a href="{% url forum_index %}">{% trans 'Forum' %}</a> &gt; ';
+      var txt = '<a href="{% url "forum_index" %}">{% trans 'Forum' %}</a> &gt; ';
       for (var i = 0; i < extra.breadcrumbs.length; i++) {
         txt += '<a href="javascript:void(0)" onclick="change(\'' + extra.breadcrumbs[i].pk + '\');">';
         txt += extra.breadcrumbs[i].text_shorter + '</a>';
@@ -182,9 +182,9 @@ Basic JSON load scenario:
 
         if (show_subscribe) {
           if (head_post.subscribed) {
-            head_button += '<li><a href="{% url forum_index %}' + head_post.pk + '/?subscribe=0"><span class="glyphicon glyphicon-bell"></span> {% trans 'Unsubscribe' %}</a></li>';
+            head_button += '<li><a href="{% url "forum_index" %}' + head_post.pk + '/?subscribe=0"><span class="glyphicon glyphicon-bell"></span> {% trans 'Unsubscribe' %}</a></li>';
           } else {
-            head_button += '<li><a href="{% url forum_index %}' + head_post.pk + '/?subscribe=1"><span class="glyphicon glyphicon-bell"></span> {% trans 'Subscribe' context 'button' %}</a></li>';
+            head_button += '<li><a href="{% url "forum_index" %}' + head_post.pk + '/?subscribe=1"><span class="glyphicon glyphicon-bell"></span> {% trans 'Subscribe' context 'button' %}</a></li>';
           }
         }
 
@@ -192,9 +192,9 @@ Basic JSON load scenario:
 
           if (show_subscribe) head_button += '<li class="divider"></li>';
 
-          head_button += '<li><a href="{% url report 'sexual' %}?target_id=' + head_post.pk + '&target=Post">{% trans 'Report sexual remarks' %}</a></li>'
-                       + '<li><a href="{% url report 'advertising' %}?target_id=' + head_post.pk + '&target=Post">{% trans 'Report advertising' %}</a></li>'
-                       + '<li><a href="{% url report 'abuse' %}?target_id=' + head_post.pk + '&target=Post">{% trans 'Report other abuse' %}</a></li>'
+          head_button += '<li><a href="{% url "report" 'sexual' %}?target_id=' + head_post.pk + '&target=Post">{% trans 'Report sexual remarks' %}</a></li>'
+                       + '<li><a href="{% url "report" 'advertising' %}?target_id=' + head_post.pk + '&target=Post">{% trans 'Report advertising' %}</a></li>'
+                       + '<li><a href="{% url "report" 'abuse' %}?target_id=' + head_post.pk + '&target=Post">{% trans 'Report other abuse' %}</a></li>'
         }
 
         head_button += '</ul>';
@@ -347,9 +347,9 @@ Basic JSON load scenario:
 
           if (show_subscribe) {
             if (e.subscribed) {
-              footer += '<li><a href="{% url forum_index %}' + e.pk + '/?subscribe=0"><span class="glyphicon glyphicon-bell"></span> {% trans 'Unsubscribe' %}</a></li>';
+              footer += '<li><a href="{% url "forum_index" %}' + e.pk + '/?subscribe=0"><span class="glyphicon glyphicon-bell"></span> {% trans 'Unsubscribe' %}</a></li>';
             } else {
-              footer += '<li><a href="{% url forum_index %}' + e.pk + '/?subscribe=1"><span class="glyphicon glyphicon-bell"></span> {% trans 'Subscribe' context 'button' %}</a></li>';
+              footer += '<li><a href="{% url "forum_index" %}' + e.pk + '/?subscribe=1"><span class="glyphicon glyphicon-bell"></span> {% trans 'Subscribe' context 'button' %}</a></li>';
             }
           }
 
@@ -357,9 +357,9 @@ Basic JSON load scenario:
 
             if (show_subscribe) footer += '<li class="divider"></li>';
 
-            footer += '<li><a href="{% url report 'sexual' %}?target_id=' + e.pk + '&target=Post">{% trans 'Report sexual remarks' %}</a></li>'
-                  + '<li><a href="{% url report 'advertising' %}?target_id=' + e.pk + '&target=Post">{% trans 'Report advertising' %}</a></li>'
-                  + '<li><a href="{% url report 'abuse' %}?target_id=' + e.pk + '&target=Post">{% trans 'Report other abuse' %}</a></li>'
+            footer += '<li><a href="{% url "report" 'sexual' %}?target_id=' + e.pk + '&target=Post">{% trans 'Report sexual remarks' %}</a></li>'
+                  + '<li><a href="{% url "report" 'advertising' %}?target_id=' + e.pk + '&target=Post">{% trans 'Report advertising' %}</a></li>'
+                  + '<li><a href="{% url "report" 'abuse' %}?target_id=' + e.pk + '&target=Post">{% trans 'Report other abuse' %}</a></li>'
           }
 
           if ('{% if user.is_superuser %}1{% else %}0{% endif %}' == '1') {
@@ -438,7 +438,7 @@ Basic JSON load scenario:
         AjaxConfiguration.root = state.data.root;
 
         if(!AjaxConfiguration.root) {
-          window.location.href = "{% url forum_index %}";
+          window.location.href = "{% url "forum_index" %}";
         } else {
           loadData();
         }

@@ -16,17 +16,17 @@ New email
   <tbody>
     <tr>
       <td align="center" style="width: 100px;">
-        <a href="http://{{domain}}{% url profile from %}?utm_source=internal&utm_content=avatarlink&utm_medium=email&utm_campaign=message" style="border: 0px;">
+        <a href="http://{{domain}}{% url "profile" from %}?utm_source=internal&utm_content=avatarlink&utm_medium=email&utm_campaign=message" style="border: 0px;">
           <img src="{{img}}" width="100%" style="border-radius: 50%; vertical-align: top; border: 0px;" />
         </a>
       </td>
       <td style="padding-left: 20px;" >
-        <p><b>{% trans 'Message from user' %} <a href="http://{{domain}}{% url profile from %}?utm_source=internal&utm_content=userlink&utm_medium=email&utm_campaign=message" style="color: #2BA6CB;">{{from}}</a></b></p>
+        <p><b>{% trans 'Message from user' %} <a href="http://{{domain}}{% url "profile" from %}?utm_source=internal&utm_content=userlink&utm_medium=email&utm_campaign=message" style="color: #2BA6CB;">{{from}}</a></b></p>
         <p>{{body|safe}}</p>
 
         <br/><br/>
 
-        <a href="http://{{domain}}{% url messages %}?addressee={{from}}&utm_source=internal&utm_content=replylink&utm_medium=email&utm_campaign=message" {% include 'base/email_calltoactionbutton.html' %}>{% trans 'Reply' %}</a>
+        <a href="http://{{domain}}{% url "messages" %}?addressee={{from}}&utm_source=internal&utm_content=replylink&utm_medium=email&utm_campaign=message" {% include 'base/email_calltoactionbutton.html' %}>{% trans 'Reply' %}</a>
       </td>
     </tr>  
   </tbody>

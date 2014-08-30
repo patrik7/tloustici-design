@@ -18,7 +18,7 @@ Email activation
     {% endblocktrans %}
   </p>
 
-  {% url activate activation_key=activation_key as act_link %}
+  {% url "activate" activation_key=activation_key as act_link %}
 
   {{p|safe}}
     {% blocktrans %}

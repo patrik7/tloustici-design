@@ -16,7 +16,7 @@ New email message
 {{body}}
 
 {% trans 'You can reply to the message on' %}
-http://hubnemevedvou.cz{% url messages %}
+http://hubnemevedvou.cz{% url "messages" %}
 
 {% trans 'Best Regards' %}
 

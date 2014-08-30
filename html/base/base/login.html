@@ -16,7 +16,7 @@ Login / Prihlasenie
        <h4>{% trans 'Log in and kick start your life!' %} </h4>
 
     <div class="panel-body">
-      <form id="login_form" method="post" action="{% url login %}" class="form-horizontal">
+      <form id="login_form" method="post" action="{% url "login" %}" class="form-horizontal">
         {% csrf_token %}
         {{ login_form|bootstrap_horizontal:"col-xs-2" }}
 
@@ -26,14 +26,14 @@ Login / Prihlasenie
           </div>
           <div class="col-sm-4 text-right hidden-xs">
             <small class="pull-right"> <!-- overflow to the left -->
-              <a class="login-link" href="{% url register %}">{% trans 'Register for free' %}</a><br/>
-              <a class="login-link" href="{% url password_recovery %}">{% trans 'Forgot your password?' %}</a>
+              <a class="login-link" href="{% url "register" %}">{% trans 'Register for free' %}</a><br/>
+              <a class="login-link" href="{% url "password_recovery" %}">{% trans 'Forgot your password?' %}</a>
             </small>
           </div>
           <div class="col-xs-12 text-centered visible-xs" style="margin-top: 10px;">            
             <small>
-              <a class="login-link" href="{% url register %}">{% trans 'Register for free' %}</a><br/>
-              <a class="login-link" href="{% url password_recovery %}">{% trans 'Forgot your password?' %}</a>
+              <a class="login-link" href="{% url "register" %}">{% trans 'Register for free' %}</a><br/>
+              <a class="login-link" href="{% url "password_recovery" %}">{% trans 'Forgot your password?' %}</a>
             </small>
           </div>
 

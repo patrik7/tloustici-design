@@ -31,13 +31,13 @@ Registration front
 
 
     <p>
-      <form method="post" action="{% url register_step 0 %}" class="form-inline">
+      <form method="post" action="{% url "register_step" 0 %}" class="form-inline">
         {% csrf_token %}
         {{form.0|bootstrap_inline}}
         <input type="submit" class="btn btn-primary" name="{{button_name}}" value="{{form.0.submit}}" />
       </form>
     </p>
-    {% url terms as url_terms %}
+    {% url "terms" as url_terms %}
     <p id="id_disclaimer" class="text-center hidden small" style="font-weight: normal;">
       {% blocktrans %}Registering here, I confirm I agree with <a href="{{url_terms}}" target="_blank">terms and conditions</a>.{% endblocktrans %}
     </p>

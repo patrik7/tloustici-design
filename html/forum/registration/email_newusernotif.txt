@@ -3,7 +3,7 @@
 {% block main %}
 New user registred: {{username}}
 
-http://{{domain}}{% url profile username %}
+http://{{domain}}{% url "profile" username %}
 http://{{domain}}/admin/auth/user/{{userid}}/
 
 {% endblock %}

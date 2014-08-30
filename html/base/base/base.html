@@ -108,7 +108,7 @@ Base - zakladna sablona
             <span class="icon-bar"></span>
           </button>
 
-          <a class="" href="{% if user.is_authenticated %}{% url articles %}{% else %}{% url register%}{% endif %}"><img alt="{% if user.is_authenticated %}{% trans 'Articles' %}{% else %}{% trans 'Register' %}{% endif %}" src="{{STATIC_URL}}images/hubneme-logo.png" /></a>
+          <a class="" href="{% if user.is_authenticated %}{% url "articles" %}{% else %}{% url "register" %}{% endif %}"><img alt="{% if user.is_authenticated %}{% trans 'Articles' %}{% else %}{% trans 'Register' %}{% endif %}" src="{{STATIC_URL}}images/hubneme-logo.png" /></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -132,9 +132,9 @@ Base - zakladna sablona
             {% block navigation_social %}
               <ul class="nav nav-pills nav-stacked" id="sidebar">
                 {% if user.is_superuser %}
-                  <li id="navadmin"><a href="{% url admin:index %}">{% trans "Administration" %}</a></li>
-                  <li id="reloadstatic"><a href="{% url reload_static %}">Reload Static</a></li>
-                 <li id="kill_server"><a href="{% url kill_server %}">Kill Server</a></li>
+                  <li id="navadmin"><a href="{% url "admin:index" %}">{% trans "Administration" %}</a></li>
+                  <li id="reloadstatic"><a href="{% url "reload_static" %}">Reload Static</a></li>
+                 <li id="kill_server"><a href="{% url "kill_server" %}">Kill Server</a></li>
                  <hr/>
                 {% endif %}
 
@@ -150,7 +150,7 @@ Base - zakladna sablona
                 {% csrf_token %}
                 {{register_form|bootstrap}}
 
-                {% url terms as url_terms %}
+                {% url "terms" as url_terms %}
                 <p id="id_disclaimer" class="text-center hidden small" style="font-weight: normal;">
                   {% blocktrans %}Registering here, I confirm I agree with <a href="{{url_terms}}" target="_blank">terms and conditions</a>.{% endblocktrans %}
                 </p> 
