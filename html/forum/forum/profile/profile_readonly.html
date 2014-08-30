@@ -50,7 +50,7 @@ Profile read only
             <h3>{{profile.username}} 
               {% if user == profile or user.is_superuser %}
                 <small>
-                  <a href="{% url profile profile.username %}?edit=1">{% trans 'Edit Profile' context 'button' %}</a>
+                  <a href="{% url "profile" profile.username %}?edit=1">{% trans 'Edit Profile' context 'button' %}</a>
                 </small>
               {% endif %}
             </h3>
@@ -70,7 +70,7 @@ Profile read only
         </div>
         
         <div class="col-sm-12 avatarstaging">
-          <form action="{% url profile profile.username %}" method="POST" enctype="multipart/form-data" onsubmit="return checkCoords();">
+          <form action="{% url "profile" profile.username %}" method="POST" enctype="multipart/form-data" onsubmit="return checkCoords();">
             {% csrf_token %}
 
             {{form_uploadavatar}}
@@ -124,7 +124,7 @@ Profile read only
               <h3 class="lead">{% trans 'Activities' %}
                 {% if user == profile or user.is_superuser %}
                   <small>
-                    <a href="{% url profile profile.username %}?edit=1&focus=act">{% trans 'Edit Activities' context 'button' %}</a>
+                    <a href="{% url "profile" profile.username %}?edit=1&focus=act">{% trans 'Edit Activities' context 'button' %}</a>
                   </small>
                 {% endif %}
               </h3>
@@ -174,7 +174,7 @@ Profile read only
               </div> <!-- row -->
             {% endif %} <!-- no data -->
           {% else %}
-            <p>{% trans 'This info is visible only to' %} <a href="{% url register %}">{% trans 'registered'%}</a> {% trans 'users.' %}</p>
+            <p>{% trans 'This info is visible only to' %} <a href="{% url "register" %}">{% trans 'registered'%}</a> {% trans 'users.' %}</p>
           {% endif %} <!-- auth -->
 
           {% if user != profile and user.is_authenticated %}
@@ -200,9 +200,9 @@ Profile read only
             <div class="btn-group btn-group-sm">
               <a class="text-muted dropdown-toggle" data-toggle="dropdown">{% trans 'Report user' %} <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="{% url report 'sexual' %}?target_id={{profile.forum_profile.id}}&target=Profile">{% trans 'Sexual Remarks' %}</a></li>
-                <li><a href="{% url report 'advertising' %}?target_id={{profile.forum_profile.id}}&target=Profile">{% trans 'Advertising' %}</a></li>
-                <li><a href="{% url report 'abuse' %}?target_id={{profile.forum_profile.id}}&target=Profile">{% trans 'Other Abuse' %}</a></li>
+                <li><a href="{% url "report" 'sexual' %}?target_id={{profile.forum_profile.id}}&target=Profile">{% trans 'Sexual Remarks' %}</a></li>
+                <li><a href="{% url "report" 'advertising' %}?target_id={{profile.forum_profile.id}}&target=Profile">{% trans 'Advertising' %}</a></li>
+                <li><a href="{% url "report" 'abuse' %}?target_id={{profile.forum_profile.id}}&target=Profile">{% trans 'Other Abuse' %}</a></li>
               </ul>
             </div>
           {% endif %}

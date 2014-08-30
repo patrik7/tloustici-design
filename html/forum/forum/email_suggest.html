@@ -11,7 +11,7 @@ New email suggest
 
 {% block title %}Hubnemevedvou.cz{% endblock %}
 
-{% block head_url %}http://{{domain}}{% url register %}?utm_source=internal&utm_content=headlink&utm_medium=email&utm_campaign={{analytics_campaign}}{% endblock %}
+{% block head_url %}http://{{domain}}{% url "register" %}?utm_source=internal&utm_content=headlink&utm_medium=email&utm_campaign={{analytics_campaign}}{% endblock %}
 {% block head_label %}{% trans 'Create an Account' %}{% endblock %}
 
 {% block main %}

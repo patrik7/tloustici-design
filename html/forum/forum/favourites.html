@@ -17,10 +17,10 @@ Favorities
       <div class="col-lg-6 col-md-6 text-left">
         <div class="white-well big-faq text-center">
             <div class="col-xs-5" style="position: relative;">
-              <a href="{% url profile f.celebrity.username %}">
+              <a href="{% url "profile" f.celebrity.username %}">
                 <img class="img img-circle" src="{{f.celebrity.forum_profile.avatar_url}}" width="120" height="120" alt="{% trans 'picture' %} {{f.celebrity.username}}" />
               </a>
-              <h3 style="position: absolute; left: 8px; top: 0px;"><a href="{% url profile f.celebrity.username %}">{{f.celebrity.username}}</a></h3>
+              <h3 style="position: absolute; left: 8px; top: 0px;"><a href="{% url "profile" f.celebrity.username %}">{{f.celebrity.username}}</a></h3>
 
             </div>
             <div class="text-right col-xs-7" style="max-height:120px; overflow:hidden; position: relative;">

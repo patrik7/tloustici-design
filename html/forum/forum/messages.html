@@ -191,9 +191,9 @@ Messagess origin
                footer += '<a class="text-muted dropdown-toggle" data-toggle="dropdown">'
                          + '{% trans 'Report' %} <span class="caret"></span></button>'
                        + '<ul class="dropdown-menu">'
-                         + '<li><a href="{% url report 'sexual' %}?target_id=' + e.pk + '&target=Message">{% trans 'Sexual Remarks' %}</a></li>'
-                         + '<li><a href="{% url report 'advertising' %}?target_id=' + e.pk + '&target=Message">{% trans 'Advertising' %}</a></li>'
-                         + '<li><a href="{% url report 'abuse' %}?target_id=' + e.pk + '&target=Message">{% trans 'Other Abuse' %}</a></li>'
+                         + '<li><a href="{% url "report" 'sexual' %}?target_id=' + e.pk + '&target=Message">{% trans 'Sexual Remarks' %}</a></li>'
+                         + '<li><a href="{% url "report" 'advertising' %}?target_id=' + e.pk + '&target=Message">{% trans 'Advertising' %}</a></li>'
+                         + '<li><a href="{% url "report" 'abuse' %}?target_id=' + e.pk + '&target=Message">{% trans 'Other Abuse' %}</a></li>'
                        + '</ul>';
       }
            footer += '</div></div>';
@@ -220,9 +220,9 @@ Messagess origin
                      + '<div class="btn-group btn-group-xs">';
 
       if (!e.blocked) {
-               footer += '<a href="{% url messages %}?block=' + e.other_user + '" class="text-muted" style="margin-bottom: 4px;"><span class="glyphicon glyphicon-ban-circle"></span> {% trans 'Block' %}</a>';
+               footer += '<a href="{% url "messages" %}?block=' + e.other_user + '" class="text-muted" style="margin-bottom: 4px;"><span class="glyphicon glyphicon-ban-circle"></span> {% trans 'Block' %}</a>';
       } else {
-               footer += '<a href="{% url messages %}?unblock=' + e.other_user + '" class="text-muted" style="margin-bottom: 4px;"><span class="glyphicon glyphicon-ban-circle"></span> {% trans 'Unblock' %}</a>';
+               footer += '<a href="{% url "messages" %}?unblock=' + e.other_user + '" class="text-muted" style="margin-bottom: 4px;"><span class="glyphicon glyphicon-ban-circle"></span> {% trans 'Unblock' %}</a>';
       }
 
          footer += '</div></div>';

@@ -51,13 +51,13 @@ Search
 
       <div class="row text-center" style="margin-top: 40px; font-size:180%;">
         <div class="col-sm-4">
-          <a href="{% url profile user.username %}" onmousedown="gaTrackEvent('searching', 'follow profile big');"><img src="{{user.forum_profile.avatar_url}}" class="img-circle" style="width: 28px; height: auto;"></img> {% trans 'Profile' %}</a><br/>
+          <a href="{% url "profile" user.username %}" onmousedown="gaTrackEvent('searching', 'follow profile big');"><img src="{{user.forum_profile.avatar_url}}" class="img-circle" style="width: 28px; height: auto;"></img> {% trans 'Profile' %}</a><br/>
         </div>
         <div class="col-sm-4">
-          <a href="{% url forum_index %}" onmousedown="gaTrackEvent('searching', 'follow forum big');"><span class="glyphicon glyphicon-comment"></span> {% trans 'Forum' %}</a><br/>
+          <a href="{% url "forum_index" %}" onmousedown="gaTrackEvent('searching', 'follow forum big');"><span class="glyphicon glyphicon-comment"></span> {% trans 'Forum' %}</a><br/>
         </div>
         <div class="col-sm-4">
-          <a href="{% url articles %}" onmousedown="gaTrackEvent('searching', 'follow articles big');"><span class="glyphicon glyphicon-home"></span> {% trans 'Articles' %}</a>
+          <a href="{% url "articles" %}" onmousedown="gaTrackEvent('searching', 'follow articles big');"><span class="glyphicon glyphicon-home"></span> {% trans 'Articles' %}</a>
         </div>
       </div>
 
@@ -154,8 +154,8 @@ Search
         + '</div>'
         
           + '<div class="btn-group col-md-12 padding-bottom">'
-            + '<a class="btn" href="{% url favourites %}?add=' + e.username  + '"><span class="glyphicon glyphicon-pushpin"></span> {% trans 'Add to Favourites' %}</a>'
-            + '<a class="btn" href="{% url messages %}?addressee=' + e.username + '"><span class="glyphicon glyphicon-envelope"></span> {% trans 'Send Message' %}</a>'
+            + '<a class="btn" href="{% url "favourites" %}?add=' + e.username  + '"><span class="glyphicon glyphicon-pushpin"></span> {% trans 'Add to Favourites' %}</a>'
+            + '<a class="btn" href="{% url "messages" %}?addressee=' + e.username + '"><span class="glyphicon glyphicon-envelope"></span> {% trans 'Send Message' %}</a>'
           + '</div>'
         + '</div>'
   
