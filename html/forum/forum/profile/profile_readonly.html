@@ -94,7 +94,7 @@ Profile read only
           <div class="col-sm-12 text-right">
             <div class="">
               {% if user.is_superuser and user != profile %}
-                {% button 'Suspend Account' 'profile' url_arg=profile.username get_param='suspend' get_value='1' icon='lock' cls='btn' %}
+                {% button 'Log in' 'login' get_param='admin_onbehalf_of' get_value=profile.username icon='log-in' cls='btn' %}
               {% endif %}
               
               {% if user != profile %}
@@ -103,6 +103,7 @@ Profile read only
                 {% else %}
                   {% button 'Add to Favourites' 'favourites' icon='pushpin' get_param='add' get_value=profile.username cls='btn-green'%}
                 {% endif %}
+                {% button 'Wink' 'wink' icon='eye-open' get_param='target' get_value=profile.username get_param2='return_url' get_value2=request.path cls='btn-blue'%}
                 {% button 'Send Message' 'messages' icon='envelope' get_param='addressee' get_value=profile.username cls='btn-blue'%}
               {% endif %}
             </div>
