@@ -1,0 +1,22 @@
+<!------------------------------------------------------------------------------------------ 
+
+Hubnemevedvou.cz
+
+New wink
+
+------------------------------------------------------------------------------------------->
+
+{% extends 'base/email_base.txt' %}
+
+{% load i18n %}
+
+{% block main %}
+{% trans 'User' %} {{from}} {% trans 'winked at you' %}
+
+{% trans 'You can wink back at' %}
+http://hubnemevedvou.cz{% url "profile" from %}
+
+{% trans 'Best Regards' %}
+
+{% endblock %}
+

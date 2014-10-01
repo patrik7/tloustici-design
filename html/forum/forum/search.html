@@ -154,12 +154,12 @@ Search
         + '</div>'
         
           + '<div class="btn-group col-md-12">'
-            + '<a class="btn" href="{% url "favourites" %}?add=' + e.username  + '" ><span class="glyphicon glyphicon-pushpin"></span> {% trans 'Add to Favourites' %}</a>'
+            + '<a class="btn" onmousedown="gaTrackEvent(\'favourites\', \'click\', \'on search page\'); href="{% url "favourites" %}?add=' + e.username  + '" ><span class="glyphicon glyphicon-pushpin"></span> {% trans 'Add to Favourites' %}</a>'
             + '<a class="btn" href="{% url "messages" %}?addressee=' + e.username + '"><span class="glyphicon glyphicon-envelope"></span> {% trans 'Send Message' %}</a>'
           + '</div>'
 
           + '<div class="btn-group col-md-12 padding-bottom text-center">'
-            + '<a class="btn" href="{% url "wink" %}?target=' + e.username  + '&return_url={% url 'search' %}" style="float: none;"><span class="glyphicon glyphicon-eye-open"></span> {% trans 'Wink' %}</a>'
+            + '<a class="btn" onmousedown="gaTrackEvent(\'winking\', \'click\', \'on search page\');" href="{% url "wink" %}?target=' + e.username  + '&return_url={% url 'search' %}" style="float: none;"><span class="glyphicon glyphicon-eye-open"></span> {% trans 'Wink' %}</a>'
           + '</div>'
 
         + '</div>'

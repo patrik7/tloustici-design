@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-20 22:37+0200\n"
+"POT-Creation-Date: 2014-10-01 20:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,24 +93,38 @@ msgid "You have been unsubscribed from the replies to this post."
 msgstr "Byl jsi odhlášen z odběru příspěvků v této diskuzi."
 
 #: Tloustici/translations.py:30 forum/views.py:151
+#, python-format
 msgctxt "female"
 msgid "You have winked at user <a href=\"%(url)s\">%(username)s</a>"
 msgstr "Mrknula jsi na uživatele <a href=\"%(url)s\">%(username)s</a>"
 
 #: Tloustici/translations.py:31
+#, python-format
 msgctxt "male"
 msgid "You have winked at user <a href=\"%(url)s\">%(username)s</a>"
 msgstr "Mrknul jsi na uživatele <a href=\"%(url)s\">%(username)s</a>"
 
 #: Tloustici/translations.py:33 forum/views.py:144
+#, python-format
 msgctxt "female"
 msgid "You have already winked at user <a href=\"%(url)s\">%(username)s</a>"
 msgstr "Na uživatele <a href=\"%(url)s\">%(username)s</a> jsi již mrknula"
 
 #: Tloustici/translations.py:34
+#, python-format
 msgctxt "male"
 msgid "You have already winked at user <a href=\"%(url)s\">%(username)s</a>"
 msgstr "Na uživatele <a href=\"%(url)s\">%(username)s</a> jsi již mrknul"
+
+#: Tloustici/translations.py:36
+msgctxt "female"
+msgid "winked at you"
+msgstr "na Tebe mrkla"
+
+#: Tloustici/translations.py:37
+msgctxt "male"
+msgid "winked at you"
+msgstr "na Tebe mrknul"
 
 #: articles/admin.py:31
 msgid "Image has incorrect with to height ratio, suggested size is 860 x 360"
@@ -614,6 +628,7 @@ msgstr "Rodič"
 
 #: forum/models.py:79 forum/models.py:263 forum/models.py:264
 #: forum/models.py:356 forum/models.py:532
+#: forum/templates/forum/email_wink_message.txt:14
 msgid "User"
 msgstr "Uživatel"
 
@@ -673,7 +688,7 @@ msgstr "Nový příspěvek na fóru"
 msgid "New Message"
 msgstr "Nová zpráva"
 
-#: forum/models.py:393
+#: forum/models.py:393 forum/models.py:888
 msgctxt "username"
 msgid "from"
 msgstr "od"
@@ -814,6 +829,11 @@ msgstr "Profily"
 #: forum/models.py:646
 msgid "note"
 msgstr "poznámka"
+
+#: forum/models.py:888
+msgctxt "Wink"
+msgid "subject"
+msgstr "Mrknutí"
 
 #: forum/tests.py:81 forum/views.py:88
 #, python-format
@@ -1355,6 +1375,7 @@ msgstr "Na zprávu můžeš odpovědět na"
 
 #: forum/templates/forum/email_new_message.txt:21
 #: forum/templates/forum/email_password_recovery.txt:23
+#: forum/templates/forum/email_wink_message.txt:19
 msgid "Best Regards"
 msgstr "S pozdravem"
 
@@ -1460,6 +1481,32 @@ msgid ""
 "This email was sent to you, as somebody you know filled out the "
 "recommendation form with your email."
 msgstr "Tento e-mail Ti byl zaslán na základě doporučení Tvého přítele."
+
+#: forum/templates/forum/email_wink_message.html:24
+#: forum/templates/forum/email_wink_message.txt:14
+msgid "winked at you"
+msgstr "na Tebe mrknul"
+
+#: forum/templates/forum/email_wink_message.html:28
+msgid "Wink back"
+msgstr "Mrknout zpátky"
+
+#: forum/templates/forum/email_wink_message.html:39
+#, python-format
+msgid ""
+"\n"
+"You can switch off the email/messages notification in your <a href=\"http://"
+"%(domain)s%(url_settings)s?"
+"utm_source=internal&utm_content=unsubscribe&utm_medium=email&utm_campaign=wink"
+"\" style=\"color: #2BA6CB;\" >profile settings page</a>.\n"
+msgstr ""
+"\n"
+"Oznámení na zprávu e-mailem můžete vypnout v <a href=\"http://%(domain)s"
+"%(url_settings)s\" style=\"color: #2BA6CB;\" >nastavení profilu</a>.\n"
+
+#: forum/templates/forum/email_wink_message.txt:16
+msgid "You can wink back at"
+msgstr "Můžete mrknout na"
 
 #: forum/templates/forum/favourites.html:41
 msgid "You have not added anyone to your favourites list."
@@ -1846,4 +1893,5 @@ msgstr "Své foto nahraji později"
 msgid "Keep the picture"
 msgstr "Ponechat obrázek"
 
-
+#~ msgid "See wink"
+#~ msgstr "Mrknout spátky"
