@@ -93,7 +93,7 @@ Profile read only
           {% if user.is_authenticated %}
           <div class="col-sm-12 text-right">
             <div class="">
-              {% if user.is_superuser and user != profile %}
+              {% if user.is_superuser and user != profile and user.is_staff %}
                 {% button 'Log in' 'login' get_param='admin_onbehalf_of' get_value=profile.username icon='log-in' cls='btn' %}
               {% endif %}
               
