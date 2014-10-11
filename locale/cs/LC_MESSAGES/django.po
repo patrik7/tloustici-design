@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-01 20:38+0200\n"
+"POT-Creation-Date: 2014-10-11 11:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,6 +125,18 @@ msgstr "na Tebe mrkla"
 msgctxt "male"
 msgid "winked at you"
 msgstr "na Tebe mrknul"
+
+#: Tloustici/translations.py:39
+#, python-format
+msgctxt "F"
+msgid "You have been winked at by <a href=\"%(profile_url)s\">%(username)s</a>"
+msgstr "Uživatelka <a href=\"%(profile_url)s\">%(username)s</a> na Tebe mrkla"
+
+#: Tloustici/translations.py:40
+#, python-format
+msgctxt "M"
+msgid "You have been winked at by <a href=\"%(profile_url)s\">%(username)s</a>"
+msgstr "Uživatel <a href=\"%(profile_url)s\">%(username)s</a> na Tebe mrkl"
 
 #: articles/admin.py:31
 msgid "Image has incorrect with to height ratio, suggested size is 860 x 360"
@@ -441,6 +453,14 @@ msgstr "Registruj se zdarma"
 #: base/templates/base/login.html:30 base/templates/base/login.html.py:36
 msgid "Forgot your password?"
 msgstr "Zapomněl jsi své heslo?"
+
+#: base/templates/base/messages.html:30
+msgid "You have been winked at by <a href=\"%(profile_url)s\">%(username)s</a>"
+msgstr "Uživatel <a href=\"%(profile_url)s\">%(username)s</a> na Tebe mrkl(a)"
+
+#: base/templates/base/messages.html:33
+msgid "wink back"
+msgstr "Mrknout zpátky"
 
 #: base/templates/base/navigation_list.html:15
 #: forum/templates/forum/favourites.html:21
