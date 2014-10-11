@@ -21,8 +21,10 @@ New wink
         </a>
       </td>
       <td style="padding-left: 20px;" >
-        <p><b><a href="http://{{domain}}{% url "profile" from %}?utm_source=internal&utm_content=userlink&utm_medium=email&utm_campaign=wink" style="color: #2BA6CB;">{{from}}</a> {% trans 'winked at you' context gender %}</b></p>
-
+        {% url 'profile' from as profile_uri %}
+        {% with "http://"|add:domain|add:profile_uri|add:"?utm_source=internal&utm_content=userlink&utm_medium=email&utm_campaign=wink" as profile_url %}
+          <p>{% blocktrans with username=from context gender %}You have been winked at by <a href="{{profile_url}}">{{username}}</a>{% endblocktrans %}
+        {% endwith %}
         <br/><br/>
 
         <a href="http://{{domain}}{% url "profile" from %}?utm_source=internal&utm_content=replylink&utm_medium=email&utm_campaign=wink" {% include 'base/email_calltoactionbutton.html' %}>{% trans 'Wink back' %}</a>
@@ -37,7 +39,7 @@ New wink
 
 <small>
 {% blocktrans %}
-You can switch off the email/messages notification in your <a href="http://{{domain}}{{url_settings}}?utm_source=internal&utm_content=unsubscribe&utm_medium=email&utm_campaign=wink" style="color: #2BA6CB;" >profile settings page</a>.
+You can switch off the email/messages notification from <a href="http://{{domain}}">{{domain}}</a> at your <a href="http://{{domain}}{{url_settings}}?utm_source=internal&utm_content=unsubscribe&utm_medium=email&utm_campaign=wink" style="color: #2BA6CB;" >profile settings page</a>.
 {% endblocktrans %}
 </small>
 

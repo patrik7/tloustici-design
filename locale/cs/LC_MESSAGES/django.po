@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-11 11:25+0200\n"
+"POT-Creation-Date: 2014-10-11 14:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Patrik Beck <patrik.beck@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,7 +72,7 @@ msgstr "Poslat heslo"
 msgid "Send Private Message"
 msgstr "Odeslat zprávu"
 
-#: Tloustici/translations.py:25 forum/views.py:1028
+#: Tloustici/translations.py:25 forum/views.py:1032
 msgctxt "female"
 msgid "You are now subscribed to the replies."
 msgstr "Nyní jsi přihlášená k odběru příspěvků v této diskuzi."
@@ -82,7 +82,7 @@ msgctxt "male"
 msgid "You are now subscribed to the replies."
 msgstr "Nyní jsi přihlášen k odběru příspěvků v této diskuzi."
 
-#: Tloustici/translations.py:27 forum/views.py:1031
+#: Tloustici/translations.py:27 forum/views.py:1035
 msgctxt "female"
 msgid "You have been unsubscribed from the replies to this post."
 msgstr "Byla jsi odhlášená z odběru příspěvků v této diskuzi."
@@ -92,29 +92,39 @@ msgctxt "male"
 msgid "You have been unsubscribed from the replies to this post."
 msgstr "Byl jsi odhlášen z odběru příspěvků v této diskuzi."
 
-#: Tloustici/translations.py:30 forum/views.py:151
+#: Tloustici/translations.py:30 forum/views.py:155
 #, python-format
 msgctxt "female"
 msgid "You have winked at user <a href=\"%(url)s\">%(username)s</a>"
-msgstr "Mrknula jsi na uživatele <a href=\"%(url)s\">%(username)s</a>"
+msgstr "Mrknula jsi na uživatele <a href=\"%(url)s\">%(username)s</a>."
 
 #: Tloustici/translations.py:31
 #, python-format
 msgctxt "male"
 msgid "You have winked at user <a href=\"%(url)s\">%(username)s</a>"
-msgstr "Mrknul jsi na uživatele <a href=\"%(url)s\">%(username)s</a>"
+msgstr "Mrknul jsi na uživatele <a href=\"%(url)s\">%(username)s</a>."
 
-#: Tloustici/translations.py:33 forum/views.py:144
+#: Tloustici/translations.py:33 forum/views.py:148
 #, python-format
 msgctxt "female"
-msgid "You have already winked at user <a href=\"%(url)s\">%(username)s</a>"
-msgstr "Na uživatele <a href=\"%(url)s\">%(username)s</a> jsi již mrknula"
+msgid ""
+"User <a href=\"%(url)s\">%(username)s</a> did not reply to your last wink "
+"yet. Winking is not always enough, <a href=\"%(send_message_url)s\"><span "
+"class=\"glyphicon glyphicon-envelope\"></span> send a message</a>"
+msgstr ""
+"Uživatelka <a href=\"%(url)s\">%(username)s</a> neopověděla na Tvé poslední mrknutí. Mrknutí je někdy málo, <a href=\"%(send_message_url)s\"><span "
+"class=\"glyphicon glyphicon-envelope\"></span> pošli zprávu.</a>"
 
 #: Tloustici/translations.py:34
 #, python-format
 msgctxt "male"
-msgid "You have already winked at user <a href=\"%(url)s\">%(username)s</a>"
-msgstr "Na uživatele <a href=\"%(url)s\">%(username)s</a> jsi již mrknul"
+msgid ""
+"User <a href=\"%(url)s\">%(username)s</a> did not reply to your last wink "
+"yet. Winking is not always enough, <a href=\"%(send_message_url)s\"><span "
+"class=\"glyphicon glyphicon-envelope\"></span> send a message</a>"
+msgstr ""
+"Uživatel <a href=\"%(url)s\">%(username)s</a> neopověděl na Tvé poslední mrknutí. Mrknutí je někdy málo, <a href=\"%(send_message_url)s\"><span "
+"class=\"glyphicon glyphicon-envelope\"></span> pošli zprávu.</a>"
 
 #: Tloustici/translations.py:36
 msgctxt "female"
@@ -130,13 +140,13 @@ msgstr "na Tebe mrknul"
 #, python-format
 msgctxt "F"
 msgid "You have been winked at by <a href=\"%(profile_url)s\">%(username)s</a>"
-msgstr "Uživatelka <a href=\"%(profile_url)s\">%(username)s</a> na Tebe mrkla"
+msgstr "Uživatelka <a href=\"%(profile_url)s\">%(username)s</a> na Tebe mrkla."
 
 #: Tloustici/translations.py:40
 #, python-format
 msgctxt "M"
 msgid "You have been winked at by <a href=\"%(profile_url)s\">%(username)s</a>"
-msgstr "Uživatel <a href=\"%(profile_url)s\">%(username)s</a> na Tebe mrkl"
+msgstr "Uživatel <a href=\"%(profile_url)s\">%(username)s</a> na Tebe mrkl."
 
 #: articles/admin.py:31
 msgid "Image has incorrect with to height ratio, suggested size is 860 x 360"
@@ -214,11 +224,11 @@ msgstr "Tvé BMI je"
 msgid "Find out your BMI"
 msgstr "Zjistěte si své BMI"
 
-#: articles/templates/articles/bmi.html:37 forum/views.py:618
+#: articles/templates/articles/bmi.html:37 forum/views.py:622
 msgid "Height"
 msgstr "Výška"
 
-#: articles/templates/articles/bmi.html:43 forum/views.py:621
+#: articles/templates/articles/bmi.html:43 forum/views.py:625
 msgid "Weight"
 msgstr "Váha"
 
@@ -455,8 +465,10 @@ msgid "Forgot your password?"
 msgstr "Zapomněl jsi své heslo?"
 
 #: base/templates/base/messages.html:30
+#: forum/templates/forum/email_wink_message.html:26
+#, python-format
 msgid "You have been winked at by <a href=\"%(profile_url)s\">%(username)s</a>"
-msgstr "Uživatel <a href=\"%(profile_url)s\">%(username)s</a> na Tebe mrkl(a)"
+msgstr "Uživatel <a href=\"%(profile_url)s\">%(username)s</a> na Tebe mrkl(a)."
 
 #: base/templates/base/messages.html:33
 msgid "wink back"
@@ -563,7 +575,7 @@ msgstr "Jsi zablokován, nemůžeš posílat zprávy tomuto uživateli."
 msgid "Real name"
 msgstr "Jméno a příjmení"
 
-#: forum/forms.py:384 forum/views.py:612
+#: forum/forms.py:384 forum/views.py:616
 msgid "Date of Birth"
 msgstr "Datum narození"
 
@@ -894,73 +906,73 @@ msgstr ""
 "Pro úspěšné dokončení registrace je nutné kliknout na odkaz, který byl "
 "automaticky odeslán na vámi zadaný e-mail."
 
-#: forum/tests.py:360 forum/views.py:333
+#: forum/tests.py:360 forum/views.py:337
 msgid "Incorrect activation key. You need to register again."
 msgstr ""
 "Vypršela doba určená pro aktivaci účtu. Navštiv hubnemevedvou.cz pro další "
 "pokus."
 
-#: forum/tests.py:387 forum/tests.py:437 forum/views.py:377
+#: forum/tests.py:387 forum/tests.py:437 forum/views.py:381
 msgid "An abuse report was created."
 msgstr "Stížnost byla nahlášena."
 
-#: forum/tests.py:408 forum/views.py:366
+#: forum/tests.py:408 forum/views.py:370
 msgid "You are trying to report your own post."
 msgstr "Snažíš se ohlásit vlastní příspěvek."
 
-#: forum/tests.py:425 forum/views.py:356
+#: forum/tests.py:425 forum/views.py:360
 msgid "You are trying to report your own message."
 msgstr "Snažíš se ohlásit svou zprávu."
 
-#: forum/tests.py:440 forum/views.py:396
+#: forum/tests.py:440 forum/views.py:400
 msgid "The report was updated."
 msgstr "Hlášení bylo aktualizováno"
 
-#: forum/tests.py:531 forum/views.py:662
+#: forum/tests.py:531 forum/views.py:666
 #, python-format
 msgid "User %s was added to the list"
 msgstr "Uživatel %s byl pridán do seznamu"
 
-#: forum/tests.py:537 forum/views.py:659
+#: forum/tests.py:537 forum/views.py:663
 #, python-format
 msgid "User %s was already in the list"
 msgstr "Uživatelské jméno %s je již v seznamu"
 
-#: forum/tests.py:547 forum/views.py:671
+#: forum/tests.py:547 forum/views.py:675
 #, python-format
 msgid "User %s was removed from the list"
 msgstr "Uživatel %s byl odebrán ze seznamu"
 
-#: forum/tests.py:575 forum/views.py:905
+#: forum/tests.py:575 forum/views.py:909
 #, python-format
 msgid ""
 "You have blocked user %s, he/she will not be able to send you messages "
 "anymore."
 msgstr "Uživatel %s byl zablokován, už od něj neobdržíš žádné zprávy."
 
-#: forum/tests.py:584 forum/views.py:914
+#: forum/tests.py:584 forum/views.py:918
 #, python-format
 msgid "You have unblocked user %s."
 msgstr "Uživatel %s již není blokován."
 
-#: forum/tests.py:725 forum/views.py:164
+#: forum/tests.py:725 forum/views.py:168
 #, python-format
 msgid "User %s was logged out."
 msgstr "Uživatel %s byl odhlášen."
 
-#: forum/tests.py:758 forum/views.py:957
+#: forum/tests.py:758 forum/views.py:961
 msgid "Email with your new password was sent to"
 msgstr "E-mail s novým heslem byl zaslán na"
 
-#: forum/tests.py:870 forum/views.py:1010
+#: forum/tests.py:870 forum/views.py:1014
 msgid "Post was deleted."
 msgstr "Příspěvek byl smazaný"
 
-#: forum/tests.py:880 forum/views.py:1008
+#: forum/tests.py:880 forum/views.py:1012
 msgid "You can no longer delete the post."
 msgstr "Na tvůj příspěvek bylo odpovězeno, nemůže být již smazán"
 
-#: forum/tests.py:889 forum/views.py:1058
+#: forum/tests.py:889 forum/views.py:1062
 msgid "Your reply was saved."
 msgstr "Tvá odpověď byla uložena."
 
@@ -969,7 +981,7 @@ msgid "Search Criteria"
 msgstr "Kritéria vyhledávání"
 
 #: forum/tests.py:1027 forum/tests.py:1049 forum/tests.py:1075
-#: forum/views.py:534
+#: forum/views.py:538
 msgid "User profile saved."
 msgstr "Uživatelský profil byl uložen."
 
@@ -978,11 +990,11 @@ msgid "There was a problem sending the email"
 msgstr ""
 "E-mail nebyl odeslán. Omlouvǎme se za technické potíže, zkus to později."
 
-#: forum/views.py:121 forum/views.py:237
+#: forum/views.py:121 forum/views.py:241
 msgid "Registration"
 msgstr "Registrace"
 
-#: forum/views.py:123 forum/views.py:239
+#: forum/views.py:123 forum/views.py:243
 msgid "Failed to send the activation email"
 msgstr ""
 "Při odeslání potvrzovacího e-mailu nastal technický problém. Omlouváme se za "
@@ -992,47 +1004,47 @@ msgstr ""
 msgid "Activation e-mail was send again"
 msgstr "Activation e-mail byl znova zaslán"
 
-#: forum/views.py:155
+#: forum/views.py:159
 msgid "There was a problem with winking"
 msgstr "Nastal problém při mrkání"
 
-#: forum/views.py:305
+#: forum/views.py:309
 msgid "1) Activity"
 msgstr "1. Aktivity"
 
-#: forum/views.py:305
+#: forum/views.py:309
 msgid "2) Personal Information"
 msgstr "2. Osobní informace"
 
-#: forum/views.py:305
+#: forum/views.py:309
 msgid "3) Select a picture"
 msgstr "3. Profilový obrázek"
 
-#: forum/views.py:305
+#: forum/views.py:309
 msgid "4) Password Setup"
 msgstr "4. Nastavení hesla"
 
-#: forum/views.py:318 forum/templates/forum/profile/profile_essentials.html:72
+#: forum/views.py:322 forum/templates/forum/profile/profile_essentials.html:72
 msgid "Save"
 msgstr "Uložit"
 
-#: forum/views.py:330
+#: forum/views.py:334
 msgid "Your account was activated."
 msgstr "Gratulujeme! Tvá registrace byla úspěšně dokončena."
 
-#: forum/views.py:403
+#: forum/views.py:407
 msgid "Update"
 msgstr "Aktualizovat"
 
-#: forum/views.py:414
+#: forum/views.py:418
 msgid "How to search for partner"
 msgstr "Jak hledat partnera?"
 
-#: forum/views.py:418
+#: forum/views.py:422
 msgid "screenshot search for weight loss partner"
 msgstr "screenshot hledám partnera na hubnutí"
 
-#: forum/views.py:419
+#: forum/views.py:423
 msgid "help_search_1"
 msgstr ""
 "Hubnemevedvou.cz využívá unikátní algoritmus, který vypočítá kompatibilitu "
@@ -1042,64 +1054,64 @@ msgstr ""
 "uživateli, kteří rovněž hledají partnera na cvičení, sport a další společné "
 "aktivity."
 
-#: forum/views.py:423
+#: forum/views.py:427
 msgid "screenshot select weight loss partner criteria"
 msgstr "screenshot vyber kritéria partnera na hubnutí"
 
-#: forum/views.py:424
+#: forum/views.py:428
 msgid "help_search_2"
 msgstr ""
 "V dalším kroku lze specifikovat svůj výběr z hlediska pohlaví a místa "
 "bydliště. Na základě takto zvolené specifikace a vypočítaného algoritmu se "
 "vám zobrazí nejvíce relevantní uživatelé."
 
-#: forum/views.py:428
+#: forum/views.py:432
 msgid "screenshot weight loss partner"
 msgstr "screenshot partner na hubnutí"
 
-#: forum/views.py:429
+#: forum/views.py:433
 msgid "help_search_3"
 msgstr ""
 "Vybranému uživateli můžete poslat zprávu nebo si ho pouze přidat do "
 "\"oblíbených\" a oslovit ho později."
 
-#: forum/views.py:433
+#: forum/views.py:437
 msgid "How to set profile photo"
 msgstr "Jak nastavit profilové foto?"
 
-#: forum/views.py:436
+#: forum/views.py:440
 msgid "screenshot menu profile"
 msgstr "screenshot menu profil"
 
-#: forum/views.py:437
+#: forum/views.py:441
 msgid "help_photo_1"
 msgstr " "
 
-#: forum/views.py:440
+#: forum/views.py:444
 msgid "screenshot click on avatar"
 msgstr "screenshot změnit obrázek"
 
-#: forum/views.py:441
+#: forum/views.py:445
 msgid "help_photo_2"
 msgstr " "
 
-#: forum/views.py:444
+#: forum/views.py:448
 msgid "screenshot crop photo"
 msgstr "screenshot orezávání fotky"
 
-#: forum/views.py:445
+#: forum/views.py:449
 msgid "help_photo_3"
 msgstr " "
 
-#: forum/views.py:453
+#: forum/views.py:457
 msgid "How to register"
 msgstr "Jak se registrovat?"
 
-#: forum/views.py:457
+#: forum/views.py:461
 msgid "screenshot register"
 msgstr "screenshot registrace"
 
-#: forum/views.py:458
+#: forum/views.py:462
 msgid "help_register_1"
 msgstr ""
 "Prvním krokem jak nehubnout sám, ale ve dvou, je registrace na hubnemevedvou."
@@ -1110,30 +1122,30 @@ msgstr ""
 "platnou e-mailovou adresu. Kliknutím na tlačítko \"Vytvořit účet\" je "
 "uživatel automaticky přesměrován do dalších sekcí registrace."
 
-#: forum/views.py:462
+#: forum/views.py:466
 msgid "screenshot select favorite activities"
 msgstr "screenshot označ oblíbené aktivity"
 
-#: forum/views.py:463
+#: forum/views.py:467
 msgid "help_register_2"
 msgstr ""
 "V prvním kroku registrace je důležité vyplnit oblíbené sportovní aktivity, "
 "možné je zatrhnout i více sportů najednou. Svému budoucímu partnerovi tak "
 "usnadníte hledání a máte větší šanci, že Vás osloví někdo s podobnými zájmy."
 
-#: forum/views.py:467
+#: forum/views.py:471
 msgid "screenshot select other activities"
 msgstr "screenshot označ jiné aktivity"
 
-#: forum/views.py:468
+#: forum/views.py:472
 msgid "help_register_3"
 msgstr "Nezapomeňte zatrhnout i aktivity, které nejsou sportovního charakteru."
 
-#: forum/views.py:472
+#: forum/views.py:476
 msgid "screenshot upload your photo"
 msgstr "screenshot nahraj svoji fotku"
 
-#: forum/views.py:473
+#: forum/views.py:477
 msgid "help_register_4"
 msgstr ""
 "V druhém kroku máte možnost nahrát své foto. Tento krok lze přeskočit, k "
@@ -1141,61 +1153,61 @@ msgstr ""
 "mají svůj obrázek v profilu vyplněný, jsou ostatními mnohem častěji "
 "oslovováni!"
 
-#: forum/views.py:477
+#: forum/views.py:481
 msgid "screenshot input your info"
 msgstr "screenshot zadej informace o sobě"
 
-#: forum/views.py:478
+#: forum/views.py:482
 msgid "help_register_5"
 msgstr ""
 "V následujícím kroku je nutné vyplnit osobní informace. Informace označené "
 "hvězdičkou jsou povinné, při volbě tlačítka „skryté“ se však ostatním "
 "uživatelům zobrazovat nebudou."
 
-#: forum/views.py:482
+#: forum/views.py:486
 msgid "screenshot input password"
 msgstr "screenshot zadej heslo"
 
-#: forum/views.py:483
+#: forum/views.py:487
 msgid "help_register_6"
 msgstr "Posledním krokem zbývá nastavení hesla."
 
-#: forum/views.py:487
+#: forum/views.py:491
 msgid "screenshot hubneme ve dvou logo"
 msgstr "screenshot hubneme ve dvou logo"
 
-#: forum/views.py:488
+#: forum/views.py:492
 msgid "help_register_7"
 msgstr " "
 
-#: forum/views.py:492
+#: forum/views.py:496
 msgid "screenshot hubneme ve dvou email"
 msgstr "screenshot hubneme ve dvou e-mail"
 
-#: forum/views.py:493
+#: forum/views.py:497
 msgid "help_register_8"
 msgstr ""
 "Při správném nastavení hesla Vám přijde na e-mail potvrzení o registraci. "
 "Kliknutím na tlačítko „Aktivovat“ potvrzujete svou e-mailovou adresu a Vaše "
 "registrace je úspěšně dokončena."
 
-#: forum/views.py:548
+#: forum/views.py:552
 msgid "Your password was changed."
 msgstr "Tvé heslo bylo změněno."
 
-#: forum/views.py:549
+#: forum/views.py:553
 msgid "Please log in again."
 msgstr "Prosím, přihlaš se znovu"
 
-#: forum/views.py:553
+#: forum/views.py:557
 msgid "Password for"
 msgstr "Heslo pro"
 
-#: forum/views.py:553
+#: forum/views.py:557
 msgid "was changed."
 msgstr "bylo změněno."
 
-#: forum/views.py:601
+#: forum/views.py:605
 #, python-format
 msgid ""
 "Your bio description is empty, consider <a href=\"%s?edit=1\"><b>filling it "
@@ -1204,23 +1216,23 @@ msgstr ""
 "<a href=\"%s?edit=1\"><b>Prozraď něco málo o sobě</b></a> a usnadni tak "
 "hledání svému budoucímu parťákovi."
 
-#: forum/views.py:609
+#: forum/views.py:613
 msgid "name"
 msgstr "Jméno"
 
-#: forum/views.py:615
+#: forum/views.py:619
 msgid "Education"
 msgstr "Vzdělání"
 
-#: forum/views.py:890
+#: forum/views.py:894
 msgid "Message sent."
 msgstr "Zpráva odeslána."
 
-#: forum/views.py:951 forum/templates/forum/password_recovery.html:17
+#: forum/views.py:955 forum/templates/forum/password_recovery.html:17
 msgid "Password Recovery"
 msgstr "Obnovení hesla"
 
-#: forum/views.py:959
+#: forum/views.py:963
 msgid ""
 "Failed to send an email with the new password, your password was not "
 "changed, please try again later"
@@ -1228,7 +1240,7 @@ msgstr ""
 "E-mail s novým heslem nebyl zaslán. Omlouváme se za technické potíže, změnu "
 "hesla zkus později."
 
-#: forum/views.py:1060
+#: forum/views.py:1064
 msgid "Post not saved."
 msgstr "Příspěvek nebyl uložen"
 
@@ -1374,16 +1386,20 @@ msgid "Reply"
 msgstr "Odpovědět"
 
 #: forum/templates/forum/email_new_message.html:40
+#: forum/templates/forum/email_wink_message.html:41
 #, python-format
 msgid ""
 "\n"
-"You can switch off the email/messages notification in your <a href=\"http://"
-"%(domain)s%(url_settings)s\" style=\"color: #2BA6CB;\" >profile settings "
-"page</a>.\n"
+"You can switch off the email/messages notification from <a href=\"http://"
+"%(domain)s\">%(domain)s</a> at your <a href=\"http://%(domain)s"
+"%(url_settings)s?"
+"utm_source=internal&utm_content=unsubscribe&utm_medium=email&utm_campaign=wink"
+"\" style=\"color: #2BA6CB;\" >profile settings page</a>.\n"
 msgstr ""
 "\n"
-"Oznámení na zprávu e-mailem můžete vypnout v <a href=\"http://%(domain)s"
-"%(url_settings)s\" style=\"color: #2BA6CB;\" >nastavení profilu</a>.\n"
+"Nechcete-li dostávat tyto upozornění od <a href=\"http://%(domain)s\">"
+"%(domain)s</a>, <a href=\"http://%(domain)s%(url_settings)s\" style=\"color: "
+"#2BA6CB;\" >zrušte jejich odběr</a> v nastavení profilu.\n"
 
 #: forum/templates/forum/email_new_message.txt:14
 msgid "New Message from"
@@ -1502,27 +1518,13 @@ msgid ""
 "recommendation form with your email."
 msgstr "Tento e-mail Ti byl zaslán na základě doporučení Tvého přítele."
 
-#: forum/templates/forum/email_wink_message.html:24
-#: forum/templates/forum/email_wink_message.txt:14
-msgid "winked at you"
-msgstr "na Tebe mrknul"
-
-#: forum/templates/forum/email_wink_message.html:28
+#: forum/templates/forum/email_wink_message.html:30
 msgid "Wink back"
 msgstr "Mrknout zpátky"
 
-#: forum/templates/forum/email_wink_message.html:39
-#, python-format
-msgid ""
-"\n"
-"You can switch off the email/messages notification in your <a href=\"http://"
-"%(domain)s%(url_settings)s?"
-"utm_source=internal&utm_content=unsubscribe&utm_medium=email&utm_campaign=wink"
-"\" style=\"color: #2BA6CB;\" >profile settings page</a>.\n"
-msgstr ""
-"\n"
-"Oznámení na zprávu e-mailem můžete vypnout v <a href=\"http://%(domain)s"
-"%(url_settings)s\" style=\"color: #2BA6CB;\" >nastavení profilu</a>.\n"
+#: forum/templates/forum/email_wink_message.txt:14
+msgid "winked at you"
+msgstr "na Tebe mrknul"
 
 #: forum/templates/forum/email_wink_message.txt:16
 msgid "You can wink back at"
@@ -1913,5 +1915,21 @@ msgstr "Své foto nahraji později"
 msgid "Keep the picture"
 msgstr "Ponechat obrázek"
 
-#~ msgid "See wink"
-#~ msgstr "Mrknout spátky"
+#~ msgctxt "female"
+#~ msgid "You have already winked at user <a href=\"%(url)s\">%(username)s</a>"
+#~ msgstr "<a href=\"%(url)s\">%(username)s</a> jsi již mrknula"
+
+#~ msgctxt "male"
+#~ msgid "You have already winked at user <a href=\"%(url)s\">%(username)s</a>"
+#~ msgstr "Na uživatele <a href=\"%(url)s\">%(username)s</a> jsi již mrknul"
+
+#~ msgid ""
+#~ "\n"
+#~ "You can switch off the email/messages notification in your <a href="
+#~ "\"http://%(domain)s%(url_settings)s\" style=\"color: #2BA6CB;\" >profile "
+#~ "settings page</a>.\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Nechcete-li dostávat tyto upozornění od <a href=\"http://%(domain)s\">"
+#~ "%(domain)</a>, <a href=\"http://%(domain)s%(url_settings)s\" style="
+#~ "\"color: #2BA6CB;\">zrušte jejich odběr</a> v nastavení profilu.\n"
