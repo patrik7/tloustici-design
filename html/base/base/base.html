@@ -81,7 +81,7 @@ Base - zakladna sablona
 
     </script>
 
-    {% if caption_prefix == "" %}
+    {% if google_analytics %}
       <script>(function() {
         var _fbq = window._fbq || (window._fbq = []);
         if (!_fbq.loaded) {
@@ -99,6 +99,7 @@ Base - zakladna sablona
       </script>
       <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=563584970408685&amp;ev=PixelInitialized" /></noscript>
     {% endif %}
+
   </head>
 
   <body>
