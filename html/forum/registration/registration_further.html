@@ -16,6 +16,28 @@ Proces registracie
   {% if step == 3 %}
     <link rel="stylesheet" href="{{STATIC_URL}}css/jquery.Jcrop.min.css" type="text/css" />
   {% endif %}
+
+  {% if google_analytics %}
+
+    <!-- Facebook Conversion Code for Registration -->
+    <script>(function() {
+      var _fbq = window._fbq || (window._fbq = []);
+      if (!_fbq.loaded) {
+        var fbds = document.createElement('script');
+        fbds.async = true;
+        fbds.src = '//connect.facebook.net/en_US/fbds.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(fbds, s);
+        _fbq.loaded = true;
+      }
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', '6021925905323', {'value':'0.00','currency':'USD'}]);
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6021925905323&amp;cd[value]=0.00&amp;cd[currency]=USD&amp;noscript=1" /></noscript>
+
+  {% endif %}
+
 {% endblock %}
 
 {% block main %}
@@ -211,25 +233,3 @@ Registracia krok 1
   
 {% endblock %}
 
-{% block extra_meta %}
-  {% if google_analytics %}
-
-    <!-- Facebook Conversion Code for Registration -->
-    <script>(function() {
-      var _fbq = window._fbq || (window._fbq = []);
-      if (!_fbq.loaded) {
-        var fbds = document.createElement('script');
-        fbds.async = true;
-        fbds.src = '//connect.facebook.net/en_US/fbds.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(fbds, s);
-        _fbq.loaded = true;
-      }
-    })();
-    window._fbq = window._fbq || [];
-    window._fbq.push(['track', '6021925905323', {'value':'0.00','currency':'USD'}]);
-    </script>
-    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6021925905323&amp;cd[value]=0.00&amp;cd[currency]=USD&amp;noscript=1" /></noscript>
-
-  {% endif %}
-{% endblock %}
