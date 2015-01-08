@@ -36,18 +36,18 @@ Article
   {% endif %}    
     
   <div class="pull-right">
-    <small><p class="text-muted" itemprop="datePublished" content="{{article.display_from|date:"Y-m-d"}}">{{article.display_from}}</p></small>
+    <small><p class="text-muted" itemprop="datePublished" content="{{article.display_from|date:"Y-m-d"}}">{{article.display_from|date:"d.m.Y"}}</p></small>
   </div>
 
   <h2 itemprop="name">{{article.heading}}</h2>
 
   
 
-  <p itemprop="articleBody">
+  <div itemprop="articleBody" class="justify">
     {{article.body_html|safe}}
-  </p>
+  </div>
 
-  <p/>
+  <p></p>
 
   <div class="row article-social">
     <div class="col-sm-6 text-left">

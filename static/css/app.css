@@ -450,6 +450,10 @@ div.activity-checkbox label.hover {
 color: #000;
 }
 
+.justify p {
+    text-align: justify;
+}
+
 h4.article-subheader {
     font-size: inherit;
     font-weight: bold;
