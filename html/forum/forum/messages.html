@@ -18,6 +18,27 @@ Messagess origin
   <style>
     .unread { background-color:#b0c4de; }
   </style>
+
+  {% if fa_conversion %}
+
+    <!-- Facebook Conversion Code for Leads - Message send -->
+    <script>(function() {
+        var _fbq = window._fbq || (window._fbq = []);
+        if (!_fbq.loaded) {
+          var fbds = document.createElement('script');
+          fbds.async = true;
+          fbds.src = '//connect.facebook.net/en_US/fbds.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(fbds, s);
+          _fbq.loaded = true;
+        }
+      })();
+      window._fbq = window._fbq || [];
+      window._fbq.push(['track', '6025937393523', {'value':'0.00','currency':'CZK'}]);
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6025937393523&amp;cd[value]=0.00&amp;cd[currency]=CZK&amp;noscript=1" /></noscript>
+  {% endif %}
+
 {% endblock %}
 
 {% block main %}
