@@ -280,6 +280,10 @@ margin-bottom:10px;
     padding: 27px;
 }
 
+.josefin {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
 .col-sm-3 nav nav-pills nav-stacked{ background-color:gray; }
 
 .lide{
